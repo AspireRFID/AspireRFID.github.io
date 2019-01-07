@@ -4,7 +4,7 @@
 
 ## Advanced Sensors and lightweight Programmable middleware for Innovative Rfid Enterprise applications
 
-https://cordis.europa.eu/project/rcn/85411/factsheet/en
+[Cordis factsheet](https://cordis.europa.eu/project/rcn/85411/factsheet/en)
 
 ASPIRE will research and provide a radical change in the current RFID deployment paradigm through innovative, programmable, royalty-free and privacy friendly middleware. This new middleware paradigm will be particular beneficial to European SME, which are nowadays experiencing significant cost-barriers to RFID deployment.
 
@@ -15,6 +15,9 @@ ASPIRE will significantly lower SME entry costs for RFID technology, through dev
 The ASPIRE middleware platform will take into account innovative European developments in the area of ubiquitous RFID-based sensing (i.e., physical quantities sensing (temperature, humidity, pressure, acceleration), mobile sensing) towards enabling novel business cases that ensure high ROI (Return on Investment).
 
 <img src="./logo/aspire-middleware.png" alt="AspireRFID middleware logo" height="200px">
+
+# Source repository
+[Github organization](https://github.com/AspireRFID)
 
 # Bibliography
 * Nikos Kefalakis, Nektarios Leontiadis, John K. Soldatos, Didier Donsez, Middleware Building Blocks for Architecting RFID Systems, 2009, DOI: [10.1007/978-3-642-03819-8_31](https://www.researchgate.net/publication/225194897_Middleware_Building_Blocks_for_Architecting_RFID_Systems)
