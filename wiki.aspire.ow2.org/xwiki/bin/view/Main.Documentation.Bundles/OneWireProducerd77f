@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>OneWireProducer</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1276765943000</creationDate>
+<date>1276772710000</date>
+<contentUpdateDate>1276772710000</contentUpdateDate>
+<version>1.20</version>
+<title>Aspire :: OSGi Bundles :: OneWireProducer</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: OneWireProducer
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for OneWire sensors
+
+1.1 Context
+The OneWire protocol is a proprietary serial protocol for communicating with low-cost [iButton devices&gt;http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm]. A iButton had a globally unique 64 bits long IDentifiers and optionnally memory banks, sensors (thermometer, hygrometer), realtime clock, wo data loggers.. According to Maxim IC, over 175 million iButtons are currently in circulation and they are used in [many applications&gt;http://www.maxim-ic.com/products/ibutton/applications] such access control, door lock, guard tour, cold supply chain, ....
+
+The OneWireProducer bundle registers one Producer service for each iButton connected to the bus managed by the OneWire adapter attached to the host (RS232,Parallel,USB).
+
+1.1 Build
+1.1.1 Sources
+* trunk/bundles/common
+* trunk/bundles/sensors
+
+1.1.1 Instruction
+# we must install the 1-Wire SDK for Java.  this library is available for download from http://files.dalsemi.com/auto_id/public/owapi_1_10.zip
+# we must install the library in your Maven repository  with mvn install:install-file -DgroupId=com.dalsemi.onewire -DartifactId=onewireapi -Dversion=1.10.0 -Dpackaging=jar -Dfile=owapi_1_10\lib\OneWireAPI.jar
+# cd trunk/bundles/common/onewireapi; mvn clean install
+# cd trunk/bundles/sensors/onewireproducer; mvn clean install
+
+1.1.1 Extra
+Windows DLL are provided in the ["1-Wire Drivers"&gt;http://www.maxim-ic.com/products/ibutton/software/tmex/index.cfm]
+and can be added in the org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi. Change the Bundle-NativeCode directive in the pom.xml.
+
+# adapterName=DS9097U on COM ports (could run without DLL ibtmjava.dll) -&gt; product name DS9097U-9 
+# adapterName={DS9097U} on COM ports (required DLL Ib97u32.dll)
+# adapterName={DS9097E} on COM ports (required DLL Ib97e32.dll)
+# adapterName={DS9490}  on USB ports (required DLL ib90usb.dll)
+# adapterName={DS1410E} on LPT ports (required DLL Ib10e32.dll)
+
+
+1.1 Configuration
+You must configure the properties adapterName and port for your OneWire adapter (see http://www.maxim-ic.com/products/ibutton/products/readers.cfm).
+The default values are {DS9490} USB1.
+
+
+1.1 Artifacts
+The artifacts to deploy are
+*  org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi
+*  org.ow2.aspirerfid:org.ow2.aspirerfid.onewireproducer
+
+Optionnally, the artifact provides a Felix shell command to inspect the OneWire devices and adapters.
+* org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi.cmd
+
+{code} 
+
+-&gt; ow help
+ow prop                  : list the properties
+ow list                  : list the available devices on the default adapter
+ow list &lt;name&gt; &lt;port&gt;    : list the available devices on the default adapter
+ow listAll               : list the available devices on all adapters
+ow adapters              : list the available adapters
+ow help                  : display this help
+
+
+-&gt; ow list
+Adapter: {DS9490} Port: USB1
+BD000801A332FA10: DS1920 (DS18S20) Digital thermometer measures temperatures ...
+830000002C575881: DS1990A (DS2401,DS2411) 64-bit unique serial number
+27000000CD3B8D2D: DS1972 (DS2431) 1K-Bit protected 1-Wire EEPROM.
+
+-&gt; ow list {DS9490} USB1
+
+{code} 
+
+
+
+
+1.1 Link
+iButton web site http://www.maxim-ic.com/products/ibutton/ibuttons
+
+1.1.1 Starter kit
+if you want to develop with onewire devices, you need as least one adapter (DS9490 is fine), one connector (DS1402D-DR8 is fine) and some iButtons.
+* http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm
+* http://www.maxim-ic.com/datasheet/index.mvp/id/3834
+* http://www.maxim-ic.com/quick_view2.cfm/qv_pk/2706
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3AOneWireProducer"&gt;Aspire :: OSGi Bundles :: OneWireProducer&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;2 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;2.1 Sources&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInstruction"&gt;2.2 Instruction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HExtra"&gt;2.3 Extra&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HConfiguration"&gt;3 Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HArtifacts"&gt;4 Artifacts&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLink"&gt;5 Link&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HStarterkit"&gt;5.1 Starter kit&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for OneWire sensors
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+The OneWire protocol is a proprietary serial protocol for communicating with low-cost &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm"&gt;&amp;#105;Button devices&lt;/a&gt;&lt;/span&gt;. A iButton had a globally unique 64 bits long IDentifiers and optionnally memory banks, sensors (thermometer, hygrometer), realtime clock, wo data loggers.. According to Maxim IC, over 175 million iButtons are currently in circulation and they are used in &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/applications"&gt;&amp;#109;any applications&lt;/a&gt;&lt;/span&gt; such access control, door lock, guard tour, cold supply chain, ....&lt;p class="paragraph"/&gt;The OneWireProducer bundle registers one Producer service for each iButton connected to the bus managed by the OneWire adapter attached to the host (RS232,Parallel,USB).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;2 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;2.1 Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;trunk/bundles/common&lt;/li&gt;
+&lt;li&gt;trunk/bundles/sensors&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstruction"&gt;2.2 Instruction&lt;/span&gt;&lt;/h4&gt; 
+&lt;ol&gt;&lt;li&gt;we must install the 1-Wire SDK for Java.  this library is available for download from &lt;span class="nobr"&gt;&lt;a href="http://files.dalsemi.com/auto_id/public/owapi_1_10.zip"&gt;&amp;#104;ttp://files.dalsemi.com/auto_id/public/owapi_1_10.zip&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;we must install the library in your Maven repository  with mvn install:install-file -DgroupId=com.dalsemi.onewire -DartifactId=onewireapi -Dversion=1.10.0 -Dpackaging=jar -Dfile=owapi_1_10&amp;#108;ib&amp;#79;neWireAPI.jar&lt;/li&gt;
+&lt;li&gt;cd trunk/bundles/common/onewireapi; mvn clean install&lt;/li&gt;
+&lt;li&gt;cd trunk/bundles/sensors/onewireproducer; mvn clean install&lt;/li&gt;
+&lt;/ol&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HExtra"&gt;2.3 Extra&lt;/span&gt;&lt;/h4&gt; 
+Windows DLL are provided in the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/software/tmex/index.cfm"&gt;&amp;#34;1-Wire Drivers"&lt;/a&gt;&lt;/span&gt;
+and can be added in the org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi. Change the Bundle-NativeCode directive in the pom.xml.
+&lt;ol&gt;&lt;li&gt;adapterName=DS9097U on COM ports (could run without DLL ibtmjava.dll) -&gt; product name DS9097U-9&lt;/li&gt;
+&lt;li&gt;adapterName={DS9097U} on COM ports (required DLL Ib97u32.dll)&lt;/li&gt;
+&lt;li&gt;adapterName={DS9097E} on COM ports (required DLL Ib97e32.dll)&lt;/li&gt;
+&lt;li&gt;adapterName={DS9490}  on USB ports (required DLL ib90usb.dll)&lt;/li&gt;
+&lt;li&gt;adapterName={DS1410E} on LPT ports (required DLL Ib10e32.dll)&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HConfiguration"&gt;3 Configuration&lt;/span&gt;&lt;/h3&gt; 
+You must configure the properties adapterName and port for your OneWire adapter (see &lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/products/readers.cfm"&gt;&amp;#104;ttp://www.maxim-ic.com/products/ibutton/products/readers.cfm&lt;/a&gt;&lt;/span&gt;).
+The default values are {DS9490} USB1.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HArtifacts"&gt;4 Artifacts&lt;/span&gt;&lt;/h3&gt; 
+The artifacts to deploy are
+&lt;ul class="star"&gt;
+&lt;li&gt; org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi&lt;/li&gt;
+&lt;li&gt; org.ow2.aspirerfid:org.ow2.aspirerfid.onewireproducer&lt;/li&gt;
+&lt;/ul&gt;Optionnally, the artifact provides a Felix shell command to inspect the OneWire devices and adapters.
+&lt;ul class="star"&gt;
+&lt;li&gt;org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi.cmd&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#45;&amp;#62; ow help
+ow prop                  : list the properties
+ow list                  : list the available devices on the &lt;span class="java&amp;#45;keyword"&gt;default&lt;/span&gt; adapter
+ow list &amp;#60;name&amp;#62; &amp;#60;port&amp;#62;    : list the available devices on the &lt;span class="java&amp;#45;keyword"&gt;default&lt;/span&gt; adapter
+ow listAll               : list the available devices on all adapters
+ow adapters              : list the available adapters
+ow help                  : display &lt;span class="java&amp;#45;keyword"&gt;this&lt;/span&gt; help&lt;p class="paragraph"/&gt;
+&amp;#45;&amp;#62; ow list
+Adapter: &amp;#123;DS9490&amp;#125; Port: USB1
+BD000801A332FA10: DS1920 (DS18S20) Digital thermometer measures temperatures &amp;#8230;
+830000002C575881: DS1990A (DS2401,DS2411) 64&amp;#45;bit unique serial number
+27000000CD3B8D2D: DS1972 (DS2431) 1K&amp;#45;Bit &lt;span class="java&amp;#45;keyword"&gt;protected&lt;/span&gt; 1&amp;#45;Wire EEPROM.&lt;p class="paragraph"/&gt;&amp;#45;&amp;#62; ow list &amp;#123;DS9490&amp;#125; USB1&lt;/pre&gt;&lt;/div&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLink"&gt;5 Link&lt;/span&gt;&lt;/h3&gt; 
+iButton web site &lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/ibuttons"&gt;&amp;#104;ttp://www.maxim-ic.com/products/ibutton/ibuttons&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HStarterkit"&gt;5.1 Starter kit&lt;/span&gt;&lt;/h4&gt; 
+if you want to develop with onewire devices, you need as least one adapter (DS9490 is fine), one connector (DS1402D-DR8 is fine) and some iButtons.
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm"&gt;&amp;#104;ttp://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/datasheet/index.mvp/id/3834"&gt;&amp;#104;ttp://www.maxim-ic.com/datasheet/index.mvp/id/3834&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/quick_view2.cfm/qv_pk/2706"&gt;&amp;#104;ttp://www.maxim-ic.com/quick_view2.cfm/qv_pk/2706&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

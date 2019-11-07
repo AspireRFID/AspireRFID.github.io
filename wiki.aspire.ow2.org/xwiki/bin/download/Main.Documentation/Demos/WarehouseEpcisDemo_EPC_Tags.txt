@@ -1,0 +1,80 @@
+---------------------For Invoise id: urn:epc:pat:gid:145.12.654645----------------------------
+
+
+<invoice>urn:epc:pat:gid-96:145.12.*</invoice>
+urn:epc:pat:gid-96:145.12.654645 = 35000009100000C00009FD35
+
+<MediumPacketContentsGroupName>urn:epc:pat:gid-96:145.255.*</MediumPacketContentsGroupName>5
+urn:epc:pat:gid-96:145.255.480 = 3500000910000FF0000001E0
+urn:epc:pat:gid-96:145.255.481 = 3500000910000FF0000001E1
+urn:epc:pat:gid-96:145.255.482 = 3500000910000FF0000001E2
+urn:epc:pat:gid-96:145.255.483 = 3500000910000FF0000001E3
+urn:epc:pat:gid-96:145.255.484 = 3500000910000FF0000001E4
+urn:epc:pat:gid-96:145.255.485 = 3500000910000FF0000001E5
+
+<SmallPacket1ContentsGroupName>urn:epc:pat:gid-96:145.233.*</SmallPacket1ContentsGroupName>4
+urn:epc:pat:gid-96:145.233.350 = 3500000910000E900000015E
+urn:epc:pat:gid-96:145.233.351 = 3500000910000E900000015F
+urn:epc:pat:gid-96:145.233.352 = 3500000910000E9000000160
+urn:epc:pat:gid-96:145.233.353 = 3500000910000E9000000161
+urn:epc:pat:gid-96:145.233.354 = 3500000910000E9000000162
+urn:epc:pat:gid-96:145.233.355 = 3500000910000E9000000163
+
+---------------------------------------------------------------------------------------------
+
+---------------------For Invoise id: urn:epc:pat:gid:239.30.58933----------------------------
+
+
+<invoice>urn:epc:pat:gid-96:239.30.*</invoice>
+urn:epc:pat:gid-96:239.30.58933 = 3500000EF00001E00000E635
+
+<SmallPacket2ContentsGroupName>urn:epc:pat:gid-96:1.3.*</SmallPacket2ContentsGroupName>4
+urn:epc:pat:gid-96:1.3.127 = 35000000100000300000007F
+urn:epc:pat:gid-96:1.3.128 = 350000001000003000000080
+urn:epc:pat:gid-96:1.3.129 = 350000001000003000000081
+urn:epc:pat:gid-96:1.3.130 = 350000001000003000000082
+
+
+<SmallPacket3ContentsGroupName>urn:epc:pat:gid-96:1.4.*</SmallPacket3ContentsGroupName>3
+urn:epc:pat:gid-96:1.4.55 = 350000001000004000000037
+urn:epc:pat:gid-96:1.4.56 = 350000001000004000000038
+urn:epc:pat:gid-96:1.4.57 = 350000001000004000000039
+
+---------------------------------------------------------------------------------------------
+
+---------------------For Invoise id:urn:epc:pat:gid:145.12.76427----------------------------
+
+
+<invoice>urn:epc:pat:gid-96:145.12.*</invoice>
+urn:epc:pat:gid-96:145.12.76427 = 35000009100000C000012A8B
+
+<MediumPacketContentsGroupName>urn:epc:pat:gid-96:145.255.*</MediumPacketContentsGroupName>5
+urn:epc:pat:gid-96:145.255.480 = 3500000910000FF0000001E0
+urn:epc:pat:gid-96:145.255.481 = 3500000910000FF0000001E1
+urn:epc:pat:gid-96:145.255.482 = 3500000910000FF0000001E2
+urn:epc:pat:gid-96:145.255.483 = 3500000910000FF0000001E3
+urn:epc:pat:gid-96:145.255.484 = 3500000910000FF0000001E4
+urn:epc:pat:gid-96:145.255.485 = 3500000910000FF0000001E5
+
+<SmallPacket1ContentsGroupName>urn:epc:pat:gid-96:145.233.*</SmallPacket1ContentsGroupName>4
+urn:epc:pat:gid-96:145.233.350 = 3500000910000E900000015E
+urn:epc:pat:gid-96:145.233.351 = 3500000910000E900000015F
+urn:epc:pat:gid-96:145.233.352 = 3500000910000E9000000160
+urn:epc:pat:gid-96:145.233.353 = 3500000910000E9000000161
+urn:epc:pat:gid-96:145.233.354 = 3500000910000E9000000162
+urn:epc:pat:gid-96:145.233.355 = 3500000910000E9000000163
+
+
+<SmallPacket2ContentsGroupName>urn:epc:pat:gid-96:1.3.*</SmallPacket2ContentsGroupName>4
+urn:epc:pat:gid-96:1.3.127 = 35000000100000300000007F
+urn:epc:pat:gid-96:1.3.128 = 350000001000003000000080
+urn:epc:pat:gid-96:1.3.129 = 350000001000003000000081
+urn:epc:pat:gid-96:1.3.130 = 350000001000003000000082
+
+
+<SmallPacket3ContentsGroupName>urn:epc:pat:gid-96:1.4.*</SmallPacket3ContentsGroupName>3
+urn:epc:pat:gid-96:1.4.55 = 350000001000004000000037
+urn:epc:pat:gid-96:1.4.56 = 350000001000004000000038
+urn:epc:pat:gid-96:1.4.57 = 350000001000004000000039
+
+---------------------------------------------------------------------------------------------

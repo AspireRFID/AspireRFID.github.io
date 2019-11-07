@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ALEonOSGi by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - ALEonOSGi
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin4b81.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ALEonOSGi">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='ALEonOSGi.html'>Aspire :: Deployment of Filtering And Collection Server on OSGi</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_ALEonOSGi.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="ALEonOSGid5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/ALEonOSGicede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="ALEonOSGid77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HAspire3A3ADeploymentofFilteringAndCollectionServeronOSGi">Aspire :: Deployment of Filtering And Collection Server on OSGi</span></h2><p class="paragraph"/>
+<hr class="line"/>
+            <ul>
+          <li><a href="#HIntroduction">1 Introduction</a> 
+      <li><a href="#HTransformationofALEServerwebapplicationinanOSGicompliantbundle">2 Transformation of ALE Server web application in an OSGi compliant bundle</a> 
+      <li><a href="#HDeploymentofF26CServeronOSGIplatform">3 Deployment of F&C Server on OSGI platform</a> 
+        <ul>
+          <li><a href="#HInstallationofanOSGiplatformwithwebapplicationsupport">3.1 Installation of an OSGi platform with web application support</a> 
+      <li><a href="#HOthernecessarybundles">3.2 Other necessary bundles</a> 
+      <li><a href="#HInstalationofF26Cserverbundle">3.3 Instalation of F&C server bundle</a> 
+        </ul>
+          <li><a href="#HInstallationofReaders27Drivers">4 Installation of Readers' Drivers</a> 
+      <li><a href="#HInstallationofthetemperaturesensors">5 Installation of the temperature sensors</a> 
+      <li><a href="#HInstallationofotherfeaturesbundles">6 Installation of other features bundles</a> 
+      <li><a href="#HAllinonedistribution">7 All-in-one distribution</a> 
+      <li><a href="#HMisc">8 Misc</a> 
+      </ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HIntroduction">1 Introduction</span></h3><p class="paragraph"/>
+Deployment of the Filtering And Collection Server on OSGi platform provides to the middleware two important properties:
+<ul class="star">
+<li>Modularity: Extensions to the F&amp;C server as addition of new readers or sensors should be provided in a modular fashion. Using OSGi approach, new readers are developed without introduce their driver code in the same archive (war) used to package the ALE Server.</li>
+<li>Dynamicity: These new modules will be deployed (or undeployed) on the platform dynamically without stopping the applications that are currently in execution.</li>
+</ul>However, deployment on OSGi imposes some conditions on the F&amp;C server provisioning. This document will explain how to deploy the Fosstrak ALE Server on OSGi platform. The document is organized as follows: first installation of OSGi platform is presented. Then, how the war archive is transformed in a compliant OSGi bundled is showed. Next, the installation of a reader driver is illustrated, follow by installation of a sensor driver. Finally, additional features installation is explained.<p class="paragraph"/>
+<img src="../../download/Main.Documentation/ALEonOSGi/aleosgiarch.png" height="445" width="784" alt="aleosgiarch.png" /><p class="paragraph"/>Figure : architecture of the ALEServer' OSGi profile (<a href="../../download/Main.Documentation/ALEonOSGi/aleosgiarch.png" />HiRes picture</a>)
+<h3 class="heading-1-1"><span id="HTransformationofALEServerwebapplicationinanOSGicompliantbundle">2 Transformation of ALE Server web application in an OSGi compliant bundle</span></h3><p class="paragraph"/>
+This transformation consists only in the addition of a MANIFEST.MF file into the war archive. This manifest file must be OSGi compliant, indicating the bundle dependencies and capabilities and also other meta-data used by the OSGi platform. In OSGi profile, we have added the manifest file, also Sensor communication and JMX management features. In the project <strong class="strong">aleserver-bundle</strong> the specific files to support these features are found.<p class="paragraph"/>Instructions to build the F&C server are <span class="wikiexternallink"><a href="Filtering%26Collection.html#HBuilding">&#104;ere</a></span>
+<h3 class="heading-1-1"><span id="HDeploymentofF26CServeronOSGIplatform">3 Deployment of F&C Server on OSGI platform</span></h3> 
+<h4 class="heading-1-1-1"><span id="HInstallationofanOSGiplatformwithwebapplicationsupport">3.1 Installation of an OSGi platform with web application support</span></h4><p class="paragraph"/>First download an OSGi distribution such as <span class="wikiexternallink"><a href="http://felix.apache.org/">&#65;pache Felix</a></span> (current version is 2.0.1). Then, install <span class="wikiexternallink"><a href="http://wiki.ops4j.org/display/paxweb/Pax+Web">&#80;ax Web</a></span> (implementation of OSGi Http Service) and their dependencies (current version is 0.7.2). Finally, install the <span class="wikiexternallink"><a href="http://wiki.ops4j.org/display/paxweb/Pax+Web">&#80;ax Web Extender</a></span> (current version is 0.7.2) with provides a transparent (for JEE war archive) registration of servlets on the OSGi platform.<p class="paragraph"/>
+These steps can be performed easily using the <span class="wikiexternallink"><a href="http://paxrunner.ops4j.org/space/Pax+Runner">&#80;ax Runner</a></span> tool (an intenet connection is required). Simply, download the Pax Runner, then in a console execute the command <i class="italic"> pax-run &#45;&#45;platform=felix &#45;&#45;dir=ale war config</i><p class="paragraph"/>
+This command install (and launch) the Felix platform into the directory <i class="italic">ale</i>.  The last arguments indicate to Pax Runner which <span class="wikiexternallink"><a href="http://paxrunner.ops4j.org/display/paxrunner/Pax+Runner+profiles+list">&#112;rofiles</a></span> it should install, war is the web support profile and config the configuration admin service.<p class="paragraph"/>In some windows system the command must be typed as <i class="italic">pax-run &quot;&#45;&#45;platform=felix&quot; &quot;&#45;&#45;dir=ale&quot; war config</i>
+<h4 class="heading-1-1-1"><span id="HOthernecessarybundles">3.2 Other necessary bundles</span></h4><p class="paragraph"/>In order to support sensor extensions is necessary also to install the <span class="wikiexternallink"><a href="http://svn.apache.org/viewvc/felix/trunk/wireadmin/">&#87;ire Admin</a></span> bundle (compiled version <a href="../../download/Main.Documentation/ALEonOSGi/wireadmin.jar" />&#119;ireadmin.jar</a> ) and <span class="wikiexternallink"><a href="http://svn.apache.org/viewvc/felix/sandbox/donsez/wireadminbinder/src/site/readme.html?view=co">&#87;ire Admin Binder</a></span> (compiled version <a href="../../download/Main.Documentation/ALEonOSGi/wireadmin-binder.jar" />&#119;ireadmin-binder.jar</a>) bundles.<p class="paragraph"/>Install the bundles using the associated command in your OSGi distribution. For Felix distribution use the next commands<p class="paragraph"/><i class="italic">install file:path/wireadmin.jar</i>
+<i class="italic">install file:path/wireadmin-binder.jar</i>
+<h4 class="heading-1-1-1"><span id="HInstalationofF26Cserverbundle">3.3 Instalation of F&C server bundle</span></h4><p class="paragraph"/>In Felix platform you can install the server bundle using the next command<p class="paragraph"/><i class="italic">install file:path/aleserver-bundle.war</i>
+<h3 class="heading-1-1"><span id="HInstallationofReaders27Drivers">4 Installation of Readers' Drivers</span></h3><p class="paragraph"/>Readers' Drivers are installed as bundles on the OSGi platform. Next readers' drivers have been included in the OSGi profile:
+<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Bundles/SimpleReader.html">Simple Reader (an reader simulator)</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Bundles/ProximaRFDesktopReader.html">ProximaRF Desktop USB reader</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Bundles/TagSysMedioReader.html">TagSys Medio Serial reader</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Bundles/ACR122Reader.html">ACR 122 USB reader</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Bundles/OneWireReader.html">OneWire reader</a></span></li>
+</ul>Use the Felix command <span class="wikiexternallink"><a href="http://felix.apache.org/site/documentation.html">&#105;nstall</a></span> to deploy each reader bundle and its dependencies.
+<h3 class="heading-1-1"><span id="HInstallationofthetemperaturesensors">5 Installation of the temperature sensors</span></h3><p class="paragraph"/>
+Two temperature sensors are provided in this distribution, At first,a fictive sensor that can be used for test purposes, and a Temper sensor that is the driver of an usb sensor temperature device. Require bundles are also provided (iPojo version 1.4.0).<p class="paragraph"/>Readers' bundles and sensors' bundles are shown in the next osgi console snapshot:<p class="paragraph"/><img src="../../download/Main.Documentation/ALEonOSGi/ALE-OSGi.png" alt="ALE-OSGi.png" />
+<h3 class="heading-1-1"><span id="HInstallationofotherfeaturesbundles">6 Installation of other features bundles</span></h3><p class="paragraph"/>
+The platform can be enriched using other bundles to add different features. By example, a bundle allowing administration of OSGi platform using the <span class="wikiexternallink"><a href="http://membres-liglab.imag.fr/kiev.gama/dev/osgi/visualvm/">&#86;isual VM OSGi plugin</a></span> is provided.
+<h3 class="heading-1-1"><span id="HAllinonedistribution">7 All-in-one distribution</span></h3><p class="paragraph"/>A distribution with all required bundles is available <span class="wikiexternallink"><a href="http://chaphe.free.fr/aspire/ale.zip">&#104;ere</a></span>. Download the file and unzip it, then execute run.sh (or run.bat in Windows).
+<h3 class="heading-1-1"><span id="HMisc">8 Misc</span></h3> 
+<ul class="star">
+<li><span class="wikilink"><a href="ALEinCilia.html">CiliaALE</a></span> : a flexible and dynamically reconfigurable ALE Server for Android platforms (phones and tablets)</li>
+</ul>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='ALEonOSGi.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/indexfe68.html?parent=Main.Documentation.ALEonOSGi"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.ALEonOSGi"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            5 Attachments  by
+            gabo_pedraza ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/ALEonOSGi/ltkjava-0.1.1.jar">ltkjava-0.1.1.jar</
+                                     a></td>
+            <td>1.1</td><td>gabo_pedraza</td><td>1420892</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ALEonOSGi/ALE-OSGi1b1e.png?width=80" alt="ALE-OSGi.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ALEonOSGi/ALE-OSGi.png">ALE-OSGi.png</
+                                     a></td>
+            <td>1.1</td><td>gabo_pedraza</td><td>31036</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/ALEonOSGi/wireadmin.jar">wireadmin.jar</
+                                     a></td>
+            <td>1.1</td><td>gabo_pedraza</td><td>24086</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/ALEonOSGi/wireadmin-binder.jar">wireadmin-binder.jar</
+                                     a></td>
+            <td>1.1</td><td>gabo_pedraza</td><td>68047</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ALEonOSGi/aleosgiarch1b1e.png?width=80" alt="aleosgiarch.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ALEonOSGi/aleosgiarch.png">aleosgiarch.png</
+                                     a></td>
+            <td>1.2</td><td>donsez</td><td>221894</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/ALEonOSGi" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='ALEonOSGi.html'>Aspire :: Deployment of Filtering And Collection Server on OSGi</a>
+  (en)
+ <br />
+  Creator: gabo_pedraza
+ &nbsp;Date: 2010/03/25 14:31
+ <br />
+ Last Author: donsez
+ &nbsp;Date: 2010/10/08 20:07
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ALEonOSGi by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:24 GMT -->
+</html>

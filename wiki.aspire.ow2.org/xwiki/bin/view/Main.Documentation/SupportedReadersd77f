@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>SupportedReaders</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.driss_r</creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1417101684000</creationDate>
+<date>1417178200000</date>
+<contentUpdateDate>1417178200000</contentUpdateDate>
+<version>1.30</version>
+<title>Supported readers</title>
+<template></template>
+<attachment>
+<filename>L100Img.jpg</filename>
+<filesize>31508</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417103088000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>L100.jpg</filename>
+<filesize>78094</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417103810000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>IDE.png</filename>
+<filesize>43596</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417104278000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Define.png</filename>
+<filesize>41298</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417105252000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>p101.png</filename>
+<filesize>104937</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417177392000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>trp101.png</filename>
+<filesize>192741</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417177401000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Supported readers
+
+This document is dedicated to AspireRFID users in charge of using the following readers:
+
+#toc("" "" "")
+
+
+1.1 Tagsys Medio L100 and L200
+TAGSYS MedioTM L100 and Medio L200 are robust, long range and multiread HF RFID readers. Packaged in rugged casings, they are both ideal for use in industrial applications where 3D volume detection is required, such as production and distribution sites.
+TAGSYS Medio L100 and Medio L200 are powerful and long range readers, designed for challenging environments. They are multi-protocols, ISO 15693 compatible and operate at 13.56MHz. Each reader offers 4 configurable I/O ports enabling end-users to connect a wide choice of RFID antenna to detect several RFID-tagged items simultaneously.
+The Medio L100 reader has 2 RF channels,while the Medio L200 has 4.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/L100Img.jpg"&gt;{image:L100Img.jpg|350|}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1 Requirements
+
+
+*Hardware*
+
+
+* Reader : Medio L100/L200 long Range HF RFID Reader
+* Antenna : Tagsys Aero LB Antenna, optimized to operate with Tagsys mid and long-range Medio readers + its coaxial cable and BNC connector.
+* Tag : HF tag that can be decoded by the reader, must be one of the supported protocols : C210, C240, C270, C370 (ISO15693).
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/L100.jpg"&gt;{image:L100.jpg|350|}&lt;/a&gt;
+&lt;/center&gt;
+
+*Software*
+
+* Tomcat Apache server installed (Tomcat 6 or later version)
+* AspireRfidIDE executable tool can be downloaded [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006]
+* AspireRFID ALE war file [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/ALE/fc-server/target/]
+
+1.1.1 Preliminary configurations 
+
+*AspireRfidIDE configuration*
+
+This tool provides means of configuration of the underlying ASPIRE infrastructure. The user can describe his requirements to the IDE, which provides all the configuration options, and translates them into configuration messages by which it will supply all the appropriate modules.
+After downloading the repository, unzip it and lunch the executable file.
+The tool can be configured through the IDE's preferences window (Window&gt;Preferences).
+Choose the Ale Server Configurator from the list appearing at the left see the picture below.
+From there you can configure the :
+* ALE client end point: Set the end point to the filtering and collection server's by giving the name of the ALE war file (fc-server-version.war) with the right version (1.2.2). This file must be set to : http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALEService
+* ALE client end point: must be set to : 
+http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALELRService
+* RP LRSpecs Directory : The directory where LRSpecs1 for RP readers will be stored.
+* EC Specs Directory: The directory where ECSpecs2 will be stored which will be used to configure the server?s filtering function.
+* Reader name: Add the reader name (Tagsys Reader for example).
+Push Apply to save the new configurations, then Ok to close the window. 
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/IDE.png"&gt;{image:IDE.png|800|}&lt;/a&gt;
+&lt;/center&gt;
+
+*Create LRSpec* 
+LRSpec is the Logical Reader Specifications, it is an xml file understandable by AspireRfid core used to define a reader. This file is provided for AspireRfidIDE tool to specify the reader settings : the class that will be called to create the reader, the used media (serial), the tag types that can be read...
+This LRSpec must be saved under the RP directory.
+
+To make the LRSpec, create a text file, copy the content of the box below and save it as an xml file in the RP directory (C:\Documents and Settings\user\AspireRFID\IDE\LRSpecs\RP).
+
+{code}
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+&lt;ns3:LRSpec xmlns:ns2="urn:epcglobal:ale:wsdl:1" xmlns:ns3="urn:epcglobal:ale:xsd:1"&gt; 
+    &lt;isComposite&gt;false&lt;/isComposite&gt; 
+    &lt;readers/&gt; 
+    &lt;properties&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;ReaderType&lt;/name&gt; 
+            &lt;value&gt;org.fosstrak.ale.server.readers.medio.MedioAdaptor&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;Description&lt;/name&gt; 
+            &lt;value&gt;This Intermec Logical Reader consists of Antenna1&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;PhysicalReaderName&lt;/name&gt; 
+            &lt;value&gt;TagsysReader&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;PhysicalReaderSource&lt;/name&gt; 
+            &lt;value&gt;Antenna1&lt;/value&gt; 
+        &lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iMediaType&lt;/name&gt; 
+		&lt;value&gt;serial&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.strSerialName&lt;/name&gt; 
+		&lt;value&gt;COM1&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iSerialSpeed&lt;/name&gt; 
+		&lt;value&gt;38400&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iPower&lt;/name&gt; 
+		&lt;value&gt;1&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!-- 0 is off and channels could be 1,2,3,4  --&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iChannel&lt;/name&gt; 
+		&lt;value&gt;1&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!--values are TAG_C210, TAG_C240, TAG_C270, TAG_ISO15693--&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.strTagType&lt;/name&gt; 
+		&lt;value&gt;TAG_ISO15693&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.boCont&lt;/name&gt; 
+		&lt;value&gt;true&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.boSort&lt;/name&gt; 
+		&lt;value&gt;false&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!-- timer between 2 reads (in millisec)  --&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iTimer&lt;/name&gt; 
+		&lt;value&gt;250&lt;/value&gt; 
+	&lt;/property&gt; 
+
+     &lt;/properties&gt; 
+&lt;/ns3:LRSpec&gt;
+
+{code}
+
+*Create ECSpec*
+Event Cycle Specification (ECSpec) is an xml file describing filtering and collection behavior. This tells the Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example : added, current or deleted tags.
+
+This file must be created (same method as the LRSpec) and saved under the EC Spec directory (C:\Documents and Settings\user\AspireRFID\IDE\ECSpecs\)
+
+{code}
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+&lt;ns2:ECSpec xmlns:ns2="urn:epcglobal:ale:xsd:1"&gt; 
+    &lt;logicalReaders&gt; 
+        &lt;logicalReader&gt;TagsysReader&lt;/logicalReader&gt; 
+    &lt;/logicalReaders&gt; 
+    &lt;boundarySpec&gt; 
+        &lt;repeatPeriod unit="MS"&gt;10000&lt;/repeatPeriod&gt; 
+        &lt;duration unit="MS"&gt;9500&lt;/duration&gt; 
+        &lt;stableSetInterval unit="MS"&gt;0&lt;/stableSetInterval&gt; 
+    &lt;/boundarySpec&gt; 
+    &lt;reportSpecs&gt; 
+        &lt;reportSpec&gt; 
+            &lt;reportSet set="CURRENT"/&gt; 
+            &lt;output includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeTag="true"/&gt; 
+        &lt;/reportSpec&gt; 
+    &lt;/reportSpecs&gt; 
+&lt;/ns2:ECSpec&gt;
+{code}
+
+*Tomcat server*
+Tomcat is used in order to deploy the Filtering and Collection server. 
+Copy the  two WAR file (fc-server-version.war) into the Tomcat's webapps directory and start Tomcat. The war file will be deployed into a new folder. 
+You will usually find the webapps folder inside the tomcat installation directory (C:\Program Files\Apache Software Foundation\Tomcat\webapps).
+
+1.1.1 Deployment
+
+Now that all configurations are done, the reader can be tested.
+* Plug-in the reader's power supply,
+* Connect the reader into the RS232 connector and check which serial port is used (make sure that it is the same as LRSpec file),
+* Connect the antenna to the reader, 
+* Put the tag in the antenna range,
+* Make sure that Tomcat server is started (if you are using windows check the graphic interface on the task bar, if your using Linux check with the command line : service tomcat7 status)
+* Go to AspireRfidIDE and push the Get vendor version in LRSpecConfiguratorView. A version number should be returned in the console tab (if not check again the configurations).
+* To define the new reader as shown in the picture below, push Define button and select the LRSpec already defined and press Execute.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/Define.jpg"&gt;{image:Define.png|500|}&lt;/a&gt;
+&lt;/center&gt;
+
+
+A dialog box will appear with the message : Lrspec successfully defined!
+Now define the ECSpec for the same reader.
+A text file will be created with the read tags under C:\Documents and Settings\user\Scans.
+For example, for a tag ISO15693 reading, the generated report is : 
+E00401000E197F26 (DSFID:00),ISO15693
+
+
+1.1 TagSys Medio TR-P101 and P101
+
+The Medio TR-P101 and P101 readers are a low cost of ownership RFID solution that are ideal for applications requiring a single antenna. The rugged design provides long-lasting performance in harsh environments, and the remote upgradability feature offers an efficient method for maintaining an RFID infrastructure without leveraging valuable resources. High performance features such as dual operating modes and 1W power output make the Medio TR-P101 an effective RFID solution for textile service applications, and the Medio P101 a good RFID reader for a multitude of applications and settings ranging from manufacturing to library checkout stations.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/p101.png"&gt;{image:p101.png|300|}&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/trp101.png"&gt;{image:trp101.png|300|}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1 Requirements
+
+
+*Hardware*
+
+
+* Reader : Medio TR-P101 Mid-Range HF RFID Reader (delivered with 1 SMA/BNC Adaptor, 1 RS232 cable and 1 Universal Power Supply).
+* Antenna : Tagsys Aero LB Antenna, optimized to operate with Tagsys? mid and long-range Medio? readers + its coaxial cable and BNC connector.
+* Tag : Tag : HF tag that can be decoded by the reader, must be one of these protocols : C210, C240, C270, C370 (ISO15693).
+
+*Software*
+
+* Tomcat Apache server installed (Tomcat 6 or later version)
+* AspireRfidIDE executable tool can be downloaded [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006]
+* AspireRFID ALE war file [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/ALE/fc-server/target/]
+
+
+1.1.1 Preliminary configurations 
+
+*AspireRfidIDE configuration*
+
+This tool provides means of configuration of the underlying ASPIRE infrastructure. The user can describe his requirements to the IDE, which provides all the configuration options, and translates them into configuration messages by which it will supply all the appropriate modules.
+After downloading the repository, unzip it and lunch the executable file.
+The tool can be configured through the IDE's preferences window (Window&gt;Preferences).
+Choose the Ale Server Configurator from the list appearing at the left see the picture below.
+From there you can configure the :
+* ALE client end point: Set the end point to the filtering and collection server's by giving the name of the ALE war file (fc-server-version.war) with the right version (1.2.2). This file must be set to : http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALEService
+* ALE client end point: must be set to : 
+http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALELRService
+* RP LRSpecs Directory : The directory where LRSpecs1 for RP readers will be stored.
+* EC Specs Directory: The directory where ECSpecs2 will be stored which will be used to configure the server?s filtering function.
+* Reader name: Add the reader name (Tagsys Reader for example).
+Push Apply to save the new configurations, then Ok to close the window. 
+
+
+*Create LRSpec* 
+LRSpec is the Logical Reader Specifications, it is an xml file understandable by AspireRfid core used to define a reader. This file is provided for AspireRfidIDE tool to specify the reader settings : the class that will be called to create the reader, the used media (serial), the tag types that can be read...
+This LRSpec must be saved under the RP directory.
+
+To make the LRSpec, create a text file, copy the content of the box below and save it as an xml file in the RP directory (C:\Documents and Settings\user\AspireRFID\IDE\LRSpecs\RP).
+
+{code}
+
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+&lt;ns3:LRSpec xmlns:ns2="urn:epcglobal:ale:wsdl:1" xmlns:ns3="urn:epcglobal:ale:xsd:1"&gt; 
+    &lt;isComposite&gt;false&lt;/isComposite&gt; 
+    &lt;readers/&gt; 
+    &lt;properties&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;ReaderType&lt;/name&gt; 
+            &lt;value&gt;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;Description&lt;/name&gt; 
+            &lt;value&gt;This Intermec Logical Reader consists of Antenna1&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;ConnectionPoint&lt;/name&gt; 
+            &lt;value&gt;http://localhost:8000&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;NotificationPoint&lt;/name&gt; 
+            &lt;value&gt;http://localhost:9090&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;ReadTimeInterval&lt;/name&gt; 
+            &lt;value&gt;1500&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;!--property&gt; 
+            &lt;name&gt;AdaptorClass&lt;/name&gt; 
+            &lt;value&gt;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;ImplementationClass&lt;/name&gt; 
+            &lt;value&gt;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&lt;/value&gt; 
+        &lt;/property--&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;PhysicalReaderName&lt;/name&gt; 
+            &lt;value&gt;TagsysReader&lt;/value&gt; 
+        &lt;/property&gt; 
+        &lt;property&gt; 
+            &lt;name&gt;PhysicalReaderSource&lt;/name&gt; 
+            &lt;value&gt;Antenna1&lt;/value&gt; 
+        &lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iMediaType&lt;/name&gt; 
+		&lt;value&gt;serial&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.strSerialName&lt;/name&gt; 
+		&lt;value&gt;COM1&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iSerialSpeed&lt;/name&gt; 
+		&lt;value&gt;38400&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iPower&lt;/name&gt; 
+		&lt;value&gt;1&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!-- 0 is off and channels could be 1,2,3,4  --&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iChannel&lt;/name&gt; 
+		&lt;value&gt;1&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!--values are TAG_C210, TAG_C240, TAG_C270, TAG_ISO15693--&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.strTagType&lt;/name&gt; 
+		&lt;value&gt;TAG_ISO15693&lt;/value&gt; 
+	&lt;/property&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.boCont&lt;/name&gt; 
+		&lt;value&gt;true&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.boSort&lt;/name&gt; 
+		&lt;value&gt;false&lt;/value&gt; 
+	&lt;/property&gt; 
+
+	&lt;!-- timer between 2 reads (in millisec)  --&gt; 
+	&lt;property&gt; 
+		&lt;name&gt;tagsys.mediolx00.settings.iTimer&lt;/name&gt; 
+		&lt;value&gt;250&lt;/value&gt; 
+	&lt;/property&gt; 
+
+     &lt;/properties&gt; 
+&lt;/ns3:LRSpec&gt;
+
+{code}
+
+*Create ECSpec*
+Event Cycle Specification (ECSpec) is an xml file describing filtering and collection behavior. This tells the Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example : added, current or deleted tags.
+
+This file must be created (same method as the LRSpec) and saved under the EC Spec directory (C:\Documents and Settings\user\AspireRFID\IDE\ECSpecs\)
+
+{code}
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt; 
+&lt;ns2:ECSpec xmlns:ns2="urn:epcglobal:ale:xsd:1"&gt; 
+    &lt;logicalReaders&gt; 
+        &lt;logicalReader&gt;TagsysReader&lt;/logicalReader&gt; 
+    &lt;/logicalReaders&gt; 
+    &lt;boundarySpec&gt; 
+        &lt;repeatPeriod unit="MS"&gt;10000&lt;/repeatPeriod&gt; 
+        &lt;duration unit="MS"&gt;9500&lt;/duration&gt; 
+        &lt;stableSetInterval unit="MS"&gt;0&lt;/stableSetInterval&gt; 
+    &lt;/boundarySpec&gt; 
+    &lt;reportSpecs&gt; 
+        &lt;reportSpec&gt; 
+            &lt;reportSet set="CURRENT"/&gt; 
+            &lt;output includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeTag="true"/&gt; 
+        &lt;/reportSpec&gt; 
+    &lt;/reportSpecs&gt; 
+&lt;/ns2:ECSpec&gt;
+{code}
+
+*Tomcat server*
+Tomcat is used in order to deploy the Filtering and Collection server. 
+Copy the  two WAR file (fc-server-version.war) into the Tomcat's webapps directory and start Tomcat. The war file will be deployed into a new folder. 
+You will usually find the webapps folder inside the tomcat installation directory (C:\Program Files\Apache Software Foundation\Tomcat\webapps).
+
+1.1.1 Deployment
+
+Now that all configurations are done, the reader can be tested.
+* Plug-in the reader's power supply,
+* Connect the reader into the RS232 connector and check which serial port is used (make sure that it is the same as LRSpec file),
+* Connect the antenna to the reader, 
+* Put the tag in the antenna range,
+* Make sure that Tomcat server is started (if you are using windows check the graphic interface on the task bar, if your using Linux check with the command line : service tomcat7 status)
+* Go to AspireRfidIDE and push the Get vendor version in LRSpecConfiguratorView. A version number should be returned in the console tab (if not check again the configurations).
+* To define the new reader as shown in the picture below, push Define button and select the LRSpec already defined and press Execute.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/Define.jpg"&gt;{image:Define.png|500|}&lt;/a&gt;
+&lt;/center&gt;
+
+
+A dialog box will appear with the message : Lrspec successfully defined!
+Now define the ECSpec for the same reader.
+A text file will be created with the read tags under C:\Documents and Settings\user\Scans.
+For example, for a tag ISO15693 reading, the generated report is : 
+E00401000E197F26 (DSFID:00),ISO15693
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSupportedreaders"&gt;Supported readers&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;This document is dedicated to AspireRFID users in charge of using the following readers:&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HTagsysMedioL100andL200"&gt; Tagsys Medio L100 and L200&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt; Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPreliminaryconfigurations"&gt; Preliminary configurations &lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeployment"&gt; Deployment&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HTagSysMedioTRP101andP101"&gt; TagSys Medio TR-P101 and P101&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements-1"&gt; Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPreliminaryconfigurations-1"&gt; Preliminary configurations &lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeployment-1"&gt; Deployment&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTagsysMedioL100andL200"&gt;Tagsys Medio L100 and L200&lt;/span&gt;&lt;/h3&gt; 
+TAGSYS MedioTM L100 and Medio L200 are robust, long range and multiread HF RFID readers. Packaged in rugged casings, they are both ideal for use in industrial applications where 3D volume detection is required, such as production and distribution sites.
+TAGSYS Medio L100 and Medio L200 are powerful and long range readers, designed for challenging environments. They are multi-protocols, ISO 15693 compatible and operate at 13.56MHz. Each reader offers 4 configurable I/O ports enabling end-users to connect a wide choice of RFID antenna to detect several RFID-tagged items simultaneously.
+The Medio L100 reader has 2 RF channels,while the Medio L200 has 4.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/L100Img.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/L100Img.jpg" height="350" alt="L100Img.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Hardware&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Reader : Medio L100/L200 long Range HF RFID Reader&lt;/li&gt;
+&lt;li&gt;Antenna : Tagsys Aero LB Antenna, optimized to operate with Tagsys mid and long-range Medio readers + its coaxial cable and BNC connector.&lt;/li&gt;
+&lt;li&gt;Tag : HF tag that can be decoded by the reader, must be one of the supported protocols : C210, C240, C270, C370 (ISO15693).&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/L100.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/L100.jpg" height="350" alt="L100.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Tomcat Apache server installed (Tomcat 6 or later version)&lt;/li&gt;
+&lt;li&gt;AspireRfidIDE executable tool can be downloaded &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;AspireRFID ALE war file &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/ALE/fc-server/target/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPreliminaryconfigurations"&gt;Preliminary configurations &lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;AspireRfidIDE configuration&lt;/strong&gt;&lt;p class="paragraph"/&gt;This tool provides means of configuration of the underlying ASPIRE infrastructure. The user can describe his requirements to the IDE, which provides all the configuration options, and translates them into configuration messages by which it will supply all the appropriate modules.
+After downloading the repository, unzip it and lunch the executable file.
+The tool can be configured through the IDE's preferences window (Window&gt;Preferences).
+Choose the Ale Server Configurator from the list appearing at the left see the picture below.
+From there you can configure the :
+&lt;ul class="star"&gt;
+&lt;li&gt;ALE client end point: Set the end point to the filtering and collection server's by giving the name of the ALE war file (fc-server-version.war) with the right version (1.2.2). This file must be set to : http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALEService&lt;/li&gt;
+&lt;li&gt;ALE client end point: must be set to :&lt;/li&gt;
+&lt;/ul&gt;http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALELRService
+&lt;ul class="star"&gt;
+&lt;li&gt;RP LRSpecs Directory : The directory where LRSpecs1 for RP readers will be stored.&lt;/li&gt;
+&lt;li&gt;EC Specs Directory: The directory where ECSpecs2 will be stored which will be used to configure the server?s filtering function.&lt;/li&gt;
+&lt;li&gt;Reader name: Add the reader name (Tagsys Reader for example).&lt;/li&gt;
+&lt;/ul&gt;Push Apply to save the new configurations, then Ok to close the window.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/IDE.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/IDE.png" height="800" alt="IDE.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Create LRSpec&lt;/strong&gt; 
+LRSpec is the Logical Reader Specifications, it is an xml file understandable by AspireRfid core used to define a reader. This file is provided for AspireRfidIDE tool to specify the reader settings : the class that will be called to create the reader, the used media (serial), the tag types that can be read&amp;#8230;
+This LRSpec must be saved under the RP directory.&lt;p class="paragraph"/&gt;To make the LRSpec, create a text file, copy the content of the box below and save it as an xml file in the RP directory (C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#65;spireRFID&amp;#73;DE&amp;#76;RSpecs&amp;#82;P).&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62; 
+&amp;#60;ns3:LRSpec xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:wsdl:1"&lt;/span&gt; xmlns:ns3=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62; 
+    &amp;#60;isComposite&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/isComposite&amp;#62; 
+    &amp;#60;readers/&amp;#62; 
+    &amp;#60;properties&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;ReaderType&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;org.fosstrak.ale.server.readers.medio.MedioAdaptor&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;Description&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;This Intermec Logical Reader consists of Antenna1&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;PhysicalReaderName&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;TagsysReader&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;PhysicalReaderSource&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;Antenna1&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iMediaType&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;serial&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strSerialName&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;COM1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iSerialSpeed&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;38400&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iPower&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45; 0 is off and channels could be 1,2,3,4  &amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iChannel&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45;values are TAG_C210, TAG_C240, TAG_C270, TAG_ISO15693&amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strTagType&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;TAG_ISO15693&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boCont&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boSort&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45; timer between 2 reads (in millisec)  &amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iTimer&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;250&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;     &amp;#60;/properties&amp;#62; 
+&amp;#60;/ns3:LRSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Create ECSpec&lt;/strong&gt;
+Event Cycle Specification (ECSpec) is an xml file describing filtering and collection behavior. This tells the Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example : added, current or deleted tags.&lt;p class="paragraph"/&gt;This file must be created (same method as the LRSpec) and saved under the EC Spec directory (C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#65;spireRFID&amp;#73;DE&amp;#69;CSpecs&amp;#41;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62; 
+&amp;#60;ns2:ECSpec xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62; 
+    &amp;#60;logicalReaders&amp;#62; 
+        &amp;#60;logicalReader&amp;#62;TagsysReader&amp;#60;/logicalReader&amp;#62; 
+    &amp;#60;/logicalReaders&amp;#62; 
+    &amp;#60;boundarySpec&amp;#62; 
+        &amp;#60;repeatPeriod unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;10000&amp;#60;/repeatPeriod&amp;#62; 
+        &amp;#60;duration unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;9500&amp;#60;/duration&amp;#62; 
+        &amp;#60;stableSetInterval unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;0&amp;#60;/stableSetInterval&amp;#62; 
+    &amp;#60;/boundarySpec&amp;#62; 
+    &amp;#60;reportSpecs&amp;#62; 
+        &amp;#60;reportSpec&amp;#62; 
+            &amp;#60;reportSet set=&lt;span class="java&amp;#45;quote"&gt;"CURRENT"&lt;/span&gt;/&amp;#62; 
+            &amp;#60;output includeRawHex=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawDecimal=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeEPC=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeTag=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;/&amp;#62; 
+        &amp;#60;/reportSpec&amp;#62; 
+    &amp;#60;/reportSpecs&amp;#62; 
+&amp;#60;/ns2:ECSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Tomcat server&lt;/strong&gt;
+Tomcat is used in order to deploy the Filtering and Collection server. 
+Copy the  two WAR file (fc-server-version.war) into the Tomcat's webapps directory and start Tomcat. The war file will be deployed into a new folder. 
+You will usually find the webapps folder inside the tomcat installation directory (C:&amp;#80;rogram Files&amp;#65;pache Software Foundation&amp;#84;omcat&amp;#119;ebapps).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Now that all configurations are done, the reader can be tested.
+&lt;ul class="star"&gt;
+&lt;li&gt;Plug-in the reader's power supply,&lt;/li&gt;
+&lt;li&gt;Connect the reader into the RS232 connector and check which serial port is used (make sure that it is the same as LRSpec file),&lt;/li&gt;
+&lt;li&gt;Connect the antenna to the reader,&lt;/li&gt;
+&lt;li&gt;Put the tag in the antenna range,&lt;/li&gt;
+&lt;li&gt;Make sure that Tomcat server is started (if you are using windows check the graphic interface on the task bar, if your using Linux check with the command line : service tomcat7 status)&lt;/li&gt;
+&lt;li&gt;Go to AspireRfidIDE and push the Get vendor version in LRSpecConfiguratorView. A version number should be returned in the console tab (if not check again the configurations).&lt;/li&gt;
+&lt;li&gt;To define the new reader as shown in the picture below, push Define button and select the LRSpec already defined and press Execute.&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/Define.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/Define.png" height="500" alt="Define.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;
+A dialog box will appear with the message : Lrspec successfully defined!
+Now define the ECSpec for the same reader.
+A text file will be created with the read tags under C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#83;cans.
+For example, for a tag ISO15693 reading, the generated report is : 
+E00401000E197F26 (DSFID:00),ISO15693
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTagSysMedioTRP101andP101"&gt;TagSys Medio TR-P101 and P101&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The Medio TR-P101 and P101 readers are a low cost of ownership RFID solution that are ideal for applications requiring a single antenna. The rugged design provides long-lasting performance in harsh environments, and the remote upgradability feature offers an efficient method for maintaining an RFID infrastructure without leveraging valuable resources. High performance features such as dual operating modes and 1W power output make the Medio TR-P101 an effective RFID solution for textile service applications, and the Medio P101 a good RFID reader for a multitude of applications and settings ranging from manufacturing to library checkout stations.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/p101.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/p101.png" height="300" alt="p101.png" /&gt;&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/trp101.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/trp101.png" height="300" alt="trp101.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Hardware&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Reader : Medio TR-P101 Mid-Range HF RFID Reader (delivered with 1 SMA/BNC Adaptor, 1 RS232 cable and 1 Universal Power Supply).&lt;/li&gt;
+&lt;li&gt;Antenna : Tagsys Aero LB Antenna, optimized to operate with Tagsys? mid and long-range Medio? readers + its coaxial cable and BNC connector.&lt;/li&gt;
+&lt;li&gt;Tag : Tag : HF tag that can be decoded by the reader, must be one of these protocols : C210, C240, C270, C370 (ISO15693).&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Tomcat Apache server installed (Tomcat 6 or later version)&lt;/li&gt;
+&lt;li&gt;AspireRfidIDE executable tool can be downloaded &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;AspireRFID ALE war file &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/ALE/fc-server/target/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPreliminaryconfigurations"&gt;Preliminary configurations &lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;AspireRfidIDE configuration&lt;/strong&gt;&lt;p class="paragraph"/&gt;This tool provides means of configuration of the underlying ASPIRE infrastructure. The user can describe his requirements to the IDE, which provides all the configuration options, and translates them into configuration messages by which it will supply all the appropriate modules.
+After downloading the repository, unzip it and lunch the executable file.
+The tool can be configured through the IDE's preferences window (Window&gt;Preferences).
+Choose the Ale Server Configurator from the list appearing at the left see the picture below.
+From there you can configure the :
+&lt;ul class="star"&gt;
+&lt;li&gt;ALE client end point: Set the end point to the filtering and collection server's by giving the name of the ALE war file (fc-server-version.war) with the right version (1.2.2). This file must be set to : http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALEService&lt;/li&gt;
+&lt;li&gt;ALE client end point: must be set to :&lt;/li&gt;
+&lt;/ul&gt;http:// localhost:8080/fc-server-1.2.2-SNAPSHOT/services/ALELRService
+&lt;ul class="star"&gt;
+&lt;li&gt;RP LRSpecs Directory : The directory where LRSpecs1 for RP readers will be stored.&lt;/li&gt;
+&lt;li&gt;EC Specs Directory: The directory where ECSpecs2 will be stored which will be used to configure the server?s filtering function.&lt;/li&gt;
+&lt;li&gt;Reader name: Add the reader name (Tagsys Reader for example).&lt;/li&gt;
+&lt;/ul&gt;Push Apply to save the new configurations, then Ok to close the window.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Create LRSpec&lt;/strong&gt; 
+LRSpec is the Logical Reader Specifications, it is an xml file understandable by AspireRfid core used to define a reader. This file is provided for AspireRfidIDE tool to specify the reader settings : the class that will be called to create the reader, the used media (serial), the tag types that can be read&amp;#8230;
+This LRSpec must be saved under the RP directory.&lt;p class="paragraph"/&gt;To make the LRSpec, create a text file, copy the content of the box below and save it as an xml file in the RP directory (C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#65;spireRFID&amp;#73;DE&amp;#76;RSpecs&amp;#82;P).&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62; 
+&amp;#60;ns3:LRSpec xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:wsdl:1"&lt;/span&gt; xmlns:ns3=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62; 
+    &amp;#60;isComposite&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/isComposite&amp;#62; 
+    &amp;#60;readers/&amp;#62; 
+    &amp;#60;properties&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;ReaderType&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;Description&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;This Intermec Logical Reader consists of Antenna1&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;ConnectionPoint&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;&lt;span class="nobr"&gt;&lt;a href="http://localhost:8000&amp;#38;#60;/value&amp;#38;#62;"&gt;&amp;#104;ttp://localhost:8000&amp;#60;/value&amp;#62;&lt;/a&gt;&lt;/span&gt; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;NotificationPoint&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;&lt;span class="nobr"&gt;&lt;a href="http://localhost:9090&amp;#38;#60;/value&amp;#38;#62;"&gt;&amp;#104;ttp://localhost:9090&amp;#60;/value&amp;#62;&lt;/a&gt;&lt;/span&gt; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;ReadTimeInterval&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;1500&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;!&amp;#45;&amp;#45;property&amp;#62; 
+            &amp;#60;name&amp;#62;AdaptorClass&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;ImplementationClass&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;org.fosstrak.ale.server.readers.tagsys.Trp101Adaptor&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#45;&amp;#45;&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;PhysicalReaderName&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;TagsysReader&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+        &amp;#60;property&amp;#62; 
+            &amp;#60;name&amp;#62;PhysicalReaderSource&amp;#60;/name&amp;#62; 
+            &amp;#60;value&amp;#62;Antenna1&amp;#60;/value&amp;#62; 
+        &amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iMediaType&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;serial&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strSerialName&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;COM1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iSerialSpeed&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;38400&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iPower&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45; 0 is off and channels could be 1,2,3,4  &amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iChannel&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45;values are TAG_C210, TAG_C240, TAG_C270, TAG_ISO15693&amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strTagType&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;TAG_ISO15693&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boCont&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boSort&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;!&amp;#45;&amp;#45; timer between 2 reads (in millisec)  &amp;#45;&amp;#45;&amp;#62; 
+	&amp;#60;property&amp;#62; 
+		&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iTimer&amp;#60;/name&amp;#62; 
+		&amp;#60;value&amp;#62;250&amp;#60;/value&amp;#62; 
+	&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;     &amp;#60;/properties&amp;#62; 
+&amp;#60;/ns3:LRSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Create ECSpec&lt;/strong&gt;
+Event Cycle Specification (ECSpec) is an xml file describing filtering and collection behavior. This tells the Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example : added, current or deleted tags.&lt;p class="paragraph"/&gt;This file must be created (same method as the LRSpec) and saved under the EC Spec directory (C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#65;spireRFID&amp;#73;DE&amp;#69;CSpecs&amp;#41;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62; 
+&amp;#60;ns2:ECSpec xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62; 
+    &amp;#60;logicalReaders&amp;#62; 
+        &amp;#60;logicalReader&amp;#62;TagsysReader&amp;#60;/logicalReader&amp;#62; 
+    &amp;#60;/logicalReaders&amp;#62; 
+    &amp;#60;boundarySpec&amp;#62; 
+        &amp;#60;repeatPeriod unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;10000&amp;#60;/repeatPeriod&amp;#62; 
+        &amp;#60;duration unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;9500&amp;#60;/duration&amp;#62; 
+        &amp;#60;stableSetInterval unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;0&amp;#60;/stableSetInterval&amp;#62; 
+    &amp;#60;/boundarySpec&amp;#62; 
+    &amp;#60;reportSpecs&amp;#62; 
+        &amp;#60;reportSpec&amp;#62; 
+            &amp;#60;reportSet set=&lt;span class="java&amp;#45;quote"&gt;"CURRENT"&lt;/span&gt;/&amp;#62; 
+            &amp;#60;output includeRawHex=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawDecimal=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeEPC=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeTag=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;/&amp;#62; 
+        &amp;#60;/reportSpec&amp;#62; 
+    &amp;#60;/reportSpecs&amp;#62; 
+&amp;#60;/ns2:ECSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Tomcat server&lt;/strong&gt;
+Tomcat is used in order to deploy the Filtering and Collection server. 
+Copy the  two WAR file (fc-server-version.war) into the Tomcat's webapps directory and start Tomcat. The war file will be deployed into a new folder. 
+You will usually find the webapps folder inside the tomcat installation directory (C:&amp;#80;rogram Files&amp;#65;pache Software Foundation&amp;#84;omcat&amp;#119;ebapps).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Now that all configurations are done, the reader can be tested.
+&lt;ul class="star"&gt;
+&lt;li&gt;Plug-in the reader's power supply,&lt;/li&gt;
+&lt;li&gt;Connect the reader into the RS232 connector and check which serial port is used (make sure that it is the same as LRSpec file),&lt;/li&gt;
+&lt;li&gt;Connect the antenna to the reader,&lt;/li&gt;
+&lt;li&gt;Put the tag in the antenna range,&lt;/li&gt;
+&lt;li&gt;Make sure that Tomcat server is started (if you are using windows check the graphic interface on the task bar, if your using Linux check with the command line : service tomcat7 status)&lt;/li&gt;
+&lt;li&gt;Go to AspireRfidIDE and push the Get vendor version in LRSpecConfiguratorView. A version number should be returned in the console tab (if not check again the configurations).&lt;/li&gt;
+&lt;li&gt;To define the new reader as shown in the picture below, push Define button and select the LRSpec already defined and press Execute.&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main.Documentation/SupportedReaders/Define.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/SupportedReaders/Define.png" height="500" alt="Define.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;
+A dialog box will appear with the message : Lrspec successfully defined!
+Now define the ECSpec for the same reader.
+A text file will be created with the read tags under C:&amp;#68;ocuments and Settings&amp;#117;ser&amp;#83;cans.
+For example, for a tag ISO15693 reading, the generated report is : 
+E00401000E197F26 (DSFID:00),ISO15693
+</renderedcontent>
+</xwikidoc>

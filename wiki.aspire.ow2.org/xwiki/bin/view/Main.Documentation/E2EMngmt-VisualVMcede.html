@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:46:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - E2EMngmt-VisualVM
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogindbcd.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM?xpage=code&amp;">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='E2EMngmt-VisualVM.html'>Aspire :: End-to-End Management :: VisualVM Plugins</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_E2EMngmt-VisualVM.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="E2EMngmt-VisualVMd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/E2EMngmt-VisualVMcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="E2EMngmt-VisualVMd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Aspire :: End-to-End Management :: VisualVM Plugins
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+----
+
+Graphical user interfaces (GUI) for managing different Aspire components are available in the form of [VisualVM&#62;https://visualvm.dev.java.net/] plugins. The VisualVM is an extensible visual tool designed for both production and development time use, it further enhances the capability of monitoring and performance analysis of Java applications. The OW2 AspireRFID project takes advantage of such infrastructure in order to provide plugins targeting the management of different Aspire components (ALE, BEG, EPCIS, APE, ...). The management funcionality is exposed by those components using JMX interfaces in the form of MBeans (Manageable Beans). The VisualVM Aspire  plugins connect to such management interfaces for providing live monitoring and management of such components through a GUI. 
+
+1.1.1 Building
+
+Currently the plugins are available in Aspire's SVN trunk, under the management/visualvm folder.
+
+After downloading the projects from the trunk, there are two option for running the plugins:
+* (1) Opening the Netbeans projects and executing the Module Suite,
+* or (2) Building the projects and installing the generated plugins in the VisualVM.
+The first option is suggested for development purposes, like understanding how the plugins were implemented or performing custom adjustments in the code.
+The second option is the preferred way to use the plugins, and is described in the next paragraphs.
+
+In order to build the plugins, it is necessary to have the latest version of [Apache Ant&#62;http://ant.apache.org] installed and the latest JDK, for compiling the projects. After having all the pre-requisites set and properly configured (e.g., JAVA_HOME and ANT_HOME environment variables), you can build the project. Go to a command line tool (e.g., Windows command prompt, Linux shell) and from inside the VisualVMAspireModuleSuite folder, type:
+
+{code}ant nbms{code}
+
+That command will build the files and generate the nbm artifacts in the build/updates folder. An nbm corresponds to a Netbeans Module. Since the VisualVM is a tool buit on top of the Netbeans platform, the VisualVM plugins take the form of Netbeans plugins. 
+
+1.1.1 Installing the VisualVM
+The VisualVM can be installed in two ways:
+
+#As part of a JDK installation. The VisualVM will be available via the jvisualvm command, installed in your JAVA_HOME/bin directory
+#As a separate download, from the [VisualVM downloads page&#62;https://visualvm.dev.java.net/download.html]. After uncompressing the installation file, a visualvm executable can be found in the VISUALVM_INSTALLATION/bin folder
+
+1.1.1 Installing the Aspire plugins in the VisualVM
+The generated plugins need to be manually installed in the VisualVM. The following steps must be taken
+
+* Start the VisualVM
+* Go to the menu Tools &#62; Plugins
+* Go to the downloaded tab
+* Click the Add Plugins button
+* Browse the nbm files generated in building step, and select them all
+* Confirm all operations, and close the plugins window
+
+1.1.1 Visualizing the plugins
+The VisualVM works inspecting Java processes, so it is necessary to connect to a Java process that runs an Aspire component (EPCIS, ALE Server, BEG). In addition, the corresponding component must have the respective MBeans enabled, so the Aspire plugins can be enabled. If these preconditions are fulfilled, you can execute the VisualVM and visualize on the Applications tree, on the left, all Java processes that are running (optionally you can connect to a remote machine). By choosing the appropriate process (e.g. An OSGi application running the ALEServer), the VisualVM will connect to the Java processe, and start the Aspire Plugins that are installed. If the corresponding Aspire MBeans are present, the plugins will be shown  
+
+1.1 FAQ
+1.1.1 How MBeans are configured in the WEB-INF/web.xml of servers' WAR file
+
+1.1.1 How to lauch the VisualVM
+The VisualVM is now provisioned with the JDK
+
+So run just  %JAVA_HOME%\bin\jvisualvm.exe
+
+1.1.1 How to lauch the VisualVM from Eclipse
+TBD
+
+1.1.1 How to install the plugin
+# Menu &#34;Tools&#62;Plugins&#34;
+# Tab &#34;Downloaded&#34;
+# Button &#34;Add plugins...&#34; and browse your file system
+# Select them and button &#34;Install&#34; 
+
+1.1.1 How to install additionnal plugins from the central repository
+# Menu &#34;Tools&#62;Plugins&#34;
+# Tab &#34;Availables plugins&#34;
+# Select them and button &#34;Install&#34; 
+
+1.1.1 How to connect to the process (local or remote)
+1.1.1.1 Local
+Double-click the java process corresponding to the ALEServer in the &#34;Application&#34; panel (on the left).
+
+1.1.1.1 Remote
+The Java process must be launch with the following options in order to start the JMX RMI Connector.
+[More information&#62;http://java.sun.com/javase/6/docs/technotes/guides/management/agent.html]
+
+With Tomcat, the options are  -Dcom.sun.management.jmxremote.port=8086 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false 
+[More information&#62;http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html]
+
+Add the connection from the menu &#34;File&#62;Add remote host...&#34; or &#34;File&#62;Add JMX Connection...&#34;
+
+1.1.1 How to extend the VisualVM plugin
+* https://visualvm.dev.java.net/api-quickstart.html
+* http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm
+
+1.1.1 JMX Utilities
+* [MBeanCmd&#62;http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html]
+* [Tomcat JMX Ant tasks&#62;http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html#Manage_Tomcat_with_JMX_remote_Ant_Tasks]
+
+1.1.1 Other consoles for JMX
+* JConsole
+* [MC4J&#62;http://mc4j.org/confluence/display/mc4j/Home]
+* [Eclipse JMX&#62;http://code.google.com/p/eclipse-jmx]
+* [OW2 Jasmine Flex Console&#62;http://jasmine.ow2.org]
+
+1.1.1 How to manage OSGi platforms with JMX
+A recent specification addresses how to manage OSGi platforms with JMX :
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/framework/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/cm/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/permissionadmin/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/provisioning/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/useradmin/package-summary.html
+
+1.1.1 How to start with JMX
+1.1.1.1 Several tutorials on JMX
+* http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/technotes/guides/jmx/tutorial/tutorialTOC.html
+* http://download.oracle.com/docs/cd/E17409_01/javase/tutorial/jmx/index.html
+
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='E2EMngmt.html'>Main.Documentation.E2EMngmt</a> &gt; <a href='E2EMngmt-VisualVM.html'>Aspire :: End-to-End Management :: VisualVM Plugins</a>
+  (en)
+ <br />
+  Creator: donsez
+ &nbsp;Date: 2010/06/18 08:28
+ <br />
+ Last Author: donsez
+ &nbsp;Date: 2010/07/14 20:53
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:46:48 GMT -->
+</html>

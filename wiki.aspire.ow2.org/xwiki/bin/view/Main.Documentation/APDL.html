@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - APDL
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLoginc4d8.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='APDL.html'>ASPIRE Process Description Language (APDL)</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_APDL.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="APDLd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/APDLcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="APDLd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h3 class="heading-1-1"><span id="HASPIREProcessDescriptionLanguage28APDL29">ASPIRE Process Description Language (APDL)</span></h3><p class="paragraph"/><hr class="line"/>
+            <ul>
+          <li><a href="#HASPIREProcessDescriptionLanguage28APDL29">1 ASPIRE Process Description Language (APDL)</a> 
+        <ul>
+          <li><a href="#HAPDLSpecification">1.1 APDL Specification</a> 
+        </ul>
+          <li><a href="#HDescribinganRFIDWorkflowProcessScenarioUsingAPDL">2 Describing an RFID Workflow Process Scenario Using APDL</a> 
+        <ul>
+          <li><a href="#HProblemdescription">2.1 Problem description</a> 
+      <li><a href="#HSolutionRequirements">2.2 Solution Requirements</a> 
+      <li><a href="#HBuildingtheRequiredAPDLSpecificationFile">2.3 Building the Required APDL Specification File</a> 
+      <li><a href="#HECSpecdefinition">2.4 ECSpec definition</a> 
+      <li><a href="#HLRSpecDefinition">2.5 LRSpec Definition</a> 
+      <li><a href="#HBEGModuleRequiredDataField">2.6 BEG Module Required Data Field</a> 
+      <li><a href="#HProcessDescription">2.7 Process Description</a> 
+      <li><a href="#HConclusions">2.8 Conclusions</a> 
+      </ul></ul> <hr class="line"/>
+<h4 class="heading-1-1-1"><span id="HAPDLSpecification">APDL Specification</span></h4><p class="paragraph"/>The AspireRFID Process Description Language (APDL) Specification has a structure as shown in the figure below.<p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/APDL/apdl_structure.jpg"><img src="../../download/Main.Documentation/APDL/apdl_structure.jpg" height="400" alt="apdl_structure.jpg" /></a>
+</center><p class="paragraph"/>The root element that may contain the description of a complete open loop business process, such as a supply chain, is the Open Loop Composite Business Process (&lt;OLCBProc/&gt;).<p class="paragraph"/>An OLCBProc element consists of the following:
+<ul class="star">
+<li>a set of Closed Loop Composite Business Process (&lt;CLCBProc/&gt;) elements, capable of describing complete closed loop supply chain scenarios. A CLCBProc elemtent consists of:<ul class="star">
+<li>A Description (&lt;Description/&gt;) element.</li>
+<li>A set of Elementary Business Process (&lt;EBProc/&gt;) elements. EBProc's are the most important elements in the APDL definition since the whole process can be broke down to Elementary Business process. Each one of them carries information that the AspireRfid middleware requires in order to be configured. An EBProc element contains:<ul class="star">
+<li>A Description (&lt;Description/&gt;) element, with a simple description of the process.</li>
+<li>A TransitionRestrictions (&lt;TransitionRestrictions/&gt;) element, containing a set of TransitionRestriction (&lt;TransitionRestriction/&gt;) elements.</li>
+<li>An ExtendedAttributes (&lt;ExtendedAttributes/&gt;) element, containing a set of ExtendedAttribute (&lt;ExtendedAttribute/&gt;) elements. This element is used in order to store the basic configuration data, for instance the ECSpec Subscription URI, and the element's graphical representation data.</li>
+<li>A set of DataFields, that include the required ECSpec (&lt;ECSpec/&gt;), LRSpec (&lt;LRSpec/&gt;) and Master Data (&lt;EPCISMasterDataDocument/&gt;) documents.</li>
+</ul>
+</li>
+<li>A Transitions (&lt;Transitions/&gt;) element, that carries the Elementary Business Process context-related semantics description of the ransitions between them. The Transition element is based on the XPDL V1.0 specification.</li>
+</ul>
+</li>
+<li>A Transitions (&lt;Transitions/&gt;) element, in the same fashion as in the EBProc element, regarding Closed Loop Composite Business processes this time.</li>
+</ul>Note that the description is not complete; the aim is to provide a general overview for the understanding of the basic concepts behind the APDL inception. A complete reference on the structure and a means to assure creation of valid APDL files is provided by the corresponding XSD (XML Schema Definition) document: <a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/apdl.xsd">apdl.xsd</a>.
+<h3 class="heading-1-1"><span id="HDescribinganRFIDWorkflowProcessScenarioUsingAPDL">Describing an RFID Workflow Process Scenario Using APDL</span></h3><p class="paragraph"/>In this example we will describe how an APDL specification file can be defined in order to configure the whole middleware serving a warehouse receiving process.
+<h4 class="heading-1-1-1"><span id="HProblemdescription">Problem description</span></h4><p class="paragraph"/>A Company Named "Acme" is a Personal Computer Assembler and collaborates with a Microchip Manufacturer that provides it with the required CPUs. Acme, at regular basis places orders to the Microchip Manufacturer for specific CPUs. Acme owns a central building with three warehouses. The first warehouse named Warehouse1 has 2 Sections named Section1 and Section2, respectively. Section1 has an entrance point where the delivered goods arrive.<p class="paragraph"/>Acme needs a way to automatically receive goods at Warehouse1 Section1 and inform its Warehouse Management System (WMS) for the new product availability and the correct completeness of each transaction.
+<h4 class="heading-1-1-1"><span id="HSolutionRequirements">Solution Requirements</span></h4><p class="paragraph"/>An RFID Portal should be placed to Acme's Warehouse1 Section1 entrance point which will be called ReadPoint1. The RFID portal will be equipped with one Reader WarehouseRfidReader1. The received goods should get equipped with preprogrammed RFID tags from their "Manufacturer". The received goods should be accompanied with a preprogrammed RFID enabled delivery document. And finally the middleware should be configured for the specific scenario.
+<h4 class="heading-1-1-1"><span id="HBuildingtheRequiredAPDLSpecificationFile">Building the Required APDL Specification File</span></h4><p class="paragraph"/>For this solution we need to build an CLCBProc as shown below (of id: urn:epcglobal:fmcg:bti:acmesupplying) which will include ACME’s Elementary Business Processes. We are dealing only with one company so defining other Close Loop Business Processes will not be required.<p class="paragraph"/>
+<div class="code"><pre><span class="xml&#45;tag">&#60;OLCBProc&#62;</span>
+	<span class="xml&#45;tag">&#60;!&#45;&#45; AspireRFID Process Description (Language Specification) &#45;&#45;&#62;</span><p class="paragraph"/>	<span class="xml&#45;tag">&#60;CLCBProc id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bti:acmesupplying"</span> name=<span class="xml&#45;quote">"CompositeBusinessProcessName"</span>&#62;</span>
+		<span class="xml&#45;tag">&#60;!&#45;&#45; RFID Composite Business Process Specification (the ID will be the Described Transactions's URI)&#45;&#45;&#62;</span>
+		<span class="xml&#45;tag">&#60;Description&#62;</span>Acme Supply Chain<span class="xml&#45;tag">&#60;/Description&#62;</span><p class="paragraph"/>		<span class="xml&#45;tag">&#60;EBProc Id=<span class="xml&#45;quote">"CLCBProcEnd"</span> Name=<span class="xml&#45;quote">"CLCBProcEnd"</span>/&#62;</span><p class="paragraph"/>		<span class="xml&#45;tag">&#60;EBProc Id=<span class="xml&#45;quote">"CLCBProcStart"</span> Name=<span class="xml&#45;quote">"CLCBProcStart"</span>/&#62;</span><p class="paragraph"/>		<span class="xml&#45;tag">&#60;EBProc id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive"</span> name=<span class="xml&#45;quote">"AcmeWarehouse3Ship"</span>/&#62;</span><p class="paragraph"/>		<span class="xml&#45;tag">&#60;Transitions/&#62;</span>
+	<span class="xml&#45;tag">&#60;/CLCBProc&#62;</span><p class="paragraph"/><span class="xml&#45;tag">&#60;/OLCBProc&#62;</span></pre></div><p class="paragraph"/>
+The EBProcesses we are going to include to the CLCBProc are the CLCBProcStart and CLCBProcEnd which are only used for the Start and Stop graphical representation of the CLCBProc. Finally, the AcmeWarehouse3Ship EBProc is included which will describe ACME's Business Scenario solution as shown above. For describing the AcmeWarehouse3Ship (see code below) except the Transition Restrictions which are used for describing the way one EBProc is related to one another, the Extended Attributes which are used for the process graphical representation and the AspireRFID Runtime configuration (e.g. ECSpecSubscriptionURI) the most important role for the completion of the "puzzle" is undertaken from the DataFields element.<p class="paragraph"/>
+<div class="code"><pre><span class="xml&#45;tag">&#60;EBProc id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive"</span> 
+	  name=<span class="xml&#45;quote">"AcmeWarehouse3Ship"</span>&#62;</span>
+	<span class="xml&#45;tag">&#60;!&#45;&#45; Elementary RFID Business Process Specification (the ID will be the
+	Described Event's URI)&#45;&#45;&#62;</span>
+	<span class="xml&#45;tag">&#60;Description&#62;</span>Acme Warehouse 3 Receiving ReadPoint5 Gate3<span class="xml&#45;tag">&#60;/Description&#62;</span>
+	<span class="xml&#45;tag">&#60;TransitionRestrictions&#62;</span>
+		<span class="xml&#45;tag">&#60;TransitionRestriction&#62;</span>
+			<span class="xml&#45;tag">&#60;Join Type=<span class="xml&#45;quote">"AND"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;/TransitionRestriction&#62;</span>
+	<span class="xml&#45;tag">&#60;/TransitionRestrictions&#62;</span>
+	<span class="xml&#45;tag">&#60;ExtendedAttributes&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"XOffset"</span> Value=<span class="xml&#45;quote">"204"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"YOffset"</span> Value=<span class="xml&#45;quote">"204"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"CellHeight"</span> Value=<span class="xml&#45;quote">"30"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"CellWidth"</span> Value=<span class="xml&#45;quote">"313"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"ECSpecSubscriptionURI"</span> Value=<span class="xml&#45;quote">"http://localhost:9999"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;ExtendedAttribute Name=<span class="xml&#45;quote">"DefinedECSpecName"</span> Value=<span class="xml&#45;quote">"Warehouse3RecievingObjectEvent"</span>/&#62;</span>
+		<span class="xml&#45;tag">&#60;!&#45;&#45; The DefinedLRSpecNames can be collected from the defined
+		 logicalReaders names at the ECSpec &#45;&#45;&#62;</span>
+		<span class="xml&#45;tag">&#60;!&#45;&#45; For the BEG configuration the port can be collected from the
+		<span class="xml&#45;quote">"ECSpecSubscriptionURI"</span> value
+		and the event to serve from the EBPSpec id &#45;&#45;&#62;</span>
+	<span class="xml&#45;tag">&#60;/ExtendedAttributes&#62;</span>
+	<span class="xml&#45;tag">&#60;DataFields&#62;</span>
+	<span class="xml&#45;tag">&#60;/DataFields&#62;</span>
+<span class="xml&#45;tag">&#60;/EBProc&#62;</span></pre></div><p class="paragraph"/>
+DataFields contains the specification files required to configure the AspireRFID F&amp;C server (by defining the ECSpec and LRSpec) and the Business Event Generator (By defining the Transaction Vocabulary at the EPCIS repository Master Data through an EPCISMasterDataDocument).
+<h4 class="heading-1-1-1"><span id="HECSpecdefinition">ECSpec definition</span></h4><p class="paragraph"/>To Configure the F&amp;C module, an ECSpec is required for creating Object Events for the Class of "products" and the Class of "receiving notes" that we expect to pass through the gate and that concerns our transaction. For the "bizTransactionIDs" reportSpec we will set the "receiving notes" Class ID's and for the "transactionItems" reportSpec we will set the "received items" Class ID's.
+<ul class="star">
+<li>So the "receiving notes" Class is:<ul class="star">
+<li>urn:epc:pat:gid-96:145.12.<strong class="strong"></li>
+</ul>
+</li>
+<li>and the "received items" Classes are:<ul class="star">
+<li>urn:epc:pat:gid-96:145.233.</strong></li>
+<li>urn:epc:pat:gid-96:145.255.*</li>
+</ul></li>
+</ul>The ECSpec DataField that should be created is shown below. Note that at the configuration time the ECSpec name that will be used is the ECSpec DataField ID and at the ECRepot names the EBProc’s ID will be concatenated to them for example the bizTransactionIDs will become bizTransactionIDs_urn:epcglobal:fmcg:bte:acmewarehouse1receive and the transactionItems will become transactionItems_urn:epcglobal:fmcg:bte:acmewarehouse1receive that are required to be delivered to the BEG engine.<p class="paragraph"/><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;DataField id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive_ecspec"</span> type=<span class="xml&#45;quote">"ECSpec"</span> name=<span class="xml&#45;quote">"RecievingECSpec"</span>&#62;</span>
+	<span class="xml&#45;tag">&#60;ECSpec includeSpecInReports=<span class="xml&#45;quote">"false"</span>&#62;</span>
+		<span class="xml&#45;tag">&#60;logicalReaders&#62;</span>
+			<span class="xml&#45;tag">&#60;logicalReader&#62;</span>SmartLabImpinjSpeedwayLogicalReader<span class="xml&#45;tag">&#60;/logicalReader&#62;</span>
+		<span class="xml&#45;tag">&#60;/logicalReaders&#62;</span>
+		<span class="xml&#45;tag">&#60;boundarySpec&#62;</span>
+			<span class="xml&#45;tag">&#60;repeatPeriod unit=<span class="xml&#45;quote">"MS"</span>&#62;</span>4500<span class="xml&#45;tag">&#60;/repeatPeriod&#62;</span>
+			<span class="xml&#45;tag">&#60;duration unit=<span class="xml&#45;quote">"MS"</span>&#62;</span>4500<span class="xml&#45;tag">&#60;/duration&#62;</span>
+			<span class="xml&#45;tag">&#60;stableSetInterval unit=<span class="xml&#45;quote">"MS"</span>&#62;</span>0
+			<span class="xml&#45;tag">&#60;/stableSetInterval&#62;</span>
+		<span class="xml&#45;tag">&#60;/boundarySpec&#62;</span>
+		<span class="xml&#45;tag">&#60;reportSpecs&#62;</span>
+			<span class="xml&#45;tag">&#60;reportSpec reportOnlyOnChange=<span class="xml&#45;quote">"false"</span> reportName=<span class="xml&#45;quote">"bizTransactionIDs"</span> reportIfEmpty=<span class="xml&#45;quote">"true"</span>&#62;</span>
+				<span class="xml&#45;tag">&#60;reportSet set=<span class="xml&#45;quote">"CURRENT"</span>/&#62;</span>
+					<span class="xml&#45;tag">&#60;filterSpec&#62;</span>
+					<span class="xml&#45;tag">&#60;includePatterns&#62;</span>
+						<span class="xml&#45;tag">&#60;includePattern&#62;</span>
+						    urn:epc:pat:gid&#45;96:145.12.&#42;
+						<span class="xml&#45;tag">&#60;/includePattern&#62;</span>
+					<span class="xml&#45;tag">&#60;/includePatterns&#62;</span>
+					<span class="xml&#45;tag">&#60;excludePatterns/&#62;</span>
+				<span class="xml&#45;tag">&#60;/filterSpec&#62;</span>
+				<span class="xml&#45;tag">&#60;groupSpec/&#62;</span>
+				<span class="xml&#45;tag">&#60;output includeTag=<span class="xml&#45;quote">"true"</span> includeRawHex=<span class="xml&#45;quote">"true"</span> includeRawDecimal=<span class="xml&#45;quote">"true"</span> includeEPC=<span class="xml&#45;quote">"true"</span> includeCount=<span class="xml&#45;quote">"true"</span>/&#62;</span>
+			<span class="xml&#45;tag">&#60;/reportSpec&#62;</span>
+			<span class="xml&#45;tag">&#60;reportSpec reportOnlyOnChange=<span class="xml&#45;quote">"false"</span> reportName=<span class="xml&#45;quote">"transactionItems"</span> reportIfEmpty=<span class="xml&#45;quote">"true"</span>&#62;</span>
+				<span class="xml&#45;tag">&#60;reportSet set=<span class="xml&#45;quote">"ADDITIONS"</span>/&#62;</span>
+				<span class="xml&#45;tag">&#60;filterSpec&#62;</span>
+					<span class="xml&#45;tag">&#60;includePatterns&#62;</span>
+						<span class="xml&#45;tag">&#60;includePattern&#62;</span>urn:epc:pat:gid&#45;96:145.233.&#42;<span class="xml&#45;tag">&#60;/includePattern&#62;</span>
+						<span class="xml&#45;tag">&#60;includePattern&#62;</span>urn:epc:pat:gid&#45;96:145.255.&#42;<span class="xml&#45;tag">&#60;/includePattern&#62;</span>
+					<span class="xml&#45;tag">&#60;/includePatterns&#62;</span>
+					<span class="xml&#45;tag">&#60;excludePatterns/&#62;</span>
+				<span class="xml&#45;tag">&#60;/filterSpec&#62;</span>
+				<span class="xml&#45;tag">&#60;groupSpec/&#62;</span>
+				<span class="xml&#45;tag">&#60;output includeTag=<span class="xml&#45;quote">"true"</span> includeRawHex=<span class="xml&#45;quote">"true"</span> includeRawDecimal=<span class="xml&#45;quote">"true"</span> includeEPC=<span class="xml&#45;quote">"true"</span> includeCount=<span class="xml&#45;quote">"true"</span>/&#62;</span>
+			<span class="xml&#45;tag">&#60;/reportSpec&#62;</span>
+		<span class="xml&#45;tag">&#60;/reportSpecs&#62;</span>
+		<span class="xml&#45;tag">&#60;extension/&#62;</span>
+	<span class="xml&#45;tag">&#60;/ECSpec&#62;</span>
+<span class="xml&#45;tag">&#60;/DataField&#62;</span></pre></div>
+<h4 class="heading-1-1-1"><span id="HLRSpecDefinition">LRSpec Definition</span></h4><p class="paragraph"/>For the LRSpec DataField definition the dynamic LRSpec definition of an Impinj Speedway LLRP reader is used as shown below where at the configuration time the LRSpec DataField's name (SmartLabImpinjSpeedwayLogicalReader) will be used as the Logicals Reader name which is included also at the ECSpec's LogicalReader list.<p class="paragraph"/>
+<div class="code"><pre><span class="xml&#45;tag">&#60;DataField id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive_lrspec"</span> 
+	type=<span class="xml&#45;quote">"LRSpec"</span> name=<span class="xml&#45;quote">" SmartLabImpinjSpeedwayLogicalReader"</span>&#62;</span>
+	<span class="xml&#45;tag">&#60;LRSPec&#62;</span>
+		<span class="xml&#45;tag">&#60;isComposite&#62;</span>false<span class="xml&#45;tag">&#60;/isComposite&#62;</span>
+		<span class="xml&#45;tag">&#60;readers/&#62;</span>
+		<span class="xml&#45;tag">&#60;properties&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>Description<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>This Logical Reader consists of read point 1,2,3<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>ConnectionPointAddress<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>192.168.212.238<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>ConnectionPointPort<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>5084<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>ReadTimeInterval<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>1000<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>PhysicalReaderSource<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>1,2,3<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>RoSpecID<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>1<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+			<span class="xml&#45;tag">&#60;property&#62;</span>
+				<span class="xml&#45;tag">&#60;name&#62;</span>ReaderType<span class="xml&#45;tag">&#60;/name&#62;</span>
+				<span class="xml&#45;tag">&#60;value&#62;</span>org.ow2.aspirerfid.ale.server.readers.llrp.LLRPAdaptor<span class="xml&#45;tag">&#60;/value&#62;</span>
+			<span class="xml&#45;tag">&#60;/property&#62;</span>
+		<span class="xml&#45;tag">&#60;/properties&#62;</span>
+	<span class="xml&#45;tag">&#60;/LRSPec&#62;</span>
+<span class="xml&#45;tag">&#60;/DataField&#62;</span></pre></div>
+<h4 class="heading-1-1-1"><span id="HBEGModuleRequiredDataField">BEG Module Required Data Field</span></h4><p class="paragraph"/>The Business Event Generator needs to get the Transaction Event to serve which is the Warehouse1DocDoorReceive (with URI urn:epcglobal:fmcg:bte:acmewarehouse1receive) and the description of it from the Information Sharing module repository which should be set up using the information from the table below.<p class="paragraph"/>
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Business  Transaction Attribute Name</th><th>Business  Transaction Attribute Value</th></tr><tr class="table-odd"><td>urn:epcglobal:epcis:mda:event_name</td><td>Warehouse1DocDoorReceive</td></tr><tr class="table-even"><td>urn:epcglobal:epcis:mda:event_type</td><td>ObjectEvent</td></tr><tr class="table-odd"><td>urn:epcglobal:epcis:mda:business_step</td><td>urn:epcglobal:fmcg:bizstep:receiving</td></tr><tr class="table-even"><td>urn:epcglobal:epcis:mda:business_location</td><td>urn:epcglobal:fmcg:loc:acme:warehouse1</td></tr><tr class="table-odd"><td>urn:epcglobal:epcis:mda:disposition</td><td>urn:epcglobal:fmcg:disp:in_progress</td></tr><tr class="table-even"><td>urn:epcglobal:epcis:mda:ecspec_name</td><td>ECSpecObjectEventFiltering</td></tr><tr class="table-odd"><td>urn:epcglobal:epcis:mda:read_point</td><td>urn:epcglobal:fmcg:loc:Warehouse1DocDoor</td></tr><tr class="table-even"><td>urn:epcglobal:epcis:mda:transaction_type</td><td>urn:epcglobal:fmcg:btt:receiving</td></tr><tr class="table-odd"><td>urn:epcglobal:epcis:mda:action</td><td>OBSERVE</td></tr></table><p class="paragraph"/>
+We create an EPCISMasterDataDocument DataField as shown in the following code. Note that we are not including the required from the BEG engine ECReport names at the description because this information can be retrieved from the EBProc's ID and the Event Type. Because this is an Object Event we know that two reports are required the bizTransactionIDs and the transactionItems where the EBProc ID urn:epcglobal:fmcg:bte:acmewarehouse1receive will get concatenated.<p class="paragraph"/><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;DataField id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive_masterdata"</span> 
+	type=<span class="xml&#45;quote">"EPCISMasterDataDocument"</span> name=<span class="xml&#45;quote">"RecievingMasterData"</span>&#62;</span>
+	<span class="xml&#45;tag">&#60;EPCISMasterDataDocument&#62;</span>
+		<span class="xml&#45;tag">&#60;EPCISBody&#62;</span>
+			<span class="xml&#45;tag">&#60;VocabularyList&#62;</span>
+				<span class="xml&#45;tag">&#60;Vocabulary 
+					type=<span class="xml&#45;quote">"urn:epcglobal:epcis:vtype:BusinessTransaction"</span>&#62;</span>
+					<span class="xml&#45;tag">&#60;VocabularyElementList&#62;</span>
+						<span class="xml&#45;tag">&#60;VocabularyElement id=<span class="xml&#45;quote">"urn:epcglobal:fmcg:bte:acmewarehouse1receive"</span>&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:event_name"</span>&#62;</span>Warehouse1DocDoorReceive<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:event_type"</span>&#62;</span>ObjectEvent<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:business_step"</span>&#62;</span>urn:epcglobal:fmcg:bizstep:receiving<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:business_location"</span>&#62;</span>urn:epcglobal:fmcg:loc:acme:warehouse1<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:disposition"</span>&#62;</span>urn:epcglobal:fmcg:disp:in_progress<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:read_point"</span>&#62;</span>urn:epcglobal:fmcg:loc:rp:warehouse1docdoor<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:transaction_type"</span>&#62;</span>urn:epcglobal:fmcg:btt:receiving<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+							<span class="xml&#45;tag">&#60;attribute id=<span class="xml&#45;quote">"urn:epcglobal:epcis:mda:action"</span>&#62;</span>OBSERVE<span class="xml&#45;tag">&#60;/attribute&#62;</span>
+						<span class="xml&#45;tag">&#60;/VocabularyElement&#62;</span>
+					<span class="xml&#45;tag">&#60;/VocabularyElementList&#62;</span>
+				<span class="xml&#45;tag">&#60;/Vocabulary&#62;</span>
+			<span class="xml&#45;tag">&#60;/VocabularyList&#62;</span>
+		<span class="xml&#45;tag">&#60;/EPCISBody&#62;</span>
+	<span class="xml&#45;tag">&#60;/EPCISMasterDataDocument&#62;</span>
+<span class="xml&#45;tag">&#60;/DataField&#62;</span></pre></div>
+<h4 class="heading-1-1-1"><span id="HProcessDescription">Process Description</span></h4><p class="paragraph"/>
+As visualized at the figure below, the order arrives to ACME's premises. ACME's RFID portal (ReadPoint1) reads the deliveryID and all the products that follow with the help of WarehouseRfidReader1. AspireRfid ALE filters out the readings and sends two reports to AspireRfid BEG, one with the deliveryID and one with all the products tags. AspireRfid BEG collects these reports, binds the deliveryID with the products tags and sends this event to the AspireRfid EPCIS Repository. The AspireRfid EPCIS Repository informs the Connector for the incoming event which in his turn sends this information to ACME's WMS. When the WMS confirms that all the requested products were delivered it sends a "transaction finish" message to the AspireRfid Connector which in his turn unsubscribe for the specific deliveryID and sends a "transaction finish" to the RFID Repository.<p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/APDL/acme.jpg"><img src="../../download/Main.Documentation/APDL/acme.jpg" height="320" alt="acme.jpg" /></a>
+</center>
+<h4 class="heading-1-1-1"><span id="HConclusions">Conclusions</span></h4><p class="paragraph"/>In this scenario, we demonstrated how APDL can be used in order to model a real-world scenario. Specifically, we present and analyze the steps that the <span class="wikilink"><a href="APE.html">APE</a></span> will follow while parsing an APDL file in order to configure end-to-end a realistic real-world scenario.<p class="paragraph"/>
+You can download the APDL file (<a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/acme.apdl">acme.apdl</a>) that contains the complete RFID solution.<p class="paragraph"/><p class="paragraph"/>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='APDL.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/indexb375.html?parent=Main.Documentation.APDL"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.APDL"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            4 Attachments  by
+            nkons ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/APDL/apdl_structure1b1e.jpg?width=80" alt="apdl_structure.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/APDL/apdl_structure.jpg">apdl_structure.jpg</
+                                     a></td>
+            <td>1.2</td><td>nkons</td><td>107382</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/APDL/apdl.xsd">apdl.xsd</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>3511</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/APDL/acme1b1e.jpg?width=80" alt="acme.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/APDL/acme.jpg">acme.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>106613</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/APDL/acme.apdl">acme.apdl</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>8955</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/APDL" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='APDL.html'>ASPIRE Process Description Language (APDL)</a>
+  (en)
+ <br />
+  Creator: WebHome
+ &nbsp;Date: 2010/03/22 09:56
+ <br />
+ Last Author: nkef
+ &nbsp;Date: 2010/05/17 22:19
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:07 GMT -->
+</html>

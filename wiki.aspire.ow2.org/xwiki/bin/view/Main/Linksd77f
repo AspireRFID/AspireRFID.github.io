@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Links</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1219528359000</creationDate>
+<date>1280385843000</date>
+<contentUpdateDate>1280385843000</contentUpdateDate>
+<version>1.35</version>
+<title>Links</title>
+<template></template>
+<content>1 Links
+
+#toc("" "" "")
+
+1.1 Consortium
+* The FP7 ASPIRE Project http://www.fp7-aspire.eu
+* EPC Global http://www.epcglobalinc.org
+* NFC Forum http://www.nfc-forum.org
+* IPSO Alliance http://www.ipso-alliance.org 
+
+1.1 Specifications
+* [EPC Global&gt;http://www.epcglobalinc.org/standards] : [RP&gt;http://www.epcglobalinc.org/standards/rp], [LLRP&gt;http://www.epcglobalinc.org/standards/llrp] [RM&gt;http://www.epcglobalinc.org/standards/rm], [ALE&gt;http://www.epcglobalinc.org/standards/ale], [EPCIS&gt;http://www.epcglobalinc.org/standards/epcis], [ONS&gt;http://www.epcglobalinc.org/standards/ons] ...
+* [NFC Forum&gt;http://www.nfc-forum.org/specs]
+* [DASH7 Alliance&gt;http://www.dash7.org/]
+* [JSR 179&gt;http://jcp.org/en/jsr/detail?id=179]
+* [JSR 256&gt;http://jcp.org/en/jsr/detail?id=256]
+* [JSR 257&gt;http://jcp.org/en/jsr/detail?id=257]
+* OSGi [specs&gt;http://www.osgi.org/Specifications/HomePage], [javadoc&gt;http://www.osgi.org/javadoc/r4/]
+* JavaEE  specs, [javadoc&gt;http://java.sun.com/javaee/5/docs/api/]
+
+
+* ISO/IEC 14443
+* ISO/IEC 15693
+* ISO/IEC 18000
+* EPC UHF Gen 2
+
+1.1 M2M/RFID open source projects
+* LLRP Toolkit http://www.llrp.org
+* Fosstrak (previously Accada) http://www.fosstrak.org
+* Rifidi http://www.rifidi.org/
+* HomeSIP http://www.enseirb.fr/cosynux/HomeSIP/
+
+
+1.1 Misc
+
+
+1.1.1 Internet of Things (IoT)
+
+1.1.1.1 Whitepapers
+* International Telecommunication Union, "[The Internet of Things, Executive Summary&gt;http://www.itu.int/osg/spu/publications/internetofthings/InternetofThings_summary.pdf]", ITU Internet Reports 2005, November 2005, 28 pages
+
+
+1.1.1 Machine-to-Machine (M2M)
+
+1.1.1.1 Whitepapers
+* FING, Syntec Informatique and Orange Business Services, "[Machine To Machine (M2M) : Stakes and Prospects&gt;http://www.fing.org/servlet/com.univ.collaboratif.utils.LectureFichiergw?ID_FICHE=7540&amp;OBJET=0008&amp;ID_FICHIER=3832]", White Paper, March 27, 2006, 36 pages
+
+1.1.1 RFID
+
+1.1.1.1 Books
+* Sandip Lahiri, RFID Sourcebook, IBM Press, August 2005; Pages: 304, [ISBN: 0131851373&gt;http://www.ibmpressbooks.com/bookstore/product.asp?isbn=0131851373]
+* Syed A. Ahson, Mohammad Ilyas, "RFID Handbook: Applications, Technology, Security, and Privacy", ISBN: 9781420054996, ISBN 10: 1420054996, Publication Date: 3/18/2008, Number of Pages: 712, Publisher: [CRC Press&gt;http://www.crcpress.com] [Google book&gt;http://books.google.fr/books?id=q4aCyZnq0cwC&amp;dq=isbn:1420054996]
+
+1.1.1.1 White papers
+* F. Letellier &amp; al, "[Etiquettes électroniques (RFID) Infrastructures logicielles et middleware&gt;https://wiki.objectweb.org/attach?page=CWPRFID%2FDGE-RFID-GT-Middleware-v1.0.pdf], Révision 1.0 – 11 avril 2006 (in french).
+
+1.1.1.1 Papers
+
+
+1.1.1 EPC Global
+
+
+1.1.1.1 Papers
+
+* Frederic Thiesse, Florian Michahelles, An overview of EPC technology, 2006, http://www.im.ethz.ch/education/HS08/Thiesse_Overview_EPC.pdf
+
+1.1.1 NFC
+
+* [An Introduction to Near-Field Communication and the Contactless Communication API (i.e. JSR 257)&gt;http://java.sun.com/developer/technicalArticles/javame/nfc/]
+* [Forum Nokia - Near Field Communication&gt;http://www.forum.nokia.com/main/resources/technologies/nfc/]
+
+1.1.1 Sensors
+
+1.1.1.1 Papers
+* The Sensor Web, ERCIM News, http://ercim-news.ercim.org/images/stories/EN76/EN76-web.pdf
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLinks"&gt;Links&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HConsortium"&gt; Consortium&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSpecifications"&gt; Specifications&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HM2M2FRFIDopensourceprojects"&gt; M2M/RFID open source projects&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMisc"&gt; Misc&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HInternetofThings28IoT29"&gt; Internet of Things (IoT)&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWhitepapers"&gt; White papers&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMachinetoMachine28M2M29"&gt; Machine-to-Machine (M2M)&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWhitepapers-1"&gt; Whitepapers&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HRFID"&gt; RFID&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBooks"&gt; Books&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPapers"&gt; Papers&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HEPCGlobal"&gt; EPC Global&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HPapers-1"&gt; Papers&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HNFC"&gt; NFC&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSensors"&gt; Sensors&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HPapers-2"&gt; Papers&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HConsortium"&gt;Consortium&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;The FP7 ASPIRE Project &lt;span class="nobr"&gt;&lt;a href="http://www.fp7-aspire.eu"&gt;&amp;#104;ttp://www.fp7-aspire.eu&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;EPC Global &lt;span class="nobr"&gt;&lt;a href="http://www.epcglobalinc.org"&gt;&amp;#104;ttp://www.epcglobalinc.org&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;NFC Forum &lt;span class="nobr"&gt;&lt;a href="http://www.nfc-forum.org"&gt;&amp;#104;ttp://www.nfc-forum.org&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;IPSO Alliance &lt;span class="nobr"&gt;&lt;a href="http://www.ipso-alliance.org"&gt;&amp;#104;ttp://www.ipso-alliance.org&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HSpecifications"&gt;Specifications&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards"&gt;&amp;#69;PC Global&lt;/a&gt;&lt;/span&gt; : &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/rp"&gt;&amp;#82;P&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/llrp"&gt;&amp;#76;LRP&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/rm"&gt;&amp;#82;M&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/ale"&gt;&amp;#65;LE&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/epcis"&gt;&amp;#69;PCIS&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/ons"&gt;&amp;#79;NS&lt;/a&gt;&lt;/span&gt; ...&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nfc-forum.org/specs"&gt;&amp;#78;FC Forum&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.dash7.org/"&gt;&amp;#68;ASH7 Alliance&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=179"&gt;&amp;#74;SR 179&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=256"&gt;&amp;#74;SR 256&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=257"&gt;&amp;#74;SR 257&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/Specifications/HomePage"&gt;&amp;#115;pecs&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4/"&gt;&amp;#106;avadoc&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;JavaEE  specs, &lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javaee/5/docs/api/"&gt;&amp;#106;avadoc&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;ISO/IEC 14443&lt;/li&gt;
+&lt;li&gt;ISO/IEC 15693&lt;/li&gt;
+&lt;li&gt;ISO/IEC 18000&lt;/li&gt;
+&lt;li&gt;EPC UHF Gen 2&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HM2M2FRFIDopensourceprojects"&gt;M2M/RFID open source projects&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;LLRP Toolkit &lt;span class="nobr"&gt;&lt;a href="http://www.llrp.org"&gt;&amp;#104;ttp://www.llrp.org&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Fosstrak (previously Accada) &lt;span class="nobr"&gt;&lt;a href="http://www.fosstrak.org"&gt;&amp;#104;ttp://www.fosstrak.org&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Rifidi &lt;span class="nobr"&gt;&lt;a href="http://www.rifidi.org/"&gt;&amp;#104;ttp://www.rifidi.org/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;HomeSIP &lt;span class="nobr"&gt;&lt;a href="http://www.enseirb.fr/cosynux/HomeSIP/"&gt;&amp;#104;ttp://www.enseirb.fr/cosynux/HomeSIP/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInternetofThings28IoT29"&gt;Internet of Things (IoT)&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWhitepapers"&gt;Whitepapers&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;International Telecommunication Union, "&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.itu.int/osg/spu/publications/internetofthings/InternetofThings_summary.pdf"&gt;&amp;#84;he Internet of Things, Executive Summary&lt;/a&gt;&lt;/span&gt;", ITU Internet Reports 2005, November 2005, 28 pages&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMachinetoMachine28M2M29"&gt;Machine-to-Machine (M2M)&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWhitepapers"&gt;Whitepapers&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;FING, Syntec Informatique and Orange Business Services, "&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fing.org/servlet/com.univ.collaboratif.utils.LectureFichiergw?ID_FICHE=7540&amp;OBJET=0008&amp;ID_FICHIER=3832"&gt;&amp;#77;achine To Machine (M2M) : Stakes and Prospects&lt;/a&gt;&lt;/span&gt;", White Paper, March 27, 2006, 36 pages&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRFID"&gt;RFID&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HBooks"&gt;Books&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Sandip Lahiri, RFID Sourcebook, IBM Press, August 2005; Pages: 304, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ibmpressbooks.com/bookstore/product.asp?isbn=0131851373"&gt;&amp;#73;SBN: 0131851373&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Syed A. Ahson, Mohammad Ilyas, "RFID Handbook: Applications, Technology, Security, and Privacy", ISBN: 9781420054996, ISBN 10: 1420054996, Publication Date: 3/18/2008, Number of Pages: 712, Publisher: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.crcpress.com"&gt;&amp;#67;RC Press&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://books.google.fr/books?id=q4aCyZnq0cwC&amp;dq=isbn:1420054996"&gt;&amp;#71;oogle book&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWhitepapers"&gt;White papers&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;F. Letellier &amp; al, "&lt;span class="wikiexternallink"&gt;&lt;a href="https://wiki.objectweb.org/attach?page=CWPRFID%2FDGE-RFID-GT-Middleware-v1.0.pdf"&gt;&amp;#69;tiquettes électroniques (RFID) Infrastructures logicielles et middleware&lt;/a&gt;&lt;/span&gt;, Révision 1.0 – 11 avril 2006 (in french).&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPapers"&gt;Papers&lt;/span&gt;&lt;/h5&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HEPCGlobal"&gt;EPC Global&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPapers"&gt;Papers&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Frederic Thiesse, Florian Michahelles, An overview of EPC technology, 2006, &lt;span class="nobr"&gt;&lt;a href="http://www.im.ethz.ch/education/HS08/Thiesse_Overview_EPC.pdf"&gt;&amp;#104;ttp://www.im.ethz.ch/education/HS08/Thiesse_Overview_EPC.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNFC"&gt;NFC&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/developer/technicalArticles/javame/nfc/"&gt;&amp;#65;n Introduction to Near-Field Communication and the Contactless Communication API (i.e. JSR 257)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.forum.nokia.com/main/resources/technologies/nfc/"&gt;&amp;#70;orum Nokia - Near Field Communication&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSensors"&gt;Sensors&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPapers"&gt;Papers&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;The Sensor Web, ERCIM News, &lt;span class="nobr"&gt;&lt;a href="http://ercim-news.ercim.org/images/stories/EN76/EN76-web.pdf"&gt;&amp;#104;ttp://ercim-news.ercim.org/images/stories/EN76/EN76-web.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

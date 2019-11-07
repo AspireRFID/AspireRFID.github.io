@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main/Statistics?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:43:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Statistics
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_Statistics.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main/Statisticsd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main/Statisticscede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main/Statisticsd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Statistics
+
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+*[Lines of code analysis &#62; LOC]*
+
+*THIS PAGE IS UNDER CONSTRUCTION*
+
+1.1 Software metrics
+see http://en.wikipedia.org/wiki/Software_metric
+
+could be compute by [Sonar&#62;http://sonar.codehaus.org] 
+
+1.1 Community metrics
+
+* number of downloads /per month
+* number of anonymous SVN checkouts/updates  per month
+* number of commits per month
+* number of commiters
+* number of users (not easy to find)
+* number of mails exchanged on MLs
+* number of subscribers on the MLs
+* number of writers on the MLs
+* number of patchs per month
+* number of issues (open, closed, resolved, commented) per month
+* number of words in the documentations (wiki) per month
+* number of comments in the documentations (wiki) per month
+* ...
+
+1.1 External audit
+
+1.1.1 Ohloh.net
+
+
+&#60;script type=&#34;text/javascript&#34; src=&#34;http://www.ohloh.net/p/15713/widgets/project_partner_badge.js&#34;&#62;&#60;/script&#62;
+
+&#60;script type=&#34;text/javascript&#34; src=&#34;http://www.ohloh.net/p/15713/widgets/project_basic_stats.js&#34;&#62;&#60;/script&#62;
+
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor53.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

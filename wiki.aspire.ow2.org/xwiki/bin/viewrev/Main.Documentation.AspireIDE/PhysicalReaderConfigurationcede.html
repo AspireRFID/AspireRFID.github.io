@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation.AspireIDE/PhysicalReaderConfiguration?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:31:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - PhysicalReaderConfiguration
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.AspireIDE/Main.Documentation.AspireIDE_PhysicalReaderConfiguration.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation.AspireIDE/PhysicalReaderConfigurationd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.AspireIDE/PhysicalReaderConfigurationcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.AspireIDE/PhysicalReaderConfigurationd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Reader Configuration &#38; Management Plug-in
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+----
+
+1.1 Introduction
+
+This tool provides a management front-end based on the Java Management extensions (JMX) for the [Reader Core proxy&#62;Main.Documentation.ReaderCoreProxy]. It enables the end user to edit the runtime parameters of the proxy and to manage its status. Though the management interface is usable through any jmx capable console, like SUN's jconsole, this plug-in enables integrated and user friendly management.
+
+1.1 Users Guide
+
+
+1.1.1 Download &#38; Run
+
+You can download the Reader Configuration &#38; Management tool from the [AspireRFID forge&#62;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIdeToolCollection” under &#34;AspireRFID AITdev&#34; package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory {pre}&#34;user.home\AspireRFID\IDE\...&#34; (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”){/pre}.
+
+1.1.1 StartUp
+You can gain access to the management and the configuration interface from the AspireRfidIDE by clicking Window -&#62; Show view and then selecting *JMX management console* or *JMX configuration console*.
+
+Before trying to use plug-in you should make sure that you have a [Reader Core proxy&#62;Main.Documentation.ReaderCoreProxy] instance running and you have configured properly the AspireIDE configuration regarding the JMX endpoint, located at Window-&#62;Preferences-&#62;Management console.
+
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg&#34;&#62;{image:ReaderCoreProxyManagementPreferences.jpg|width=50%|height=50%}&#60;/a&#62;
+
+The JMX server URL field should contain the appropriate url pointing to the OSGI JMX RMI endpoint
+
+1.1.1 JMX management console
+
+This tool provides high level control over the reader proxy. It provides the user with the following functionality:
+
+* *Current status*: Displays the current status of the proxy component. The possible values are:
+** DISCONNECTED: The proxy cannot be reached. This could be happening either because the OSGI container is shut down, or because the Reader Core Proxy bundle is not properly deployed, or the bundle is stopped or the URL connection string, mentioned before is wrong.
+** STOPPED: The plug-in has been connected to the bundle and its operation is set to Stopped
+** STARTED: The plug-in has been connected to the bundle and its operation is set to Started
+* *Refresh status*: Refreshed the current status (described above).
+* *Start*: Starts the reader proxy operation
+* *Stop*: Stops the reader proxy operation
+* *Reset configuration*: Deletes every change that may have happened to the proxy component and restores the default configuration file. *The default configuration loads by the simulator reader when the proxy is started*
+* *Save and load updated configuration*: This operation saves the updated configuration to a new configuration file, and loads it to the runtime. You can update the configuration through the JMX configuration console. This operation is mandatory if you have changed any parameter through this console and you want to apply it.
+* *Download configuration file*: This operation enables you to backup the currently loaded configuration and save it locally as a XML file. When you click on this button a Save As dialogue will be presented to choose the location and the name of the backup file.
+* *Upload configuration file*: This operation enables you to restore a previously backed up XML configuration file and set the new configuration as active. By clicking on the button you will be prompted of a dialogue that will let you choose a configuration file. You should backup the current configuration before trying to upload a new one.
+
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg&#34;&#62;{image:ReaderCoreProxyManagementIDE.jpg|width=50%|height=50%}&#60;/a&#62;
+
+1.1.1 JMX configuration console
+
+When you open the console, if the connection URL is valid and operational, all configuration fields will be populated with the live configuration information from the server. There are 4 panels with grouped configuration that can be edited. *Every update that is executed through the console is NOT activated immediately*. Instead you have to hit the *Save and load updated configuration* button located an the JMX management console. This will save the configuration and restart the reader with the updated configuration. We will now iterate of the available configuration groups.
+
+1.1.1.1 Reader information
+This is general information regarding the reader proxy that is used for identification purposes. The ~~reader name~~ parameter is also used by the [filtering and collection server&#62;Main.Documentation.Filtering&#38;Collection] to identify the proxy component.
+
+1.1.1.1 Main configuration
+These configuration parameters are of general purpose that define operational parameters of the proxy module. These parameters are referenced and documented at the [EPCglobal Reader Protocol&#62;http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf] standard v1.1.
+In most cases you will not need to alter any of these parameters, except if there is a port conflict with the TCP and/or HTTP servers that may be used. By default the proxy opens two server connections, a TCP server on port 5566 and one HTTP server on port 8000. This configuration can be altered from this configuration group.
+
+1.1.1.1 Sources
+Sources are an abstraction through which we can manage and access a group of read points. These read points may be scattered and could have miscellaneous capabilities. Fro example they could be able to read RFID or bardcode or RF tags. 
+Through this configuration group you can *add a new source* by entering a source name and selecting an available read point to connect with the source. You can add a read point through the ~~readers configuration~~ parameters group.
+Through the ~~current source~~ group you can select the source that will be be used (active) in the proxy configuration.
+
+1.1.1.1 Readers configuration
+Through this group you may add a new reader to the configuration or change the configuration of an existing reader.
+* *To add a new reader* you should start by selecting ~~NEW~~ from the existing readers list. The you set the reader name, the class name and the properties file of the reader and push the ~~Add reader~~ button. After adding the reader you can set its read point names.
+* *To edit the configuration* of a reader you should first select it through the ~~existing readers~~ list. Then you are able to view some permanent configuration parameters of the selected reader and add a read point.
+
+
+1.1 Developers Guide
+In this section we will describe the JMX aspects of this component and information on how to add information for a new reader that will be used with the Reader Core Proxy.
+
+1.1.1 Adding new reader information
+As it is explained at the [reader core proxy&#62;Main.Documentation.ReaderCoreProxy] page, you can add a non RP compliant reader to the Aspire middleware. In order to enable the end user to activate and use a new reader implementation, apart from deploying the bundle to the OSGI server, you have to follow some steps to make this information available.
+
+The option to add a new reader is available at the ~~Readers configuration~~ tab of the ~~JMX configuration console~~. To add a new reader, the user has to select ~~NEW~~ from the readers list and then select the implementation class name from the available list and define the properties file, if there is such file required by the implementation. The available class files are defined through the ~~Preferences~~ dialogue (~~Window-&#62;Preferences-&#62;Management console~~). Through this form you can add the name of the class file implementing the ~~org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction~~ interface, as defined [here&#62;Main.Documentation.ReaderCoreProxy#HComponentanalysis]. You should also provide the user of the information regarding the properties file location, which should be existent within the deployed bundle. The property file location should be relative to bundle root directory (e.g. /props/ConfigFile.properties).
+
+1.1.1 JMX MBean
+Through the managed OSGI (MOSGI) we expose one managed bean (MBean) that provides several operations and attributes. This MBean is defined within the ReaderProtocol bundle through the Java interface ~~org.ow2.aspirerfid.reader.rp.RmRpMBean~~. The MBean implementation exists in the ReaderProtocolImpl bundle through the ~~org.ow2.aspirerfid.reader.rp.impl.ReaderProtocol~~ class. The following is provides is the list of operations and attributes.
+
+1.1.1.1 MBean Operations
+
+* Start,stop and check the functionality of the reader proxy based on the active configuration
+{code}
+public boolean start();
+public boolean stop();
+public boolean isStarted();
+{code}
+
+* Loads an updated configuration and makes it active
+{code}
+public void loadConfig();
+{code}
+
+* Loads the default configuration and makes it active
+{code}
+public void resetConfig();
+{code}
+
+* Loads an XML serialized configuration file and makes it active
+{code}
+public void loadConfigurationFile(String serializedFile);
+{code}
+
+* Serializes the XML configuration file and returns it
+{code}
+public String saveConfigurationFileAs();
+{code}
+
+* Get or set functional parameters of the proxy bundle, without making them active. To activate and save the configuration you have to use the ~~loadConfig~~ operation.
+{code}
+public void setEPC(String epc);
+public String getEPC();
+
+public void setName(String name);
+public String getName();
+
+public void setManufacturer(String manufacturer);
+public String getManufacturer();
+
+public void setManufacturerDescription(String desc);
+public String getManufacturerDescription();
+
+public void setModel(String model);
+public String getModel();
+
+public void setHandle(int handle);
+public int getHandle();
+
+public void setRole(String role);
+public String getRole();
+
+public void setMaxSourceNumber(int number);
+public int getMaxSourceNumber();
+
+public void setMaxTagSelectorNumber(int number);
+public int getMaxTagSelectorNumber();
+
+public void setMaxTriggerNumber(int number);
+public int getMaxTriggerNumber();
+
+public void addReader(String name, String className, String propertiesFile);
+public void addReaderReadpoint(String readerName, String readpoint);
+
+public String[] getReaders();
+
+public String getReaderClassName(String readerName);
+
+public String getReaderPropertiesFile(String readerName);
+
+public String[] getReadPointNames(String readerName);
+
+public void setCurrentSource(String source);
+public String getCurrentSource();
+
+public void addSource(String name, boolean fixed, String readpoint);
+
+public String[] getSources();
+
+public boolean getIsSourceFixed(String sourceName);
+
+public String getSourceReadpoint(String sourceName);
+
+public void addIOEdgeTriggerPortManager(String port);
+public String[] getIOEdgeTriggerPortManager();
+
+public void addIOValueTriggerPortManager(String port);
+public String[] getIOValueTriggerPortManager();
+
+public void setTcpServerConnection(boolean isEnabled);
+public boolean getTcpServerConnection();
+
+public void setTcpPort(int port);
+public int getTcpPort();
+
+public void setHttpServerConnectionEnabled(boolean isEnabled);
+public boolean getHttpServerConnectionEnabled();
+
+public void setHttpPort(int port);
+public int getHttpPort();
+
+public void setNotificationListenTimeout(long timeout);
+public long getNotificationListenTimeout();
+
+public void setThreadPoolSize(int size);
+public int getThreadPoolSize();
+
+//For the active source
+public void setIsSourceFized(boolean isFixed);
+
+public void setGlimpsedTimeout(long timeout);
+public long getGlimpsedTimeout();
+
+public void setObservedThreshold(long threshold);
+public long getObservedThreshold();
+
+public void setObservedTimeout(long timeout);
+public long getObservedTimeout();
+
+public void setLostTimeout(long timeout);
+public long getLostTimeout();
+
+public void setReadCyclesPerTrigger(int cycles);
+public int getReadCyclesPerTrigger();
+
+public void setMaxReadDutyCycles(int cycles);
+public int getMaxReadDutyCycles();
+
+public void setReadTimeout(long timeout);
+public long getReadTimeout();
+{code}
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

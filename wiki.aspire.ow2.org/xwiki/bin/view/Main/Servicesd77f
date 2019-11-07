@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Services</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Community</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1216844638000</creationDate>
+<date>1273735662000</date>
+<contentUpdateDate>1273735662000</contentUpdateDate>
+<version>1.43</version>
+<title>AspireRfid Services</title>
+<template></template>
+<attachment>
+<filename>Intro_RFID_AutoID.pdf</filename>
+<filesize>252539</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1224195834000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AspireRfid_SOTA_Middleware.pdf</filename>
+<filesize>648528</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1224195870000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>OW2_ASPIRE_MAVEN.pdf</filename>
+<filesize>595380</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1225558228000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Configure_Eclipse_to_work_with_Gforge.pdf</filename>
+<filesize>961955</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1225558255000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>RFID_Understanding.pdf</filename>
+<filesize>217357</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1227266520000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>RFID_EPC_Essentials.pdf</filename>
+<filesize>416238</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1227267308000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>IoT_Intro.pdf</filename>
+<filesize>139289</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1227267564000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Aspire_Intro.pdf</filename>
+<filesize>648508</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1227267984000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>RFID_Middleware_Introduction.pdf</filename>
+<filesize>213823</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1236501389000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>RFID_EPC_Network_Architecture.pdf</filename>
+<filesize>349810</filesize>
+<author>xwiki:XWiki.jsoldat</author>
+<date>1237155820000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>01 Introduction to RFID Technology.pdf</filename>
+<filesize>1352819</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503142000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>02 Introduction to RFID Middleware.pdf</filename>
+<filesize>329706</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503154000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>03 Introduction to EPC &amp; EPC Architecture.pdf</filename>
+<filesize>1009152</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503166000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>04 EPC Middleware Standards.pdf</filename>
+<filesize>3850284</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503182000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>05 ASPIRE and AspireRfid.pdf</filename>
+<filesize>707261</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503195000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>06 ASPIRE Architecture and Middleware.pdf</filename>
+<filesize>1141070</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503207000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>07 ASPIRE Programmable Language and Engine.pdf</filename>
+<filesize>897013</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503216000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>08 ASPIRE Tools and IDE.pdf</filename>
+<filesize>1571912</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503226000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>09 ASPIRE Pilots.pdf</filename>
+<filesize>1806517</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503236000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>course_outline.pdf</filename>
+<filesize>35796</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503260000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>List_of_References.pdf</filename>
+<filesize>85533</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1273503268000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Services (Training / Consulting)
+
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introductory course to ASPIRE and RFID
+
+
+This is a course intended to offer an introduction to the concepts around RFID and guide the reader through the ASPIRE and AspireRFID middleware architecture. You can start by taking a look at the course outline and proceed by studying the lectures. 
+
+
+* Course Outline ({attach:pdf|file=course_outline.pdf})
+
+# Introduction to RFID Technology ({attach:pdf|file=01 Introduction to RFID Technology.pdf})
+# Introduction to RFID Middleware ({attach:pdf|file=02 Introduction to RFID Middleware.pdf})
+# Introduction to EPC &amp;amp; EPC Architecture ({attach:pdf|file=03 Introduction to EPC &amp; EPC Architecture.pdf})
+# EPC Middleware Standards ({attach:pdf|file=04 EPC Middleware Standards.pdf})
+# ASPIRE and AspireRfid ({attach:pdf|file=05 ASPIRE and AspireRfid.pdf})
+# ASPIRE Architecture and Middleware ({attach:pdf|file=06 ASPIRE Architecture and Middleware.pdf})
+# ASPIRE Tools and IDE ({attach:pdf|file=08 ASPIRE Tools and IDE.pdf})
+# ASPIRE Pilots ({attach:pdf|file=09 ASPIRE Pilots.pdf})
+
+* Additional reading material ({attach:pdf|file=List_of_References.pdf})
+
+1 Other Training
+
+
+ASPIRE Trainings typically consist of three complementary sections:
+
+
+1.1 General Training on RFID Technology and Middleware, including EPC (Tutorials)
+
+
+* Introduction to RFID and AutoID Technologies ({attach:pdf|file=Intro_RFID_AutoID.pdf})
+* Understanding RFID Technologies ({attach:pdf|file=RFID_Understanding.pdf})
+* Introduction to RFID Middleware ({attach:pdf|file=RFID_Middleware_Introduction.pdf})
+* Introduction to the IoT (Internet of Things) ({attach:pdf|file=IoT_Intro.pdf})
+* EPC Essentials ({attach:pdf|file=RFID_EPC_Essentials.pdf})
+* EPC Network Architecture ({attach:pdf|file=RFID_EPC_Network_Architecture.pdf})
+* Overview of RFID Middleware Toolkits and the ASPIRE Project ({attach:pdf|file=AspireRfid_SOTA_Middleware.pdf})
+* Comparison of OSS RFID and Introduction to ASPIRE Developments ({attach:pdf|file=Aspire_Intro.pdf})
+
+
+1.1 Training on OW2 tools and techniques
+
+
+* Maven Presentation ({attach:pdf|file=OW2_ASPIRE_MAVEN.pdf})
+* Configure Eclipse to work with GForge ({attach:pdf|file=Configure_Eclipse_to_work_with_Gforge.pdf})
+
+
+1.1 Training on AspireRfid developments and middleware
+
+Under Construction
+
+1.1.1 University courses
+
+
+The Aspire project is used in the teaching units to teach machine-2-machine technologies (RFID, sensors, ...).
+
+
+* Teaching Unit &amp;quot;Machine 2 Machine Project (6 ECTS), Master 2nd year in Information Technologies, professional track, Universite Joseph Fourier (Grenoble 1), France (~~UE PM2M: Projet de Service Machine a Machine (6 ECTS), Master 2 Professionel Genie Informatique, Universite Joseph Fourier (Grenoble 1), France~~)
+** http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/
+** http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie1.pdf
+** http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie2.pdf
+
+1.1.1 Professional Services
+
+
+AspireRfid main Developers and Contributors (UJF and AIT) are available to provide a range of consulting, integration and training services including:
+
+
+* Business Case Establishment
+* Cost and Financial Analysis (Return-on-Investment (ROI), Internal Rate of Return (IRR) and more)
+* Site Investigation
+* Solution Design (based on AspireRfid middleware)
+* Solution Implementation (based on AspireRfid middleware)
+* Solution Integration (based on AspireRfid middleware)
+* Training on AspireRfid Middleware and Tools
+* Technical Support of AspireRfid Middleware and Tools
+* Customization of AspireRfid Middleware and Tools
+
+
+Under Construction</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HServices28Training2FConsulting29"&gt;Services (Training / Consulting)&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroductorycoursetoASPIREandRFID"&gt;1 Introductory course to ASPIRE and RFID&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGeneralTrainingonRFIDTechnologyandMiddleware2CincludingEPC28Tutorials29"&gt;2 General Training on RFID Technology and Middleware, including EPC (Tutorials)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTrainingonOW2toolsandtechniques"&gt;3 Training on OW2 tools and techniques&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTrainingonAspireRfiddevelopmentsandmiddleware"&gt;4 Training on AspireRfid developments and middleware&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HUniversitycourses"&gt;4.1 University courses&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HProfessionalServices"&gt;4.2 Professional Services&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroductorycoursetoASPIREandRFID"&gt;Introductory course to ASPIRE and RFID&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+This is a course intended to offer an introduction to the concepts around RFID and guide the reader through the ASPIRE and AspireRFID middleware architecture. You can start by taking a look at the course outline and proceed by studying the lectures. 
+&lt;ul class="star"&gt;
+&lt;li&gt;Course Outline (&lt;a href="/xwiki/bin/download/Main/Services/course_outline.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Introduction to RFID Technology (&lt;a href="/xwiki/bin/download/Main/Services/01%20Introduction%20to%20RFID%20Technology.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Introduction to RFID Middleware (&lt;a href="/xwiki/bin/download/Main/Services/02%20Introduction%20to%20RFID%20Middleware.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Introduction to EPC &amp;amp; EPC Architecture (&lt;a href="/xwiki/bin/download/Main/Services/03%20Introduction%20to%20EPC%20%26%20EPC%20Architecture.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;EPC Middleware Standards (&lt;a href="/xwiki/bin/download/Main/Services/04%20EPC%20Middleware%20Standards.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;ASPIRE and AspireRfid (&lt;a href="/xwiki/bin/download/Main/Services/05%20ASPIRE%20and%20AspireRfid.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;ASPIRE Architecture and Middleware (&lt;a href="/xwiki/bin/download/Main/Services/06%20ASPIRE%20Architecture%20and%20Middleware.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;ASPIRE Tools and IDE (&lt;a href="/xwiki/bin/download/Main/Services/08%20ASPIRE%20Tools%20and%20IDE.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;ASPIRE Pilots (&lt;a href="/xwiki/bin/download/Main/Services/09%20ASPIRE%20Pilots.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Additional reading material (&lt;a href="/xwiki/bin/download/Main/Services/List_of_References.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 class="heading-1"&gt;&lt;span id="HOtherTraining"&gt;Other Training&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+ASPIRE Trainings typically consist of three complementary sections:
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGeneralTrainingonRFIDTechnologyandMiddleware2CincludingEPC28Tutorials29"&gt;General Training on RFID Technology and Middleware, including EPC (Tutorials)&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Introduction to RFID and AutoID Technologies (&lt;a href="/xwiki/bin/download/Main/Services/Intro_RFID_AutoID.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Understanding RFID Technologies (&lt;a href="/xwiki/bin/download/Main/Services/RFID_Understanding.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Introduction to RFID Middleware (&lt;a href="/xwiki/bin/download/Main/Services/RFID_Middleware_Introduction.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Introduction to the IoT (Internet of Things) (&lt;a href="/xwiki/bin/download/Main/Services/IoT_Intro.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;EPC Essentials (&lt;a href="/xwiki/bin/download/Main/Services/RFID_EPC_Essentials.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;EPC Network Architecture (&lt;a href="/xwiki/bin/download/Main/Services/RFID_EPC_Network_Architecture.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Overview of RFID Middleware Toolkits and the ASPIRE Project (&lt;a href="/xwiki/bin/download/Main/Services/AspireRfid_SOTA_Middleware.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Comparison of OSS RFID and Introduction to ASPIRE Developments (&lt;a href="/xwiki/bin/download/Main/Services/Aspire_Intro.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HTrainingonOW2toolsandtechniques"&gt;Training on OW2 tools and techniques&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Maven Presentation (&lt;a href="/xwiki/bin/download/Main/Services/OW2_ASPIRE_MAVEN.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Configure Eclipse to work with GForge (&lt;a href="/xwiki/bin/download/Main/Services/Configure_Eclipse_to_work_with_Gforge.pdf" /&gt;pdf&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HTrainingonAspireRfiddevelopmentsandmiddleware"&gt;Training on AspireRfid developments and middleware&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Under Construction
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HUniversitycourses"&gt;University courses&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+The Aspire project is used in the teaching units to teach machine-2-machine technologies (RFID, sensors, ...).
+&lt;ul class="star"&gt;
+&lt;li&gt;Teaching Unit &amp;quot;Machine 2 Machine Project (6 ECTS), Master 2nd year in Information Technologies, professional track, Universite Joseph Fourier (Grenoble 1), France (&lt;i class="italic"&gt;UE PM2M: Projet de Service Machine a Machine (6 ECTS), Master 2 Professionel Genie Informatique, Universite Joseph Fourier (Grenoble 1), France&lt;/i&gt;)&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/"&gt;&amp;#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie1.pdf"&gt;&amp;#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie1.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie2.pdf"&gt;&amp;#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie2.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HProfessionalServices"&gt;Professional Services&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+AspireRfid main Developers and Contributors (UJF and AIT) are available to provide a range of consulting, integration and training services including:
+&lt;ul class="star"&gt;
+&lt;li&gt;Business Case Establishment&lt;/li&gt;
+&lt;li&gt;Cost and Financial Analysis (Return-on-Investment (ROI), Internal Rate of Return (IRR) and more)&lt;/li&gt;
+&lt;li&gt;Site Investigation&lt;/li&gt;
+&lt;li&gt;Solution Design (based on AspireRfid middleware)&lt;/li&gt;
+&lt;li&gt;Solution Implementation (based on AspireRfid middleware)&lt;/li&gt;
+&lt;li&gt;Solution Integration (based on AspireRfid middleware)&lt;/li&gt;
+&lt;li&gt;Training on AspireRfid Middleware and Tools&lt;/li&gt;
+&lt;li&gt;Technical Support of AspireRfid Middleware and Tools&lt;/li&gt;
+&lt;li&gt;Customization of AspireRfid Middleware and Tools&lt;/li&gt;
+&lt;/ul&gt;Under Construction
+</renderedcontent>
+</xwikidoc>

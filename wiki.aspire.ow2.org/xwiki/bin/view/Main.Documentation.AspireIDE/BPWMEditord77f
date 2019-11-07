@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>BPWMEditor</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.yluo</author>
+<contentAuthor>xwiki:XWiki.yluo</contentAuthor>
+<creationDate>1274219266000</creationDate>
+<date>1282567461000</date>
+<contentUpdateDate>1282567461000</contentUpdateDate>
+<version>1.20</version>
+<title>BPWM Editor</title>
+<template></template>
+<attachment>
+<filename>bpwme-3.jpg</filename>
+<filesize>55285</filesize>
+<author>xwiki:XWiki.yluo</author>
+<date>1275636254000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>bpwme-2.jpg</filename>
+<filesize>56151</filesize>
+<author>xwiki:XWiki.yluo</author>
+<date>1275636211000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>bpwme-1.jpg</filename>
+<filesize>77423</filesize>
+<author>xwiki:XWiki.yluo</author>
+<date>1275636000000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>bpwme-4.jpg</filename>
+<filesize>28961</filesize>
+<author>xwiki:XWiki.yluo</author>
+<date>1275636384000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>bpwme-5.jpg</filename>
+<filesize>51863</filesize>
+<author>xwiki:XWiki.yluo</author>
+<date>1275636390000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Business Process Workflow Management Editor
+
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introduction
+
+
+The objective of this tool is to provide a graphical interface to edit business process workflow, and the related ECSpec, LRSpec and Master Data, then generate the APDL XML file.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-1.jpg"&gt;{image:bpwme-1.jpg|350}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1 Users Guide
+1.1.1 Download &amp; Run
+
+By now, you can download the packages from svn. Run it with AspireRfidIDECore.
+
+1.1.1 Create &amp; Open Diagram
+
+A diagram can be created or opened by choosing File-&gt;New Diagram or File-&gt;Open Diagram. There are four kinds of objects on the palette you can use to put on the diagram. Objects on the diagram can be re-sized, moved, deleted by drag and drop or right click. These operation are straightforward and you can try to explore more.
+
+1.1.1 LRSpec &amp; ECSpec Configuration
+
+Right click on the EBProc object, in the context menu choose the "Edit ECSpec", then the Editor for LRSpec and ECSpec will pop out.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-2.jpg"&gt;{image:bpwme-2.jpg|300}&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-3.jpg"&gt;{image:bpwme-3.jpg|300}&lt;/a&gt;
+&lt;/center&gt;
+
+The editor is separated to two parts. The upper part cares about the data from "ECSpec-&gt;logicalReaders" and "ECSpec-&gt;boundarySpec", and everything from LRSpec. The down part cares about data from "ECSpec-&gt;reportSpecs". All the modifications of logicalReaders and reportSpec are done through standard properties view.
+
+1.1.1 Master Data Configuration
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-4.jpg"&gt;{image:bpwme-4.jpg|300}&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-5.jpg"&gt;{image:bpwme-5.jpg|300}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1.1 Get Data From Master Data GMF Editor
+
+1.1 Developers Guide
+
+Business Process Workflow Management Editor plug-in is an &amp;ldquo;AspireRfidIDE&amp;rdquo; product plug-in that is running within its environment. So for using this plug-in you should first download the &amp;ldquo;[AspireRfidIDECore&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]&amp;rdquo;.
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+
+*Software*
+
+
+* Java 1.6
+* [Eclipse 3.4&gt;http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment, EMF/GMF plug-ins and [Subversive plug-in&gt;http://www.polarion.org/index.php?page=download&amp;project=subversive])
+
+1.1.1 Acquiring the code
+
+The “BPWM Editor Plug-in” source code is available for checkout at the AspireRFID forge [SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive] and by using the following URL at the window that appears: 
+svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-BPWME/
+* right click the repository that have been just created and hit the check out button
+* check the org.ow2.aspirerfid.ide.bpwme.diagram, org.ow2.aspirerfid.ide.bpwme.edit, org.ow2.aspirerfid.ide.bpwme projects on the list and hit ok
+
+1.1.1 Running the Project
+
+For running AspireRfidIDE with the BPWM Editor Plug-in:
+* Create an aspireRfidIDE project (unless you already have created one)
+* Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product
+* At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product
+* At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde”, “org.ow2.aspirerfid.ide.bpwme”, “org.ow2.aspirerfid.ide.bpwme.edit”, “org.ow2.aspirerfid.ide.bpwme.diagram” and then hit the Add required Plug-ins button.
+* Hit apply
+* Now you are ready to run the application.
+
+1.1.1 Dive into the Code
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HBusinessProcessWorkflowManagementEditor"&gt;Business Process Workflow Management Editor&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;2 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload26Run"&gt;2.1 Download &amp; Run&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HCreate26OpenDiagram"&gt;2.2 Create &amp; Open Diagram&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLRSpec26ECSpecConfiguration"&gt;2.3 LRSpec &amp; ECSpec Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMasterDataConfiguration"&gt;2.4 Master Data Configuration&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HGetDataFromMasterDataGMFEditor"&gt;2.4.1 Get Data From Master Data GMF Editor&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;3 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;3.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;3.2 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRunningtheProject"&gt;3.3 Running the Project&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDiveintotheCode"&gt;3.4 Dive into the Code&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The objective of this tool is to provide a graphical interface to edit business process workflow, and the related ECSpec, LRSpec and Master Data, then generate the APDL XML file.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-1.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-1.jpg" height="350" alt="bpwme-1.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26Run"&gt;Download &amp; Run&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;By now, you can download the packages from svn. Run it with AspireRfidIDECore.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HCreate26OpenDiagram"&gt;Create &amp; Open Diagram&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;A diagram can be created or opened by choosing File-&gt;New Diagram or File-&gt;Open Diagram. There are four kinds of objects on the palette you can use to put on the diagram. Objects on the diagram can be re-sized, moved, deleted by drag and drop or right click. These operation are straightforward and you can try to explore more.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLRSpec26ECSpecConfiguration"&gt;LRSpec &amp; ECSpec Configuration&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Right click on the EBProc object, in the context menu choose the "Edit ECSpec", then the Editor for LRSpec and ECSpec will pop out.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-2.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-2.jpg" height="300" alt="bpwme-2.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-3.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-3.jpg" height="300" alt="bpwme-3.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The editor is separated to two parts. The upper part cares about the data from "ECSpec-&gt;logicalReaders" and "ECSpec-&gt;boundarySpec", and everything from LRSpec. The down part cares about data from "ECSpec-&gt;reportSpecs". All the modifications of logicalReaders and reportSpec are done through standard properties view.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMasterDataConfiguration"&gt;Master Data Configuration&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-4.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-4.jpg" height="300" alt="bpwme-4.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-5.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/BPWMEditor/bpwme-5.jpg" height="300" alt="bpwme-5.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HGetDataFromMasterDataGMFEditor"&gt;Get Data From Master Data GMF Editor&lt;/span&gt;&lt;/h5&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Business Process Workflow Management Editor plug-in is an &amp;ldquo;AspireRfidIDE&amp;rdquo; product plug-in that is running within its environment. So for using this plug-in you should first download the &amp;ldquo;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;AspireRfidIDECore&lt;/a&gt;&lt;/span&gt;&amp;rdquo;.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#69;clipse 3.4&lt;/a&gt;&lt;/span&gt; and above (with RCP/Plug-in Development Environment, EMF/GMF plug-ins and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#83;ubversive plug-in&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The “BPWM Editor Plug-in” source code is available for checkout at the AspireRFID forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#83;VN&lt;/a&gt;&lt;/span&gt;. 
+Check it out by:
+&lt;ul class="star"&gt;
+&lt;li&gt;hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#112;lug-in&lt;/a&gt;&lt;/span&gt; and by using the following URL at the window that appears:&lt;/li&gt;
+&lt;/ul&gt;svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-BPWME/
+&lt;ul class="star"&gt;
+&lt;li&gt;right click the repository that have been just created and hit the check out button&lt;/li&gt;
+&lt;li&gt;check the org.ow2.aspirerfid.ide.bpwme.diagram, org.ow2.aspirerfid.ide.bpwme.edit, org.ow2.aspirerfid.ide.bpwme projects on the list and hit ok&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRunningtheProject"&gt;Running the Project&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For running AspireRfidIDE with the BPWM Editor Plug-in:
+&lt;ul class="star"&gt;
+&lt;li&gt;Create an aspireRfidIDE project (unless you already have created one)&lt;/li&gt;
+&lt;li&gt;Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde”, “org.ow2.aspirerfid.ide.bpwme”, “org.ow2.aspirerfid.ide.bpwme.edit”, “org.ow2.aspirerfid.ide.bpwme.diagram” and then hit the Add required Plug-ins button.&lt;/li&gt;
+&lt;li&gt;Hit apply&lt;/li&gt;
+&lt;li&gt;Now you are ready to run the application.&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDiveintotheCode"&gt;Dive into the Code&lt;/span&gt;&lt;/h4&gt; 
+</renderedcontent>
+</xwikidoc>

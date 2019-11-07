@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>EventsCalendar</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1237374911000</creationDate>
+<date>1241132475000</date>
+<contentUpdateDate>1241132475000</contentUpdateDate>
+<version>1.4</version>
+<title>Event Calendar</title>
+<template></template>
+<content>1 Event Calendar
+
+#if($request.month)
+#if($request.month.startsWith("+")==true)
+#set($cmonth = $xwiki.parseInt($request.month.substring(1)))
+#else
+#set($cmonth = $xwiki.parseInt($request.month))
+#end
+#else
+#set($cmonth = 0)
+#end
+#set($pmonth = (-1+$cmonth))
+#set($nmonth = ($cmonth+1))
+#if($pmonth&gt;0)
+#set($spmonth = "%2b${pmonth}")
+#else
+#set($spmonth = "${pmonth}")
+#end
+#if($nmonth&gt;0)
+#set($snmonth = "%2b${nmonth}")
+#else
+#set($snmonth = "${nmonth}")
+#end
+
+[Previous Month&gt;$doc.name?month=${spmonth}] [Next Month&gt;$doc.name?month=${snmonth}]
+
+#set($cview = $xwiki.calendar)
+#set($cparams = $cview.calendarParams)
+$cparams.put("month",$request.get("month"))
+$cview.getHTMLCalendar($cparams, "")
+
+1.1 Event List
+
+#foreach($event in $doc.getObjects("XWiki.CalendarEvent"))
+* $xwiki.getLocalUserName($event.user) $event.startDate $event.endDate $event.description
+#end
+
+* Use &lt;a href="$doc.getURL("edit","xpage=editobject")"&gt;edit object&lt;/a&gt; to modify or remove existing events.
+
+1.1 New Event
+
+#set($cclass = $xwiki.getDocument("XWiki.CalendarEvent").getxWikiClass())
+#set($event = $cclass.newObject())
+&lt;form action="$doc.getURL('objectadd')" method="get"&gt;
+&lt;p&gt;
+&lt;input type="hidden" name="classname" value="XWiki.CalendarEvent" /&gt;
+&lt;input type="hidden" name="xredirect" value="${doc.getURL('view')}" /&gt;
+&lt;table&gt;
+&lt;tr&gt;
+#set($pclass = $cclass.get("user"))
+&lt;td&gt;Location:&lt;/td&gt;&lt;td&gt;$doc.displayEdit($pclass,"XWiki.CalendarEvent_",$event)&lt;td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+#set($pclass = $cclass.get("startDate"))
+&lt;td&gt;Start date inclusive (dd/mm/yyyy):&lt;/td&gt;&lt;td&gt;
+$doc.displayEdit($pclass,"XWiki.CalendarEvent_",$event)
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+#set($pclass = $cclass.get("endDate"))
+&lt;td&gt;End date inclusive (dd/mm/yyyy):&lt;/td&gt;&lt;td&gt;
+$doc.displayEdit($pclass,"XWiki.CalendarEvent_",$event)
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+#set($pclass = $cclass.get("description"))
+&lt;td&gt;Description:&lt;/td&gt;&lt;td&gt;
+$doc.displayEdit($pclass,"XWiki.CalendarEvent_",$event)
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;
+&lt;input type="submit" value="Add this event" /&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HEventCalendar"&gt;Event Calendar&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/EventsCalendar?month=-1"&gt;Previous Month&lt;/a&gt;&lt;/span&gt; &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/EventsCalendar?month=%2b1"&gt;Next Month&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;
+&lt;table cellspacing="0" border="0"  id="wiki-calendar-table-1" class="wiki-calendar-table"&gt;&lt;tr&gt;&lt;th colspan="7" align="center" class="wiki-calendar-monthyearrow"&gt;March 2015&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Sun&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Mon&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Tue&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Wed&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Thu&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Fri&lt;/th&gt;&lt;th class="wiki-calendar-daynamerow" align="center"&gt;Sat&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;1&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;2&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;3&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;4&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;5&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;6&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;7&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;8&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;9&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;10&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;11&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;12&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;13&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;14&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;15&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;16&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;17&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;18&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;19&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;20&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;21&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;22&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-today"&gt;&lt;div class="wiki-calendar-daytitle"&gt;23&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;24&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;25&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;26&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;27&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;28&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;29&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;30&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-dayinmonth"&gt;&lt;div class="wiki-calendar-daytitle"&gt;31&lt;br /&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;1&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;2&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;3&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;4&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;5&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;6&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;7&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;8&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;9&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;10&amp;nbsp;&lt;/td&gt;&lt;td class="wiki-calendar-daynotinmonth"&gt;11&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HEventList"&gt;Event List&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Use &lt;a href="/xwiki/bin/edit/Main/EventsCalendar?xpage=editobject#aspire"&gt;edit object&lt;/a&gt; to modify or remove existing events.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HNewEvent"&gt;New Event&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;form action="/xwiki/bin/objectadd/Main/EventsCalendar" method="get"&gt;
+&lt;p&gt;
+&lt;input type="hidden" name="classname" value="XWiki.CalendarEvent" /&gt;
+&lt;input type="hidden" name="xredirect" value="/xwiki/bin/view/Main/EventsCalendar" /&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;Location:&lt;/td&gt;&lt;td&gt;&lt;input size='30' id='XWiki.CalendarEvent_user' name='XWiki.CalendarEvent_user' type='text'/&gt;&lt;td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Start date inclusive (dd/mm/yyyy):&lt;/td&gt;&lt;td&gt;
+&lt;input size='20' id='XWiki.CalendarEvent_startDate' name='XWiki.CalendarEvent_startDate' type='text'/&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;End date inclusive (dd/mm/yyyy):&lt;/td&gt;&lt;td&gt;
+&lt;input size='20' id='XWiki.CalendarEvent_endDate' name='XWiki.CalendarEvent_endDate' type='text'/&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description:&lt;/td&gt;&lt;td&gt;
+ &lt;!-- Text Editor --&gt;
+&lt;textarea id='XWiki.CalendarEvent_description' rows='5' name='XWiki.CalendarEvent_description' cols='40'&gt;&lt;/textarea&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;
+&lt;input type="submit" value="Add this event" /&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+</renderedcontent>
+</xwikidoc>

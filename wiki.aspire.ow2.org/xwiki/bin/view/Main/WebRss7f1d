@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wiki="http://purl.org/rss/1.0/modules/wiki/" >
+<channel rdf:about="http://wiki.aspire.ow2.org">
+<title>wiki.aspire.ow2.org</title>
+<link>http://wiki.aspire.ow2.org</link>
+<description>
+wiki.aspire.ow2.org
+</description>
+<image rdf:resource="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif" />
+<dc:language>en</dc:language>
+<dc:rights>Copyright (c) 2008-2010, <a href="http://www.fp7-aspire.eu/">Aspire</a></dc:rights>
+<dc:publisher>XWiki.superadmin</dc:publisher>
+<dc:creator>XWiki.superadmin</dc:creator>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices" />
+</rdf:Seq>
+</items>
+</channel>
+<image rdf:about="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif">
+  <title>XWiki Logo</title>
+  <link>http://wiki.aspire.ow2.org</link>
+  <url>http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif</url>
+</image>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection">
+<title>Main.Documentation.Filtering&Collection</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection</link>
+<description>
+Version 1.78 edited by driss_r on 2014-12-04 15:23:36.0
+</description>
+<dc:date>2014-12-04 15:23:36.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders">
+<title>Main.Documentation.SupportedReaders</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders</link>
+<description>
+Version 1.30 edited by driss_r on 2014-11-28 13:36:40.0
+</description>
+<dc:date>2014-11-28 13:36:40.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation">
+<title>Main.Documentation</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation</link>
+<description>
+Version 1.88 edited by driss_r on 2014-11-27 16:21:30.0
+</description>
+<dc:date>2014-11-27 16:21:30.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test">
+<title>XWiki.test</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test</link>
+<description>
+Version 1.2 edited by superadmin on 2014-11-17 12:11:42.0
+</description>
+<dc:date>2014-11-17 12:11:42.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>XWiki.superadmin</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar">
+<title>XWiki.Toolbar</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar</link>
+<description>
+Version 1.203 edited by driss_r on 2013-09-23 10:58:52.0
+</description>
+<dc:date>2013-09-23 10:58:52.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)">
+<title>Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1.1)</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)</link>
+<description>
+Version 1.16 edited by driss_r on 2013-09-23 10:57:29.0
+</description>
+<dc:date>2013-09-23 10:57:29.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT">
+<title>Main.Documentation.TDT</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT</link>
+<description>
+Version 1.51 edited by driss_r on 2013-08-20 17:04:43.0
+</description>
+<dc:date>2013-08-20 17:04:43.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire">
+<title>XWiki.aspire</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire</link>
+<description>
+Version 1.64 edited by schmidt on 2013-07-17 14:40:59.0
+</description>
+<dc:date>2013-07-17 14:40:59.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.schmidt</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences">
+<title>Main.WebPreferences</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences</link>
+<description>
+Version 1.3 edited by  on 2013-05-21 19:52:05.0
+</description>
+<dc:date>2013-05-21 19:52:05.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value></rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome">
+<title>Main.WebHome</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome</link>
+<description>
+Version 1.79 edited by nkef on 2012-03-14 21:35:57.0
+</description>
+<dc:date>2012-03-14 21:35:57.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References">
+<title>Main.References</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References</link>
+<description>
+Version 1.32 edited by nkef on 2012-03-13 18:13:37.0
+</description>
+<dc:date>2012-03-13 18:13:37.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE">
+<title>Main.Documentation.Filtering&Collection.NFCLightALE</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE</link>
+<description>
+Version 1.5 edited by schmidt on 2012-02-08 11:54:30.0
+</description>
+<dc:date>2012-02-08 11:54:30.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.schmidt</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu">
+<title>XWiki.Menu</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu</link>
+<description>
+Version 1.304 edited by nkef on 2011-10-07 14:31:21.0
+</description>
+<dc:date>2011-10-07 14:31:21.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader">
+<title>Main.Documentation.Bundles.UPnPRFIDReader</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader</link>
+<description>
+Version 1.23 edited by donsez on 2011-09-07 09:50:47.0
+</description>
+<dc:date>2011-09-07 09:50:47.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.donsez</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables">
+<title>Main.Documentation.Deliverables</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables</link>
+<description>
+Version 1.71 edited by nkef on 2011-08-19 15:57:53.0
+</description>
+<dc:date>2011-08-19 15:57:53.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos">
+<title>Main.Documentation.Demos</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos</link>
+<description>
+Version 1.117 edited by nkef on 2011-08-19 15:57:14.0
+</description>
+<dc:date>2011-08-19 15:57:14.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles">
+<title>Main.Documentation.Bundles</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles</link>
+<description>
+Version 1.52 edited by donsez on 2011-06-22 16:17:11.0
+</description>
+<dc:date>2011-06-22 16:17:11.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.donsez</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos">
+<title>Main.Videos</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos</link>
+<description>
+Version 1.10 edited by nkef on 2011-06-17 15:27:33.0
+</description>
+<dc:date>2011-06-17 15:27:33.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire">
+<title>Main.WhoIsUsingAspire</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire</link>
+<description>
+Version 1.9 edited by nkef on 2011-06-17 15:09:04.0
+</description>
+<dc:date>2011-06-17 15:09:04.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices">
+<title>Main.Documentation.BestPractices</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices</link>
+<description>
+Version 1.9 edited by nkef on 2011-06-14 00:30:55.0
+</description>
+<dc:date>2011-06-14 00:30:55.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+</rdf:RDF>

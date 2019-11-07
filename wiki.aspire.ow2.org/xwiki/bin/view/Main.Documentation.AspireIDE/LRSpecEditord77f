@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>LRSpecEditor</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.AspireIDE</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1233321724000</creationDate>
+<date>1273737741000</date>
+<contentUpdateDate>1273737741000</contentUpdateDate>
+<version>1.15</version>
+<title>LR-Spec Editor Plug-in</title>
+<template></template>
+<attachment>
+<filename>LRSpecEditorIDE2.jpg</filename>
+<filesize>109481</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234374040000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>LRSpecEditorIDE3.jpg</filename>
+<filesize>92308</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234374056000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>LRSpecEditorPreferences.jpg</filename>
+<filesize>88906</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234374067000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 LR-Spec Editor Plug-in
+
+----
+#toc("" "" "true")
+----
+1.1 Introduction
+
+The objective of this tool is to provide an interface to edit LRSpec files.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE2.jpg"&gt;{image:LRSpecEditorIDE2.jpg|350}&lt;/a&gt;_&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE3.jpg"&gt;{image:LRSpecEditorIDE3.jpg|350}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1 Users Guide
+
+1.1.1 Download &amp; Run
+You can download the aspireRfidIDE RCP application with the aspireRfidIde-LRSpecEditor plug-in from the [AspireRFID forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIdeEditors” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable.
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory {pre}"user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”){/pre}.
+1.1.1 Configuration
+The LRSpec Editor is configured through the IDE’s preferences window (Window&gt;Preferences) by choosing the “LRSpec Editor Preferences” from the list appearing at the left see the picture below.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorPreferences.jpg"&gt;{image:LRSpecEditorPreferences.jpg|350}&lt;/a&gt;
+&lt;/center&gt;
+
+From there you can configure the:
+*. *EC Specs Directory*: The directory where ECSpecs will be stored which will be used to configure the server’s filtering function.
+*. *HAL LR Specs Directory*: The directory where static and dynamic LRSpecs for HAL readers will be stored.
+*. *RP LR Specs Directory*: The directory where static and dynamic LRSpecs for RP readers will be stored.
+*. *LLRP LR Specs Directory*: The directory where static and dynamic LRSpecs for LLRP readers will be stored.
+*. *List of RP Readers Connection points*: Connection points of RP readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.
+*. *List of RP Readers Notification Points*: Notifications points of RP readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.
+*. *List of Available Dynamic Readers*: Dynamic readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.
+
+1.1 Developers Guide
+LRSpec Editor plug-in is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “[AspireRfidIDECore&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]”.
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* Java 1.6
+* [Eclipse 3.4&gt; http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment plug-ins and [Subversive plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive])
+
+1.1.1 Acquiring the code
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge [SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive] and by using the following URL at the window that appears: 
+svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-LRSpecEditor/
+* right click the repository that have been just created and hit the check out button
+* check the aspireRfidIde-beg project on the list and hit ok
+
+1.1.1 Running the Project
+
+For running AspireRfidIDE with the aspireRfidIde-LRSpecEditor Plug-in:
+* Create an aspireRfidIDE project (unless you already have created one)
+* Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product
+* At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product
+* At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde” and “org.ow2.aspirerfid.ide.LRspec” and then hit the Add required Plug-ins button.
+* Hit apply
+* Now you are ready to run the application.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLRSpecEditorPlugin"&gt;LR-Spec Editor Plug-in&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;2 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload26Run"&gt;2.1 Download &amp; Run&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;2.2 Configuration&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;3 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;3.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;3.2 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRunningtheProject"&gt;3.3 Running the Project&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The objective of this tool is to provide an interface to edit LRSpec files.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE2.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE2.jpg" height="350" alt="LRSpecEditorIDE2.jpg" /&gt;&lt;/a&gt;_&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE3.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorIDE3.jpg" height="350" alt="LRSpecEditorIDE3.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26Run"&gt;Download &amp; Run&lt;/span&gt;&lt;/h4&gt; 
+You can download the aspireRfidIDE RCP application with the aspireRfidIde-LRSpecEditor plug-in from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#65;spireRFID forge&lt;/a&gt;&lt;/span&gt; named “AspireRfidIdeEditors” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable.
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory "user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h4&gt; 
+The LRSpec Editor is configured through the IDE’s preferences window (Window&gt;Preferences) by choosing the “LRSpec Editor Preferences” from the list appearing at the left see the picture below.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorPreferences.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/LRSpecEditor/LRSpecEditorPreferences.jpg" height="350" alt="LRSpecEditorPreferences.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;From there you can configure the:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;EC Specs Directory&lt;/strong&gt;: The directory where ECSpecs will be stored which will be used to configure the server’s filtering function.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;HAL LR Specs Directory&lt;/strong&gt;: The directory where static and dynamic LRSpecs for HAL readers will be stored.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;RP LR Specs Directory&lt;/strong&gt;: The directory where static and dynamic LRSpecs for RP readers will be stored.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;LLRP LR Specs Directory&lt;/strong&gt;: The directory where static and dynamic LRSpecs for LLRP readers will be stored.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;List of RP Readers Connection points&lt;/strong&gt;: Connection points of RP readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;List of RP Readers Notification Points&lt;/strong&gt;: Notifications points of RP readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;List of Available Dynamic Readers&lt;/strong&gt;: Dynamic readers in use. This makes the editing of the specifications faster by making them available to the user to choose from a list at the LRSpec Editor.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt; 
+LRSpec Editor plug-in is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;AspireRfidIDECore&lt;/a&gt;&lt;/span&gt;”.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#69;clipse 3.4&lt;/a&gt;&lt;/span&gt; and above (with RCP/Plug-in Development Environment plug-ins and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#83;ubversive plug-in&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt; 
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#83;VN&lt;/a&gt;&lt;/span&gt;. 
+Check it out by:
+&lt;ul class="star"&gt;
+&lt;li&gt;hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#112;lug-in&lt;/a&gt;&lt;/span&gt; and by using the following URL at the window that appears:&lt;/li&gt;
+&lt;/ul&gt;svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-LRSpecEditor/
+&lt;ul class="star"&gt;
+&lt;li&gt;right click the repository that have been just created and hit the check out button&lt;/li&gt;
+&lt;li&gt;check the aspireRfidIde-beg project on the list and hit ok&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRunningtheProject"&gt;Running the Project&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For running AspireRfidIDE with the aspireRfidIde-LRSpecEditor Plug-in:
+&lt;ul class="star"&gt;
+&lt;li&gt;Create an aspireRfidIDE project (unless you already have created one)&lt;/li&gt;
+&lt;li&gt;Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde” and “org.ow2.aspirerfid.ide.LRspec” and then hit the Add required Plug-ins button.&lt;/li&gt;
+&lt;li&gt;Hit apply&lt;/li&gt;
+&lt;li&gt;Now you are ready to run the application.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

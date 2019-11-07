@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>LOC</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>xwiki:XWiki.nektarios</creator>
+<author>xwiki:XWiki.nektarios</author>
+<contentAuthor>xwiki:XWiki.nektarios</contentAuthor>
+<creationDate>1241790517000</creationDate>
+<date>1241792819000</date>
+<contentUpdateDate>1241792819000</contentUpdateDate>
+<version>1.11</version>
+<title>Lines of Code Analysis</title>
+<template></template>
+<attachment>
+<filename>loc.png</filename>
+<filesize>32668</filesize>
+<author>xwiki:XWiki.nektarios</author>
+<date>1241792798000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<content>1 Lines of Code Analysis
+
+In this page we provide an analysis for the lines of code that have been commited to the project's SVN by 21/4/2009. 
+
+1.1 AspireRFID components
+
+{image:loc.png}
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLinesofCodeAnalysis"&gt;Lines of Code Analysis&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;In this page we provide an analysis for the lines of code that have been commited to the project's SVN by 21/4/2009. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAspireRFIDcomponents"&gt;AspireRFID components&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/LOC/loc.png" alt="loc.png" /&gt;
+</renderedcontent>
+</xwikidoc>

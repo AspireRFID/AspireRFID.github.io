@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Photos</web>
+<name>AthensDigitalWeek</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.PhotoAlbumClass</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1237375554000</creationDate>
+<date>1256242290000</date>
+<contentUpdateDate>1256242290000</contentUpdateDate>
+<version>1.12</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>AthensDigitalWeek1.jpg</filename>
+<filesize>438163</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237375668000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek2.jpg</filename>
+<filesize>327183</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237375684000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek3.jpg</filename>
+<filesize>304840</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376118000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek4.jpg</filename>
+<filesize>300829</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376136000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek5.jpg</filename>
+<filesize>570049</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376153000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek6.jpg</filename>
+<filesize>391320</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376166000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek7.jpg</filename>
+<filesize>670323</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376183000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek8.jpg</filename>
+<filesize>705465</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376203000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek9.jpg</filename>
+<filesize>649197</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376226000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.PhotoAlbumClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<description>
+<name>description</name>
+<prettyName>description</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<rows>5</rows>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</description>
+<height>
+<name>height</name>
+<prettyName>Thumbnail Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height>
+<height2>
+<name>height2</name>
+<prettyName>Photo Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height2>
+</class>
+<name>Photos.AthensDigitalWeek</name>
+<number>0</number>
+<className>XWiki.PhotoAlbumClass</className>
+<property>
+<description>AspireRFID at Athens Digital Week </description>
+</property>
+<property>
+<height>150</height>
+</property>
+<property>
+<height2>400</height2>
+</property>
+<property>
+<title>Athens Digital Week 2008</title>
+</property>
+</object>
+<content>#includeForm("XWiki.PhotoAlbumClassSheet")</content>
+<renderedcontent>&lt;br /&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HAthensDigitalWeek2008"&gt;Athens Digital Week 2008&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;AspireRFID at Athens Digital Week&lt;p class="paragraph"/&gt;&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=1#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek1.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=2#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek2.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=3#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek3.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=4#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek4.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=5#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek5.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=6#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek6.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=7#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek7.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=8#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek8.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=9#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AthensDigitalWeek/AthensDigitalWeek9.jpg?height=150" height="150"/&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;&lt;br /&gt;
+&lt;i class="italic"&gt;
+ &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=all"&gt;All Photos&lt;/a&gt;&lt;/span&gt; &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AthensDigitalWeek?diapo=1"&gt;Diaporama&lt;/a&gt;&lt;/span&gt;&lt;/i&gt;
+
+</renderedcontent>
+</xwikidoc>

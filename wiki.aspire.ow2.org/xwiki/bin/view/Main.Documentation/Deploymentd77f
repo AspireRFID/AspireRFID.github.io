@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Deployment</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nektarios</creator>
+<author>xwiki:XWiki.nektarios</author>
+<contentAuthor>xwiki:XWiki.nektarios</contentAuthor>
+<creationDate>1223543778000</creationDate>
+<date>1223554724000</date>
+<contentUpdateDate>1223554724000</contentUpdateDate>
+<version>1.7</version>
+<title></title>
+<template></template>
+<content>1 Deployment
+
+In this section we will provide information regarding the deployment of the components available at the [AspireRFID SVN branches|http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches]. Before getting on with the deployment of the components, you should check the [building|Building] section which describes how to build the software from the source. 
+
+----
+#toc("" "" "")
+----
+
+1.1 AITdev branch components
+
+This branch contains three types of software components.
+# Components deployable on an OSGI container (e.g. apache felix)
+# Components deployable on a Java Application server (e.g. apache tomcat)
+# Client side application (non-deployable)
+
+We will describe how to deploy the first two types of components.
+
+1.1.1 OSGI bundles
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means that one can take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, he can make the reader AspireRFID enabled. 
+
+1.1.1.1 Deploying the bundles
+
+To deploy the bundles you need first to get the latest version of [Apache Felix|http://felix.apache.org] and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:
+
+~~mosgi.jmxconsole.rmiport.core=9999~~
+
+Then you may start the server by running the following command (being in the felix directory):
+
+~~java -jar bin/felix.jar~~
+
+You will then be asked to enter a profile name; you should type in the word "core" (without the quotes) and press enter. The the server starts and you will be prompted with the felix shell (&gt;). You may type help to get a list of the available commands. Now you need to deploy some required bundles, which can be found at [the forge SVN|http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/sandbox/nektarios/Common%20bundles/AITdev%20required%20bundles].
+
+These are the following (note the sequence):
+# OSGi R4 Compendium Bundle
+# MOSGi JMX-MX4J Agent Service
+# MOSGi JMX rmiregistry
+# MOSGi JMX-MX4J RMI Connector
+# Apache Jakarta log4j Plug-in
+# OW2 Bundles :: Externals :: Commons Collections
+# castor
+# antlr-osgi bundle
+# commons-lang-osgi bundle
+# commons-configuration-osgi
+
+To deploy a bundle you will need the following command:
+
+~~start file:"full_bundle_location"~~
+
+where ~~full_bundle_location~~ is the location of the bundle on your disk.
+
+You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+
+# JaxBLib
+# TDT Implementation bundle
+# Reader Protocol bundle (API)
+# Reader Protocol implementation bundle
+# Simulator reader
+# Intermec IF5 reader proxy
+
+The two latter bundles provide a HAL implementation of the RP.
+
+1.1.1.1 Configuration
+
+After having done all that, you may start and configure the RP bundle using its JMX interface. You may start the JMX console and connect to the server with the following command:
+
+~~jconsole service:jmx:rmi:///jndi/rmi://localhost:9999/core~~
+
+The jconsole tool is provided by the Sun Java JDK. A graphical user interface should be displayed providing means of interacting with the bundle through the exposed JMX functionality. You may see the available functionality under the menu rfid-&gt;service-&gt;RPreader. The administrator may interact with the bundle through the Attributes and Operations. We will now describe how to start, stop the bundle and to change the active HAL implementation. 
+
+The default Reader Protocol implementation bundle configuration requires the Simulator reader bundle installed. There are two HAL implementations available; a simulated reader and an Intermec IF5 proxy reader which uses the BRI protocol natively.
+
+* To start the bundle functionality you have to simply click the "start" button under the Operations menu. By default the simulator reader starts and the user is provided with a GUI for creating tags and moving them over the virtual antennas.
+
+* To stop the bundle functionality you have to simply click the "stop" button under the Operations menu. Please note that though the simulator window does not close when the bundle is stopped, this module becomes isolated from the rest of the components (like the ALE) and it is safe to close the GUI window through the designated button.
+
+* To enable the use of the Intermec IF5 reader you have to add configuration about the reader. The process of adding configuration is the following:
+** Under the operations you add the following in the addReader button:
+*** p1=IntermecIF5
+*** p2=org.ow2.aspirerfid.reader.rp.impl.hal.impl.intermec.IntermecIF5Controller
+*** p3=/props/IntermecIF5ControllerProperties.xml
+*** Then you click the button
+** Under the operations you add the following in the addReaderReadpoint button
+*** p1=IntermecIF5
+*** p2=Antenna1
+*** Then you click the button
+** Under the operations you add the following in the addSource button
+*** p1=Antenna1
+*** p2=true
+*** p3=Antenna1
+*** Then you click the button
+** Under the attributes you edit the CurrentSource addSource field and you set the value Antenna1 and then you press enter
+** Press the loadConfig button. This will load the changes and restart the bundle functionality.
+
+When you stop the bundle the configuration changes will be permanently saved to a file under the user's profile with the name ReaderDevice.xml. You may edit this file directly, ~~if you know what you are doing~~. When you start again the bundle the configuration is going to be loaded from this file. If you delete it, the default one is going to be loaded instead.
+
+1.1.1 Web application
+
+To deploy the web application a Java application server (e.g Apache Tomcat) is required to be installed. This guide assumes that you use an Apache Tomcat server.
+
+1.1.1.1 Deployment
+
+1.1.1.1 Configuration</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;In this section we will provide information regarding the deployment of the components available at the &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches"&gt;&amp;#65;spireRFID SVN branches&lt;/a&gt;&lt;/span&gt;. Before getting on with the deployment of the components, you should check the &lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/Building?parent=Main.Documentation.Deployment"&gt;&lt;span class="wikicreatelinktext"&gt;building&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt; section which describes how to build the software from the source.&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAITdevbranchcomponents"&gt; AITdev branch components&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HOSGIbundles"&gt; OSGI bundles&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDeployingthebundles"&gt; Deploying the bundles&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt; Configuration&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HWebapplication"&gt; Web application&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDeployment"&gt; Deployment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration-1"&gt; Configuration&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAITdevbranchcomponents"&gt;AITdev branch components&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This branch contains three types of software components.
+&lt;ol&gt;&lt;li&gt;Components deployable on an OSGI container (e.g. apache felix)&lt;/li&gt;
+&lt;li&gt;Components deployable on a Java Application server (e.g. apache tomcat)&lt;/li&gt;
+&lt;li&gt;Client side application (non-deployable)&lt;/li&gt;
+&lt;/ol&gt;We will describe how to deploy the first two types of components.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGIbundles"&gt;OSGI bundles&lt;/span&gt;&lt;/h4&gt; 
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means that one can take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, he can make the reader AspireRFID enabled. 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HDeployingthebundles"&gt;Deploying the bundles&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;To deploy the bundles you need first to get the latest version of &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org"&gt;&amp;#65;pache Felix&lt;/a&gt;&lt;/span&gt; and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;mosgi.jmxconsole.rmiport.core=9999&lt;/i&gt;&lt;p class="paragraph"/&gt;Then you may start the server by running the following command (being in the felix directory):&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;java -jar bin/felix.jar&lt;/i&gt;&lt;p class="paragraph"/&gt;You will then be asked to enter a profile name; you should type in the word "core" (without the quotes) and press enter. The the server starts and you will be prompted with the felix shell (&gt;). You may type help to get a list of the available commands. Now you need to deploy some required bundles, which can be found at &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/sandbox/nektarios/Common%20bundles/AITdev%20required%20bundles"&gt;&amp;#116;he forge SVN&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;These are the following (note the sequence):
+&lt;ol&gt;&lt;li&gt;OSGi R4 Compendium Bundle&lt;/li&gt;
+&lt;li&gt;MOSGi JMX-MX4J Agent Service&lt;/li&gt;
+&lt;li&gt;MOSGi JMX rmiregistry&lt;/li&gt;
+&lt;li&gt;MOSGi JMX-MX4J RMI Connector&lt;/li&gt;
+&lt;li&gt;Apache Jakarta log4j Plug-in&lt;/li&gt;
+&lt;li&gt;OW2 Bundles :: Externals :: Commons Collections&lt;/li&gt;
+&lt;li&gt;castor&lt;/li&gt;
+&lt;li&gt;antlr-osgi bundle&lt;/li&gt;
+&lt;li&gt;commons-lang-osgi bundle&lt;/li&gt;
+&lt;li&gt;commons-configuration-osgi&lt;/li&gt;
+&lt;/ol&gt;To deploy a bundle you will need the following command:&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;start file:"full_bundle_location"&lt;/i&gt;&lt;p class="paragraph"/&gt;where &lt;i class="italic"&gt;full_bundle_location&lt;/i&gt; is the location of the bundle on your disk.&lt;p class="paragraph"/&gt;You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+&lt;ol&gt;&lt;li&gt;JaxBLib&lt;/li&gt;
+&lt;li&gt;TDT Implementation bundle&lt;/li&gt;
+&lt;li&gt;Reader Protocol bundle (API)&lt;/li&gt;
+&lt;li&gt;Reader Protocol implementation bundle&lt;/li&gt;
+&lt;li&gt;Simulator reader&lt;/li&gt;
+&lt;li&gt;Intermec IF5 reader proxy&lt;/li&gt;
+&lt;/ol&gt;The two latter bundles provide a HAL implementation of the RP.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;After having done all that, you may start and configure the RP bundle using its JMX interface. You may start the JMX console and connect to the server with the following command:&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;jconsole service:jmx:rmi:///jndi/rmi://localhost:9999/core&lt;/i&gt;&lt;p class="paragraph"/&gt;The jconsole tool is provided by the Sun Java JDK. A graphical user interface should be displayed providing means of interacting with the bundle through the exposed JMX functionality. You may see the available functionality under the menu rfid-&gt;service-&gt;RPreader. The administrator may interact with the bundle through the Attributes and Operations. We will now describe how to start, stop the bundle and to change the active HAL implementation.&lt;p class="paragraph"/&gt;The default Reader Protocol implementation bundle configuration requires the Simulator reader bundle installed. There are two HAL implementations available; a simulated reader and an Intermec IF5 proxy reader which uses the BRI protocol natively.
+&lt;ul class="star"&gt;
+&lt;li&gt;To start the bundle functionality you have to simply click the "start" button under the Operations menu. By default the simulator reader starts and the user is provided with a GUI for creating tags and moving them over the virtual antennas.&lt;/li&gt;
+&lt;li&gt;To stop the bundle functionality you have to simply click the "stop" button under the Operations menu. Please note that though the simulator window does not close when the bundle is stopped, this module becomes isolated from the rest of the components (like the ALE) and it is safe to close the GUI window through the designated button.&lt;/li&gt;
+&lt;li&gt;To enable the use of the Intermec IF5 reader you have to add configuration about the reader. The process of adding configuration is the following:&lt;ul class="star"&gt;
+&lt;li&gt;Under the operations you add the following in the addReader button:&lt;ul class="star"&gt;
+&lt;li&gt;p1=IntermecIF5&lt;/li&gt;
+&lt;li&gt;p2=org.ow2.aspirerfid.reader.rp.impl.hal.impl.intermec.IntermecIF5Controller&lt;/li&gt;
+&lt;li&gt;p3=/props/IntermecIF5ControllerProperties.xml&lt;/li&gt;
+&lt;li&gt;Then you click the button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Under the operations you add the following in the addReaderReadpoint button&lt;ul class="star"&gt;
+&lt;li&gt;p1=IntermecIF5&lt;/li&gt;
+&lt;li&gt;p2=Antenna1&lt;/li&gt;
+&lt;li&gt;Then you click the button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Under the operations you add the following in the addSource button&lt;ul class="star"&gt;
+&lt;li&gt;p1=Antenna1&lt;/li&gt;
+&lt;li&gt;p2=true&lt;/li&gt;
+&lt;li&gt;p3=Antenna1&lt;/li&gt;
+&lt;li&gt;Then you click the button&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Under the attributes you edit the CurrentSource addSource field and you set the value Antenna1 and then you press enter&lt;/li&gt;
+&lt;li&gt;Press the loadConfig button. This will load the changes and restart the bundle functionality.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;When you stop the bundle the configuration changes will be permanently saved to a file under the user's profile with the name ReaderDevice.xml. You may edit this file directly, &lt;i class="italic"&gt;if you know what you are doing&lt;/i&gt;. When you start again the bundle the configuration is going to be loaded from this file. If you delete it, the default one is going to be loaded instead.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWebapplication"&gt;Web application&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;To deploy the web application a Java application server (e.g Apache Tomcat) is required to be installed. This guide assumes that you use an Apache Tomcat server.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h5&gt; 
+</renderedcontent>
+</xwikidoc>

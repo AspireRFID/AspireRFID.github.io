@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/PhysicalReaderConfiguration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - PhysicalReaderConfiguration
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin9d8f.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/PhysicalReaderConfiguration">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='PhysicalReaderConfiguration.html'>Reader Configuration & Management Plug-in</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.AspireIDE/Main.Documentation.AspireIDE_PhysicalReaderConfiguration.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="PhysicalReaderConfigurationd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation.AspireIDE/PhysicalReaderConfigurationcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="PhysicalReaderConfigurationd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HReaderConfiguration26ManagementPlugin">Reader Configuration & Management Plug-in</span></h2><p class="paragraph"/><hr class="line"/>
+            <ul>
+          <li><a href="#HIntroduction"> Introduction</a> 
+      <li><a href="#HUsersGuide"> Users Guide</a> 
+        <ul>
+          <li><a href="#HDownload26Run"> Download & Run</a> 
+      <li><a href="#HStartUp"> StartUp</a> 
+      <li><a href="#HJMXmanagementconsole"> JMX management console</a> 
+      <li><a href="#HJMXconfigurationconsole"> JMX configuration console</a> 
+        <ul>
+          <li><a href="#HReaderinformation"> Reader information</a> 
+      <li><a href="#HMainconfiguration"> Main configuration</a> 
+      <li><a href="#HSources"> Sources</a> 
+      <li><a href="#HReadersconfiguration"> Readers configuration</a> 
+        </ul>
+       </ul>
+          <li><a href="#HDevelopersGuide"> Developers Guide</a> 
+        <ul>
+          <li><a href="#HAddingnewreaderinformation"> Adding new reader information</a> 
+      <li><a href="#HJMXMBean"> JMX MBean</a> 
+        <ul>
+          <li><a href="#HMBeanOperations"> MBean Operations</a> 
+      </ul></ul></ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HIntroduction">Introduction</span></h3><p class="paragraph"/>This tool provides a management front-end based on the Java Management extensions (JMX) for the <span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">Reader Core proxy</a></span>. It enables the end user to edit the runtime parameters of the proxy and to manage its status. Though the management interface is usable through any jmx capable console, like SUN's jconsole, this plug-in enables integrated and user friendly management.
+<h3 class="heading-1-1"><span id="HUsersGuide">Users Guide</span></h3> 
+<h4 class="heading-1-1-1"><span id="HDownload26Run">Download & Run</span></h4><p class="paragraph"/>You can download the Reader Configuration & Management tool from the <span class="wikiexternallink"><a href="http://forge.objectweb.org/project/showfiles.php?group_id=324">&#65;spireRFID forge</a></span> named “AspireRfidIdeToolCollection” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory "user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”).
+<h4 class="heading-1-1-1"><span id="HStartUp">StartUp</span></h4> 
+You can gain access to the management and the configuration interface from the AspireRfidIDE by clicking Window -> Show view and then selecting <strong class="strong">JMX management console</strong> or <strong class="strong">JMX configuration console</strong>.<p class="paragraph"/>Before trying to use plug-in you should make sure that you have a <span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">Reader Core proxy</a></span> instance running and you have configured properly the AspireIDE configuration regarding the JMX endpoint, located at Window->Preferences->Management console.<p class="paragraph"/><a href="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg"><img src="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg" height="50%" width="50%" alt="ReaderCoreProxyManagementPreferences.jpg" /></a><p class="paragraph"/>The JMX server URL field should contain the appropriate url pointing to the OSGI JMX RMI endpoint
+<h4 class="heading-1-1-1"><span id="HJMXmanagementconsole">JMX management console</span></h4><p class="paragraph"/>This tool provides high level control over the reader proxy. It provides the user with the following functionality:
+<ul class="star">
+<li><strong class="strong">Current status</strong>: Displays the current status of the proxy component. The possible values are:<ul class="star">
+<li>DISCONNECTED: The proxy cannot be reached. This could be happening either because the OSGI container is shut down, or because the Reader Core Proxy bundle is not properly deployed, or the bundle is stopped or the URL connection string, mentioned before is wrong.</li>
+<li>STOPPED: The plug-in has been connected to the bundle and its operation is set to Stopped</li>
+<li>STARTED: The plug-in has been connected to the bundle and its operation is set to Started</li>
+</ul>
+</li>
+<li><strong class="strong">Refresh status</strong>: Refreshed the current status (described above).</li>
+<li><strong class="strong">Start</strong>: Starts the reader proxy operation</li>
+<li><strong class="strong">Stop</strong>: Stops the reader proxy operation</li>
+<li><strong class="strong">Reset configuration</strong>: Deletes every change that may have happened to the proxy component and restores the default configuration file. <strong class="strong">The default configuration loads by the simulator reader when the proxy is started</strong></li>
+<li><strong class="strong">Save and load updated configuration</strong>: This operation saves the updated configuration to a new configuration file, and loads it to the runtime. You can update the configuration through the JMX configuration console. This operation is mandatory if you have changed any parameter through this console and you want to apply it.</li>
+<li><strong class="strong">Download configuration file</strong>: This operation enables you to backup the currently loaded configuration and save it locally as a XML file. When you click on this button a Save As dialogue will be presented to choose the location and the name of the backup file.</li>
+<li><strong class="strong">Upload configuration file</strong>: This operation enables you to restore a previously backed up XML configuration file and set the new configuration as active. By clicking on the button you will be prompted of a dialogue that will let you choose a configuration file. You should backup the current configuration before trying to upload a new one.</li>
+</ul><a href="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg"><img src="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg" height="50%" width="50%" alt="ReaderCoreProxyManagementIDE.jpg" /></a>
+<h4 class="heading-1-1-1"><span id="HJMXconfigurationconsole">JMX configuration console</span></h4><p class="paragraph"/>When you open the console, if the connection URL is valid and operational, all configuration fields will be populated with the live configuration information from the server. There are 4 panels with grouped configuration that can be edited. <strong class="strong">Every update that is executed through the console is NOT activated immediately</strong>. Instead you have to hit the <strong class="strong">Save and load updated configuration</strong> button located an the JMX management console. This will save the configuration and restart the reader with the updated configuration. We will now iterate of the available configuration groups.
+<h5 class="heading-1-1-1-1"><span id="HReaderinformation">Reader information</span></h5> 
+This is general information regarding the reader proxy that is used for identification purposes. The <i class="italic">reader name</i> parameter is also used by the <span class="wikilink"><a href="../Main.Documentation/Filtering%26Collection.html">filtering and collection server</a></span> to identify the proxy component.
+<h5 class="heading-1-1-1-1"><span id="HMainconfiguration">Main configuration</span></h5> 
+These configuration parameters are of general purpose that define operational parameters of the proxy module. These parameters are referenced and documented at the <span class="wikiexternallink"><a href="http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf">&#69;PCglobal Reader Protocol</a></span> standard v1.1.
+In most cases you will not need to alter any of these parameters, except if there is a port conflict with the TCP and/or HTTP servers that may be used. By default the proxy opens two server connections, a TCP server on port 5566 and one HTTP server on port 8000. This configuration can be altered from this configuration group.
+<h5 class="heading-1-1-1-1"><span id="HSources">Sources</span></h5> 
+Sources are an abstraction through which we can manage and access a group of read points. These read points may be scattered and could have miscellaneous capabilities. Fro example they could be able to read RFID or bardcode or RF tags. 
+Through this configuration group you can <strong class="strong">add a new source</strong> by entering a source name and selecting an available read point to connect with the source. You can add a read point through the <i class="italic">readers configuration</i> parameters group.
+Through the <i class="italic">current source</i> group you can select the source that will be be used (active) in the proxy configuration.
+<h5 class="heading-1-1-1-1"><span id="HReadersconfiguration">Readers configuration</span></h5> 
+Through this group you may add a new reader to the configuration or change the configuration of an existing reader.
+<ul class="star">
+<li><strong class="strong">To add a new reader</strong> you should start by selecting <i class="italic">NEW</i> from the existing readers list. The you set the reader name, the class name and the properties file of the reader and push the <i class="italic">Add reader</i> button. After adding the reader you can set its read point names.</li>
+<li><strong class="strong">To edit the configuration</strong> of a reader you should first select it through the <i class="italic">existing readers</i> list. Then you are able to view some permanent configuration parameters of the selected reader and add a read point.</li>
+</ul><h3 class="heading-1-1"><span id="HDevelopersGuide">Developers Guide</span></h3> 
+In this section we will describe the JMX aspects of this component and information on how to add information for a new reader that will be used with the Reader Core Proxy.
+<h4 class="heading-1-1-1"><span id="HAddingnewreaderinformation">Adding new reader information</span></h4> 
+As it is explained at the <span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">reader core proxy</a></span> page, you can add a non RP compliant reader to the Aspire middleware. In order to enable the end user to activate and use a new reader implementation, apart from deploying the bundle to the OSGI server, you have to follow some steps to make this information available.<p class="paragraph"/>The option to add a new reader is available at the <i class="italic">Readers configuration</i> tab of the <i class="italic">JMX configuration console</i>. To add a new reader, the user has to select <i class="italic">NEW</i> from the readers list and then select the implementation class name from the available list and define the properties file, if there is such file required by the implementation. The available class files are defined through the <i class="italic">Preferences</i> dialogue (<i class="italic">Window->Preferences->Management console</i>). Through this form you can add the name of the class file implementing the <i class="italic">org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction</i> interface, as defined <span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html#HComponentanalysis">here</a></span>. You should also provide the user of the information regarding the properties file location, which should be existent within the deployed bundle. The property file location should be relative to bundle root directory (e.g. /props/ConfigFile.properties).
+<h4 class="heading-1-1-1"><span id="HJMXMBean">JMX MBean</span></h4> 
+Through the managed OSGI (MOSGI) we expose one managed bean (MBean) that provides several operations and attributes. This MBean is defined within the ReaderProtocol bundle through the Java interface <i class="italic">org.ow2.aspirerfid.reader.rp.RmRpMBean</i>. The MBean implementation exists in the ReaderProtocolImpl bundle through the <i class="italic">org.ow2.aspirerfid.reader.rp.impl.ReaderProtocol</i> class. The following is provides is the list of operations and attributes.
+<h5 class="heading-1-1-1-1"><span id="HMBeanOperations">MBean Operations</span></h5> 
+<ul class="star">
+<li>Start,stop and check the functionality of the reader proxy based on the active configuration</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> start();
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> stop();
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> isStarted();</pre></div>
+<ul class="star">
+<li>Loads an updated configuration and makes it active</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> void loadConfig();</pre></div>
+<ul class="star">
+<li>Loads the default configuration and makes it active</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> void resetConfig();</pre></div>
+<ul class="star">
+<li>Loads an XML serialized configuration file and makes it active</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> void loadConfigurationFile(<span class="java&#45;object">String</span> serializedFile);</pre></div>
+<ul class="star">
+<li>Serializes the XML configuration file and returns it</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> saveConfigurationFileAs();</pre></div>
+<ul class="star">
+<li>Get or set functional parameters of the proxy bundle, without making them active. To activate and save the configuration you have to use the <i class="italic">loadConfig</i> operation.</li>
+</ul><div class="code"><pre><span class="java&#45;keyword">public</span> void setEPC(<span class="java&#45;object">String</span> epc);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getEPC();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setName(<span class="java&#45;object">String</span> name);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getName();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setManufacturer(<span class="java&#45;object">String</span> manufacturer);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getManufacturer();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setManufacturerDescription(<span class="java&#45;object">String</span> desc);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getManufacturerDescription();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setModel(<span class="java&#45;object">String</span> model);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getModel();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setHandle(<span class="java&#45;object">int</span> handle);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getHandle();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setRole(<span class="java&#45;object">String</span> role);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getRole();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setMaxSourceNumber(<span class="java&#45;object">int</span> number);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getMaxSourceNumber();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setMaxTagSelectorNumber(<span class="java&#45;object">int</span> number);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getMaxTagSelectorNumber();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setMaxTriggerNumber(<span class="java&#45;object">int</span> number);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getMaxTriggerNumber();<p class="paragraph"/><span class="java&#45;keyword">public</span> void addReader(<span class="java&#45;object">String</span> name, <span class="java&#45;object">String</span> className, <span class="java&#45;object">String</span> propertiesFile);
+<span class="java&#45;keyword">public</span> void addReaderReadpoint(<span class="java&#45;object">String</span> readerName, <span class="java&#45;object">String</span> readpoint);<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span>&#91;&#93; getReaders();<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getReaderClassName(<span class="java&#45;object">String</span> readerName);<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getReaderPropertiesFile(<span class="java&#45;object">String</span> readerName);<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span>&#91;&#93; getReadPointNames(<span class="java&#45;object">String</span> readerName);<p class="paragraph"/><span class="java&#45;keyword">public</span> void setCurrentSource(<span class="java&#45;object">String</span> source);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getCurrentSource();<p class="paragraph"/><span class="java&#45;keyword">public</span> void addSource(<span class="java&#45;object">String</span> name, <span class="java&#45;object">boolean</span> fixed, <span class="java&#45;object">String</span> readpoint);<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span>&#91;&#93; getSources();<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> getIsSourceFixed(<span class="java&#45;object">String</span> sourceName);<p class="paragraph"/><span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span> getSourceReadpoint(<span class="java&#45;object">String</span> sourceName);<p class="paragraph"/><span class="java&#45;keyword">public</span> void addIOEdgeTriggerPortManager(<span class="java&#45;object">String</span> port);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span>&#91;&#93; getIOEdgeTriggerPortManager();<p class="paragraph"/><span class="java&#45;keyword">public</span> void addIOValueTriggerPortManager(<span class="java&#45;object">String</span> port);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">String</span>&#91;&#93; getIOValueTriggerPortManager();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setTcpServerConnection(<span class="java&#45;object">boolean</span> isEnabled);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> getTcpServerConnection();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setTcpPort(<span class="java&#45;object">int</span> port);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getTcpPort();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setHttpServerConnectionEnabled(<span class="java&#45;object">boolean</span> isEnabled);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">boolean</span> getHttpServerConnectionEnabled();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setHttpPort(<span class="java&#45;object">int</span> port);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getHttpPort();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setNotificationListenTimeout(<span class="java&#45;object">long</span> timeout);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getNotificationListenTimeout();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setThreadPoolSize(<span class="java&#45;object">int</span> size);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getThreadPoolSize();<p class="paragraph"/>//For the active source
+<span class="java&#45;keyword">public</span> void setIsSourceFized(<span class="java&#45;object">boolean</span> isFixed);<p class="paragraph"/><span class="java&#45;keyword">public</span> void setGlimpsedTimeout(<span class="java&#45;object">long</span> timeout);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getGlimpsedTimeout();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setObservedThreshold(<span class="java&#45;object">long</span> threshold);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getObservedThreshold();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setObservedTimeout(<span class="java&#45;object">long</span> timeout);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getObservedTimeout();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setLostTimeout(<span class="java&#45;object">long</span> timeout);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getLostTimeout();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setReadCyclesPerTrigger(<span class="java&#45;object">int</span> cycles);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getReadCyclesPerTrigger();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setMaxReadDutyCycles(<span class="java&#45;object">int</span> cycles);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">int</span> getMaxReadDutyCycles();<p class="paragraph"/><span class="java&#45;keyword">public</span> void setReadTimeout(<span class="java&#45;object">long</span> timeout);
+<span class="java&#45;keyword">public</span> <span class="java&#45;object">long</span> getReadTimeout();</pre></div>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='PhysicalReaderConfiguration.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation.AspireIDE/index40d5.html?parent=Main.Documentation.AspireIDE.PhysicalReaderConfiguration"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation.AspireIDE/0?parent=Main.Documentation.AspireIDE.PhysicalReaderConfiguration"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            2 Attachments  by
+            nektarios ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                <img src="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE1b1e.jpg?width=80" alt="ReaderCoreProxyManagementIDE.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg">ReaderCoreProxyManagementIDE.jpg</
+                                     a></td>
+            <td>1.1</td><td>nektarios</td><td>116606</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences1b1e.jpg?width=80" alt="ReaderCoreProxyManagementPreferences.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg">ReaderCoreProxyManagementPreferences.jpg</
+                                     a></td>
+            <td>1.1</td><td>nektarios</td><td>56555</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation.AspireIDE/PhysicalReaderConfiguration" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation/StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main.Documentation/AspireIDE.html'>Main.Documentation.AspireIDE</a> &gt; <a href='PhysicalReaderConfiguration.html'>Reader Configuration & Management Plug-in</a>
+  (en)
+ <br />
+  Creator: nektarios
+ &nbsp;Date: 2009/01/30 13:20
+ <br />
+ Last Author: nkons
+ &nbsp;Date: 2010/05/17 09:10
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/PhysicalReaderConfiguration by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:15:54 GMT -->
+</html>

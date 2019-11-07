@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>APDL</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator></creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1269251786000</creationDate>
+<date>1274134795000</date>
+<contentUpdateDate>1274134795000</contentUpdateDate>
+<version>1.30</version>
+<title>ASPIRE Process Description Language (APDL)</title>
+<template></template>
+<attachment>
+<filename>apdl_structure.jpg</filename>
+<filesize>107382</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1269255020000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>apdl.xsd</filename>
+<filesize>3511</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1269255233000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>acme.jpg</filename>
+<filesize>106613</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1269356997000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>acme.apdl</filename>
+<filesize>8955</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1274112350000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1.1 ASPIRE Process Description Language (APDL)
+
+----
+#toc("" "" "true")
+----
+
+1.1.1 APDL Specification
+
+The AspireRFID Process Description Language (APDL) Specification has a structure as shown in the figure below.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/apdl_structure.jpg"&gt;{image:apdl_structure.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+The root element that may contain the description of a complete open loop business process, such as a supply chain, is the Open Loop Composite Business Process (&amp;lt;OLCBProc/&amp;gt;).
+
+An OLCBProc element consists of the following:
+
+* a set of Closed Loop Composite Business Process (&amp;lt;CLCBProc/&amp;gt;) elements, capable of describing complete closed loop supply chain scenarios. A CLCBProc elemtent consists of:
+
+** A Description (&amp;lt;Description/&amp;gt;) element.
+** A set of Elementary Business Process (&amp;lt;EBProc/&amp;gt;) elements. EBProc's are the most important elements in the APDL definition since the whole process can be broke down to Elementary Business process. Each one of them carries information that the AspireRfid middleware requires in order to be configured. An EBProc element contains:
+
+*** A Description (&amp;lt;Description/&amp;gt;) element, with a simple description of the process.
+
+*** A TransitionRestrictions (&amp;lt;TransitionRestrictions/&amp;gt;) element, containing a set of TransitionRestriction (&amp;lt;TransitionRestriction/&amp;gt;) elements.
+
+*** An ExtendedAttributes (&amp;lt;ExtendedAttributes/&amp;gt;) element, containing a set of ExtendedAttribute (&amp;lt;ExtendedAttribute/&amp;gt;) elements. This element is used in order to store the basic configuration data, for instance the ECSpec Subscription URI, and the element's graphical representation data.
+
+
+*** A set of DataFields, that include the required ECSpec (&amp;lt;ECSpec/&amp;gt;), LRSpec (&amp;lt;LRSpec/&amp;gt;) and Master Data (&amp;lt;EPCISMasterDataDocument/&amp;gt;) documents.
+
+** A Transitions (&amp;lt;Transitions/&amp;gt;) element, that carries the Elementary Business Process context-related semantics description of the ransitions between them. The Transition element is based on the XPDL V1.0 specification.
+
+* A Transitions (&amp;lt;Transitions/&amp;gt;) element, in the same fashion as in the EBProc element, regarding Closed Loop Composite Business processes this time.
+
+Note that the description is not complete; the aim is to provide a general overview for the understanding of the basic concepts behind the APDL inception. A complete reference on the structure and a means to assure creation of valid APDL files is provided by the corresponding XSD (XML Schema Definition) document: &lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/apdl.xsd"&gt;apdl.xsd&lt;/a&gt;.
+
+
+1.1 Describing an RFID Workflow Process Scenario Using APDL
+
+In this example we will describe how an APDL specification file can be defined in order to configure the whole middleware serving a warehouse receiving process.
+
+1.1.1 Problem description
+
+A Company Named "Acme" is a Personal Computer Assembler and collaborates with a Microchip Manufacturer that provides it with the required CPUs. Acme, at regular basis places orders to the Microchip Manufacturer for specific CPUs. Acme owns a central building with three warehouses. The first warehouse named Warehouse1 has 2 Sections named Section1 and Section2, respectively. Section1 has an entrance point where the delivered goods arrive.
+
+Acme needs a way to automatically receive goods at Warehouse1 Section1 and inform its Warehouse Management System (WMS) for the new product availability and the correct completeness of each transaction.
+
+
+1.1.1 Solution Requirements
+
+An RFID Portal should be placed to Acme's Warehouse1 Section1 entrance point which will be called ReadPoint1. The RFID portal will be equipped with one Reader WarehouseRfidReader1. The received goods should get equipped with preprogrammed RFID tags from their "Manufacturer". The received goods should be accompanied with a preprogrammed RFID enabled delivery document. And finally the middleware should be configured for the specific scenario.
+
+
+1.1.1 Building the Required APDL Specification File
+
+For this solution we need to build an CLCBProc as shown below (of id: urn:epcglobal:fmcg:bti:acmesupplying) which will include ACME’s Elementary Business Processes. We are dealing only with one company so defining other Close Loop Business Processes will not be required. 
+
+
+{code:xml}
+
+&lt;OLCBProc&gt;
+	&lt;!-- AspireRFID Process Description (Language Specification) --&gt;
+
+	&lt;CLCBProc id="urn:epcglobal:fmcg:bti:acmesupplying" name="CompositeBusinessProcessName"&gt;
+		&lt;!-- RFID Composite Business Process Specification (the ID will be the Described Transactions's URI)--&gt;
+		&lt;Description&gt;Acme Supply Chain&lt;/Description&gt;
+
+		&lt;EBProc Id="CLCBProcEnd" Name="CLCBProcEnd"/&gt;
+
+		&lt;EBProc Id="CLCBProcStart" Name="CLCBProcStart"/&gt;
+
+		&lt;EBProc id="urn:epcglobal:fmcg:bte:acmewarehouse1receive" name="AcmeWarehouse3Ship"/&gt;
+
+		&lt;Transitions/&gt;
+	&lt;/CLCBProc&gt;
+
+&lt;/OLCBProc&gt;
+
+{code}
+
+
+The EBProcesses we are going to include to the CLCBProc are the CLCBProcStart and CLCBProcEnd which are only used for the Start and Stop graphical representation of the CLCBProc. Finally, the AcmeWarehouse3Ship EBProc is included which will describe ACME's Business Scenario solution as shown above. For describing the AcmeWarehouse3Ship (see code below) except the Transition Restrictions which are used for describing the way one EBProc is related to one another, the Extended Attributes which are used for the process graphical representation and the AspireRFID Runtime configuration (e.g. ECSpecSubscriptionURI) the most important role for the completion of the "puzzle" is undertaken from the DataFields element.
+
+
+{code:xml}
+&lt;EBProc id="urn:epcglobal:fmcg:bte:acmewarehouse1receive" 
+	  name="AcmeWarehouse3Ship"&gt;
+	&lt;!-- Elementary RFID Business Process Specification (the ID will be the
+	Described Event's URI)--&gt;
+	&lt;Description&gt;Acme Warehouse 3 Receiving ReadPoint5 Gate3&lt;/Description&gt;
+	&lt;TransitionRestrictions&gt;
+		&lt;TransitionRestriction&gt;
+			&lt;Join Type="AND"/&gt;
+		&lt;/TransitionRestriction&gt;
+	&lt;/TransitionRestrictions&gt;
+	&lt;ExtendedAttributes&gt;
+		&lt;ExtendedAttribute Name="XOffset" Value="204"/&gt;
+		&lt;ExtendedAttribute Name="YOffset" Value="204"/&gt;
+		&lt;ExtendedAttribute Name="CellHeight" Value="30"/&gt;
+		&lt;ExtendedAttribute Name="CellWidth" Value="313"/&gt;
+		&lt;ExtendedAttribute Name="ECSpecSubscriptionURI" Value="http://localhost:9999"/&gt;
+		&lt;ExtendedAttribute Name="DefinedECSpecName" Value="Warehouse3RecievingObjectEvent"/&gt;
+		&lt;!-- The DefinedLRSpecNames can be collected from the defined
+		 logicalReaders names at the ECSpec --&gt;
+		&lt;!-- For the BEG configuration the port can be collected from the
+		"ECSpecSubscriptionURI" value
+		and the event to serve from the EBPSpec id --&gt;
+	&lt;/ExtendedAttributes&gt;
+	&lt;DataFields&gt;
+	&lt;/DataFields&gt;
+&lt;/EBProc&gt;
+{code}
+
+
+DataFields contains the specification files required to configure the AspireRFID F&amp;amp;C server (by defining the ECSpec and LRSpec) and the Business Event Generator (By defining the Transaction Vocabulary at the EPCIS repository Master Data through an EPCISMasterDataDocument).
+
+
+1.1.1 ECSpec definition
+
+To Configure the F&amp;amp;C module, an ECSpec is required for creating Object Events for the Class of "products" and the Class of "receiving notes" that we expect to pass through the gate and that concerns our transaction. For the "bizTransactionIDs" reportSpec we will set the "receiving notes" Class ID's and for the "transactionItems" reportSpec we will set the "received items" Class ID's.
+
+
+* So the "receiving notes" Class is:
+** urn:epc:pat:gid-96:145.12.*
+* and the "received items" Classes are:
+** urn:epc:pat:gid-96:145.233.*
+** urn:epc:pat:gid-96:145.255.*
+
+
+The ECSpec DataField that should be created is shown below. Note that at the configuration time the ECSpec name that will be used is the ECSpec DataField ID and at the ECRepot names the EBProc’s ID will be concatenated to them for example the bizTransactionIDs will become bizTransactionIDs_urn:epcglobal:fmcg:bte:acmewarehouse1receive and the transactionItems will become transactionItems_urn:epcglobal:fmcg:bte:acmewarehouse1receive that are required to be delivered to the BEG engine.
+
+
+
+{code:xml}
+
+&lt;DataField id="urn:epcglobal:fmcg:bte:acmewarehouse1receive_ecspec" type="ECSpec" name="RecievingECSpec"&gt;
+	&lt;ECSpec includeSpecInReports="false"&gt;
+		&lt;logicalReaders&gt;
+			&lt;logicalReader&gt;SmartLabImpinjSpeedwayLogicalReader&lt;/logicalReader&gt;
+		&lt;/logicalReaders&gt;
+		&lt;boundarySpec&gt;
+			&lt;repeatPeriod unit="MS"&gt;4500&lt;/repeatPeriod&gt;
+			&lt;duration unit="MS"&gt;4500&lt;/duration&gt;
+			&lt;stableSetInterval unit="MS"&gt;0
+			&lt;/stableSetInterval&gt;
+		&lt;/boundarySpec&gt;
+		&lt;reportSpecs&gt;
+			&lt;reportSpec reportOnlyOnChange="false" reportName="bizTransactionIDs" reportIfEmpty="true"&gt;
+				&lt;reportSet set="CURRENT"/&gt;
+					&lt;filterSpec&gt;
+					&lt;includePatterns&gt;
+						&lt;includePattern&gt;
+						    urn:epc:pat:gid-96:145.12.*
+						&lt;/includePattern&gt;
+					&lt;/includePatterns&gt;
+					&lt;excludePatterns/&gt;
+				&lt;/filterSpec&gt;
+				&lt;groupSpec/&gt;
+				&lt;output includeTag="true" includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeCount="true"/&gt;
+			&lt;/reportSpec&gt;
+			&lt;reportSpec reportOnlyOnChange="false" reportName="transactionItems" reportIfEmpty="true"&gt;
+				&lt;reportSet set="ADDITIONS"/&gt;
+				&lt;filterSpec&gt;
+					&lt;includePatterns&gt;
+						&lt;includePattern&gt;urn:epc:pat:gid-96:145.233.*&lt;/includePattern&gt;
+						&lt;includePattern&gt;urn:epc:pat:gid-96:145.255.*&lt;/includePattern&gt;
+					&lt;/includePatterns&gt;
+					&lt;excludePatterns/&gt;
+				&lt;/filterSpec&gt;
+				&lt;groupSpec/&gt;
+				&lt;output includeTag="true" includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeCount="true"/&gt;
+			&lt;/reportSpec&gt;
+		&lt;/reportSpecs&gt;
+		&lt;extension/&gt;
+	&lt;/ECSpec&gt;
+&lt;/DataField&gt;
+
+{code}
+
+
+
+1.1.1 LRSpec Definition
+
+For the LRSpec DataField definition the dynamic LRSpec definition of an Impinj Speedway LLRP reader is used as shown below where at the configuration time the LRSpec DataField's name (SmartLabImpinjSpeedwayLogicalReader) will be used as the Logicals Reader name which is included also at the ECSpec's LogicalReader list.
+
+
+{code:xml}
+&lt;DataField id="urn:epcglobal:fmcg:bte:acmewarehouse1receive_lrspec" 
+	type="LRSpec" name=" SmartLabImpinjSpeedwayLogicalReader"&gt;
+	&lt;LRSPec&gt;
+		&lt;isComposite&gt;false&lt;/isComposite&gt;
+		&lt;readers/&gt;
+		&lt;properties&gt;
+			&lt;property&gt;
+				&lt;name&gt;Description&lt;/name&gt;
+				&lt;value&gt;This Logical Reader consists of read point 1,2,3&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;ConnectionPointAddress&lt;/name&gt;
+				&lt;value&gt;192.168.212.238&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;ConnectionPointPort&lt;/name&gt;
+				&lt;value&gt;5084&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;ReadTimeInterval&lt;/name&gt;
+				&lt;value&gt;1000&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;PhysicalReaderSource&lt;/name&gt;
+				&lt;value&gt;1,2,3&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;RoSpecID&lt;/name&gt;
+				&lt;value&gt;1&lt;/value&gt;
+			&lt;/property&gt;
+			&lt;property&gt;
+				&lt;name&gt;ReaderType&lt;/name&gt;
+				&lt;value&gt;org.ow2.aspirerfid.ale.server.readers.llrp.LLRPAdaptor&lt;/value&gt;
+			&lt;/property&gt;
+		&lt;/properties&gt;
+	&lt;/LRSPec&gt;
+&lt;/DataField&gt;
+{code}
+
+
+
+
+1.1.1 BEG Module Required Data Field
+
+The Business Event Generator needs to get the Transaction Event to serve which is the Warehouse1DocDoorReceive (with URI urn:epcglobal:fmcg:bte:acmewarehouse1receive) and the description of it from the Information Sharing module repository which should be set up using the information from the table below.
+
+
+{table}
+Business  Transaction Attribute Name | Business  Transaction Attribute Value
+urn:epcglobal:epcis:mda:event_name | Warehouse1DocDoorReceive
+urn:epcglobal:epcis:mda:event_type | ObjectEvent
+urn:epcglobal:epcis:mda:business_step | urn:epcglobal:fmcg:bizstep:receiving
+urn:epcglobal:epcis:mda:business_location | urn:epcglobal:fmcg:loc:acme:warehouse1
+urn:epcglobal:epcis:mda:disposition | urn:epcglobal:fmcg:disp:in_progress
+urn:epcglobal:epcis:mda:ecspec_name | ECSpecObjectEventFiltering
+urn:epcglobal:epcis:mda:read_point | urn:epcglobal:fmcg:loc:Warehouse1DocDoor
+urn:epcglobal:epcis:mda:transaction_type | urn:epcglobal:fmcg:btt:receiving
+urn:epcglobal:epcis:mda:action | OBSERVE
+{table}
+
+
+We create an EPCISMasterDataDocument DataField as shown in the following code. Note that we are not including the required from the BEG engine ECReport names at the description because this information can be retrieved from the EBProc's ID and the Event Type. Because this is an Object Event we know that two reports are required the bizTransactionIDs and the transactionItems where the EBProc ID urn:epcglobal:fmcg:bte:acmewarehouse1receive will get concatenated.
+
+
+
+{code:xml}
+&lt;DataField id="urn:epcglobal:fmcg:bte:acmewarehouse1receive_masterdata" 
+	type="EPCISMasterDataDocument" name="RecievingMasterData"&gt;
+	&lt;EPCISMasterDataDocument&gt;
+		&lt;EPCISBody&gt;
+			&lt;VocabularyList&gt;
+				&lt;Vocabulary 
+					type="urn:epcglobal:epcis:vtype:BusinessTransaction"&gt;
+					&lt;VocabularyElementList&gt;
+						&lt;VocabularyElement id="urn:epcglobal:fmcg:bte:acmewarehouse1receive"&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:event_name"&gt;Warehouse1DocDoorReceive&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:event_type"&gt;ObjectEvent&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:business_step"&gt;urn:epcglobal:fmcg:bizstep:receiving&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:business_location"&gt;urn:epcglobal:fmcg:loc:acme:warehouse1&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:disposition"&gt;urn:epcglobal:fmcg:disp:in_progress&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:read_point"&gt;urn:epcglobal:fmcg:loc:rp:warehouse1docdoor&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:transaction_type"&gt;urn:epcglobal:fmcg:btt:receiving&lt;/attribute&gt;
+							&lt;attribute id="urn:epcglobal:epcis:mda:action"&gt;OBSERVE&lt;/attribute&gt;
+						&lt;/VocabularyElement&gt;
+					&lt;/VocabularyElementList&gt;
+				&lt;/Vocabulary&gt;
+			&lt;/VocabularyList&gt;
+		&lt;/EPCISBody&gt;
+	&lt;/EPCISMasterDataDocument&gt;
+&lt;/DataField&gt;
+
+{code}
+
+
+
+1.1.1 Process Description
+
+
+As visualized at the figure below, the order arrives to ACME's premises. ACME's RFID portal (ReadPoint1) reads the deliveryID and all the products that follow with the help of WarehouseRfidReader1. AspireRfid ALE filters out the readings and sends two reports to AspireRfid BEG, one with the deliveryID and one with all the products tags. AspireRfid BEG collects these reports, binds the deliveryID with the products tags and sends this event to the AspireRfid EPCIS Repository. The AspireRfid EPCIS Repository informs the Connector for the incoming event which in his turn sends this information to ACME's WMS. When the WMS confirms that all the requested products were delivered it sends a "transaction finish" message to the AspireRfid Connector which in his turn unsubscribe for the specific deliveryID and sends a "transaction finish" to the RFID Repository.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/acme.jpg"&gt;{image:acme.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1 Conclusions
+
+In this scenario, we demonstrated how APDL can be used in order to model a real-world scenario. Specifically, we present and analyze the steps that the [APE] will follow while parsing an APDL file in order to configure end-to-end a realistic real-world scenario.
+
+
+You can download the APDL file (&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/acme.apdl"&gt;acme.apdl&lt;/a&gt;) that contains the complete RFID solution.
+
+
+
+
+</content>
+<renderedcontent>&lt;h3 class="heading-1-1"&gt;&lt;span id="HASPIREProcessDescriptionLanguage28APDL29"&gt;ASPIRE Process Description Language (APDL)&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HASPIREProcessDescriptionLanguage28APDL29"&gt;1 ASPIRE Process Description Language (APDL)&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAPDLSpecification"&gt;1.1 APDL Specification&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDescribinganRFIDWorkflowProcessScenarioUsingAPDL"&gt;2 Describing an RFID Workflow Process Scenario Using APDL&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HProblemdescription"&gt;2.1 Problem description&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSolutionRequirements"&gt;2.2 Solution Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuildingtheRequiredAPDLSpecificationFile"&gt;2.3 Building the Required APDL Specification File&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HECSpecdefinition"&gt;2.4 ECSpec definition&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLRSpecDefinition"&gt;2.5 LRSpec Definition&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBEGModuleRequiredDataField"&gt;2.6 BEG Module Required Data Field&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HProcessDescription"&gt;2.7 Process Description&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConclusions"&gt;2.8 Conclusions&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAPDLSpecification"&gt;APDL Specification&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The AspireRFID Process Description Language (APDL) Specification has a structure as shown in the figure below.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/apdl_structure.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/APDL/apdl_structure.jpg" height="400" alt="apdl_structure.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The root element that may contain the description of a complete open loop business process, such as a supply chain, is the Open Loop Composite Business Process (&amp;lt;OLCBProc/&amp;gt;).&lt;p class="paragraph"/&gt;An OLCBProc element consists of the following:
+&lt;ul class="star"&gt;
+&lt;li&gt;a set of Closed Loop Composite Business Process (&amp;lt;CLCBProc/&amp;gt;) elements, capable of describing complete closed loop supply chain scenarios. A CLCBProc elemtent consists of:&lt;ul class="star"&gt;
+&lt;li&gt;A Description (&amp;lt;Description/&amp;gt;) element.&lt;/li&gt;
+&lt;li&gt;A set of Elementary Business Process (&amp;lt;EBProc/&amp;gt;) elements. EBProc's are the most important elements in the APDL definition since the whole process can be broke down to Elementary Business process. Each one of them carries information that the AspireRfid middleware requires in order to be configured. An EBProc element contains:&lt;ul class="star"&gt;
+&lt;li&gt;A Description (&amp;lt;Description/&amp;gt;) element, with a simple description of the process.&lt;/li&gt;
+&lt;li&gt;A TransitionRestrictions (&amp;lt;TransitionRestrictions/&amp;gt;) element, containing a set of TransitionRestriction (&amp;lt;TransitionRestriction/&amp;gt;) elements.&lt;/li&gt;
+&lt;li&gt;An ExtendedAttributes (&amp;lt;ExtendedAttributes/&amp;gt;) element, containing a set of ExtendedAttribute (&amp;lt;ExtendedAttribute/&amp;gt;) elements. This element is used in order to store the basic configuration data, for instance the ECSpec Subscription URI, and the element's graphical representation data.&lt;/li&gt;
+&lt;li&gt;A set of DataFields, that include the required ECSpec (&amp;lt;ECSpec/&amp;gt;), LRSpec (&amp;lt;LRSpec/&amp;gt;) and Master Data (&amp;lt;EPCISMasterDataDocument/&amp;gt;) documents.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;A Transitions (&amp;lt;Transitions/&amp;gt;) element, that carries the Elementary Business Process context-related semantics description of the ransitions between them. The Transition element is based on the XPDL V1.0 specification.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;A Transitions (&amp;lt;Transitions/&amp;gt;) element, in the same fashion as in the EBProc element, regarding Closed Loop Composite Business processes this time.&lt;/li&gt;
+&lt;/ul&gt;Note that the description is not complete; the aim is to provide a general overview for the understanding of the basic concepts behind the APDL inception. A complete reference on the structure and a means to assure creation of valid APDL files is provided by the corresponding XSD (XML Schema Definition) document: &lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/apdl.xsd"&gt;apdl.xsd&lt;/a&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDescribinganRFIDWorkflowProcessScenarioUsingAPDL"&gt;Describing an RFID Workflow Process Scenario Using APDL&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In this example we will describe how an APDL specification file can be defined in order to configure the whole middleware serving a warehouse receiving process.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HProblemdescription"&gt;Problem description&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;A Company Named "Acme" is a Personal Computer Assembler and collaborates with a Microchip Manufacturer that provides it with the required CPUs. Acme, at regular basis places orders to the Microchip Manufacturer for specific CPUs. Acme owns a central building with three warehouses. The first warehouse named Warehouse1 has 2 Sections named Section1 and Section2, respectively. Section1 has an entrance point where the delivered goods arrive.&lt;p class="paragraph"/&gt;Acme needs a way to automatically receive goods at Warehouse1 Section1 and inform its Warehouse Management System (WMS) for the new product availability and the correct completeness of each transaction.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSolutionRequirements"&gt;Solution Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;An RFID Portal should be placed to Acme's Warehouse1 Section1 entrance point which will be called ReadPoint1. The RFID portal will be equipped with one Reader WarehouseRfidReader1. The received goods should get equipped with preprogrammed RFID tags from their "Manufacturer". The received goods should be accompanied with a preprogrammed RFID enabled delivery document. And finally the middleware should be configured for the specific scenario.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBuildingtheRequiredAPDLSpecificationFile"&gt;Building the Required APDL Specification File&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For this solution we need to build an CLCBProc as shown below (of id: urn:epcglobal:fmcg:bti:acmesupplying) which will include ACME’s Elementary Business Processes. We are dealing only with one company so defining other Close Loop Business Processes will not be required.&lt;p class="paragraph"/&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;OLCBProc&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;!&amp;#45;&amp;#45; AspireRFID Process Description (Language Specification) &amp;#45;&amp;#45;&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;CLCBProc id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bti:acmesupplying"&lt;/span&gt; name=&lt;span class="xml&amp;#45;quote"&gt;"CompositeBusinessProcessName"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;!&amp;#45;&amp;#45; RFID Composite Business Process Specification (the ID will be the Described Transactions's URI)&amp;#45;&amp;#45;&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;Description&amp;#62;&lt;/span&gt;Acme Supply Chain&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/Description&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EBProc Id=&lt;span class="xml&amp;#45;quote"&gt;"CLCBProcEnd"&lt;/span&gt; Name=&lt;span class="xml&amp;#45;quote"&gt;"CLCBProcEnd"&lt;/span&gt;/&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EBProc Id=&lt;span class="xml&amp;#45;quote"&gt;"CLCBProcStart"&lt;/span&gt; Name=&lt;span class="xml&amp;#45;quote"&gt;"CLCBProcStart"&lt;/span&gt;/&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EBProc id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive"&lt;/span&gt; name=&lt;span class="xml&amp;#45;quote"&gt;"AcmeWarehouse3Ship"&lt;/span&gt;/&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;Transitions/&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/CLCBProc&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/OLCBProc&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+The EBProcesses we are going to include to the CLCBProc are the CLCBProcStart and CLCBProcEnd which are only used for the Start and Stop graphical representation of the CLCBProc. Finally, the AcmeWarehouse3Ship EBProc is included which will describe ACME's Business Scenario solution as shown above. For describing the AcmeWarehouse3Ship (see code below) except the Transition Restrictions which are used for describing the way one EBProc is related to one another, the Extended Attributes which are used for the process graphical representation and the AspireRFID Runtime configuration (e.g. ECSpecSubscriptionURI) the most important role for the completion of the "puzzle" is undertaken from the DataFields element.&lt;p class="paragraph"/&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EBProc id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive"&lt;/span&gt; 
+	  name=&lt;span class="xml&amp;#45;quote"&gt;"AcmeWarehouse3Ship"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;!&amp;#45;&amp;#45; Elementary RFID Business Process Specification (the ID will be the
+	Described Event's URI)&amp;#45;&amp;#45;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;Description&amp;#62;&lt;/span&gt;Acme Warehouse 3 Receiving ReadPoint5 Gate3&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/Description&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;TransitionRestrictions&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;TransitionRestriction&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;Join Type=&lt;span class="xml&amp;#45;quote"&gt;"AND"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/TransitionRestriction&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/TransitionRestrictions&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttributes&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"XOffset"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"204"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"YOffset"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"204"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"CellHeight"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"30"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"CellWidth"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"313"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"ECSpecSubscriptionURI"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"http://localhost:9999"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ExtendedAttribute Name=&lt;span class="xml&amp;#45;quote"&gt;"DefinedECSpecName"&lt;/span&gt; Value=&lt;span class="xml&amp;#45;quote"&gt;"Warehouse3RecievingObjectEvent"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;!&amp;#45;&amp;#45; The DefinedLRSpecNames can be collected from the defined
+		 logicalReaders names at the ECSpec &amp;#45;&amp;#45;&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;!&amp;#45;&amp;#45; For the BEG configuration the port can be collected from the
+		&lt;span class="xml&amp;#45;quote"&gt;"ECSpecSubscriptionURI"&lt;/span&gt; value
+		and the event to serve from the EBPSpec id &amp;#45;&amp;#45;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/ExtendedAttributes&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;DataFields&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/DataFields&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/EBProc&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+DataFields contains the specification files required to configure the AspireRFID F&amp;amp;C server (by defining the ECSpec and LRSpec) and the Business Event Generator (By defining the Transaction Vocabulary at the EPCIS repository Master Data through an EPCISMasterDataDocument).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HECSpecdefinition"&gt;ECSpec definition&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;To Configure the F&amp;amp;C module, an ECSpec is required for creating Object Events for the Class of "products" and the Class of "receiving notes" that we expect to pass through the gate and that concerns our transaction. For the "bizTransactionIDs" reportSpec we will set the "receiving notes" Class ID's and for the "transactionItems" reportSpec we will set the "received items" Class ID's.
+&lt;ul class="star"&gt;
+&lt;li&gt;So the "receiving notes" Class is:&lt;ul class="star"&gt;
+&lt;li&gt;urn:epc:pat:gid-96:145.12.&lt;strong class="strong"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;and the "received items" Classes are:&lt;ul class="star"&gt;
+&lt;li&gt;urn:epc:pat:gid-96:145.233.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;urn:epc:pat:gid-96:145.255.*&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;The ECSpec DataField that should be created is shown below. Note that at the configuration time the ECSpec name that will be used is the ECSpec DataField ID and at the ECRepot names the EBProc’s ID will be concatenated to them for example the bizTransactionIDs will become bizTransactionIDs_urn:epcglobal:fmcg:bte:acmewarehouse1receive and the transactionItems will become transactionItems_urn:epcglobal:fmcg:bte:acmewarehouse1receive that are required to be delivered to the BEG engine.&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;DataField id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive_ecspec"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"ECSpec"&lt;/span&gt; name=&lt;span class="xml&amp;#45;quote"&gt;"RecievingECSpec"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;ECSpec includeSpecInReports=&lt;span class="xml&amp;#45;quote"&gt;"false"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;logicalReaders&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;logicalReader&amp;#62;&lt;/span&gt;SmartLabImpinjSpeedwayLogicalReader&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/logicalReader&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/logicalReaders&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;boundarySpec&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;repeatPeriod unit=&lt;span class="xml&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;&lt;/span&gt;4500&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/repeatPeriod&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;duration unit=&lt;span class="xml&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;&lt;/span&gt;4500&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/duration&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;stableSetInterval unit=&lt;span class="xml&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;&lt;/span&gt;0
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/stableSetInterval&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/boundarySpec&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSpecs&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSpec reportOnlyOnChange=&lt;span class="xml&amp;#45;quote"&gt;"false"&lt;/span&gt; reportName=&lt;span class="xml&amp;#45;quote"&gt;"bizTransactionIDs"&lt;/span&gt; reportIfEmpty=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSet set=&lt;span class="xml&amp;#45;quote"&gt;"CURRENT"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;filterSpec&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;includePatterns&amp;#62;&lt;/span&gt;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;includePattern&amp;#62;&lt;/span&gt;
+						    urn:epc:pat:gid&amp;#45;96:145.12.&amp;#42;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/includePattern&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/includePatterns&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;excludePatterns/&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/filterSpec&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;groupSpec/&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;output includeTag=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeRawHex=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeRawDecimal=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeEPC=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeCount=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/reportSpec&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSpec reportOnlyOnChange=&lt;span class="xml&amp;#45;quote"&gt;"false"&lt;/span&gt; reportName=&lt;span class="xml&amp;#45;quote"&gt;"transactionItems"&lt;/span&gt; reportIfEmpty=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSet set=&lt;span class="xml&amp;#45;quote"&gt;"ADDITIONS"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;filterSpec&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;includePatterns&amp;#62;&lt;/span&gt;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;includePattern&amp;#62;&lt;/span&gt;urn:epc:pat:gid&amp;#45;96:145.233.&amp;#42;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/includePattern&amp;#62;&lt;/span&gt;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;includePattern&amp;#62;&lt;/span&gt;urn:epc:pat:gid&amp;#45;96:145.255.&amp;#42;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/includePattern&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/includePatterns&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;excludePatterns/&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/filterSpec&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;groupSpec/&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;output includeTag=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeRawHex=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeRawDecimal=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeEPC=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt; includeCount=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt;/&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/reportSpec&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/reportSpecs&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;extension/&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/ECSpec&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/DataField&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLRSpecDefinition"&gt;LRSpec Definition&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For the LRSpec DataField definition the dynamic LRSpec definition of an Impinj Speedway LLRP reader is used as shown below where at the configuration time the LRSpec DataField's name (SmartLabImpinjSpeedwayLogicalReader) will be used as the Logicals Reader name which is included also at the ECSpec's LogicalReader list.&lt;p class="paragraph"/&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;DataField id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive_lrspec"&lt;/span&gt; 
+	type=&lt;span class="xml&amp;#45;quote"&gt;"LRSpec"&lt;/span&gt; name=&lt;span class="xml&amp;#45;quote"&gt;" SmartLabImpinjSpeedwayLogicalReader"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;LRSPec&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;isComposite&amp;#62;&lt;/span&gt;false&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/isComposite&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;readers/&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;properties&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;Description&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;This Logical Reader consists of read point 1,2,3&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;ConnectionPointAddress&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;192.168.212.238&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;ConnectionPointPort&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;5084&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;ReadTimeInterval&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;1000&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;PhysicalReaderSource&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;1,2,3&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;RoSpecID&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;1&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;property&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;name&amp;#62;&lt;/span&gt;ReaderType&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/name&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;value&amp;#62;&lt;/span&gt;org.ow2.aspirerfid.ale.server.readers.llrp.LLRPAdaptor&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/value&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/property&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/properties&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/LRSPec&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/DataField&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBEGModuleRequiredDataField"&gt;BEG Module Required Data Field&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The Business Event Generator needs to get the Transaction Event to serve which is the Warehouse1DocDoorReceive (with URI urn:epcglobal:fmcg:bte:acmewarehouse1receive) and the description of it from the Information Sharing module repository which should be set up using the information from the table below.&lt;p class="paragraph"/&gt;
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Business  Transaction Attribute Name&lt;/th&gt;&lt;th&gt;Business  Transaction Attribute Value&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:event_name&lt;/td&gt;&lt;td&gt;Warehouse1DocDoorReceive&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:event_type&lt;/td&gt;&lt;td&gt;ObjectEvent&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:business_step&lt;/td&gt;&lt;td&gt;urn:epcglobal:fmcg:bizstep:receiving&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:business_location&lt;/td&gt;&lt;td&gt;urn:epcglobal:fmcg:loc:acme:warehouse1&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:disposition&lt;/td&gt;&lt;td&gt;urn:epcglobal:fmcg:disp:in_progress&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:ecspec_name&lt;/td&gt;&lt;td&gt;ECSpecObjectEventFiltering&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:read_point&lt;/td&gt;&lt;td&gt;urn:epcglobal:fmcg:loc:Warehouse1DocDoor&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:transaction_type&lt;/td&gt;&lt;td&gt;urn:epcglobal:fmcg:btt:receiving&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;urn:epcglobal:epcis:mda:action&lt;/td&gt;&lt;td&gt;OBSERVE&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p class="paragraph"/&gt;
+We create an EPCISMasterDataDocument DataField as shown in the following code. Note that we are not including the required from the BEG engine ECReport names at the description because this information can be retrieved from the EBProc's ID and the Event Type. Because this is an Object Event we know that two reports are required the bizTransactionIDs and the transactionItems where the EBProc ID urn:epcglobal:fmcg:bte:acmewarehouse1receive will get concatenated.&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;DataField id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive_masterdata"&lt;/span&gt; 
+	type=&lt;span class="xml&amp;#45;quote"&gt;"EPCISMasterDataDocument"&lt;/span&gt; name=&lt;span class="xml&amp;#45;quote"&gt;"RecievingMasterData"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EPCISMasterDataDocument&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;EPCISBody&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;VocabularyList&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;Vocabulary 
+					type=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:vtype:BusinessTransaction"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;VocabularyElementList&amp;#62;&lt;/span&gt;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;VocabularyElement id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:fmcg:bte:acmewarehouse1receive"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:event_name"&lt;/span&gt;&amp;#62;&lt;/span&gt;Warehouse1DocDoorReceive&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:event_type"&lt;/span&gt;&amp;#62;&lt;/span&gt;ObjectEvent&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:business_step"&lt;/span&gt;&amp;#62;&lt;/span&gt;urn:epcglobal:fmcg:bizstep:receiving&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:business_location"&lt;/span&gt;&amp;#62;&lt;/span&gt;urn:epcglobal:fmcg:loc:acme:warehouse1&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:disposition"&lt;/span&gt;&amp;#62;&lt;/span&gt;urn:epcglobal:fmcg:disp:in_progress&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:read_point"&lt;/span&gt;&amp;#62;&lt;/span&gt;urn:epcglobal:fmcg:loc:rp:warehouse1docdoor&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:transaction_type"&lt;/span&gt;&amp;#62;&lt;/span&gt;urn:epcglobal:fmcg:btt:receiving&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+							&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute id=&lt;span class="xml&amp;#45;quote"&gt;"urn:epcglobal:epcis:mda:action"&lt;/span&gt;&amp;#62;&lt;/span&gt;OBSERVE&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+						&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/VocabularyElement&amp;#62;&lt;/span&gt;
+					&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/VocabularyElementList&amp;#62;&lt;/span&gt;
+				&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/Vocabulary&amp;#62;&lt;/span&gt;
+			&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/VocabularyList&amp;#62;&lt;/span&gt;
+		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/EPCISBody&amp;#62;&lt;/span&gt;
+	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/EPCISMasterDataDocument&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/DataField&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HProcessDescription"&gt;Process Description&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+As visualized at the figure below, the order arrives to ACME's premises. ACME's RFID portal (ReadPoint1) reads the deliveryID and all the products that follow with the help of WarehouseRfidReader1. AspireRfid ALE filters out the readings and sends two reports to AspireRfid BEG, one with the deliveryID and one with all the products tags. AspireRfid BEG collects these reports, binds the deliveryID with the products tags and sends this event to the AspireRfid EPCIS Repository. The AspireRfid EPCIS Repository informs the Connector for the incoming event which in his turn sends this information to ACME's WMS. When the WMS confirms that all the requested products were delivered it sends a "transaction finish" message to the AspireRfid Connector which in his turn unsubscribe for the specific deliveryID and sends a "transaction finish" to the RFID Repository.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/acme.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/APDL/acme.jpg" height="320" alt="acme.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConclusions"&gt;Conclusions&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;In this scenario, we demonstrated how APDL can be used in order to model a real-world scenario. Specifically, we present and analyze the steps that the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/APE"&gt;APE&lt;/a&gt;&lt;/span&gt; will follow while parsing an APDL file in order to configure end-to-end a realistic real-world scenario.&lt;p class="paragraph"/&gt;
+You can download the APDL file (&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/acme.apdl"&gt;acme.apdl&lt;/a&gt;) that contains the complete RFID solution.&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

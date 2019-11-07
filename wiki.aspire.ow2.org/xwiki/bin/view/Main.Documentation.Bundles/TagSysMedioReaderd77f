@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>TagSysMedioReader</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.ALEonOSGi</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.gabo_pedraza</author>
+<contentAuthor>xwiki:XWiki.gabo_pedraza</contentAuthor>
+<creationDate>1277102947000</creationDate>
+<date>1284539024000</date>
+<contentUpdateDate>1284539024000</contentUpdateDate>
+<version>1.28</version>
+<title>Aspire :: OSGi Bundles :: Tagsys Medio Reader</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: Tagsys Medio Reader
+
+
+----
+#toc("" "" "true")
+----
+
+
+This section describes the bundle for [Tagsys Medio Reader L100 &amp;amp; L200&gt;http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200] (ie HALAdaptor)
+
+1.1 Context
+
+
+The [Tagsys Medio Reader L100 &amp;amp; L200&gt;http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200] is an industrial ISO 15693 RFID reader.
+
+
+The Tagsys Reader bundle packages a HALAdaptor for Tagsys Medio L100 &amp;amp; L200 reader attached to the host (RS232).
+
+1.1 Building process
+
+# Download the vendor library tagsysmedio. Then, transform this jar into a compliant OSGi bundle (you can use the [BND&gt;http://www.aqute.biz/Code/Bnd] tool). 
+
+# Install in the local maven repository the bundle version of the vendor Java library.
+
+&lt;blockquote&gt;mvn install:install-file -DgroupId=com.tagsys -DartifactId=tagsysmedio -Dversion=1.0.0 -Dpackaging=jar -Dfile=tagsysmedio-1.0.0.jar&lt;/blockquote&gt;
+
+# Build and deploy the RXTX bundle (RXTX is a native interface to serial ports in java).
+
+&lt;blockquote&gt;
+The sources of this project are in the svn repository (~~trunk/bundles/common/rxtx~~). Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+
+# You must also build the abstract-reader project. This project contains base classes used by all HAL adaptors.
+
+&lt;blockquote&gt;
+The sources of this project are in in the svn repository (~~trunk/bundles/readers/abstract-reader~~). Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+
+# Finally you must build the tagsys reader project. The sources are in in the svn repository (~~trunk/bundles/readers/tagsys-reader~~)
+
+&lt;blockquote&gt;
+Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+
+1.1 Deployment
+
+
+The artifacts to deploy are
+
+
+* org.ow2.aspirerfid:abstract-reader (Artifact that has the base reader classes)
+* com.tagsys:tagsysmedio (The reader vendor library)
+* org.ow2.aspirerfid:tagsys-reader (The tagsys reader driver)
+
+In Felix use install comand to deploy the bundles.
+
+1.1 LRSpec
+1.1.1 Configurable properties
+
+{code}
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;ns3:LRSpec xmlns:ns2="urn:epcglobal:ale:wsdl:1" xmlns:ns3="urn:epcglobal:ale:xsd:1"&gt;
+	&lt;isComposite&gt;false&lt;/isComposite&gt;
+	&lt;readers /&gt;
+	&lt;properties&gt;
+		&lt;property&gt;
+			&lt;name&gt;ReaderType&lt;/name&gt;
+			&lt;value&gt;org.ow2.aspirerfid.ale.server.readers.rp.tagsys.TagsysAdaptor&lt;/value&gt;
+		&lt;/property&gt;
+		&lt;property&gt;
+			&lt;name&gt;Description&lt;/name&gt;
+			&lt;value&gt;This Tagsys Logical Reader &lt;/value&gt;
+		&lt;/property&gt;
+		&lt;property&gt;
+			&lt;name&gt;PhysicalReaderName&lt;/name&gt;
+			&lt;value&gt;IntermecIF5&lt;/value&gt;
+		&lt;/property&gt;
+		&lt;property&gt;
+			&lt;name&gt;ReadTimeInterval&lt;/name&gt;
+			&lt;value&gt;1500&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;!-- specific properties to configure the communication with the TagSys Link --&gt;
+
+		&lt;!-- Serial link  --&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.iMediaType&lt;/name&gt;
+			&lt;value&gt;serial&lt;/value&gt;
+		&lt;/property&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.strSerialName&lt;/name&gt;
+			&lt;value&gt;COM1&lt;/value&gt;
+		&lt;/property&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.iSerialSpeed&lt;/name&gt;
+			&lt;value&gt;38400&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;!-- IP link  --&gt;
+		&lt;!-- &lt;property&gt;&lt;name&gt;tagsys.mediolx00.settings.iMediaType&lt;/name&gt;&lt;value&gt;ip&lt;/value&gt;&lt;/property&gt;		--&gt;
+		&lt;!-- &lt;property&gt;&lt;name&gt;tagsys.mediolx00.settings.strIPAddress&lt;/name&gt;&lt;value&gt;192.168.1.1&lt;/value&gt;&lt;/property&gt; --&gt;
+		&lt;!-- &lt;property&gt;&lt;name&gt;tagsys.mediolx00.settings.iTCPPort&lt;/name&gt;&lt;value&gt;4001&lt;/value&gt;&lt;/property&gt; --&gt;
+		&lt;!-- (in multiple of 500mW)  --&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.iPower&lt;/name&gt;
+			&lt;value&gt;1&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;!-- 0 is off and channels could be 1,2,3,4  --&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.iChannel&lt;/name&gt;
+			&lt;value&gt;1&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;!--values are TAG_C210, TAG_C220, TAG_C240, TAG_C270, TAG_EPC,
+			TAG_ISO15693--&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.strTagType&lt;/name&gt;
+			&lt;value&gt;TAG_ISO15693&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.boCont&lt;/name&gt;
+			&lt;value&gt;true&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.boSort&lt;/name&gt;
+			&lt;value&gt;false&lt;/value&gt;
+		&lt;/property&gt;
+
+		&lt;!-- timer between 2 reads (in millisec)  --&gt;
+		&lt;property&gt;
+			&lt;name&gt;tagsys.mediolx00.settings.iTimer&lt;/name&gt;
+			&lt;value&gt;250&lt;/value&gt;
+		&lt;/property&gt;
+
+	&lt;/properties&gt;
+&lt;/ns3:LRSpec&gt;
+
+{code}
+
+1.1 Link
+
+
+* [Tagsys Medio Reader&gt;http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200]</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3ATagsysMedioReader"&gt;Aspire :: OSGi Bundles :: Tagsys Medio Reader&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuildingprocess"&gt;2 Building process&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeployment"&gt;3 Deployment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLRSpec"&gt;4 LRSpec&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HConfigurableproperties"&gt;4.1 Configurable properties&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HLink"&gt;5 Link&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;
+This section describes the bundle for &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200"&gt;&amp;#84;agsys Medio Reader L100 &amp;amp; L200&lt;/a&gt;&lt;/span&gt; (ie HALAdaptor)
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;Context&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200"&gt;&amp;#84;agsys Medio Reader L100 &amp;amp; L200&lt;/a&gt;&lt;/span&gt; is an industrial ISO 15693 RFID reader.&lt;p class="paragraph"/&gt;
+The Tagsys Reader bundle packages a HALAdaptor for Tagsys Medio L100 &amp;amp; L200 reader attached to the host (RS232).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuildingprocess"&gt;Building process&lt;/span&gt;&lt;/h3&gt; 
+&lt;ol&gt;&lt;li&gt;Download the vendor library tagsysmedio. Then, transform this jar into a compliant OSGi bundle (you can use the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.aqute.biz/Code/Bnd"&gt;&amp;#66;ND&lt;/a&gt;&lt;/span&gt; tool).&lt;/li&gt;
+&lt;li&gt;Install in the local maven repository the bundle version of the vendor Java library.&lt;/li&gt;
+&lt;/ol&gt;&lt;blockquote&gt;mvn install:install-file -DgroupId=com.tagsys -DartifactId=tagsysmedio -Dversion=1.0.0 -Dpackaging=jar -Dfile=tagsysmedio-1.0.0.jar&lt;/blockquote&gt;
+&lt;ol&gt;&lt;li&gt;Build and deploy the RXTX bundle (RXTX is a native interface to serial ports in java).&lt;/li&gt;
+&lt;/ol&gt;&lt;blockquote&gt;
+The sources of this project are in the svn repository (&lt;i class="italic"&gt;trunk/bundles/common/rxtx&lt;/i&gt;). Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+&lt;ol&gt;&lt;li&gt;You must also build the abstract-reader project. This project contains base classes used by all HAL adaptors.&lt;/li&gt;
+&lt;/ol&gt;&lt;blockquote&gt;
+The sources of this project are in in the svn repository (&lt;i class="italic"&gt;trunk/bundles/readers/abstract-reader&lt;/i&gt;). Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+&lt;ol&gt;&lt;li&gt;Finally you must build the tagsys reader project. The sources are in in the svn repository (&lt;i class="italic"&gt;trunk/bundles/readers/tagsys-reader&lt;/i&gt;)&lt;/li&gt;
+&lt;/ol&gt;&lt;blockquote&gt;
+Use maven to build this project, the instruction is mvn clean install
+&lt;/blockquote&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The artifacts to deploy are
+&lt;ul class="star"&gt;
+&lt;li&gt;org.ow2.aspirerfid:abstract-reader (Artifact that has the base reader classes)&lt;/li&gt;
+&lt;li&gt;com.tagsys:tagsysmedio (The reader vendor library)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid:tagsys-reader (The tagsys reader driver)&lt;/li&gt;
+&lt;/ul&gt;In Felix use install comand to deploy the bundles.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLRSpec"&gt;LRSpec&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfigurableproperties"&gt;Configurable properties&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62;
+&amp;#60;ns3:LRSpec xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:wsdl:1"&lt;/span&gt; xmlns:ns3=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62;
+	&amp;#60;isComposite&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/isComposite&amp;#62;
+	&amp;#60;readers /&amp;#62;
+	&amp;#60;properties&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;ReaderType&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;org.ow2.aspirerfid.ale.server.readers.rp.tagsys.TagsysAdaptor&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;Description&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;This Tagsys Logical Reader &amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;PhysicalReaderName&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;IntermecIF5&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;ReadTimeInterval&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;1500&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45; specific properties to configure the communication with the TagSys Link &amp;#45;&amp;#45;&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45; Serial link  &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iMediaType&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;serial&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strSerialName&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;COM1&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iSerialSpeed&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;38400&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45; IP link  &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;!&amp;#45;&amp;#45; &amp;#60;property&amp;#62;&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iMediaType&amp;#60;/name&amp;#62;&amp;#60;value&amp;#62;ip&amp;#60;/value&amp;#62;&amp;#60;/property&amp;#62;		&amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;!&amp;#45;&amp;#45; &amp;#60;property&amp;#62;&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strIPAddress&amp;#60;/name&amp;#62;&amp;#60;value&amp;#62;192.168.1.1&amp;#60;/value&amp;#62;&amp;#60;/property&amp;#62; &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;!&amp;#45;&amp;#45; &amp;#60;property&amp;#62;&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iTCPPort&amp;#60;/name&amp;#62;&amp;#60;value&amp;#62;4001&amp;#60;/value&amp;#62;&amp;#60;/property&amp;#62; &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;!&amp;#45;&amp;#45; (in multiple of 500mW)  &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iPower&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45; 0 is off and channels could be 1,2,3,4  &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iChannel&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;1&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45;values are TAG_C210, TAG_C220, TAG_C240, TAG_C270, TAG_EPC,
+			TAG_ISO15693&amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.strTagType&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;TAG_ISO15693&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boCont&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.boSort&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;		&amp;#60;!&amp;#45;&amp;#45; timer between 2 reads (in millisec)  &amp;#45;&amp;#45;&amp;#62;
+		&amp;#60;property&amp;#62;
+			&amp;#60;name&amp;#62;tagsys.mediolx00.settings.iTimer&amp;#60;/name&amp;#62;
+			&amp;#60;value&amp;#62;250&amp;#60;/value&amp;#62;
+		&amp;#60;/property&amp;#62;&lt;p class="paragraph"/&gt;	&amp;#60;/properties&amp;#62;
+&amp;#60;/ns3:LRSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLink"&gt;Link&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tagsysrfid.com/Products-Services/RFID-Readers/Medio-L100-L200"&gt;&amp;#84;agsys Medio Reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

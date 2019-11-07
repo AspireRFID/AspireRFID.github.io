@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Merge</web>
+<name>ProvidedByAitBranch</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Merge</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1241426470000</creationDate>
+<date>1241426827000</date>
+<contentUpdateDate>1241426827000</contentUpdateDate>
+<version>1.4</version>
+<title>Provided By AIT Branch</title>
+<template></template>
+<content>1 Provided By AIT Branch
+
+
+----
+#toc("" "" "true")
+----
+
+* *Reader Core Proxy*
+** Exists within OSGi
+** Provides JMX management interface
+** Provides EPC Reader Management (not currently enabled and used)
+** ALE communicates with it via EPC Reader Protocol
+** Provides Interfaces with readers:
+*** For Intermec(BRI)
+*** For Impinj (Mach1)
+*** For FossTrack’s Simulator reader
+*** HAL Wrapper for new readers
+* *ALE Server*
+** EPC F&amp;C1.1 standard compliant.
+*** Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)
+**** ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.
+** Runs on Apache tomcat 6.0
+** Uses CXF and spring to implement JaxWS for the control interface.
+** It Supports Maven.
+** Supports RP and LLRP for the communication with the readers.
+** Supports TCP/HTTP protocol to deliver EC reports
+** Provides Standard EPC Control Interface Based on SOAP messages
+* *EPCIS*
+** EPC 1.0.1 standard compliant
+*** Provides Extension Mechanisms
+**** ~~New Event Field~~ A new field may be added to an existing Event Type in the Data Definition Layer. Additionally to every event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications): 
+{table}
+Column Name | Type Name
+event_id | BIGINT
+fieldname | VARCHAR
+prefix | VARCHAR
+intValue | INT
+floatValue | FLOAT
+dateValue | TIMESTAMP
+strValue | VARCHAR 
+{table}
+
+** Runs on Apache tomcat 6.0
+** Uses CXF and spring to implement JaxWS for the query and capture interface.
+** Uses SQL for the query interface and Hibernate for the capture interface.
+** Supports MySQL 5.0
+** Provides standard EPC Query and capture Interface Based on SOAP messages.
+** Provides proprietary master data capture interface.
+* *BEG* (under development)
+* *Tooling (Eclipse)* ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.
+** AspireRfidIDE Core 
+** ALE Server Configurator Plug-in 
+** Business Event Generator Plug-in 
+** Physical Reader Configuration &amp; Management Plug-in 
+** EC-Spec Editor Plug-in 
+** LR-Spec Editor Plug-in 
+** Master Data Editor Plug-in 
+Business Process Management and Workflow Management Editor Plug-in (under design)
+Connector Configurator Plug-in (Under design)
+ASPIRE Programmability Engine Plug-in (Under design)
+* *Connector*
+** Connector engine component
+** Connector client component
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HProvidedByAITBranch"&gt;Provided By AIT Branch&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+        &lt;hr class="line"/&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Reader Core Proxy&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Exists within OSGi&lt;/li&gt;
+&lt;li&gt;Provides JMX management interface&lt;/li&gt;
+&lt;li&gt;Provides EPC Reader Management (not currently enabled and used)&lt;/li&gt;
+&lt;li&gt;ALE communicates with it via EPC Reader Protocol&lt;/li&gt;
+&lt;li&gt;Provides Interfaces with readers:&lt;ul class="star"&gt;
+&lt;li&gt;For Intermec(BRI)&lt;/li&gt;
+&lt;li&gt;For Impinj (Mach1)&lt;/li&gt;
+&lt;li&gt;For FossTrack’s Simulator reader&lt;/li&gt;
+&lt;li&gt;HAL Wrapper for new readers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;ALE Server&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;EPC F&amp;C1.1 standard compliant.&lt;ul class="star"&gt;
+&lt;li&gt;Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)&lt;ul class="star"&gt;
+&lt;li&gt;ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and spring to implement JaxWS for the control interface.&lt;/li&gt;
+&lt;li&gt;It Supports Maven.&lt;/li&gt;
+&lt;li&gt;Supports RP and LLRP for the communication with the readers.&lt;/li&gt;
+&lt;li&gt;Supports TCP/HTTP protocol to deliver EC reports&lt;/li&gt;
+&lt;li&gt;Provides Standard EPC Control Interface Based on SOAP messages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;EPCIS&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;EPC 1.0.1 standard compliant&lt;ul class="star"&gt;
+&lt;li&gt;Provides Extension Mechanisms&lt;ul class="star"&gt;
+&lt;li&gt;&lt;i class="italic"&gt;New Event Field&lt;/i&gt; A new field may be added to an existing Event Type in the Data Definition Layer. Additionally to every event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications):&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Column Name&lt;/th&gt;&lt;th&gt;Type Name&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;event_id&lt;/td&gt;&lt;td&gt;BIGINT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;fieldname&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;prefix&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;intValue&lt;/td&gt;&lt;td&gt;INT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;floatValue&lt;/td&gt;&lt;td&gt;FLOAT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;dateValue&lt;/td&gt;&lt;td&gt;TIMESTAMP&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;strValue&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and spring to implement JaxWS for the query and capture interface.&lt;/li&gt;
+&lt;li&gt;Uses SQL for the query interface and Hibernate for the capture interface.&lt;/li&gt;
+&lt;li&gt;Supports MySQL 5.0&lt;/li&gt;
+&lt;li&gt;Provides standard EPC Query and capture Interface Based on SOAP messages.&lt;/li&gt;
+&lt;li&gt;Provides proprietary master data capture interface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;BEG&lt;/strong&gt; (under development)&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Tooling (Eclipse)&lt;/strong&gt; ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.&lt;ul class="star"&gt;
+&lt;li&gt;AspireRfidIDE Core&lt;/li&gt;
+&lt;li&gt;ALE Server Configurator Plug-in&lt;/li&gt;
+&lt;li&gt;Business Event Generator Plug-in&lt;/li&gt;
+&lt;li&gt;Physical Reader Configuration &amp; Management Plug-in&lt;/li&gt;
+&lt;li&gt;EC-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;LR-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;Master Data Editor Plug-in&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;Business Process Management and Workflow Management Editor Plug-in (under design)
+Connector Configurator Plug-in (Under design)
+ASPIRE Programmability Engine Plug-in (Under design)
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Connector&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Connector engine component&lt;/li&gt;
+&lt;li&gt;Connector client component&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

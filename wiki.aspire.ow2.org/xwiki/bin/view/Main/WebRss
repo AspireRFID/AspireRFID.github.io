@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>
+Aspire Wiki - ObjectWeb - WebRss
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="/xwiki/bin/view/Main/BlogRss?xpage=rdf" />
+<link type="image/x-icon" href="/xwiki/bin/download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="/xwiki/bin/download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="/xwiki/bin/skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="/xwiki/bin/skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="/xwiki/bin/skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="/xwiki/skins/default/skin.js"></script>
+<script type="text/javascript" src="/xwiki/skins/default/prototype.js"></script>
+<script type="text/javascript" src="/xwiki/skins/default/xwiki.js"></script>
+<script type="text/javascript" src="/xwiki/skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="/xwiki/bin/view/Main/">
+<img src="/xwiki/bin/download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="/xwiki/bin/login/XWiki/XWikiLogin?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebRss">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='/xwiki/bin/view/Main/WebRss'>WebRss</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="http://wiki.aspire.ow2.org/xwiki/bin/pdf/Main/WebRss" class="img"><img src="/xwiki/skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="/xwiki/bin/view/Main/WebRss?xpage=history#aspire" class="img"><img src="/xwiki/skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="/xwiki/bin/viewrev/Main/WebRss?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebRss?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="/xwiki/bin/view/Doc/">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="/xwiki/bin/view/Doc/XWikiSyntax">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wiki="http://purl.org/rss/1.0/modules/wiki/" >
+<channel rdf:about="http://wiki.aspire.ow2.org">
+<title>wiki.aspire.ow2.org</title>
+<link>http://wiki.aspire.ow2.org</link>
+<description>
+wiki.aspire.ow2.org
+</description>
+<image rdf:resource="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif" />
+<dc:language>en</dc:language>
+<dc:rights>Copyright (c) 2008-2010, <a href="http://www.fp7-aspire.eu/">Aspire</a></dc:rights>
+<dc:publisher>XWiki.superadmin</dc:publisher>
+<dc:creator>XWiki.superadmin</dc:creator>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire" />
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices" />
+</rdf:Seq>
+</items>
+</channel>
+<image rdf:about="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif">
+  <title>XWiki Logo</title>
+  <link>http://wiki.aspire.ow2.org</link>
+  <url>http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif</url>
+</image>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection">
+<title>Main.Documentation.Filtering&Collection</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering&Collection</link>
+<description>
+Version 1.78 edited by driss_r on 2014-12-04 15:23:36.0
+</description>
+<dc:date>2014-12-04 15:23:36.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders">
+<title>Main.Documentation.SupportedReaders</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/SupportedReaders</link>
+<description>
+Version 1.30 edited by driss_r on 2014-11-28 13:36:40.0
+</description>
+<dc:date>2014-11-28 13:36:40.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation">
+<title>Main.Documentation</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Documentation</link>
+<description>
+Version 1.88 edited by driss_r on 2014-11-27 16:21:30.0
+</description>
+<dc:date>2014-11-27 16:21:30.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test">
+<title>XWiki.test</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/test</link>
+<description>
+Version 1.2 edited by superadmin on 2014-11-17 12:11:42.0
+</description>
+<dc:date>2014-11-17 12:11:42.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>XWiki.superadmin</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar">
+<title>XWiki.Toolbar</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Toolbar</link>
+<description>
+Version 1.203 edited by driss_r on 2013-09-23 10:58:52.0
+</description>
+<dc:date>2013-09-23 10:58:52.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)">
+<title>Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1.1)</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection.LLRP toolkit library (updated according to LLRP 1/1)</link>
+<description>
+Version 1.16 edited by driss_r on 2013-09-23 10:57:29.0
+</description>
+<dc:date>2013-09-23 10:57:29.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT">
+<title>Main.Documentation.TDT</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT</link>
+<description>
+Version 1.51 edited by driss_r on 2013-08-20 17:04:43.0
+</description>
+<dc:date>2013-08-20 17:04:43.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.driss_r</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire">
+<title>XWiki.aspire</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/aspire</link>
+<description>
+Version 1.64 edited by schmidt on 2013-07-17 14:40:59.0
+</description>
+<dc:date>2013-07-17 14:40:59.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.schmidt</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences">
+<title>Main.WebPreferences</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebPreferences</link>
+<description>
+Version 1.3 edited by  on 2013-05-21 19:52:05.0
+</description>
+<dc:date>2013-05-21 19:52:05.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value></rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome">
+<title>Main.WebHome</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebHome</link>
+<description>
+Version 1.79 edited by nkef on 2012-03-14 21:35:57.0
+</description>
+<dc:date>2012-03-14 21:35:57.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References">
+<title>Main.References</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/References</link>
+<description>
+Version 1.32 edited by nkef on 2012-03-13 18:13:37.0
+</description>
+<dc:date>2012-03-13 18:13:37.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE">
+<title>Main.Documentation.Filtering&Collection.NFCLightALE</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering&Collection/NFCLightALE</link>
+<description>
+Version 1.5 edited by schmidt on 2012-02-08 11:54:30.0
+</description>
+<dc:date>2012-02-08 11:54:30.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.schmidt</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu">
+<title>XWiki.Menu</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/XWiki/Menu</link>
+<description>
+Version 1.304 edited by nkef on 2011-10-07 14:31:21.0
+</description>
+<dc:date>2011-10-07 14:31:21.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader">
+<title>Main.Documentation.Bundles.UPnPRFIDReader</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader</link>
+<description>
+Version 1.23 edited by donsez on 2011-09-07 09:50:47.0
+</description>
+<dc:date>2011-09-07 09:50:47.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.donsez</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables">
+<title>Main.Documentation.Deliverables</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables</link>
+<description>
+Version 1.71 edited by nkef on 2011-08-19 15:57:53.0
+</description>
+<dc:date>2011-08-19 15:57:53.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos">
+<title>Main.Documentation.Demos</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos</link>
+<description>
+Version 1.117 edited by nkef on 2011-08-19 15:57:14.0
+</description>
+<dc:date>2011-08-19 15:57:14.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles">
+<title>Main.Documentation.Bundles</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Bundles</link>
+<description>
+Version 1.52 edited by donsez on 2011-06-22 16:17:11.0
+</description>
+<dc:date>2011-06-22 16:17:11.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.donsez</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos">
+<title>Main.Videos</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Videos</link>
+<description>
+Version 1.10 edited by nkef on 2011-06-17 15:27:33.0
+</description>
+<dc:date>2011-06-17 15:27:33.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire">
+<title>Main.WhoIsUsingAspire</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhoIsUsingAspire</link>
+<description>
+Version 1.9 edited by nkef on 2011-06-17 15:09:04.0
+</description>
+<dc:date>2011-06-17 15:09:04.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices">
+<title>Main.Documentation.BestPractices</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices</link>
+<description>
+Version 1.9 edited by nkef on 2011-06-14 00:30:55.0
+</description>
+<dc:date>2011-06-14 00:30:55.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+</rdf:RDF>
+
+
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/">Home</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/News">News</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/FAQs">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Documentation">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Services">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Readers">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main.Documentation/Deliverables">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/References">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Downloads">Downloads</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main.Documentation/Demos">Demos</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Demos">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main.Documentation/BestPractices">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Licenses">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Developers">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Source-SVN">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Guidelines">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Roadmap">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/SummerOfCode">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Internships">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Community/Lists">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Contributors">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/WhoIsUsingAspire">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Logo">Logo</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/PhotoAlbum">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Goodies">Goodies</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Videos">Videos</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Operation">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="/xwiki/bin/view/Main/Links">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='http://clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="http://widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='http:'){
+ var Tynt=Tynt||<span class="wikilink"><a href="/xwiki/bin/view/Main/"></a></span>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.WebRss"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='/xwiki/bin/view/Main/'>Main.WebHome</a> &gt; <a href='/xwiki/bin/view/Main/WebRss'>WebRss</a>
+  (en)
+ <br />
+  Creator: WebHome
+ &nbsp;Date: 2005/02/06 17:46
+ <br />
+ Last Author: superadmin
+ &nbsp;Date: 2005/05/31 13:50
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org">
+ <img src="/xwiki/bin/download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org">OW2 Consortium</a> | <a href="/xwiki/bin/view/Main/Contact">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+</html>

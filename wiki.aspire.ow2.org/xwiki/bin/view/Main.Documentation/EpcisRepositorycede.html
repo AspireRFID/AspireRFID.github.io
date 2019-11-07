@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:39:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - EpcisRepository
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogine935.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository?xpage=code&amp;">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='EpcisRepository.html'>EPCIS Repository</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_EpcisRepository.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="EpcisRepositoryd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/EpcisRepositorycede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="EpcisRepositoryd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 EPCIS Repository
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+Please note that the AspireRfid  EPCIS Repository is a slightly modified version of [Accada&#62;http://www.accada.org] RFID Middleware, which is now call [FossTrak&#62;http://www.fosstrak.org], licensed under LGPL. AspireRfid have implemented changes and bug fixes on the original Accada middleware. As of 14/05/2009 we have ceased distribution of [FossTrak&#62;http://www.fosstrak.org] licensed code. The AspireRfid EPCIS repository (under development) will be compatible with the Fosstrak EPCIS repository.
+
+1.1 Introduction
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/EpcisRepository/epcis.jpg&#34;&#62;{image:epcis.jpg|350}&#60;/a&#62;
+&#60;/center&#62;
+
+The ASPIRE Information Sharing repository and services are the components that:
+* Receive application-agnostic RFID data from the filtering &#38; collection middleware through the Business Event Generation (BEG) application.
+* Translate RFID data in corresponding business events. These events carry the business context as well (e.g., they refer to particular companies, business locations, business processes etc.). 
+* Make business events available and accessible to other upstream applications. 
+
+The Information Services of the ASPIRE Information Sharing middleware itself consists of three parts: 
+* A capture application that interprets the captured RFID data.
+* A repository (i.e. a database system) that provides persistence, and
+* A query application that retrieves the business events from the repository.
+
+Note that the ASPIRE Information Sharing repository:
+* Deals explicitly with historical data (in addition to current data). 
+* Deals not just with raw RFID data observations, but also with the business context associated with these data (e.g., the physical world and specific business steps in operational or analytical business processes). 
+* Operates within enterprise IT environments at a level that is much more diverse and multi-faceted comparing to the underlying data capture and filtering &#38; collection middleware modules. 
+
+Generally, the ASPIRE information sharing repository is built to deal with two kinds of data: 
+* RFID event data i.e. data arising in the course of carrying out business processes.  These data change very frequently, at the time scales where business processes are carried out.
+* Master/company data, i.e. additional data that provide the necessary context for interpreting the event data. These are data associated with the company, its business locations, its read points, as well as with the business steps comprising the business processes that this company carries out.
+
+Business events are generated at the edge and delivered into the Information Sharing middleware infrastructure through an appropriate capture interface. The BEG middleware (illustrated in a later paragraph) undertakes to automatically map application agnostic reading (from the F&#38;C layer) to the Information Sharing middleware. These events can be subsequently delivered to interested enterprise applications through the interface enabling query of RFID business events.
+
+Please note that the AspireRfid  EPCIS Repository is a modified version of [Accada&#62;http://www.accada.org] RFID Middleware, which is now call [FossTrak&#62;http://www.fosstrak.org], licensed under LGPL. AspireRfid have implemented changes and bug fixes on the original Accada middleware.
+
+
+1.1 Users Guide
+
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* Java 1.6
+* Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)
+* MySQL 5.0 (or higher).
+
+
+1.1.1 Deployment
+
+This section includes a step-by-step tutorial describing how to set up your own EPCIS repository.
+
+In order to set up your own EPCIS repository, follow the step-by-step tutorial outlined below:
+Make sure you have an Apache Tomcat servlet container (version 6.0 or higher) running. It will be used to deploy and run the EPCIS repository web application.
+Download the latest aspireRfidEpcisRepository distribution found at the ASPIRE's [Forge&#62;http://forge.objectweb.org/project/showfiles.php?group_id=324] and place the WAR file contained in the archive in your Tomcat's webapps directory. After restarting Tomcat, the WAR file will be deployed.
+Install a MySQL server (version 5.0 or higher). It will be used by the EPCIS repository to store event data.
+Make sure that web applications deployed to Tomcat can access your MySQL server by installing the MySQL Connector/J driver. This is usually done by copying the mysql-connector-java-&#60;version&#62;-bin.jar into Tomcat's lib (version 6) or common/lib (version 5.5) directory. 
+Set up a MySQL database for the EPCIS repository to use.
+Log into the MySQL Command Line Client as root and perform the following steps:
+
+Create the database (in this example, we'll use epcis as the database name).
+{code:text}
+mysql&#62; CREATE DATABASE epcis;
+{code}
+Create a user that is allowed access to the newly created database (in this example, we'll use the user name epcis and password epcis).
+{code:text}
+mysql&#62; GRANT SELECT, INSERT, UPDATE, DELETE, DROP, CREATE, ALTER ON 
+epcis.* TO epcis IDENTIFIED BY 'epcis';
+{code}
+Create the database schema by running the &#34;epcis_schema.sql&#34; script contained in the archive you downloaded (located at : aspireRfidEpcisRepository\WEB-INF\classes\sql folder). (Make sure you are connected to the newly created database before running the script.)
+{code:text}
+   
+mysql&#62; USE epcis;
+mysql&#62; SOURCE &#60;path-to-unpacked-download&#62;/epcis_schema.sql
+   
+{code}
+Optionally populate the repository with some sample data.
+{code:text}
+    
+mysql&#62; SOURCE &#60;path-to-unpacked-download&#62;/epcis_demo_data.sql
+   
+{code}
+Configure the repository to connect to the newly created database.
+In a default installation of Tomcat, the database connection settings can be found in $TOMCAT_HOME/conf/Catalina/localhost/aspireRfidEpcisRepository.xml. The relevant attributes that must be adjusted are username, password, and url.
+
+{code:xml}
+&#60;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&#62;
+&#60;Context reloadable=&#34;true&#34;&#62;
+  &#60;Resource
+    name=&#34;jdbc/EPCISDB&#34;
+    type=&#34;javax.sql.DataSource&#34;
+    auth=&#34;Container&#34;
+    username=&#34;epcis&#34;
+    password=&#34;epcis&#34;
+    driverClassName=&#34;org.gjt.mm.mysql.Driver&#34;
+    url=&#34;jdbc:mysql://localhost:3306/epcis?autoReconnect=true&#34;&#62;
+  &#60;/Resource&#62;
+&#60;/Context&#62;
+{code}
+
+
+If you used the default user name, password and database name from the examples above, then you don't need to reconfigure anything here. If, however, you used different values, you need to stop Tomcat, change the values and start Tomcat again.
+
+Check if the application is running.
+In a default installation of Tomcat, the capture and query interfaces will now be available at http://localhost:8080/aspireRfidEpcisRepository/capture and http://localhost:8080/aspireRfidEpcisRepository/query respectively.
+
+When you open the capture interface's URL in your web browser, you should see a short information page similar to this:
+
+This service captures EPCIS events sent to it using HTTP POST requests.
+The payload of the HTTP POST request is expected to be an XML document
+conforming to the EPCISDocument schema.
+
+For further information refer to the xml schema files or check the Example
+in 'EPC Information Services (EPCIS) Version 1.0 Specification', Section 9.6.
+
+To also check if the query interface is set up correctly, point your browser to its URL and append the string ?wsdl to it. The WSDL file of the query service should now be displayed in your browser.
+
+Proceed to the next sections to test your repository installation using one of our client applications.
+
+Check the application's log file in case of problems.
+The application's log is kept in TOMCAT_HOME/logs/aspireRfidEpcisRepository.log. In case of problems with your own EPCIS repository instance, this is the first place to look for information about errors or specific exceptions thrown by the application.
+
+
+1.1.1 Runtime Configuration of your EPCIS Repository
+
+In this section, we describe the properties you can use to configure AspireRFID EPCIS repository implementation.
+
+Basically there are three coniguration files relevant to the user of the application: application.properties, context.xml, and log4j.properties
+
+*application.properties*
+The application.properties file is located in the application's class path at TOMCAT_HOME/webapps/aspireRfidEpcisRepository/WEB-INF/classes. It contains the basic configuration directives that control the repository's behaviour when processing queries and events. This file looks as follows:
+{code:xml}
+\# application.properties - various properties (loaded at runtime) which are used
+\# to configure the behaviour of the epcis-repository application
+
+\# the version of this service, as exposed by getVendorVersion (must be valid URI)
+service.version=http://wiki.aspire.objectweb.org/xwiki/bin/view/Main.Documentation/EpcisRepository
+
+\# maximum number of result rows allowed for a single query before a
+\# QueryTooLarge exception is raised
+maxQueryResultRows=1000
+
+\# maximum time in milliseconds to wait for a query to finish before a
+\# QueryTooComplex exception is raised
+maxQueryExecutionTime=20000
+
+\# whether to allow inserting new vocabularies when they are missing in the db
+insertMissingVoc=true
+
+\# the schedule used to check for trigger conditions - the values provided here
+\# are parsed into a query schedule which is used to periodically check whether
+\# incoming events contain a specific trigger URI
+trigger.condition.check.sec=0,20,40
+trigger.condition.check.min=
+
+\# whether to allow resetting the database via a HTTP POST 'dbReset' parameter
+dbResetAllowed=false
+dbResetScript=/sql/reset_epcis_with_demo_data.sql
+
+\# the location of the EPCglobal EPCIS schema
+epcisSchemaFile=/wsdl/EPCglobal-epcis-1_0.xsd
+
+\# the location of the EPCglobal EPCIS MasterData schema(nkef)
+epcisMasterDataSchemaFile=/wsdl/EPCglobal-epcis-masterdata-1_0.xsd
+
+\# whether to trust a certificate whose certificate chain cannot be validated
+\# when delivering results via Query Callback Interface
+trustAllCertificates=false
+
+\# the name of the JNDI datasource holding the connection to the database
+jndi.datasource.name=java:comp/env/jdbc/EPCISDB
+
+{code}
+
+We would like to outline one specific feature: The AspireRFID EPCIS implementation includes the option to specify an SQL script (see dbResetScript property) and trigger the execution of this script remotely. This behaviour is not part of the EPCIS specification, but can be used to remotely initialize a repository to a predefined state. The script is triggered by sending an HTTP POST request to the capture interface with the HTTP parameter dbReset set to true. Please note that this feature is not protected by any security mechanisms. It is intended for internal use only and therefore disabled by default (future versions may provide more sophisticated remote management capabilities).
+
+*context.xml*
+The context.xml file includes the configuration parameters for the database connection and looks as follows:
+{code:xml}
+&#60;?xml version=&#34;1.0&#34; encoding=&#34;ISO-8859-1&#34;?&#62;
+&#60;Context reloadable=&#34;true&#34;&#62;
+
+  &#60;Resource
+    name=&#34;jdbc/EPCISDB&#34;
+    type=&#34;javax.sql.DataSource&#34;
+    auth=&#34;Container&#34;
+    username=&#34;epcis&#34;
+    password=&#34;epcis&#34;
+    driverClassName=&#34;org.gjt.mm.mysql.Driver&#34;
+    defaultAutoCommit=&#34;false&#34;
+    url=&#34;jdbc:mysql://localhost:3306/epcis?autoReconnect=true&#34;&#62;
+  &#60;/Resource&#62;
+
+&#60;/Context&#62;
+{code}
+This file is located at TOMCAT_HOME/webapps/aspireRfidEpcisRepository/META-INF/. However, as indicated before, Tomcat reads these configuration settings from the conf/Catalina/localhost/aspireRfidEpcisRepository.xml file once your application has been deployed.
+
+log4j.properties
+This file is also located in the application's class path at TOMCAT_HOME/webapps/aspireRfidEpcisRepository/WEB-INF/classes. The properties defined here affect the logging behaviour of the application. The log file is written to TOMCAT_HOME/logs/aspireRfidEpcisRepository.log. By default, it only includes log statements of level INFO and higher. To log more detailed information (e.g., the contents of incoming soap requests), uncomment the corresponding entries in the file as shown below:
+{code:xml}
+\# LOG4J configuration
+
+\# default logging
+log4j.rootCategory=INFO, LOGFILE
+
+\# customize logging levels
+log4j.logger.org.ow2.aspirerfid = DEBUG
+log4j.logger.org.fosstrak = DEBUG
+log4j.logger.org.accada = DEBUG
+log4j.logger.org.ow2.aspirerfid = DEBUG
+
+\# enable logging of SQL prepared statements
+log4j.logger.org.hibernate.SQL=FINE
+log4j.logger.org.hibernate.type=FINE
+
+\# enable logging of incoming/outgoing SOAP requests/responses
+log4j.logger.org.apache.cxf.interceptor.LoggingInInterceptor=INFO
+log4j.logger.org.apache.cxf.interceptor.LoggingOutInterceptor=INFO
+
+\# logging to file
+log4j.appender.LOGFILE=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.LOGFILE.File=${catalina.base}/logs/aspireRfidEpcisRepository.log
+log4j.appender.LOGFILE.DatePattern='.'yyyy-MM-dd'.log'
+log4j.appender.LOGFILE.layout=org.apache.log4j.PatternLayout
+log4j.appender.LOGFILE.layout.ConversionPattern=%5p (%d{yyyy-MM-dd HH\:mm\:ss,SSS}) [%C\:%L] - %m%n
+{code}
+
+1.1 Developers Guide
+
+Under construction </textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='EpcisRepository.html'>EPCIS Repository</a>
+  (en)
+ <br />
+  Creator: nkef
+ &nbsp;Date: 2009/01/29 18:00
+ <br />
+ Last Author: nkons
+ &nbsp;Date: 2010/06/09 09:27
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:39:43 GMT -->
+</html>

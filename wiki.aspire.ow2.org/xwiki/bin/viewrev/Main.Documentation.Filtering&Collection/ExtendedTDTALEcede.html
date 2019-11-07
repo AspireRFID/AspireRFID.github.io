@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation.Filtering%26Collection/ExtendedTDTALE?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:30:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - ExtendedTDTALE
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.Filtering%26Collection/Main.Documentation.Filtering%26Collection_ExtendedTDTALE.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation.Filtering%26Collection/ExtendedTDTALEd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.Filtering%26Collection/ExtendedTDTALEcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.Filtering%26Collection/ExtendedTDTALEd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Extended TDT ALE
+
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+
+1.1 Introduction
+Extended TDT ALE is extended from Fosstrak Filtering and Collection Server 1.0.2, and makes it possible to be compatible with different input identification formats (i.e. GS1, ISO, MAC address, Telephone numbers, Gsma, OneWire ...).
+
+Extended TDT ALE allows to convert these different formats to EPC standard format (i.e. 'EGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING', and then generate new ECReports. We insert a new field 'gs1_ai_encoding' to ECReport, the ECReprt then includes fields 'epc' 'tag' 'rawHex' rawDecimal' as well as 'gs1_ai_encoding' (if applicable). Filtering and grouping are available for the different input formats as well.
+
+1.1 User Guide
+Make sure the java has been installed in your machine and PATH variable (bin subdirectory of the JVM directory) has been  configured as system environment variable.
+* 1) Download the Fosstrak ALE package: [fc-server-1.0.2.war&#62;http://maven-repository.fosstrak.org/releases/org/fosstrak/fc/fc-server/1.0.2/fc-server-1.0.2.war]
+* 2) Download the extended TDT package [AspireExtendedTDT.rar&#62;http://forge.ow2.org/project/download.php?group_id=324&#38;file_id=15522], this package should be placed in the same directory as fc-server-1.0.2.war.
+* 3) Unzip AspireExtendedTDT.rar to the current repository. Launch the script commands GenerateExtendedALE.bat, a new ExtendedTDTALE archive file (fc-server-1.0.2-AspireExtendedTDT.war) will be automatically generated in the repository /fc-server-1.0.2-AspireExtendedTDT
+* 4) Copy the generated archive file under /Tomcat(your version)/webapps, restart Tomcat server. 
+* 5) You should configure the ALE Client End Point as: http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALEService. And ALE LR client End point as: http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALELRService.
+
+Here is an example of the configuration of ECSpec which integrates ReportSet, filtering, grouping for extended input formats :
+ {code:java}
+&#60;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&#62;
+&#60;ns2:ECSpec includeSpecInReports=&#34;false&#34; xmlns:ns2=&#34;urn:epcglobal:ale:xsd:1&#34;&#62;
+    &#60;logicalReaders&#62;
+        &#60;logicalReader&#62;LR&#60;/logicalReader&#62;
+    &#60;/logicalReaders&#62;
+    &#60;boundarySpec&#62;
+        &#60;repeatPeriod unit=&#34;MS&#34;&#62;2000&#60;/repeatPeriod&#62;
+        &#60;duration unit=&#34;MS&#34;&#62;2000&#60;/duration&#62;
+        &#60;stableSetInterval unit=&#34;MS&#34;&#62;0&#60;/stableSetInterval&#62;
+        &#60;extension/&#62;
+    &#60;/boundarySpec&#62;
+    &#60;reportSpecs&#62;
+        &#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;C&#34; reportIfEmpty=&#34;true&#34;&#62;
+            &#60;reportSet set=&#34;CURRENT&#34;/&#62;
+            &#60;filterSpec&#62;
+               &#60;includePatterns&#62;
+                    &#60;includePattern&#62;urn:epc:pat:sgtin-96:*.*.*.*&#60;/includePattern&#62;&#60;!-- Test in Rifidi Custom:30395dfa804012c000000003 --&#62;
+			  &#60;includePattern&#62;urn:iso:pat:14443double-56:*.*&#60;/includePattern&#62;
+			  &#60;includePattern&#62;urn:iso:pat:14443single-32:*.*&#60;/includePattern&#62;
+                &#60;/includePatterns&#62;
+		    &#60;excludePatterns&#62;
+			  &#60;excludePattern&#62;urn:onewire:pat:ibutton:*.*.*&#60;/excludePattern&#62;
+                &#60;/excludePatterns&#62;
+            &#60;/filterSpec&#62;
+            &#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34; includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34;/&#62;
+        &#60;/reportSpec&#62;
+        &#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;A&#34; reportIfEmpty=&#34;true&#34;&#62;
+            &#60;reportSet set=&#34;ADDITIONS&#34;/&#62;
+            &#60;filterSpec&#62;
+               &#60;includePatterns&#62;
+                    &#60;includePattern&#62;urn:epc:pat:sgtin-96:*.*.*.*&#60;/includePattern&#62;
+			  &#60;includePattern&#62;urn:phonenumber:pat:*.*.*&#60;/includePattern&#62;
+			  &#60;includePattern&#62;urn:gsma:pat:imei:*.*.*&#60;/includePattern&#62;
+			  &#60;includePattern&#62;urn:onewire:pat:ibutton:*.*.*&#60;/includePattern&#62;
+                &#60;/includePatterns&#62;
+		    &#60;excludePatterns/&#62;
+            &#60;/filterSpec&#62;
+            &#60;groupSpec&#62;
+                &#60;pattern&#62;urn:epc:pat:sgtin-96:*.*.X.*&#60;/pattern&#62;&#60;!-- Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003--&#62;
+                &#60;pattern&#62;urn:phonenumber:pat:X.*.*&#60;/pattern&#62;
+		&#60;/groupSpec&#62;
+            &#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34; includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34;/&#62;
+        &#60;/reportSpec&#62;
+	&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;D&#34; reportIfEmpty=&#34;true&#34;&#62;
+            &#60;reportSet set=&#34;DELETIONS&#34;/&#62;
+            &#60;filterSpec&#62;
+               &#60;includePatterns&#62;
+                    &#60;includePattern&#62;urn:epc:pat:sgtin-96:*.*.*.*&#60;/includePattern&#62;
+			  &#60;includePattern&#62;urn:phonenumber:pat:*.*.*&#60;/includePattern&#62;
+                &#60;/includePatterns&#62;
+		    &#60;excludePatterns/&#62;
+            &#60;/filterSpec&#62;
+            &#60;groupSpec&#62;
+                &#60;pattern&#62;urn:epc:pat:sgtin-96:*.*.X.*&#60;/pattern&#62;&#60;!-- Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003--&#62;
+                &#60;pattern&#62;urn:phonenumber:pat:X.*.*&#60;/pattern&#62;
+		&#60;/groupSpec&#62;
+            &#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34; includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34;/&#62;
+        &#60;/reportSpec&#62;
+    &#60;/reportSpecs&#62;
+    &#60;extension/&#62;
+&#60;/ns2:ECSpec&#62;
+
+
+{code}
+
+You can download the AspireTDT simulation client ( [.jar&#62;http://forge.ow2.org/project/download.php?group_id=324&#38;file_id=15524], [.exe&#62;http://forge.ow2.org/project/download.php?group_id=324&#38;file_id=15523] ) to do some preliminary tests. This simulation tool allows to send the GS1, ISO, telphone number, Gsma, OneWire formats to Extended TDT ALE server, then the ALE converts them to EPC standard format (i.e. 'LEGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING' (if applicable), and then generate new ECReport. Filtering and grouping are available for the different input formats as well.
+ 
+
+You can use either [AspireRfid IDE&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE] (in this case, the configuration of ALE End points is under Windows/Preferences) or [Fosstrak Standalone Client 1.0.2&#62;http://www.fosstrak.org/fc/download.html] for the complete tests.
+
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/ExtendedTDTALE/Simulator_Interface.png&#34;&#62;{image:Simulator_Interface.png|800}&#60;/a&#62;
+&#60;/center&#62;
+
+Press the upper left button to set the default setting.   
+~~Network setting~~ allows to configure the ALE server's IP address.  
+~~Send~~ button allows to send the different input identification formats to ALE and convert into standard format.</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment?xpage=code by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 18:05:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Deployment
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin59b5.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment?xpage=code">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='Deployment.html'>Deployment</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_Deployment.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="Deploymentd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/Deploymentcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="Deploymentd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Deployment
+
+In this section we will provide information regarding the deployment of the components available at the [AspireRFID SVN branches|http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches]. Before getting on with the deployment of the components, you should check the [building|Building] section which describes how to build the software from the source. 
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+----
+
+1.1 AITdev branch components
+
+This branch contains three types of software components.
+# Components deployable on an OSGI container (e.g. apache felix)
+# Components deployable on a Java Application server (e.g. apache tomcat)
+# Client side application (non-deployable)
+
+We will describe how to deploy the first two types of components.
+
+1.1.1 OSGI bundles
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means that one can take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, he can make the reader AspireRFID enabled. 
+
+1.1.1.1 Deploying the bundles
+
+To deploy the bundles you need first to get the latest version of [Apache Felix|http://felix.apache.org] and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:
+
+~~mosgi.jmxconsole.rmiport.core=9999~~
+
+Then you may start the server by running the following command (being in the felix directory):
+
+~~java -jar bin/felix.jar~~
+
+You will then be asked to enter a profile name; you should type in the word &#34;core&#34; (without the quotes) and press enter. The the server starts and you will be prompted with the felix shell (&#62;). You may type help to get a list of the available commands. Now you need to deploy some required bundles, which can be found at [the forge SVN|http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/sandbox/nektarios/Common%20bundles/AITdev%20required%20bundles].
+
+These are the following (note the sequence):
+# OSGi R4 Compendium Bundle
+# MOSGi JMX-MX4J Agent Service
+# MOSGi JMX rmiregistry
+# MOSGi JMX-MX4J RMI Connector
+# Apache Jakarta log4j Plug-in
+# OW2 Bundles :: Externals :: Commons Collections
+# castor
+# antlr-osgi bundle
+# commons-lang-osgi bundle
+# commons-configuration-osgi
+
+To deploy a bundle you will need the following command:
+
+~~start file:&#34;full_bundle_location&#34;~~
+
+where ~~full_bundle_location~~ is the location of the bundle on your disk.
+
+You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+
+# JaxBLib
+# TDT Implementation bundle
+# Reader Protocol bundle (API)
+# Reader Protocol implementation bundle
+# Simulator reader
+# Intermec IF5 reader proxy
+
+The two latter bundles provide a HAL implementation of the RP.
+
+1.1.1.1 Configuration
+
+After having done all that, you may start and configure the RP bundle using its JMX interface. You may start the JMX console and connect to the server with the following command:
+
+~~jconsole service:jmx:rmi:///jndi/rmi://localhost:9999/core~~
+
+The jconsole tool is provided by the Sun Java JDK. A graphical user interface should be displayed providing means of interacting with the bundle through the exposed JMX functionality. You may see the available functionality under the menu rfid-&#62;service-&#62;RPreader. The administrator may interact with the bundle through the Attributes and Operations. We will now describe how to start, stop the bundle and to change the active HAL implementation. 
+
+The default Reader Protocol implementation bundle configuration requires the Simulator reader bundle installed. There are two HAL implementations available; a simulated reader and an Intermec IF5 proxy reader which uses the BRI protocol natively.
+
+* To start the bundle functionality you have to simply click the &#34;start&#34; button under the Operations menu. By default the simulator reader starts and the user is provided with a GUI for creating tags and moving them over the virtual antennas.
+
+* To stop the bundle functionality you have to simply click the &#34;stop&#34; button under the Operations menu. Please note that though the simulator window does not close when the bundle is stopped, this module becomes isolated from the rest of the components (like the ALE) and it is safe to close the GUI window through the designated button.
+
+* To enable the use of the Intermec IF5 reader you have to add configuration about the reader. The process of adding configuration is the following:
+** Under the operations you add the following in the addReader button:
+*** p1=IntermecIF5
+*** p2=org.ow2.aspirerfid.reader.rp.impl.hal.impl.intermec.IntermecIF5Controller
+*** p3=/props/IntermecIF5ControllerProperties.xml
+*** Then you click the button
+** Under the operations you add the following in the addReaderReadpoint button
+*** p1=IntermecIF5
+*** p2=Antenna1
+*** Then you click the button
+** Under the operations you add the following in the addSource button
+*** p1=Antenna1
+*** p2=true
+*** p3=Antenna1
+*** Then you click the button
+** Under the attributes you edit the CurrentSource addSource field and you set the value Antenna1 and then you press enter
+** Press the loadConfig button. This will load the changes and restart the bundle functionality.
+
+When you stop the bundle the configuration changes will be permanently saved to a file under the user's profile with the name ReaderDevice.xml. You may edit this file directly, ~~if you know what you are doing~~. When you start again the bundle the configuration is going to be loaded from this file. If you delete it, the default one is going to be loaded instead.
+
+1.1.1 Web application
+
+To deploy the web application a Java application server (e.g Apache Tomcat) is required to be installed. This guide assumes that you use an Apache Tomcat server.
+
+1.1.1.1 Deployment
+
+1.1.1.1 Configuration</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='Deployment.html'>Deployment</a>
+  (en)
+ <br />
+  Creator: nektarios
+ &nbsp;Date: 2008/10/09 09:16
+ <br />
+ Last Author: nektarios
+ &nbsp;Date: 2008/10/09 12:18
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment?xpage=code by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 18:05:13 GMT -->
+</html>

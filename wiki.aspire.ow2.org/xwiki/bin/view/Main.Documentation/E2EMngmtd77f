@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>E2EMngmt</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1275911211000</creationDate>
+<date>1280320993000</date>
+<contentUpdateDate>1280320993000</contentUpdateDate>
+<version>1.27</version>
+<title>Aspire :: End-to-end management</title>
+<template></template>
+<content>1 Aspire :: End-to-end management
+----
+#toc("" "" "true")
+----
+
+This section describes the tools to management the components of the Aspire middleware.
+
+1.1 Context
+Aspire' end-to-end management tools are availables as RCP standalone applications and as plugins for the VisualVM.
+* RCP based tools use WebServics for communication
+* VisualVM tools use the JMX specifications. JMX (Java Management eXtension) is the de-facto standard for managing and for monitoring Java applications and middlewares.
+
+1.1 Source repository
+* [Source repository&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fmanagement%2F]
+
+1.1 ALE
+* [The RCP Configurator&gt;Main.Documentation.AspireIDE.AleServerConfigurator]
+* [The plugin for VisualVM&gt;Main.Documentation.E2EMngmt-ALEServer-JMX]
+
+1.1 BEG
+* [The BEG Configurator&gt;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in]
+* [The plugin for VisualVM&gt;Main.Documentation.E2EMngmt-BEG-JMX]
+
+1.1 EPCIS
+* [The EPCIS Configurator&gt;]
+* [The plugin for VisualVM&gt;Main.Documentation.E2EMngmt-EPCIS-JMX]
+
+1.1 APE (Aspire Programmable Engine)
+
+1.1 Connector Application
+
+1.1 Autonomic Management
+* [E2E Management with OW2 Jasmine&gt;Main.Documentation.E2EMngmt-Jasmine]
+
+1.1 Others
+
+1.1.1 ONS
+
+1.1.1 OSGi Core Proxy
+
+1.1.1 Rifidi simulator
+
+1.1 Misc
+1.1.1 VisualVM
+*[More documentation on the VisualVM ...&gt;Main.Documentation.E2EMngmt-VisualVM]
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AEndtoendmanagement"&gt;Aspire :: End-to-end management&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSourcerepository"&gt;2 Source repository&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HALE"&gt;3 ALE&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBEG"&gt;4 BEG&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEPCIS"&gt;5 EPCIS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAPE28AspireProgrammableEngine29"&gt;6 APE (Aspire Programmable Engine)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConnectorApplication"&gt;7 Connector Application&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAutonomicManagement"&gt;8 Autonomic Management&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOthers"&gt;9 Others&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HONS"&gt;9.1 ONS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiCoreProxy"&gt;9.2 OSGi Core Proxy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRifidisimulator"&gt;9.3 Rifidi simulator&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMisc"&gt;10 Misc&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HVisualVM"&gt;10.1 VisualVM&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the tools to management the components of the Aspire middleware.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+Aspire' end-to-end management tools are availables as RCP standalone applications and as plugins for the VisualVM.
+&lt;ul class="star"&gt;
+&lt;li&gt;RCP based tools use WebServics for communication&lt;/li&gt;
+&lt;li&gt;VisualVM tools use the JMX specifications. JMX (Java Management eXtension) is the de-facto standard for managing and for monitoring Java applications and middlewares.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HSourcerepository"&gt;2 Source repository&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fmanagement%2F"&gt;&amp;#83;ource repository&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HALE"&gt;3 ALE&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AleServerConfigurator"&gt;The RCP Configurator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-ALEServer-JMX"&gt;The plugin for VisualVM&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBEG"&gt;4 BEG&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in"&gt;The BEG Configurator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-BEG-JMX"&gt;The plugin for VisualVM&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HEPCIS"&gt;5 EPCIS&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/?parent=Main.Documentation.E2EMngmt"&gt;&lt;span class="wikicreatelinktext"&gt;The EPCIS Configurator&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-EPCIS-JMX"&gt;The plugin for VisualVM&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HAPE28AspireProgrammableEngine29"&gt;6 APE (Aspire Programmable Engine)&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HConnectorApplication"&gt;7 Connector Application&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAutonomicManagement"&gt;8 Autonomic Management&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-Jasmine"&gt;E2E Management with OW2 Jasmine&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HOthers"&gt;9 Others&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HONS"&gt;9.1 ONS&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiCoreProxy"&gt;9.2 OSGi Core Proxy&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRifidisimulator"&gt;9.3 Rifidi simulator&lt;/span&gt;&lt;/h4&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;10 Misc&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVisualVM"&gt;10.1 VisualVM&lt;/span&gt;&lt;/h4&gt; 
+*&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM"&gt;More documentation on the VisualVM ...&lt;/a&gt;&lt;/span&gt;
+</renderedcontent>
+</xwikidoc>

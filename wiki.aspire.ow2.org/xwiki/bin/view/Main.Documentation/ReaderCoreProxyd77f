@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>ReaderCoreProxy</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nektarios</creator>
+<author>xwiki:XWiki.yluo</author>
+<contentAuthor>xwiki:XWiki.yluo</contentAuthor>
+<creationDate>1233251820000</creationDate>
+<date>1276006923000</date>
+<contentUpdateDate>1276006923000</contentUpdateDate>
+<version>1.13</version>
+<title>Reader Core Proxy</title>
+<template></template>
+<content>1 Reader Core Proxy
+
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introduction
+
+
+This section provides information regarding the deployment of the Reader Core components available at the [AspireRFID SVN branches|http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/trunk/bundles/]. Before getting on with the deployment of the components, you could check the developers section which describes how to build the software from the source.
+
+1.1 Users Guide
+
+
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means we may take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, we could make the reader AspireRFID enabled.
+
+
+You can download the bundled package that contains Apache Felix with the required configuration and the OSGI bundles from [here&gt;http://forge.objectweb.org/project/shownotes.php?release_id=2987] or you may proceed to manual deployment using the following instructions.
+
+
+You can start Felix with the following command (while being in the root directory of the installation) and set the profile name as &amp;quot;core&amp;quot; when asked.
+~~java -jar bin/felix.jar~~
+
+1.1.1 Manual deployment
+
+
+To deploy the bundles you need first to get the latest version of [Apache Felix|http://felix.apache.org] and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:
+
+
+~~mosgi.jmxconsole.rmiport.core=9995~~
+
+
+Then you may start the server:
+
+
+~~java -jar bin/felix.jar~~
+
+
+You will then be asked to enter a profile name; you should type in the word &amp;quot;core&amp;quot; (without the quotes) and press enter. Then the server starts and you will be prompted with the felix shell (&gt;). You may type help to get a list of the available commands.
+
+
+Now you need to deploy some required bundles, which can be found at [the forge SVN|http://websvn.ow2.org/listing.php?repname=aspire/&amp;path=/sandbox/nektarios/Common+bundles/AITdev+required+bundles/].
+
+
+These are the following (note the sequence):
+
+
+# OSGi R4 Compendium Bundle
+# MOSGi JMX-MX4J Agent Service
+# MOSGi JMX rmiregistry
+# MOSGi JMX-MX4J RMI Connector
+# Apache Jakarta log4j Plug-in
+# OW2 Bundles :: Externals :: Commons Collections
+# castor
+# antlr-osgi
+# commons-logging-osgi
+# commons-lang-osgi
+# commons-configuration-osgi
+
+
+To deploy a bundle you will need the following command:
+
+
+~~start file:&amp;quot;full_bundle_location&amp;quot;~~
+
+
+where ~~full_bundle_location~~ is the location of the bundle on your disk.
+
+
+To *skip the manual deployment process*, you can download the {attach:config.aspire.properties} file and replace the original felix configuration file. Assuming that the required bundles exist in the {felix.home}\bundle directory, when you start felix, the bundles will be auto-deployed.
+
+
+You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+
+
+# JaxBLib
+# TDT Implementation bundle
+# Reader Protocol bundle (API)
+# Reader Protocol implementation bundle
+# Simulator reader
+# Intermec IF5 reader proxy
+
+1.1.1 Configuration
+
+
+You may configure Reader core proxy using JMX. We have developed a plug-in for AspireID, the [JMX plugin&gt;Main.Documentation.AspireIDE.PhysicalReaderConfiguration], which makes the underlying mechanics of configuration transparent to the user. You may find documentation regarding the use of the plug-in at the link above.
+Another way of configuration through JMX is via the JMX console, the jconsole tool, which is provided by the Sun Java JDK. You may connect to the server with the following command (assuming that felix is run at the local machine):
+
+
+~~jconsole service:jmx:rmi:///jndi/rmi://localhost:9995/core~~
+
+
+A graphical user interface should be displayed providing means of using the exposed JMX functionality. You may see the available functionality under the menu rfid-&gt;service-&gt;RPreader. For details regarding the available functionality please refer to the developers guide.
+
+1.1 Developers Guide
+
+
+As it is said in the introduction, this component is based on the OSGi framework. Thus, it is composed by a number of bundles, each implementing a different kind of functionality. The TDT bundle is covered in the [Tag Data Translation&gt;Main.Documentation.TDT] section.
+
+1.1.1 Acquiring the code
+
+
+You can get the source code of the bundles through [Aspire SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. You should get all the source code under the path aspire/trunk/bundles/. The projects under bundles are build with maven and they can be imported to eclipse.
+
+1.1.1 Component analysis
+
+
+The Reader Protocol bundle defines the API that is used by the implementation bundle. The reason we followed this strategy is to allow for other developers to implement their own implementations if such an alternative is required. The operations defined through the API are also the ones that are exported as management operations through JMX.
+
+
+The reader protocol implementation bundle is based on the codebase of [Fosstrak&gt;http://www.fosstrak.org] reader project. This bundle is responsible for creating the JMX MBean and exporting it through MOSGI. Moreover, it maintains the configuration which can be updated through JMX.
+The bundle's jar initially contains a ReaderProtocol.xml file with a basic configuration. Every update that is made to the configuration is saved on an external configuration file that is saved under the user's home directory with the name ReaderProtocol.xml. The initial configuration is loads the RFID reader simulator implementation. If there is not such a configuration file under the user's home directory for some reason (e.g. initial deployment or deleted file) the default configuration is loaded.
+
+
+In order for the component to be of any use, a HAL implementation is required. The HAL implementation is the actual reader with which the proxy module communicates. Within this module the standard RP calls are translated into proprietary calls.
+
+
+Anyone who is interested in creating a bundle implementing the HAL should implement the following Java interface, which is located in the Reader protocol implementation bundle
+
+
+~~org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction~~
+
+
+Then the implementation bundle should be deployed in the OSGI container and the implementation class should be identified in the RP configuration through JMX.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HReaderCoreProxy"&gt;Reader Core Proxy&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;2 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HManualdeployment"&gt;2.1 Manual deployment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;2.2 Configuration&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;3 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;3.1 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HComponentanalysis"&gt;3.2 Component analysis&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+This section provides information regarding the deployment of the Reader Core components available at the &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/trunk/bundles/"&gt;&amp;#65;spireRFID SVN branches&lt;/a&gt;&lt;/span&gt;. Before getting on with the deployment of the components, you could check the developers section which describes how to build the software from the source.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means we may take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, we could make the reader AspireRFID enabled.&lt;p class="paragraph"/&gt;
+You can download the bundled package that contains Apache Felix with the required configuration and the OSGI bundles from &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/shownotes.php?release_id=2987"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt; or you may proceed to manual deployment using the following instructions.&lt;p class="paragraph"/&gt;
+You can start Felix with the following command (while being in the root directory of the installation) and set the profile name as &amp;quot;core&amp;quot; when asked.
+&lt;i class="italic"&gt;java -jar bin/felix.jar&lt;/i&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HManualdeployment"&gt;Manual deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+To deploy the bundles you need first to get the latest version of &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org"&gt;&amp;#65;pache Felix&lt;/a&gt;&lt;/span&gt; and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;mosgi.jmxconsole.rmiport.core=9995&lt;/i&gt;&lt;p class="paragraph"/&gt;
+Then you may start the server:&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;java -jar bin/felix.jar&lt;/i&gt;&lt;p class="paragraph"/&gt;
+You will then be asked to enter a profile name; you should type in the word &amp;quot;core&amp;quot; (without the quotes) and press enter. Then the server starts and you will be prompted with the felix shell (&gt;). You may type help to get a list of the available commands.&lt;p class="paragraph"/&gt;
+Now you need to deploy some required bundles, which can be found at &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire/&amp;path=/sandbox/nektarios/Common+bundles/AITdev+required+bundles/"&gt;&amp;#116;he forge SVN&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;
+These are the following (note the sequence):
+&lt;ol&gt;&lt;li&gt;OSGi R4 Compendium Bundle&lt;/li&gt;
+&lt;li&gt;MOSGi JMX-MX4J Agent Service&lt;/li&gt;
+&lt;li&gt;MOSGi JMX rmiregistry&lt;/li&gt;
+&lt;li&gt;MOSGi JMX-MX4J RMI Connector&lt;/li&gt;
+&lt;li&gt;Apache Jakarta log4j Plug-in&lt;/li&gt;
+&lt;li&gt;OW2 Bundles :: Externals :: Commons Collections&lt;/li&gt;
+&lt;li&gt;castor&lt;/li&gt;
+&lt;li&gt;antlr-osgi&lt;/li&gt;
+&lt;li&gt;commons-logging-osgi&lt;/li&gt;
+&lt;li&gt;commons-lang-osgi&lt;/li&gt;
+&lt;li&gt;commons-configuration-osgi&lt;/li&gt;
+&lt;/ol&gt;To deploy a bundle you will need the following command:&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;start file:&amp;quot;full_bundle_location&amp;quot;&lt;/i&gt;&lt;p class="paragraph"/&gt;
+where &lt;i class="italic"&gt;full_bundle_location&lt;/i&gt; is the location of the bundle on your disk.&lt;p class="paragraph"/&gt;
+To &lt;strong class="strong"&gt;skip the manual deployment process&lt;/strong&gt;, you can download the &lt;a href="/xwiki/bin/download/Main.Documentation/ReaderCoreProxy/config.aspire.properties" /&gt;&amp;#99;onfig.aspire.properties&lt;/a&gt; file and replace the original felix configuration file. Assuming that the required bundles exist in the {felix.home}&amp;#98;undle directory, when you start felix, the bundles will be auto-deployed.&lt;p class="paragraph"/&gt;
+You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+&lt;ol&gt;&lt;li&gt;JaxBLib&lt;/li&gt;
+&lt;li&gt;TDT Implementation bundle&lt;/li&gt;
+&lt;li&gt;Reader Protocol bundle (API)&lt;/li&gt;
+&lt;li&gt;Reader Protocol implementation bundle&lt;/li&gt;
+&lt;li&gt;Simulator reader&lt;/li&gt;
+&lt;li&gt;Intermec IF5 reader proxy&lt;/li&gt;
+&lt;/ol&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+You may configure Reader core proxy using JMX. We have developed a plug-in for AspireID, the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/PhysicalReaderConfiguration"&gt;JMX plugin&lt;/a&gt;&lt;/span&gt;, which makes the underlying mechanics of configuration transparent to the user. You may find documentation regarding the use of the plug-in at the link above.
+Another way of configuration through JMX is via the JMX console, the jconsole tool, which is provided by the Sun Java JDK. You may connect to the server with the following command (assuming that felix is run at the local machine):&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;jconsole service:jmx:rmi:///jndi/rmi://localhost:9995/core&lt;/i&gt;&lt;p class="paragraph"/&gt;
+A graphical user interface should be displayed providing means of using the exposed JMX functionality. You may see the available functionality under the menu rfid-&gt;service-&gt;RPreader. For details regarding the available functionality please refer to the developers guide.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+As it is said in the introduction, this component is based on the OSGi framework. Thus, it is composed by a number of bundles, each implementing a different kind of functionality. The TDT bundle is covered in the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/TDT"&gt;Tag Data Translation&lt;/a&gt;&lt;/span&gt; section.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+You can get the source code of the bundles through &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#65;spire SVN&lt;/a&gt;&lt;/span&gt;. You should get all the source code under the path aspire/trunk/bundles/. The projects under bundles are build with maven and they can be imported to eclipse.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HComponentanalysis"&gt;Component analysis&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+The Reader Protocol bundle defines the API that is used by the implementation bundle. The reason we followed this strategy is to allow for other developers to implement their own implementations if such an alternative is required. The operations defined through the API are also the ones that are exported as management operations through JMX.&lt;p class="paragraph"/&gt;
+The reader protocol implementation bundle is based on the codebase of &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt; reader project. This bundle is responsible for creating the JMX MBean and exporting it through MOSGI. Moreover, it maintains the configuration which can be updated through JMX.
+The bundle's jar initially contains a ReaderProtocol.xml file with a basic configuration. Every update that is made to the configuration is saved on an external configuration file that is saved under the user's home directory with the name ReaderProtocol.xml. The initial configuration is loads the RFID reader simulator implementation. If there is not such a configuration file under the user's home directory for some reason (e.g. initial deployment or deleted file) the default configuration is loaded.&lt;p class="paragraph"/&gt;
+In order for the component to be of any use, a HAL implementation is required. The HAL implementation is the actual reader with which the proxy module communicates. Within this module the standard RP calls are translated into proprietary calls.&lt;p class="paragraph"/&gt;
+Anyone who is interested in creating a bundle implementing the HAL should implement the following Java interface, which is located in the Reader protocol implementation bundle&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction&lt;/i&gt;&lt;p class="paragraph"/&gt;
+Then the implementation bundle should be deployed in the OSGI container and the implementation class should be identified in the RP configuration through JMX.
+</renderedcontent>
+</xwikidoc>

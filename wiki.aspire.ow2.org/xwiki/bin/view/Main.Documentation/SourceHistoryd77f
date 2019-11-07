@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>SourceHistory</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1276217017000</creationDate>
+<date>1276217211000</date>
+<contentUpdateDate>1276217211000</contentUpdateDate>
+<version>1.6</version>
+<title>Source History</title>
+<template></template>
+<attachment>
+<filename>rfidsuite-user-guide.pdf</filename>
+<filesize>1759038</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1276217210000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>rfidsuite-installation-guide.pdf</filename>
+<filesize>649943</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1276217182000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>rfidsuite-datasheet.pdf</filename>
+<filesize>1754218</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1276217158000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>rfidsuite-administration-guide.pdf</filename>
+<filesize>490502</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1276217128000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>Source History
+
+
+----
+#toc("" "" "true")
+----
+
+
+1.1 Branches
+1.1.1 AITdev
+
+
+The AITdev branch is the initial effort by AIT to start development for the AspireRFID middleware. The main target of this branch is to provide software that follows the AspireRFID&amp;rsquo;s Middleware and Programmability specifications. Thus, this branch will be providing software components for:
+
+
+* Reader Core Proxy with RFID reader Connectors and simulators
+* Filtering and Collecting
+* Business Event Generator
+* Information sharing repository
+* Various connector implementations (ERP, WMS, RDBMS)
+* And the AspireRFID IDE for configuring, programming and managing the middleware.
+
+This branch is maintained by the [AIT team|Main.Contributors]
+
+*The AITdev Branch have moved to the AspireRFID trunk and it will keep evolving from there.*
+
+
+1.1.1 RFID Suite
+
+
+The RFID Suite precedes the Aspire RFID middleware. The source code is available on the forge (http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite).
+
+
+The available documentation concerns :
+
+
+* the Specification datasheet ({attach:.pdf|file=rfidsuite-datasheet.pdf}, .doc, wiki)
+* the Installation manual ({attach:.pdf|file=rfidsuite-installation-guide.pdf}, .doc, wiki)
+* the Administration manual ({attach:.pdf|file=rfidsuite-administration-guide.pdf}, .doc, wiki)
+* the User guide ({attach:.pdf|file=rfidsuite-user-guide.pdf}, .doc, wiki)
+
+A video shows the usage of the RFID Suite (version 09/2007) [Watch the video ...&gt;http://membres-liglab.imag.fr/donsez/pub/aspire/ow2aspire-rfid-suite-2007.avi].
+
+
+Goto the [developer documentation&gt;Main.DevDocRFIDSuite].
+
+
+~~Remark: The RFID Suite has been developed by the [Adèle team&gt;http://www-adele.imag.fr] (Université Joseph Fourier - Grenoble 1, France) between 2005 and 2008.~~
+
+1.1.1 NFC Museum
+
+
+* ["NFCMuseum: an Open-Source Middleware for Augmenting Museum Exhibits"&gt;http://membres-liglab.imag.fr/donsez/pub/publi/icps08-nfcmuseum.pdf], demonstration @ International Conference on Pervasive Services (ICPS'08), Demonstration track, July 6-10, 2008, Sorrento, Italy,
+
+1.1 General
+
+
+* "Supply chain management and NFC picking demonstrations using the AspireRfid middleware platform", demonstration @ ACM/IFIP/USENIX Middleware '08 Conference, Leuven, Belgium, December 2008, http://doi.acm.org/10.1145/1462735.1462751</content>
+<renderedcontent>Source History&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBranches"&gt;1 Branches&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAITdev"&gt;1.1 AITdev&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRFIDSuite"&gt;1.2 RFID Suite&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNFCMuseum"&gt;1.3 NFC Museum&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HGeneral"&gt;2 General&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBranches"&gt;Branches&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAITdev"&gt;AITdev&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+The AITdev branch is the initial effort by AIT to start development for the AspireRFID middleware. The main target of this branch is to provide software that follows the AspireRFID&amp;rsquo;s Middleware and Programmability specifications. Thus, this branch will be providing software components for:
+&lt;ul class="star"&gt;
+&lt;li&gt;Reader Core Proxy with RFID reader Connectors and simulators&lt;/li&gt;
+&lt;li&gt;Filtering and Collecting&lt;/li&gt;
+&lt;li&gt;Business Event Generator&lt;/li&gt;
+&lt;li&gt;Information sharing repository&lt;/li&gt;
+&lt;li&gt;Various connector implementations (ERP, WMS, RDBMS)&lt;/li&gt;
+&lt;li&gt;And the AspireRFID IDE for configuring, programming and managing the middleware.&lt;/li&gt;
+&lt;/ul&gt;This branch is maintained by the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Contributors"&gt;AIT team&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;The AITdev Branch have moved to the AspireRFID trunk and it will keep evolving from there.&lt;/strong&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRFIDSuite"&gt;RFID Suite&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+The RFID Suite precedes the Aspire RFID middleware. The source code is available on the forge (&lt;span class="nobr"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite"&gt;&amp;#104;ttp://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite&lt;/a&gt;&lt;/span&gt;).&lt;p class="paragraph"/&gt;
+The available documentation concerns :
+&lt;ul class="star"&gt;
+&lt;li&gt;the Specification datasheet (&lt;a href="/xwiki/bin/download/Main.Documentation/SourceHistory/rfidsuite-datasheet.pdf" /&gt;.pdf&lt;/a&gt;, .doc, wiki)&lt;/li&gt;
+&lt;li&gt;the Installation manual (&lt;a href="/xwiki/bin/download/Main.Documentation/SourceHistory/rfidsuite-installation-guide.pdf" /&gt;.pdf&lt;/a&gt;, .doc, wiki)&lt;/li&gt;
+&lt;li&gt;the Administration manual (&lt;a href="/xwiki/bin/download/Main.Documentation/SourceHistory/rfidsuite-administration-guide.pdf" /&gt;.pdf&lt;/a&gt;, .doc, wiki)&lt;/li&gt;
+&lt;li&gt;the User guide (&lt;a href="/xwiki/bin/download/Main.Documentation/SourceHistory/rfidsuite-user-guide.pdf" /&gt;.pdf&lt;/a&gt;, .doc, wiki)&lt;/li&gt;
+&lt;/ul&gt;A video shows the usage of the RFID Suite (version 09/2007) &lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/pub/aspire/ow2aspire-rfid-suite-2007.avi"&gt;&amp;#87;atch the video ...&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;
+Goto the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/DevDocRFIDSuite"&gt;developer documentation&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;Remark: The RFID Suite has been developed by the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www-adele.imag.fr"&gt;&amp;#65;dèle team&lt;/a&gt;&lt;/span&gt; (Université Joseph Fourier - Grenoble 1, France) between 2005 and 2008.&lt;/i&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNFCMuseum"&gt;NFC Museum&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/pub/publi/icps08-nfcmuseum.pdf"&gt;&amp;#34;NFCMuseum: an Open-Source Middleware for Augmenting Museum Exhibits"&lt;/a&gt;&lt;/span&gt;, demonstration @ International Conference on Pervasive Services (ICPS'08), Demonstration track, July 6-10, 2008, Sorrento, Italy,&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HGeneral"&gt;General&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;"Supply chain management and NFC picking demonstrations using the AspireRfid middleware platform", demonstration @ ACM/IFIP/USENIX Middleware '08 Conference, Leuven, Belgium, December 2008, &lt;span class="nobr"&gt;&lt;a href="http://doi.acm.org/10.1145/1462735.1462751"&gt;&amp;#104;ttp://doi.acm.org/10.1145/1462735.1462751&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

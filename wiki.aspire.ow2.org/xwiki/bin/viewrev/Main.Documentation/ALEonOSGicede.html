@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation/ALEonOSGi?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:28:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - ALEonOSGi
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_ALEonOSGi.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation/ALEonOSGid5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/ALEonOSGicede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/ALEonOSGid77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Aspire :: Deployment of Filtering And Collection Server on OSGi
+
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+1.1 Introduction
+
+
+Deployment of the Filtering And Collection Server on OSGi platform provides to the middleware two important properties:
+
+
+* Modularity: Extensions to the F&#38;amp;C server as addition of new readers or sensors should be provided in a modular fashion. Using OSGi approach, new readers are developed without introduce their driver code in the same archive (war) used to package the ALE Server.
+* Dynamicity: These new modules will be deployed (or undeployed) on the platform dynamically without stopping the applications that are currently in execution.
+
+
+However, deployment on OSGi imposes some conditions on the F&#38;amp;C server provisioning. This document will explain how to deploy the Fosstrak ALE Server on OSGi platform. The document is organized as follows: first installation of OSGi platform is presented. Then, how the war archive is transformed in a compliant OSGi bundled is showed. Next, the installation of a reader driver is illustrated, follow by installation of a sensor driver. Finally, additional features installation is explained.
+
+
+{image:aleosgiarch.png|width=784|height=445}
+
+Figure : architecture of the ALEServer' OSGi profile ({attach:HiRes picture|file=aleosgiarch.png})
+
+1.1 Transformation of ALE Server web application in an OSGi compliant bundle
+
+
+This transformation consists only in the addition of a MANIFEST.MF file into the war archive. This manifest file must be OSGi compliant, indicating the bundle dependencies and capabilities and also other meta-data used by the OSGi platform. In OSGi profile, we have added the manifest file, also Sensor communication and JMX management features. In the project *aleserver-bundle* the specific files to support these features are found.
+
+Instructions to build the F&#38;C server are [here&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection#HBuilding]
+
+1.1 Deployment of F&#38;C Server on OSGI platform
+
+1.1.1 Installation of an OSGi platform with web application support
+
+First download an OSGi distribution such as [Apache Felix&#62;http://felix.apache.org] (current version is 2.0.1). Then, install [Pax Web&#62;http://wiki.ops4j.org/display/paxweb/Pax+Web] (implementation of OSGi Http Service) and their dependencies (current version is 0.7.2). Finally, install the [Pax Web Extender&#62;http://wiki.ops4j.org/display/paxweb/Pax+Web] (current version is 0.7.2) with provides a transparent (for JEE war archive) registration of servlets on the OSGi platform.
+
+
+These steps can be performed easily using the [Pax Runner&#62;http://paxrunner.ops4j.org/space/Pax+Runner] tool (an intenet connection is required). Simply, download the Pax Runner, then in a console execute the command ~~ pax-run \-\-platform=felix \-\-dir=ale war config~~
+
+
+This command install (and launch) the Felix platform into the directory ~~ale~~.  The last arguments indicate to Pax Runner which [profiles&#62;http://paxrunner.ops4j.org/display/paxrunner/Pax+Runner+profiles+list] it should install, war is the web support profile and config the configuration admin service.
+
+In some windows system the command must be typed as ~~pax-run &#38;quot;\-\-platform=felix&#38;quot; &#38;quot;\-\-dir=ale&#38;quot; war config~~
+
+1.1.1 Other necessary bundles
+
+In order to support sensor extensions is necessary also to install the [Wire Admin&#62;http://svn.apache.org/viewvc/felix/trunk/wireadmin/] bundle (compiled version {attach:wireadmin.jar} ) and [Wire Admin Binder&#62;http://svn.apache.org/viewvc/felix/sandbox/donsez/wireadminbinder/src/site/readme.html?view=co] (compiled version {attach:wireadmin-binder.jar}) bundles.
+
+Install the bundles using the associated command in your OSGi distribution. For Felix distribution use the next commands
+
+~~install file:path/wireadmin.jar~~
+~~install file:path/wireadmin-binder.jar~~
+
+1.1.1 Instalation of F&#38;C server bundle
+
+In Felix platform you can install the server bundle using the next command 
+
+~~install file:path/aleserver-bundle.war~~
+
+
+1.1 Installation of Readers' Drivers
+
+Readers' Drivers are installed as bundles on the OSGi platform. Next readers' drivers have been included in the OSGi profile:
+
+* [Simple Reader (an reader simulator)&#62;Main.Documentation.Bundles.SimpleReader]
+* [ProximaRF Desktop USB reader&#62;Main.Documentation.Bundles.ProximaRFDesktopReader]
+* [TagSys Medio Serial reader&#62;Main.Documentation.Bundles.TagSysMedioReader]
+* [ACR 122 USB reader&#62;Main.Documentation.Bundles.ACR122Reader]
+* [OneWire reader&#62;Main.Documentation.Bundles.OneWireReader]
+
+Use the Felix command [install&#62;http://felix.apache.org/site/documentation.html] to deploy each reader bundle and its dependencies.
+
+1.1 Installation of the temperature sensors
+
+
+Two temperature sensors are provided in this distribution, At first,a fictive sensor that can be used for test purposes, and a Temper sensor that is the driver of an usb sensor temperature device. Require bundles are also provided (iPojo version 1.4.0).
+
+Readers' bundles and sensors' bundles are shown in the next osgi console snapshot:
+
+{image:ALE-OSGi.png}
+
+1.1 Installation of other features bundles
+
+
+The platform can be enriched using other bundles to add different features. By example, a bundle allowing administration of OSGi platform using the [Visual VM OSGi plugin&#62;http://membres-liglab.imag.fr/kiev.gama/dev/osgi/visualvm/] is provided.
+
+
+1.1 All-in-one distribution
+
+A distribution with all required bundles is available [here&#62;http://chaphe.free.fr/aspire/ale.zip]. Download the file and unzip it, then execute run.sh (or run.bat in Windows).
+
+
+1.1 Misc
+* [CiliaALE&#62;Main.Documentation.ALEinCilia] : a flexible and dynamically reconfigurable ALE Server for Android platforms (phones and tablets) 
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

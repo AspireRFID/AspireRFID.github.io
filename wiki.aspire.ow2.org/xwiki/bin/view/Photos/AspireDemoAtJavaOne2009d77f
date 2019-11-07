@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Photos</web>
+<name>AspireDemoAtJavaOne2009</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.PhotoAlbumClass</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1244580422000</creationDate>
+<date>1268210649000</date>
+<contentUpdateDate>1268210649000</contentUpdateDate>
+<version>1.10</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>aspireatjavaone2009.png</filename>
+<filesize>776255</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1244580540000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireatjavaone2009-1.jpg</filename>
+<filesize>192929</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1244580619000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireatjavaone2009-2.jpg</filename>
+<filesize>194492</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1244580637000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireatjavaone2009-3.jpg</filename>
+<filesize>188425</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1244580650000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireatjavaone2009-4-withFrancois.jpg</filename>
+<filesize>111238</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1244615542000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.PhotoAlbumClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<description>
+<name>description</name>
+<prettyName>description</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<rows>5</rows>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</description>
+<height>
+<name>height</name>
+<prettyName>Thumbnail Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height>
+<height2>
+<name>height2</name>
+<prettyName>Photo Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height2>
+</class>
+<name>Photos.AspireDemoAtJavaOne2009</name>
+<number>0</number>
+<className>XWiki.PhotoAlbumClass</className>
+<property>
+<description>The Aspire supply chain demo presented at JavaOne 2009 (40.000 attendees), June 2009, San Francisco, Moscone center</description>
+</property>
+<property>
+<height>150</height>
+</property>
+<property>
+<height2>400</height2>
+</property>
+<property>
+<title>Aspire demo at JavaOne 2009</title>
+</property>
+</object>
+<content>#includeForm("XWiki.PhotoAlbumClassSheet")</content>
+<renderedcontent>&lt;br /&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HAspiredemoatJavaOne2009"&gt;Aspire demo at JavaOne 2009&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;The Aspire supply chain demo presented at JavaOne 2009 (40.000 attendees), June 2009, San Francisco, Moscone center&lt;p class="paragraph"/&gt;&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=1#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009.png?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=2#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009-1.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=3#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009-2.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=4#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009-3.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=5#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009-4-withFrancois.jpg?height=150" height="150"/&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;&lt;br /&gt;
+&lt;i class="italic"&gt;
+ &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=all"&gt;All Photos&lt;/a&gt;&lt;/span&gt; &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009?diapo=1"&gt;Diaporama&lt;/a&gt;&lt;/span&gt;&lt;/i&gt;
+
+</renderedcontent>
+</xwikidoc>

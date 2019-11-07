@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Readers</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1219527269000</creationDate>
+<date>1292391953000</date>
+<contentUpdateDate>1292391953000</contentUpdateDate>
+<version>1.137</version>
+<title>Supported readers, sensors and actuators</title>
+<template></template>
+<attachment>
+<filename>GPIO_Terminal_Block.pdf</filename>
+<filesize>1875420</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1236164161000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>IF5_spec_web.pdf</filename>
+<filesize>113505</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1236164179000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Impinj_Speedway_GPIO_r4.pdf</filename>
+<filesize>369914</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1236164193000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Supported readers, sensors and actuators
+#toc("" "" "")
+
+Contributions are welcome.
+
+~~Some of the implementations have dependencies to proprietary or commercial libraries: they are noted by a +.~~
+
+1.1 RFID Readers
+
+The source repositories are here:
+* http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/
+* .. 
+
+1.1.1 supported 
+* Reader Protocol v1.1 compliant readers (http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf)
+* TagSys Medio [L100 L200&gt;http://www.tagsysrfid.com/systems/upload/Medio-L100-200-Sep08.pdf] +
+* TI Tiris 6350
+* [Nokia 6131 NFC phone&gt;http://europe.nokia.com/A4307094]
+* Touchatag([ACR 122&gt;http://www.nfc-reader.com/NFC-smart-card-reader/ACR122-API-Manual/API_ACR122.pdf] USB (CCID compliant)) [http://www.touchatag.com] [Utilities&gt;http://www.acs.com.hk/card-utility-tools.php]
+* Lego Mindstorms NXT' RFID sensor (MS1048)
+* Intermec IF5 (BRI protocol)
+* Impinj Speedway (Mach1 and LLRP protocol) 
+* FEIG ID ISC.LRU1000 (Ethernet, TPC/IP)
+* FEIG ID ISC.MR101-A (RS232/485, COM)
+* [Proxima RF Desktop&gt;http://www.proximarf.com/ProductsAndServices/DesktopPage.aspx] (Multi-protocol RFID Tag support including ISO15693 including MLX90129 Sensor transponder ICs, ISO14443B tags using CryptoRF protocols)
+
+see also [ASPIRE&gt;http://www.fp7-aspire.eu/] Deliverable D3.2
+
+1.1.1 planned/targetted
+if you own one, your contribution is welcomed
+
+1.1.1.1 USB readers for desktops
+* Violet' mir:ror [http://www.violet.net/_mirror-give-powers-to-your-objects.html] [http://code.google.com/p/erawrim/]
+* Parallax RFID reader module [detail&gt;http://www.parallax.com/detail.asp?product_id=28140], [spec&gt;http://www.parallax.com/dl/docs/prod/audiovis/RFID-Reader-v1.1.pdf]
+* [OMNIKEY 5321&gt;http://www.omnikey.com/fileadmin/Documents/OK5321_Datasheet.pdf] ([dev guide&gt;http://www.omnikey.com/fileadmin/Documents/OMNIKEY_5x21-CL_ReaderDevelopers_Guide_V1_14.pdf])
+* [NXP Pegoda readers&gt;http://www.nxp.com/search/?query=Pegoda]
+* RIOTEC LS8000 for 1D barcodes (UPC/EAN/JAN, Code 39, Codabar, ITF 2/5, Code 128, Code 11, Code 93, MSI/Plessey, Pharmacy, ...) and RFID (Mifare, Mifare PRO, ISO14443-A, ISO15693, SHC1102)
+* ASK [Reader RDR 400 Series&gt;http://www.ask.fr/images/pdf/rdr400_flyer.pdf]
+* ASK [HCR Handhelp readers&gt;http://www.ask.fr/images/pdf/hcr_flyer.pdf]
+
+1.1.1.1 NFC phones
+* [Nokia 6212 Classic (NFC phone)&gt;http://europe.nokia.com/A4991363]
+* Sagem my700X Contact Less
+* [Twinlinx' My-Max NFC Sticker&gt;http://twinlinx.com/mymaxsticker.htm]
+* Japanese Felica NFC phones
+
+1.1.1.1 Readers for Phones
+* [iCarte for iPhone&gt;http://www.icarte.ca] (ISO 14443 A/B, Felica, MiFare)
+* [RFinity' microSD reader&gt;http://rfinity.com]
+* [IDTRONIC' SD Reader HF / NFC&gt;http://idtronic.de/wEnglisch/sites/index-sdio-cf-readers.php]
+* [Tyfone' NFC MicroSD card&gt;http://www.tyfone.com]
+* ...
+
+1.1.1.1 Misc
+* Violet' Nabaztag/tag (CR14) + Ztamps [http://www.nabaztag.com/en/index.html] [http://doc.nabaztag.com/api/home.html]
+* Swinxs
+* Poken [http://www.doyoupoken.com]
+* [BTnodeRFID&gt;http://sourceforge.net/projects/btnoderfid/]
+* [TazTag' TazCard&gt;http://www.taztag.com/TazCard.pdf]
+
+1.1 Other ID Readers
+The source repositories are here:
+* http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/
+* .. 
+
+1.1.1 supported 
+Soon
+
+1.1.1 planned/targetted
+if you own one, your contribution is welcomed
+* Smartcard readers (Gemalto GCR410 (serial), O2Micro CCID SC Reader) using [javax.smartcardio&gt;http://java.sun.com/javase/6/docs/jre/api/security/smartcardio/spec/javax/smartcardio/package-summary.html]
+* OneWire iButton (Remark : all iButtons have a unique ID) +
+* USB/Serial Universal Magnetic Stripe Card Readers
+* Barcode readers
+
+1.1 Sensors
+The source repositories are here:
+* http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors/
+* .. 
+
+1.1.1 supported
+* OneWire iButton (thermometer, thermocron, hygrocron) +
+* GPS receivers (NMEA 0183 over bluetooth, serial or USB)
+* Nintendo' WiiMote
+* Lego Mindstorms NXT' sensors (9846, 9845, 9843)
+* Apple Mac book' Sudden Motion Sensor
+* Sun' SunSPOT [http://www.sunspotworld.com/] (temperature, light, 3-axis acceleration maximum, battery level)
+
+
+1.1.1 planned/targetted
+if you own one, your contribution is welcomed
+
+1.1.1.1 Phones
+* Apple iPhone 2 [accelerometer&gt;http://www.apple.com/iphone/features/accelerometer.html], [sensors&gt;http://www.apple.com/iphone/features/sensors.html] and [GPS&gt;http://www.apple.com/iphone/features/gps.html]
+* Nokia N95 accelerometer and GPS http://wiki.forum.nokia.com/index.php/S60_Sensor_Framework
+
+1.1.1.1 Toys
+* Nintendo' Wiimote and nunchuk
+* Nintendo' Wiifit
+
+1.1.1.1 Robots (sensors and actuators)
+* Lego Mindstorms NXT' sensors (MS1040, MS1042, MS1046, MS1034, MS1044, MS1038, Vernier adapter)
+* Meccano Spykee (WiFi robot) sensors and actuators
+* WowWee Rovio (Wifi robot) sensors and actuators [API spec&gt;http://www.wowweesupport.com/pdf/Rovio_API_Specifications_v1.2.pdf]
+* [Sony' Aibo&gt;http://support.sony-europe.com/aibo/] ([wikipedia ...&gt;http://en.wikipedia.org/wiki/AIBO])
+
+1.1.1.1 Home and Building automation
+* USB Digital Thermometer/Hygrometer Dongle [TEMPer&gt;http://www.dealextreme.com/details.dx/sku.7003] and TEMPerHum (see also [utac project&gt;http://sourceforge.net/projects/utac])
+* Smoke detectors
+* CO2 detectors
+* CO detectors
+* Presence detectors
+* HVAC Devices ([UPnP HVAC Device profile&gt;http://www.upnp.org/standardizeddcps/hvac.asp])
+* [X10&gt;http://en.wikipedia.org/wiki/X10_(industry_standard)] modules : MS13 (presence detector), SD10 (light detector) , SS13 (switch) ...
+* see "Audio/Video" section for security applications
+* see "Toys and Phones" section
+* see "Energy and GreenIT" section
+
+1.1.1.1 Energy and GreenIT
+* USB multimeters : current (AC/DC), voltage (AC/DC), frequency, resistance, temperature, capacitance ...
+** [Velleman DVM1200&gt;http://www.velleman.eu/distributor/products/view/?id=372236]
+* USB/RF Wattmeters : power (in Watt), cosphi, current (AC/DC), voltage (AC/DC), frequency, ...
+** [Chacon EcoWatt 850 USB&gt;http://www.chacon.be/en/index.htm]
+* USB/Serial scopes
+** [Velleman PPS10 (PERSONAL POCKET SCOPE)&gt;http://www.vellemanusa.com/us/enu/product/view/?id=522380]
+
+1.1.1.1 Audio/Video
+* USB webcams
+* Digital Security Cameras ([UPnP DSC Device profile&gt;http://www.upnp.org/standardizeddcps/digitalsecuritycamera.asp])
+** Axis 211 IP security camera
+** [Aviosys IP Kamera 90xx (MPEG4, MJPEG, IR, ...)&gt;http://www.aviosys.com/ipkamera.htm]
+** ...
+* Cell phones (for a posterori upload)
+
+1.1.1.1 Factory
+* [ShockWatch' SensorBox&gt;http://www.tilt-import.com] (shock detector)
+* Temperature sensors (serial or bluetooth (eg Versid BT-10r))
+* pH meters (acidity or alkalinity)
+
+1.1.1.1 Healthcare
+* ECG recorders or monitors (BT/USB)
+* [EMG&gt;http://en.wikipedia.org/wiki/Electromyography]
+* Oxymeters
+* Glucometers (blood glucose)
+* TI Sensium 
+** http://www.ti.com/ww/en/analog/cc981h-sensium/CC981H_Products_A.pdf
+** http://www.toumaz.com/products/tz1030%20Sensium%20Product%20Brief%20V3_0.pdf
+
+1.1.1.1 Sport
+* GPS loggers for racers (Garmin Forerunner 301, Suunto X9i/X10 GPS watch...)
+* Heat rate logger
+** Polar watches ([HRM2 file format&gt;http://www.polar.fi/files/Polar_HRM_file%20format.pdf], [PDD+PWD files format&gt;http://www.polar.fi/files/Polar_PWD_PDD_file%20format.pdf]): heat rate + altiture or pressure 
+** Suunto watches
+** ...
+* Pedometers (Remark: N95 or iPhone accelerometer can be used to infer the steps)
+* [eZ430-Chronos Wireless Watch Development Tool&gt;http://focus.ti.com/lit/ml/slyt318a/slyt318a.pdf]
+* ...
+
+1.1.1.1 Environment
+* Serial/USB/BT Weather stations (for ground/air temperature, outdoor/indoor temperature, ground/air humidity, pressure, wind speed &amp; direction, UV, rain/snow level, DCF77 clocks ...) : remark outdoor temperature sensors could be used for cold rooms.
+** Oregon scientific WMR200 (http://groups.google.com/group/usb_net/browse_thread/thread/ec413a0a91ad75b6 and http://www.windspots.com/infos/OregonScientificWeatherStation-USB-Protocol.txt) 
+** Oregon scientific WMR100
+** Lacrosse WS23xx (WS2350, WS2355, ...) http://code.google.com/p/openjaws/
+* USB/BT/Zigbee Nilometers
+* Pollution (NO2, ...) meters
+** LPG http://www.sparkfun.com/products/9405
+** Carbon Monoxyde http://www.sparkfun.com/products/9403
+** CO2
+** Methane http://www.sparkfun.com/products/9404
+* Radiation detectors
+** Geiger-Müller counter http://www.sparkfun.com/products/9298
+* Silicon diode-based dosimeter
+* River levels
+
+1.1.1.1 Misc
+* I2C sensors
+** Wii Nunchuk : I2C analog stick and 3-axis-accelerometer (see 
+http://forums.nxtasy.org/index.php?showtopic=3075).
+* ZigBee (6lowpan) sensors ([see the Persona' Zigbee base driver&gt;http://gforge.aal-persona.org/mediawiki/index.php/ZigBee_Integration_on_OSGi_Platform])
+* [MLX90129 RFID thermometer&gt;http://www.melexis.com/Assets/MLX90129_DataSheet_5193.aspx]
+* [CAEN Temperature Logger UHF Semi-Passive Tag&gt;http://www.caen.it/rfid/syproduct.php?fam=tag&amp;mod=A927Z]
+
+1.1 Actuators (I/O)
+The source repositories are here:
+* http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators/
+
+1.1.1 supported
+* Lego Mindstorms NXT rotors
+
+1.1.1 planned/targetted
+if you own one, your contribution is welcomed
+* TagSys Medio L100 and L200(4 buildin I/O ports) +
+* USB I/O controller ()
+* Violet' Nabaztag (ear, leds, ...)
+* [X10&gt;http://en.wikipedia.org/wiki/X10_(industry_standard)] modules and controllers (CM11, LM11, LM12, IR7243, SM10, AM12  ...) (see [LGPL WiSH project&gt;http://wish.sourceforge.net/] or [GPL Java X10&gt;http://www.agaveblue.org/projects/x10/] or [K-Zone&gt;http://www.kevinboone.com/download_home_automation.html] or [X1Controller&gt;http://x10controller.sourceforge.net/X10Server])
+* I2C actuators (Mindstorms NXT' rotors)
+* UPnP Profiles : [Light Control&gt;http://www.upnp.org/standardizeddcps/lighting.asp], [AV Media Server and Renderer&gt;http://www.upnp.org/standardizeddcps/mediaserver.asp], [HVAC (Fan speed, Control valve)&gt;http://www.upnp.org/standardizeddcps/hvac.asp], ...
+* [iBuddy&gt;http://www.i-buddy.com]
+* [Aviosys IP Power 92xx&gt;http://www.aviosys.com/ippower.htm]
+* [Beck IPC SC1x&gt;http://www.beck-ipc.com/en/products/sc1x/index.asp]
+* [Home-made USB GPIO (in french)&gt;http://www.elektor.fr/magazines/2007/novembre/carte-d-acquisition-de-donnees-usb.272564.lynkx]
+* {attach:Intermec IF5 (BRI protocol)|file=IF5_spec_web.pdf}: The IF5 reader includes powered general purpose input/output (GPIO) circuitry, which allows direct monitoring and/or controlling of peripherals such as presence detectors and signal lights without requiring extra devices and power supplies to facilitate the connection.It supports:
+** {attach:GPIO Terminal Block|file=GPIO_Terminal_Block.pdf}: The terminal block is an accessory for the IF5 Fixed Reader that makes it easy to connect industrial controls such as motion sensors or lights to the reader. You connect the terminal block to the IF5 with a 25-pin GPIO cable (P/N 236-057-001). The block provides access to each of the four general purpose inputs and outputs on the IF5 via standard screw terminals. Each terminal is clearly marked to make wiring easy.
+
+* {attach:Impinj Speedway (Mach1 and LLRP protocol)|file=Impinj_Speedway_GPIO_r4.pdf}: Impinj’s Speedway® reader incorporates a general purpose input/output port that enables interaction with its external environment. Through this port the reader can be controlled by external stimuli and can trigger external events. External sensors connected to a GPIO input can generate a trigger that will activate the reader to identify tagged items, for example, when they are passing through a specific read zone. The GPIO outputs can drive signal lights to indicate a successful read. It supports:
+** Sensormatic® RFID GPIO
+** Tacit Solutions® General Purpose I/O Box
+
+1.1.1 Misc
+* Electric door latches
+
+
+1.1 Universal Time
+The internal clock of readers/sensors/actuators, of hosts (phones, minipc, servers, ...) could be unset (resetted, bad timezone) or desynchronized. Universal time devices could offer services for equipment resynchronization when [NTP&gt;http://en.wikipedia.org/wiki/Network_Time_Protocol] is not available (offline, ...). 
+* GPS timestamp (24 atomic clocks !!)
+* RF antennas (Frankfurt antenna DCF-77, ...): Remark: [USB weather stations&gt;Main.Readers#HEnvironment] use DCF77 for internal clock synchronization.
+* [Radio Data System (RDS)&gt;http://en.wikipedia.org/wiki/Radio_Data_System]
+* Realtime clock (RTC) iButton ([DS1904&gt;http://www.maxim-ic.com/products/ibutton/ibuttons/RTCoverview.cfm]),
+* ... 
+
+
+1.1 Useful HW
+
+1.1.1 Hosts
+* ARM9-based for the RFID edges : [NSLU2&gt;http://www.nslu2-linux.org/], [Fonera&gt;], [Link Station Mini (NAS)&gt;http://www.buffalotech.com/products/network-storage/linkstation/linkstation-mini] and the [hack&gt;http://buffalo.nas-central.org/index.php/Main_Page], [Hackable NAS&gt;http://www.nas-central.org]
+* [VIA-based mini PC for the RFID edges&gt;http://www.norhtec.com/products/mcjr/index.html]
+* [TINI boards&gt;http://www.maxim-ic.com/products/microcontrollers/tini] for infra-edge configurations
+
+1.1.1 Misc for hosts
+* Bluetooth dongles
+* Serial-to-USB convertor cables
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSupportedreaders2Csensorsandactuators"&gt;Supported readers, sensors and actuators&lt;/span&gt;&lt;/h2&gt; 
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRFIDReaders"&gt; RFID Readers&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#Hsupported"&gt; supported&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#Hplanned2Ftargetted"&gt; planned/targetted&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HUSBreadersfordesktops"&gt; USB readers for desktops&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNFCphones"&gt; NFC phones&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReadersforPhones"&gt; Readers for Phones&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMisc"&gt; Misc&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HOtherIDReaders"&gt; Other ID Readers&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#Hsupported-1"&gt; supported&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#Hplanned2Ftargetted-1"&gt; planned/targetted&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HSensors"&gt; Sensors&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#Hplanned2Ftargetted-2"&gt; planned/targetted&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HPhones"&gt; Phones&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HToys"&gt; Toys&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRobots28sensorsandactuators29"&gt; Robots (sensors and actuators)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHomeandBuildingautomation"&gt; Home and Building automation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEnergyandGreenIT"&gt; Energy and GreenIT&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAudio2FVideo"&gt; Audio/Video&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HFactory"&gt; Factory&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHealthcare"&gt; Healthcare&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSport"&gt; Sport&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEnvironment"&gt; Environment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMisc-1"&gt; Misc&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HActuators28I2FO29"&gt; Actuators (I/O)&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#Hplanned2Ftargetted-3"&gt; planned/targetted&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMisc-2"&gt; Misc&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HUniversalTime"&gt; Universal Time&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsefulHW"&gt; Useful HW&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHosts"&gt; Hosts&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMiscforhosts"&gt; Misc for hosts&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; 
+Contributions are welcome.&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;Some of the implementations have dependencies to proprietary or commercial libraries: they are noted by a +.&lt;/i&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRFIDReaders"&gt;RFID Readers&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The source repositories are here:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/"&gt;&amp;#104;ttp://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;..&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hsupported"&gt;supported &lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Reader Protocol v1.1 compliant readers (&lt;span class="nobr"&gt;&lt;a href="http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf"&gt;&amp;#104;ttp://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;TagSys Medio &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tagsysrfid.com/systems/upload/Medio-L100-200-Sep08.pdf"&gt;&amp;#76;100 L200&lt;/a&gt;&lt;/span&gt; +&lt;/li&gt;
+&lt;li&gt;TI Tiris 6350&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://europe.nokia.com/A4307094"&gt;&amp;#78;okia 6131 NFC phone&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Touchatag(&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nfc-reader.com/NFC-smart-card-reader/ACR122-API-Manual/API_ACR122.pdf"&gt;&amp;#65;CR 122&lt;/a&gt;&lt;/span&gt; USB (CCID compliant)) &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.touchatag.com"&gt;&amp;#104;ttp://www.touchatag.com&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.acs.com.hk/card-utility-tools.php"&gt;&amp;#85;tilities&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Lego Mindstorms NXT' RFID sensor (MS1048)&lt;/li&gt;
+&lt;li&gt;Intermec IF5 (BRI protocol)&lt;/li&gt;
+&lt;li&gt;Impinj Speedway (Mach1 and LLRP protocol)&lt;/li&gt;
+&lt;li&gt;FEIG ID ISC.LRU1000 (Ethernet, TPC/IP)&lt;/li&gt;
+&lt;li&gt;FEIG ID ISC.MR101-A (RS232/485, COM)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.proximarf.com/ProductsAndServices/DesktopPage.aspx"&gt;&amp;#80;roxima RF Desktop&lt;/a&gt;&lt;/span&gt; (Multi-protocol RFID Tag support including ISO15693 including MLX90129 Sensor transponder ICs, ISO14443B tags using CryptoRF protocols)&lt;/li&gt;
+&lt;/ul&gt;see also &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fp7-aspire.eu/"&gt;&amp;#65;SPIRE&lt;/a&gt;&lt;/span&gt; Deliverable D3.2
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hplanned2Ftargetted"&gt;planned/targetted&lt;/span&gt;&lt;/h4&gt; 
+if you own one, your contribution is welcomed
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HUSBreadersfordesktops"&gt;USB readers for desktops&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Violet' mir:ror &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.violet.net/_mirror-give-powers-to-your-objects.html"&gt;&amp;#104;ttp://www.violet.net/_mirror-give-powers-to-your-objects.html&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://code.google.com/p/erawrim/"&gt;&amp;#104;ttp://code.google.com/p/erawrim/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Parallax RFID reader module &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.parallax.com/detail.asp?product_id=28140"&gt;&amp;#100;etail&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.parallax.com/dl/docs/prod/audiovis/RFID-Reader-v1.1.pdf"&gt;&amp;#115;pec&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.omnikey.com/fileadmin/Documents/OK5321_Datasheet.pdf"&gt;&amp;#79;MNIKEY 5321&lt;/a&gt;&lt;/span&gt; (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.omnikey.com/fileadmin/Documents/OMNIKEY_5x21-CL_ReaderDevelopers_Guide_V1_14.pdf"&gt;&amp;#100;ev guide&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nxp.com/search/?query=Pegoda"&gt;&amp;#78;XP Pegoda readers&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;RIOTEC LS8000 for 1D barcodes (UPC/EAN/JAN, Code 39, Codabar, ITF 2/5, Code 128, Code 11, Code 93, MSI/Plessey, Pharmacy, ...) and RFID (Mifare, Mifare PRO, ISO14443-A, ISO15693, SHC1102)&lt;/li&gt;
+&lt;li&gt;ASK &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ask.fr/images/pdf/rdr400_flyer.pdf"&gt;&amp;#82;eader RDR 400 Series&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;ASK &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ask.fr/images/pdf/hcr_flyer.pdf"&gt;&amp;#72;CR Handhelp readers&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HNFCphones"&gt;NFC phones&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://europe.nokia.com/A4991363"&gt;&amp;#78;okia 6212 Classic (NFC phone)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Sagem my700X Contact Less&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://twinlinx.com/mymaxsticker.htm"&gt;&amp;#84;winlinx' My-Max NFC Sticker&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Japanese Felica NFC phones&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReadersforPhones"&gt;Readers for Phones&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.icarte.ca"&gt;&amp;#105;Carte for iPhone&lt;/a&gt;&lt;/span&gt; (ISO 14443 A/B, Felica, MiFare)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://rfinity.com"&gt;&amp;#82;Finity' microSD reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://idtronic.de/wEnglisch/sites/index-sdio-cf-readers.php"&gt;&amp;#73;DTRONIC' SD Reader HF / NFC&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tyfone.com"&gt;&amp;#84;yfone' NFC MicroSD card&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Violet' Nabaztag/tag (CR14) + Ztamps &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nabaztag.com/en/index.html"&gt;&amp;#104;ttp://www.nabaztag.com/en/index.html&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://doc.nabaztag.com/api/home.html"&gt;&amp;#104;ttp://doc.nabaztag.com/api/home.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Swinxs&lt;/li&gt;
+&lt;li&gt;Poken &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.doyoupoken.com"&gt;&amp;#104;ttp://www.doyoupoken.com&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://sourceforge.net/projects/btnoderfid/"&gt;&amp;#66;TnodeRFID&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.taztag.com/TazCard.pdf"&gt;&amp;#84;azTag' TazCard&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HOtherIDReaders"&gt;Other ID Readers&lt;/span&gt;&lt;/h3&gt; 
+The source repositories are here:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/"&gt;&amp;#104;ttp://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;..&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hsupported"&gt;supported &lt;/span&gt;&lt;/h4&gt; 
+Soon
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hplanned2Ftargetted"&gt;planned/targetted&lt;/span&gt;&lt;/h4&gt; 
+if you own one, your contribution is welcomed
+&lt;ul class="star"&gt;
+&lt;li&gt;Smartcard readers (Gemalto GCR410 (serial), O2Micro CCID SC Reader) using &lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javase/6/docs/jre/api/security/smartcardio/spec/javax/smartcardio/package-summary.html"&gt;&amp;#106;avax.smartcardio&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;OneWire iButton (Remark : all iButtons have a unique ID) +&lt;/li&gt;
+&lt;li&gt;USB/Serial Universal Magnetic Stripe Card Readers&lt;/li&gt;
+&lt;li&gt;Barcode readers&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HSensors"&gt;Sensors&lt;/span&gt;&lt;/h3&gt; 
+The source repositories are here:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors/"&gt;&amp;#104;ttp://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;..&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hsupported"&gt;supported&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;OneWire iButton (thermometer, thermocron, hygrocron) +&lt;/li&gt;
+&lt;li&gt;GPS receivers (NMEA 0183 over bluetooth, serial or USB)&lt;/li&gt;
+&lt;li&gt;Nintendo' WiiMote&lt;/li&gt;
+&lt;li&gt;Lego Mindstorms NXT' sensors (9846, 9845, 9843)&lt;/li&gt;
+&lt;li&gt;Apple Mac book' Sudden Motion Sensor&lt;/li&gt;
+&lt;li&gt;Sun' SunSPOT &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.sunspotworld.com/"&gt;&amp;#104;ttp://www.sunspotworld.com/&lt;/a&gt;&lt;/span&gt; (temperature, light, 3-axis acceleration maximum, battery level)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hplanned2Ftargetted"&gt;planned/targetted&lt;/span&gt;&lt;/h4&gt; 
+if you own one, your contribution is welcomed
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPhones"&gt;Phones&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Apple iPhone 2 &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.apple.com/iphone/features/accelerometer.html"&gt;&amp;#97;ccelerometer&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.apple.com/iphone/features/sensors.html"&gt;&amp;#115;ensors&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.apple.com/iphone/features/gps.html"&gt;&amp;#71;PS&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Nokia N95 accelerometer and GPS &lt;span class="nobr"&gt;&lt;a href="http://wiki.forum.nokia.com/index.php/S60_Sensor_Framework"&gt;&amp;#104;ttp://wiki.forum.nokia.com/index.php/S60_Sensor_Framework&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HToys"&gt;Toys&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Nintendo' Wiimote and nunchuk&lt;/li&gt;
+&lt;li&gt;Nintendo' Wiifit&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HRobots28sensorsandactuators29"&gt;Robots (sensors and actuators)&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Lego Mindstorms NXT' sensors (MS1040, MS1042, MS1046, MS1034, MS1044, MS1038, Vernier adapter)&lt;/li&gt;
+&lt;li&gt;Meccano Spykee (WiFi robot) sensors and actuators&lt;/li&gt;
+&lt;li&gt;WowWee Rovio (Wifi robot) sensors and actuators &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.wowweesupport.com/pdf/Rovio_API_Specifications_v1.2.pdf"&gt;&amp;#65;PI spec&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://support.sony-europe.com/aibo/"&gt;&amp;#83;ony' Aibo&lt;/a&gt;&lt;/span&gt; (&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/AIBO"&gt;&amp;#119;ikipedia ...&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HHomeandBuildingautomation"&gt;Home and Building automation&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;USB Digital Thermometer/Hygrometer Dongle &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.dealextreme.com/details.dx/sku.7003"&gt;&amp;#84;EMPer&lt;/a&gt;&lt;/span&gt; and TEMPerHum (see also &lt;span class="wikiexternallink"&gt;&lt;a href="http://sourceforge.net/projects/utac"&gt;&amp;#117;tac project&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Smoke detectors&lt;/li&gt;
+&lt;li&gt;CO2 detectors&lt;/li&gt;
+&lt;li&gt;CO detectors&lt;/li&gt;
+&lt;li&gt;Presence detectors&lt;/li&gt;
+&lt;li&gt;HVAC Devices (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org/standardizeddcps/hvac.asp"&gt;&amp;#85;PnP HVAC Device profile&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/X10_(industry_standard)"&gt;&amp;#88;10&lt;/a&gt;&lt;/span&gt; modules : MS13 (presence detector), SD10 (light detector) , SS13 (switch) ...&lt;/li&gt;
+&lt;li&gt;see "Audio/Video" section for security applications&lt;/li&gt;
+&lt;li&gt;see "Toys and Phones" section&lt;/li&gt;
+&lt;li&gt;see "Energy and GreenIT" section&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HEnergyandGreenIT"&gt;Energy and GreenIT&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;USB multimeters : current (AC/DC), voltage (AC/DC), frequency, resistance, temperature, capacitance ...&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/products/view/?id=372236"&gt;&amp;#86;elleman DVM1200&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;USB/RF Wattmeters : power (in Watt), cosphi, current (AC/DC), voltage (AC/DC), frequency, ...&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.chacon.be/en/index.htm"&gt;&amp;#67;hacon EcoWatt 850 USB&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;USB/Serial scopes&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.vellemanusa.com/us/enu/product/view/?id=522380"&gt;&amp;#86;elleman PPS10 (PERSONAL POCKET SCOPE)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HAudio2FVideo"&gt;Audio/Video&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;USB webcams&lt;/li&gt;
+&lt;li&gt;Digital Security Cameras (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org/standardizeddcps/digitalsecuritycamera.asp"&gt;&amp;#85;PnP DSC Device profile&lt;/a&gt;&lt;/span&gt;)&lt;ul class="star"&gt;
+&lt;li&gt;Axis 211 IP security camera&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.aviosys.com/ipkamera.htm"&gt;&amp;#65;viosys IP Kamera 90xx (MPEG4, MJPEG, IR, ...)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cell phones (for a posterori upload)&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HFactory"&gt;Factory&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tilt-import.com"&gt;&amp;#83;hockWatch' SensorBox&lt;/a&gt;&lt;/span&gt; (shock detector)&lt;/li&gt;
+&lt;li&gt;Temperature sensors (serial or bluetooth (eg Versid BT-10r))&lt;/li&gt;
+&lt;li&gt;pH meters (acidity or alkalinity)&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HHealthcare"&gt;Healthcare&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ECG recorders or monitors (BT/USB)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Electromyography"&gt;&amp;#69;MG&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Oxymeters&lt;/li&gt;
+&lt;li&gt;Glucometers (blood glucose)&lt;/li&gt;
+&lt;li&gt;TI Sensium&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.ti.com/ww/en/analog/cc981h-sensium/CC981H_Products_A.pdf"&gt;&amp;#104;ttp://www.ti.com/ww/en/analog/cc981h-sensium/CC981H_Products_A.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.toumaz.com/products/tz1030%20Sensium%20Product%20Brief%20V3_0.pdf"&gt;&amp;#104;ttp://www.toumaz.com/products/tz1030%20Sensium%20Product%20Brief%20V3_0.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HSport"&gt;Sport&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;GPS loggers for racers (Garmin Forerunner 301, Suunto X9i/X10 GPS watch...)&lt;/li&gt;
+&lt;li&gt;Heat rate logger&lt;ul class="star"&gt;
+&lt;li&gt;Polar watches (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polar.fi/files/Polar_HRM_file%20format.pdf"&gt;&amp;#72;RM2 file format&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polar.fi/files/Polar_PWD_PDD_file%20format.pdf"&gt;&amp;#80;DD+PWD files format&lt;/a&gt;&lt;/span&gt;): heat rate + altiture or pressure&lt;/li&gt;
+&lt;li&gt;Suunto watches&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pedometers (Remark: N95 or iPhone accelerometer can be used to infer the steps)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://focus.ti.com/lit/ml/slyt318a/slyt318a.pdf"&gt;&amp;#101;Z430-Chronos Wireless Watch Development Tool&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HEnvironment"&gt;Environment&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Serial/USB/BT Weather stations (for ground/air temperature, outdoor/indoor temperature, ground/air humidity, pressure, wind speed &amp; direction, UV, rain/snow level, DCF77 clocks ...) : remark outdoor temperature sensors could be used for cold rooms.&lt;ul class="star"&gt;
+&lt;li&gt;Oregon scientific WMR200 (&lt;span class="nobr"&gt;&lt;a href="http://groups.google.com/group/usb_net/browse_thread/thread/ec413a0a91ad75b6"&gt;&amp;#104;ttp://groups.google.com/group/usb_net/browse_thread/thread/ec413a0a91ad75b6&lt;/a&gt;&lt;/span&gt; and &lt;span class="nobr"&gt;&lt;a href="http://www.windspots.com/infos/OregonScientificWeatherStation-USB-Protocol.txt"&gt;&amp;#104;ttp://www.windspots.com/infos/OregonScientificWeatherStation-USB-Protocol.txt&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Oregon scientific WMR100&lt;/li&gt;
+&lt;li&gt;Lacrosse WS23xx (WS2350, WS2355, ...) &lt;span class="nobr"&gt;&lt;a href="http://code.google.com/p/openjaws/"&gt;&amp;#104;ttp://code.google.com/p/openjaws/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;USB/BT/Zigbee Nilometers&lt;/li&gt;
+&lt;li&gt;Pollution (NO2, ...) meters&lt;ul class="star"&gt;
+&lt;li&gt;LPG &lt;span class="nobr"&gt;&lt;a href="http://www.sparkfun.com/products/9405"&gt;&amp;#104;ttp://www.sparkfun.com/products/9405&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Carbon Monoxyde &lt;span class="nobr"&gt;&lt;a href="http://www.sparkfun.com/products/9403"&gt;&amp;#104;ttp://www.sparkfun.com/products/9403&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;CO2&lt;/li&gt;
+&lt;li&gt;Methane &lt;span class="nobr"&gt;&lt;a href="http://www.sparkfun.com/products/9404"&gt;&amp;#104;ttp://www.sparkfun.com/products/9404&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Radiation detectors&lt;ul class="star"&gt;
+&lt;li&gt;Geiger-Müller counter &lt;span class="nobr"&gt;&lt;a href="http://www.sparkfun.com/products/9298"&gt;&amp;#104;ttp://www.sparkfun.com/products/9298&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Silicon diode-based dosimeter&lt;/li&gt;
+&lt;li&gt;River levels&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;I2C sensors&lt;ul class="star"&gt;
+&lt;li&gt;Wii Nunchuk : I2C analog stick and 3-axis-accelerometer (see&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;span class="nobr"&gt;&lt;a href="http://forums.nxtasy.org/index.php?showtopic=3075"&gt;&amp;#104;ttp://forums.nxtasy.org/index.php?showtopic=3075&lt;/a&gt;&lt;/span&gt;).
+&lt;ul class="star"&gt;
+&lt;li&gt;ZigBee (6lowpan) sensors (&lt;span class="wikiexternallink"&gt;&lt;a href="http://gforge.aal-persona.org/mediawiki/index.php/ZigBee_Integration_on_OSGi_Platform"&gt;&amp;#115;ee the Persona' Zigbee base driver&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.melexis.com/Assets/MLX90129_DataSheet_5193.aspx"&gt;&amp;#77;LX90129 RFID thermometer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.caen.it/rfid/syproduct.php?fam=tag&amp;mod=A927Z"&gt;&amp;#67;AEN Temperature Logger UHF Semi-Passive Tag&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HActuators28I2FO29"&gt;Actuators (I/O)&lt;/span&gt;&lt;/h3&gt; 
+The source repositories are here:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators/"&gt;&amp;#104;ttp://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hsupported"&gt;supported&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Lego Mindstorms NXT rotors&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="Hplanned2Ftargetted"&gt;planned/targetted&lt;/span&gt;&lt;/h4&gt; 
+if you own one, your contribution is welcomed
+&lt;ul class="star"&gt;
+&lt;li&gt;TagSys Medio L100 and L200(4 buildin I/O ports) +&lt;/li&gt;
+&lt;li&gt;USB I/O controller ()&lt;/li&gt;
+&lt;li&gt;Violet' Nabaztag (ear, leds, ...)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/X10_(industry_standard)"&gt;&amp;#88;10&lt;/a&gt;&lt;/span&gt; modules and controllers (CM11, LM11, LM12, IR7243, SM10, AM12  ...) (see &lt;span class="wikiexternallink"&gt;&lt;a href="http://wish.sourceforge.net/"&gt;&amp;#76;GPL WiSH project&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.agaveblue.org/projects/x10/"&gt;&amp;#71;PL Java X10&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.kevinboone.com/download_home_automation.html"&gt;&amp;#75;-Zone&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://x10controller.sourceforge.net/X10Server"&gt;&amp;#88;1Controller&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;I2C actuators (Mindstorms NXT' rotors)&lt;/li&gt;
+&lt;li&gt;UPnP Profiles : &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org/standardizeddcps/lighting.asp"&gt;&amp;#76;ight Control&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org/standardizeddcps/mediaserver.asp"&gt;&amp;#65;V Media Server and Renderer&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org/standardizeddcps/hvac.asp"&gt;&amp;#72;VAC (Fan speed, Control valve)&lt;/a&gt;&lt;/span&gt;, ...&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.i-buddy.com"&gt;&amp;#105;Buddy&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.aviosys.com/ippower.htm"&gt;&amp;#65;viosys IP Power 92xx&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.beck-ipc.com/en/products/sc1x/index.asp"&gt;&amp;#66;eck IPC SC1x&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.elektor.fr/magazines/2007/novembre/carte-d-acquisition-de-donnees-usb.272564.lynkx"&gt;&amp;#72;ome-made USB GPIO (in french)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main/Readers/IF5_spec_web.pdf" /&gt;Intermec IF5 (BRI protocol)&lt;/a&gt;: The IF5 reader includes powered general purpose input/output (GPIO) circuitry, which allows direct monitoring and/or controlling of peripherals such as presence detectors and signal lights without requiring extra devices and power supplies to facilitate the connection.It supports:&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main/Readers/GPIO_Terminal_Block.pdf" /&gt;GPIO Terminal Block&lt;/a&gt;: The terminal block is an accessory for the IF5 Fixed Reader that makes it easy to connect industrial controls such as motion sensors or lights to the reader. You connect the terminal block to the IF5 with a 25-pin GPIO cable (P/N 236-057-001). The block provides access to each of the four general purpose inputs and outputs on the IF5 via standard screw terminals. Each terminal is clearly marked to make wiring easy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main/Readers/Impinj_Speedway_GPIO_r4.pdf" /&gt;Impinj Speedway (Mach1 and LLRP protocol)&lt;/a&gt;: Impinj’s Speedway® reader incorporates a general purpose input/output port that enables interaction with its external environment. Through this port the reader can be controlled by external stimuli and can trigger external events. External sensors connected to a GPIO input can generate a trigger that will activate the reader to identify tagged items, for example, when they are passing through a specific read zone. The GPIO outputs can drive signal lights to indicate a successful read. It supports:&lt;ul class="star"&gt;
+&lt;li&gt;Sensormatic® RFID GPIO&lt;/li&gt;
+&lt;li&gt;Tacit Solutions® General Purpose I/O Box&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Electric door latches&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUniversalTime"&gt;Universal Time&lt;/span&gt;&lt;/h3&gt; 
+The internal clock of readers/sensors/actuators, of hosts (phones, minipc, servers, ...) could be unset (resetted, bad timezone) or desynchronized. Universal time devices could offer services for equipment resynchronization when &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Network_Time_Protocol"&gt;&amp;#78;TP&lt;/a&gt;&lt;/span&gt; is not available (offline, ...). 
+&lt;ul class="star"&gt;
+&lt;li&gt;GPS timestamp (24 atomic clocks !!)&lt;/li&gt;
+&lt;li&gt;RF antennas (Frankfurt antenna DCF-77, ...): Remark: &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Readers#HEnvironment"&gt;USB weather stations&lt;/a&gt;&lt;/span&gt; use DCF77 for internal clock synchronization.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Radio_Data_System"&gt;&amp;#82;adio Data System (RDS)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Realtime clock (RTC) iButton (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/ibuttons/RTCoverview.cfm"&gt;&amp;#68;S1904&lt;/a&gt;&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsefulHW"&gt;Useful HW&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHosts"&gt;Hosts&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ARM9-based for the RFID edges : &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nslu2-linux.org/"&gt;&amp;#78;SLU2&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/"&gt;Fonera&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.buffalotech.com/products/network-storage/linkstation/linkstation-mini"&gt;&amp;#76;ink Station Mini (NAS)&lt;/a&gt;&lt;/span&gt; and the &lt;span class="wikiexternallink"&gt;&lt;a href="http://buffalo.nas-central.org/index.php/Main_Page"&gt;&amp;#104;ack&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nas-central.org"&gt;&amp;#72;ackable NAS&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.norhtec.com/products/mcjr/index.html"&gt;&amp;#86;IA-based mini PC for the RFID edges&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/microcontrollers/tini"&gt;&amp;#84;INI boards&lt;/a&gt;&lt;/span&gt; for infra-edge configurations&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMiscforhosts"&gt;Misc for hosts&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Bluetooth dongles&lt;/li&gt;
+&lt;li&gt;Serial-to-USB convertor cables&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

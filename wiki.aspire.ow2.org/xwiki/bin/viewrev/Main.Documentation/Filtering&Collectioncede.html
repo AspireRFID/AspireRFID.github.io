@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation/Filtering%26Collection?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:23:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Filtering&Collection
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_Filtering%26Collection.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation/Filtering%26Collectiond5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/Filtering%26Collectioncede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/Filtering%26Collectiond77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Filtering And Collection Server
+
+
+* The [AspireRfid Filtering and Collection Middleware&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection#HIntroduction] is a slightly modified version of Accada RFID Middleware, which is now called FossTrak, licensed under LGPL. This component implements EPCglobal's [ALE 1.1 specification&#62;http://www.gs1.org/gsmp/kc/epcglobal/ale]. AspireRfid have implemented changes and bug fixes on the original Accada middleware. As of 14/05/2009 we have ceased distribution of [FossTrak&#62;http://www.fosstrak.org] licensed code.
+* [Deployment of Filtering And Collection Server on OSGi&#62;Main.Documentation.ALEonOSGi]
+* [CiliaALE&#62;Main.Documentation.ALEinCilia] : a lightweight, flexible and dynamically reconfigurable ALE Servers for Android phones and tablets (developed by the Adele team, LIG, Grenoble)
+* [Embedded ALE&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/EmbededALE]: developed by the FUN team, Inria-Lille, which can be implemented in mobile terminals.
+* [Extended TDT ALE&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/ExtendedTDTALE]: developed by the FUN team, Inria-Lille, which is compatible with different input identification formats (i.e. EPC, GS1, ISO, MAC address, Telephone numbers, etc.).
+* [Light ALECC&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LightALECC]: developed by the FUN team, Inria-Lille, which aims to supply an easy and efficient framework for developers to realize the most used basic operations defined by the EPC ALECC (writing API) standard.
+* [LLRP toolkit library (updated according to LLRP1.1)&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.1)]: developed by the FUN team, Inria-Lille, which aims to provide an updated LLRP toolkit library for developers intersted by LLRP interface.
+
+1 AspireRfid Filtering And Collection Server
+
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+1.1 Introduction
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/Filtering%26Collection/ALE.jpg&#34;&#62;{image:ALE.jpg|350|}&#60;/a&#62;
+&#60;/center&#62;
+
+In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable &#38;ldquo;noise.&#38;rdquo; To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+
+
+* Drive as much filtering and counting of reads as low in the architecture as possible.
+* Minimize the amount of &#38;ldquo;business logic&#38;rdquo; embedded in the Tags.
+
+
+The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce &#38;ldquo;reports&#38;rdquo; in response to client &#38;ldquo;requests.&#38;rdquo; The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional &#38;ldquo;enterprise application,&#38;rdquo; or it may be new software designed expressly to carry out an RFID-enabled business process. but which operates at a higher level than the &#38;ldquo;middleware&#38;rdquo; that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.
+
+
+The AspireRfid  Filtering and Collection Middleware is a modified version of [Accada&#62;http://www.accada.org] RFID Middleware, which is now called [FossTrak&#62;http://www.fosstrak.org], licensed under LGPL. AspireRfid have implemented changes and bug fixes on the original Accada middleware.
+
+
+The actual AspireRFID ALE version is taken from Fosstrak filtering and collection module's revision number 2295 (released on February 2013). It implements EPCglobal's ALE 1.1 and LLRP 1.1 specifications.
+If we consider a user point of view, ALE compromises 3 modules as follows:
+
+
+* the filtering and collection server
+* a standalone clientto configure filtering and collection servers
+* aweb-based clientto configure filtering and collection servers
+
+
+However, if we consider a developer point of view and focus on the source code, ALE is also organized  in 3 modules :
+
+
+* fc-client: Filtering and Collection Client: a Java Swing based test client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification
+* fc-commons: common functionality used by the different Filtering and Collection modules
+* fc-server: an implementation of EPCglobal Application Level Event (ALE) specification. An LLRP interface insures communication procedure with LLRP compliant RFID readers. For readers that do not support LLRP, ALE uses the Hardware Abstraction Layer (HAL) interface.
+
+1.1 Users Guide
+1.1.1 Requirements
+
+
+*Hardware (minimum)*
+
+
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+
+*Software*
+
+
+* [LLRP Commander&#62;https://code.google.com/p/fosstrak/wiki/LlrpMain]
+* [Rifidi&#62;http://sourceforge.net/projects/rifidi/files/Rifidi Emulator/] Reader Emulator
+* [Apache&#62;http://tomcat.apache.org/] Tomcat Java Servlet Container
+
+
+*Files*
+
+
+* a copy of the [fc-server-1.0.0.war or higher&#62;http://websvn.ow2.org/listing.php?repname=aspire&#38;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-server%2Ftarget%2F] (note: LLRP support requires &#62;= 1.0.0)
+* a copy of the [fc-webclient fc-webclient-0.4.0.war&#62;http://websvn.ow2.org/listing.php?repname=aspire&#38;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-webclient%2Ftarget%2F] or higher
+* a copy of the  [aspireTcpMessageCapturer&#62;http://forge.ow2.org/project/showfiles.php?group_id=324]
+* a copy of this LLRP [ADD_ROSPEC&#62;http://fosstrak.googlecode.com/svn/wikires/ale/ROSPEC_example.llrp] message (to be saved in xml format)
+
+* a copy of this ALE [ECSpec&#62;http://fosstrak.googlecode.com/svn/wikires/ale/ECSpec_current.xml] message (to be saved in xml format)
+* a copy of this [ALE logical&#62;http://fosstrak.googlecode.com/svn/wikires/ale/LLRPReader.xml] reader definition file (to be saved in LLRP format)
+
+1.1.1 Deployment
+
+
+*Tomcat Deployment*
+Tomcat is used in order to deploy the Filtering and Collection server. Deployment is worked out as follows.
+* Install Apache Tomcat if you have not installed it yet.
+* Copy the  two WAR files (fc-server-VERSION .war and fc-webclient-VERSION .war) into the Tomcat's webapps directory and start Tomcat. The war-file will be deployed into a new folder.
+
+For Windows users :
+You will usually find the webapps folder inside the tomcat installation directory :
+
+* c:/Program Files/Apache Tomcat/webapps for 32-bit Windows
+* c:/Programs/Apache Software Foundation/Tomcat/webappps for 64-bit Windows
+
+
+For Linux/unix users :
+You can use this command to start tomcat : service tomcat7 start
+
+
+The webapps folder will depend on your distribution, here are some possible locations:
+
+* /var/lib/tomcat/webapps
+* /usr/local/lib/tomcat/webapps
+
+
+Once the two war files are in the webapps directory, Tomcat will automatically deploy them. 
+The ALE server is now ready to be configured at your needs.
+
+
+*Rifidi configuration*
+
+
+* Install the Rifidi emulator
+* Start the Rifidi emulator
+* Instantiate a new reader of type &#38;quot;LLRPReader&#38;quot; that listens on port 5084 (default) using the Reader Wizard
+* Start the reader just instantiated (right click &#38;quot;Start reader&#38;quot;)
+
+
+We will return to the LLRP reader emulator once the other components are configured.
+
+
+*Configure the Rifidi Emulator by using LLRP Commander*
+
+* LLRP Commander is an Eclipse plugin. To install it, you can &#38;quot;check for updates&#38;quot; via the Eclipse or &#38;quot;install a new software&#38;quot;
+
+Eclipse Update Site URL: http://fosstrak.googlecode.com/svn/llrp/eclipse_update_site
+
+* Start Eclipse and customize the view to LLRP Commander (In Eclipse: Window/Open perspective/Other/LLRP Commander).
+* Create a new reader (Under Reader Explorer tab : Right Click on DEFAULT and Add RFID Reader).
+* Connect to the remote adapter instance running on the ALE. Check, if you can send and retrieve messages from the reader by sending a GET_READER_CAPABILITIES message (Right click on the reader and Send message). You can follow the reader behavior towards the messages in Rifidi console and also in the &#38;ldquo;LLRP Messagebox&#38;rdquo; in Eclipse.
+* Create a new LLRP message (Right click on LLRP_CMDR/New/Other/LLRP/LLRP Message)
+* Edit the content (in XML Editor) by the content of the fileRO_SPEC and save
+* Send the message to the Rifid Emulator(use the button &#38;quot;Sending the current message&#38;quot;)
+* From the Reader Explorer tab (right-click on the reader name), select &#38;quot;Send ENABLE_RO_SPEC message&#38;quot; to instruct the reader to enable the ROspec just loaded.
+
+
+Now we are sure that the virtual reader is configured, we just need to provide it with tags. This step will be done after.
+
+
+*GUI Setup : TCP Message Capturer*
+
+
+This interface will spy the reports sent by the filtering and collection server, it displays incoming HTTP requests. Make sure the provided port (9999) is not used by some other application.
+
+
+* Uncompress the aspireTcpMessageCapturer archive
+* Start the TCP Message Capturer that listens on port 9999
+
+
+Command to Start aspireTcpMessageCapturer :
+
+
+{code:xml}
+java -jar aspireTcpMessageCapturer-VERSION -jar-with-dependencies.jar
+#For Example
+java -jar aspireTcpMessageCapturer-V0.1m-jar-with-dependencies.jar
+{code}
+
+
+*ALE web-client configuration*
+
+
+The web-based client is used to configure the filtering and collection server. We need first to tell it the URL through which the filtering and collection server can be accessed.
+Start your web browser and point it to the address of the web-based client.
+
+{code:xml}
+http: //&#60;SERVER&#62;:&#60;PORT&#62;/&#60;WEBCLIENT_VERSION&#62;/services/ALEWebClient.jsp
+
+#For Example
+http:// localhost:8080/fc-webclient-1.2.0/services/ALEWebClient.jsp
+{code}
+
+In the next step, specify two endpoints that tell the web-based client where the &#38;quot;Filtering and Collection API &#38;quot;and the &#38;quot;Logical Reader API&#38;quot; can be found.
+Set the endpoint to the filtering and collection server by selecting the &#38;quot;setEndpoint(String endPointName)&#38;quot; method in the &#38;quot;Filtering and Collection API&#38;quot;. Click &#38;quot;Invoke&#38;quot; to execute the command.
+{code:xml}
+
+endpoint: http: //&#60;SERVER&#62;:&#60;PORT&#62;/&#60;FCSERVER_VERSION&#62;/services/ALEService
+
+#For Example
+http:// localhost:8080/fc-server-1.2.0/services/ALEService
+{code}
+
+
+To be sure that a connection between the web-based client and the server can be established, click &#38;quot;getVendorVersion()&#38;quot;. A version number should be returned.
+
+
+Set the endpoint to the filtering and collection server's Logical Reader API by selecting &#38;quot;setEndPoint(String endPointName)&#38;quot; in the &#38;quot;LogicalReader API&#38;quot;. Click &#38;quot;Invoke&#38;quot; to execute the command.
+{code:xml}
+
+endpoint: http: //&#60;SERVER&#62;:&#60;PORT&#62;/&#60;FCSERVER_VERSION&#62;/services/ALELRService
+
+#For Example
+http: //localhost:8080/fc-server-1.2.0/services/ALELRService
+{code}
+
+
+Click &#38;quot;getVendorVersion()&#38;quot; to be sure that a connection between the web-based client and the server can be established, a version number should be returned.
+
+
+*Set the readers connected to ALE*
+
+
+The next step is to configure the fc-server with the LLRP reader connected. Click on &#38;quot;define(String readerName, LRSpec spec)&#38;quot; in the section &#38;quot;LogicalReader API&#38;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your reader &#38;quot;LogicalReader1&#38;quot; and use theLLRPReader.xmlas your LRSpec.
+{code:xml}
+readerName:  READERNAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: LogicalReader1
+specFilePath: /home/epc/LLRPReader.xml
+{code}
+
+
+Verify that the reader has been created by clicking on &#38;quot;getLogicalReaderNames()&#38;quot;. The call should return a list of logical readers in brackets. Make sure that the reader just creates is listed.
+In the LLRP reader emulator console you can now see the message exchange with the Fosstrak ALE middleware.
+You can inspect the logical reader specification LRSpec by the method &#38;quot;getLRSpec(String readerName)&#38;quot;.
+
+
+*Define the Filtering and Collection Behavior*
+
+
+The behavior of ALE is described in an xml file. So in this step you will define an ALE ECSpec, this tells the ALE Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example: added, current or deleted tags.
+Click on &#38;quot;define(String specName, String specFilePath)&#38;quot; in the section &#38;quot;Filtering and Collection API&#38;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your EventCycle &#38;quot;specCURRENT&#38;quot; and use thisECSpec_current.xmlas your ECSpec.
+{code:xml}
+readerName:  SPEC_NAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: specCURRENT
+specFilePath: /home/epc/ECSpec_current.xml
+{code}
+
+
+Verify the correct defintion of your ECSpec by invoking the method &#38;quot;getECSpecNames()&#38;quot;. You should get a list of ECSpec names currently defined in brackets. Make sure that the ECSpec you just defined is listed.
+You can inspect the event cycle specification ECSpec_current by the method &#38;quot;getECSpec(String specName)&#38;quot;.
+
+
+*Specify the Event Consumer of the ALE Events Being Sent*
+
+
+When there is no subscriber for an ECSpec, the ECSpec is not executed. We therefore need to specify a listener by subscribing our event sink to the ECSpec &#38;quot;specCURRENT&#38;quot; we added earlier.
+Invoke &#38;quot;subscribe(String specName, String notificationUri)&#38;quot; and register the URL on which the event sink GUI is listening.
+{code:xml}
+notificationURI:  http: //SERVER:PORT
+specName: SPEC_NAME
+#For Example
+notificationURI:http: //localhost:9999
+specName: specCURRENT
+{code}
+
+
+The ALE will start sending empty ECReports to the event sink GUI as the Rifidi emulator has no tags in field yet.
+
+
+*Set tags in the reader field*
+Now we will make the virtual reader start delivering tags to the ALE. From the &#38;ldquo;TagsView&#38;rdquo; of Rifidi emulator, create a new tag (SGTIN96, GEN2) then drop it into the antenna zone. The tag reads will be reported to the Fosstrak ALE Middleware. After the tag reads are filtered and collected as specified in the ECSpec, they are delivered by the Fosstrak ALE middleware to the event sink GUI.
+
+
+Based on[Fosstrak&#62;https://code.google.com/p/fosstrak/]ALE MiddlewareUser guide.
+
+1.1 Developers Guide
+1.1.1 Acquiring the code
+
+
+You can get the source code of ALE through [Aspire&#62;http://forge.ow2.org/projects/aspire] SVN. You should get all the source code under the path aspire/trunk/servers/AspireRfidALE/ALE.
+
+1.1.1 Building
+
+
+You will need to:
+
+
+* install Maven 2.2
+* install subversion
+* install java runtime
+
+
+Then :
+
+
+* svn checkout svn://svn.forge.objectweb.org/svnroot/aspire/trunk/servers/AspireRfidALE/ALE
+* download the following dependencies :
+
+
+[javax.comm&#62;http://llk.media.mit.edu/projects/picdev/software/javaxcomm.zip]
+
+
+eclipse [webserviceUtils&#62;https://www.dropbox.com/s/i62pg37xe8s1y2f/webserviceutils.zip] (needed only by fc-webclient)
+
+
+[ltkjava-1.0.0.7 updated library&#62;http://websvn.ow2.org/listing.php?repname=aspire&#38;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FLlrpLib%2F] (needed by fc-server)
+
+
+* Install the dependencies locally :
+
+
+{code:xml}
+
+mvn install : install-file -Dfile=&#60; path-to-file &#62; -DgroupId=&#60; group-id &#62; -DartifactId=&#60; artifact-id &#62;
+
+{code}
+For  webserviceUtils : groupId = org.eclipse.jst.ws.consumption, artifactId = webserviceutils, version = 1.0.102.v200609220223
+
+
+* mvn package</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:11:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - BestPractices
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogina924.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='BestPractices.html'>Best Practices</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_BestPractices.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="BestPracticesd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/BestPracticescede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="BestPracticesd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HBestPractices">Best Practices</span></h2><p class="paragraph"/>            <ul>
+          <li><a href="#HRFIDDeployment">1 RFID Deployment</a> 
+        <ul>
+          <li><a href="#HTagSelection">1.1 Tag Selection</a> 
+      <li><a href="#HAntennaPosition">1.2 Antenna Position</a> 
+      <li><a href="#HCableSelection">1.3 Cable Selection</a> 
+      <li><a href="#HReaderConfiguration">1.4 Reader Configuration</a> 
+      <li><a href="#HPrinterLocation">1.5 Printer Location</a> 
+      <li><a href="#HRFInterference">1.6 RF Interference</a> 
+      <li><a href="#HMultipathFading">1.7 Multipath Fading</a> 
+      </ul></ul><p class="paragraph"/>
+In this Section we Identify and describe installation dependencies of RFID applications that may influence/hinder their operations and lie beyond the functionality of the middleware. Moreover a Deployment best practices presentation can be found <a href="../../download/Main.Documentation/BestPractices/AspireRFID_Deployment_Best_Practices.ppt" />here</a>.
+<h3 class="heading-1-1"><span id="HRFIDDeployment">RFID Deployment</span></h3><p class="paragraph"/>
+Issues that could severely influence the performance of the overall system are the following:
+<h4 class="heading-1-1-1"><span id="HTagSelection">Tag Selection</span></h4><p class="paragraph"/>Three important factors has been recognized that should be addressed:
+<ul class="star">
+<li>The first one is the material from which they are built. For example coper offers a higher conductivity than aluminium. As a result, tags built from coper have a longer reading range.</li>
+<li>The second one is the impendance matching between the chip and the antenna. Usually chips and antennas manufactured from the same vendor are better matched, resulting in better overall quality.</li>
+<li>The third one is the position of tags on items or containers. It is very important to assure that the attached tags are aligned with the near by antennas, something that yields better electromagnetic reflections and thus more accurate readings.</li>
+</ul><h4 class="heading-1-1-1"><span id="HAntennaPosition">Antenna Position</span></h4><p class="paragraph"/>Three important factors has been recognized that should be addressed:
+<ul class="star">
+<li>The angle of the antenna, while mounting. The angle should be chosen in such a way that tags remain as much time as possible in the antenna field of view.</li>
+<li>The field of view of antennas connected to different readers should have no intersection.</li>
+<li>The antenna beams should be known so as to create intense, wellcontained read zones, with little spillover beyond exterior faces.</li>
+</ul><h4 class="heading-1-1-1"><span id="HCableSelection">Cable Selection</span></h4><p class="paragraph"/>Cables should have:
+<ul class="star">
+<li>Minimum attenuation</li>
+<li>Short length</li>
+<li>No breakings</li>
+</ul><h4 class="heading-1-1-1"><span id="HReaderConfiguration">Reader Configuration</span></h4><p class="paragraph"/>The reader should be configured as follows:
+<ul class="star">
+<li>Inventory should start and stop with the use of general purpose inputs and outputs, as this type of operation is well suited in industrial environments.</li>
+<li>Antenna inventory should not be stopped if the antenna field is not stable, i.e., new tags are being read.</li>
+<li>The highest transmit power is not always beneficial. Due to RF interference form other devices, it is possible that lowering the transmit power may yield better performance.</li>
+</ul><h4 class="heading-1-1-1"><span id="HPrinterLocation">Printer Location</span></h4><p class="paragraph"/>The printer should be placed away from dock doors, so as to be impossible for tags generated by RFID printers to be immediately read by readers in dock doors. Firstly because the performance of readers degrades and secondly because those particular tags, depending on the middleware configuration, may not participate in any other process.
+<h4 class="heading-1-1-1"><span id="HRFInterference">RF Interference</span></h4><p class="paragraph"/>The interference from surrounding devices should be measured by elecromagnetic field meters, in order to identify interference problems.
+<h4 class="heading-1-1-1"><span id="HMultipathFading">Multipath Fading</span></h4><p class="paragraph"/>Reflective surfaces in the surounding environment should be recognized before antenna installation. Electromagnetic waves from antennas should not propagate towards reflective surfaces, because this may result into stray tags.<p class="paragraph"/>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='BestPractices.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/indexb4c6.html?parent=Main.Documentation.BestPractices"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.BestPractices"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            1 Attachments  by
+            nkef ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/BestPractices/AspireRFID_Deployment_Best_Practices.ppt">AspireRFID_Deployment_Best_Practices.ppt</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>245248</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/BestPractices" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/index.html'>Main.WebHome</a> &gt; <a href='BestPractices.html'>Best Practices</a>
+  (en)
+ <br />
+  Creator: nkef
+ &nbsp;Date: 2011/06/01 17:06
+ <br />
+ Last Author: nkef
+ &nbsp;Date: 2011/06/13 22:30
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BestPractices by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:11:09 GMT -->
+</html>

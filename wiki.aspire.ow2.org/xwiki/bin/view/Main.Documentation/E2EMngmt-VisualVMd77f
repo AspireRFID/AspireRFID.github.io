@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>E2EMngmt-VisualVM</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.E2EMngmt</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1276849727000</creationDate>
+<date>1279140803000</date>
+<contentUpdateDate>1279140803000</contentUpdateDate>
+<version>1.13</version>
+<title>Aspire :: End-to-End Management :: VisualVM Plugins</title>
+<template></template>
+<content>1 Aspire :: End-to-End Management :: VisualVM Plugins
+
+----
+#toc("" "" "")
+----
+
+Graphical user interfaces (GUI) for managing different Aspire components are available in the form of [VisualVM&gt;https://visualvm.dev.java.net/] plugins. The VisualVM is an extensible visual tool designed for both production and development time use, it further enhances the capability of monitoring and performance analysis of Java applications. The OW2 AspireRFID project takes advantage of such infrastructure in order to provide plugins targeting the management of different Aspire components (ALE, BEG, EPCIS, APE, ...). The management funcionality is exposed by those components using JMX interfaces in the form of MBeans (Manageable Beans). The VisualVM Aspire  plugins connect to such management interfaces for providing live monitoring and management of such components through a GUI. 
+
+1.1.1 Building
+
+Currently the plugins are available in Aspire's SVN trunk, under the management/visualvm folder.
+
+After downloading the projects from the trunk, there are two option for running the plugins:
+* (1) Opening the Netbeans projects and executing the Module Suite,
+* or (2) Building the projects and installing the generated plugins in the VisualVM.
+The first option is suggested for development purposes, like understanding how the plugins were implemented or performing custom adjustments in the code.
+The second option is the preferred way to use the plugins, and is described in the next paragraphs.
+
+In order to build the plugins, it is necessary to have the latest version of [Apache Ant&gt;http://ant.apache.org] installed and the latest JDK, for compiling the projects. After having all the pre-requisites set and properly configured (e.g., JAVA_HOME and ANT_HOME environment variables), you can build the project. Go to a command line tool (e.g., Windows command prompt, Linux shell) and from inside the VisualVMAspireModuleSuite folder, type:
+
+{code}ant nbms{code}
+
+That command will build the files and generate the nbm artifacts in the build/updates folder. An nbm corresponds to a Netbeans Module. Since the VisualVM is a tool buit on top of the Netbeans platform, the VisualVM plugins take the form of Netbeans plugins. 
+
+1.1.1 Installing the VisualVM
+The VisualVM can be installed in two ways:
+
+#As part of a JDK installation. The VisualVM will be available via the jvisualvm command, installed in your JAVA_HOME/bin directory
+#As a separate download, from the [VisualVM downloads page&gt;https://visualvm.dev.java.net/download.html]. After uncompressing the installation file, a visualvm executable can be found in the VISUALVM_INSTALLATION/bin folder
+
+1.1.1 Installing the Aspire plugins in the VisualVM
+The generated plugins need to be manually installed in the VisualVM. The following steps must be taken
+
+* Start the VisualVM
+* Go to the menu Tools &gt; Plugins
+* Go to the downloaded tab
+* Click the Add Plugins button
+* Browse the nbm files generated in building step, and select them all
+* Confirm all operations, and close the plugins window
+
+1.1.1 Visualizing the plugins
+The VisualVM works inspecting Java processes, so it is necessary to connect to a Java process that runs an Aspire component (EPCIS, ALE Server, BEG). In addition, the corresponding component must have the respective MBeans enabled, so the Aspire plugins can be enabled. If these preconditions are fulfilled, you can execute the VisualVM and visualize on the Applications tree, on the left, all Java processes that are running (optionally you can connect to a remote machine). By choosing the appropriate process (e.g. An OSGi application running the ALEServer), the VisualVM will connect to the Java processe, and start the Aspire Plugins that are installed. If the corresponding Aspire MBeans are present, the plugins will be shown  
+
+1.1 FAQ
+1.1.1 How MBeans are configured in the WEB-INF/web.xml of servers' WAR file
+
+1.1.1 How to lauch the VisualVM
+The VisualVM is now provisioned with the JDK
+
+So run just  %JAVA_HOME%\bin\jvisualvm.exe
+
+1.1.1 How to lauch the VisualVM from Eclipse
+TBD
+
+1.1.1 How to install the plugin
+# Menu "Tools&gt;Plugins"
+# Tab "Downloaded"
+# Button "Add plugins..." and browse your file system
+# Select them and button "Install" 
+
+1.1.1 How to install additionnal plugins from the central repository
+# Menu "Tools&gt;Plugins"
+# Tab "Availables plugins"
+# Select them and button "Install" 
+
+1.1.1 How to connect to the process (local or remote)
+1.1.1.1 Local
+Double-click the java process corresponding to the ALEServer in the "Application" panel (on the left).
+
+1.1.1.1 Remote
+The Java process must be launch with the following options in order to start the JMX RMI Connector.
+[More information&gt;http://java.sun.com/javase/6/docs/technotes/guides/management/agent.html]
+
+With Tomcat, the options are  -Dcom.sun.management.jmxremote.port=8086 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false 
+[More information&gt;http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html]
+
+Add the connection from the menu "File&gt;Add remote host..." or "File&gt;Add JMX Connection..."
+
+1.1.1 How to extend the VisualVM plugin
+* https://visualvm.dev.java.net/api-quickstart.html
+* http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm
+
+1.1.1 JMX Utilities
+* [MBeanCmd&gt;http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html]
+* [Tomcat JMX Ant tasks&gt;http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html#Manage_Tomcat_with_JMX_remote_Ant_Tasks]
+
+1.1.1 Other consoles for JMX
+* JConsole
+* [MC4J&gt;http://mc4j.org/confluence/display/mc4j/Home]
+* [Eclipse JMX&gt;http://code.google.com/p/eclipse-jmx]
+* [OW2 Jasmine Flex Console&gt;http://jasmine.ow2.org]
+
+1.1.1 How to manage OSGi platforms with JMX
+A recent specification addresses how to manage OSGi platforms with JMX :
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/framework/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/cm/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/permissionadmin/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/provisioning/package-summary.html
+* http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/useradmin/package-summary.html
+
+1.1.1 How to start with JMX
+1.1.1.1 Several tutorials on JMX
+* http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/technotes/guides/jmx/tutorial/tutorialTOC.html
+* http://download.oracle.com/docs/cd/E17409_01/javase/tutorial/jmx/index.html
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AEndtoEndManagement3A3AVisualVMPlugins"&gt;Aspire :: End-to-End Management :: VisualVM Plugins&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+       &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBuilding"&gt; Building&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInstallingtheVisualVM"&gt; Installing the VisualVM&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInstallingtheAspirepluginsintheVisualVM"&gt; Installing the Aspire plugins in the VisualVM&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HVisualizingtheplugins"&gt; Visualizing the plugins&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HFAQ"&gt; FAQ&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHowMBeansareconfiguredintheWEBINF2Fwebxmlofservers27WARfile"&gt; How MBeans are configured in the WEB-INF/web.xml of servers' WAR file&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtolauchtheVisualVM"&gt; How to lauch the VisualVM&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtolauchtheVisualVMfromEclipse"&gt; How to lauch the VisualVM from Eclipse&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoinstalltheplugin"&gt; How to install the plugin&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoinstalladditionnalpluginsfromthecentralrepository"&gt; How to install additionnal plugins from the central repository&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoconnecttotheprocess28localorremote29"&gt; How to connect to the process (local or remote)&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HLocal"&gt; Local&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRemote"&gt; Remote&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HHowtoextendtheVisualVMplugin"&gt; How to extend the VisualVM plugin&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMXUtilities"&gt; JMX Utilities&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOtherconsolesforJMX"&gt; Other consoles for JMX&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtomanageOSGiplatformswithJMX"&gt; How to manage OSGi platforms with JMX&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtostartwithJMX"&gt; How to start with JMX&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSeveraltutorialsonJMX"&gt; Several tutorials on JMX&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;Graphical user interfaces (GUI) for managing different Aspire components are available in the form of &lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net/"&gt;&amp;#86;isualVM&lt;/a&gt;&lt;/span&gt; plugins. The VisualVM is an extensible visual tool designed for both production and development time use, it further enhances the capability of monitoring and performance analysis of Java applications. The OW2 AspireRFID project takes advantage of such infrastructure in order to provide plugins targeting the management of different Aspire components (ALE, BEG, EPCIS, APE, ...). The management funcionality is exposed by those components using JMX interfaces in the form of MBeans (Manageable Beans). The VisualVM Aspire  plugins connect to such management interfaces for providing live monitoring and management of such components through a GUI. 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBuilding"&gt;Building&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Currently the plugins are available in Aspire's SVN trunk, under the management/visualvm folder.&lt;p class="paragraph"/&gt;After downloading the projects from the trunk, there are two option for running the plugins:
+&lt;ul class="star"&gt;
+&lt;li&gt;(1) Opening the Netbeans projects and executing the Module Suite,&lt;/li&gt;
+&lt;li&gt;or (2) Building the projects and installing the generated plugins in the VisualVM.&lt;/li&gt;
+&lt;/ul&gt;The first option is suggested for development purposes, like understanding how the plugins were implemented or performing custom adjustments in the code.
+The second option is the preferred way to use the plugins, and is described in the next paragraphs.&lt;p class="paragraph"/&gt;In order to build the plugins, it is necessary to have the latest version of &lt;span class="wikiexternallink"&gt;&lt;a href="http://ant.apache.org"&gt;&amp;#65;pache Ant&lt;/a&gt;&lt;/span&gt; installed and the latest JDK, for compiling the projects. After having all the pre-requisites set and properly configured (e.g., JAVA_HOME and ANT_HOME environment variables), you can build the project. Go to a command line tool (e.g., Windows command prompt, Linux shell) and from inside the VisualVMAspireModuleSuite folder, type:&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;ant nbms&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;That command will build the files and generate the nbm artifacts in the build/updates folder. An nbm corresponds to a Netbeans Module. Since the VisualVM is a tool buit on top of the Netbeans platform, the VisualVM plugins take the form of Netbeans plugins. 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstallingtheVisualVM"&gt;Installing the VisualVM&lt;/span&gt;&lt;/h4&gt; 
+The VisualVM can be installed in two ways:&lt;p class="paragraph"/&gt;#As part of a JDK installation. The VisualVM will be available via the jvisualvm command, installed in your JAVA_HOME/bin directory
+#As a separate download, from the &lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net/download.html"&gt;&amp;#86;isualVM downloads page&lt;/a&gt;&lt;/span&gt;. After uncompressing the installation file, a visualvm executable can be found in the VISUALVM_INSTALLATION/bin folder
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstallingtheAspirepluginsintheVisualVM"&gt;Installing the Aspire plugins in the VisualVM&lt;/span&gt;&lt;/h4&gt; 
+The generated plugins need to be manually installed in the VisualVM. The following steps must be taken
+&lt;ul class="star"&gt;
+&lt;li&gt;Start the VisualVM&lt;/li&gt;
+&lt;li&gt;Go to the menu Tools &gt; Plugins&lt;/li&gt;
+&lt;li&gt;Go to the downloaded tab&lt;/li&gt;
+&lt;li&gt;Click the Add Plugins button&lt;/li&gt;
+&lt;li&gt;Browse the nbm files generated in building step, and select them all&lt;/li&gt;
+&lt;li&gt;Confirm all operations, and close the plugins window&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVisualizingtheplugins"&gt;Visualizing the plugins&lt;/span&gt;&lt;/h4&gt; 
+The VisualVM works inspecting Java processes, so it is necessary to connect to a Java process that runs an Aspire component (EPCIS, ALE Server, BEG). In addition, the corresponding component must have the respective MBeans enabled, so the Aspire plugins can be enabled. If these preconditions are fulfilled, you can execute the VisualVM and visualize on the Applications tree, on the left, all Java processes that are running (optionally you can connect to a remote machine). By choosing the appropriate process (e.g. An OSGi application running the ALEServer), the VisualVM will connect to the Java processe, and start the Aspire Plugins that are installed. If the corresponding Aspire MBeans are present, the plugins will be shown  
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HFAQ"&gt;FAQ&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowMBeansareconfiguredintheWEBINF2Fwebxmlofservers27WARfile"&gt;How MBeans are configured in the WEB-INF/web.xml of servers' WAR file&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtolauchtheVisualVM"&gt;How to lauch the VisualVM&lt;/span&gt;&lt;/h4&gt; 
+The VisualVM is now provisioned with the JDK&lt;p class="paragraph"/&gt;So run just  %JAVA_HOME%&amp;#98;in&amp;#106;visualvm.exe
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtolauchtheVisualVMfromEclipse"&gt;How to lauch the VisualVM from Eclipse&lt;/span&gt;&lt;/h4&gt; 
+TBD
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoinstalltheplugin"&gt;How to install the plugin&lt;/span&gt;&lt;/h4&gt; 
+&lt;ol&gt;&lt;li&gt;Menu "Tools&gt;Plugins"&lt;/li&gt;
+&lt;li&gt;Tab "Downloaded"&lt;/li&gt;
+&lt;li&gt;Button "Add plugins..." and browse your file system&lt;/li&gt;
+&lt;li&gt;Select them and button "Install"&lt;/li&gt;
+&lt;/ol&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoinstalladditionnalpluginsfromthecentralrepository"&gt;How to install additionnal plugins from the central repository&lt;/span&gt;&lt;/h4&gt; 
+&lt;ol&gt;&lt;li&gt;Menu "Tools&gt;Plugins"&lt;/li&gt;
+&lt;li&gt;Tab "Availables plugins"&lt;/li&gt;
+&lt;li&gt;Select them and button "Install"&lt;/li&gt;
+&lt;/ol&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoconnecttotheprocess28localorremote29"&gt;How to connect to the process (local or remote)&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HLocal"&gt;Local&lt;/span&gt;&lt;/h5&gt; 
+Double-click the java process corresponding to the ALEServer in the "Application" panel (on the left).
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HRemote"&gt;Remote&lt;/span&gt;&lt;/h5&gt; 
+The Java process must be launch with the following options in order to start the JMX RMI Connector.
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javase/6/docs/technotes/guides/management/agent.html"&gt;&amp;#77;ore information&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;With Tomcat, the options are  -Dcom.sun.management.jmxremote.port=8086 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false 
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html"&gt;&amp;#77;ore information&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;Add the connection from the menu "File&gt;Add remote host..." or "File&gt;Add JMX Connection..."
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoextendtheVisualVMplugin"&gt;How to extend the VisualVM plugin&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="https://visualvm.dev.java.net/api-quickstart.html"&gt;&amp;#104;ttps://visualvm.dev.java.net/api-quickstart.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm"&gt;&amp;#104;ttp://blogs.sun.com/geertjan/entry/getting_started_extending_visualvm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HJMXUtilities"&gt;JMX Utilities&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html"&gt;&amp;#77;BeanCmd&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://tomcat.apache.org/tomcat-6.0-doc/monitoring.html#Manage_Tomcat_with_JMX_remote_Ant_Tasks"&gt;&amp;#84;omcat JMX Ant tasks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOtherconsolesforJMX"&gt;Other consoles for JMX&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;JConsole&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mc4j.org/confluence/display/mc4j/Home"&gt;&amp;#77;C4J&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://code.google.com/p/eclipse-jmx"&gt;&amp;#69;clipse JMX&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org"&gt;&amp;#79;W2 Jasmine Flex Console&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtomanageOSGiplatformswithJMX"&gt;How to manage OSGi platforms with JMX&lt;/span&gt;&lt;/h4&gt; 
+A recent specification addresses how to manage OSGi platforms with JMX :
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/framework/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/framework/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/cm/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/cm/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/permissionadmin/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/permissionadmin/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/provisioning/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/provisioning/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/useradmin/package-summary.html"&gt;&amp;#104;ttp://www.osgi.org/javadoc/r4v42/org/osgi/jmx/service/useradmin/package-summary.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtostartwithJMX"&gt;How to start with JMX&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HSeveraltutorialsonJMX"&gt;Several tutorials on JMX&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/technotes/guides/jmx/tutorial/tutorialTOC.html"&gt;&amp;#104;ttp://download.oracle.com/docs/cd/E17409_01/javase/6/docs/technotes/guides/jmx/tutorial/tutorialTOC.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://download.oracle.com/docs/cd/E17409_01/javase/tutorial/jmx/index.html"&gt;&amp;#104;ttp://download.oracle.com/docs/cd/E17409_01/javase/tutorial/jmx/index.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

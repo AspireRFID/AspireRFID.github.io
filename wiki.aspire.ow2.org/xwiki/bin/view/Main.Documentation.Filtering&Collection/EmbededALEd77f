@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Filtering&amp;Collection</web>
+<name>EmbededALE</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1274357574000</creationDate>
+<date>1276525249000</date>
+<contentUpdateDate>1276525249000</contentUpdateDate>
+<version>1.66</version>
+<title>Embeded ALE</title>
+<template></template>
+<attachment>
+<filename>application_context.png</filename>
+<filesize>193773</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1274866902000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>software_layers.png</filename>
+<filesize>9689</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1274870956000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Developed_software_layers.png</filename>
+<filesize>63212</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1274871298000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Embedded ALE
+
+#toc("" "" "true")
+
+This section describes the Embedded application software developed by the POPS team, Inria-Lille. This software includes a light-ALE which can be implemented in mobile terminals such like PDA (we choose the brand Psion and Intermec in our tests).
+
+1.1 Application Context
+
+The use case that drives the application context can be summarized as follows :
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/application_context.png"&gt;{image:application_context.png|400}&lt;/a&gt;
+&lt;/center&gt;
+There are three main levels in this scenario :
+
+1) Tags : EPC C1G2 tags sticked on items or location spots.
+
+2) Embedded applications :
+* IHM : the user's interface for inventory management : start, pause, stop, download ECSpec and upload ECReports in a binary serialized fashion. This application is used as client for the ALE (not covered by this document
+* ALE : The filtering and collection server. Tailored for use in an embedded Java environment.
+* RP : the reader abstraction layer using the EPC Reader Protocol API. It interacts with the RFID reader device.
+
+3) Server : connected to an EPC network, it hosts specs and manages reports. The XML marshalling of ECSpec and ECReports objects is performed on the server for performance issues (not covered by this document).
+
+The embedded applications are fully written in Java, under the J2ME CDC 1.0 profile. They run on top of IBM's J9 virtual machine. 
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/software_layers.png"&gt;{image:software_layers.png|150}&lt;/a&gt;
+&lt;/center&gt;
+
+The use of the Java language constrains the development style in order to cope with garbage collection (such as reusable objects). 
+Finally, the RFID readers (CAEN and BRI) are accessed using vendor-specific drivers.
+
+1.1 Embeded ALE  overview
+
+The currently implemented layers are the following :
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/Developed_software_layers.png"&gt;{image:Developed_software_layers.png|200}&lt;/a&gt;
+&lt;/center&gt;
+
+*1) ALE Layer :*  Inventory of tags in reader's field, reader configuration.
+
+In order to provide minimal inventory services, at interface level, subsets of the Reading and the Logical Reader APIs are implemented :
+* Immediate mode : sufficient for user-triggered inventory.
+
+* Fixed readers configuration : only some properties (Power, Session and InitialQ) can be updated.
+
+The ALE engine manages tag grouping and filtering according to EPC standard patterns in input ECSpec objects.  A lightweight custom CODEC was developed as well, in order to decode tag IDs using binary format (array of bytes) and in a garbage-free fashion. A filter engine is also made available for software filtering of tags. This leaves the choice for Reader Connectors to choose the best tradeoff between software and hardware filtering.  Note that, because of the Java CDC constraint, the ECSpec and ECReports classes and subclasses were written manually despite of automatic generation from XSD files.
+
+*2) Reader Layer :* Abstraction layer of reader device.
+
+This abstraction layer defines the contract that a reader connector shall respect in order to be bound to the ALE. It provides several services to the connectors such as access to the software filtering engine. Four connectors has been developed :
+* RP : connector to an RP-compliant reader implementing the minimal inventory functions.
+
+* Sim : a custom reader for debugging purposes. The list of tags for simulation can be retrieved from a configuration file generated by the tag generator application (see next section).
+
+* BRI : Connector to the Intermec IP30 reader using the BRI driver.
+
+* CAEN : Connector to the CAEN A528 reader using the CAEN driver.
+
+*3) EPC Reader Protocol wrapper (RP) : * This wrapper defines the Reader Protocol interface classes that are used to dialog with an RP-compliant reader device. Based on each vendor-specific driver, two implementations were developed in order to provide minimal required services (inventory).	
+Note that the communication with the Reader Device is done locally and directly via method calls. This avoids overhead when using MTB layers for message bindings.
+
+
+1.1 Users Guide
+
+1.1.1 DOWNLOAD &amp; RUN
+You can download the application files from [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15232].
+All the source can be found [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/LightALE/LightALE/].
+
+* Implementation in a PDA :
+   **  Copy the repository located in ~~Light_ALE_1.0~~ (depends on the testing PDA) to the root path of PDA. 
+
+   **  Configure the file ~~testConfig.txt~~
+
+   **  Click LaunchDemo.lnk to test light ALE (light RP included) or TestRp.lnk (test only the light RP)
+
+* Simulation test
+   **  Set ~~simu=true~~ in testConfig.txt
+
+* All the sources are zipped in ~~workspaceICOM.zip~~
+
+Certain complex classes were tested unitary by simply adding a main method in the class that tests the main functions (ex. pops.ale.engine.collect.grouping). This is useful for unitary tests on PDA.
+
+The RP-light subset was tested on the PSION and INTERMEC PDA's using the test.Test class.
+
+The ALE-light tests contains more information useful for the ALE user. The tests are written in the *pops.ale.engine.TestCase class*. The test Case is configured in an input file *(Config.txt)*, in order to choose the test, select the reader layer...etc
+
+There are 5 tests ( Test 3 is the whole ALE test) available :
+* Test 1  : Validates the CAEN API in order to read on the PSION.
+
+* Test 2  : Tests the grouping algorithm used in the ALE engine.
+
+* Test 3 : Tests and demonstrates the immediate mode (spec build, call, use report).
+
+* Test 4  : Benchmarks for the beep durations (Searching algorithm which is used to look for an item in the neighborhood by the beep frequency of the PDA)
+
+* Test 5  : Tag Searcher (Geiger-like) proof of concept (Geiger.java class).
+
+More details about the embedded light RP can be found [here&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/LightRP].
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HEmbeddedALE"&gt;Embedded ALE&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HApplicationContext"&gt;1 Application Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEmbededALEoverview"&gt;2 Embeded ALE  overview&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;3 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDOWNLOAD26RUN"&gt;3.1 DOWNLOAD &amp; RUN&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; 
+This section describes the Embedded application software developed by the POPS team, Inria-Lille. This software includes a light-ALE which can be implemented in mobile terminals such like PDA (we choose the brand Psion and Intermec in our tests).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HApplicationContext"&gt;Application Context&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The use case that drives the application context can be summarized as follows :
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/application_context.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/application_context.png" height="400" alt="application_context.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+There are three main levels in this scenario :&lt;p class="paragraph"/&gt;1) Tags : EPC C1G2 tags sticked on items or location spots.&lt;p class="paragraph"/&gt;2) Embedded applications :
+&lt;ul class="star"&gt;
+&lt;li&gt;IHM : the user's interface for inventory management : start, pause, stop, download ECSpec and upload ECReports in a binary serialized fashion. This application is used as client for the ALE (not covered by this document&lt;/li&gt;
+&lt;li&gt;ALE : The filtering and collection server. Tailored for use in an embedded Java environment.&lt;/li&gt;
+&lt;li&gt;RP : the reader abstraction layer using the EPC Reader Protocol API. It interacts with the RFID reader device.&lt;/li&gt;
+&lt;/ul&gt;3) Server : connected to an EPC network, it hosts specs and manages reports. The XML marshalling of ECSpec and ECReports objects is performed on the server for performance issues (not covered by this document).&lt;p class="paragraph"/&gt;The embedded applications are fully written in Java, under the J2ME CDC 1.0 profile. They run on top of IBM's J9 virtual machine.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/software_layers.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/software_layers.png" height="150" alt="software_layers.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The use of the Java language constrains the development style in order to cope with garbage collection (such as reusable objects). 
+Finally, the RFID readers (CAEN and BRI) are accessed using vendor-specific drivers.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HEmbededALEoverview"&gt;Embeded ALE  overview&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The currently implemented layers are the following :&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/Developed_software_layers.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection/EmbededALE/Developed_software_layers.png" height="200" alt="Developed_software_layers.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;1) ALE Layer :&lt;/strong&gt;  Inventory of tags in reader's field, reader configuration.&lt;p class="paragraph"/&gt;In order to provide minimal inventory services, at interface level, subsets of the Reading and the Logical Reader APIs are implemented :
+&lt;ul class="star"&gt;
+&lt;li&gt;Immediate mode : sufficient for user-triggered inventory.&lt;/li&gt;
+&lt;li&gt;Fixed readers configuration : only some properties (Power, Session and InitialQ) can be updated.&lt;/li&gt;
+&lt;/ul&gt;The ALE engine manages tag grouping and filtering according to EPC standard patterns in input ECSpec objects.  A lightweight custom CODEC was developed as well, in order to decode tag IDs using binary format (array of bytes) and in a garbage-free fashion. A filter engine is also made available for software filtering of tags. This leaves the choice for Reader Connectors to choose the best tradeoff between software and hardware filtering.  Note that, because of the Java CDC constraint, the ECSpec and ECReports classes and subclasses were written manually despite of automatic generation from XSD files.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;2) Reader Layer :&lt;/strong&gt; Abstraction layer of reader device.&lt;p class="paragraph"/&gt;This abstraction layer defines the contract that a reader connector shall respect in order to be bound to the ALE. It provides several services to the connectors such as access to the software filtering engine. Four connectors has been developed :
+&lt;ul class="star"&gt;
+&lt;li&gt;RP : connector to an RP-compliant reader implementing the minimal inventory functions.&lt;/li&gt;
+&lt;li&gt;Sim : a custom reader for debugging purposes. The list of tags for simulation can be retrieved from a configuration file generated by the tag generator application (see next section).&lt;/li&gt;
+&lt;li&gt;BRI : Connector to the Intermec IP30 reader using the BRI driver.&lt;/li&gt;
+&lt;li&gt;CAEN : Connector to the CAEN A528 reader using the CAEN driver.&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;3) EPC Reader Protocol wrapper (RP) : &lt;/strong&gt; This wrapper defines the Reader Protocol interface classes that are used to dialog with an RP-compliant reader device. Based on each vendor-specific driver, two implementations were developed in order to provide minimal required services (inventory).	
+Note that the communication with the Reader Device is done locally and directly via method calls. This avoids overhead when using MTB layers for message bindings.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDOWNLOAD26RUN"&gt;DOWNLOAD &amp; RUN&lt;/span&gt;&lt;/h4&gt; 
+You can download the application files from &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15232"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.
+All the source can be found &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/LightALE/LightALE/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.
+&lt;ul class="star"&gt;
+&lt;li&gt;Implementation in a PDA :&lt;ul class="star"&gt;
+&lt;li&gt; Copy the repository located in &lt;i class="italic"&gt;Light_ALE_1.0&lt;/i&gt; (depends on the testing PDA) to the root path of PDA.&lt;/li&gt;
+&lt;li&gt; Configure the file &lt;i class="italic"&gt;testConfig.txt&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt; Click LaunchDemo.lnk to test light ALE (light RP included) or TestRp.lnk (test only the light RP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Simulation test&lt;ul class="star"&gt;
+&lt;li&gt; Set &lt;i class="italic"&gt;simu=true&lt;/i&gt; in testConfig.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;All the sources are zipped in &lt;i class="italic"&gt;workspaceICOM.zip&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;Certain complex classes were tested unitary by simply adding a main method in the class that tests the main functions (ex. pops.ale.engine.collect.grouping). This is useful for unitary tests on PDA.&lt;p class="paragraph"/&gt;The RP-light subset was tested on the PSION and INTERMEC PDA's using the test.Test class.&lt;p class="paragraph"/&gt;The ALE-light tests contains more information useful for the ALE user. The tests are written in the &lt;strong class="strong"&gt;pops.ale.engine.TestCase class&lt;/strong&gt;. The test Case is configured in an input file &lt;strong class="strong"&gt;(Config.txt)&lt;/strong&gt;, in order to choose the test, select the reader layer...etc&lt;p class="paragraph"/&gt;There are 5 tests ( Test 3 is the whole ALE test) available :
+&lt;ul class="star"&gt;
+&lt;li&gt;Test 1  : Validates the CAEN API in order to read on the PSION.&lt;/li&gt;
+&lt;li&gt;Test 2  : Tests the grouping algorithm used in the ALE engine.&lt;/li&gt;
+&lt;li&gt;Test 3 : Tests and demonstrates the immediate mode (spec build, call, use report).&lt;/li&gt;
+&lt;li&gt;Test 4  : Benchmarks for the beep durations (Searching algorithm which is used to look for an item in the neighborhood by the beep frequency of the PDA)&lt;/li&gt;
+&lt;li&gt;Test 5  : Tag Searcher (Geiger-like) proof of concept (Geiger.java class).&lt;/li&gt;
+&lt;/ul&gt;More details about the embedded light RP can be found &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/LightRP"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>TDT</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1233251663000</creationDate>
+<date>1377011083000</date>
+<contentUpdateDate>1377011083000</contentUpdateDate>
+<version>1.51</version>
+<title>Tag Data Translation</title>
+<template></template>
+<content>1 Tag Data Translation
+
+----
+#toc("" "" "")
+----
+
+
+1.1 Introduction
+
+Tag data translation or Tag Virtualization is the process of translating the information stored on a tag from a specific encoding to another one, e.g from binary format to GID-96. This process is very important especially for open loop systems. EPCglobal Inc. has defined a standard which clarifies this process for EPC based systems. 
+
+Tag virtualization capitalises on a machine-readable version of the [EPC Tag Data Standards specification&gt;http://www.epcglobalinc.org/standards/tdt]. The actual version of TDS standard implemented in TDT is [TDT Standard v1.6&gt;http://www.gs1.org/gsmp/kc/epcglobal/tdt/tdt_1_6_RatifiedStd-20111012-i2.pdf]. It was updated by using the library [tdt-1.0.0-with-dependencies&gt;https://code.google.com/p/fosstrak/wiki/TdtDownload] released by [Fosstrak&gt;https://code.google.com/p/fosstrak/]. 
+
+This machine-readable version can be used for abstracting underlying RFID tags through bridging and mapping different representations. Hence, a tag translation module is a (standalone or embedded) middleware component that enables the interpretation of machine readable version of the tag.
+
+The interpretation can be used in automated fashion. In addition the tag translation specification can be used for validating machine readable formats of the EPC tags. The TDT engine built in the scope of the AspireRfid project currently supports the ISO15693, ISO14443, NFC, MAC address, phone numbers (with company prefixes), various GS1 formats (EAN/UPC, GS1 DataBar, GS1-128, ITF-14, GS1 DataMatrix, and Composite Component), as well as Bar Codes 1D and 2D: Note that barcode support is deemed particularly important given the vast number of legacy barcode applications, which need to be interoperable with emerging RFID applications. The AspireRFID TDT supports EPC tags by using an implementation of the EPCglobal standard provided by [Fosstrak&gt;http://www.fosstrak.org/tdt] project.
+
+More information regarding tag virtualization in AspireRFID can be acquired through the public deliverable [D3.2 Readers and Tags Virtualization&gt;http://fp7-aspire.eu/fileadmin/aspire/docs/D3_2.pdf] of the Aspire FP7 project
+
+1.1 Users Guide
+
+This component is provided as a stand alone tool on the project forge [here&gt;http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324]. It depends on the Fosstrak TDT library available [here&gt;https://code.google.com/p/fosstrak/wiki/TdtDownload] (download the JAR with Dependencies file).
+
+The file TDTFrontEnd.java shows how to use the AspireRfid TDT. The following source code is a quote from this file, explaining the use of the engine parameters:
+
+{code:java}
+AspireTDTEngine engine = new AspireTDTEngine();
+
+HashMap&lt;String,String&gt; extraparams = new HashMap&lt;String, String&gt;(); // a HashMap providing extra parameters needed in addition to the input value
+
+/** MANDATORY PARAMETERS FOR TDT **/
+extraparams.put("dataType","gs1"); // permitted values are 'gs1', 'ISO' or 'phone' (not case sensitive)
+extraparams.put("outputFormat","LEGACY");
+// permitted values are :
+// for EPC Tags and GS1 Bar Code (EPC TDS Compliant)* : 'LEGACY', 'BINARY', 'TAG_ENCODING', 'PURE_IDENTITY', 'ONS_HOSTNAME' and 'GS1_AI_ENCODING'
+// for GS1 Bar Code (not EPC TDS Compliant) :'LEGACY' and 'GS1_AI_ENCODING'
+// for ISO Tags :'HEXA', 'LEGACY', 'BINARY', 'TAG_ENCODING', 'PURE_IDENTITY', 'ONS_HOSTNAME'
+
+
+/** PARAMETERS FOR EPC Tags TDT **/
+/* These parameters are mandatory for inbound levels 'PURE_IDENTITY', 'LEGACY' or 'GS1_AI_ENCODING', */
+/* and if outputFormat=GS1_AI_ENCODING */
+extraparams.put("taglength","96"); // the taglength must be specified as "64" or "96"
+extraparams.put("filter","1"); // the filter value must be specified - range depends on coding scheme.
+extraparams.put("companyprefixlength","6"); // the companyprefixlength (length of the EAN.UCC Company Prefix) must be specified for GS1 coding schemes
+
+
+/** PARAMETERS FOR GS1 Bar Code TDT **/
+/* These parameters are mandatory if outputFormat=GS1_AI_ENCODING */
+extraparams.put("gs1symbol","]e0"); // GS1 Bar Code Type (permitted values are ']E0', ']E1', ']E2', ']E3', ']E4', ']I1', ']C1', ']e0' or  ']d2')
+extraparams.put("codelength","12"); // size of the bar code (mandatory with gs1symbol values ]E0 an ]E3), permitted values are 12 (for UPC-A), 13 (for EAN-13) or 8 (for UPC-E)
+
+/** PARAMETERS FOR PHONE NUMBER TDT **/
+extraparams.put("countryprefixlength","96"); // the countryprefixlength must be specified as "1", "2" or "3"
+{code}
+
+The following method provided by the AspireTDTEngine object translates the input string of a specified input level to a specified outbound level of the same coding scheme.
+
+{code:java}
+public String convert(String input, Map&lt;String,String&gt; inputParameters) throws TDTException 
+{code}
+
+For example, the input string value may be a tag-encoding URI and the outbound level specified by string outboundlevel may be BINARY, in which case the return value is a binary representation expressed as a string. The different available levels depend on the input string and are:
+* BINARY
+* TAG_ENCODING
+* PURE_IDENTITY
+* LEGACY
+* ONS_HOSTNAME
+* GS1_AI_ENCODING
+* HEXA</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HTagDataTranslation"&gt;Tag Data Translation&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt; Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt; Users Guide&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Tag data translation or Tag Virtualization is the process of translating the information stored on a tag from a specific encoding to another one, e.g from binary format to GID-96. This process is very important especially for open loop systems. EPCglobal Inc. has defined a standard which clarifies this process for EPC based systems.&lt;p class="paragraph"/&gt;Tag virtualization capitalises on a machine-readable version of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/tdt"&gt;&amp;#69;PC Tag Data Standards specification&lt;/a&gt;&lt;/span&gt;. The actual version of TDS standard implemented in TDT is &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.gs1.org/gsmp/kc/epcglobal/tdt/tdt_1_6_RatifiedStd-20111012-i2.pdf"&gt;&amp;#84;DT Standard v1.6&lt;/a&gt;&lt;/span&gt;. It was updated by using the library &lt;span class="wikiexternallink"&gt;&lt;a href="https://code.google.com/p/fosstrak/wiki/TdtDownload"&gt;&amp;#116;dt-1.0.0-with-dependencies&lt;/a&gt;&lt;/span&gt; released by &lt;span class="wikiexternallink"&gt;&lt;a href="https://code.google.com/p/fosstrak/"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;This machine-readable version can be used for abstracting underlying RFID tags through bridging and mapping different representations. Hence, a tag translation module is a (standalone or embedded) middleware component that enables the interpretation of machine readable version of the tag.&lt;p class="paragraph"/&gt;The interpretation can be used in automated fashion. In addition the tag translation specification can be used for validating machine readable formats of the EPC tags. The TDT engine built in the scope of the AspireRfid project currently supports the ISO15693, ISO14443, NFC, MAC address, phone numbers (with company prefixes), various GS1 formats (EAN/UPC, GS1 DataBar, GS1-128, ITF-14, GS1 DataMatrix, and Composite Component), as well as Bar Codes 1D and 2D: Note that barcode support is deemed particularly important given the vast number of legacy barcode applications, which need to be interoperable with emerging RFID applications. The AspireRFID TDT supports EPC tags by using an implementation of the EPCglobal standard provided by &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org/tdt"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt; project.&lt;p class="paragraph"/&gt;More information regarding tag virtualization in AspireRFID can be acquired through the public deliverable &lt;span class="wikiexternallink"&gt;&lt;a href="http://fp7-aspire.eu/fileadmin/aspire/docs/D3_2.pdf"&gt;&amp;#68;3.2 Readers and Tags Virtualization&lt;/a&gt;&lt;/span&gt; of the Aspire FP7 project
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This component is provided as a stand alone tool on the project forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. It depends on the Fosstrak TDT library available &lt;span class="wikiexternallink"&gt;&lt;a href="https://code.google.com/p/fosstrak/wiki/TdtDownload"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt; (download the JAR with Dependencies file).&lt;p class="paragraph"/&gt;The file TDTFrontEnd.java shows how to use the AspireRfid TDT. The following source code is a quote from this file, explaining the use of the engine parameters:&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;AspireTDTEngine engine = &lt;span class="java&amp;#45;keyword"&gt;new&lt;/span&gt; AspireTDTEngine();&lt;p class="paragraph"/&gt;HashMap&amp;#60;&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;,&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#62; extraparams = &lt;span class="java&amp;#45;keyword"&gt;new&lt;/span&gt; HashMap&amp;#60;&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;, &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#62;(); // a HashMap providing extra parameters needed in addition to the input value&lt;p class="paragraph"/&gt;/&amp;#42;&amp;#42; MANDATORY PARAMETERS FOR TDT &amp;#42;&amp;#42;/
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"dataType"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"gs1"&lt;/span&gt;); // permitted values are 'gs1', 'ISO' or 'phone' (not &lt;span class="java&amp;#45;keyword"&gt;case&lt;/span&gt; sensitive)
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"outputFormat"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"LEGACY"&lt;/span&gt;);
+// permitted values are :
+// &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; EPC Tags and GS1 Bar Code (EPC TDS Compliant)&amp;#42; : 'LEGACY', 'BINARY', 'TAG_ENCODING', 'PURE_IDENTITY', 'ONS_HOSTNAME' and 'GS1_AI_ENCODING'
+// &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; GS1 Bar Code (not EPC TDS Compliant) :'LEGACY' and 'GS1_AI_ENCODING'
+// &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; ISO Tags :'HEXA', 'LEGACY', 'BINARY', 'TAG_ENCODING', 'PURE_IDENTITY', 'ONS_HOSTNAME'&lt;p class="paragraph"/&gt;
+/&amp;#42;&amp;#42; PARAMETERS FOR EPC Tags TDT &amp;#42;&amp;#42;/
+/&amp;#42; These parameters are mandatory &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; inbound levels 'PURE_IDENTITY', 'LEGACY' or 'GS1_AI_ENCODING', &amp;#42;/
+/&amp;#42; and &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; outputFormat=GS1_AI_ENCODING &amp;#42;/
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"taglength"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"96"&lt;/span&gt;); // the taglength must be specified as &lt;span class="java&amp;#45;quote"&gt;"64"&lt;/span&gt; or &lt;span class="java&amp;#45;quote"&gt;"96"&lt;/span&gt;
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"filter"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"1"&lt;/span&gt;); // the filter value must be specified &amp;#45; range depends on coding scheme.
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"companyprefixlength"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"6"&lt;/span&gt;); // the companyprefixlength (length of the EAN.UCC Company Prefix) must be specified &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; GS1 coding schemes&lt;p class="paragraph"/&gt;
+/&amp;#42;&amp;#42; PARAMETERS FOR GS1 Bar Code TDT &amp;#42;&amp;#42;/
+/&amp;#42; These parameters are mandatory &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; outputFormat=GS1_AI_ENCODING &amp;#42;/
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"gs1symbol"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"&amp;#93;e0"&lt;/span&gt;); // GS1 Bar Code Type (permitted values are '&amp;#93;E0', '&amp;#93;E1', '&amp;#93;E2', '&amp;#93;E3', '&amp;#93;E4', '&amp;#93;I1', '&amp;#93;C1', '&amp;#93;e0' or  '&amp;#93;d2')
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"codelength"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"12"&lt;/span&gt;); // size of the bar code (mandatory with gs1symbol values &amp;#93;E0 an &amp;#93;E3), permitted values are 12 (&lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; UPC&amp;#45;A), 13 (&lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; EAN&amp;#45;13) or 8 (&lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; UPC&amp;#45;E)&lt;p class="paragraph"/&gt;/&amp;#42;&amp;#42; PARAMETERS FOR PHONE NUMBER TDT &amp;#42;&amp;#42;/
+extraparams.put(&lt;span class="java&amp;#45;quote"&gt;"countryprefixlength"&lt;/span&gt;,&lt;span class="java&amp;#45;quote"&gt;"96"&lt;/span&gt;); // the countryprefixlength must be specified as &lt;span class="java&amp;#45;quote"&gt;"1"&lt;/span&gt;, &lt;span class="java&amp;#45;quote"&gt;"2"&lt;/span&gt; or &lt;span class="java&amp;#45;quote"&gt;"3"&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;The following method provided by the AspireTDTEngine object translates the input string of a specified input level to a specified outbound level of the same coding scheme.&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; convert(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; input, Map&amp;#60;&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;,&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#62; inputParameters) &lt;span class="java&amp;#45;keyword"&gt;throws&lt;/span&gt; TDTException&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;For example, the input string value may be a tag-encoding URI and the outbound level specified by string outboundlevel may be BINARY, in which case the return value is a binary representation expressed as a string. The different available levels depend on the input string and are:
+&lt;ul class="star"&gt;
+&lt;li&gt;BINARY&lt;/li&gt;
+&lt;li&gt;TAG_ENCODING&lt;/li&gt;
+&lt;li&gt;PURE_IDENTITY&lt;/li&gt;
+&lt;li&gt;LEGACY&lt;/li&gt;
+&lt;li&gt;ONS_HOSTNAME&lt;/li&gt;
+&lt;li&gt;GS1_AI_ENCODING&lt;/li&gt;
+&lt;li&gt;HEXA&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

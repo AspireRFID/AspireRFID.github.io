@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/AleServerConfigurator?xpage=code by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:53:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - AleServerConfigurator
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin55b5.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/AleServerConfigurator?xpage=code">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='AleServerConfigurator.html'>ALE Server Configurator Plug-in</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.AspireIDE/Main.Documentation.AspireIDE_AleServerConfigurator.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="AleServerConfiguratord5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation.AspireIDE/AleServerConfiguratorcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="AleServerConfiguratord77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 ALE Server Configurator
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+
+1.1 Introduction
+
+The objective of this tool is to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfigurator.jpg&#34;&#62;{image:AleServerConfigurator.jpg|300}&#60;/a&#62;
+&#60;/center&#62;
+
+This guide gives a short overview to the ALE Server Configurator that allows to interactively use the Filtering and Collection Server instance which is an AspireRFID plug-in and comprises:
+
+*. A *View*, where you can interact with the F&#38;C Server
+*. A *Preference window* where you can choose the various preferences for the Configurator
+*. And a *Console*, used to display the server's response.
+
+1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* [F&#38;amp;C Server&#62;Main.Documentation.Filtering&#38;Collection]
+* Java 1.6
+* [Eclipse 3.4&#62; http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment plug-ins and [Subversive plug-in&#62; http://www.polarion.org/index.php?page=download&#38;project=subversive]) (required only for developers)
+
+
+
+
+1.1 Users Guide
+
+1.1.1 Download &#38; Run
+You can download the ALE Server Configurator tool from the [AspireRFID forge&#62;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIdeToolCollection” under &#34;AspireRFID AITdev&#34; package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory {pre}&#34;user.home\AspireRFID\IDE\...&#34; (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”){/pre}.
+
+1.1.1 Configuration
+
+The ALE Server Configurator is configured through the IDE’s preferences window (Window&#62;Preferences) by choosing the ALE Server Configurator from the list appearing at the left see the picture below.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfiguratorPreferences.jpg&#34;&#62;{image:AleServerConfiguratorPreferences.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+From there you can configure the:
+*. *EC Specs Directory*: The directory where ECSpecs will be stored which will be used to configure the server’s filtering function.
+*. *ALE Client EndPoint*: The F&#38;C Server’s EndPoint that accepts connections for the ALEService.
+*. *LR Specs Directory*: The directory where the LRSpecs will be stored that will be used to dynamically define logical readers.
+*. *ALE LR Client EndPoint*: The F&#38;C Server’s LR EndPoint that accepts connections for the ALELRService to dynamically define logical readers.
+
+1.1.1 ECSpec
+
+The ECSpecs define how the Filtering and Collection Server generates reports. You can retrieve current tags, tags that have been added or deleted with respect to the last EventCycle or combinations of all. For that, you need to provide to the Filtering and Collection Server with a valid ECSpec in xml format by using the ALE Server Configurator. The ECSpec becomes active as soon as you subscribe with a notificationURI.
+
+1.1.1 LRSpec
+
+An LRSpec contains information about a reader. Whenever a new reader is to be created, a corresponding LRSpec has to be created and shipped to the Filtering and Collection Server.
+
+1.1 Developers Guide
+
+ALE Server configurator is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “[AspireRfidIDECore&#62;Main.Documentation.AspireIDE.AspireRfidIdeCore]”.
+
+
+1.1.1 Acquiring the code
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge [SVN&#62;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&#62; http://www.polarion.org/index.php?page=download&#38;project=subversive] and by using the following URL at the window that appears:  
+svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-AleSerConfig
+* right click the repository that has been just created and hit the check out button
+* check the aspireRfidIde-AleSerConfig project on the list and hit ok
+
+1.1.1 Running the Project
+
+For running AspireRfidIDE with the ALE ServerConfigurator Plug-in:
+* Create an aspireRfidIDE project (unless you have already created one)
+* Go to the aspireRfidIde project Run Configurations (Run&#62;Run Configurations…) and at the list choose Eclipse Application&#62;aspireRfidIde.product
+* At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product
+* At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the aspireRfidIde, org.ow2.aspirerfid.ide.aleconfig and then hit the Add required Plug-ins button.
+* Hit apply
+* Now you are ready to run the application.
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main.Documentation/AspireIDE.html'>Main.Documentation.AspireIDE</a> &gt; <a href='AleServerConfigurator.html'>ALE Server Configurator Plug-in</a>
+  (en)
+ <br />
+  Creator: nkef
+ &nbsp;Date: 2009/01/30 13:19
+ <br />
+ Last Author: nkons
+ &nbsp;Date: 2010/05/13 07:40
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.AspireIDE/AleServerConfigurator?xpage=code by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:53:45 GMT -->
+</html>

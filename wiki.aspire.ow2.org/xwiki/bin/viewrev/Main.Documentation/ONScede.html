@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation/ONS?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:27:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - ONS
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_ONS.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation/ONSd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/ONScede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/ONSd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Object Name Service
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+1.1 Introduction
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/ONS_Documentation.png&#34;&#62;{image:ONS_Documentation.png|500}&#60;/a&#62;
+&#60;/center&#62;
+
+In this document, we shall present an implementation of the Object Name Service (ONS) as defined in the EpcGlobal framework.
+The ONS service (both local and root) shall:
+
+* (For the root ONS) Given an EPC, can return a list of network accessible service endpoints that pertain to the EPC in question. ONS does not contain actual data about the EPC. It only contains the network address of services that contain the actual data. ONS is also authoritative in that the entity that has change control over the information about the EPC is the same entity that assigned the EPC to the item to begin with. For example, in the case of an SGTIN EPC, the entity having control over the ONS record is the owner of the SGTIN manager number (EAN.UCC Company Prefix)
+
+* (For the local ONS) Fulfills ONS lookup requests for EPCs within the control of the enterprise that operates the Local ONS; that is, EPCs for which the enterprise is the EPC Manager.
+
+Along with the implementation of the ONS server, an application that enables tracking of products between inter-enterprise EPCIS repositories is provided. This application shall
+
+* Implement and expose a new /tracking interface for the ASPIRE Information Sharing Repository, along with the /query and /capture interfaces. This new interface can be used by an external accessing application to obtain data about any EPC tag belonging to this particular company/repository. Data includes both events from the local repository and data reported from foreign domains as products move to them. The tracking interface is a SOAP interface.
+* Collect data reports about an EPC tag from foreign tracking deployments. Data includes at least time, date, geographical coordinates and information about the company which received the item and issued the data. Data can also include details about the particular item (name, features, price, date of production e.t.c) if available. All data of this kind is stored in a local database, separate from the EPCIS repository database.
+* Poll the attached EPCIS repository periodically for any events regarding EPC tags having a company identifier different than the one designated as ‘parent company’. Events are grouped together by company, a query is send to the ONS server for an EPCIS/tracking service endpoint, and an attempt is made to report the events.
+
+
+1.1 User Guide
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* Java 1.6
+* Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)
+* MySQL 5.0 (or higher).
+
+1.1.1 Deployment
+
+This section includes a step-by-step tutorial describing how to set up your own ONS server and the tracking application add-on to the Epcis Repository 
+
+* Download and install a fully functional EPCIS repository, following the instructions on the appropriate [wiki&#62;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository] page. Populate the repository with sample data. 
+* Download aspireRfidOnsTrackingService.zip from the project [Forge&#62;http://forge.objectweb.org/project/showfiles.php?group_id=324] page.
+
+1.1.1.1 Database installation and creation
+
+The tracking application was developed (and is preconfigured) to work with the open source MySQL relational database. Following are installation and configuration instructions for the MySQL database, along with a brief guide on how the user can configure the application to work with other relational databases. The installation instructions refer to a windows platform (although most of them apply to linux platforms also)
+
+* *MySQL installation (skip this step if MySQL is already installed in your system)*
+** Go to http://www.mysql.com/downloads/mysql/ and download the MySQL community server (version 5.5.8 as of writing this document) package appropriate for your operating system (for windows platforms choose the .msi installer)
+** Follow the instruction and install MySQL at a place of your choosing. Accept all default parameters (unless you have other needs and you know what you are doing). Make sure you choose to start the server after the installation is done
+** During the installation you will be asked to create the ‘root’ user. Create the user and note down the password for later use.
+** Go to http://www.mysql.com/downloads/workbench/ and download the MySQL Workbench (version 5.2.31a as of writing this document) package appropriate for your operating system
+** Install MySQL workbench and launch it. From the main screen of the program select ‘New connection’ .
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/workbench_main.png&#34;&#62;{image:workbench_main.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** The following screen should appear
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/new_db_connection.png&#34;&#62;{image:new_db_connection.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Give a connection name of your liking. If you installed MySQL with the default parameters then hostname should be 127.0.0.1 and port should be 3306. Leave the username as root and enter the password you selected during installation. Press the ‘Test Connection’ button to make sure everything is ok and then ‘OK’. The connection should have now appeared to the list on your left on the main screen of the program.
+** Select ‘New Server Instance –from the list on the right of the main screen
+** On the popup screen select localhost
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance1.png&#34;&#62;{image:instance1.png|350}&#60;/a&#62;
+&#60;/center&#62;
+ 
+** Select your software platform
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance2.png&#34;&#62;{image:instance2.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Ignore any missing configuration file warnings
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance3.png&#34;&#62;{image:instance3.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Select the connection you created on the previous step
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance4.png&#34;&#62;{image:instance4.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Give a name your newly created instance and you are done
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance5.png&#34;&#62;{image:instance5.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** By double clicking the instance you created, you can manage all aspect of your mysql_server. If the server is not running, you will get a warning. Select ‘continue anyway’ and you can start the server from there .
+
+
+
+* *Schema creation and user configuration*
+** The following instructions and provided scripts assume that you used MySQL community edition as your relational database. If you used any other database, then the needed schema must be created manually according to the provided EER diagram
+** Double click the connection you created in the previous part of the guide –make sure the server is running. The following screen should appear 
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/connection_main.png&#34;&#62;{image:connection_main.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Select ‘File-&#62;Open SQL Script’ and choose the provided TrackingDBCreation.sql you downloaded
+** Run the script. It should create the needed schema for the tracking application. The script does not create any users or grant any privileges to the schema. These have to be created manually. Close the SQL editor and double click the database instance you created –from the right part of the main program screen.
+** Select the accounts tab, and click ‘Add account’
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/accounts_main.png&#34;&#62;{image:accounts_main.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Input a login name, password, localhost as the host matching criteria and click apply (see photo for details). Note down the username and password.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/account_create.png&#34;&#62;{image:account_create.png|350}&#60;/a&#62;
+&#60;/center&#62;
+
+** Go to the ‘Schema Privileges’ Tab. Select the user you just created and click on ‘Add Entry’
+** On the screen that will pop-up choose: SelectedHost:localhost  and SelectedSchema: epcis_tracking. Then press ‘Ok’.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/schema_previliges.png&#34;&#62;{image:schema_previliges.png|350}&#60;/a&#62;
+&#60;/center&#62;
+ 
+** On the bottom of the screen click ‘Select ALL’ – to give the new user all privileges on the schema – and then ‘Save changes’
+** We are now ready. Next step is to edit the application configuration files for database access and for our company .
+
+
+1.1.1.1 Application configuration files
+
+There are 2 main configuration files that should be edited according to the database installation and the user needs. The first file is about the Hibernate O/R mapping framework our application uses to access the database. The second is the properties file for the application. Extract the aspireRfidTracking.war file you downloaded to a folder in your hard disk. It should create 2 folders named WEB-INF and META-INF. You can use any archive manager you like (a free option for Windows based platforms is 7-Zip )
+
+{code:text}
+{pre}..\WEB-INF\classes\hibernate.cfg.xml{/pre}
+{code}
+
+* “hibernate.connection.driver_class”  
+** Default: “com.mysql.jdbc.Driver”
+** Set: Don’t change if you used MySQL. In other cases change this to the class name of your connector class
+
+* “hibernate.dialect”
+** Default:  “org.hibernate.dialect.MySQLDialect”
+** Set: Don’t change if you used MySQL. In other cases, consult the appendix for a dialect that matches your database provider (or the Hibernate Documentation for more resources)
+
+* “hibernate.connection.username”
+** Default: “user”
+** Set: Change this to the username of the user you created on the previous step
+
+* “hibernate.connection.password”
+** Default: “pass”
+** Set:  Change this to the password of the user you created on the previous step
+
+* “hibernate.connection.url”
+** Default: “jdbc:mysql://localhost:3306/epcis_tracking”
+** Set: Don’t change if you used MySQL and installed with default options. In other case consult your software vendor’s manual.
+	
+	
+{code:text}
+{pre}..\WEB-INF\classes\tracking.properties{/pre}
+{code}
+
+* localEpcisInterface 	
+** Default: http\://localhost\:8080/aspireRfidEpcisRepository/query
+** Set: The query interface URL of the EPCIS repository the tracking application is attached to
+
+* localONS_Resolver 	
+** Default:  127.0.0.1
+** Set: IP of the local ONS server (see ONS section for more details)
+
+* exportedEpcisInterface 	
+** Default: http\://localhost\:8080/aspireRfidEpcisRepository/query
+** Set: This is what will appear as the remote URI to the foreign tracking application. It can be used by the other party to obtain more information about reported epc events
+
+* companyName 			
+** Default: ASPIRE Inc.
+** Set: Your company name
+
+* companyDesc 		
+** Default: RFID Solutions
+** Set: A brief description of your company
+
+* companyAddress 			
+** Default: 19.7Km Markopoulou Ave
+** Set: Company’s address.
+
+* companyCountryCode 		
+** Default: GR
+** Set: Company’s country code.
+
+* companyRegion 			
+** Default: Attica
+** Set: Company’s  region, state or province e.t.c
+
+* companyEmail 		
+** Default:  komo@aspire_inc.gr
+** Set: Contact email
+
+* companyTel 				
+** Default: +302106671836
+** Set: Contact landline
+
+* companyFax 	
+** Default:  +302106672478
+** Set: Contact Fax 
+
+* companyIdentifier  		
+** Default: 000
+** Set: This is the unique company identifier as defined by the EPCIS standard. This numerical in always the first component on any epc urn that is assigned to the company domain. The application uses this to filter out any data from the local EPCIS repository that are for own epc tags.
+* lattitude				
+** Default: 37.939605
+** Set: A default latitude attribute for generated events that don’t carry such information. Can be set to any relevant to the epcis repository location. 
+
+* longtitude				
+** Default: 23.874013
+** Set: As above
+
+* pollPeriod				
+** Default:  10000
+** Set: The poll interval (in msec) the program should wait before it checks for any new events to report
+
+* startTimeDate			
+** Default: 2010-10-04 18\:09\:24
+** Set:  On startup, the tracking interface will only poll for events newer that this time/date. This is updated every time a poll is made, so we get only the newer events each time .
+
+After you have edited the files, repack everything into the original archive aspireRfidTracking.war .
+
+
+1.1.1.1 ONS installation
+
+* *Platform choice and implementation*
+
+As per the ONS specification, each company assigned part of the epc namespace, should maintain an appropriate ONS server for that namespace. Our application uses these ONS servers to find out the appropriate foreign tracking interfaces to report epc events. The ONS server is actually a properly configured DNS server with NAPTR records for the part of the namespace the server is qualified. Any DNS implementation and platform combination is a valid option. We used the popular, open source and reference BIND implementation of DNS on windows machines. Ideally a realistic setup for our application involves one ONS server per company. For demonstration needs we will present a setup where a single ONS server contains information for EPC’s belonging to several different domains. The guide assumes at least basic information on what DNS (very helpful on this matter is the BIND manual available at http://www.isc.org/software/bind/documentation) .
+
+* *DNS Installation*
+** Go to http://www.isc.org/downloads and select ‘Windows Download’ of the latest BIND release (version 9.7.2-P3 as of writing this guide).
+** Follow the very helpful instructions on http://alex.charrett.com/bind-on-windows-mainmenu-3 up to the point of Configuring your zone ( if you don’t want to go though the BIND installation manual)
+** The scenario also assumes that while populating your EPCIS repository with sample data, you did so with tags having at least 2 different company identifiers. Let us assume that one of them is 1 –for your company – and the other one is 145 – for one of your clients. Modify your named.conf according to the one provided. Also following the instructions on how to configure your zones – from the site mentioned at the previous step, alter if needed the 2 provided zone files and copy them at the appropriate folder. If needed modify again the entry on tracking.properties file for the company identifier.
+** Save everything and start the DNS service – or restart it
+** Make sure it runs correctly, and that your firewall does not block traffic on TCP and UDP ports 53 (the default for DNS requests) .
+
+1.1.1.1 Final steps
+
+Copy aspireRfidTracking.war to the Tomcat webapps folder. Launch tomcat and you should be set. 
+
+1.1 Developer Guide
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

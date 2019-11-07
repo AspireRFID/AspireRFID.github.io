@@ -1,0 +1,237 @@
+<html>
+<link href="../../../stylesheets/rico67e7.html?1140397522" media="all" rel="Stylesheet" type="text/css" />
+<link href="../../../stylesheets/openricoe167.html?1147176691" media="all" rel="Stylesheet" type="text/css" />
+<link href="../../../stylesheets/rico_header7aa8.html?1140572545" media="all" rel="Stylesheet" type="text/css" />
+<link href="../../../stylesheets/ricoTests6df1.html?1140397523" media="all" rel="Stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototypec89b.html?1140874108" type="text/javascript"></script>
+<script src="../../../javascripts/rico29c3.html?1141681080" type="text/javascript"></script>
+<script src="../../../javascripts/util971d.html?1140659643" type="text/javascript"></script>
+
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/skins/xwiki10/layoutwizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:56:29 GMT -->
+<head>
+<title>Rico</title>
+
+</head>
+
+<body onload="javascript:bodyOnLoad()">
+
+	<table cellspacing="0" cellpadding="0" border="0"><tr>
+	   <td ><img class="imgcell" src="../../../images/ricologo.html" border="0" alt=""/></td>
+	   <td style="padding:3px;"></td>
+	   <td ><img class="imgcell" src="../../../images/ricoheader.html" border="0" alt=""/></td>
+	   <td class="headerEndCap"></td>
+	   <td ><img class="imgcell" src="../../../images/ricoEndCap.html" border="0" alt=""/></td>
+	</tr></table>
+
+	<div id="menu" style="padding-top:5px;padding-bottom:5px" class="menuBox roundNormal">
+	   <span class="leftPadding">
+	       <a id="homeLink"      class="menuLink" href="home.html">Home</a>
+	       <a id="demosLink"     class="menuLink" href="demos.html">Demos</a>      
+	       <a id="downloadsLink" class="menuLink" href="downloads.html">Downloads</a>
+
+		   <a id="weblogLink"      class="menuLink" href="http://weblog.openrico.org/">Weblog</a>
+
+		   <a id="forumink"      class="menuLink" href="http://forum.openrico.org/">Forum</a>
+		   <a id="tracLink"      class="menuLink" href="http://tracking.openrico.org:9004/rico">Tracking</a>
+	       <a id="resourcesLink" class="menuLink" href="docs.html">Resources</a>
+	   </span>
+	</div>
+
+	<script>
+
+	   var onloads = new Array();
+	   function bodyOnLoad() {
+	      new Rico.Effect.Round( null, 'roundNormal' );
+	      new Rico.Effect.Round( null, 'roundCompact', {compact:true} );
+	      for ( var i = 0 ; i < onloads.length ; i++ )
+	         onloads[i]();
+}
+	  showMenuContext()      
+	</script>
+
+
+
+<script>
+   var saveHeight;
+   var showing = true;
+
+   function toggleSlide() {
+      if ( showing )
+{ slideMenuUp(); showing = false; }
+      else
+{ slideMenuDown(); showing = true; }
+}
+
+   function slideMenuUp() {
+      var menu = $('demosMenu');
+      saveHeight = menu.offsetHeight;
+
+      menu.style.overflow = "hidden";
+      new Rico.Effect.Size( menu, null, 1, 120, 8 );
+
+      $('demoPanelLink').innerHTML = "Show demo panel";
+}
+
+   function slideMenuDown() {
+      var menu = $('demosMenu');
+      new Rico.Effect.Size( menu, null, saveHeight, 120, 8, {complete:function() { $(menu).style.overflow = "visible"; }} );
+      $('demoPanelLink').innerHTML = "Hide demo panel";
+}
+</script>
+<!-- I did have this as float:right but it screws up in firefox -->
+<div style="margin-left:6px"><a id="demoPanelLink" href="javascript:toggleSlide();">Hide demo panel</a></div>
+
+<div id="demosMenu" ondblclick="toggleSlide()" style="margin-left:2px;margin-top:2px;padding-left:6px;background-color:#adba8c;width:575px">
+<table cellpadding="0" style="margin-top:6px;margin-bottom:6px"><tr>
+
+<td class="portalBox" id="ajaxDemos">
+
+<div class="leftPadding">
+<span  class="header">AJAX DEMOS</span>
+
+<a class="demoLinks" href="demose2e2.html?demo=rico_ajax_inner_HTML">Inner Html</a>
+<a class="demoLinks" href="demosded4.html?demo=rico_ajax_complex">Javascript Updater</a>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+
+</td>
+<td>&nbsp;</td>
+<td class="portalBox" id="dragdropDemos">
+
+<div class="leftPadding">
+<span  class="header">DRAG &amp; DROP DEMOS</span>
+
+<a class="demoLinks" href="demos5f42.html?demo=rico_drag_and_drop_simple">Simple</a>
+<a class="demoLinks" href="demosf2a9.html?demo=rico_drag_and_drop_custom_draggable">Custom Draggable</a>
+<a class="demoLinks" href="demos7099.html?demo=rico_drag_and_drop_custom_dropzone">Custom Drop Zone</a>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+
+</td>
+
+<td>&nbsp;</td>
+<td class="portalBox" id="cinemaDemos">
+
+<div class="leftPadding">
+<span  class="header">CINEMATIC DEMOS</span>
+<a class="demoLinks" href="demos41f6.html?demo=rico_effect_position">Animate Position</a>
+<a class="demoLinks" href="demos32f8.html?demo=rico_effect_size">Animate Size</a>
+<a class="demoLinks" href="demos4968.html?demo=rico_effect_size_and_position">Animate Size &amp; Position</a>
+<a class="demoLinks" href="demos3af3.html?demo=rico_effect_fade_to">Animate Fade</a>
+<a class="demoLinks" href="demos1fa0.html?demo=rico_effect_round">Round a Shape</a>
+<a class="demoLinks" href="demosd41e.html?demo=rico_color">Color Example</a>
+
+<a class="demoLinks" href="demos2ec7.html?demo=rico_corner">Rounded&nbsp;Corner&nbsp;Examples</a>
+</div>
+
+</td>
+
+<td>&nbsp;</td>
+<td class="portalBox" id="extraDemos">
+
+<div class="leftPadding">
+<span  class="header">BEHAVIOR DEMOS</span>
+<a class="demoLinks" href="demosee48.html?demo=rico_accordion">Accordion</a>
+<a class="demoLinks" href="demosf354.html?demo=rico_weather">Weather Widget</a>
+
+<a class="demoLinks" href="livegrid.html">LiveGrid - Data Table</a>
+<a class="demoLinks" href="yahoo_search.html">LiveGrid - Search</a>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+</div>
+
+</td>
+
+</tr>
+</table>
+
+</div>
+
+<script>
+Rico.Corner.round( 'ajaxDemos',     {corners:'tl br',bgColor:'#adba8c'} );
+Rico.Corner.round( 'dragdropDemos', {corners:'tl br',bgColor:'#adba8c'} );
+Rico.Corner.round( 'cinemaDemos',   {corners:'tl br',bgColor:'#adba8c'} );
+Rico.Corner.round( 'extraDemos',    {corners:'tl br',bgColor:'#adba8c'} );
+
+</script>
+
+<table>
+<tr><td>
+
+   
+<span class="header">SIMPLE DRAG &amp; DROP EXAMPLE&nbsp;</span>
+
+<div style="padding:5px;border:1px solid #5b5b5b;height:50px">
+<div class="box" style="background:#f7a673" id="dragme">Drag Me</div>
+</div>
+
+<br/>
+
+<table style="margin-bottom:8px" cellspacing="3" cellpadding="3">
+<tr>
+   <td>
+      <div id="droponme" class="simpleDropPanel" style="background:#ffd773">
+         <div class="title">Drop On Me</div>
+      </div>
+    </td>
+
+    <td>
+
+      <div id="droponme2" class="simpleDropPanel" style="background:#c6c3de">
+         <div class="title">Drop On Me 2</div>
+      </div>
+	 </td>
+</tr>
+</table>
+
+<div id="explanation" class="explanation">
+   <pre>
+   &lt;div class="box" style="background:#f7a673" id="dragme"&gt;
+
+      Drag Me
+   &lt;/div&gt;
+
+   &lt;div style="margin-bottom:8px;"&gt;
+      &lt;div id="droponme" class="panel" style="display:inline;background:#ffd773"&gt;
+         &lt;div class="title"&gt;Drop On Me&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;span&gt;&nbsp;&lt;/span&gt;
+									
+      &lt;div id="droponme2" class="panel" style="display:inline;background:#c6c3de"&gt;
+         &lt;div class="title"&gt;Drop On Me 2&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;script&gt;
+      dndMgr.registerDraggable( new Rico.Draggable('test-rico-dnd','dragme') );
+      dndMgr.registerDropZone( new Rico.Dropzone('droponme') );
+      dndMgr.registerDropZone( new Rico.Dropzone('droponme2') );
+   &lt;/script&gt;</pre>
+</div>
+
+<script>
+   Rico.Corner.round('explanation');
+   dndMgr.registerDraggable( new Rico.Draggable('test-rico-dnd','dragme') );
+   dndMgr.registerDropZone( new Rico.Dropzone('droponme') );
+   dndMgr.registerDropZone( new Rico.Dropzone('droponme2') );
+</script>
+</td></tr>
+</table>
+
+
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/skins/xwiki10/layoutwizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:56:34 GMT -->
+</html>

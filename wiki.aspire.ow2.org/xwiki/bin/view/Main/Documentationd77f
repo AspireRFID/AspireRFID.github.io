@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Documentation</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1216844776000</creationDate>
+<date>1417101690000</date>
+<contentUpdateDate>1417101690000</contentUpdateDate>
+<version>1.88</version>
+<title>ASPIRE RFID Documentation</title>
+<template></template>
+<content>1 Documentation
+
+
+~~The [license&gt;Main.Licenses#HDocumentation] used by AspireRFID documentation is the [Creative Commons Share Alike (by-sa)&gt;http://creativecommons.org/licenses/by-sa/3.0/]
+
+&lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;
+&lt;img border="0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="CC" /&gt;
+&lt;/a&gt;.~~
+
+----
+#toc("" "" "")
+----
+1.1 Aspire architecture
+
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+&lt;title&gt;Aspire Architecture&lt;/title&gt;
+&lt;style type="text/css"&gt;
+&lt;!--
+.style1 {color: #000000}
+--&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+       
+&lt;H2 class="heading-1"&gt;&lt;font color="#FB6400" face="Arial"&gt;&lt;SPAN id="HDownloads"&gt; Aspire Architecture &lt;/SPAN&gt;&lt;/font&gt;&lt;/H2&gt;
+
+ 
+          
+ &lt;TD id="content-primary"&gt;
+&lt;P class="style1"&gt;&lt;font face="Arial"&gt;Click the different modules of Aspire Architecture below to access 
+the detailed introduction. &lt;br /&gt;
+Click little arrows at the bottom right of some modules to download the corresponding src/binaire files. &lt;br /&gt;
+&lt;/font&gt;&lt;/P&gt;
+&lt;MAP name="aspire_structure"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14616" shape="rect" alt="" coords="215, 158, 235, 178"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14614" shape="rect" alt="" coords="215,262,235,281"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14617" shape="rect" alt="" coords="347, 360, 367, 383"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006" shape="rect" alt="" coords="570, 110, 590, 128"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector" shape="rect" alt="" coords="25, 135, 250, 178"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture" shape="rect" alt="" coords="97,7,541,77"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository" shape="rect" alt="" coords="25, 185, 250, 228"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG" shape="rect" alt="" coords="25, 235, 250, 280"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection" shape="rect" alt="" coords="25, 285, 250, 332"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ReaderCoreProxy" shape="rect" alt="" coords="25, 340, 250, 387"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/HAL" shape="rect" alt="" coords="25, 392, 250, 440"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" shape="rect" alt="" coords="25, 447, 250, 492"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL" shape="rect" alt="" coords="275, 130, 378, 242"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APE" shape="rect" alt="" coords="275, 280, 378, 390"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/StandaloneTestingTools" shape="rect" alt="" coords="275, 420, 378, 480"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE" shape="rect" alt="" coords="400, 90, 640, 500"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" shape="rect" alt="" coords="12, 522, 652, 620"&gt;
+
+&lt;/MAP&gt;
+&lt;P&gt;&lt;IMG src="http://wiki.aspire.ow2.org/xwiki/bin/download/Main/Downloads/Aspire_Structure.gif" width="660" height="575" usemap="#aspire_structure"&gt;&lt;/P&gt;
+&lt;P&gt;&lt;span class="style1"&gt;&lt;font face="Arial"&gt;Some of the modules bind a set of contributions from different partners, downloads are available in the introduction pages of the related modules. &lt;/font&gt;&lt;/span&gt;&lt;BR&gt;
+&lt;/P&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+1.1 Main access
+
+
+The AspireRFID trunk source code is available on the [forge SVN|http://svn.forge.objectweb.org/svnroot/aspire/trunk]. Having an SVN client you can get the source with the following command:
+
+~~svn checkout svn://svn.forge.objectweb.org/svnroot/aspire/trunk~~
+
+The documentation for the AspireRFID trunk can be found below or at the menu on the right:
+* *[AspireRFID Architecture&gt;Main.Documentation.AspireRfidArchitecture]*
+* *[Tag Data Translation&gt;Main.Documentation.TDT]*
+* *[Hardware Abstraction Layer&gt;Main.Documentation.HAL]*
+* *Reader Proxies*
+** *[Reader Core&gt;Main.Documentation.ReaderCoreProxy]*
+** *[Embedded light RP&gt;Main.Documentation.LightRP]*
+* *[F&amp;amp;C Server ALE&gt;Main.Documentation.Filtering&amp;Collection]*
+* *[Supported Readers&gt;Main.Documentation.SupportedReaders]*
+* *[Business Event Generator&gt;Main.Documentation.BEG]*
+* *[EPCIS Repository&gt;Main.Documentation.EpcisRepository]*
+* *[Connector&gt;Main.Documentation.Connector]*
+* *[AspireRfid IDE&gt;Main.Documentation.AspireIDE]*
+* *[Standalone Testing Tools&gt;Main.Documentation.StandaloneTestingTools]*
+* *[Demos&gt;Main.Documentation.Demos]*
+* *[Deployment of ALE Server on OSGi&gt;Main.Documentation.ALEonOSGi]* 
+* *[End-to-End Management&gt;Main.Documentation.E2EMngmt]* 
+* *[OSGi Bundles for servers&gt;Main.Documentation.Bundles]*
+* *[NFC (Near Field Communication)&gt;Main.Documentation.NFC]*
+* *[Utilities&gt;Main.Documentation.Utilities]*
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HDocumentation"&gt;Documentation&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;i class="italic"&gt;The &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Licenses#HDocumentation"&gt;license&lt;/a&gt;&lt;/span&gt; used by AspireRFID documentation is the &lt;span class="wikiexternallink"&gt;&lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;&amp;#67;reative Commons Share Alike (by-sa)&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;
+&lt;img border="0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="CC" /&gt;
+&lt;/a&gt;.&lt;/i&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAspirearchitecture"&gt; Aspire architecture&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMainaccess"&gt; Main access&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAspirearchitecture"&gt;Aspire architecture&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;html&gt;&lt;p class="paragraph"/&gt;&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+&lt;title&gt;Aspire Architecture&lt;/title&gt;
+&lt;style type="text/css"&gt;
+&lt;!--
+.style1 {color: #000000}
+--&gt;
+&lt;/style&gt;
+&lt;/head&gt;&lt;p class="paragraph"/&gt;&lt;body&gt;&lt;p class="paragraph"/&gt;       
+&lt;H2 class="heading-1"&gt;&lt;font color="#FB6400" face="Arial"&gt;&lt;SPAN id="HDownloads"&gt; Aspire Architecture &lt;/SPAN&gt;&lt;/font&gt;&lt;/H2&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt; &lt;TD id="content-primary"&gt;
+&lt;P class="style1"&gt;&lt;font face="Arial"&gt;Click the different modules of Aspire Architecture below to access 
+the detailed introduction. &lt;br /&gt;
+Click little arrows at the bottom right of some modules to download the corresponding src/binaire files. &lt;br /&gt;
+&lt;/font&gt;&lt;/P&gt;
+&lt;MAP name="aspire_structure"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14616" shape="rect" alt="" coords="215, 158, 235, 178"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14614" shape="rect" alt="" coords="215,262,235,281"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14617" shape="rect" alt="" coords="347, 360, 367, 383"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006" shape="rect" alt="" coords="570, 110, 590, 128"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector" shape="rect" alt="" coords="25, 135, 250, 178"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture" shape="rect" alt="" coords="97,7,541,77"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository" shape="rect" alt="" coords="25, 185, 250, 228"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG" shape="rect" alt="" coords="25, 235, 250, 280"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection" shape="rect" alt="" coords="25, 285, 250, 332"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ReaderCoreProxy" shape="rect" alt="" coords="25, 340, 250, 387"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/HAL" shape="rect" alt="" coords="25, 392, 250, 440"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" shape="rect" alt="" coords="25, 447, 250, 492"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL" shape="rect" alt="" coords="275, 130, 378, 242"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APE" shape="rect" alt="" coords="275, 280, 378, 390"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/StandaloneTestingTools" shape="rect" alt="" coords="275, 420, 378, 480"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE" shape="rect" alt="" coords="400, 90, 640, 500"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" shape="rect" alt="" coords="12, 522, 652, 620"&gt;&lt;p class="paragraph"/&gt;&lt;/MAP&gt;
+&lt;P&gt;&lt;IMG src="http://wiki.aspire.ow2.org/xwiki/bin/download/Main/Downloads/Aspire_Structure.gif" width="660" height="575" usemap="#aspire_structure"&gt;&lt;/P&gt;
+&lt;P&gt;&lt;span class="style1"&gt;&lt;font face="Arial"&gt;Some of the modules bind a set of contributions from different partners, downloads are available in the introduction pages of the related modules. &lt;/font&gt;&lt;/span&gt;&lt;BR&gt;
+&lt;/P&gt;
+&lt;/body&gt;&lt;p class="paragraph"/&gt;&lt;/html&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HMainaccess"&gt;Main access&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The AspireRFID trunk source code is available on the &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/svnroot/aspire/trunk"&gt;&amp;#102;orge SVN&lt;/a&gt;&lt;/span&gt;. Having an SVN client you can get the source with the following command:&lt;p class="paragraph"/&gt;&lt;i class="italic"&gt;svn checkout svn://svn.forge.objectweb.org/svnroot/aspire/trunk&lt;/i&gt;&lt;p class="paragraph"/&gt;The documentation for the AspireRFID trunk can be found below or at the menu on the right:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture"&gt;AspireRFID Architecture&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/TDT"&gt;Tag Data Translation&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/HAL"&gt;Hardware Abstraction Layer&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Reader Proxies&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/LightRP"&gt;Embedded light RP&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;F&amp;amp;C Server ALE&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/SupportedReaders"&gt;Supported Readers&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;Business Event Generator&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;EPCIS Repository&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Connector"&gt;Connector&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireIDE"&gt;AspireRfid IDE&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/StandaloneTestingTools"&gt;Standalone Testing Tools&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos"&gt;Demos&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ALEonOSGi"&gt;Deployment of ALE Server on OSGi&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt"&gt;End-to-End Management&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Bundles"&gt;OSGi Bundles for servers&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/NFC"&gt;NFC (Near Field Communication)&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Utilities"&gt;Utilities&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

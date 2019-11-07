@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>iBuddy</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1277220872000</creationDate>
+<date>1278586828000</date>
+<contentUpdateDate>1278586828000</contentUpdateDate>
+<version>1.8</version>
+<title>Aspire :: Bundles ::  iBuddy</title>
+<template></template>
+<content>1 Aspire :: Bundles ::  iBuddy
+
+This bundle provides a service and a command to control one or more iBuddies connected to the host
+
+The i-Buddy is a small blinking and moving USB figurine initially designed as a MSN live avantar.
+This actuator can be used in SOHO (Small Office Home Office) usecases.
+
+The bundle provides
+* a org.ow2.aspirerfid.ibuddy.service.IIBuddy service per plugged iBuddy
+* a command 'ibuddy' for the Felix shell
+
+
+1.1 Installation
+1.1.1 Windows
+Uninstall all the iBuddies devices already installed in 'Configuration Panel'&gt;'System'&gt;'Hardware'&gt;'Device Manager'&gt;'HID devices'
+
+* copy the file IBUDDY.INF in the system
+* copy libusb0.dll C:/windows/system32/
+* copy libusb0.sys C:/windows/system32/drivers/
+
+Install 
+TBC
+
+1.1.1 Linux
+
+On Fedora 13 64 bits :
+
+* Plug the iBuddy
+* Install libusb, libusb-devel (for Fedora), version 0.1
+* Compile libusbjava project for your architecture (the libusbjava bundle in the repo is ready for 32 bits)
+** You have to patch libusbjava and the iBuddy bundle to let it work correctly (see next section)
+** You may need to change the file system.properties, to point /lib64/ instead of /lib/
+* Prepare the libusbjava bundle by adding the compiled libusbjava.so in src/main/resources/
+* Install and start bundles, the ibuddy may be found (ibuddy list)
+
+You need to be root to access the iBuddy.
+
+1.1.1 Patches for Linux
+
+1.1.1.1 libusbjava
+
+In order to send data to the iBuddy, it needs to be not used by the kernel, done by usb_detach_kernel_driver_np()
+
+Add a call to it in LibUsbJava.cpp, in function Java_ch_ntb_usb_LibusbJava_usb_1claim_1interface (line 639) :
+
+{code}
+JNIEXPORT jint JNICALL Java_ch_ntb_usb_LibusbJava_usb_1claim_1interface(JNIEnv \*env, jclass obj, jlong dev_handle, jint interface)
+{
+   clearLibusbJavaError();
+
+    // Add this
+    int err = usb_detach_kernel_driver_np((usb_dev_handle \*) dev_handle, interface);
+    if(err &lt; 0)
+        return err;
+
+    return usb_claim_interface((usb_dev_handle \*) dev_handle, interface);
+}
+{code}
+
+1.1.1.1 iBuddy bundle
+
+In file org/ow2/aspirerfid/ibuddy/service/IBuddyDescriptor.java : change claimed interface from 0 to 1, line 73
+
+
+1.1 Build
+
+
+1.1.1 Artifact
+
+
+1.1 Command
+The bundle provides a command for the Felix shell
+The subcommands are:
+{code}
+ibuddy list : List connected Ibuddys with id
+ibuddy &lt;id|*&gt; rotate &lt;interval&gt; &lt;directions: left|right&gt;: rotate  every interval (&gt;=200) time(in milliseconde) to the directions (eg : ibuddy 0 rotate 500 left right left)
+ibuddy &lt;id|*&gt; flap &lt;intensity&gt; &lt;number of flaps&gt;: flap with specific intensity(&gt;=75)  (eg ibuddy 0 flap 75 10)
+ibuddy &lt;id|*&gt; head &lt;interval&gt; &lt;colors:none|yellow|blue|white|violet|cyan|green|red&gt;  : change head color every interval(in ms) (eg : ibuddy * head 500 yellow red blue)
+ibuddy &lt;id|*&gt; heart &lt;interval&gt; &lt;status:on|off&gt;  : change heart status every interval (in ms) (eg : ibuddy * head 500 yellow red blue)
+ibuddy &lt;id|*&gt; reset  : reset the ibuddy (eg : ibuddy * reset)
+{code}
+
+Remark:
+
+The command can execute in parallel several actions on a set of connected iBuddies
+
+For instance,
+{code}
+ibuddy 0 rotate 1000 left right left right left right flap 75 30 head 1000 red yellow none cyan yellow heart 1000 on off on off on off on off  ibuddy 1 rotate 1000 left right left right left right flap 75 30 head 1000 red yellow none cyan yellow heart 1000 on off on off on off on
+
+is interpreted as
+ 
+&gt;&gt;iBuddy 0 will excute all those actions in parallel :
+        ROTATE : [1000, LEFT, RIGHT, LEFT, RIGHT, LEFT, RIGHT]
+        FLAP : [75, 30]
+        HEAD : [1000, RED, YELLOW, NONE, CYAN, YELLOW]
+        HEART : [1000, ON, OFF, ON, OFF, ON, OFF, ON, OFF]
+
+&gt;&gt;iBuddy 1 will excute all those actions in parallel :
+        ROTATE : [1000, LEFT, RIGHT, LEFT, RIGHT, LEFT, RIGHT]
+        FLAP : [75, 30]
+        HEAD : [1000, RED, YELLOW, NONE, CYAN, YELLOW]
+        HEART : [1000, ON, OFF, ON, OFF, ON, OFF, ON]
+{code}
+
+* The first parameter is the duration in milliseconds of the action
+* The second parameter of the FLAP action is the number of times of the wing flapping with a duration indicated in the first argument
+
+
+1.1 Other links
+-----------
+* "hacking the USB i-buddy" http://cuntography.com/blog/?p=17
+* http://www.jraf.org/static/maven/sites/jlibibuddy
+* http://sourceforge.net/projects/usbsnoop
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3AiBuddy"&gt;Aspire :: Bundles ::  iBuddy&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;This bundle provides a service and a command to control one or more iBuddies connected to the host&lt;p class="paragraph"/&gt;The i-Buddy is a small blinking and moving USB figurine initially designed as a MSN live avantar.
+This actuator can be used in SOHO (Small Office Home Office) usecases.&lt;p class="paragraph"/&gt;The bundle provides
+&lt;ul class="star"&gt;
+&lt;li&gt;a org.ow2.aspirerfid.ibuddy.service.IIBuddy service per plugged iBuddy&lt;/li&gt;
+&lt;li&gt;a command 'ibuddy' for the Felix shell&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstallation"&gt;Installation&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWindows"&gt;Windows&lt;/span&gt;&lt;/h4&gt; 
+Uninstall all the iBuddies devices already installed in 'Configuration Panel'&gt;'System'&gt;'Hardware'&gt;'Device Manager'&gt;'HID devices'
+&lt;ul class="star"&gt;
+&lt;li&gt;copy the file IBUDDY.INF in the system&lt;/li&gt;
+&lt;li&gt;copy libusb0.dll C:/windows/system32/&lt;/li&gt;
+&lt;li&gt;copy libusb0.sys C:/windows/system32/drivers/&lt;/li&gt;
+&lt;/ul&gt;Install 
+TBC
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLinux"&gt;Linux&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;On Fedora 13 64 bits :
+&lt;ul class="star"&gt;
+&lt;li&gt;Plug the iBuddy&lt;/li&gt;
+&lt;li&gt;Install libusb, libusb-devel (for Fedora), version 0.1&lt;/li&gt;
+&lt;li&gt;Compile libusbjava project for your architecture (the libusbjava bundle in the repo is ready for 32 bits)&lt;ul class="star"&gt;
+&lt;li&gt;You have to patch libusbjava and the iBuddy bundle to let it work correctly (see next section)&lt;/li&gt;
+&lt;li&gt;You may need to change the file system.properties, to point /lib64/ instead of /lib/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Prepare the libusbjava bundle by adding the compiled libusbjava.so in src/main/resources/&lt;/li&gt;
+&lt;li&gt;Install and start bundles, the ibuddy may be found (ibuddy list)&lt;/li&gt;
+&lt;/ul&gt;You need to be root to access the iBuddy.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPatchesforLinux"&gt;Patches for Linux&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="Hlibusbjava"&gt;libusbjava&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;In order to send data to the iBuddy, it needs to be not used by the kernel, done by usb_detach_kernel_driver_np()&lt;p class="paragraph"/&gt;Add a call to it in LibUsbJava.cpp, in function Java_ch_ntb_usb_LibusbJava_usb_1claim_1interface (line 639) :&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;JNIEXPORT jint JNICALL Java_ch_ntb_usb_LibusbJava_usb_1claim_1interface(JNIEnv &amp;#42;env, jclass obj, jlong dev_handle, jint &lt;span class="java&amp;#45;keyword"&gt;interface&lt;/span&gt;)
+&amp;#123;
+   clearLibusbJavaError();&lt;p class="paragraph"/&gt;    // Add &lt;span class="java&amp;#45;keyword"&gt;this&lt;/span&gt;
+    &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; err = usb_detach_kernel_driver_np((usb_dev_handle &amp;#42;) dev_handle, &lt;span class="java&amp;#45;keyword"&gt;interface&lt;/span&gt;);
+    &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt;(err &amp;#60; 0)
+        &lt;span class="java&amp;#45;keyword"&gt;return&lt;/span&gt; err;&lt;p class="paragraph"/&gt;    &lt;span class="java&amp;#45;keyword"&gt;return&lt;/span&gt; usb_claim_interface((usb_dev_handle &amp;#42;) dev_handle, &lt;span class="java&amp;#45;keyword"&gt;interface&lt;/span&gt;);
+&amp;#125;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HiBuddybundle"&gt;iBuddy bundle&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;In file org/ow2/aspirerfid/ibuddy/service/IBuddyDescriptor.java : change claimed interface from 0 to 1, line 73
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HArtifact"&gt;Artifact&lt;/span&gt;&lt;/h4&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HCommand"&gt;Command&lt;/span&gt;&lt;/h3&gt; 
+The bundle provides a command for the Felix shell
+The subcommands are:
+&lt;div class="code"&gt;&lt;pre&gt;ibuddy list : List connected Ibuddys with id
+ibuddy &amp;#60;id|&amp;#42;&amp;#62; rotate &amp;#60;interval&amp;#62; &amp;#60;directions: left|right&amp;#62;: rotate  every interval (&amp;#62;=200) time(in milliseconde) to the directions (eg : ibuddy 0 rotate 500 left right left)
+ibuddy &amp;#60;id|&amp;#42;&amp;#62; flap &amp;#60;intensity&amp;#62; &amp;#60;number of flaps&amp;#62;: flap with specific intensity(&amp;#62;=75)  (eg ibuddy 0 flap 75 10)
+ibuddy &amp;#60;id|&amp;#42;&amp;#62; head &amp;#60;interval&amp;#62; &amp;#60;colors:none|yellow|blue|white|violet|cyan|green|red&amp;#62;  : change head color every interval(in ms) (eg : ibuddy &amp;#42; head 500 yellow red blue)
+ibuddy &amp;#60;id|&amp;#42;&amp;#62; heart &amp;#60;interval&amp;#62; &amp;#60;status:on|off&amp;#62;  : change heart status every interval (in ms) (eg : ibuddy &amp;#42; head 500 yellow red blue)
+ibuddy &amp;#60;id|&amp;#42;&amp;#62; reset  : reset the ibuddy (eg : ibuddy &amp;#42; reset)&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;Remark:&lt;p class="paragraph"/&gt;The command can execute in parallel several actions on a set of connected iBuddies&lt;p class="paragraph"/&gt;For instance,
+&lt;div class="code"&gt;&lt;pre&gt;ibuddy 0 rotate 1000 left right left right left right flap 75 30 head 1000 red yellow none cyan yellow heart 1000 on off on off on off on off  ibuddy 1 rotate 1000 left right left right left right flap 75 30 head 1000 red yellow none cyan yellow heart 1000 on off on off on off on&lt;p class="paragraph"/&gt;is interpreted as&lt;p class="paragraph"/&gt;&amp;#62;&amp;#62;iBuddy 0 will excute all those actions in parallel :
+        ROTATE : &amp;#91;1000, LEFT, RIGHT, LEFT, RIGHT, LEFT, RIGHT&amp;#93;
+        FLAP : &amp;#91;75, 30&amp;#93;
+        HEAD : &amp;#91;1000, RED, YELLOW, NONE, CYAN, YELLOW&amp;#93;
+        HEART : &amp;#91;1000, ON, OFF, ON, OFF, ON, OFF, ON, OFF&amp;#93;&lt;p class="paragraph"/&gt;&amp;#62;&amp;#62;iBuddy 1 will excute all those actions in parallel :
+        ROTATE : &amp;#91;1000, LEFT, RIGHT, LEFT, RIGHT, LEFT, RIGHT&amp;#93;
+        FLAP : &amp;#91;75, 30&amp;#93;
+        HEAD : &amp;#91;1000, RED, YELLOW, NONE, CYAN, YELLOW&amp;#93;
+        HEART : &amp;#91;1000, ON, OFF, ON, OFF, ON, OFF, ON&amp;#93;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;The first parameter is the duration in milliseconds of the action&lt;/li&gt;
+&lt;li&gt;The second parameter of the FLAP action is the number of times of the wing flapping with a duration indicated in the first argument&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HOtherlinks"&gt;Other links&lt;/span&gt;&lt;/h3&gt; 
+&lt;hr class="line"/&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;"hacking the USB i-buddy" &lt;span class="nobr"&gt;&lt;a href="http://cuntography.com/blog/?p=17"&gt;&amp;#104;ttp://cuntography.com/blog/?p=17&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.jraf.org/static/maven/sites/jlibibuddy"&gt;&amp;#104;ttp://www.jraf.org/static/maven/sites/jlibibuddy&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://sourceforge.net/projects/usbsnoop"&gt;&amp;#104;ttp://sourceforge.net/projects/usbsnoop&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

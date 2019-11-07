@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>WhoIsUsingAspire</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1308314615000</creationDate>
+<date>1308316144000</date>
+<contentUpdateDate>1308316144000</contentUpdateDate>
+<version>1.9</version>
+<title>Who is Using AspireRFID</title>
+<template></template>
+<content>1 Who is Using AspireRFID
+
+
+----
+#toc("" "" "true")
+----
+
+
+{table}
+Organization | Country | Project | Descreption
+SATA Srl. (http://www.satanet.it) |	Italy | ICT PSP project, RFID-ROI-SME See also: www.rfid-roi-sme.eu | [Document Management&gt;http://www.youtube.com/watch?v=CF-UxpGGIyU]
+RFID Farm2Fork Consortium | Several | ICT-PSP project  RFID F2F (Farm2Fork) |
+IE Technology Co., Ltd (IET) (http://www.iet.co.th) zc | Thailand | RFID-enabled control of devices | "7-Segment" light that shows license plates that match the RFID tags that have been read
+Informe Air - Inteligência Empresarial (http://www.informeair.com.br) | Brazil | | Performed several updates and fixes on AspireRFID; An APDL file with 14 different elementary Business Processes was implemented to allow testing of their whole system for a larger configuration of readers and event cycles.
+University of Modena and Liu-Jo (www.liujo.it). | Italy | Apparel Deployment | The development of the system started April 2011 and is planned to be completed after the end of the ASPIRE project
+Athens Information Technology | Greece | NikiRFID, AspireRFID, Laboratory/Professional courses | AIT is already using AspireRFID in other in-house projects (such as the [Niki system&gt;http://www.youtube.com/watch?v=DljvjG8kEvM]). AIT is also using AspireRFID to support laboratory courses, as well as professional courses on RFID and Internet-of-Things
+SENSAP S.A | Greece | STAFF and SENSAP trials | In addition to the implementation of the STAFF and SENSAP trials, SENSAP is using AspireRFID modules in its laboratory for fast prototyping and testing associated with new projects and deployments
+PV Lab | 	France | Demonstrations |Laboratory Demonstrations of Recieving and Shipping Processes
+IT | Portugal | Low Cost Reader | IT has been testing AspireRFID and uses it for academic purposes and for integration of the Low Cost Reader prototype
+OSI | UK | Privacy | OSI is using AspireRFID for privacy studies on RFID
+INRIA | France | Anymal Identification, ICOM Project |
+{table}
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HWhoisUsingAspireRFID"&gt;Who is Using AspireRFID&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+        &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Organization&lt;/th&gt;&lt;th&gt;Country&lt;/th&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Descreption&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;SATA Srl. (&lt;span class="nobr"&gt;&lt;a href="http://www.satanet.it"&gt;&amp;#104;ttp://www.satanet.it&lt;/a&gt;&lt;/span&gt;)&lt;/td&gt;&lt;td&gt;Italy&lt;/td&gt;&lt;td&gt;ICT PSP project, RFID-ROI-SME See also: www.rfid-roi-sme.eu&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.youtube.com/watch?v=CF-UxpGGIyU"&gt;&amp;#68;ocument Management&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;RFID Farm2Fork Consortium&lt;/td&gt;&lt;td&gt;Several&lt;/td&gt;&lt;td&gt;ICT-PSP project  RFID F2F (Farm2Fork)&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;IE Technology Co., Ltd (IET) (&lt;span class="nobr"&gt;&lt;a href="http://www.iet.co.th"&gt;&amp;#104;ttp://www.iet.co.th&lt;/a&gt;&lt;/span&gt;) zc&lt;/td&gt;&lt;td&gt;Thailand&lt;/td&gt;&lt;td&gt;RFID-enabled control of devices&lt;/td&gt;&lt;td&gt;"7-Segment" light that shows license plates that match the RFID tags that have been read&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;Informe Air - Inteligência Empresarial (&lt;span class="nobr"&gt;&lt;a href="http://www.informeair.com.br"&gt;&amp;#104;ttp://www.informeair.com.br&lt;/a&gt;&lt;/span&gt;)&lt;/td&gt;&lt;td&gt;Brazil&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;Performed several updates and fixes on AspireRFID; An APDL file with 14 different elementary Business Processes was implemented to allow testing of their whole system for a larger configuration of readers and event cycles.&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;University of Modena and Liu-Jo (www.liujo.it).&lt;/td&gt;&lt;td&gt;Italy&lt;/td&gt;&lt;td&gt;Apparel Deployment&lt;/td&gt;&lt;td&gt;The development of the system started April 2011 and is planned to be completed after the end of the ASPIRE project&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;Athens Information Technology&lt;/td&gt;&lt;td&gt;Greece&lt;/td&gt;&lt;td&gt;NikiRFID, AspireRFID, Laboratory/Professional courses&lt;/td&gt;&lt;td&gt;AIT is already using AspireRFID in other in-house projects (such as the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.youtube.com/watch?v=DljvjG8kEvM"&gt;&amp;#78;iki system&lt;/a&gt;&lt;/span&gt;). AIT is also using AspireRFID to support laboratory courses, as well as professional courses on RFID and Internet-of-Things&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;SENSAP S.A&lt;/td&gt;&lt;td&gt;Greece&lt;/td&gt;&lt;td&gt;STAFF and SENSAP trials&lt;/td&gt;&lt;td&gt;In addition to the implementation of the STAFF and SENSAP trials, SENSAP is using AspireRFID modules in its laboratory for fast prototyping and testing associated with new projects and deployments&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;PV Lab&lt;/td&gt;&lt;td&gt;France&lt;/td&gt;&lt;td&gt;Demonstrations&lt;/td&gt;&lt;td&gt;Laboratory Demonstrations of Recieving and Shipping Processes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;IT&lt;/td&gt;&lt;td&gt;Portugal&lt;/td&gt;&lt;td&gt;Low Cost Reader&lt;/td&gt;&lt;td&gt;IT has been testing AspireRFID and uses it for academic purposes and for integration of the Low Cost Reader prototype&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;OSI&lt;/td&gt;&lt;td&gt;UK&lt;/td&gt;&lt;td&gt;Privacy&lt;/td&gt;&lt;td&gt;OSI is using AspireRFID for privacy studies on RFID&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;INRIA&lt;/td&gt;&lt;td&gt;France&lt;/td&gt;&lt;td&gt;Anymal Identification, ICOM Project&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Connector</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nektarios</creator>
+<author>xwiki:XWiki.nektarios</author>
+<contentAuthor>xwiki:XWiki.nektarios</contentAuthor>
+<creationDate>1233252220000</creationDate>
+<date>1235665194000</date>
+<contentUpdateDate>1235665194000</contentUpdateDate>
+<version>1.14</version>
+<title>Connector</title>
+<template></template>
+<attachment>
+<filename>ConnectorEngine.wsdl</filename>
+<filesize>5406</filesize>
+<author>xwiki:XWiki.nektarios</author>
+<date>1235663518000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ConnectorClient.wsdl</filename>
+<filesize>3646</filesize>
+<author>xwiki:XWiki.nektarios</author>
+<date>1235663531000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Connector
+
+----
+#toc("" "" "")
+----
+
+
+1.1 Introduction
+
+In this section we will provide information regarding the deployment and the configuration of the connector components.
+
+The connector is composed by two collaborating components the server part and the client part. These terms should not be taken with their strict meaning because both components act at some time in their lifecycle as a server and as a client. These terms represent their position in the AspireRFID framework. The connector server is located next two the EPCIS component and the connector client is located next to the client application that requires information from EPCIS. They act as proxies to automate the process of communicating with an EPCIS repository. More information about the role of the connectors can be acquired from Aspire's deliverable [2.4 Requirements and specifications&gt;http://fp7-aspire.eu/fileadmin/aspire/docs/D2_4.pdf]. 
+
+1.1 Users Guide
+
+1.1.1 Deployment
+
+Both connector components are designed to work in a Java application server (e.g. tomcat) so they are provided as a web archive (i.e. war). The connector client can also be embedded within a client application if required. This means that it can function either within a web container or in standalone mode, functionality that can be selected through configuration files.
+Instructions on how to deploy the provided war files are dependent on the application server that you may choose to use. For the latest version of tomcat, all you have to do is place a copy of the war files within the webapps directory located at the tomcat installation folder.
+
+
+1.1.1 Configuration 
+
+Configuration files exist within the war files under the folder props with the name *application.properties*. You can either edit them before deployment or after deployment based on your needs and on the application server that you are using. Following we will describe the configuration options for each connector component.
+
+1.1.1.1 Connector server
+This is the configuration file of the connector server. We will explain each one of the configuration options.
+{code}
+callbackDestinationUrl=http://localhost:8899
+epcisQueryIfceUrl=http://localhost:8080/epcis/query
+epcisCaptureIfceUrl=http://localhost:8080/epcis/capture
+queryName=SimpleEventQuery
+timeDifferenceFromUTC=+02:00
+{code}
+
+*callbackDestinationUrl*: This generally does not need to be changed. It defines a TCP server where query subscriptions to the EPCIS repository will return their results to. If this is defined incorrectly the connector will not be able to receive any query results from the EPCIS repository.
+
+*epcisQueryIfceUrl*: This property holds the location of the EPCIS query interface that we are interested in getting information from, as defined by the [EPCglobal EPCIS standard&gt;http://www.epcglobalinc.org/standards/epcis]
+
+*epcisCaptureIfceUrl*: This is the URL of location of the EPCIS capture interface.
+
+*queryName*: The only available query name is the SimpleEventQuery. Unless another query is implemented at the EPCIS query interface, this should not be changed.
+
+*timeDifferenceFromUTC*: This is the time difference of the local time from the [UTC&gt;http://en.wikipedia.org/wiki/Utc] or [GMT&gt;http://en.wikipedia.org/wiki/Gmt]. It is required for the generation of specific EPCIS events. The format is ±HH:MM.
+
+1.1.1.1 Connector client
+{code}
+connectorServerUrl = http://localhost:8080/Connector-1.0/connector
+{code}
+
+*connectorServerUrl*: The endpoint of the connector server. The first part, i.e. ~~http://localhost:8080/Connector-1.0~~ is the location where the connector server has been deployed. The second part, i.e. ~~connector~~ is the web service that the client uses to communicate with the server and subscribe for new queries.
+
+*isConnectorClientStandaloneModeOn*: Possible values: true or false. This defines whether the connector client is deployed as a standalone web application or is embedded within a client application. If this property is set to *false* and the war file is deployed to an application server, an embedded servlet will be used to deploy the web services of the connector client. On the other hand, if this property is set to true, an embedded trivial application server will be opened by the connector client, on the port defined by the *standaloneConnectorClientPort* property, and the web service will be deployed on this server.
+
+1.1 Developers Guide
+
+The Connector components provide SOAP based web services to subscribe to new EPCIS transactions and to receive new events information. As it has been mentioned above there are two components than compose the Connector functionality: The Connector Server or Connector Engine and the Connector Client.
+
+1.1.1 Connector Engine
+
+This component is responsible for receiving query (subscription or polling) requests from the client, to translate this information to EPCIS query information and then forward any event details from the EPCIS repository to the connector client via the web service that the client exposes.
+The engine provides two web services to start and stop a transaction observation. The *startObservingTransaction* and the *stopObservingTransaction*. Both of these operations require (among others) a specific type of object to be passwd that encapsulates all mandatory and optional information for the query, the *SubscriptionParameters* object.
+
+*SubscriptionParameters*
+{code}
+&lt;xs:complexType name="subscriptionParameters"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="doPoll" type="xs:boolean"/&gt;
+        &lt;xs:element minOccurs="0" name="initialTime" type="xs:dateTime"/&gt;
+        &lt;xs:element minOccurs="0" name="queryDayOfMonth" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="queryDayOfWeek" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="queryHour" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="queryMin" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="queryMonth" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="querySec" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="replyEndpoint" type="xs:string"/&gt;
+        &lt;xs:element name="reportIfEmpty" type="xs:boolean"/&gt;
+        &lt;xs:element minOccurs="0" name="subscriptionId" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="transactionId" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="transactionType" type="xs:string"/&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+{code}
+
+* *doPoll*: If false, then a new subscription will be registered within the EPCIS with information that is provided with other elements. If true then the query will be executed only once. Mandatory for new subscriptions.
+* *initialTime*: This parameter defines the time constraint after which all matching events will be returned. If doPoll is false, and the initialTime refers to the past, the old matching events will be returned within the first response message. Mandatory for new subscriptions.
+* *queryX*: This category of parameters define the time interval that the query will be executed within the EPCIS repository if doPoll is false. At least one of the parameters should be defined in this case. These parameters take a comma separated list of integers that define the query schedule. For example, if querySec has the value ~~1,31~~ then the query will be executed on the 1st and 31st second of every minute. For more information you should read chapter ~~8.2.5.3 Query Schedule~~ of the ~~EPCglobal EPC Information Services (EPCIS) Version 1.0.1 Specification~~. Mandatory for new subscriptions.
+* *replyEndpoint*: Defines the web service endpoint of the Connector Client that query results should be posted to. Mandatory for new subscriptions.
+* *reportIfEmpty*: Indicates whether a query result will be send to the Connector client even if there is no matching event. Mandatory for new subscriptions.
+* *subscriptionId*: Should be a universally unique identifier to identify a subscription. Mandatory if doPoll false.
+* *transactionId*: Indicates the events that we are interested in. Mandatory for new subscriptions and for deletions.
+* *transactionType*: Indicates the optional event type that we are interested in. Optional. Mandatory in deletions only if it had been defined in the initial subscription.
+
+The *startObservingTransaction operation* requires this object as a parameter. 
+
+The *stopObservingTransaction operation* takes as a parameter a subscription parameters object along with a boolean value which indicates if the transaction id that we want to stop observing has been completed, in order to send a Transaction Event to the EPCIS repository and delete the transaction designated in the SubscriptionParameters object. If the deletion of the  transaction is not required then the parameters construct should only contain the subscriptionId element.
+
+Refer to the {attach:ConnectorEngine.wsdl} for the web service definition.
+
+1.1.1 Connector client
+
+This component is responsible for receiving query (subscription or polling) requests from a software that uses the client component, submit the query to the Connector Engine and receive query responses from the latter.
+The component provides one web services to receive events from the engine based on subscribed or polled queries. This operation is called asynchronously from the engine when event information is available and receives an Event object that encapsulates information provided by EPCIS events which are defined by the EPCIS 1.0.1 specification.
+
+*Event*
+{code}
+&lt;xs:complexType name="event"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="0" name="action" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="bizLocationId" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="bizStepId" type="xs:string"/&gt;
+        &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="bizTransactionList" nillable="true" type="xs:string"/&gt;
+        &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="childEpcs" nillable="true" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="dispositionId" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="epcClass" type="xs:string"/&gt;
+        &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="epcList" nillable="true" type="xs:string"/&gt;
+        &lt;xs:element name="eventTime" type="xs:long"/&gt;
+        &lt;xs:element minOccurs="0" name="parentId" type="xs:string"/&gt;
+        &lt;xs:element name="quantity" type="xs:int"/&gt;
+        &lt;xs:element minOccurs="0" name="readPointId" type="xs:string"/&gt;
+        &lt;xs:element minOccurs="0" name="subscriptionId" type="xs:string"/&gt;
+    &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+{code}
+
+Refer to the {attach:ConnectorClient.wsdl} for the web service definition.
+
+The client can be either deployed separately in an application server, e.g. Apache Tomcat, or it may be embedded within a client application and deploy the web service through an embedded Jetty application server. The first task is done automatically. The second is done by calling the *startStandaloneMode* method of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class. 
+
+The client application should implement the *org.ow2.aspirerfid.connectors.api.ClientEventHandler* interface and register itself through the *setEventHandler* of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class so that it may receive the events and do the whatever it wants.
+
+The client application should use the org.ow2.aspirerfid.connectors.client.RegistrationManager operations to register or execute new queries passing a SubscriptionParameters object and unregister from existing subscriptions.
+
+1.1.1 Work to do
+
+* Make Connector engine subscription information persistent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HConnector"&gt;Connector&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt; Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt; Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDeployment"&gt; Deployment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt; Configuration &lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HConnectorserver"&gt; Connector server&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConnectorclient"&gt; Connector client&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt; Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HConnectorEngine"&gt; Connector Engine&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConnectorclient-1"&gt; Connector client&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWorktodo"&gt; Work to do&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In this section we will provide information regarding the deployment and the configuration of the connector components.&lt;p class="paragraph"/&gt;The connector is composed by two collaborating components the server part and the client part. These terms should not be taken with their strict meaning because both components act at some time in their lifecycle as a server and as a client. These terms represent their position in the AspireRFID framework. The connector server is located next two the EPCIS component and the connector client is located next to the client application that requires information from EPCIS. They act as proxies to automate the process of communicating with an EPCIS repository. More information about the role of the connectors can be acquired from Aspire's deliverable &lt;span class="wikiexternallink"&gt;&lt;a href="http://fp7-aspire.eu/fileadmin/aspire/docs/D2_4.pdf"&gt;&amp;#50;.4 Requirements and specifications&lt;/a&gt;&lt;/span&gt;. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Both connector components are designed to work in a Java application server (e.g. tomcat) so they are provided as a web archive (i.e. war). The connector client can also be embedded within a client application if required. This means that it can function either within a web container or in standalone mode, functionality that can be selected through configuration files.
+Instructions on how to deploy the provided war files are dependent on the application server that you may choose to use. For the latest version of tomcat, all you have to do is place a copy of the war files within the webapps directory located at the tomcat installation folder.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration &lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Configuration files exist within the war files under the folder props with the name &lt;strong class="strong"&gt;application.properties&lt;/strong&gt;. You can either edit them before deployment or after deployment based on your needs and on the application server that you are using. Following we will describe the configuration options for each connector component.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HConnectorserver"&gt;Connector server&lt;/span&gt;&lt;/h5&gt; 
+This is the configuration file of the connector server. We will explain each one of the configuration options.
+&lt;div class="code"&gt;&lt;pre&gt;callbackDestinationUrl=http://localhost:8899
+epcisQueryIfceUrl=http://localhost:8080/epcis/query
+epcisCaptureIfceUrl=http://localhost:8080/epcis/capture
+queryName=SimpleEventQuery
+timeDifferenceFromUTC=+02:00&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;callbackDestinationUrl&lt;/strong&gt;: This generally does not need to be changed. It defines a TCP server where query subscriptions to the EPCIS repository will return their results to. If this is defined incorrectly the connector will not be able to receive any query results from the EPCIS repository.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;epcisQueryIfceUrl&lt;/strong&gt;: This property holds the location of the EPCIS query interface that we are interested in getting information from, as defined by the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/epcis"&gt;&amp;#69;PCglobal EPCIS standard&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;epcisCaptureIfceUrl&lt;/strong&gt;: This is the URL of location of the EPCIS capture interface.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;queryName&lt;/strong&gt;: The only available query name is the SimpleEventQuery. Unless another query is implemented at the EPCIS query interface, this should not be changed.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;timeDifferenceFromUTC&lt;/strong&gt;: This is the time difference of the local time from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Utc"&gt;&amp;#85;TC&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Gmt"&gt;&amp;#71;MT&lt;/a&gt;&lt;/span&gt;. It is required for the generation of specific EPCIS events. The format is ±HH:MM.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HConnectorclient"&gt;Connector client&lt;/span&gt;&lt;/h5&gt; 
+&lt;div class="code"&gt;&lt;pre&gt;connectorServerUrl = &lt;span class="nobr"&gt;&lt;a href="http://localhost:8080/Connector&amp;#38;#45;1.0/connector"&gt;&amp;#104;ttp://localhost:8080/Connector&amp;#45;1.0/connector&lt;/a&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;connectorServerUrl&lt;/strong&gt;: The endpoint of the connector server. The first part, i.e. &lt;i class="italic"&gt;&lt;span class="nobr"&gt;&lt;a href="http://localhost:8080/Connector-1.0"&gt;&amp;#104;ttp://localhost:8080/Connector-1.0&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; is the location where the connector server has been deployed. The second part, i.e. &lt;i class="italic"&gt;connector&lt;/i&gt; is the web service that the client uses to communicate with the server and subscribe for new queries.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;isConnectorClientStandaloneModeOn&lt;/strong&gt;: Possible values: true or false. This defines whether the connector client is deployed as a standalone web application or is embedded within a client application. If this property is set to &lt;strong class="strong"&gt;false&lt;/strong&gt; and the war file is deployed to an application server, an embedded servlet will be used to deploy the web services of the connector client. On the other hand, if this property is set to true, an embedded trivial application server will be opened by the connector client, on the port defined by the &lt;strong class="strong"&gt;standaloneConnectorClientPort&lt;/strong&gt; property, and the web service will be deployed on this server.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The Connector components provide SOAP based web services to subscribe to new EPCIS transactions and to receive new events information. As it has been mentioned above there are two components than compose the Connector functionality: The Connector Server or Connector Engine and the Connector Client.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConnectorEngine"&gt;Connector Engine&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;This component is responsible for receiving query (subscription or polling) requests from the client, to translate this information to EPCIS query information and then forward any event details from the EPCIS repository to the connector client via the web service that the client exposes.
+The engine provides two web services to start and stop a transaction observation. The &lt;strong class="strong"&gt;startObservingTransaction&lt;/strong&gt; and the &lt;strong class="strong"&gt;stopObservingTransaction&lt;/strong&gt;. Both of these operations require (among others) a specific type of object to be passwd that encapsulates all mandatory and optional information for the query, the &lt;strong class="strong"&gt;SubscriptionParameters&lt;/strong&gt; object.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;SubscriptionParameters&lt;/strong&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;xs:complexType name=&lt;span class="java&amp;#45;quote"&gt;"subscriptionParameters"&lt;/span&gt;&amp;#62;
+    &amp;#60;xs:sequence&amp;#62;
+        &amp;#60;xs:element name=&lt;span class="java&amp;#45;quote"&gt;"doPoll"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:&lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"initialTime"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:dateTime"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"queryDayOfMonth"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"queryDayOfWeek"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"queryHour"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"queryMin"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"queryMonth"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"querySec"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"replyEndpoint"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element name=&lt;span class="java&amp;#45;quote"&gt;"reportIfEmpty"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:&lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"subscriptionId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"transactionId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"transactionType"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+    &amp;#60;/xs:sequence&amp;#62;
+&amp;#60;/xs:complexType&amp;#62;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;doPoll&lt;/strong&gt;: If false, then a new subscription will be registered within the EPCIS with information that is provided with other elements. If true then the query will be executed only once. Mandatory for new subscriptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;initialTime&lt;/strong&gt;: This parameter defines the time constraint after which all matching events will be returned. If doPoll is false, and the initialTime refers to the past, the old matching events will be returned within the first response message. Mandatory for new subscriptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;queryX&lt;/strong&gt;: This category of parameters define the time interval that the query will be executed within the EPCIS repository if doPoll is false. At least one of the parameters should be defined in this case. These parameters take a comma separated list of integers that define the query schedule. For example, if querySec has the value &lt;i class="italic"&gt;1,31&lt;/i&gt; then the query will be executed on the 1st and 31st second of every minute. For more information you should read chapter &lt;i class="italic"&gt;8.2.5.3 Query Schedule&lt;/i&gt; of the &lt;i class="italic"&gt;EPCglobal EPC Information Services (EPCIS) Version 1.0.1 Specification&lt;/i&gt;. Mandatory for new subscriptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;replyEndpoint&lt;/strong&gt;: Defines the web service endpoint of the Connector Client that query results should be posted to. Mandatory for new subscriptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;reportIfEmpty&lt;/strong&gt;: Indicates whether a query result will be send to the Connector client even if there is no matching event. Mandatory for new subscriptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;subscriptionId&lt;/strong&gt;: Should be a universally unique identifier to identify a subscription. Mandatory if doPoll false.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;transactionId&lt;/strong&gt;: Indicates the events that we are interested in. Mandatory for new subscriptions and for deletions.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;transactionType&lt;/strong&gt;: Indicates the optional event type that we are interested in. Optional. Mandatory in deletions only if it had been defined in the initial subscription.&lt;/li&gt;
+&lt;/ul&gt;The &lt;strong class="strong"&gt;startObservingTransaction operation&lt;/strong&gt; requires this object as a parameter.&lt;p class="paragraph"/&gt;The &lt;strong class="strong"&gt;stopObservingTransaction operation&lt;/strong&gt; takes as a parameter a subscription parameters object along with a boolean value which indicates if the transaction id that we want to stop observing has been completed, in order to send a Transaction Event to the EPCIS repository and delete the transaction designated in the SubscriptionParameters object. If the deletion of the  transaction is not required then the parameters construct should only contain the subscriptionId element.&lt;p class="paragraph"/&gt;Refer to the &lt;a href="/xwiki/bin/download/Main.Documentation/Connector/ConnectorEngine.wsdl" /&gt;&amp;#67;onnectorEngine.wsdl&lt;/a&gt; for the web service definition.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConnectorclient"&gt;Connector client&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;This component is responsible for receiving query (subscription or polling) requests from a software that uses the client component, submit the query to the Connector Engine and receive query responses from the latter.
+The component provides one web services to receive events from the engine based on subscribed or polled queries. This operation is called asynchronously from the engine when event information is available and receives an Event object that encapsulates information provided by EPCIS events which are defined by the EPCIS 1.0.1 specification.&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Event&lt;/strong&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;xs:complexType name=&lt;span class="java&amp;#45;quote"&gt;"event"&lt;/span&gt;&amp;#62;
+    &amp;#60;xs:sequence&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"action"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"bizLocationId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"bizStepId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element maxOccurs=&lt;span class="java&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"bizTransactionList"&lt;/span&gt; nillable=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element maxOccurs=&lt;span class="java&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"childEpcs"&lt;/span&gt; nillable=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"dispositionId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"epcClass"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element maxOccurs=&lt;span class="java&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"epcList"&lt;/span&gt; nillable=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element name=&lt;span class="java&amp;#45;quote"&gt;"eventTime"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"parentId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element name=&lt;span class="java&amp;#45;quote"&gt;"quantity"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"readPointId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+        &amp;#60;xs:element minOccurs=&lt;span class="java&amp;#45;quote"&gt;"0"&lt;/span&gt; name=&lt;span class="java&amp;#45;quote"&gt;"subscriptionId"&lt;/span&gt; type=&lt;span class="java&amp;#45;quote"&gt;"xs:string"&lt;/span&gt;/&amp;#62;
+    &amp;#60;/xs:sequence&amp;#62;
+&amp;#60;/xs:complexType&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;Refer to the &lt;a href="/xwiki/bin/download/Main.Documentation/Connector/ConnectorClient.wsdl" /&gt;&amp;#67;onnectorClient.wsdl&lt;/a&gt; for the web service definition.&lt;p class="paragraph"/&gt;The client can be either deployed separately in an application server, e.g. Apache Tomcat, or it may be embedded within a client application and deploy the web service through an embedded Jetty application server. The first task is done automatically. The second is done by calling the &lt;strong class="strong"&gt;startStandaloneMode&lt;/strong&gt; method of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class.&lt;p class="paragraph"/&gt;The client application should implement the &lt;strong class="strong"&gt;org.ow2.aspirerfid.connectors.api.ClientEventHandler&lt;/strong&gt; interface and register itself through the &lt;strong class="strong"&gt;setEventHandler&lt;/strong&gt; of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class so that it may receive the events and do the whatever it wants.&lt;p class="paragraph"/&gt;The client application should use the org.ow2.aspirerfid.connectors.client.RegistrationManager operations to register or execute new queries passing a SubscriptionParameters object and unregister from existing subscriptions.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWorktodo"&gt;Work to do&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Make Connector engine subscription information persistent.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

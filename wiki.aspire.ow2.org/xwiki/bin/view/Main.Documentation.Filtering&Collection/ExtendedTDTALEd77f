@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Filtering&amp;Collection</web>
+<name>ExtendedTDTALE</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.reckeyzhang</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1275038575000</creationDate>
+<date>1284039354000</date>
+<contentUpdateDate>1284039354000</contentUpdateDate>
+<version>1.47</version>
+<title>Extended TDT ALE</title>
+<template></template>
+<attachment>
+<filename>Simulator_Interface.png</filename>
+<filesize>30372</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1284039277000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Extended TDT ALE
+
+#toc("" "" "true")
+
+1.1 Introduction
+Extended TDT ALE is extended from Fosstrak Filtering and Collection Server 1.0.2, and makes it possible to be compatible with different input identification formats (i.e. GS1, ISO, MAC address, Telephone numbers, Gsma, OneWire ...).
+
+Extended TDT ALE allows to convert these different formats to EPC standard format (i.e. 'EGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING', and then generate new ECReports. We insert a new field 'gs1_ai_encoding' to ECReport, the ECReprt then includes fields 'epc' 'tag' 'rawHex' rawDecimal' as well as 'gs1_ai_encoding' (if applicable). Filtering and grouping are available for the different input formats as well.
+
+1.1 User Guide
+Make sure the java has been installed in your machine and PATH variable (bin subdirectory of the JVM directory) has been  configured as system environment variable.
+* 1) Download the Fosstrak ALE package: [fc-server-1.0.2.war&gt;http://maven-repository.fosstrak.org/releases/org/fosstrak/fc/fc-server/1.0.2/fc-server-1.0.2.war]
+* 2) Download the extended TDT package [AspireExtendedTDT.rar&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15522], this package should be placed in the same directory as fc-server-1.0.2.war.
+* 3) Unzip AspireExtendedTDT.rar to the current repository. Launch the script commands GenerateExtendedALE.bat, a new ExtendedTDTALE archive file (fc-server-1.0.2-AspireExtendedTDT.war) will be automatically generated in the repository /fc-server-1.0.2-AspireExtendedTDT
+* 4) Copy the generated archive file under /Tomcat(your version)/webapps, restart Tomcat server. 
+* 5) You should configure the ALE Client End Point as: http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALEService. And ALE LR client End point as: http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALELRService.
+
+Here is an example of the configuration of ECSpec which integrates ReportSet, filtering, grouping for extended input formats :
+ {code:java}
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;ns2:ECSpec includeSpecInReports="false" xmlns:ns2="urn:epcglobal:ale:xsd:1"&gt;
+    &lt;logicalReaders&gt;
+        &lt;logicalReader&gt;LR&lt;/logicalReader&gt;
+    &lt;/logicalReaders&gt;
+    &lt;boundarySpec&gt;
+        &lt;repeatPeriod unit="MS"&gt;2000&lt;/repeatPeriod&gt;
+        &lt;duration unit="MS"&gt;2000&lt;/duration&gt;
+        &lt;stableSetInterval unit="MS"&gt;0&lt;/stableSetInterval&gt;
+        &lt;extension/&gt;
+    &lt;/boundarySpec&gt;
+    &lt;reportSpecs&gt;
+        &lt;reportSpec reportOnlyOnChange="false" reportName="C" reportIfEmpty="true"&gt;
+            &lt;reportSet set="CURRENT"/&gt;
+            &lt;filterSpec&gt;
+               &lt;includePatterns&gt;
+                    &lt;includePattern&gt;urn:epc:pat:sgtin-96:*.*.*.*&lt;/includePattern&gt;&lt;!-- Test in Rifidi Custom:30395dfa804012c000000003 --&gt;
+			  &lt;includePattern&gt;urn:iso:pat:14443double-56:*.*&lt;/includePattern&gt;
+			  &lt;includePattern&gt;urn:iso:pat:14443single-32:*.*&lt;/includePattern&gt;
+                &lt;/includePatterns&gt;
+		    &lt;excludePatterns&gt;
+			  &lt;excludePattern&gt;urn:onewire:pat:ibutton:*.*.*&lt;/excludePattern&gt;
+                &lt;/excludePatterns&gt;
+            &lt;/filterSpec&gt;
+            &lt;output includeTag="true" includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeCount="true"/&gt;
+        &lt;/reportSpec&gt;
+        &lt;reportSpec reportOnlyOnChange="false" reportName="A" reportIfEmpty="true"&gt;
+            &lt;reportSet set="ADDITIONS"/&gt;
+            &lt;filterSpec&gt;
+               &lt;includePatterns&gt;
+                    &lt;includePattern&gt;urn:epc:pat:sgtin-96:*.*.*.*&lt;/includePattern&gt;
+			  &lt;includePattern&gt;urn:phonenumber:pat:*.*.*&lt;/includePattern&gt;
+			  &lt;includePattern&gt;urn:gsma:pat:imei:*.*.*&lt;/includePattern&gt;
+			  &lt;includePattern&gt;urn:onewire:pat:ibutton:*.*.*&lt;/includePattern&gt;
+                &lt;/includePatterns&gt;
+		    &lt;excludePatterns/&gt;
+            &lt;/filterSpec&gt;
+            &lt;groupSpec&gt;
+                &lt;pattern&gt;urn:epc:pat:sgtin-96:*.*.X.*&lt;/pattern&gt;&lt;!-- Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003--&gt;
+                &lt;pattern&gt;urn:phonenumber:pat:X.*.*&lt;/pattern&gt;
+		&lt;/groupSpec&gt;
+            &lt;output includeTag="true" includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeCount="true"/&gt;
+        &lt;/reportSpec&gt;
+	&lt;reportSpec reportOnlyOnChange="false" reportName="D" reportIfEmpty="true"&gt;
+            &lt;reportSet set="DELETIONS"/&gt;
+            &lt;filterSpec&gt;
+               &lt;includePatterns&gt;
+                    &lt;includePattern&gt;urn:epc:pat:sgtin-96:*.*.*.*&lt;/includePattern&gt;
+			  &lt;includePattern&gt;urn:phonenumber:pat:*.*.*&lt;/includePattern&gt;
+                &lt;/includePatterns&gt;
+		    &lt;excludePatterns/&gt;
+            &lt;/filterSpec&gt;
+            &lt;groupSpec&gt;
+                &lt;pattern&gt;urn:epc:pat:sgtin-96:*.*.X.*&lt;/pattern&gt;&lt;!-- Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003--&gt;
+                &lt;pattern&gt;urn:phonenumber:pat:X.*.*&lt;/pattern&gt;
+		&lt;/groupSpec&gt;
+            &lt;output includeTag="true" includeRawHex="true" includeRawDecimal="true" includeEPC="true" includeCount="true"/&gt;
+        &lt;/reportSpec&gt;
+    &lt;/reportSpecs&gt;
+    &lt;extension/&gt;
+&lt;/ns2:ECSpec&gt;
+
+
+{code}
+
+You can download the AspireTDT simulation client ( [.jar&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15524], [.exe&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15523] ) to do some preliminary tests. This simulation tool allows to send the GS1, ISO, telphone number, Gsma, OneWire formats to Extended TDT ALE server, then the ALE converts them to EPC standard format (i.e. 'LEGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING' (if applicable), and then generate new ECReport. Filtering and grouping are available for the different input formats as well.
+ 
+
+You can use either [AspireRfid IDE&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE] (in this case, the configuration of ALE End points is under Windows/Preferences) or [Fosstrak Standalone Client 1.0.2&gt;http://www.fosstrak.org/fc/download.html] for the complete tests.
+
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/ExtendedTDTALE/Simulator_Interface.png"&gt;{image:Simulator_Interface.png|800}&lt;/a&gt;
+&lt;/center&gt;
+
+Press the upper left button to set the default setting.   
+~~Network setting~~ allows to configure the ALE server's IP address.  
+~~Send~~ button allows to send the different input identification formats to ALE and convert into standard format.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HExtendedTDTALE"&gt;Extended TDT ALE&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserGuide"&gt;2 User Guide&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt; 
+Extended TDT ALE is extended from Fosstrak Filtering and Collection Server 1.0.2, and makes it possible to be compatible with different input identification formats (i.e. GS1, ISO, MAC address, Telephone numbers, Gsma, OneWire ...).&lt;p class="paragraph"/&gt;Extended TDT ALE allows to convert these different formats to EPC standard format (i.e. 'EGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING', and then generate new ECReports. We insert a new field 'gs1_ai_encoding' to ECReport, the ECReprt then includes fields 'epc' 'tag' 'rawHex' rawDecimal' as well as 'gs1_ai_encoding' (if applicable). Filtering and grouping are available for the different input formats as well.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;User Guide&lt;/span&gt;&lt;/h3&gt; 
+Make sure the java has been installed in your machine and PATH variable (bin subdirectory of the JVM directory) has been  configured as system environment variable.
+&lt;ul class="star"&gt;
+&lt;li&gt;1) Download the Fosstrak ALE package: &lt;span class="wikiexternallink"&gt;&lt;a href="http://maven-repository.fosstrak.org/releases/org/fosstrak/fc/fc-server/1.0.2/fc-server-1.0.2.war"&gt;&amp;#102;c-server-1.0.2.war&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;2) Download the extended TDT package &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15522"&gt;&amp;#65;spireExtendedTDT.rar&lt;/a&gt;&lt;/span&gt;, this package should be placed in the same directory as fc-server-1.0.2.war.&lt;/li&gt;
+&lt;li&gt;3) Unzip AspireExtendedTDT.rar to the current repository. Launch the script commands GenerateExtendedALE.bat, a new ExtendedTDTALE archive file (fc-server-1.0.2-AspireExtendedTDT.war) will be automatically generated in the repository /fc-server-1.0.2-AspireExtendedTDT&lt;/li&gt;
+&lt;li&gt;4) Copy the generated archive file under /Tomcat(your version)/webapps, restart Tomcat server.&lt;/li&gt;
+&lt;li&gt;5) You should configure the ALE Client End Point as: &lt;span class="nobr"&gt;&lt;a href="http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALEService."&gt;&amp;#104;ttp://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALEService.&lt;/a&gt;&lt;/span&gt; And ALE LR client End point as: &lt;span class="nobr"&gt;&lt;a href="http://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALELRService."&gt;&amp;#104;ttp://localhost:8080/fc-server-1.0.2-AspireExtendedTDT/services/ALELRService.&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;Here is an example of the configuration of ECSpec which integrates ReportSet, filtering, grouping for extended input formats :
+ &lt;div class="code"&gt;&lt;pre&gt;&amp;#60;?xml version=&lt;span class="java&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="java&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt; standalone=&lt;span class="java&amp;#45;quote"&gt;"yes"&lt;/span&gt;?&amp;#62;
+&amp;#60;ns2:ECSpec includeSpecInReports=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;"&lt;/span&gt; xmlns:ns2=&lt;span class="java&amp;#45;quote"&gt;"urn:epcglobal:ale:xsd:1"&lt;/span&gt;&amp;#62;
+    &amp;#60;logicalReaders&amp;#62;
+        &amp;#60;logicalReader&amp;#62;LR&amp;#60;/logicalReader&amp;#62;
+    &amp;#60;/logicalReaders&amp;#62;
+    &amp;#60;boundarySpec&amp;#62;
+        &amp;#60;repeatPeriod unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;2000&amp;#60;/repeatPeriod&amp;#62;
+        &amp;#60;duration unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;2000&amp;#60;/duration&amp;#62;
+        &amp;#60;stableSetInterval unit=&lt;span class="java&amp;#45;quote"&gt;"MS"&lt;/span&gt;&amp;#62;0&amp;#60;/stableSetInterval&amp;#62;
+        &amp;#60;extension/&amp;#62;
+    &amp;#60;/boundarySpec&amp;#62;
+    &amp;#60;reportSpecs&amp;#62;
+        &amp;#60;reportSpec reportOnlyOnChange=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;"&lt;/span&gt; reportName=&lt;span class="java&amp;#45;quote"&gt;"C"&lt;/span&gt; reportIfEmpty=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;&amp;#62;
+            &amp;#60;reportSet set=&lt;span class="java&amp;#45;quote"&gt;"CURRENT"&lt;/span&gt;/&amp;#62;
+            &amp;#60;filterSpec&amp;#62;
+               &amp;#60;includePatterns&amp;#62;
+                    &amp;#60;includePattern&amp;#62;urn:epc:pat:sgtin&amp;#45;96:&amp;#42;.&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;&amp;#60;!&amp;#45;&amp;#45; Test in Rifidi Custom:30395dfa804012c000000003 &amp;#45;&amp;#45;&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:iso:pat:14443double&amp;#45;56:&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:iso:pat:14443single&amp;#45;32:&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+                &amp;#60;/includePatterns&amp;#62;
+		    &amp;#60;excludePatterns&amp;#62;
+			  &amp;#60;excludePattern&amp;#62;urn:onewire:pat:ibutton:&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/excludePattern&amp;#62;
+                &amp;#60;/excludePatterns&amp;#62;
+            &amp;#60;/filterSpec&amp;#62;
+            &amp;#60;output includeTag=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawHex=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawDecimal=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeEPC=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeCount=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;/reportSpec&amp;#62;
+        &amp;#60;reportSpec reportOnlyOnChange=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;"&lt;/span&gt; reportName=&lt;span class="java&amp;#45;quote"&gt;"A"&lt;/span&gt; reportIfEmpty=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;&amp;#62;
+            &amp;#60;reportSet set=&lt;span class="java&amp;#45;quote"&gt;"ADDITIONS"&lt;/span&gt;/&amp;#62;
+            &amp;#60;filterSpec&amp;#62;
+               &amp;#60;includePatterns&amp;#62;
+                    &amp;#60;includePattern&amp;#62;urn:epc:pat:sgtin&amp;#45;96:&amp;#42;.&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:phonenumber:pat:&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:gsma:pat:imei:&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:onewire:pat:ibutton:&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+                &amp;#60;/includePatterns&amp;#62;
+		    &amp;#60;excludePatterns/&amp;#62;
+            &amp;#60;/filterSpec&amp;#62;
+            &amp;#60;groupSpec&amp;#62;
+                &amp;#60;pattern&amp;#62;urn:epc:pat:sgtin&amp;#45;96:&amp;#42;.&amp;#42;.X.&amp;#42;&amp;#60;/pattern&amp;#62;&amp;#60;!&amp;#45;&amp;#45; Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003&amp;#45;&amp;#45;&amp;#62;
+                &amp;#60;pattern&amp;#62;urn:phonenumber:pat:X.&amp;#42;.&amp;#42;&amp;#60;/pattern&amp;#62;
+		&amp;#60;/groupSpec&amp;#62;
+            &amp;#60;output includeTag=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawHex=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawDecimal=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeEPC=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeCount=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;/reportSpec&amp;#62;
+	&amp;#60;reportSpec reportOnlyOnChange=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;"&lt;/span&gt; reportName=&lt;span class="java&amp;#45;quote"&gt;"D"&lt;/span&gt; reportIfEmpty=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;&amp;#62;
+            &amp;#60;reportSet set=&lt;span class="java&amp;#45;quote"&gt;"DELETIONS"&lt;/span&gt;/&amp;#62;
+            &amp;#60;filterSpec&amp;#62;
+               &amp;#60;includePatterns&amp;#62;
+                    &amp;#60;includePattern&amp;#62;urn:epc:pat:sgtin&amp;#45;96:&amp;#42;.&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+			  &amp;#60;includePattern&amp;#62;urn:phonenumber:pat:&amp;#42;.&amp;#42;.&amp;#42;&amp;#60;/includePattern&amp;#62;
+                &amp;#60;/includePatterns&amp;#62;
+		    &amp;#60;excludePatterns/&amp;#62;
+            &amp;#60;/filterSpec&amp;#62;
+            &amp;#60;groupSpec&amp;#62;
+                &amp;#60;pattern&amp;#62;urn:epc:pat:sgtin&amp;#45;96:&amp;#42;.&amp;#42;.X.&amp;#42;&amp;#60;/pattern&amp;#62;&amp;#60;!&amp;#45;&amp;#45; Test in Rifidi Custom:30395dfa804012c000000003,30395dfa804002c000000003,30395dfa804042c000000003&amp;#45;&amp;#45;&amp;#62;
+                &amp;#60;pattern&amp;#62;urn:phonenumber:pat:X.&amp;#42;.&amp;#42;&amp;#60;/pattern&amp;#62;
+		&amp;#60;/groupSpec&amp;#62;
+            &amp;#60;output includeTag=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawHex=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeRawDecimal=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeEPC=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt; includeCount=&lt;span class="java&amp;#45;quote"&gt;"&lt;span class="java&amp;#45;keyword"&gt;true&lt;/span&gt;"&lt;/span&gt;/&amp;#62;
+        &amp;#60;/reportSpec&amp;#62;
+    &amp;#60;/reportSpecs&amp;#62;
+    &amp;#60;extension/&amp;#62;
+&amp;#60;/ns2:ECSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;You can download the AspireTDT simulation client ( &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15524"&gt;&amp;#46;jar&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15523"&gt;&amp;#46;exe&lt;/a&gt;&lt;/span&gt; ) to do some preliminary tests. This simulation tool allows to send the GS1, ISO, telphone number, Gsma, OneWire formats to Extended TDT ALE server, then the ALE converts them to EPC standard format (i.e. 'LEGACY', 'TAG_ENCODING') and 'GS1_AI_ENCODING' (if applicable), and then generate new ECReport. Filtering and grouping are available for the different input formats as well.&lt;p class="paragraph"/&gt;
+You can use either &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE"&gt;&amp;#65;spireRfid IDE&lt;/a&gt;&lt;/span&gt; (in this case, the configuration of ALE End points is under Windows/Preferences) or &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org/fc/download.html"&gt;&amp;#70;osstrak Standalone Client 1.0.2&lt;/a&gt;&lt;/span&gt; for the complete tests.&lt;p class="paragraph"/&gt;
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/ExtendedTDTALE/Simulator_Interface.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection/ExtendedTDTALE/Simulator_Interface.png" height="800" alt="Simulator_Interface.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;Press the upper left button to set the default setting.   
+&lt;i class="italic"&gt;Network setting&lt;/i&gt; allows to configure the ALE server's IP address.  
+&lt;i class="italic"&gt;Send&lt;/i&gt; button allows to send the different input identification formats to ALE and convert into standard format.
+</renderedcontent>
+</xwikidoc>

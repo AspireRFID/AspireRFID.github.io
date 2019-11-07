@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:14:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - AspireRfidArchitecture
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLoginbb4c.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='AspireRfidArchitecture.html'>AspireRFID Architecture</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_AspireRfidArchitecture.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="AspireRfidArchitectured5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/AspireRfidArchitecturecede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="AspireRfidArchitectured77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HAspireRFIDArchitecture">AspireRFID Architecture</span></h2><p class="paragraph"/><hr class="line"/>
+            <ul>
+          <li><a href="#HHardwareAbstractionLayer5B28HAL293EMainDocumentationHAL5D">1 Hardware Abstraction Layer <span class="wikilink"><a href="HAL.html">(HAL)</a></span></a> 
+      <li><a href="#HReaderCoreProxy5B28RCP293EMainDocumentationReaderCoreProxy5D">2 Reader Core Proxy <span class="wikilink"><a href="ReaderCoreProxy.html">(RCP)</a></span></a> 
+      <li><a href="#HFiltering26CollectionServer5B28ALE293EMainDocumentationFiltering26Collection5D">3 Filtering & Collection Server <span class="wikilink"><a href="Filtering%26Collection.html">(ALE)</a></span></a> 
+      <li><a href="#HBusinessEventGenerator5B28BEG293EMainDocumentationBEG5D">4 Business Event Generator <span class="wikilink"><a href="BEG.html">(BEG)</a></span></a> 
+      <li><a href="#HInformationSharingRepository5B28EPCIS293EMainDocumentationEpcisRepository5D">5 Information Sharing Repository <span class="wikilink"><a href="EpcisRepository.html">(EPCIS)</a></span></a> 
+      <li><a href="#HConnectorApplication5B28Connector293EMainDocumentationConnector5D">6 Connector Application<span class="wikilink"><a href="Connector.html">(Connector)</a></span></a> 
+      <li><a href="#HManagement">7 Management</a> 
+      <li><a href="#HActuators">8 Actuators</a> 
+      <li><a href="#HIntegratedDevelopmentEnvironment5B28AspireRfidIDE293EMainDocumentationAspireIDE5D">9 Integrated Development Environment <span class="wikilink"><a href="AspireIDE.html">(AspireRfidIDE)</a></span></a> 
+      </ul> <hr class="line"/><p class="paragraph"/>
+<center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew6.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew7.jpg" height="300" alt="aspireArchitectureNew7.jpg" /></a>
+</center>
+<h3 class="heading-1-1"><span id="HHardwareAbstractionLayer5B28HAL293EMainDocumentationHAL5D">Hardware Abstraction Layer <span class="wikilink"><a href="HAL.html">(HAL)</a></span></span></h3><p class="paragraph"/>The role of this layer is to unify the way the ASPIRE middleware interacts with the RFID readers from multiple vendors that support varying protocols. This is based on the introduction of a hardware abstraction layer (HAL) and the provision of a fixed instruction set to upstream middleware layers which consume RFID readings from the hardware.<p class="paragraph"/>Specifications that satisfy the need for a norm at this level are the EPCglobal Reader Protocol (RP), the EPCglobal Lower Level Reader Protocol (LLRP). These protocols define the standard bindings through witch an application can send messages in a standardized format.<p class="paragraph"/>The methods of communication between the HAL and the hardware itself vary, depending on the hardware vendor and it may require a serial connection, an Ethernet connection, etc. The protocols of communication may also vary from a raw TCP (Transmission Control Protocol) connection, to SSL (Secure Sockets Layer) and HTTP (Hypertext Transfer Transport Protocol). The same will apply for the command and message encodings, which may be text, XML or binary.<p class="paragraph"/>The Hardware Abstraction shown in the Figure Below defines the interface between the HAL, the F&C server, the Reader Core or any other application using the HAL. It standardises access to various readers and simulators of readers. This allows uniform usage. The readers and simulators become interchangeable because the code specific to the reader is part of the HAL and not of the application. The implementations of the Hardware Abstraction interface are divided into multiple modules, one for the simulators and one for each reader manufacturer. A module can contain one or multiple reader controllers.<p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg" height="280" alt="ASPIRE_HAL_Connections.jpg" /></a>
+</center>
+<h3 class="heading-1-1"><span id="HReaderCoreProxy5B28RCP293EMainDocumentationReaderCoreProxy5D">Reader Core Proxy <span class="wikilink"><a href="ReaderCoreProxy.html">(RCP)</a></span></span></h3><p class="paragraph"/>In order to transform non EPC Reader Protocol readers into compliant readers we are using a Reader Core Proxy application, which is used (as shown in the Figure above) as a mediator between a reader supporting protocol “X” and the corresponding F&C Reader Protocol Interface. By deploying the appropriate HAL module at the Reader Core we make whatever reader compliant to RP. Every reader with an implementation of the Hardware Abstraction interface can be controlled over the Reader Protocol.<p class="paragraph"/>The core reader support TCP and HTTP for transporting reader protocol messages, while the message content can be either XML or Text. In addition, it support synchronous and asynchronous messaging (through the reader’s protocol Notification Channels mechanisms). Furthermore, support for other reader protocol characteristics, such as triggers, data selectors must be provided. 
+<h3 class="heading-1-1"><span id="HFiltering26CollectionServer5B28ALE293EMainDocumentationFiltering26Collection5D">Filtering & Collection Server <span class="wikilink"><a href="Filtering%26Collection.html">(ALE)</a></span></span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/ALE.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/ALE.jpg" height="280" alt="ALE.jpg" /></a>
+</center><p class="paragraph"/>In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable “noise.” To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+<ul class="star">
+<li>Drive as much filtering and counting of reads as low in the architecture as possible.</li>
+<li>Minimize the amount of “business logic” embedded in the Tags.</li>
+</ul>The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce “reports” in response to client “requests.” The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional “enterprise application,” or it may be new software designed expressly to carry out an RFID-enabled business process which operates at a higher level than the “middleware” that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware (described later) would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.<p class="paragraph"/>Once the readers capture relevant tag data they notify the middleware which combines the data arriving from different readers in a report that is sent according to a pre-determined schedule to the subscribed applications. Since the middleware receives data from multiple readers, it provides specific filtering functionality depending on the different already defined specifications. So redundant events from different readers observing the same location are not included to the despatched report accomplishing the reduction of filtering and aggregation required to the registered application interpreting the captured RFID data.
+<h3 class="heading-1-1"><span id="HBusinessEventGenerator5B28BEG293EMainDocumentationBEG5D">Business Event Generator <span class="wikilink"><a href="BEG.html">(BEG)</a></span></span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/BEG.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/BEG.jpg" height="280" alt="BEG.jpg" /></a>
+</center><p class="paragraph"/>The architecture introduces a Business Event Generator (BEG) module between the F&C and Information Sharing (e.g., EPC-IS) modules. The role of the BEG is to automate the mapping between reports stemming from F&C and IS events. Instead of requiring developers to implement the mapping logic, the BEG enables application builders to configure the mapping based on the semantics of the RFID application.<p class="paragraph"/>With the help of AspireRfid IDE by describing the company’s business processes and its underlying business infrastructure the required business events that constitutes a company’s business functionality are created and stored at the RFID repository that Business Event Generator engine exploits to define its functionality.   In EPC terms, BEG can be seen as a specific instance of an EPC-IS capturing application, which parses EPC-ALE reports, fuses these reports with business context data using the assigned business event from the company’s business metadata to serve as guide and accordingly prepares EPC-IS compliant events. The latter events are submitted to the EPC-IS Repository, based on an EPC-IS capture interface and related bindings (e.g., HyperText Transfer Protocol (HTTP)/ Java Messaging Service (JMS). The specification of the BEG is a valuable addition over existing RFID middleware architectures and platforms. 
+<h3 class="heading-1-1"><span id="HInformationSharingRepository5B28EPCIS293EMainDocumentationEpcisRepository5D">Information Sharing Repository <span class="wikilink"><a href="EpcisRepository.html">(EPCIS)</a></span></span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/epcis.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/epcis.jpg" height="280" alt="epcis.jpg" /></a>
+</center><p class="paragraph"/>
+At the heart of the architecture is the EPC-IS repository. The ASPIRE Information Sharing repository is responsible for receiving application-agnostic RFID data from the filtering & collection middleware through the Business Event Generation (BEG) application and store the translated RFID data in corresponding business events. These events carry the business context as well (e.g., they refer to particular companies, business locations, business processes etc.). Moreover it makes business events and master data available and accessible to other upstream applications thru the query interface.<p class="paragraph"/>Generally, the ASPIRE information sharing repository is dealing with two kinds of data: 
+<ul class="star">
+<li>RFID event data i.e. data arising in the course of carrying out business processes.  These data change very frequently, at the time scales where business processes are carried out.</li>
+<li>Master/company data, i.e. additional data that provide the necessary context for interpreting the event data. These are data associated with the company, its business locations, its read points, as well as with the business steps comprising the business processes that this company carries out.</li>
+</ul>At a glance Information Services of the ASPIRE Information Sharing middleware itself consists of three parts a capture interface that provides web services for storing data, a repository that provides persistence and query interface that provides web services that retrieves the business events/master data from the repository.
+<h3 class="heading-1-1"><span id="HConnectorApplication5B28Connector293EMainDocumentationConnector5D">Connector Application<span class="wikilink"><a href="Connector.html">(Connector)</a></span></span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg" height="320" alt="ConnectorLight.jpg" /></a>
+</center><p class="paragraph"/>RFID middleware components described in the previous paragraphs provide a foundation for translating raw RFID streams to meaningful business events comprising business context such as where a tag was seen, at what time and in the scope of which process. Enterprises can then leverage these business events through their legacy IT systems (e.g., ERPs, WMS, corporate databases), which are used to support their business processes. To this end, there is a clear need for interfacing these legacy systems, with the information sharing repositories, established and populated as part of the RFID deployment. Interfacing between IT systems and the information sharing repository, as well as other middleware blocks of the RFID deployment is realized through specialized middleware components that are called “connectors”.<p class="paragraph"/>The main purpose of connector components are to abstract the interface between the ASPIRE information sharing repository and enterprise information systems. Hence, connectors offer APIs, that enable proprietary enterprise information systems to exchange business information with the ASPIRE RFID middleware system.<p class="paragraph"/>Connector therefore provides:
+<ul class="star">
+<li>Support for services and events: Composite applications can call out to existing functionality as a set of services, and to be notified when a particular event type (for example, “purchase order inserted,” “employee hired”) occurs within an existing application.</li>
+<li>Service abstraction: All services have some common properties, including error handling, syntax, and calling mechanisms. They also have common access mechanisms such as JCA (Java Connector Architecture), JDBC, ODBC (Object Database Connectivity), and Web services, ideally spanning different platforms. This makes the services more reusable, while also allowing them to share communications, load balancing, and other non-service-specific capabilities.</li>
+<li>Functionality abstraction: Individual services are driven by metadata about the transactions that the business needs to execute.</li>
+<li>Process management: Services embed processes, and process management tools call services. Hence, connectors support the grouping of several service invocations to processes.</li>
+</ul><h3 class="heading-1-1"><span id="HManagement">Management</span></h3> 
+The architecture specifies also implementation of end-to-end (e2e) management functionality based on JMX (Java Management Extension) technology. To this end, a JMX wrapper is specified for each middleware and hardware component. JMX wrappers interface to underlying readers based on the Simple Network Management Protocol (SNMP) and the Reader Management (RM) protocol, while they interface to middleware components (e.g., ALE, BEG, Connector) using MBeans that access their low-level control properties. Based on these JMX wrappers composite sophisticated management applications can be implemented. Management applications can be used to interface and control actuators as well. Based on JMX, actuator control commands can be issued upon the occurrence of certain events at any middleware layer. 
+<h3 class="heading-1-1"><span id="HActuators">Actuators</span></h3> 
+The actuator control framework will define certain interfaces and connectors that third party applications will be able to utilize in order to successfully interact with analogue or digital devices, based on sensor events. These sensors may either be RFID or other ASPIRE supported physical sensors.  Using this framework the application will be able to register an event handler that will, for example, interact with a flashlight when a specific group of tags pass through a RFID aggregation gate.
+<h3 class="heading-1-1"><span id="HIntegratedDevelopmentEnvironment5B28AspireRfidIDE293EMainDocumentationAspireIDE5D">Integrated Development Environment <span class="wikilink"><a href="AspireIDE.html">(AspireRfidIDE)</a></span></span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg"><img src="../../download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg" height="320" alt="programmabilityTooling.jpg" /></a>
+</center><p class="paragraph"/>As far as ease of development and deployment is concerned, the architecture specifies the existence of an IDE enabling the visual management of all configuration files and meta-data that are required for the operation of an RFID solution. These include:
+<ul class="star">
+<li>The Physical Reader Configuration Editor to configure physical readers and their operational parameters and environments.</li>
+<li>The Logical Reader Configuration Editor which will support the definition of logical readers (LLRP, RP, HAL and Simulator readers).</li>
+<li>The Reading Specifications Editor which will enable editing, as well as management of F&C server Filtering Specifications.</li>
+<li>The F&C Commands Execution which will have as an objective to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.</li>
+<li>The Connector Configurator which will be able to interact with the Connector application to reveal all its functionalities and configurations. It should enable configuration of connectors to different systems and databases.</li>
+<li>The Master Data Editor (with support for Elementary Business Process Description) which will enable users and/or consultants to edit enterprise data including information about the company’s location, its business locations, readpoints, as well as its business processes.</li>
+<li>And the Business Prosess Workflow Management Editor which can offer to business users and RFID consultants a graphical user interface for manipulating complex business processes, that are composed as workflows of elementary business processes.  The workflow management tool will leverage (though. using/ invoking) the functionality of the above tools in order to support RFID deployments in accordance to particular business processes.</li>
+</ul>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='AspireRfidArchitecture.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/index08d2.html?parent=Main.Documentation.AspireRfidArchitecture"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.AspireRfidArchitecture"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            10 Attachments  by
+            nkef ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew1b1e.jpg?width=80" alt="aspireArchitectureNew.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew.jpg">aspireArchitectureNew.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>84422</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling1b1e.jpg?width=80" alt="programmabilityTooling.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg">programmabilityTooling.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>143909</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections1b1e.jpg?width=80" alt="ASPIRE_HAL_Connections.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg">ASPIRE_HAL_Connections.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>51530</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/ConnectorLight1b1e.jpg?width=80" alt="ConnectorLight.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg">ConnectorLight.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>101314</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/epcis1b1e.jpg?width=80" alt="epcis.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/epcis.jpg">epcis.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>54924</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/BEG1b1e.jpg?width=80" alt="BEG.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/BEG.jpg">BEG.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>82150</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/ALE1b1e.jpg?width=80" alt="ALE.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/ALE.jpg">ALE.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>63535</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew51b1e.jpg?width=80" alt="aspireArchitectureNew5.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew5.jpg">aspireArchitectureNew5.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>297725</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew61b1e.jpg?width=80" alt="aspireArchitectureNew6.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew6.jpg">aspireArchitectureNew6.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>269162</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew71b1e.jpg?width=80" alt="aspireArchitectureNew7.jpg" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew7.jpg">aspireArchitectureNew7.jpg</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>299564</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/AspireRfidArchitecture" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='AspireRfidArchitecture.html'>AspireRFID Architecture</a>
+  (en)
+ <br />
+  Creator: nkef
+ &nbsp;Date: 2009/01/30 11:02
+ <br />
+ Last Author: nkef
+ &nbsp;Date: 2011/03/02 19:12
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:14:57 GMT -->
+</html>

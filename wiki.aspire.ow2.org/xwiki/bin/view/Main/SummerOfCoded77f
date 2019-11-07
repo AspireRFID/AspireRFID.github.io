@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>SummerOfCode</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1222672763000</creationDate>
+<date>1243542467000</date>
+<contentUpdateDate>1243542467000</contentUpdateDate>
+<version>1.58</version>
+<title>Summer of Code</title>
+<template></template>
+<content>1 Summer of Code
+
+Students in software development, AspireRFID needs You !
+
+You can contribute by implementing features listed in the [forge&gt;http://forge.objectweb.org/tracker/?atid=350456&amp;group_id=324&amp;func=browse] (especially in the categories "demo" or "application").
+
+For instance :
+
+#toc("" "" "")
+
+
+1.1 a Person Access Control System
+(suggestion of Didier Donsez)
+Summary:
+* Persons (Name, role, building, contactless card number) are recorded in a LDAP directory (served by OpenDS, Apache Directory, OpenLDAP, ...).
+* RFID readers are placed at the entrances and exits of buildings and rooms.
+* RFID readers scans persons contactless cards
+
+Main application : access control
+* The system unlocks the doors according the role, the time slot, the building, ...
+* The system unlocks the evelators panels according the role, the time slot, the building, ...
+Derivative applications:
+* The system reports the time spent at work
+* The system switchs off the office light when people left the building, the lobby, ...
+
+
+Alternative: Offline access control
+* The offline access control usecase fits well when door lockers can not access to the authentication &amp; autorization server (no IP connectivity, costly connectivity, ...)
+* The RFID (or iButton) memory stores the autorizations (their validaty period or calendar).
+* The set of autorizations is signed by the organization. The readers trust the organization. 
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+* ID-only iButtons ([DS1990A&gt;])
+* ...
+
+Example:
+* This student project uses Tikitag readers and RFID ISO 14443 badges. The scanned identifier is used to query a LDAP directory. If the authentication is successful, the iBuddy head switchs to green. Else the iBuddy head switchs to red and the USB rocket launcher shoots one rocket. [video 1 (iBuddy only)&gt;http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy.avi] [video 2 (iBuddy+rocket launcher) ...&gt;http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy+rocketlauncher.avi]
+
+1.1 a Ski pass system
+Summary:
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers 
+* ...
+
+1.1 a Vehicule Control System
+Summary:
+* Cars can be stolen ... 
+
+Possible hardware:
+* EPC Gen2 or ISO 15693 tags and readers 
+* ...
+
+1.1 a "Pay As You Throw" (PAYT) System
+Summary:
+* [What is PAYT ?&gt;http://www.epa.gov/epawaste/conserve/tools/payt/index.htm] ([Wikipedia&gt;http://en.wikipedia.org/wiki/PAYT])
+* Trash containers are tagged by LF (or HF) tags
+* Containers are identified by the truck reader then weighted by the truck balance during the collection
+* GPS positions are used to check if containers are in the right area (ie stolen, exchanged, ...)
+* The local authority or municipality send a monthly bill to the users. The bill is rated by the weight of recycled waste and unrecycled waste.
+
+Possible hardware:
+* EPC Gen2 or ISO 15693 tags and readers
+* a balance (Wiifit)
+* a GPS
+
+1.1 a NFC book reader
+Summary:
+* books are tagged
+* scanning the tag of a book starts the spelling of the story (audio stream).
+* if the player is stopped, the system keeps in mind the last streamed sentences.
+* target: kids, disable people, elders.  
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+* a UPnP Media Server and Renderer
+
+1.1 a NFC Social Radar
+Summary: Users can be used their NFC phones to touch tags in public places (bar, ...)  to publish presence, mood, ... to friends through their favorite social networks.  
+
+Possible hardware:
+* ISO 14443 tags and NFC phones.
+
+1.1 a RFID library
+Summary:
+
+Possible hardware:
+* ISO 15693 tags and readers
+
+1.1 a Private Company Gas Station
+Summary:
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+
+1.1 a NFC inspection system
+Summary:
+
+Possible hardware:
+* ISO 14443 tags and NFC phones
+
+1.1 a NFC building info point
+1.1.1 Summary
+* suppose that you are visiting a large campus and you are lost !
+* entrances fo the buildings are equipped of NFC labels with printed data matrix. The data matrix cantains an url and NFC tag contains NDEF RTD urls linking to maps, phone numbers of the building offices, ...
+
+1.1.1 Possible hardware
+* ISO 14443 tags and NFC phones
+
+1.1 a e-Healthcare system
+1.1.1 Summary
+
+1.1.1 Possible hardware
+* ISO 14443 or ISO 15693 tags and readers
+* [health sensors&gt;Main.Readers#HHealthcare]
+
+1.1 a cooperative Weather alert system (flood, tornado, ...) based on social networking
+1.1.1 Summary
+
+1.1.1 Possible hardware:
+* [USB weather stations&gt;Main.Readers#HEnvironment]
+
+1.1 a cooperative Pollution alert system (undeclared radioactive clouds, ...) based on social networking
+1.1.1 Summary
+
+1.1.1 Possible hardware
+* see 
+
+1.1 a sport competition system 
+(suggestion of  Didier Donsez and Pierre-Yves Gibello)
+
+1.1.1 Summary
+* Race organizers use RFID to manage a large number of racers in massive competitions (marathon, nordic sky, bicycle, ...)
+* RFID simplifies chronometering and avoids cheating.
+* Racers are equipped of RFID tags
+* RFID portals scans (snaphots or videos can be records) the racers several time during the race. The portal can be fixed or mobile (GPS-located).
+* Supporters can follow favorite racers on their (mobile or not) web browser 
+* Racers can receive SMS to encourage them
+* Racers can upload afterward their own GPS tracks (Garmin Forerunner or other) and cardiac frequency histories (Polar and Suunto watches), pedometer histories (N95 or iPhone accelerometer can be used to infer the steps), video (recorded during the race for small wearable cameras)  ...
+* Racers can calculate their effort from data
+* Racers can compare a race with previous ones
+* Racers can compare their races with other'ones (mainly champions like Lance Armstrong in the Alpe d'Huez ascent )
+
+1.1.1 Possible hardware
+* ISO 15693 tags and readers
+* GPS, accelerometers (in cell phone), video camera, cardiac frequency watches, [more&gt;Main.Readers#HSport]
+
+
+1.1 a RFID-based multiplayer game
+(suggestion of  Eric Gressier-Soudan) 
+1.1.1 Goal
+Write a game that uses RFIDs, able to be played by visitors in a museum (no specific type of museum, it is free). Players/visitors must have fun, they not only learn things about art pieces.
+
+1.1.1 Main Specifications
+- A visit is played as a game, the kind of game is part of the contest.
+- The visitors play alone (no team play).
+- Visitors gain points when they give right answers to questions along the game.
+- Visitors can ask for help to a game master but they loose points in this case.
+- The winner is the person with the highest score at the end of the visit/game.
+
+1.1.1 Technical hints
+- Visitors uses a dedicated device with an NFC reader (PDA or Mobile phone)
+- A mobile network can be considered
+- The OW2 [GASP suite&gt;http://gasp.objectweb.org] can be used to handle game logic on a server and on clients
+- The game uses read AND write features of tags.
+
+Solutions to be avoid
+- PACLAN RFID
+- [Via Mineralia&gt;http://vr.tu-freiberg.de/viamineralia]
+These projects can give ideas but shouldn't be reproduced.
+
+1.1.1 Variant
+* [Orienteering&gt;http://en.wikipedia.org/wiki/Orienteering]
+* [Amazing Race&gt;http://en.wikipedia.org/wiki/The_Amazing_Race]
+* ...
+
+1.1.1 Possible hardware
+* NFC phones (Nokia 6212 classic, ...), ISO 14443 tags, phone accelerators (Nokia serie S60, iPhone, HTC, ...) for visitor pace counting 
+
+1.1 a RFID/NFC Sushi Bar
+
+1.1.1 Motivation
+(suggestion of  Luvent Gurgen)
+
+In Japan, RFID is already in the daily life. The recent example is the  traditional conveyor belt sushi-bars (kaiten sushi):
+In a kaiten sushi restaurant, there is a rotating conveyor belt on  which the sushi plates make the tour of all the restaurant. You can  therefore pick up the sushi you desire when it passes in front of you.  You can also order (in Japanese, for sure) your favorite sushi to the  sushi man(s) who is(are) in the middle of the conveyor preparing it  for you. Plates are coloured according to the price of the sushi, so  the bill will be calculated based on the number and the colour of the  sushi plates. At the end of the meal, the waiter comes, counts your  plates and calculates the bill.
+
+Nowadays, in most of the restaurants each plate has an embedded RFID  tag which contains the price of the sushi it is carrying. This allows  the waiter calculating your bill in one second thanks to a RFID  enabled device (and you pay it with your NFC enabled mobile phone).  Besides, in some restaurants, you can order your favorite sushi via a  monitor in front of each seat (thus no need to speak Japanese), and  your sushi will be being prepared in the kitchen and will be put on  the rotating conveyor. And thanks to the embedded RFID tag, you don't  stress about missing your order, because when your order approaches to  you, you will be notified by an alarm.
+
+This is the integration of the technology with the traditional life  and Japan do that very well!
+
+see:
+* http://wireless.engadget.com/2004/03/23/calculating-your-tab-the-rfid-way/
+* http://www.engadget.com/2004/03/25/rfid-sushi-plate-in-action/
+
+1.1.1 Possible realization
+This application could reuse the 2 demos
+* the Lego train to transport the sushi and what is added and removed
+* the NFC picking demo
+
+1.1.1 Variants
+* NFC [Tamales&gt;http://en.wikipedia.org/wiki/Tamale] Bar
+* NFC Tapas Bar
+* ...
+
+1.1.1 Possible Hardware
+* ISO 14443 or ISO 15693 tags and readers (and NFC phones)
+* a Lego duplo train for the plate conveyor
+* some plates
+* some plastic sushi (used for presentation in japanese restaurants)
+
+
+1.1 NFC Sommelier
+
+1.1.1 Motivation
+For professional or personal wine cellar
+
+* manage the stock of bottles (inventory, ...)
+* alert on temperature and hygrometry thresholds
+* alert the owner when bottles must be consumed
+* provide expert advice 
+* ... 
+
+1.1.1 Possible Hardware
+* ISO 14443 or ISO 15693 tags and readers (and NFC phones)
+* a temperature sensor, a hygrometry sensor or a weather station (for the wine cellar temperature and hygrometry)
+
+Remark: some wine bottle cork include a RFID inlays (tracability, counterfeit, ...) : http://www.rfidjournal.com/article/articleview/2117/1/1/
+
+1.1 Others
+You may have ideas also ...
+
+* GPS tracks importer (http://www.gpsbabel.org/capabilities.html)
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSummerofCode"&gt;Summer of Code&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;Students in software development, AspireRFID needs You !&lt;p class="paragraph"/&gt;You can contribute by implementing features listed in the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/tracker/?atid=350456&amp;group_id=324&amp;func=browse"&gt;&amp;#102;orge&lt;/a&gt;&lt;/span&gt; (especially in the categories "demo" or "application").&lt;p class="paragraph"/&gt;For instance :&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HaPersonAccessControlSystem"&gt; a Person Access Control System&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaSkipasssystem"&gt; a Ski pass system&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaVehiculeControlSystem"&gt; a Vehicule Control System&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#Ha22PayAsYouThrow2228PAYT29System"&gt; a "Pay As You Throw" (PAYT) System&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaNFCbookreader"&gt; a NFC book reader&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaNFCSocialRadar"&gt; a NFC Social Radar&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaRFIDlibrary"&gt; a RFID library&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaPrivateCompanyGasStation"&gt; a Private Company Gas Station&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaNFCinspectionsystem"&gt; a NFC inspection system&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HaNFCbuildinginfopoint"&gt; a NFC building info point&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSummary"&gt; Summary&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware"&gt; Possible hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HaeHealthcaresystem"&gt; a e-Healthcare system&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSummary-1"&gt; Summary&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware-1"&gt; Possible hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HacooperativeWeatheralertsystem28flood2Ctornado2C29basedonsocialnetworking"&gt; a cooperative Weather alert system (flood, tornado, ...) based on social networking&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSummary-2"&gt; Summary&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware3A"&gt; Possible hardware:&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HacooperativePollutionalertsystem28undeclaredradioactiveclouds2C29basedonsocialnetworking"&gt; a cooperative Pollution alert system (undeclared radioactive clouds, ...) based on social networking&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSummary-3"&gt; Summary&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware-2"&gt; Possible hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#Hasportcompetitionsystem"&gt; a sport competition system &lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSummary-4"&gt; Summary&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware-3"&gt; Possible hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HaRFIDbasedmultiplayergame"&gt; a RFID-based multiplayer game&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HGoal"&gt; Goal&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMainSpecifications"&gt; Main Specifications&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTechnicalhints"&gt; Technical hints&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HVariant"&gt; Variant&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblehardware-4"&gt; Possible hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HaRFID2FNFCSushiBar"&gt; a RFID/NFC Sushi Bar&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HMotivation"&gt; Motivation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossiblerealization"&gt; Possible realization&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HVariants"&gt; Variants&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossibleHardware"&gt; Possible Hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HNFCSommelier"&gt; NFC Sommelier&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HMotivation-1"&gt; Motivation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPossibleHardware-1"&gt; Possible Hardware&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HOthers"&gt; Others&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HaPersonAccessControlSystem"&gt;a Person Access Control System&lt;/span&gt;&lt;/h3&gt; 
+(suggestion of Didier Donsez)
+Summary:
+&lt;ul class="star"&gt;
+&lt;li&gt;Persons (Name, role, building, contactless card number) are recorded in a LDAP directory (served by OpenDS, Apache Directory, OpenLDAP, ...).&lt;/li&gt;
+&lt;li&gt;RFID readers are placed at the entrances and exits of buildings and rooms.&lt;/li&gt;
+&lt;li&gt;RFID readers scans persons contactless cards&lt;/li&gt;
+&lt;/ul&gt;Main application : access control
+&lt;ul class="star"&gt;
+&lt;li&gt;The system unlocks the doors according the role, the time slot, the building, ...&lt;/li&gt;
+&lt;li&gt;The system unlocks the evelators panels according the role, the time slot, the building, ...&lt;/li&gt;
+&lt;/ul&gt;Derivative applications:
+&lt;ul class="star"&gt;
+&lt;li&gt;The system reports the time spent at work&lt;/li&gt;
+&lt;li&gt;The system switchs off the office light when people left the building, the lobby, ...&lt;/li&gt;
+&lt;/ul&gt;Alternative: Offline access control
+&lt;ul class="star"&gt;
+&lt;li&gt;The offline access control usecase fits well when door lockers can not access to the authentication &amp; autorization server (no IP connectivity, costly connectivity, ...)&lt;/li&gt;
+&lt;li&gt;The RFID (or iButton) memory stores the autorizations (their validaty period or calendar).&lt;/li&gt;
+&lt;li&gt;The set of autorizations is signed by the organization. The readers trust the organization.&lt;/li&gt;
+&lt;/ul&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;ID-only iButtons (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/"&gt;DS1990A&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;Example:
+&lt;ul class="star"&gt;
+&lt;li&gt;This student project uses Tikitag readers and RFID ISO 14443 badges. The scanned identifier is used to query a LDAP directory. If the authentication is successful, the iBuddy head switchs to green. Else the iBuddy head switchs to red and the USB rocket launcher shoots one rocket. &lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy.avi"&gt;&amp;#118;ideo 1 (iBuddy only)&lt;/a&gt;&lt;/span&gt; &lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy+rocketlauncher.avi"&gt;&amp;#118;ideo 2 (iBuddy+rocket launcher) ...&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaSkipasssystem"&gt;a Ski pass system&lt;/span&gt;&lt;/h3&gt; 
+Summary:&lt;p class="paragraph"/&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaVehiculeControlSystem"&gt;a Vehicule Control System&lt;/span&gt;&lt;/h3&gt; 
+Summary:
+&lt;ul class="star"&gt;
+&lt;li&gt;Cars can be stolen ...&lt;/li&gt;
+&lt;/ul&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;EPC Gen2 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="Ha22PayAsYouThrow2228PAYT29System"&gt;a "Pay As You Throw" (PAYT) System&lt;/span&gt;&lt;/h3&gt; 
+Summary:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epa.gov/epawaste/conserve/tools/payt/index.htm"&gt;&amp;#87;hat is PAYT ?&lt;/a&gt;&lt;/span&gt; (&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/PAYT"&gt;&amp;#87;ikipedia&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Trash containers are tagged by LF (or HF) tags&lt;/li&gt;
+&lt;li&gt;Containers are identified by the truck reader then weighted by the truck balance during the collection&lt;/li&gt;
+&lt;li&gt;GPS positions are used to check if containers are in the right area (ie stolen, exchanged, ...)&lt;/li&gt;
+&lt;li&gt;The local authority or municipality send a monthly bill to the users. The bill is rated by the weight of recycled waste and unrecycled waste.&lt;/li&gt;
+&lt;/ul&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;EPC Gen2 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;a balance (Wiifit)&lt;/li&gt;
+&lt;li&gt;a GPS&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaNFCbookreader"&gt;a NFC book reader&lt;/span&gt;&lt;/h3&gt; 
+Summary:
+&lt;ul class="star"&gt;
+&lt;li&gt;books are tagged&lt;/li&gt;
+&lt;li&gt;scanning the tag of a book starts the spelling of the story (audio stream).&lt;/li&gt;
+&lt;li&gt;if the player is stopped, the system keeps in mind the last streamed sentences.&lt;/li&gt;
+&lt;li&gt;target: kids, disable people, elders.&lt;/li&gt;
+&lt;/ul&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;a UPnP Media Server and Renderer&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaNFCSocialRadar"&gt;a NFC Social Radar&lt;/span&gt;&lt;/h3&gt; 
+Summary: Users can be used their NFC phones to touch tags in public places (bar, ...)  to publish presence, mood, &amp;#8230; to friends through their favorite social networks.&lt;p class="paragraph"/&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 tags and NFC phones.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaRFIDlibrary"&gt;a RFID library&lt;/span&gt;&lt;/h3&gt; 
+Summary:&lt;p class="paragraph"/&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 15693 tags and readers&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaPrivateCompanyGasStation"&gt;a Private Company Gas Station&lt;/span&gt;&lt;/h3&gt; 
+Summary:&lt;p class="paragraph"/&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaNFCinspectionsystem"&gt;a NFC inspection system&lt;/span&gt;&lt;/h3&gt; 
+Summary:&lt;p class="paragraph"/&gt;Possible hardware:
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 tags and NFC phones&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaNFCbuildinginfopoint"&gt;a NFC building info point&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSummary"&gt;Summary&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;suppose that you are visiting a large campus and you are lost !&lt;/li&gt;
+&lt;li&gt;entrances fo the buildings are equipped of NFC labels with printed data matrix. The data matrix cantains an url and NFC tag contains NDEF RTD urls linking to maps, phone numbers of the building offices, ...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware"&gt;Possible hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 tags and NFC phones&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaeHealthcaresystem"&gt;a e-Healthcare system&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSummary"&gt;Summary&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware"&gt;Possible hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Readers#HHealthcare"&gt;health sensors&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HacooperativeWeatheralertsystem28flood2Ctornado2C29basedonsocialnetworking"&gt;a cooperative Weather alert system (flood, tornado, ...) based on social networking&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSummary"&gt;Summary&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware3A"&gt;Possible hardware:&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Readers#HEnvironment"&gt;USB weather stations&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HacooperativePollutionalertsystem28undeclaredradioactiveclouds2C29basedonsocialnetworking"&gt;a cooperative Pollution alert system (undeclared radioactive clouds, ...) based on social networking&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSummary"&gt;Summary&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware"&gt;Possible hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;see&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="Hasportcompetitionsystem"&gt;a sport competition system &lt;/span&gt;&lt;/h3&gt; 
+(suggestion of  Didier Donsez and Pierre-Yves Gibello)
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSummary"&gt;Summary&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Race organizers use RFID to manage a large number of racers in massive competitions (marathon, nordic sky, bicycle, ...)&lt;/li&gt;
+&lt;li&gt;RFID simplifies chronometering and avoids cheating.&lt;/li&gt;
+&lt;li&gt;Racers are equipped of RFID tags&lt;/li&gt;
+&lt;li&gt;RFID portals scans (snaphots or videos can be records) the racers several time during the race. The portal can be fixed or mobile (GPS-located).&lt;/li&gt;
+&lt;li&gt;Supporters can follow favorite racers on their (mobile or not) web browser&lt;/li&gt;
+&lt;li&gt;Racers can receive SMS to encourage them&lt;/li&gt;
+&lt;li&gt;Racers can upload afterward their own GPS tracks (Garmin Forerunner or other) and cardiac frequency histories (Polar and Suunto watches), pedometer histories (N95 or iPhone accelerometer can be used to infer the steps), video (recorded during the race for small wearable cameras)  ...&lt;/li&gt;
+&lt;li&gt;Racers can calculate their effort from data&lt;/li&gt;
+&lt;li&gt;Racers can compare a race with previous ones&lt;/li&gt;
+&lt;li&gt;Racers can compare their races with other'ones (mainly champions like Lance Armstrong in the Alpe d'Huez ascent )&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware"&gt;Possible hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 15693 tags and readers&lt;/li&gt;
+&lt;li&gt;GPS, accelerometers (in cell phone), video camera, cardiac frequency watches, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Readers#HSport"&gt;more&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaRFIDbasedmultiplayergame"&gt;a RFID-based multiplayer game&lt;/span&gt;&lt;/h3&gt; 
+(suggestion of  Eric Gressier-Soudan) 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HGoal"&gt;Goal&lt;/span&gt;&lt;/h4&gt; 
+Write a game that uses RFIDs, able to be played by visitors in a museum (no specific type of museum, it is free). Players/visitors must have fun, they not only learn things about art pieces.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMainSpecifications"&gt;Main Specifications&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="minus"&gt;
+&lt;li&gt;A visit is played as a game, the kind of game is part of the contest.&lt;/li&gt;
+&lt;li&gt;The visitors play alone (no team play).&lt;/li&gt;
+&lt;li&gt;Visitors gain points when they give right answers to questions along the game.&lt;/li&gt;
+&lt;li&gt;Visitors can ask for help to a game master but they loose points in this case.&lt;/li&gt;
+&lt;li&gt;The winner is the person with the highest score at the end of the visit/game.&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTechnicalhints"&gt;Technical hints&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="minus"&gt;
+&lt;li&gt;Visitors uses a dedicated device with an NFC reader (PDA or Mobile phone)&lt;/li&gt;
+&lt;li&gt;A mobile network can be considered&lt;/li&gt;
+&lt;li&gt;The OW2 &lt;span class="wikiexternallink"&gt;&lt;a href="http://gasp.objectweb.org"&gt;&amp;#71;ASP suite&lt;/a&gt;&lt;/span&gt; can be used to handle game logic on a server and on clients&lt;/li&gt;
+&lt;li&gt;The game uses read AND write features of tags.&lt;/li&gt;
+&lt;/ul&gt;Solutions to be avoid
+&lt;ul class="minus"&gt;
+&lt;li&gt;PACLAN RFID&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://vr.tu-freiberg.de/viamineralia"&gt;&amp;#86;ia Mineralia&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;These projects can give ideas but shouldn't be reproduced.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVariant"&gt;Variant&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Orienteering"&gt;&amp;#79;rienteering&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/The_Amazing_Race"&gt;&amp;#65;mazing Race&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblehardware"&gt;Possible hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;NFC phones (Nokia 6212 classic, ...), ISO 14443 tags, phone accelerators (Nokia serie S60, iPhone, HTC, ...) for visitor pace counting&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HaRFID2FNFCSushiBar"&gt;a RFID/NFC Sushi Bar&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMotivation"&gt;Motivation&lt;/span&gt;&lt;/h4&gt; 
+(suggestion of  Luvent Gurgen)&lt;p class="paragraph"/&gt;In Japan, RFID is already in the daily life. The recent example is the  traditional conveyor belt sushi-bars (kaiten sushi):
+In a kaiten sushi restaurant, there is a rotating conveyor belt on  which the sushi plates make the tour of all the restaurant. You can  therefore pick up the sushi you desire when it passes in front of you.  You can also order (in Japanese, for sure) your favorite sushi to the  sushi man(s) who is(are) in the middle of the conveyor preparing it  for you. Plates are coloured according to the price of the sushi, so  the bill will be calculated based on the number and the colour of the  sushi plates. At the end of the meal, the waiter comes, counts your  plates and calculates the bill.&lt;p class="paragraph"/&gt;Nowadays, in most of the restaurants each plate has an embedded RFID  tag which contains the price of the sushi it is carrying. This allows  the waiter calculating your bill in one second thanks to a RFID  enabled device (and you pay it with your NFC enabled mobile phone).  Besides, in some restaurants, you can order your favorite sushi via a  monitor in front of each seat (thus no need to speak Japanese), and  your sushi will be being prepared in the kitchen and will be put on  the rotating conveyor. And thanks to the embedded RFID tag, you don't  stress about missing your order, because when your order approaches to  you, you will be notified by an alarm.&lt;p class="paragraph"/&gt;This is the integration of the technology with the traditional life  and Japan do that very well!&lt;p class="paragraph"/&gt;see:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://wireless.engadget.com/2004/03/23/calculating-your-tab-the-rfid-way/"&gt;&amp;#104;ttp://wireless.engadget.com/2004/03/23/calculating-your-tab-the-rfid-way/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.engadget.com/2004/03/25/rfid-sushi-plate-in-action/"&gt;&amp;#104;ttp://www.engadget.com/2004/03/25/rfid-sushi-plate-in-action/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossiblerealization"&gt;Possible realization&lt;/span&gt;&lt;/h4&gt; 
+This application could reuse the 2 demos
+&lt;ul class="star"&gt;
+&lt;li&gt;the Lego train to transport the sushi and what is added and removed&lt;/li&gt;
+&lt;li&gt;the NFC picking demo&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVariants"&gt;Variants&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;NFC &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Tamale"&gt;&amp;#84;amales&lt;/a&gt;&lt;/span&gt; Bar&lt;/li&gt;
+&lt;li&gt;NFC Tapas Bar&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossibleHardware"&gt;Possible Hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers (and NFC phones)&lt;/li&gt;
+&lt;li&gt;a Lego duplo train for the plate conveyor&lt;/li&gt;
+&lt;li&gt;some plates&lt;/li&gt;
+&lt;li&gt;some plastic sushi (used for presentation in japanese restaurants)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HNFCSommelier"&gt;NFC Sommelier&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMotivation"&gt;Motivation&lt;/span&gt;&lt;/h4&gt; 
+For professional or personal wine cellar
+&lt;ul class="star"&gt;
+&lt;li&gt;manage the stock of bottles (inventory, ...)&lt;/li&gt;
+&lt;li&gt;alert on temperature and hygrometry thresholds&lt;/li&gt;
+&lt;li&gt;alert the owner when bottles must be consumed&lt;/li&gt;
+&lt;li&gt;provide expert advice&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPossibleHardware"&gt;Possible Hardware&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ISO 14443 or ISO 15693 tags and readers (and NFC phones)&lt;/li&gt;
+&lt;li&gt;a temperature sensor, a hygrometry sensor or a weather station (for the wine cellar temperature and hygrometry)&lt;/li&gt;
+&lt;/ul&gt;Remark: some wine bottle cork include a RFID inlays (tracability, counterfeit, ...) : &lt;span class="nobr"&gt;&lt;a href="http://www.rfidjournal.com/article/articleview/2117/1/1/"&gt;&amp;#104;ttp://www.rfidjournal.com/article/articleview/2117/1/1/&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HOthers"&gt;Others&lt;/span&gt;&lt;/h3&gt; 
+You may have ideas also &amp;#8230;
+&lt;ul class="star"&gt;
+&lt;li&gt;GPS tracks importer (&lt;span class="nobr"&gt;&lt;a href="http://www.gpsbabel.org/capabilities.html"&gt;&amp;#104;ttp://www.gpsbabel.org/capabilities.html&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

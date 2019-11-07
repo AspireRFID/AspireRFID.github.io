@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>WhatIsAWiki</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Presentations</parent>
+<creator></creator>
+<author>XWiki.superadmin</author>
+<contentAuthor></contentAuthor>
+<creationDate>1107712021000</creationDate>
+<date>1117547449000</date>
+<contentUpdateDate>1427132207926</contentUpdateDate>
+<version>1.3</version>
+<title></title>
+<template></template>
+<object>
+<class>
+<name>XWiki.PresentationClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<logo>
+<name>logo</name>
+<prettyName>logo</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</logo>
+<header>
+<name>header</name>
+<prettyName>header</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>10</rows>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</header>
+<footer>
+<name>footer</name>
+<prettyName>footer</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>10</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</footer>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>0</number>
+<className>XWiki.PresentationClass</className>
+<property>
+<footer>What is a Wiki - http://www.xwiki.com &lt;a href="$doc.getURL("inline")"&gt;&lt;img src="$xwiki.getSkinFile("editPage.gif")" border="0" alt="Edit Presentation" /&gt;&lt;/a&gt;
+&lt;br /&gt;Paris - Dec 11th, 2004
+</footer>
+</property>
+<property>
+<header></header>
+</property>
+<property>
+<logo>logo.gif</logo>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>0</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* and what to do with it and XWiki !
+* demonstration of S5 by the XWiki Team</content>
+</property>
+<property>
+<number>1</number>
+</property>
+<property>
+<title>What is a Wiki</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>1</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* Definition
+** "A Wiki or wiki (pronounced "wicky" or "veekee") is a website (or other hypertext document collection) that allows a user to add content, as on an Internet forum, but also allows that content to be edited by anybody. (Wikipedia)
+** "Wiki Wiki" means "fast" in hawaiian 
+** [Ward Cunningham&gt;http://c2.com/cgi/wiki?WardCunningham] created the wiki concept in 1995. 
+* Main features
+** edit, add your content, save =&gt; Your content is online
+** hyperlinks between Wiki pages and automatic creation management of a new page
+** integrated search engine
+** "what's new" list of recent modified pages (like a forum)
+** automatic versioning and history of the modifications of each page
+</content>
+</property>
+<property>
+<number>2</number>
+</property>
+<property>
+<title>What is a Wiki ?</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>2</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* Word files and emails didn't change sharing
+* "The network is the computer" said Scott McNealy
+* Wikis are considered the tool providing the "most" collaboration
+* It lightens the load on your mailbox and its low cost.
+* The challenge is the Change Management related to users working with a tool that is based on another philosophy than the traditional "File based systems".
+</content>
+</property>
+<property>
+<number>3</number>
+</property>
+<property>
+<title>Why a new concept ?</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>3</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* Creation and maintenance of an FAQ
+* Knowledge Management
+* Event organization
+* Individual &amp; collective brainstorming
+* Off line community management
+* Collective Artistic creation
+* Teaching Tool
+* Corporate projects (Extranets, Intranets, Workflows) 
+</content>
+</property>
+<property>
+<number>4</number>
+</property>
+<property>
+<title>What can a Wiki do for you ?</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>4</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* Available as a hosted service or as software
+* XWiki is open-source (GPL)
+* Build on a proven J2EE platform
+* Relational Database storage
+* An engine and interface for constructing meta data and forms for logical structured data
+* Integrated support for programming languages 
+* Support for multiple languages</content>
+</property>
+<property>
+<number>5</number>
+</property>
+<property>
+<title>Why is XWiki the best choice ?</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.SlideClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<number>
+<name>number</name>
+<prettyName>number</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>integer</numberType>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</number>
+<content>
+<name>content</name>
+<prettyName>content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<comment>
+<name>comment</name>
+<prettyName>comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+</class>
+<name>Main.WhatIsAWiki</name>
+<number>5</number>
+<className>XWiki.SlideClass</className>
+<property>
+<comment></comment>
+</property>
+<property>
+<content>* This slide is here for you to edit.. Add whatever you want</content>
+</property>
+<property>
+<number>6</number>
+</property>
+<property>
+<title>New Slide</title>
+</property>
+</object>
+<content>#if($request.xpage=="s5b")
+#includeForm("XWiki.PresentationClassS5Sheet")
+#else
+#if($context.action=="inline")
+#includeForm("XWiki.PresentationClassEditSheet")
+#else
+#includeForm("XWiki.PresentationClassSheet")
+#end
+#end</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HPresentation"&gt;Presentation&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/WhatIsAWiki?xpage=s5b"&gt;Start the Presentation&lt;/a&gt;&lt;/span&gt; (click F11 to go full screen).&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/objectadd/Main/WhatIsAWiki?classname=XWiki.SlideClass&amp;xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WhatIsAWiki?xpage=xml&amp;#aspire"&gt;Add a slide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/edit/Main/WhatIsAWiki?xpage=editobject#aspire"&gt;Edit/Remove slides&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HPresentationTemplate"&gt;Presentation Template&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Logo: logo.gif&lt;p class="paragraph"/&gt;
+Header:&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;Footer:&lt;p class="paragraph"/&gt;What is a Wiki - &lt;span class="nobr"&gt;&lt;a href="http://www.xwiki.com"&gt;&amp;#104;ttp://www.xwiki.com&lt;/a&gt;&lt;/span&gt; &lt;a href="/xwiki/bin/inline/Main/WhatIsAWiki"&gt;&lt;img src="/xwiki/skins/default/editPage.gif" border="0" alt="Edit Presentation" /&gt;&lt;/a&gt;
+&lt;br /&gt;Paris - Dec 11th, 2004
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide1"&gt;Slide 1&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: What is a Wiki&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;and what to do with it and XWiki !&lt;/li&gt;
+&lt;li&gt;demonstration of S5 by the XWiki Team&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide2"&gt;Slide 2&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: What is a Wiki ?&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Definition&lt;ul class="star"&gt;
+&lt;li&gt;"A Wiki or wiki (pronounced "wicky" or "veekee") is a website (or other hypertext document collection) that allows a user to add content, as on an Internet forum, but also allows that content to be edited by anybody. (Wikipedia)&lt;/li&gt;
+&lt;li&gt;"Wiki Wiki" means "fast" in hawaiian&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://c2.com/cgi/wiki?WardCunningham"&gt;&amp;#87;ard Cunningham&lt;/a&gt;&lt;/span&gt; created the wiki concept in 1995.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Main features&lt;ul class="star"&gt;
+&lt;li&gt;edit, add your content, save =&gt; Your content is online&lt;/li&gt;
+&lt;li&gt;hyperlinks between Wiki pages and automatic creation management of a new page&lt;/li&gt;
+&lt;li&gt;integrated search engine&lt;/li&gt;
+&lt;li&gt;"what's new" list of recent modified pages (like a forum)&lt;/li&gt;
+&lt;li&gt;automatic versioning and history of the modifications of each page&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide3"&gt;Slide 3&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: Why a new concept ?&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Word files and emails didn't change sharing&lt;/li&gt;
+&lt;li&gt;"The network is the computer" said Scott McNealy&lt;/li&gt;
+&lt;li&gt;Wikis are considered the tool providing the "most" collaboration&lt;/li&gt;
+&lt;li&gt;It lightens the load on your mailbox and its low cost.&lt;/li&gt;
+&lt;li&gt;The challenge is the Change Management related to users working with a tool that is based on another philosophy than the traditional "File based systems".&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide4"&gt;Slide 4&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: What can a Wiki do for you ?&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Creation and maintenance of an FAQ&lt;/li&gt;
+&lt;li&gt;Knowledge Management&lt;/li&gt;
+&lt;li&gt;Event organization&lt;/li&gt;
+&lt;li&gt;Individual &amp; collective brainstorming&lt;/li&gt;
+&lt;li&gt;Off line community management&lt;/li&gt;
+&lt;li&gt;Collective Artistic creation&lt;/li&gt;
+&lt;li&gt;Teaching Tool&lt;/li&gt;
+&lt;li&gt;Corporate projects (Extranets, Intranets, Workflows)&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide5"&gt;Slide 5&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: Why is XWiki the best choice ?&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Available as a hosted service or as software&lt;/li&gt;
+&lt;li&gt;XWiki is open-source (GPL)&lt;/li&gt;
+&lt;li&gt;Build on a proven J2EE platform&lt;/li&gt;
+&lt;li&gt;Relational Database storage&lt;/li&gt;
+&lt;li&gt;An engine and interface for constructing meta data and forms for logical structured data&lt;/li&gt;
+&lt;li&gt;Integrated support for programming languages&lt;/li&gt;
+&lt;li&gt;Support for multiple languages&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSlide6"&gt;Slide 6&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Title: New Slide&lt;p class="paragraph"/&gt;Content:&lt;p class="paragraph"/&gt;&lt;ul class="star"&gt;
+&lt;li&gt;This slide is here for you to edit.. Add whatever you want&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;
+Comment (not shown in the presentation):&lt;p class="paragraph"/&gt;
+
+</renderedcontent>
+</xwikidoc>

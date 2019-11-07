@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+wiki.aspire.ow2.org	TRUE	/xwiki	FALSE	1999999999	JSESSIONID	AF97E14B391611F03E79AC87945DD56E
+www.openhub.net	TRUE	/	FALSE	1999999999	uid	rB0lMlUQR1lo7wZYBmV7Ag==
+www.ow2.org	TRUE	/	FALSE	1999999999	JSESSIONID	E1C5605B905CD4BF1B2587F627C4F860
+.licensebuttons.net	TRUE	/	FALSE	1999999999	__cfduid	d499a91190a2dcbba2cf03eb0ea3614f91427130253
+www.openhub.net	TRUE	/	FALSE	1999999999	_ohloh_session	BAh7BjoPc2Vzc2lvbl9pZEkiJTYwMmVlZjA4MjYxZWY5YjcxYWRlMjU4ZjU3OTZiMDgwBjoGRUY%3D--3b6c33e3f1fa1b352f2ca2e9c41422be34b6c473
+

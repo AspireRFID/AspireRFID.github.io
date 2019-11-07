@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>EmbeddedTools</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Filtering</parent>
+<creator>xwiki:XWiki.reckeyzhang</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1275652197000</creationDate>
+<date>1275656237000</date>
+<contentUpdateDate>1275656237000</contentUpdateDate>
+<version>1.6</version>
+<title>Embedded Tools</title>
+<template></template>
+<content>1 Embedded Tools
+
+This section is dedicated to describe two embedded tools developed by the POPS team, Inria-Lille:
+* [Tag Generator&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagGenerator]: generate tag ids in hexadecimal format in order to validate the EPC grouping and filtering engines of the ALE.
+* [Tag Searcher&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagSearcher]: based on searching algorithm and is used to look for an item in the neighborhood by the beep frequency of the PDA.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HEmbeddedTools"&gt;Embedded Tools&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;This section is dedicated to describe two embedded tools developed by the POPS team, Inria-Lille:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagGenerator"&gt;&amp;#84;ag Generator&lt;/a&gt;&lt;/span&gt;: generate tag ids in hexadecimal format in order to validate the EPC grouping and filtering engines of the ALE.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagSearcher"&gt;&amp;#84;ag Searcher&lt;/a&gt;&lt;/span&gt;: based on searching algorithm and is used to look for an item in the neighborhood by the beep frequency of the PDA.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

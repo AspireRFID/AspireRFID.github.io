@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>FAQs</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.schmidt</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1259314089000</creationDate>
+<date>1273738356000</date>
+<contentUpdateDate>1273738356000</contentUpdateDate>
+<version>1.5</version>
+<title>Frequently Asked Questions</title>
+<template></template>
+<content>1 Frequently Asked Questions
+
+Under construction 
+
+----
+#toc("" "" "true")
+----
+
+1.1 How can I create an account for accessing the AspireRFID forge ?
+
+You don't need an account for downloading AspireRFID. Nevertheless, if you wish to contribute, you can create an account on the OW2 forge by filling the form available [here&gt;http://forge.ow2.org/account/register.php]. An email will be sent to you to validate your subscription. 
+Once you confirm and your account is created, you can contribute to the AspireRFID project by posting bugs, requests, etc... If you would like to contribute to this project by becoming a developer, contact one of the project admins, designated in bold in the [Member List&gt;http://forge.ow2.org/project/memberlist.php?group_id=324].
+
+1.1 How can I install and configure AspireRFID ?
+
+Components of the AspireRFID middleware are independent. Each one can be used separately. Information about installation and configuration are available in the user guides provided for each part of the AspireRFID middleware. These user guides are accessible from the documentation menu on the right of the wiki [Documentation&gt;Main.Documentation] page.
+
+1.1 What should I do if I detect a bug ?
+
+In such a case, please use the tracker provided by the OW2 forge for the AspireRFID project and submit a new bug report or directly contact administrators.
+
+1.1 How can I be informed about new releases of the AspireRFID middleware ?
+
+Using the wiki, you can subscribe to 3 mailing lists. One general mailing and two technical. You can find more information and subscribe to the mailing lists [here&gt;Community.Lists].
+
+1.1 Can legally exploit AspireRFID for commercial purposes?
+
+AspireRFID middleware is under the followings licences.
+* License used by AspireRFID sources is the LGPL v2.1
+* License used by AspireRFID documentation is the Creative Commons Share Alike (by-sa)
+This means that AspireRFID (parts or a whole) can be incorporated into a proprietary program.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HFrequentlyAskedQuestions"&gt;Frequently Asked Questions&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;Under construction&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHowcanIcreateanaccountforaccessingtheAspireRFIDforge3F"&gt;1 How can I create an account for accessing the AspireRFID forge ?&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowcanIinstallandconfigureAspireRFID3F"&gt;2 How can I install and configure AspireRFID ?&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWhatshouldIdoifIdetectabug3F"&gt;3 What should I do if I detect a bug ?&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowcanIbeinformedaboutnewreleasesoftheAspireRFIDmiddleware3F"&gt;4 How can I be informed about new releases of the AspireRFID middleware ?&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HCanlegallyexploitAspireRFIDforcommercialpurposes3F"&gt;5 Can legally exploit AspireRFID for commercial purposes?&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HHowcanIcreateanaccountforaccessingtheAspireRFIDforge3F"&gt;How can I create an account for accessing the AspireRFID forge ?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;You don't need an account for downloading AspireRFID. Nevertheless, if you wish to contribute, you can create an account on the OW2 forge by filling the form available &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/account/register.php"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. An email will be sent to you to validate your subscription. 
+Once you confirm and your account is created, you can contribute to the AspireRFID project by posting bugs, requests, etc&amp;#8230; If you would like to contribute to this project by becoming a developer, contact one of the project admins, designated in bold in the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/memberlist.php?group_id=324"&gt;&amp;#77;ember List&lt;/a&gt;&lt;/span&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HHowcanIinstallandconfigureAspireRFID3F"&gt;How can I install and configure AspireRFID ?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Components of the AspireRFID middleware are independent. Each one can be used separately. Information about installation and configuration are available in the user guides provided for each part of the AspireRFID middleware. These user guides are accessible from the documentation menu on the right of the wiki &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Documentation"&gt;Documentation&lt;/a&gt;&lt;/span&gt; page.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWhatshouldIdoifIdetectabug3F"&gt;What should I do if I detect a bug ?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In such a case, please use the tracker provided by the OW2 forge for the AspireRFID project and submit a new bug report or directly contact administrators.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HHowcanIbeinformedaboutnewreleasesoftheAspireRFIDmiddleware3F"&gt;How can I be informed about new releases of the AspireRFID middleware ?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Using the wiki, you can subscribe to 3 mailing lists. One general mailing and two technical. You can find more information and subscribe to the mailing lists &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Community/Lists"&gt;here&lt;/a&gt;&lt;/span&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HCanlegallyexploitAspireRFIDforcommercialpurposes3F"&gt;Can legally exploit AspireRFID for commercial purposes?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;AspireRFID middleware is under the followings licences.
+&lt;ul class="star"&gt;
+&lt;li&gt;License used by AspireRFID sources is the LGPL v2.1&lt;/li&gt;
+&lt;li&gt;License used by AspireRFID documentation is the Creative Commons Share Alike (by-sa)&lt;/li&gt;
+&lt;/ul&gt;This means that AspireRFID (parts or a whole) can be incorporated into a proprietary program.
+</renderedcontent>
+</xwikidoc>

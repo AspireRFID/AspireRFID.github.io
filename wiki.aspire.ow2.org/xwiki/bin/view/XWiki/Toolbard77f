@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>Toolbar</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator></creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1107712020000</creationDate>
+<date>1379926732000</date>
+<contentUpdateDate>1379926732000</contentUpdateDate>
+<version>1.203</version>
+<title>XWiki Toolbar</title>
+<template></template>
+<attachment>
+<filename>javarss_img_80.png</filename>
+<filesize>27655</filesize>
+<author>XWiki.Admin</author>
+<date>1128350850000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>news.gif</filename>
+<filesize>1036</filesize>
+<author>XWiki.Admin</author>
+<date>1128351005000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>top.gif</filename>
+<filesize>1117</filesize>
+<author>XWiki.Admin</author>
+<date>1128351020000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>coming.gif</filename>
+<filesize>1017</filesize>
+<author>XWiki.Admin</author>
+<date>1128351026000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>latest.gif</filename>
+<filesize>1152</filesize>
+<author>XWiki.Admin</author>
+<date>1128351541000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AspireRFID@OW2(197x91).JPG</filename>
+<filesize>23255</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1242301585000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>#set($hasedit = $xwiki.hasAccessLevel("edit"))
+
+#if ($hasedit)
+&lt;div style="clear: both; width: 100%; margin-left: auto; margin-right: auto; padding-top: 10px; text-align: left;"&gt;
+#set($tooldoc = $xwiki.getDocument("XWiki.Toolbar"))
+&lt;a href="$tooldoc.getURL("edit")"&gt;&lt;img src="$xwiki.getSkinFile("editPage.gif")" border="0" alt="Edit Toolbar" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+#end
+
+&lt;center&gt;
+1.1.1 Search
+&lt;/center&gt;
+&lt;center&gt;
+&lt;form action="WebSearch"&gt;
+&lt;input type="text" name="text" value="$!text" size=15&gt;&amp;nbsp;&lt;input type="submit" name="search" value="Search" size=15&gt;
+&lt;/form&gt;
+&lt;/center&gt;
+
+#if($doc.getFullName() == ("Main.WebHome"))
+----
+&lt;center&gt;
+1.1.1 Take a [Survey&gt;http://www.surveymonkey.com/s/B72LYP5]
+&lt;/center&gt;
+#end
+
+
+#if($doc.getFullName() == ("Main.WebHome"))
+&lt;center&gt;
+1.1.1 Recent News
+&lt;/center&gt;
+
+&lt;a href="http://www.ow2.org/view/Events2009AnnualConference/"&gt;
+&lt;img src="http://www.ow2.org/xwiki/bin/download/Events2009AnnualConference/HelpToPromote/annual%2Dconference%2Dtransparent%2Dsmall.png" width="156" height="77" border="0" alt="OW2 Annual Conference" title="OW2 Annual Conference" /&gt;
+&lt;/a&gt;
+
+&lt;div class="xwikimenulinks"&gt;
+#set($nbstart = $request.nbstart)
+#set($category = "")
+#set($nbitems = "3")
+#includeMacros("Blog.RecentNewsMacros")
+[Archives&gt;Main.News]
+&lt;a href="$!xwiki.getURL("Main.BlogRss", "view", "xpage=rdf")"&gt;&lt;img src="$xwiki.getSkinFile("rss.gif")" border="0" alt="ObjectWebCon'06 News RSS" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+#end
+
+
+
+#if(0==1)
+&lt;center&gt;
+1.1.1 Referers
+&lt;/center&gt;
+&lt;div id="xwikireferermenulinks" class="xwikimenulinks"&gt;
+#set($refstats = $doc.getCurrentMonthRefStats())
+#foreach($i in [0..5])
+#if($i &lt; $refstats.size())
+#set($refstat = $refstats.get($i))
+&lt;a href="$refstat.referer" alt="$xwiki.getRefererText($refstat.referer)"&gt; $xwiki.getShortRefererText($refstat.referer,10)... ($refstat.pageViews)&lt;/a&gt;&lt;span class="xwikisep"&gt; | &lt;/span&gt;
+#end
+#end
+&lt;/div&gt;
+#end
+
+
+#if($doc.getFullName() == ("Main.Documentation") || $doc.getFullName() == ("Main.Documentation.AspireRfidArchitecture") || $doc.getFullName() == ("Main.Documentation.TDT") || $doc.getFullName() == ("Main.Documentation.HAL") || $doc.getFullName() == ("Main.Documentation.ReaderCoreProxy") || $doc.getFullName() == ("Main.Documentation.Filtering&amp;Collection") || $doc.getFullName() == ("Main.Documentation.AspireIDE.PhysicalReaderConfiguration") || $doc.getFullName() == ("Main.Documentation.AspireIDE") || $doc.getFullName() == ("Main.Documentation.Connector") || $doc.getFullName() == ("Main.Documentation.EpcisRepository") || $doc.getFullName() == ("Main.Documentation.BEG") || $doc.getFullName() == ("Main.Documentation.AspireIDE.AleServerConfigurator") || $doc.getFullName() == ("Main.Documentation.AspireIDE.ECSpecEditor") || $doc.getFullName() == ("Main.Documentation.AspireIDE.AspireRfidIdeCore") || $doc.getFullName() == ("Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in") || $doc.getFullName() == ("Main.Documentation.AspireIDE.LRSpecEditor") || $doc.getFullName() == ("Main.Documentation.AspireIDE.MasterDataEditor") || $doc.getFullName() == ("Main.Documentation.AspireIDE.TcpMessageCapturer") || $doc.getFullName() == ("Main.Documentation.StandaloneTestingTools") || $doc.getFullName() == ("Main.Documentation.Deliverables") || $doc.getFullName() == ("Main.Documentation.Demos") || $doc.getFullName() == ("Main.Documentation.APDL") || $doc.getFullName() == ("Main.Documentation.APE")|| $doc.getFullName() == ("Main.Documentation.ALEonOSGi") || $doc.getFullName() == ("Main.Services") || $doc.getFullName() == ("Main.Glossary") || $doc.getFullName() == ("Main.Readers") || $doc.getFullName() == ("Main.References") || $doc.getFullName() == ("Main.Documentation.AspireIDE.BPWMEditor") || $doc.getFullName() == ("Main.Documentation.AspireIDE.ProgrammableEngineConfig") || $doc.getFullName() == ("Main.Documentation.Filtering&amp;Collection.EmbededALE")|| $doc.getFullName() == ("Main.Documentation.Filtering&amp;Collection.ExtendedTDTALE")|| $doc.getFullName() == ("Main.Documentation.LightRP")|| $doc.getFullName() == ("Main.Documentation.EmbeddedTools")|| $doc.getFullName() == ("Main.Documentation.EmbeddedTools.TagGenerator")|| $doc.getFullName() == ("Main.Documentation.EmbeddedTools.TagSearcher")|| $doc.getFullName() == ("Main.Documentation.AspireIDE.RFIDBusinessLocationGMFEditor") || $doc.getFullName() == ("Main.Documentation.E2EMngmt-ALEServer-JMX") || $doc.getFullName() == ("Main.Documentation.Bundles.BluetoothServer") || $doc.getFullName() == ("Main.Documentation.Bundles") || $doc.getFullName() == ("Main.Documentation.ONS")|| $doc.getFullName() == ("Main.Documentation.Bundles.NMEAGPS") || $doc.getFullName() == ("Main.Documentation.Bundles.RXTX") || $doc.getFullName() == ("Main.Documentation.Filtering&amp;Collection.LightALECC") || $doc.getFullName() == ("Main.Documentation.Filtering&amp;Collection.NFCLightALE")) 
+
+&lt;div style="width: 145px"&gt;
+&lt;br/&gt;
+&lt;center&gt;
+1.1.1 Documentation 
+&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class="leftOW" style="width: 160px"&gt;
+* [AspireRFID Architecture&gt;Main.Documentation.AspireRfidArchitecture]
+* [Tag Data Translation&gt;Main.Documentation.TDT]
+* [Hardware Abstraction Layer&gt;Main.Documentation.HAL]
+* Reader Proxies
+** [Reader Core&gt;Main.Documentation.ReaderCoreProxy]
+** [Embedded light RP&gt;Main.Documentation.LightRP]
+* [F&amp;amp;C Server (ALE)&gt;Main.Documentation.Filtering&amp;Collection]
+** [Extended TDT ALE&gt;Main.Documentation.Filtering&amp;Collection.ExtendedTDTALE]
+** [Deploy F&amp;amp;C on OSGi&gt;Main.Documentation.ALEonOSGi]
+** [Embedded ALE&gt;Main.Documentation.Filtering&amp;Collection.EmbededALE]
+** [Light ALECC&gt;Main.Documentation.Filtering&amp;Collection.LightALECC]
+** [NFC Light ALE&gt;Main.Documentation.Filtering&amp;Collection.NFCLightALE]
+** [LLRP toolkit library (updated according to LLRP 1.1)&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.1)]
+* [Business Event Generator&gt;Main.Documentation.BEG]
+* [EPCIS Repository&gt;Main.Documentation.EpcisRepository]
+* [Object Name Service&gt;Main.Documentation.ONS]
+* [Connector&gt;Main.Documentation.Connector]
+* [Programmable Engine&gt;Main.Documentation.APE]
+* [APDL&gt;Main.Documentation.APDL]
+* [AspireRfid IDE&gt;Main.Documentation.AspireIDE]
+** [AspireRfidIDE Core&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]
+** [ALE Server Configurator&gt;Main.Documentation.AspireIDE.AleServerConfigurator]
+** [BEG&gt;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in]
+** [Physical Reader Configurator&gt;Main.Documentation.AspireIDE.PhysicalReaderConfiguration]
+** [EC-Spec Editor&gt;Main.Documentation.AspireIDE.ECSpecEditor]
+** [LR-Spec Editor&gt;Main.Documentation.AspireIDE.LRSpecEditor]
+** [Master Data Editor&gt;Main.Documentation.AspireIDE.MasterDataEditor]
+** [Business Loc. GMF Editor&gt;Main.Documentation.AspireIDE.RFIDBusinessLocationGMFEditor]
+** [TCP Message Capturer&gt;Main.Documentation.AspireIDE.TcpMessageCapturer]
+** [BPWM Editor&gt;Main.Documentation.AspireIDE.BPWMEditor]
+** [Prog. Engine Configurator&gt;Main.Documentation.AspireIDE.ProgrammableEngineConfig]
+** Connector Configurator
+** Privacy Framework Tool
+* [OSGi Bundles&gt;Main.Documentation.Bundles]
+* [Standalone Testing Tools&gt;Main.Documentation.StandaloneTestingTools]
+** [Tag Generator&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagGenerator]
+** [Tag Searcher&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagSearcher]
+** [TCP Message Capturer&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/StandaloneTestingTools#HTCPCapturer]
+* [Deliverables&gt;Main.Documentation.Deliverables]
+* [Best Practices&gt;Main.Documentation.BestPractices]
+* [Glossary&gt;Main.Glossary]
+* [Demos&gt;Main.Documentation.Demos]
+&lt;/div&gt;
+----
+
+#end
+
+
+
+#if($doc.getFullName() == ("Main.Documentation.BusinessIntelligenceTool"))
+
+
+&lt;div style="width: 145px"&gt;
+&lt;br/&gt;
+&lt;center&gt;
+1.1.1 Documentation temp
+&lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class="leftOW" style="width: 160px"&gt;
+* [AspireRFID Architecture&gt;Main.Documentation.AspireRfidArchitecture]
+* [Tag Data Translation&gt;Main.Documentation.TDT]
+* [Hardware Abstraction Layer&gt;Main.Documentation.HAL]
+* [Reader Core Proxy&gt;Main.Documentation.ReaderCoreProxy]
+* [Embedded light RP&gt;Main.Documentation.LightRP]
+* [F&amp;amp;C Server (ALE)&gt;Main.Documentation.Filtering&amp;Collection]
+** [Deploy F&amp;amp;C on OSGi&gt;Main.Documentation.ALEonOSGi]
+** [Embedded ALE&gt;Main.Documentation.Filtering&amp;Collection.EmbededALE]
+** [Aspire Extended TDT ALE&gt;Main.Documentation.Filtering&amp;Collection.ExtendedTDTALE]
+* [Business Event Generator&gt;Main.Documentation.BEG]
+* [EPCIS Repository&gt;Main.Documentation.EpcisRepository]
+* [Connector&gt;Main.Documentation.Connector]
+* [Programmable Engine&gt;Main.Documentation.APE]
+* [APDL&gt;Main.Documentation.APDL]
+* [AspireRfid IDE&gt;Main.Documentation.AspireIDE]
+** [AspireRfidIDE Core&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]
+** [ALE Server Configurator&gt;Main.Documentation.AspireIDE.AleServerConfigurator]
+** [BEG&gt;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in]
+** [Physical Reader Configurator&gt;Main.Documentation.AspireIDE.PhysicalReaderConfiguration]
+** [EC-Spec Editor&gt;Main.Documentation.AspireIDE.ECSpecEditor]
+** [LR-Spec Editor&gt;Main.Documentation.AspireIDE.LRSpecEditor]
+** [Master Data Editor&gt;Main.Documentation.AspireIDE.MasterDataEditor]
+** [Business Loc. GMF Editor&gt;Main.Documentation.AspireIDE.RFIDBusinessLocationGMFEditor]
+** [TCP Message Capturer&gt;Main.Documentation.AspireIDE.TcpMessageCapturer]
+** [BPWM Editor&gt;Main.Documentation.AspireIDE.BPWMEditor]
+** [Prog. Engine Configurator&gt;Main.Documentation.AspireIDE.ProgrammableEngineConfig]
+** Connector Configurator
+** Privacy Framework Tool
+* [AspireRFID BI&gt;Main.Documentation.BusinessIntelligenceTool]
+* [Standalone Testing Tools&gt;Main.Documentation.StandaloneTestingTools]
+* [Embedded tools&gt;Main.Documentation.EmbeddedTools]
+** [Tag Generator&gt;Main.Documentation.EmbeddedTools.TagGenerator]
+** [Tag Searcher&gt;Main.Documentation.EmbeddedTools.TagSearcher]
+* [Deliverables&gt;Main.Documentation.Deliverables]
+* [Glossary&gt;Main.Glossary]
+&lt;/div&gt;
+----
+
+#end
+
+
+
+
+
+
+
+
+
+
+
+
+#if($hasadmin)
+&lt;center&gt;
+&lt;div style="width: 160px"&gt;
+&lt;br/&gt;
+1.1.1 Merge/Dev. Roadmap 
+&lt;/div&gt;
+&lt;/center&gt;
+&lt;div class="leftOW" style="width: 160px"&gt;
+* [Provided By AIT Br.&gt;Main.Documentation.Merge.ProvidedByAitBranch]
+* [Provided By UJF Br.&gt;Main.Documentation.Merge.ProvidedByUjfBranch]
+* [Common Program. Pract.&gt;Main.Documentation.Merge.CommonProgrammingPractices]
+* [Main (Trunk)&gt;Main.Documentation.Merge.Trunk]
+* [AspireRFID Specs Impl.Status&gt;Main.Documentation.AspireRfidSpecsImplStatus]
+* [Merge/Development Roadmap&gt;Main.Documentation.RoadmapForTheMerge]
+
+&lt;/div&gt;
+----
+
+#end
+
+#if($doc.getFullName() == ("Main.WebHome"))
+&lt;center&gt;
+&lt;div style="width: 160px"&gt;
+&lt;br/&gt;
+1.1.1 Open Source
+&lt;/div&gt;
+
+&lt;a href="http://forge.ow2.org/projects/aspire"&gt;{image:AspireRFID@OW2(197x91).JPG|60}&lt;/a&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_thin_badge.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_users.js?style=rainbow"&gt;&lt;/script&gt;
+&lt;br/&gt;
+&lt;/center&gt;
+----
+
+#end
+
+
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+#if($doc.getFullName() == ("Main.WebHome"))
+
+&lt;a href="http://ipligence.com"&gt;&lt;img src="http://www.ipligence.com/freetools/iplocation/b2/" alt="geolocation database" /&gt;&lt;/a&gt;
+#end</content>
+<renderedcontent>&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSearch"&gt;Search&lt;/span&gt;&lt;/h4&gt; 
+&lt;/center&gt;
+&lt;center&gt;
+&lt;form action="WebSearch"&gt;
+&lt;input type="text" name="text" value="" size=15&gt;&amp;nbsp;&lt;input type="submit" name="search" value="Search" size=15&gt;
+&lt;/form&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

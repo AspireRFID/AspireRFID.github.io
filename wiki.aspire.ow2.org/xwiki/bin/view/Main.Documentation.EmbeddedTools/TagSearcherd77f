@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.EmbeddedTools</web>
+<name>TagSearcher</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.EmbeddedTools.TagGenerator</parent>
+<creator>xwiki:XWiki.reckeyzhang</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1275654700000</creationDate>
+<date>1276203200000</date>
+<contentUpdateDate>1276203200000</contentUpdateDate>
+<version>1.10</version>
+<title>Tag Searcher</title>
+<template></template>
+<attachment>
+<filename>TagSearcher.png</filename>
+<filesize>18771</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1275655209000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>TagSearcher.zip</filename>
+<filesize>311802</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1275656042000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Tag Searcher
+
+#toc("" "" "true")
+
+1.1 Introduction
+This section describes an embedded tool: Tag Searcher, which is developed by the POPS team, Inria-Lille.
+
+The objective is to use the PDA to look for an item in a given neighborhood. The user would be notified of item proximity via the change of the beep frequency. 
+
+Tag Searcher is composed of three main modules:
+* The Reader interface is an abstraction of the required services for searching for a tag at a given RF power. The wrappers for CAEN and Intermec readers are straightforward.
+
+* The Ticker class represents a periodic thread that beeps periodically using the standard java call java.awt.Toolkit.getDefaultToolkit.beep(). The ticker's period is synchronized inside the PeriodSemaphore class.
+
+* The Scanner class is able to scan for a tag ID and update the Ticker period according to the RF power at which the tag was observed : observation at a small RF power leads to a small tick period, and vice versa.
+
+After testing on both PDAs (i.e. Psion, Intermec), a standalone application with an IHM was developed. It is able to retrieve a list (from a local file or an URL) so that the user choose the item to search for.
+
+1.1 Users &amp; Developers Guide
+
+The executable jar file can be found under the repository TagSearcher/dist.
+All the source can be found under the repository TagSearcher/src.
+
+Before launching the application, you have configure in *TagSearcher/Config.txt* to choose Reader name (Simulation mode , Caen or Intermec reader) as well as the items that you want to search.
+
+Here is the graphical user interface of the Standalone Tag Searcher Application.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.EmbeddedTools/TagSearcher/TagSearcher.png"&gt;{image:TagSearcher|400}&lt;/a&gt;
+&lt;/center&gt;
+
+The executable jar file and source can be found [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15238].
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HTagSearcher"&gt;Tag Searcher&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsers26DevelopersGuide"&gt;2 Users &amp; Developers Guide&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt; 
+This section describes an embedded tool: Tag Searcher, which is developed by the POPS team, Inria-Lille.&lt;p class="paragraph"/&gt;The objective is to use the PDA to look for an item in a given neighborhood. The user would be notified of item proximity via the change of the beep frequency.&lt;p class="paragraph"/&gt;Tag Searcher is composed of three main modules:
+&lt;ul class="star"&gt;
+&lt;li&gt;The Reader interface is an abstraction of the required services for searching for a tag at a given RF power. The wrappers for CAEN and Intermec readers are straightforward.&lt;/li&gt;
+&lt;li&gt;The Ticker class represents a periodic thread that beeps periodically using the standard java call java.awt.Toolkit.getDefaultToolkit.beep(). The ticker's period is synchronized inside the PeriodSemaphore class.&lt;/li&gt;
+&lt;li&gt;The Scanner class is able to scan for a tag ID and update the Ticker period according to the RF power at which the tag was observed : observation at a small RF power leads to a small tick period, and vice versa.&lt;/li&gt;
+&lt;/ul&gt;After testing on both PDAs (i.e. Psion, Intermec), a standalone application with an IHM was developed. It is able to retrieve a list (from a local file or an URL) so that the user choose the item to search for.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsers26DevelopersGuide"&gt;Users &amp; Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The executable jar file can be found under the repository TagSearcher/dist.
+All the source can be found under the repository TagSearcher/src.&lt;p class="paragraph"/&gt;Before launching the application, you have configure in &lt;strong class="strong"&gt;TagSearcher/Config.txt&lt;/strong&gt; to choose Reader name (Simulation mode , Caen or Intermec reader) as well as the items that you want to search.&lt;p class="paragraph"/&gt;Here is the graphical user interface of the Standalone Tag Searcher Application.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.EmbeddedTools/TagSearcher/TagSearcher.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.EmbeddedTools/TagSearcher/TagSearcher" height="400" alt="TagSearcher" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The executable jar file and source can be found &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15238"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.
+</renderedcontent>
+</xwikidoc>

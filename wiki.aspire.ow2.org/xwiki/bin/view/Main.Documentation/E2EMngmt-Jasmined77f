@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>E2EMngmt-Jasmine</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.E2EMngmt</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1280321001000</creationDate>
+<date>1283551886000</date>
+<contentUpdateDate>1283551886000</contentUpdateDate>
+<version>1.8</version>
+<title>Aspire :: End-to-end management :: Jasmine</title>
+<template></template>
+<content>1 Aspire :: End-to-end management :: Jasmine
+----
+#toc("" "" "true")
+----
+
+This section describes the usage of OW2 Jasmine to manage autonomically the components of the Aspire middleware.
+
+1.1 Context
+[OW2 Jasmine&gt;http://jasmine.ow2.org] enables the autonomic management of distributed infrastructure of machines executed the Aspire components (ALE, BEG, EPCIS, ...).
+
+OW2 Jasmine elements are:
+* [MBeanCmd&gt;http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html]
+** [command stat&gt;http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html#mbeancmd.stat] 
+* [Drools rules for notification&gt;http://jasmine.ow2.org/doc/docbkx/jasmine-monitoring-user-guide/1.2.3-SNAPSHOT/html/jasmine-monitoring_guide.html#monitoring.notification]
+
+1.1 Usecases
+1.1.1 Static topology
+
+1.1.1.1 Bootstrap
+
+* µJOnAS : provides utility MBeans (send a file to the server, ...)
+* Jasmine Agent
+
+1.1.1.1 Artifact repository
+
+1.1.1.1 Configuration repository
+
+In order to ease the deployment and to have a homogeneous platform, all configuration files (ECSpec, LRSpec, ...) may be available on a specific repository, common for all servers.
+
+1.1.1 Machine wakeup
+
+The code from the [GreenIT demo&gt;http://ecom.ow2.org/xwiki/bin/view/Main/engreenit] for machines wake up is based on the WakeOnLAN standard.
+
+This standard can't cross routers, and may have to be used in internal networks.
+
+Also, the ALE server may be automatically started when the system is up (Unix daemon, Windows service...), or started via a JASMINe Agent.
+
+1.1.1 Initial provisioning
+
+Different ways has been discussed for the initial provisioning :
+* via [deployment plans&gt;http://jonas.ow2.org/JONAS_5_1_0/doc/doc-en/html/deployment-plans_guide.html]
+* by sending bundles JAR files to the server (via its sendFile() capable MBean), then load it with a FileInstall bundle, or via the AdminMBean
+* by using PaxRunner or Tomcat
+
+1.1.1 Provisioning update
+
+* There is no information about updating a deployment plan.
+* Sending an updated file, and use it with FileInstall or AdminMBean may not be difficult
+
+1.1.1 Configuration provisioning and recovery
+
+When the µJOnAS is started, it provides some utility MBeans.
+One of them allows to send a binary file to the server (via a bytes array).
+
+This way, when JASMINe is able to recognize that a new server is up, a drools rule can provide base ECSpec and LRSpecs XML files.
+
+1.1.1 Metrics collection and alarms
+
+All data may be collected throught JMX MBeans.
+
+Some metrics are purely informative (uptime...), but other ones may be used in order to control the server state (number of generated reports, event cycles...).
+
+By using the '-rate' option of the JASMINe *stat* command and a threshold, a drools rule is able to test the ale server activity, and notify the administrator, via JASMINe notifications, if the server runs to slow or to fast.
+
+1.1 Hints
+
+1.1.1 Server start-up
+
+The server may be started by using an agent able to launch Pax Runner with a specified configuration file provided through an MBean method call.
+
+1.1.1 Server configuration
+
+By using MBeanCmd, JASMINe events can be used to detect new servers, and send them their specific configuration via MBeans.
+
+A sample rule has been developed to demonstrate this mechanism :
+* JASMINe polls periodically an ALE server MBean attribute : the uptime
+* When the server is down, no event are triggered
+* When the server is up, a rule handles the event, and sends a server-specific configuration (Logical readers, ECSpecs, subscriptions) via ALE server MBeans.
+
+*TODO* attach the demonstration files
+
+1.1.1 Access MBeans through the network
+
+MBeans can be accessed directly on a local machine, but a little trick allows a remote access : in the ALE server command line, the JMX remote options must be defined.
+
+Example :
+{code}
+$ java \
+    -Dcom.sun.management.jmxremote.port=8088           # Listening port
+    -Dcom.sun.management.jmxremote.authenticate=false  # no authentication
+    -Dcom.sun.management.jmxremote.ssl=false           # No SSL connexion
+    -Dfelix.config.properties=file:felix/config.ini
+    -jar bundles/org.apache.felix.main_2.0.2.jar
+{code}
+
+This way, the ALE server can be accessed by MBeanCmd in JASMINe, by using the corresponding JNDI target address :
+
+{code}
+service:jmx:rmi://ale_server_address/jndi/rmi://ale_server_address:1111/jmxrmi
+{code}
+
+1.1.1 MBean value polling with MBeanCmd
+
+MBeanCmd and its command stat allows to retrieve periodically informations about the current server state.
+
+Each time a requested attribute has been read, a JasmineEventEB event is raised, and can be handled in a Drool script.
+
+Example : Retrieve the server uptime everey 5 seconds
+
+{code}
+$ stat \
+    -p 5                                                    # Poll delay
+    -name "org.ow2.aspirerfid:type=aleserver,name=server"   # Source MBean
+    -a Uptime                                               # MBean attribute to read
+    -target service:jmx:rmi://localhost/jndi/rmi://localhost:1111/jmxrmi
+    -jasmine vm://MBeanCmd_dispatcher                       # Event handler (JASMINe)
+{code}
+
+1.1 Links
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AEndtoendmanagement3A3AJasmine"&gt;Aspire :: End-to-end management :: Jasmine&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsecases"&gt;2 Usecases&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HStatictopology"&gt;2.1 Static topology&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBootstrap"&gt;2.1.1 Bootstrap&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HArtifactrepository"&gt;2.1.2 Artifact repository&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfigurationrepository"&gt;2.1.3 Configuration repository&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMachinewakeup"&gt;2.2 Machine wakeup&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInitialprovisioning"&gt;2.3 Initial provisioning&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HProvisioningupdate"&gt;2.4 Provisioning update&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfigurationprovisioningandrecovery"&gt;2.5 Configuration provisioning and recovery&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMetricscollectionandalarms"&gt;2.6 Metrics collection and alarms&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HHints"&gt;3 Hints&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HServerstartup"&gt;3.1 Server start-up&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HServerconfiguration"&gt;3.2 Server configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAccessMBeansthroughthenetwork"&gt;3.3 Access MBeans through the network&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMBeanvaluepollingwithMBeanCmd"&gt;3.4 MBean value polling with MBeanCmd&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HLinks"&gt;4 Links&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the usage of OW2 Jasmine to manage autonomically the components of the Aspire middleware.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;Context&lt;/span&gt;&lt;/h3&gt; 
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org"&gt;&amp;#79;W2 Jasmine&lt;/a&gt;&lt;/span&gt; enables the autonomic management of distributed infrastructure of machines executed the Aspire components (ALE, BEG, EPCIS, ...).&lt;p class="paragraph"/&gt;OW2 Jasmine elements are:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html"&gt;&amp;#77;BeanCmd&lt;/a&gt;&lt;/span&gt;&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org/doc/docbkx/mbeancmd-user-guide/2.2.1-SNAPSHOT/html/mbeancmd_guide.html#mbeancmd.stat"&gt;&amp;#99;ommand stat&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://jasmine.ow2.org/doc/docbkx/jasmine-monitoring-user-guide/1.2.3-SNAPSHOT/html/jasmine-monitoring_guide.html#monitoring.notification"&gt;&amp;#68;rools rules for notification&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsecases"&gt;Usecases&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HStatictopology"&gt;Static topology&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HBootstrap"&gt;Bootstrap&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;µJOnAS : provides utility MBeans (send a file to the server, ...)&lt;/li&gt;
+&lt;li&gt;Jasmine Agent&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HArtifactrepository"&gt;Artifact repository&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HConfigurationrepository"&gt;Configuration repository&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;In order to ease the deployment and to have a homogeneous platform, all configuration files (ECSpec, LRSpec, ...) may be available on a specific repository, common for all servers.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMachinewakeup"&gt;Machine wakeup&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The code from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://ecom.ow2.org/xwiki/bin/view/Main/engreenit"&gt;&amp;#71;reenIT demo&lt;/a&gt;&lt;/span&gt; for machines wake up is based on the WakeOnLAN standard.&lt;p class="paragraph"/&gt;This standard can't cross routers, and may have to be used in internal networks.&lt;p class="paragraph"/&gt;Also, the ALE server may be automatically started when the system is up (Unix daemon, Windows service...), or started via a JASMINe Agent.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInitialprovisioning"&gt;Initial provisioning&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Different ways has been discussed for the initial provisioning :
+&lt;ul class="star"&gt;
+&lt;li&gt;via &lt;span class="wikiexternallink"&gt;&lt;a href="http://jonas.ow2.org/JONAS_5_1_0/doc/doc-en/html/deployment-plans_guide.html"&gt;&amp;#100;eployment plans&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;by sending bundles JAR files to the server (via its sendFile() capable MBean), then load it with a FileInstall bundle, or via the AdminMBean&lt;/li&gt;
+&lt;li&gt;by using PaxRunner or Tomcat&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HProvisioningupdate"&gt;Provisioning update&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;There is no information about updating a deployment plan.&lt;/li&gt;
+&lt;li&gt;Sending an updated file, and use it with FileInstall or AdminMBean may not be difficult&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfigurationprovisioningandrecovery"&gt;Configuration provisioning and recovery&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;When the µJOnAS is started, it provides some utility MBeans.
+One of them allows to send a binary file to the server (via a bytes array).&lt;p class="paragraph"/&gt;This way, when JASMINe is able to recognize that a new server is up, a drools rule can provide base ECSpec and LRSpecs XML files.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMetricscollectionandalarms"&gt;Metrics collection and alarms&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;All data may be collected throught JMX MBeans.&lt;p class="paragraph"/&gt;Some metrics are purely informative (uptime...), but other ones may be used in order to control the server state (number of generated reports, event cycles...).&lt;p class="paragraph"/&gt;By using the '-rate' option of the JASMINe &lt;strong class="strong"&gt;stat&lt;/strong&gt; command and a threshold, a drools rule is able to test the ale server activity, and notify the administrator, via JASMINe notifications, if the server runs to slow or to fast.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HHints"&gt;Hints&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HServerstartup"&gt;Server start-up&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The server may be started by using an agent able to launch Pax Runner with a specified configuration file provided through an MBean method call.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HServerconfiguration"&gt;Server configuration&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;By using MBeanCmd, JASMINe events can be used to detect new servers, and send them their specific configuration via MBeans.&lt;p class="paragraph"/&gt;A sample rule has been developed to demonstrate this mechanism :
+&lt;ul class="star"&gt;
+&lt;li&gt;JASMINe polls periodically an ALE server MBean attribute : the uptime&lt;/li&gt;
+&lt;li&gt;When the server is down, no event are triggered&lt;/li&gt;
+&lt;li&gt;When the server is up, a rule handles the event, and sends a server-specific configuration (Logical readers, ECSpecs, subscriptions) via ALE server MBeans.&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;TODO&lt;/strong&gt; attach the demonstration files
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAccessMBeansthroughthenetwork"&gt;Access MBeans through the network&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;MBeans can be accessed directly on a local machine, but a little trick allows a remote access : in the ALE server command line, the JMX remote options must be defined.&lt;p class="paragraph"/&gt;Example :
+&lt;div class="code"&gt;&lt;pre&gt;$ java &amp;#13;
+    &amp;#45;Dcom.sun.management.jmxremote.port=8088           # Listening port
+    &amp;#45;Dcom.sun.management.jmxremote.authenticate=&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;  # no authentication
+    &amp;#45;Dcom.sun.management.jmxremote.ssl=&lt;span class="java&amp;#45;keyword"&gt;false&lt;/span&gt;           # No SSL connexion
+    &amp;#45;Dfelix.config.properties=file:felix/config.ini
+    &amp;#45;jar bundles/org.apache.felix.main_2.0.2.jar&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;This way, the ALE server can be accessed by MBeanCmd in JASMINe, by using the corresponding JNDI target address :&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;service:jmx:rmi://ale_server_address/jndi/rmi://ale_server_address:1111/jmxrmi&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMBeanvaluepollingwithMBeanCmd"&gt;MBean value polling with MBeanCmd&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;MBeanCmd and its command stat allows to retrieve periodically informations about the current server state.&lt;p class="paragraph"/&gt;Each time a requested attribute has been read, a JasmineEventEB event is raised, and can be handled in a Drool script.&lt;p class="paragraph"/&gt;Example : Retrieve the server uptime everey 5 seconds&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;$ stat &amp;#13;
+    &amp;#45;p 5                                                    # Poll delay
+    &amp;#45;name &lt;span class="java&amp;#45;quote"&gt;"org.ow2.aspirerfid:type=aleserver,name=server"&lt;/span&gt;   # Source MBean
+    &amp;#45;a Uptime                                               # MBean attribute to read
+    &amp;#45;target service:jmx:rmi://localhost/jndi/rmi://localhost:1111/jmxrmi
+    &amp;#45;jasmine vm://MBeanCmd_dispatcher                       # Event handler (JASMINe)&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLinks"&gt;Links&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

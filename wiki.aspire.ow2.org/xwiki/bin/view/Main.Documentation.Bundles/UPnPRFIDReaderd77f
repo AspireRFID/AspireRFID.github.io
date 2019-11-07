@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>UPnPRFIDReader</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1308743347000</creationDate>
+<date>1315381847000</date>
+<contentUpdateDate>1315381847000</contentUpdateDate>
+<version>1.23</version>
+<title>OW2 :: AspireRFID :: UPnP RFID Reader</title>
+<template></template>
+<attachment>
+<filename>upnpale.png</filename>
+<filesize>80902</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1308745645000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>upnprfidreader1.png</filename>
+<filesize>210603</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1315381246000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>upnprfidreader2.png</filename>
+<filesize>120311</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1315381255000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 OW2 :: AspireRFID :: UPnP RFID Reader
+
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle emulated an UPnP RFID Reader
+
+1.1 Context
+The installation of new readers and their configuration (ie LRSpec) in the ALE Server is a burden for non-expert people (shop employees for instance) in the context of SOHO. The zero-configuration can be provided by popular service discovery protocols and frameworks such as UPnP and DNS-SD (aka mDNS or Apple’Bonjour). [UPnP&gt;http://www.upnp.org] is the defacto standard for plug-and-play appliances in the small shop and small office (SOHO) context. In order to alleviate the end-user (which is not a RFID integrator or expert), the Aspire middleware will provide a way to taken in account plug-and-play RFID readers (such as shop portals, portable readers, ..) using UPnP. Various implementations of the UPnP specification are available for Java. The Apache Felix UPnP Base Driver provides a bridge between OSGi registry and the UPnP network. It can directly integrated in the OSGi profile of the Aspire ALE Server to discover and to use the UPnP Device.
+
+
+This project proposes a “zero-configuration” feature for readers communicating with IP (Ethernet, Wifi) using the UPnP infrastructure.
+It proposes a UPnP device profile (DCP) for RFID Reader. Readers implementing this profile can be discovery automatically by the Aspire ALE server and added (dynamically and without opertaor configuration) as a regular reader thru their LRSpec description.
+
+The following figure depicts the extension of the ALE Server (OSGi profile) in order to add UPnP RFID Device.
+
+{image:upnpale.png}
+
+The following XML document presents the service description (DCP)  of the RFID Readers is ~~urn:schemas-ow2aspire-org:service:Reader:1~~ .
+* Properties (ro) : properties of the reader (application ...). 
+* Duration (rw) : duration before two notifications of the report members
+* ReportMembers (subscription only) : tag identifiers scanned during a period (similar to the ~~ECReport reportMember~~). The tag is are comma-separated.
+
+{code}
+&lt;scpd&gt;
+  &lt;serviceStateTable&gt;
+
+    &lt;stateVariable&gt; &lt;!-- Reader properties  --&gt;
+      &lt;name&gt;Properties&lt;/name&gt;
+      &lt;sendEventsAttribute&gt;no&lt;/sendEventsAttribute&gt; 
+      &lt;dataType&gt;string&lt;/dataType&gt; &lt;!-- pairs name-value x-www-form-urlencoded  --&gt;
+    &lt;/stateVariable&gt;
+
+    &lt;stateVariable&gt; &lt;!--  duration between 2 reports --&gt;
+      &lt;name&gt;Duration&lt;/name&gt;
+      &lt;sendEventsAttribute&gt;yes&lt;/sendEventsAttribute&gt; 
+      &lt;dataType&gt;ui4&lt;/dataType&gt; &lt;!--  in milliseconds --&gt;
+      &lt;defaultValue&gt;1000&lt;/defaultValue&gt;
+    &lt;/stateVariable&gt;
+    &lt;!-- more parameters for the reader configuration  --&gt;
+    
+    &lt;stateVariable&gt;  &lt;!-- Report members  --&gt;
+      &lt;name&gt;ReportMembers&lt;/name&gt;
+      &lt;sendEventsAttribute&gt;yes&lt;/sendEventsAttribute&gt; 
+      &lt;dataType&gt;string&lt;/dataType&gt; &lt;!-- CSV of the hexadecimal representation of EPC identifiers  --&gt;
+    &lt;/stateVariable&gt;
+
+  &lt;/serviceStateTable&gt;
+
+  &lt;actionList&gt;
+    &lt;action&gt;
+      &lt;name&gt;SetDuration&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;newDuration&lt;/name&gt;
+          &lt;direction&gt;in&lt;/direction&gt;
+          &lt;relatedStateVariable&gt;Duration&lt;/relatedStateVariable&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+    &lt;action&gt;
+      &lt;name&gt;GetDuration&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;currentDuration&lt;/name&gt;
+          &lt;direction&gt;out&lt;/direction&gt;
+          &lt;relatedStateVariable&gt;Duration&lt;/relatedStateVariable&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+    &lt;action&gt;
+      &lt;name&gt;GetProperties&lt;/name&gt;
+      &lt;argumentList&gt;
+        &lt;argument&gt;
+          &lt;name&gt;currentProperties&lt;/name&gt;
+          &lt;direction&gt;out&lt;/direction&gt;
+          &lt;relatedStateVariable&gt;Properties&lt;/relatedStateVariable&gt;
+        &lt;/argument&gt;
+      &lt;/argumentList&gt;
+    &lt;/action&gt;
+  &lt;/actionList&gt;
+&lt;/scpd&gt;
+
+{code}
+Some improvements will coming soon in order to include TDT prefixes, filtering patterns (ie ~~ECSpec.reportSpec.groupSpec.pattern~~), report triggrering conditions (ECSpec++), ...
+
+
+The UPnP Device can also combine the urn:schemas-ow2aspire-org:service:Reader:1 service with other (standardized) DCP  (~~[TemperatureSensor&gt;http://upnp.org/specs/ha/hvac/]~~ , ~~[LowPower&gt;http://upnp.org/specs/lp/lp1/]~~ , ...) as it shows in the following snapshots of the [Intel' DeviceSpy tool&gt;http://opentools.homeip.net/dev-tools-for-upnp].
+
+{image:upnprfidreader1.png}
+{image:upnprfidreader2.png}
+
+
+Various implementations of the UPnP specification are available for Java. The Apache Felix UPnP Base Driver provides a bridge between OSGi registry and the UPnP network. It can directly integrated in the OSGi profile of the Aspire ALE Server to discover and to use the UPnP RFID reader.
+
+
+1.1 Demonstrator
+A demonstrator of a UPnP RFID Reader is available. It uses the ACR122U reader. The device includes also a fictive ~~[TemperatureSensor&gt;http://upnp.org/specs/ha/hvac/]~~ service and a ~~[LowPower&gt;http://upnp.org/specs/lp/lp1/]~~ service for GreenIT purpose. In the demonstration, this service enables the deep sleep and waking up of the PC running the demonstrator (WakeOnLAN must be activate for waking up the PC).
+
+1.1 Dependencies
+
+This bundle requires :
+* OSGi R4 Compendium, available from Felix OBR
+* UPnP GenDevice Utils, available from http://svn.apache.org/viewvc/felix/sandbox/donsez/upnp.devicegen.util/
+* ACR122U client bundle
+
+1.1 Build
+1.1.1 Sources
+* [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Freaders%2Fupnp.rfidreader%2F]
+
+1.1 Installation
+
+1.1 Test
+
+1.1 Configuration
+
+1.1 Troubleshooting
+
+1.1 Links
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HOW23A3AAspireRFID3A3AUPnPRFIDReader"&gt;OW2 :: AspireRFID :: UPnP RFID Reader&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDemonstrator"&gt;2 Demonstrator&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDependencies"&gt;3 Dependencies&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;4 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;4.1 Sources&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HInstallation"&gt;5 Installation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTest"&gt;6 Test&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;7 Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTroubleshooting"&gt;8 Troubleshooting&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLinks"&gt;9 Links&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle emulated an UPnP RFID Reader
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+The installation of new readers and their configuration (ie LRSpec) in the ALE Server is a burden for non-expert people (shop employees for instance) in the context of SOHO. The zero-configuration can be provided by popular service discovery protocols and frameworks such as UPnP and DNS-SD (aka mDNS or Apple’Bonjour). &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.upnp.org"&gt;&amp;#85;PnP&lt;/a&gt;&lt;/span&gt; is the defacto standard for plug-and-play appliances in the small shop and small office (SOHO) context. In order to alleviate the end-user (which is not a RFID integrator or expert), the Aspire middleware will provide a way to taken in account plug-and-play RFID readers (such as shop portals, portable readers, ..) using UPnP. Various implementations of the UPnP specification are available for Java. The Apache Felix UPnP Base Driver provides a bridge between OSGi registry and the UPnP network. It can directly integrated in the OSGi profile of the Aspire ALE Server to discover and to use the UPnP Device.&lt;p class="paragraph"/&gt;
+This project proposes a “zero-configuration” feature for readers communicating with IP (Ethernet, Wifi) using the UPnP infrastructure.
+It proposes a UPnP device profile (DCP) for RFID Reader. Readers implementing this profile can be discovery automatically by the Aspire ALE server and added (dynamically and without opertaor configuration) as a regular reader thru their LRSpec description.&lt;p class="paragraph"/&gt;The following figure depicts the extension of the ALE Server (OSGi profile) in order to add UPnP RFID Device.&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Bundles/UPnPRFIDReader/upnpale.png" alt="upnpale.png" /&gt;&lt;p class="paragraph"/&gt;The following XML document presents the service description (DCP)  of the RFID Readers is &lt;i class="italic"&gt;urn:schemas-ow2aspire-org:service:Reader:1&lt;/i&gt; .
+&lt;ul class="star"&gt;
+&lt;li&gt;Properties (ro) : properties of the reader (application ...).&lt;/li&gt;
+&lt;li&gt;Duration (rw) : duration before two notifications of the report members&lt;/li&gt;
+&lt;li&gt;ReportMembers (subscription only) : tag identifiers scanned during a period (similar to the &lt;i class="italic"&gt;ECReport reportMember&lt;/i&gt;). The tag is are comma-separated.&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;scpd&amp;#62;
+  &amp;#60;serviceStateTable&amp;#62;&lt;p class="paragraph"/&gt;    &amp;#60;stateVariable&amp;#62; &amp;#60;!&amp;#45;&amp;#45; Reader properties  &amp;#45;&amp;#45;&amp;#62;
+      &amp;#60;name&amp;#62;Properties&amp;#60;/name&amp;#62;
+      &amp;#60;sendEventsAttribute&amp;#62;no&amp;#60;/sendEventsAttribute&amp;#62; 
+      &amp;#60;dataType&amp;#62;string&amp;#60;/dataType&amp;#62; &amp;#60;!&amp;#45;&amp;#45; pairs name&amp;#45;value x&amp;#45;www&amp;#45;form&amp;#45;urlencoded  &amp;#45;&amp;#45;&amp;#62;
+    &amp;#60;/stateVariable&amp;#62;&lt;p class="paragraph"/&gt;    &amp;#60;stateVariable&amp;#62; &amp;#60;!&amp;#45;&amp;#45;  duration between 2 reports &amp;#45;&amp;#45;&amp;#62;
+      &amp;#60;name&amp;#62;Duration&amp;#60;/name&amp;#62;
+      &amp;#60;sendEventsAttribute&amp;#62;yes&amp;#60;/sendEventsAttribute&amp;#62; 
+      &amp;#60;dataType&amp;#62;ui4&amp;#60;/dataType&amp;#62; &amp;#60;!&amp;#45;&amp;#45;  in milliseconds &amp;#45;&amp;#45;&amp;#62;
+      &amp;#60;defaultValue&amp;#62;1000&amp;#60;/defaultValue&amp;#62;
+    &amp;#60;/stateVariable&amp;#62;
+    &amp;#60;!&amp;#45;&amp;#45; more parameters &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; the reader configuration  &amp;#45;&amp;#45;&amp;#62;&lt;p class="paragraph"/&gt;    &amp;#60;stateVariable&amp;#62;  &amp;#60;!&amp;#45;&amp;#45; Report members  &amp;#45;&amp;#45;&amp;#62;
+      &amp;#60;name&amp;#62;ReportMembers&amp;#60;/name&amp;#62;
+      &amp;#60;sendEventsAttribute&amp;#62;yes&amp;#60;/sendEventsAttribute&amp;#62; 
+      &amp;#60;dataType&amp;#62;string&amp;#60;/dataType&amp;#62; &amp;#60;!&amp;#45;&amp;#45; CSV of the hexadecimal representation of EPC identifiers  &amp;#45;&amp;#45;&amp;#62;
+    &amp;#60;/stateVariable&amp;#62;&lt;p class="paragraph"/&gt;  &amp;#60;/serviceStateTable&amp;#62;&lt;p class="paragraph"/&gt;  &amp;#60;actionList&amp;#62;
+    &amp;#60;action&amp;#62;
+      &amp;#60;name&amp;#62;SetDuration&amp;#60;/name&amp;#62;
+      &amp;#60;argumentList&amp;#62;
+        &amp;#60;argument&amp;#62;
+          &amp;#60;name&amp;#62;newDuration&amp;#60;/name&amp;#62;
+          &amp;#60;direction&amp;#62;in&amp;#60;/direction&amp;#62;
+          &amp;#60;relatedStateVariable&amp;#62;Duration&amp;#60;/relatedStateVariable&amp;#62;
+        &amp;#60;/argument&amp;#62;
+      &amp;#60;/argumentList&amp;#62;
+    &amp;#60;/action&amp;#62;
+    &amp;#60;action&amp;#62;
+      &amp;#60;name&amp;#62;GetDuration&amp;#60;/name&amp;#62;
+      &amp;#60;argumentList&amp;#62;
+        &amp;#60;argument&amp;#62;
+          &amp;#60;name&amp;#62;currentDuration&amp;#60;/name&amp;#62;
+          &amp;#60;direction&amp;#62;out&amp;#60;/direction&amp;#62;
+          &amp;#60;relatedStateVariable&amp;#62;Duration&amp;#60;/relatedStateVariable&amp;#62;
+        &amp;#60;/argument&amp;#62;
+      &amp;#60;/argumentList&amp;#62;
+    &amp;#60;/action&amp;#62;
+    &amp;#60;action&amp;#62;
+      &amp;#60;name&amp;#62;GetProperties&amp;#60;/name&amp;#62;
+      &amp;#60;argumentList&amp;#62;
+        &amp;#60;argument&amp;#62;
+          &amp;#60;name&amp;#62;currentProperties&amp;#60;/name&amp;#62;
+          &amp;#60;direction&amp;#62;out&amp;#60;/direction&amp;#62;
+          &amp;#60;relatedStateVariable&amp;#62;Properties&amp;#60;/relatedStateVariable&amp;#62;
+        &amp;#60;/argument&amp;#62;
+      &amp;#60;/argumentList&amp;#62;
+    &amp;#60;/action&amp;#62;
+  &amp;#60;/actionList&amp;#62;
+&amp;#60;/scpd&amp;#62;&lt;/pre&gt;&lt;/div&gt;
+Some improvements will coming soon in order to include TDT prefixes, filtering patterns (ie &lt;i class="italic"&gt;ECSpec.reportSpec.groupSpec.pattern&lt;/i&gt;), report triggrering conditions (ECSpec++), ...&lt;p class="paragraph"/&gt;
+The UPnP Device can also combine the urn:schemas-ow2aspire-org:service:Reader:1 service with other (standardized) DCP  (&lt;i class="italic"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://upnp.org/specs/ha/hvac/"&gt;&amp;#84;emperatureSensor&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; , &lt;i class="italic"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://upnp.org/specs/lp/lp1/"&gt;&amp;#76;owPower&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; , ...) as it shows in the following snapshots of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://opentools.homeip.net/dev-tools-for-upnp"&gt;&amp;#73;ntel' DeviceSpy tool&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Bundles/UPnPRFIDReader/upnprfidreader1.png" alt="upnprfidreader1.png" /&gt;
+&lt;img src="/xwiki/bin/download/Main.Documentation.Bundles/UPnPRFIDReader/upnprfidreader2.png" alt="upnprfidreader2.png" /&gt;&lt;p class="paragraph"/&gt;
+Various implementations of the UPnP specification are available for Java. The Apache Felix UPnP Base Driver provides a bridge between OSGi registry and the UPnP network. It can directly integrated in the OSGi profile of the Aspire ALE Server to discover and to use the UPnP RFID reader.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDemonstrator"&gt;2 Demonstrator&lt;/span&gt;&lt;/h3&gt; 
+A demonstrator of a UPnP RFID Reader is available. It uses the ACR122U reader. The device includes also a fictive &lt;i class="italic"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://upnp.org/specs/ha/hvac/"&gt;&amp;#84;emperatureSensor&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; service and a &lt;i class="italic"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://upnp.org/specs/lp/lp1/"&gt;&amp;#76;owPower&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; service for GreenIT purpose. In the demonstration, this service enables the deep sleep and waking up of the PC running the demonstrator (WakeOnLAN must be activate for waking up the PC).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDependencies"&gt;3 Dependencies&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle requires :
+&lt;ul class="star"&gt;
+&lt;li&gt;OSGi R4 Compendium, available from Felix OBR&lt;/li&gt;
+&lt;li&gt;UPnP GenDevice Utils, available from &lt;span class="nobr"&gt;&lt;a href="http://svn.apache.org/viewvc/felix/sandbox/donsez/upnp.devicegen.util/"&gt;&amp;#104;ttp://svn.apache.org/viewvc/felix/sandbox/donsez/upnp.devicegen.util/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;ACR122U client bundle&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;4 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;4.1 Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Freaders%2Fupnp.rfidreader%2F"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstallation"&gt;5 Installation&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTest"&gt;6 Test&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HConfiguration"&gt;7 Configuration&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTroubleshooting"&gt;8 Troubleshooting&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLinks"&gt;9 Links&lt;/span&gt;&lt;/h3&gt; 
+</renderedcontent>
+</xwikidoc>

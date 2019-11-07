@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/Developers by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:11:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Developers
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin7376.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Developers">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='Developers.html'>ASPIRE RFID Developers</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_Developers.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="Developersd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main/Developerscede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="Developersd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HDevelopers">Developers</span></h2> 
+            <ul>
+          <li><a href="#HInstructionsfornewdevelopers"> Instructions for new developers</a> 
+      <li><a href="#HGenericDevelopmentRequirements"> Generic Development Requirements </a> 
+      <li><a href="#HDownloadingtheSourceCodeinEclipse"> Downloading the Source Code in Eclipse </a> 
+      <li><a href="#HDebuggingandRunningtheSourceCodeinEclipse"> Debugging and Running the Source Code in Eclipse</a> 
+      <li><a href="#HGeneral"> General</a> 
+      <li><a href="#HDocuments"> Documents</a> 
+      <li><a href="#HFacts"> Facts</a> 
+      </ul> 
+<h3 class="heading-1-1"><span id="HInstructionsfornewdevelopers">Instructions for new developers</span></h3> 
+If you are a new <span class="wikiexternallink"><a href="http://forge.ow2.org/project/memberlist.php?group_id=324">&#100;eveloper</a></span> of the Aspire project, check this to do list:
+<ul class="star">
+<li>check that your username is in <span class="nobr"><a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324">&#104;ttp://forge.ow2.org/plugins/scmsvn/index.php?group_id=324</a></span></li>
+<li>log in on the forge <span class="nobr"><a href="http://forge.ow2.org/projects/aspire/">&#104;ttp://forge.ow2.org/projects/aspire/</a></span></li>
+<li>edit your SSH (public) key (if not already done) in <span class="nobr"><a href="http://forge.ow2.org/account/editsshkeys.php">&#104;ttp://forge.ow2.org/account/editsshkeys.php</a></span> . You can generate your private and public keys with <span class="wikiexternallink"><a href="http://www.putty.org/">&#80;utty</a></span>.</li>
+<li>checkout the SVN root via SSH with your username <span class="nobr"><a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324">&#104;ttp://forge.ow2.org/plugins/scmsvn/index.php?group_id=324</a></span></li>
+<li>create your sandbox (./sandbox/<i class="italic">yourusername</i>) in the sandbox directory (<span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Fsandbox%2F">&#46;/sandbox</a></span>).</li>
+<li>commit a file (a readme or a whoami for instance) in your sandbox (./sandbox/<i class="italic">yourusername</i>).</li>
+<li>log in on the wiki <span class="nobr"><a href="../../../../index.html">&#104;ttp://wiki.aspire.ow2.org/</a></span></li>
+<li>edit some lines in the <span class="wikiexternallink"><a href="../../login/XWiki/XWikiLogin.html#aspire">&#119;iki sandbox</a></span>, save the result and <span class="wikilink"><a href="Sandboxd5a0.html?xpage=history#aspire">rollback to the previous version</a></span>.</li>
+<li>subcribe to project's <span class="wikilink"><a href="../Community/Lists.html">mailing lists</a></span><ul class="star">
+<li><a href="mailto:aspirerfid-subscribe@ow2.org">aspirerfid-subscribe@ow2.org</a></li>
+<li><a href="mailto:aspirerfid-dev-subscribe@ow2.org">aspirerfid-dev-subscribe@ow2.org</a></li>
+<li><a href="mailto:aspirerfid-commits-subscribe@ow2.org">aspirerfid-commits-subscribe@ow2.org</a></li>
+</ul>
+</li>
+<li>read the <span class="wikilink"><a href="Guidelines.html">coding guidelines</a></span> used in Aspire.</li>
+<li>add your name in the <span class="wikilink"><a href="Contributors.html">contributors list</a></span>.</li>
+<li>add a description of your organization if your organization is contractually involved in the Aspire project.</li>
+<li>if you are registered on <span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#111;hloh.net</a></span>, you can join the <span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire/contributors">&#65;spire RFID contributors list</a></span> and add a <span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire/widgets">&#119;idget</a></span> in your personal homepage.</li>
+<li>if you are registered on linkedin.com, you can join the <span class="wikiexternallink"><a href="http://www.linkedin.com/groups?viewMembers=&amp;gid=1179007">&#65;spire RFID group</a></span>.</li>
+</ul><h3 class="heading-1-1"><span id="HGenericDevelopmentRequirements">Generic Development Requirements </span></h3> 
+<ul class="star">
+<li>Eclipse 3.4 and above (<span class="nobr"><a href="http://www.eclipse.org/downloads/">&#104;ttp://www.eclipse.org/downloads/</a></span>) with<ul class="star">
+<li>RCP/Plug-in Development Environment plug-ins,</li>
+<li>Web and Java EE Development plug-ins,</li>
+<li>Subversive plug-in (<span class="nobr"><a href="http://community.polarion.com/index.php?page=overview&amp;project=subversive">&#104;ttp://community.polarion.com/index.php?page=overview&project=subversive</a></span>)<ul class="star">
+<li>Update Site: <span class="nobr"><a href="http://download.eclipse.org/technology/subversive/0.7/update-site/">&#104;ttp://download.eclipse.org/technology/subversive/0.7/update-site/</a></span></li>
+</ul>
+</li>
+<li>Subversive SVN Connectors<ul class="star">
+<li>Update Site: <span class="nobr"><a href="http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/">&#104;ttp://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/</a></span></li>
+</ul>
+</li>
+<li>Maven Integration for Eclipse plug-ins (<span class="nobr"><a href="http://m2eclipse.sonatype.org/">&#104;ttp://m2eclipse.sonatype.org/</a></span>)<ul class="star">
+<li>Update Site: <span class="nobr"><a href="http://m2eclipse.sonatype.org/sites/m2e">&#104;ttp://m2eclipse.sonatype.org/sites/m2e</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JDK 1.6 and above</li>
+<li>Tomcat 6.0 (or higher)</li>
+<li>MySQL 5.0 (or higher)</li>
+<li>Apache Maven 2.0.8 or higher (<span class="nobr"><a href="http://maven.apache.org/">&#104;ttp://maven.apache.org/</a></span>)</li>
+<li>VisualVM (<span class="nobr"><a href="https://visualvm.dev.java.net/">&#104;ttps://visualvm.dev.java.net</a></span>)</li>
+</ul><h3 class="heading-1-1"><span id="HDownloadingtheSourceCodeinEclipse">Downloading the Source Code in Eclipse </span></h3> 
+<ul class="star">
+<li>Install the Subversive and the Subversive SVN Connectors plug-ins</li>
+<li>Open the SVN Repository Perspective</li>
+<li>Go to the SVN Repositories Tab and hit the new repository location button.</li>
+<li>For acquiring the hole trunk source code place at the URL of the New Repository Location window that appears the following URL:<ul class="star">
+<li>svn://svn.forge.objectweb.org/svnroot/aspire/ (Anonymous) or</li>
+<li>svn+ssh://USER@svn.forge.objectweb.org/svnroot/aspire  (Developer SVN Access )</li>
+</ul>
+</li>
+<li>Open the repository go to the trunk file right click it an hit Check Out</li>
+<li>For working with a specific AspireRFID project hit File -> Import -> General -> Existing Projects into Workspace and select for the root directory the project you want to work with from the Hole trunk you have just checked out.</li>
+<li>Select it from the list, Uncheck the Copy projects into workspace</li>
+<li>Hit finish and you are ready to work :)</li>
+</ul><h3 class="heading-1-1"><span id="HDebuggingandRunningtheSourceCodeinEclipse">Debugging and Running the Source Code in Eclipse</span></h3><p class="paragraph"/>In general, every component comes with specific instructions.
+e.g. a good starting point for the AspireRFID IDE is the <span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">Aspire IDE Core</a></span>, which is the host of the Aspire tools.
+<h3 class="heading-1-1"><span id="HGeneral">General</span></h3> 
+<ul class="star">
+<li><span class="wikilink"><a href="DeveloperTools.html">Developer tools documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="https://forge.ow2.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="https://forge.ow2.org/tracker/?group_id=324">&#66;ug tracker</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2F">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="Guidelines.html">Coding guidelines</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/projects/aspire">&#65;spireRFID @ ohloh.net</a></span></li>
+</ul><h3 class="heading-1-1"><span id="HDocuments">Documents</span></h3><p class="paragraph"/>Developers <a href="../../download/Main/Developers/ASPIRE_Developers_CodeCamp1.ppt" />CodeCamp1</a>
+<h3 class="heading-1-1"><span id="HFacts">Facts</span></h3><p class="paragraph"/><strong class="strong"><span class="wikilink"><a href="LOC.html">Lines of code analysis </a></span></strong><p class="paragraph"/><script type="text/javascript" src="../../../../../www.openhub.net/p/15713/widgets/project_partner_badge.js"></script>
+<script type="text/javascript" src="../../../../../www.openhub.net/p/15713/widgets/project_languages.js"></script>
+<script type="text/javascript" src="../../../../../www.openhub.net/p/15713/widgets/project_basic_stats.js"></script><p class="paragraph"/>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="News.html">News</a></span></li>
+<li><span class="wikilink"><a href="FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='Developers.html'){
+ var Tynt=Tynt||<span class="wikilink"><a href="index.html"></a></span>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Developers"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            1 Attachments  by
+            nkef ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Developers/ASPIRE_Developers_CodeCamp1.ppt">ASPIRE_Developers_CodeCamp1.ppt</
+                                     a></td>
+            <td>1.1</td><td>nkef</td><td>236544</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main/Developers" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='Documentation.html'>Main.Documentation</a> &gt; <a href='Developers.html'>ASPIRE RFID Developers</a>
+  (en)
+ <br />
+  Creator: donsez
+ &nbsp;Date: 2008/07/23 20:30
+ <br />
+ Last Author: nkef
+ &nbsp;Date: 2010/07/29 11:10
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/Developers by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:11:26 GMT -->
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Glossary</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1223017223000</creationDate>
+<date>1273678409000</date>
+<contentUpdateDate>1273678409000</contentUpdateDate>
+<version>1.18</version>
+<title>Glossary</title>
+<template></template>
+<content>1 Glossary &amp; Accronyms
+
+1.1 Aspire
+* BEG: Business Event Generator
+* AspireRFID IDE: AspireRFID Integrated Development Environment
+
+1.1 EPC Global
+* ALE : Application Level Event
+** ECSpec : Event Cycle Specification
+** ECREports : Event Cycle Reports
+* DS : Discovery Services
+* EPC: Electronic Product Code
+* EPCGlobal: [wikipedia entry&gt;http://en.wikipedia.org/wiki/EPCGlobal]
+* EPCIS: EPC Information System (EPCGlobal)
+* LLRP: Low-level Reader Protocol
+* ONS: Object Naming Service
+* RP: Reader Protocol
+* RM: Reader Management
+* TDT: Tag Data Translation
+
+1.1 NFC Forum
+
+* NDEF: NFC Data Exchange Format 
+* NFC: Near Field Communication [wikipedia entry&gt;http://en.wikipedia.org/wiki/Near_Field_Communication]
+* NFCForum [wikipedia entry&gt;http://en.wikipedia.org/wiki/Near_Field_Communication#NFC_Forum]
+* RTD: NFC Record Type Definition
+
+1.1 Misc
+
+* ERP: Enterprise Resource Planning
+* IoT: Internet of Things [wikipedia entry&gt;http://en.wikipedia.org/wiki/Internet_of_Things]
+* JavaEE: Java Enterprise Edition
+* J2ME: Java 2 Micro-Edition
+* JCP: Java Community Process
+* JMX: Java Management eXtension [wikipedia entry&gt;http://en.wikipedia.org/wiki/JMX]
+* LDAP: Lightweight Directory Access Protocol [wikipedia entry&gt;http://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol]
+* M2M: Machine-to-Machine [wikipedia entry&gt;http://en.wikipedia.org/wiki/Machine_to_Machine]
+* MES: Manufacturing Execution System
+* OSGi: [wikipedia entry&gt;http://en.wikipedia.org/wiki/OSGi]
+* UPnP: Universal Plug and Play [wikipedia entry&gt;http://en.wikipedia.org/wiki/UPnP]
+* RFID: Radio-frequency identification [wikipedia entry&gt;http://en.wikipedia.org/wiki/Radio-frequency_identification]
+* SOA &amp; SOC: Service-Oriented Architecture &amp; Service-Oriented Computing
+* WMS: Warehouse Management System
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HGlossary26Accronyms"&gt;Glossary &amp; Accronyms&lt;/span&gt;&lt;/h2&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAspire"&gt;Aspire&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;BEG: Business Event Generator&lt;/li&gt;
+&lt;li&gt;AspireRFID IDE: AspireRFID Integrated Development Environment&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HEPCGlobal"&gt;EPC Global&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ALE : Application Level Event&lt;ul class="star"&gt;
+&lt;li&gt;ECSpec : Event Cycle Specification&lt;/li&gt;
+&lt;li&gt;ECREports : Event Cycle Reports&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DS : Discovery Services&lt;/li&gt;
+&lt;li&gt;EPC: Electronic Product Code&lt;/li&gt;
+&lt;li&gt;EPCGlobal: &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/EPCGlobal"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;EPCIS: EPC Information System (EPCGlobal)&lt;/li&gt;
+&lt;li&gt;LLRP: Low-level Reader Protocol&lt;/li&gt;
+&lt;li&gt;ONS: Object Naming Service&lt;/li&gt;
+&lt;li&gt;RP: Reader Protocol&lt;/li&gt;
+&lt;li&gt;RM: Reader Management&lt;/li&gt;
+&lt;li&gt;TDT: Tag Data Translation&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HNFCForum"&gt;NFC Forum&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;NDEF: NFC Data Exchange Format&lt;/li&gt;
+&lt;li&gt;NFC: Near Field Communication &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Near_Field_Communication"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;NFCForum &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Near_Field_Communication#NFC_Forum"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;RTD: NFC Record Type Definition&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;ERP: Enterprise Resource Planning&lt;/li&gt;
+&lt;li&gt;IoT: Internet of Things &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Internet_of_Things"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;JavaEE: Java Enterprise Edition&lt;/li&gt;
+&lt;li&gt;J2ME: Java 2 Micro-Edition&lt;/li&gt;
+&lt;li&gt;JCP: Java Community Process&lt;/li&gt;
+&lt;li&gt;JMX: Java Management eXtension &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/JMX"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;LDAP: Lightweight Directory Access Protocol &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;M2M: Machine-to-Machine &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Machine_to_Machine"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;MES: Manufacturing Execution System&lt;/li&gt;
+&lt;li&gt;OSGi: &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/OSGi"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;UPnP: Universal Plug and Play &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/UPnP"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;RFID: Radio-frequency identification &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Radio-frequency_identification"&gt;&amp;#119;ikipedia entry&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;SOA &amp; SOC: Service-Oriented Architecture &amp; Service-Oriented Computing&lt;/li&gt;
+&lt;li&gt;WMS: Warehouse Management System&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

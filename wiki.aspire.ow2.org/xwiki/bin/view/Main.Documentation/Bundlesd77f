@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Bundles</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1276181207000</creationDate>
+<date>1308752231000</date>
+<contentUpdateDate>1308752231000</contentUpdateDate>
+<version>1.52</version>
+<title>Aspire :: OSGi Bundles for Aspire servers</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles for Aspire servers
+----
+#toc("" "" "true")
+----
+
+This section describes the OSGi bundles used in the Aspire middleware.
+
+1.1 Source repository
+* [Source repository&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2F]
+
+1.1 OBR
+The artifact will be available soon through an [OBR index&gt;http://www.osgi.org/download/rfc-0112_BundleRepository.pdf] mapped on a Maven repository.
+
+1.1 General Purpose
+* [Bluetooth Server&gt;Main.Documentation.Bundles.BluetoothServer]
+* [RXTX&gt;Main.Documentation.Bundles.RXTX]
+* [LibUSBJava&gt;Main.Documentation.Bundles.LibUSBJava]
+* [Phidget library&gt;Main.Documentation.Bundles.PhidgetLib]
+
+
+
+1.1 Readers
+
+1.1.1 Libraries
+The bundles for readers package only implementation classes imported by the ALEServer barfile (bundle+war) deployed on the OSGi platform.
+* [ProximaRF Desktop USB reader&gt;Main.Documentation.Bundles.ProximaRFDesktopReader]
+* [TagSys Medio Serial reader&gt;Main.Documentation.Bundles.TagSysMedioReader]
+* [ACR 122 USB reader&gt;Main.Documentation.Bundles.ACR122Reader]
+* [OneWire reader&gt;Main.Documentation.Bundles.OneWireReader]
+* [Phidget RFID Reader&gt;Main.Documentation.Bundles.PhidgetReader]
+
+1.1.1 Bundles with HALAdaptor services
+The bundles package services that are automatically added and removed to the ALEServer' LRSpec list
+
+1.1.1 UPnP RFID Readers
+* [UPnP RFID Reader (based on ACR122U&gt;Main.Documentation.Bundles.UPnPRFIDReader] 
+
+
+1.1 Sensors
+1.1.1 Data exchanges
+Data sent by the sensors to the ALEServer are:
+* [org.osgi.util.measurement.Measurement&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Measurement.html]
+* [org.osgi.util.measurement.State&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/State.html]
+* [org.osgi.util.position.Position&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/position/Position.html]
+* [java.awt.Image&gt;http://java.sun.com/javase/6/docs/api/java/awt/Image.html]
+* [javax.imageio.IIOImage&gt;http://java.sun.com/javase/6/docs/api/javax/imageio/IIOImage.html]
+* java.lang.Double
+* java.lang.Float
+* java.lang.Long
+* java.lang.Integer
+
+Data values must be represented in units defined by the [International System of Units&gt;http://en.wikipedia.org/wiki/International_System_of_Units] (such as the [org.osgi.util.measurement.Unit&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Unit.html]).
+
+Sensors data types are named ~~[flavors&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/wireadmin/WireConstants.html#WIREADMIN_PRODUCER_FLAVORS]~~ in the WireAdmin terminology.
+
+Other data types could be
+* Location API for J2ME (JSR 179) ( http://www.jcp.org/en/jsr/detail?id=179)
+* Java Distributed Data Acquisition and Control API (JDDAC) ( https://jddac.dev.java.net) 
+
+1.1.1 Sensors properties
+Sensors and data properties qualify the Producer services and Event properties used in the Aspire components.
+* application.name
+* value.unit
+* ...
+
+[UPnP constants&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/UPnPDevice.html] can be used also.
+
+1.1.1 OSGi WireAdmin based sensors
+The sensors are developed according the OSGi [WireAdmin&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/wireadmin/package-summary.html] specification.
+The bundles for sensors package Producer services. Those service are automatically wired to the Consumer service of the ALEServer barfile.
+* [OneWire&gt;Main.Documentation.Bundles.OneWireProducer]
+* [TEMPer&gt;Main.Documentation.Bundles.TEMerProducer]
+* [Oregon WMR 200 weather station&gt;Main.Documentation.Bundles.WMR200WeatherStation]
+* [LaCrosse WS 2300 weather station&gt;Main.Documentation.Bundles.WS2300WeatherStation]
+* Sunspot
+* Wiimote
+* [NMEA GPS&gt;Main.Documentation.Bundles.NMEAGPS]
+* USB WebCam using JMF
+* USB WebCam unig QT
+* [USB Multimeter Velleman DVM 1200&gt;Main.Documentation.Bundles.MultimeterDVM1200] 
+
+1.1.1 OSGi EventAdmin based sensors
+The sensors are developed according the OSGi [EventAdmin&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/event/package-summary.html] specification. They send/post events containing measures to the ALEServer' topic &lt;code&gt;org/ow2/aspirerfid/aleserver/sensedata&lt;/code&gt;.
+The Event properties are : 
+
+1.1.1 OSGi MonitorAdmin based sensors
+The sensors are developed according the OSGi [MonitorAdmin&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/monitor/package-summary.html] specification.
+
+
+1.1.1 OSGi UPnP Base Driver based sensors
+The sensors are developed according the OSGi [UPnP Base Driver&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/package-summary.html] specification.
+
+
+1.1 Actuators
+* [iBuddy&gt;Main.Documentation.Bundles.iBuddy]
+* [Rocket launcher&gt;Main.Documentation.Bundles.RocketLauncher]
+* [Velleman K8090 USB 8 relays&gt;Main.Documentation.Bundles.K8090]
+* [Servo Motors&gt;Main.Documentation.Bundles.ServoMotor]
+
+1.1.1 OSGi UPnP Base Driver based actuators
+The sensors are developed according the OSGi [UPnP Base Driver&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/package-summary.html] specification.
+
+1.1 Sensors+Actuators
+* Lego Mindstorms
+* [USB Phidgets&gt;Main.Documentation.Bundles.Phidgets]
+* [Velleman K8055 acquisition board&gt;Main.Documentation.Bundles.K8055]
+* [Arduino&gt;Main.Documentation.Bundles.Arduino]
+
+1.1 Others
+
+1.1 Utilities
+* SensorConsumer
+* WireAdmin-to-EventAdmin bridge
+
+1.1 How to develop
+
+1.1.1 Serial devices (and serial-to-USB devices)
+* RXTX
+
+1.1.1 USB devices
+* LibUSB Java
+
+1.1.1 Bluetooth devices
+* Bluetooth bridge
+
+1.1.1 Zigbee devices
+
+1.1.1 6lowPAN devices
+
+1.1.1 Sample of OSGi WireAdmin producer
+
+1.1.1 Sample of OSGi WireAdmin consumer
+
+1.1.1 Sample of OSGi EventAdmin publisher
+
+1.1.1 Sample of OSGi EventAdmin subscriber (ie EventHandler)
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundlesforAspireservers"&gt;Aspire :: OSGi Bundles for Aspire servers&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSourcerepository"&gt;1 Source repository&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOBR"&gt;2 OBR&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGeneralPurpose"&gt;3 General Purpose&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReaders"&gt;4 Readers&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HLibraries"&gt;4.1 Libraries&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBundleswithHALAdaptorservices"&gt;4.2 Bundles with HALAdaptor services&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUPnPRFIDReaders"&gt;4.3 UPnP RFID Readers&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HSensors"&gt;5 Sensors&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDataexchanges"&gt;5.1 Data exchanges&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSensorsproperties"&gt;5.2 Sensors properties&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiWireAdminbasedsensors"&gt;5.3 OSGi WireAdmin based sensors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiEventAdminbasedsensors"&gt;5.4 OSGi EventAdmin based sensors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiMonitorAdminbasedsensors"&gt;5.5 OSGi MonitorAdmin based sensors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiUPnPBaseDriverbasedsensors"&gt;5.6 OSGi UPnP Base Driver based sensors&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HActuators"&gt;6 Actuators&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HOSGiUPnPBaseDriverbasedactuators"&gt;6.1 OSGi UPnP Base Driver based actuators&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HSensors2BActuators"&gt;7 Sensors+Actuators&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOthers"&gt;8 Others&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUtilities"&gt;9 Utilities&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtodevelop"&gt;10 How to develop&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSerialdevices28andserialtoUSBdevices29"&gt;10.1 Serial devices (and serial-to-USB devices)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUSBdevices"&gt;10.2 USB devices&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBluetoothdevices"&gt;10.3 Bluetooth devices&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HZigbeedevices"&gt;10.4 Zigbee devices&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#H6lowPANdevices"&gt;10.5 6lowPAN devices&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSampleofOSGiWireAdminproducer"&gt;10.6 Sample of OSGi WireAdmin producer&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSampleofOSGiWireAdminconsumer"&gt;10.7 Sample of OSGi WireAdmin consumer&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSampleofOSGiEventAdminpublisher"&gt;10.8 Sample of OSGi EventAdmin publisher&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSampleofOSGiEventAdminsubscriber28ieEventHandler29"&gt;10.9 Sample of OSGi EventAdmin subscriber (ie EventHandler)&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the OSGi bundles used in the Aspire middleware.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSourcerepository"&gt;1 Source repository&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2F"&gt;&amp;#83;ource repository&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HOBR"&gt;2 OBR&lt;/span&gt;&lt;/h3&gt; 
+The artifact will be available soon through an &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/download/rfc-0112_BundleRepository.pdf"&gt;&amp;#79;BR index&lt;/a&gt;&lt;/span&gt; mapped on a Maven repository.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGeneralPurpose"&gt;3 General Purpose&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/BluetoothServer"&gt;Bluetooth Server&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/RXTX"&gt;RXTX&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/LibUSBJava"&gt;LibUSBJava&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation.Bundles/PhidgetLib?parent=Main.Documentation.Bundles"&gt;&lt;span class="wikicreatelinktext"&gt;Phidget library&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HReaders"&gt;4 Readers&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLibraries"&gt;4.1 Libraries&lt;/span&gt;&lt;/h4&gt; 
+The bundles for readers package only implementation classes imported by the ALEServer barfile (bundle+war) deployed on the OSGi platform.
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/ProximaRFDesktopReader"&gt;ProximaRF Desktop USB reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/TagSysMedioReader"&gt;TagSys Medio Serial reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/ACR122Reader"&gt;ACR 122 USB reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/OneWireReader"&gt;OneWire reader&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation.Bundles/PhidgetReader?parent=Main.Documentation.Bundles"&gt;&lt;span class="wikicreatelinktext"&gt;Phidget RFID Reader&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBundleswithHALAdaptorservices"&gt;4.2 Bundles with HALAdaptor services&lt;/span&gt;&lt;/h4&gt; 
+The bundles package services that are automatically added and removed to the ALEServer' LRSpec list
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HUPnPRFIDReaders"&gt;4.3 UPnP RFID Readers&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader"&gt;UPnP RFID Reader (based on ACR122U&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HSensors"&gt;5 Sensors&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDataexchanges"&gt;5.1 Data exchanges&lt;/span&gt;&lt;/h4&gt; 
+Data sent by the sensors to the ALEServer are:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Measurement.html"&gt;&amp;#111;rg.osgi.util.measurement.Measurement&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/State.html"&gt;&amp;#111;rg.osgi.util.measurement.State&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/position/Position.html"&gt;&amp;#111;rg.osgi.util.position.Position&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javase/6/docs/api/java/awt/Image.html"&gt;&amp;#106;ava.awt.Image&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javase/6/docs/api/javax/imageio/IIOImage.html"&gt;&amp;#106;avax.imageio.IIOImage&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;java.lang.Double&lt;/li&gt;
+&lt;li&gt;java.lang.Float&lt;/li&gt;
+&lt;li&gt;java.lang.Long&lt;/li&gt;
+&lt;li&gt;java.lang.Integer&lt;/li&gt;
+&lt;/ul&gt;Data values must be represented in units defined by the &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/International_System_of_Units"&gt;&amp;#73;nternational System of Units&lt;/a&gt;&lt;/span&gt; (such as the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Unit.html"&gt;&amp;#111;rg.osgi.util.measurement.Unit&lt;/a&gt;&lt;/span&gt;).&lt;p class="paragraph"/&gt;Sensors data types are named &lt;i class="italic"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/wireadmin/WireConstants.html#WIREADMIN_PRODUCER_FLAVORS"&gt;&amp;#102;lavors&lt;/a&gt;&lt;/span&gt;&lt;/i&gt; in the WireAdmin terminology.&lt;p class="paragraph"/&gt;Other data types could be
+&lt;ul class="star"&gt;
+&lt;li&gt;Location API for J2ME (JSR 179) ( &lt;span class="nobr"&gt;&lt;a href="http://www.jcp.org/en/jsr/detail?id=179"&gt;&amp;#104;ttp://www.jcp.org/en/jsr/detail?id=179&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Java Distributed Data Acquisition and Control API (JDDAC) ( &lt;span class="nobr"&gt;&lt;a href="https://jddac.dev.java.net"&gt;&amp;#104;ttps://jddac.dev.java.net&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSensorsproperties"&gt;5.2 Sensors properties&lt;/span&gt;&lt;/h4&gt; 
+Sensors and data properties qualify the Producer services and Event properties used in the Aspire components.
+&lt;ul class="star"&gt;
+&lt;li&gt;application.name&lt;/li&gt;
+&lt;li&gt;value.unit&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/UPnPDevice.html"&gt;&amp;#85;PnP constants&lt;/a&gt;&lt;/span&gt; can be used also.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiWireAdminbasedsensors"&gt;5.3 OSGi WireAdmin based sensors&lt;/span&gt;&lt;/h4&gt; 
+The sensors are developed according the OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/wireadmin/package-summary.html"&gt;&amp;#87;ireAdmin&lt;/a&gt;&lt;/span&gt; specification.
+The bundles for sensors package Producer services. Those service are automatically wired to the Consumer service of the ALEServer barfile.
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/OneWireProducer"&gt;OneWire&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/TEMerProducer"&gt;TEMPer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/WMR200WeatherStation"&gt;Oregon WMR 200 weather station&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/WS2300WeatherStation"&gt;LaCrosse WS 2300 weather station&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Sunspot&lt;/li&gt;
+&lt;li&gt;Wiimote&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/NMEAGPS"&gt;NMEA GPS&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;USB WebCam using JMF&lt;/li&gt;
+&lt;li&gt;USB WebCam unig QT&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/MultimeterDVM1200"&gt;USB Multimeter Velleman DVM 1200&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiEventAdminbasedsensors"&gt;5.4 OSGi EventAdmin based sensors&lt;/span&gt;&lt;/h4&gt; 
+The sensors are developed according the OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/event/package-summary.html"&gt;&amp;#69;ventAdmin&lt;/a&gt;&lt;/span&gt; specification. They send/post events containing measures to the ALEServer' topic &lt;code&gt;org/ow2/aspirerfid/aleserver/sensedata&lt;/code&gt;.
+The Event properties are : 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiMonitorAdminbasedsensors"&gt;5.5 OSGi MonitorAdmin based sensors&lt;/span&gt;&lt;/h4&gt; 
+The sensors are developed according the OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/monitor/package-summary.html"&gt;&amp;#77;onitorAdmin&lt;/a&gt;&lt;/span&gt; specification.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiUPnPBaseDriverbasedsensors"&gt;5.6 OSGi UPnP Base Driver based sensors&lt;/span&gt;&lt;/h4&gt; 
+The sensors are developed according the OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/package-summary.html"&gt;&amp;#85;PnP Base Driver&lt;/a&gt;&lt;/span&gt; specification.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HActuators"&gt;6 Actuators&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/iBuddy"&gt;iBuddy&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/RocketLauncher"&gt;Rocket launcher&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/K8090"&gt;Velleman K8090 USB 8 relays&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation.Bundles/ServoMotor?parent=Main.Documentation.Bundles"&gt;&lt;span class="wikicreatelinktext"&gt;Servo Motors&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOSGiUPnPBaseDriverbasedactuators"&gt;6.1 OSGi UPnP Base Driver based actuators&lt;/span&gt;&lt;/h4&gt; 
+The sensors are developed according the OSGi &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/service/upnp/package-summary.html"&gt;&amp;#85;PnP Base Driver&lt;/a&gt;&lt;/span&gt; specification.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSensors2BActuators"&gt;7 Sensors+Actuators&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Lego Mindstorms&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/Phidgets"&gt;USB Phidgets&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/K8055"&gt;Velleman K8055 acquisition board&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/Arduino"&gt;Arduino&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HOthers"&gt;8 Others&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUtilities"&gt;9 Utilities&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;SensorConsumer&lt;/li&gt;
+&lt;li&gt;WireAdmin-to-EventAdmin bridge&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HHowtodevelop"&gt;10 How to develop&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSerialdevices28andserialtoUSBdevices29"&gt;10.1 Serial devices (and serial-to-USB devices)&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;RXTX&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HUSBdevices"&gt;10.2 USB devices&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;LibUSB Java&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBluetoothdevices"&gt;10.3 Bluetooth devices&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Bluetooth bridge&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HZigbeedevices"&gt;10.4 Zigbee devices&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="H6lowPANdevices"&gt;10.5 6lowPAN devices&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSampleofOSGiWireAdminproducer"&gt;10.6 Sample of OSGi WireAdmin producer&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSampleofOSGiWireAdminconsumer"&gt;10.7 Sample of OSGi WireAdmin consumer&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSampleofOSGiEventAdminpublisher"&gt;10.8 Sample of OSGi EventAdmin publisher&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSampleofOSGiEventAdminsubscriber28ieEventHandler29"&gt;10.9 Sample of OSGi EventAdmin subscriber (ie EventHandler)&lt;/span&gt;&lt;/h4&gt; 
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>BusinessIntelligenceTool</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1274796144000</creationDate>
+<date>1274796231000</date>
+<contentUpdateDate>1274796231000</contentUpdateDate>
+<version>1.2</version>
+<title>AspireBI: Business Intelligence for RFID Applications</title>
+<template></template>
+<content>1 AspireBI: Business Intelligence for RFID Applications
+
+----
+#toc("" "" "true")
+----
+
+
+1.1 Introduction
+
+
+*Under construction*</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspireBI3ABusinessIntelligenceforRFIDApplications"&gt;AspireBI: Business Intelligence for RFID Applications&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Under construction&lt;/strong&gt;
+</renderedcontent>
+</xwikidoc>

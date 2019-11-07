@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Demos</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.News</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1216843595000</creationDate>
+<date>1286558218000</date>
+<contentUpdateDate>1286558218000</contentUpdateDate>
+<version>1.162</version>
+<title>ASPIRE RFID Demonstration</title>
+<template></template>
+<attachment>
+<filename>aspiredemolego.jpg</filename>
+<filesize>51619</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1219527087000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspiredemonfcpicking.jpg</filename>
+<filesize>66547</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1220641475000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspirerfidsunspot.jpg</filename>
+<filesize>53158</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1220674585000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspirenfcmuseum.png</filename>
+<filesize>209797</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1220948152000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>demoaspiresunspot.mp4</filename>
+<filesize>6739780</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1222151440000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Aspire_Warehouse_Demo.jpg</filename>
+<filesize>260980</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1225467189000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>privacy-friendly-wallet.jpg</filename>
+<filesize>49117</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1232549319000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon3.jpg</filename>
+<filesize>58939</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242408703000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon2.jpg</filename>
+<filesize>55316</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242408694000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon1.jpg</filename>
+<filesize>10177</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242408687000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon4.png</filename>
+<filesize>91147</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242409890000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon5.png</filename>
+<filesize>106990</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242409898000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon6.png</filename>
+<filesize>239617</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242409908000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireballoon7.png</filename>
+<filesize>92949</filesize>
+<author>xwiki:XWiki.baz</author>
+<date>1242409916000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AthensDigitalWeek.jpg</filename>
+<filesize>74957</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286558170000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Demonstrations
+#toc("" "" "")
+
+
+1.1 AspireRFID Middleware
+
+1.1.1 Warehouse Packet Delivery (AITdev AspireRfid 3 Tier Use)
+
+The objective of  ASPIRE’s Warehouse ALE Demo is to provide a GUI of a warehouse Delivery Counter from which will be automatically be “fed” with RFID Tag data from  the Filtering and collection server  captured report. This way someone will be able to demonstrate a warehouse delivery scenario using only three tiers of the AspireRFID middleware ([Hardware Abstraction Layer&gt;Main.Documentation.HAL], [Reader Core Proxy&gt;Main.Documentation.ReaderCoreProxy] and [F&amp;amp;C Server&gt;Main.Documentation.Filtering&amp;Collection]).
+
+
+For more information on how to download and run this demo you can go to the "[WarehousePacketDelivery(3 Tier Use)&gt;Main.Documentation.Demos#HWarehousePacketDelivery283TierUse29]” at the "[AITdev Demos&gt;Main.Documentation.Demos]" page.
+
+
+1.1.1 Warehouse Packet Delivery (AITdev AspireRFID 6 Tier Use) (See [YouTube Video&gt;http://www.youtube.com/watch?v=9f63eoFwEN4])
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main/Demos/AthensDigitalWeek.jpg"&gt;{image:AthensDigitalWeek8.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+*[See the Demo's Video&gt;http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo.html]*
+
+
+The objective of ASPIRE’s Warehouse EPCIS Demo is to provide a Virtual Warehouse Management system GUI that supports receiving scenarios from a readpoint and will use the hole [AspireRFID Architecture&gt;Main.Documentation.AspireRfidArchitecture]. The tags that will pas throe the specific read point will be filtered from the [F&amp;amp;C Server&gt;Main.Documentation.Filtering&amp;Collection] and be send within a report to the [Business Event Generator&gt;Main.Documentation.BEG] engine. Then the BEG engine will translate them to event data taking in consideration the transaction defined at the master data and store them to the [EPCIS Repository&gt;Main.Documentation.EpcisRepository]. The Event data will be retrieved from the EPCIS repository with the help of the [Connector&gt;Main.Documentation.Connector] and send to the Warehouse Management System. This way someone will be able to demonstrate a warehouse delivery scenario using six tiers of the AspireRFID middleware ([Hardware Abstraction Layer&gt;Main.Documentation.HAL], [Reader Core Proxy&gt;Main.Documentation.ReaderCoreProxy], [F&amp;amp;C Server&gt;Main.Documentation.Filtering&amp;Collection], [Business Event Generator&gt;Main.Documentation.BEG], [EPCIS Repository&gt;Main.Documentation.EpcisRepository] and the [Connector&gt;Main.Documentation.Connector]).
+
+
+For more information on how to download and run this demo you can go to the "[WarehousePacketDelivery (6 Tier Use)&gt;Main.Documentation.Demos#HWarehousePacketDelivery286TierUse29]” at the "[AITdev Demos&gt;Main.Documentation.Demos]" page.
+
+
+1.1 RFID Suite
+
+1.1.1 Object tracking
+This demonstration presents the tracking of several objects. End users are alerted when objects are lost or stolen and when some pairing rules (driver licence with tractor model, carried object type and pallets, ...) are not satisfied.
+This demonstration uses the RFID Suite. The documentation is available [here&gt;Main.Documentation#HRFIDSuite].
+
+Under construction
+ 
+Hardware Kit for the in-vitro demo (available on http://shop.lego.com):
+* 1 laptop
+* 1 Lego® starter train set kit ([5608&gt;http://shop.lego.com/ByTheme/Product.aspx?p=5608] or [5609&gt;http://shop.lego.com/ByTheme/Product.aspx?p=5609]) + a set of bricks ([5577&gt;http://shop.lego.com/Product/?p=5577])
+* 1 or more [Touchatag readers&gt;http://www.touchatag.com] and a set of ISO14443 tags (such as Touchatag)
+* 1 or more [iBuddies&gt;http://www.i-buddy.com] (one per Touchatag reader)
+
+For a more complex demo, a Lego® Mindstorms® NXT ([B8527&gt;http://shop.lego.com/ByTheme/Product.aspx?p=B8527] or [9841&gt;http://shop.lego.com/product/?p=9841]) can switch the tracks ([3775&gt;http://shop.lego.com/Product/?p=3775]) and measures distance (and then train speed), noise level, light, ...
+The NXT communicates data using a bluetooth connection with the edge.
+
+
+{image:aspiredemolego.jpg}
+
+[video soon]
+
+This demo was presented on the OW2 stand at JavaOne 2009. [The diaporama ...&gt;Photos.AspireDemoAtJavaOne2009] 
+
+1.1.1 Supply chain management 
+This demonstration extends the latter demonstration with shipping QoS criteria tracking (position (vertical), shock, temperature, light). Each tracked object is attached either to a RFID tag and to a wireless sensors.
+
+Hardware Kit for the in-vitro demo:
+* 1 SunSPOT kit (available on http://www.sunspotworld.com/) or other Zigbee-based sensors.
+
+{image:aspirerfidsunspot.jpg}
+
+{attach:video (.mp4)|file=demoaspiresunspot.mp4}
+
+1.1.1 Sounding Balloon tracking
+A [sounding balloon&gt;http://en.wikipedia.org/wiki/Weather_balloon] has been launched from l'IUT de Valence ([map&gt;http://maps.google.fr/maps?ll=44.915116,4.914901&amp;spn=0.009999,0.024741&amp;t=h&amp;z=12]) , France, the 24th of April 2009.
+The balloon has flown for 3 hours (2 hours up, 1 hour down), up to 26500 meters (~~87000 feet~~) high, and has landed 140 km (~~87 miles~~)  away ([map&gt;http://maps.google.fr/maps?ll=44.064570,6.155825&amp;spn=0.009999,0.024741&amp;t=h&amp;z=12]). KML track coming soon !
+
+{image:aspireballoon2.jpg}  {image:aspireballoon1.jpg} {image:aspireballoon3.jpg}
+
+Collected data were: 
+* GPS position (latitude,longitude, altitude) 
+* internal and external temperatures
+* pressure
+* snapshots
+
+The flight has been followed in real-time in a classroom, using Aspire RFID suite, by the 40 high school students that had worked on the sensors ([UBPE&gt;http://www.planete-sciences.org/espace/spip.php?article213] operation in french).
+
+Screenshot of received events:
+
+{image:aspireballoon5.png}
+
+Screenshot of map tracking: (the four weird points on the upper right corner come from corrupted radio frames)
+
+{image:aspireballoon6.png}
+
+Screenshot of altitude graph:
+
+{image:aspireballoon4.png}
+
+Screenshot of pressure graph:
+
+{image:aspireballoon7.png}
+
+Flying part:
+
+
+* To be completed
+
+Ground part:
+
+* Aspire Edge, running HTTPReader service, for collecting data received by radio
+* Aspire EPCIS, for storing current track and measurements
+* Aspire GWT Console for displaying current track and measurements
+
+[The full diaporama ...&gt;Photos.SoundingBalloonTracking]
+[The paper ...&gt;http://membres-liglab.imag.fr/donsez/pub/publi/acmmobility2009-jean.pdf]
+[The presentation ...&gt;http://membres-liglab.imag.fr/donsez/pub/publi/acmmobility2009-jean.pres.pdf]
+
+1.1 General RFID Demos
+
+1.1.1 NFC Museum
+This demonstration presents the usage of NFC phones to augment exhibits visits. The demonstration exists in 2 versions : one for NFC Java phones using NFC transponders and one for phones using the builtin camera to scan Data Matrix codes. A pre-release of the demo is running [here&gt;http://www-adele.imag.fr/nfc/museum/].
+
+Under construction
+
+Hardware Kit for the in-vitro demo:
+* 1 laptop with a bluetooth dongle
+* 1 Nokia [6131 NFC&gt;http://europe.nokia.com/6131nfc] phone
+* 1 [Nabaztag&gt;http://www.nabaztag.com] (optional)
+* 1 UPnP Renderer (optional)
+* a set of ISO 14443 tags (remark: you can collect and reuse some transportation contactless tickets: most of them are MiFare Ultralight tags !). 
+
+{image:aspirenfcmuseum.png}
+
+[video soon]
+
+1.1.1 NFC Picking
+This demonstration presents the usage of NFC phones to pick a subset of tagged objects.
+
+Under construction
+
+Hardware Kit for the in-vitro demo:
+* 1 laptop with a bluetooth dongle
+* 1 Nokia [6131 NFC&gt;http://europe.nokia.com/6131nfc] phone
+* a set of ISO 14443 tags (remark: you can collect and reuse some transportation contactless tickets: most of them are MiFare Ultralight tags !). 
+
+{image:aspiredemonfcpicking.jpg}
+
+[video soon]
+
+Remark: we are looking for testers who own other NFC Java-phones (BenQ T80, Nokia 6212 NFC, Japanese Felica NFC phones, Twinlinx MyMax NFC/BT stickers ...).
+
+1.1.1 The Patrol Man
+This demonstration presents the usage of NFC phones in a patrol purpose.
+
+The patrol man (aka the user) have to connect his phone to a bluetooth server which will send it a report specification file (ECSpec).
+This file contains questionnaires representations paired with one or more tag UID or record type pattern.
+
+Then, when the user touches a tag during his patrol, the corresponding questionnaire will be shown, and its answers are kept in memory.
+
+At the end of the patrol, the user have to connect a bluetooth server to send a report XML file (ECReport).
+Each questionnaire answers are grouped by the pattern which was recognized and brought the questionnaire up.
+
+[See the complete description here&gt;Main.Demos.PatrolMan]
+
+1.1.1 Touch and Locate
+This demonstration presents the usage of NFC phones and RFID tags to present locations and associated points of interest to the user.
+
+This application handles two different record types :
+* Location : Coordinates are stored in binary form
+* URI : Coordinates are stored in text form as a bookmark (for example: http://loc/45.187778/5.726945)
+
+The location tags MUST contain latitude and longitude information, they MAY contain altitude and bearing information.
+
+All information are retrieved from Google Map, through the static map API, and the AJAX API for POI listing.
+
+[See the complete description here&gt;Main.Demos.TouchnLocate]
+
+1.1 Misc
+
+1.1.1 Homemade "Privacy-Friendly" Wallet
+
+Usage: protect your personal data against RFID sniffing
+* passports and ids ([Budapest declaration&gt;http://www.fidis.net/press-events/press-releases/budapest-declaration])
+* contactless credit cards : some have accessible banking infos
+* contactless transportation cards : some are not locked or have accessible personal information ([MOBIB&gt;http://www.uclouvain.be/sites/security/fr-mobib.html], [BlackHat RFID topics&gt;http://www.blackhat.com/html/bh-us-10/bh-us-10-briefings.html#Paget]...]
+* ... 
+
+Hardware kit
+* 1 wallet
+* 1 outdoor rubber tape
+* 1 piece of cooking aluminium foil
+
+Remark : add several foils to be 100% RFID protected
+
+{image:privacy-friendly-wallet.jpg}</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HDemonstrations"&gt;Demonstrations&lt;/span&gt;&lt;/h2&gt; 
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAspireRFIDMiddleware"&gt; AspireRFID Middleware&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWarehousePacketDelivery28AITdevAspireRfid3TierUse29"&gt; Warehouse Packet Delivery (AITdev AspireRfid 3 Tier Use)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWarehousePacketDelivery28AITdevAspireRFID6TierUse2928See5BYouTubeVideo3Ehttp3A2F2Fwwwyoutubecom2Fwatch3Fv3D9f63eoFwEN45D29"&gt; Warehouse Packet Delivery (AITdev AspireRFID 6 Tier Use) (See &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.youtube.com/watch?v=9f63eoFwEN4"&gt;&amp;#89;ouTube Video&lt;/a&gt;&lt;/span&gt;)&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HRFIDSuite"&gt; RFID Suite&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HObjecttracking"&gt; Object tracking&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSupplychainmanagement"&gt; Supply chain management &lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSoundingBalloontracking"&gt; Sounding Balloon tracking&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HGeneralRFIDDemos"&gt; General RFID Demos&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HNFCMuseum"&gt; NFC Museum&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNFCPicking"&gt; NFC Picking&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HThePatrolMan"&gt; The Patrol Man&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTouchandLocate"&gt; Touch and Locate&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMisc"&gt; Misc&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHomemade22PrivacyFriendly22Wallet"&gt; Homemade "Privacy-Friendly" Wallet&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAspireRFIDMiddleware"&gt;AspireRFID Middleware&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWarehousePacketDelivery28AITdevAspireRfid3TierUse29"&gt;Warehouse Packet Delivery (AITdev AspireRfid 3 Tier Use)&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The objective of  ASPIRE’s Warehouse ALE Demo is to provide a GUI of a warehouse Delivery Counter from which will be automatically be “fed” with RFID Tag data from  the Filtering and collection server  captured report. This way someone will be able to demonstrate a warehouse delivery scenario using only three tiers of the AspireRFID middleware (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/HAL"&gt;Hardware Abstraction Layer&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core Proxy&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;F&amp;amp;C Server&lt;/a&gt;&lt;/span&gt;).&lt;p class="paragraph"/&gt;
+For more information on how to download and run this demo you can go to the "&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos#HWarehousePacketDelivery283TierUse29"&gt;WarehousePacketDelivery(3 Tier Use)&lt;/a&gt;&lt;/span&gt;” at the "&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos"&gt;AITdev Demos&lt;/a&gt;&lt;/span&gt;" page.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWarehousePacketDelivery28AITdevAspireRFID6TierUse2928See5BYouTubeVideo3Ehttp3A2F2Fwwwyoutubecom2Fwatch3Fv3D9f63eoFwEN45D29"&gt;Warehouse Packet Delivery (AITdev AspireRFID 6 Tier Use) (See &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.youtube.com/watch?v=9f63eoFwEN4"&gt;&amp;#89;ouTube Video&lt;/a&gt;&lt;/span&gt;)&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main/Demos/AthensDigitalWeek.jpg"&gt;&lt;img src="/xwiki/bin/download/Main/Demos/AthensDigitalWeek8.jpg" height="400" alt="AthensDigitalWeek8.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo.html"&gt;&amp;#83;ee the Demo's Video&lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+The objective of ASPIRE’s Warehouse EPCIS Demo is to provide a Virtual Warehouse Management system GUI that supports receiving scenarios from a readpoint and will use the hole &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireRfidArchitecture"&gt;AspireRFID Architecture&lt;/a&gt;&lt;/span&gt;. The tags that will pas throe the specific read point will be filtered from the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;F&amp;amp;C Server&lt;/a&gt;&lt;/span&gt; and be send within a report to the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;Business Event Generator&lt;/a&gt;&lt;/span&gt; engine. Then the BEG engine will translate them to event data taking in consideration the transaction defined at the master data and store them to the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;EPCIS Repository&lt;/a&gt;&lt;/span&gt;. The Event data will be retrieved from the EPCIS repository with the help of the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Connector"&gt;Connector&lt;/a&gt;&lt;/span&gt; and send to the Warehouse Management System. This way someone will be able to demonstrate a warehouse delivery scenario using six tiers of the AspireRFID middleware (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/HAL"&gt;Hardware Abstraction Layer&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core Proxy&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;F&amp;amp;C Server&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;Business Event Generator&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;EPCIS Repository&lt;/a&gt;&lt;/span&gt; and the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Connector"&gt;Connector&lt;/a&gt;&lt;/span&gt;).&lt;p class="paragraph"/&gt;
+For more information on how to download and run this demo you can go to the "&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos#HWarehousePacketDelivery286TierUse29"&gt;WarehousePacketDelivery (6 Tier Use)&lt;/a&gt;&lt;/span&gt;” at the "&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos"&gt;AITdev Demos&lt;/a&gt;&lt;/span&gt;" page.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRFIDSuite"&gt;RFID Suite&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HObjecttracking"&gt;Object tracking&lt;/span&gt;&lt;/h4&gt; 
+This demonstration presents the tracking of several objects. End users are alerted when objects are lost or stolen and when some pairing rules (driver licence with tractor model, carried object type and pallets, ...) are not satisfied.
+This demonstration uses the RFID Suite. The documentation is available &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Documentation#HRFIDSuite"&gt;here&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;Under construction&lt;p class="paragraph"/&gt;Hardware Kit for the in-vitro demo (available on &lt;span class="nobr"&gt;&lt;a href="http://shop.lego.com"&gt;&amp;#104;ttp://shop.lego.com&lt;/a&gt;&lt;/span&gt;):
+&lt;ul class="star"&gt;
+&lt;li&gt;1 laptop&lt;/li&gt;
+&lt;li&gt;1 Lego® starter train set kit (&lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/ByTheme/Product.aspx?p=5608"&gt;&amp;#53;608&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/ByTheme/Product.aspx?p=5609"&gt;&amp;#53;609&lt;/a&gt;&lt;/span&gt;) + a set of bricks (&lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/Product/?p=5577"&gt;&amp;#53;577&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;1 or more &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.touchatag.com"&gt;&amp;#84;ouchatag readers&lt;/a&gt;&lt;/span&gt; and a set of ISO14443 tags (such as Touchatag)&lt;/li&gt;
+&lt;li&gt;1 or more &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.i-buddy.com"&gt;&amp;#105;Buddies&lt;/a&gt;&lt;/span&gt; (one per Touchatag reader)&lt;/li&gt;
+&lt;/ul&gt;For a more complex demo, a Lego® Mindstorms® NXT (&lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/ByTheme/Product.aspx?p=B8527"&gt;&amp;#66;8527&lt;/a&gt;&lt;/span&gt; or &lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/product/?p=9841"&gt;&amp;#57;841&lt;/a&gt;&lt;/span&gt;) can switch the tracks (&lt;span class="wikiexternallink"&gt;&lt;a href="http://shop.lego.com/Product/?p=3775"&gt;&amp;#51;775&lt;/a&gt;&lt;/span&gt;) and measures distance (and then train speed), noise level, light, &amp;#8230;
+The NXT communicates data using a bluetooth connection with the edge.&lt;p class="paragraph"/&gt;
+&lt;img src="/xwiki/bin/download/Main/Demos/aspiredemolego.jpg" alt="aspiredemolego.jpg" /&gt;&lt;p class="paragraph"/&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/video+soon?parent=Main.Demos"&gt;&lt;span class="wikicreatelinktext"&gt;video soon&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;This demo was presented on the OW2 stand at JavaOne 2009. &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009"&gt;The diaporama ...&lt;/a&gt;&lt;/span&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSupplychainmanagement"&gt;Supply chain management &lt;/span&gt;&lt;/h4&gt; 
+This demonstration extends the latter demonstration with shipping QoS criteria tracking (position (vertical), shock, temperature, light). Each tracked object is attached either to a RFID tag and to a wireless sensors.&lt;p class="paragraph"/&gt;Hardware Kit for the in-vitro demo:
+&lt;ul class="star"&gt;
+&lt;li&gt;1 SunSPOT kit (available on &lt;span class="nobr"&gt;&lt;a href="http://www.sunspotworld.com/"&gt;&amp;#104;ttp://www.sunspotworld.com/&lt;/a&gt;&lt;/span&gt;) or other Zigbee-based sensors.&lt;/li&gt;
+&lt;/ul&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspirerfidsunspot.jpg" alt="aspirerfidsunspot.jpg" /&gt;&lt;p class="paragraph"/&gt;&lt;a href="/xwiki/bin/download/Main/Demos/demoaspiresunspot.mp4" /&gt;video (.mp4)&lt;/a&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSoundingBalloontracking"&gt;Sounding Balloon tracking&lt;/span&gt;&lt;/h4&gt; 
+A &lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Weather_balloon"&gt;&amp;#115;ounding balloon&lt;/a&gt;&lt;/span&gt; has been launched from l'IUT de Valence (&lt;span class="wikiexternallink"&gt;&lt;a href="http://maps.google.fr/maps?ll=44.915116,4.914901&amp;spn=0.009999,0.024741&amp;t=h&amp;z=12"&gt;&amp;#109;ap&lt;/a&gt;&lt;/span&gt;) , France, the 24th of April 2009.
+The balloon has flown for 3 hours (2 hours up, 1 hour down), up to 26500 meters (&lt;i class="italic"&gt;87000 feet&lt;/i&gt;) high, and has landed 140 km (&lt;i class="italic"&gt;87 miles&lt;/i&gt;)  away (&lt;span class="wikiexternallink"&gt;&lt;a href="http://maps.google.fr/maps?ll=44.064570,6.155825&amp;spn=0.009999,0.024741&amp;t=h&amp;z=12"&gt;&amp;#109;ap&lt;/a&gt;&lt;/span&gt;). KML track coming soon !&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon2.jpg" alt="aspireballoon2.jpg" /&gt;  &lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon1.jpg" alt="aspireballoon1.jpg" /&gt; &lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon3.jpg" alt="aspireballoon3.jpg" /&gt;&lt;p class="paragraph"/&gt;Collected data were: 
+&lt;ul class="star"&gt;
+&lt;li&gt;GPS position (latitude,longitude, altitude)&lt;/li&gt;
+&lt;li&gt;internal and external temperatures&lt;/li&gt;
+&lt;li&gt;pressure&lt;/li&gt;
+&lt;li&gt;snapshots&lt;/li&gt;
+&lt;/ul&gt;The flight has been followed in real-time in a classroom, using Aspire RFID suite, by the 40 high school students that had worked on the sensors (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.planete-sciences.org/espace/spip.php?article213"&gt;&amp;#85;BPE&lt;/a&gt;&lt;/span&gt; operation in french).&lt;p class="paragraph"/&gt;Screenshot of received events:&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon5.png" alt="aspireballoon5.png" /&gt;&lt;p class="paragraph"/&gt;Screenshot of map tracking: (the four weird points on the upper right corner come from corrupted radio frames)&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon6.png" alt="aspireballoon6.png" /&gt;&lt;p class="paragraph"/&gt;Screenshot of altitude graph:&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon4.png" alt="aspireballoon4.png" /&gt;&lt;p class="paragraph"/&gt;Screenshot of pressure graph:&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspireballoon7.png" alt="aspireballoon7.png" /&gt;&lt;p class="paragraph"/&gt;Flying part:
+&lt;ul class="star"&gt;
+&lt;li&gt;To be completed&lt;/li&gt;
+&lt;/ul&gt;Ground part:
+&lt;ul class="star"&gt;
+&lt;li&gt;Aspire Edge, running HTTPReader service, for collecting data received by radio&lt;/li&gt;
+&lt;li&gt;Aspire EPCIS, for storing current track and measurements&lt;/li&gt;
+&lt;li&gt;Aspire GWT Console for displaying current track and measurements&lt;/li&gt;
+&lt;/ul&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/SoundingBalloonTracking"&gt;The full diaporama ...&lt;/a&gt;&lt;/span&gt;
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/pub/publi/acmmobility2009-jean.pdf"&gt;&amp;#84;he paper ...&lt;/a&gt;&lt;/span&gt;
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/pub/publi/acmmobility2009-jean.pres.pdf"&gt;&amp;#84;he presentation ...&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGeneralRFIDDemos"&gt;General RFID Demos&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNFCMuseum"&gt;NFC Museum&lt;/span&gt;&lt;/h4&gt; 
+This demonstration presents the usage of NFC phones to augment exhibits visits. The demonstration exists in 2 versions : one for NFC Java phones using NFC transponders and one for phones using the builtin camera to scan Data Matrix codes. A pre-release of the demo is running &lt;span class="wikiexternallink"&gt;&lt;a href="http://www-adele.imag.fr/nfc/museum/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;Under construction&lt;p class="paragraph"/&gt;Hardware Kit for the in-vitro demo:
+&lt;ul class="star"&gt;
+&lt;li&gt;1 laptop with a bluetooth dongle&lt;/li&gt;
+&lt;li&gt;1 Nokia &lt;span class="wikiexternallink"&gt;&lt;a href="http://europe.nokia.com/6131nfc"&gt;&amp;#54;131 NFC&lt;/a&gt;&lt;/span&gt; phone&lt;/li&gt;
+&lt;li&gt;1 &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nabaztag.com"&gt;&amp;#78;abaztag&lt;/a&gt;&lt;/span&gt; (optional)&lt;/li&gt;
+&lt;li&gt;1 UPnP Renderer (optional)&lt;/li&gt;
+&lt;li&gt;a set of ISO 14443 tags (remark: you can collect and reuse some transportation contactless tickets: most of them are MiFare Ultralight tags !).&lt;/li&gt;
+&lt;/ul&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspirenfcmuseum.png" alt="aspirenfcmuseum.png" /&gt;&lt;p class="paragraph"/&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/video+soon?parent=Main.Demos"&gt;&lt;span class="wikicreatelinktext"&gt;video soon&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNFCPicking"&gt;NFC Picking&lt;/span&gt;&lt;/h4&gt; 
+This demonstration presents the usage of NFC phones to pick a subset of tagged objects.&lt;p class="paragraph"/&gt;Under construction&lt;p class="paragraph"/&gt;Hardware Kit for the in-vitro demo:
+&lt;ul class="star"&gt;
+&lt;li&gt;1 laptop with a bluetooth dongle&lt;/li&gt;
+&lt;li&gt;1 Nokia &lt;span class="wikiexternallink"&gt;&lt;a href="http://europe.nokia.com/6131nfc"&gt;&amp;#54;131 NFC&lt;/a&gt;&lt;/span&gt; phone&lt;/li&gt;
+&lt;li&gt;a set of ISO 14443 tags (remark: you can collect and reuse some transportation contactless tickets: most of them are MiFare Ultralight tags !).&lt;/li&gt;
+&lt;/ul&gt;&lt;img src="/xwiki/bin/download/Main/Demos/aspiredemonfcpicking.jpg" alt="aspiredemonfcpicking.jpg" /&gt;&lt;p class="paragraph"/&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/video+soon?parent=Main.Demos"&gt;&lt;span class="wikicreatelinktext"&gt;video soon&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;Remark: we are looking for testers who own other NFC Java-phones (BenQ T80, Nokia 6212 NFC, Japanese Felica NFC phones, Twinlinx MyMax NFC/BT stickers ...).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HThePatrolMan"&gt;The Patrol Man&lt;/span&gt;&lt;/h4&gt; 
+This demonstration presents the usage of NFC phones in a patrol purpose.&lt;p class="paragraph"/&gt;The patrol man (aka the user) have to connect his phone to a bluetooth server which will send it a report specification file (ECSpec).
+This file contains questionnaires representations paired with one or more tag UID or record type pattern.&lt;p class="paragraph"/&gt;Then, when the user touches a tag during his patrol, the corresponding questionnaire will be shown, and its answers are kept in memory.&lt;p class="paragraph"/&gt;At the end of the patrol, the user have to connect a bluetooth server to send a report XML file (ECReport).
+Each questionnaire answers are grouped by the pattern which was recognized and brought the questionnaire up.&lt;p class="paragraph"/&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Demos/PatrolMan"&gt;See the complete description here&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTouchandLocate"&gt;Touch and Locate&lt;/span&gt;&lt;/h4&gt; 
+This demonstration presents the usage of NFC phones and RFID tags to present locations and associated points of interest to the user.&lt;p class="paragraph"/&gt;This application handles two different record types :
+&lt;ul class="star"&gt;
+&lt;li&gt;Location : Coordinates are stored in binary form&lt;/li&gt;
+&lt;li&gt;URI : Coordinates are stored in text form as a bookmark (for example: &lt;span class="nobr"&gt;&lt;a href="http://loc/45.187778/5.726945"&gt;&amp;#104;ttp://loc/45.187778/5.726945&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;The location tags MUST contain latitude and longitude information, they MAY contain altitude and bearing information.&lt;p class="paragraph"/&gt;All information are retrieved from Google Map, through the static map API, and the AJAX API for POI listing.&lt;p class="paragraph"/&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Demos/TouchnLocate"&gt;See the complete description here&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;Misc&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHomemade22PrivacyFriendly22Wallet"&gt;Homemade "Privacy-Friendly" Wallet&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Usage: protect your personal data against RFID sniffing
+&lt;ul class="star"&gt;
+&lt;li&gt;passports and ids (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fidis.net/press-events/press-releases/budapest-declaration"&gt;&amp;#66;udapest declaration&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;contactless credit cards : some have accessible banking infos&lt;/li&gt;
+&lt;li&gt;contactless transportation cards : some are not locked or have accessible personal information (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.uclouvain.be/sites/security/fr-mobib.html"&gt;&amp;#77;OBIB&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.blackhat.com/html/bh-us-10/bh-us-10-briefings.html#Paget"&gt;&amp;#66;lackHat RFID topics&lt;/a&gt;&lt;/span&gt;...]&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;Hardware kit
+&lt;ul class="star"&gt;
+&lt;li&gt;1 wallet&lt;/li&gt;
+&lt;li&gt;1 outdoor rubber tape&lt;/li&gt;
+&lt;li&gt;1 piece of cooking aluminium foil&lt;/li&gt;
+&lt;/ul&gt;Remark : add several foils to be 100% RFID protected&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Demos/privacy-friendly-wallet.jpg" alt="privacy-friendly-wallet.jpg" /&gt;
+</renderedcontent>
+</xwikidoc>

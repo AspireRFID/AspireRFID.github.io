@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>E2EMngmt-BEG-JMX</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.E2EMngmt</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1277715688000</creationDate>
+<date>1277716192000</date>
+<contentUpdateDate>1277716192000</contentUpdateDate>
+<version>1.4</version>
+<title>Aspire :: BEG Server management with JMX</title>
+<template></template>
+<content>1 Aspire :: BEG Server management with JMX
+----
+#toc("" "" "true")
+----
+
+This section describes the management of the BEG server with JMX.
+
+[JMX (Java Management eXtension)&gt;http://en.wikipedia.org/wiki/Java_Management_Extensions] is the de-facto standard for managing and for monitoring Java applications and middlewares.
+
+The management is composed of 2 parts
+* MBean which are probes to manage/monitor the BEG elements and its extensions (sensors, ...).
+* consoles
+
+1.1 BEG MBeans
+
+The BEG can be managed with the following MBeans:
+* &lt;code&gt;org.ow2.aspirerfid:type=beg,name=server&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.beg.server.mbean.BEGServer&lt;/code&gt;) provides general information about the Server
+* &lt;code&gt;org.ow2.aspirerfid:type=beg,name=begspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.beg.server.mbean.BEGSpec&lt;/code&gt;) manages BEGSpec (add, remove)
+
+1.1 Consoles
+1.1.1 VisualVM plugin for Aspire BEG Server
+The console uses to manage the ALEServer is the standard [VisualVM&gt;https://visualvm.dev.java.net] with the Aspire BEGServer plugin
+
+The Aspire BEGServer plugin gathers in one panel the main operations available on the 2 MBeans previously described.
+
+
+{image:jvisualplugin-begserver-1.jpg|600}
+
+[Additionnal plugins&gt;https://visualvm.dev.java.net/plugins.html] can completed the management of the host :
+* OSGi plugin (bundles and shell)
+* Tomcat
+* Glassfish (which is also based on Felix since the version 3)
+
+
+
+1.1 Misc
+*[More documentation on the VisualVM ...&gt;Main.Documentation.E2EMngmt-VisualVM]
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABEGServermanagementwithJMX"&gt;Aspire :: BEG Server management with JMX&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBEGMBeans"&gt;1 BEG MBeans&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConsoles"&gt;2 Consoles&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HVisualVMpluginforAspireBEGServer"&gt;2.1 VisualVM plugin for Aspire BEG Server&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMisc"&gt;3 Misc&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the management of the BEG server with JMX.&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Java_Management_Extensions"&gt;&amp;#74;MX (Java Management eXtension)&lt;/a&gt;&lt;/span&gt; is the de-facto standard for managing and for monitoring Java applications and middlewares.&lt;p class="paragraph"/&gt;The management is composed of 2 parts
+&lt;ul class="star"&gt;
+&lt;li&gt;MBean which are probes to manage/monitor the BEG elements and its extensions (sensors, ...).&lt;/li&gt;
+&lt;li&gt;consoles&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBEGMBeans"&gt;1 BEG MBeans&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The BEG can be managed with the following MBeans:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=beg,name=server&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.beg.server.mbean.BEGServer&lt;/code&gt;) provides general information about the Server&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=beg,name=begspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.beg.server.mbean.BEGSpec&lt;/code&gt;) manages BEGSpec (add, remove)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HConsoles"&gt;2 Consoles&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVisualVMpluginforAspireBEGServer"&gt;2.1 VisualVM plugin for Aspire BEG Server&lt;/span&gt;&lt;/h4&gt; 
+The console uses to manage the ALEServer is the standard &lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net"&gt;&amp;#86;isualVM&lt;/a&gt;&lt;/span&gt; with the Aspire BEGServer plugin&lt;p class="paragraph"/&gt;The Aspire BEGServer plugin gathers in one panel the main operations available on the 2 MBeans previously described.&lt;p class="paragraph"/&gt;
+&lt;img src="/xwiki/bin/download/Main.Documentation/E2EMngmt-BEG-JMX/jvisualplugin-begserver-1.jpg" height="600" alt="jvisualplugin-begserver-1.jpg" /&gt;&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net/plugins.html"&gt;&amp;#65;dditionnal plugins&lt;/a&gt;&lt;/span&gt; can completed the management of the host :
+&lt;ul class="star"&gt;
+&lt;li&gt;OSGi plugin (bundles and shell)&lt;/li&gt;
+&lt;li&gt;Tomcat&lt;/li&gt;
+&lt;li&gt;Glassfish (which is also based on Felix since the version 3)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;3 Misc&lt;/span&gt;&lt;/h3&gt; 
+*&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM"&gt;More documentation on the VisualVM ...&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

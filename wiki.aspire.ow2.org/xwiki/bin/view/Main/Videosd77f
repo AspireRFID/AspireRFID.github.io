@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Videos</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1262700940000</creationDate>
+<date>1308317253000</date>
+<contentUpdateDate>1308317253000</contentUpdateDate>
+<version>1.10</version>
+<title>AspireRFID Videos</title>
+<template></template>
+<content>1 Videos
+
+----
+#toc("" "" "true")
+----
+
+
+1.1  Warehouse Packet Delivery (6 Tier Use) Demo
+
+        &lt;div id="media"&gt;
+            &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="498" id="csSWF"&gt;
+                &lt;param name="movie" value="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo_controller.swf" /&gt;
+                &lt;param name="quality" value="best" /&gt;
+                &lt;param name="bgcolor" value="#1a1a1a" /&gt;
+                &lt;param name="allowfullscreen" value="true" /&gt;
+                &lt;param name="scale" value="showall" /&gt;
+                &lt;param name="allowscriptaccess" value="always" /&gt;
+                &lt;param name="flashvars" value="autostart=false&amp;thumb=FirstFrame.png&amp;thumbscale=45&amp;color=0x000000,0x000000" /&gt;
+                &lt;!--[if !IE]&gt;--&gt;
+                &lt;object type="application/x-shockwave-flash" data="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo_controller.swf" width="640" height="498"&gt;
+                    &lt;param name="quality" value="best" /&gt;
+                    &lt;param name="bgcolor" value="#1a1a1a" /&gt;
+                    &lt;param name="allowfullscreen" value="true" /&gt;
+                    &lt;param name="scale" value="showall" /&gt;
+                    &lt;param name="allowscriptaccess" value="always" /&gt;
+                    &lt;param name="flashvars" value="autostart=false&amp;thumb=FirstFrame.png&amp;thumbscale=45&amp;color=0x000000,0x000000" /&gt;
+                &lt;!--&lt;![endif]--&gt;
+                    &lt;div id="noUpdate"&gt;
+                        &lt;p&gt;Video content presented here requires a more recent version of the Adobe Flash Player. If you are you using a browser with JavaScript disabled please enable it now. Otherwise, please update your version of the free Flash Player by &lt;a href="http://www.adobe.com/go/getflashplayer"&gt;downloading here&lt;/a&gt;.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;!--[if !IE]&gt;--&gt;
+                &lt;/object&gt;
+                &lt;!--&lt;![endif]--&gt;
+            &lt;/object&gt;
+        &lt;/div&gt;
+
+* Creator: [Nikos Kefalakis&gt;http://www.ait.edu.gr/ait_web_site/Researcher/nkef/kefalakis.html]
+
+
+
+
+
+1.1 Niki RFID Automated Reception Management System
+
+&lt;object width="640" height="505"&gt;&lt;param name="movie" value="http://www.youtube.com/v/DljvjG8kEvM&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x2b405b&amp;color2=0x6b8ab6"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/DljvjG8kEvM&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x2b405b&amp;color2=0x6b8ab6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"&gt;&lt;/embed&gt;&lt;/object&gt;
+
+* Creator: [Nikos Kefalakis&gt;http://www.ait.edu.gr/ait_web_site/Researcher/nkef/kefalakis.html]
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HVideos"&gt;Videos&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWarehousePacketDelivery286TierUse29Demo"&gt;1 Warehouse Packet Delivery (6 Tier Use) Demo&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNikiRFIDAutomatedReceptionManagementSystem"&gt;2 Niki RFID Automated Reception Management System&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWarehousePacketDelivery286TierUse29Demo"&gt;Warehouse Packet Delivery (6 Tier Use) Demo&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;        &lt;div id="media"&gt;
+            &lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="498" id="csSWF"&gt;
+                &lt;param name="movie" value="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo_controller.swf" /&gt;
+                &lt;param name="quality" value="best" /&gt;
+                &lt;param name="bgcolor" value="#1a1a1a" /&gt;
+                &lt;param name="allowfullscreen" value="true" /&gt;
+                &lt;param name="scale" value="showall" /&gt;
+                &lt;param name="allowscriptaccess" value="always" /&gt;
+                &lt;param name="flashvars" value="autostart=false&amp;thumb=FirstFrame.png&amp;thumbscale=45&amp;color=0x000000,0x000000" /&gt;
+                &lt;!--&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/if+%21IE?parent=Main.Videos"&gt;&lt;span class="wikicreatelinktext"&gt;if !IE&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&gt;&lt;del class="strike"&gt;&gt;
+                &lt;object type="application/x-shockwave-flash" data="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/WarehouseEpcisPacketDeliveryDemo/WarehouseEpcisPacketDeliveryDemo_controller.swf" width="640" height="498"&gt;
+                    &lt;param name="quality" value="best" /&gt;
+                    &lt;param name="bgcolor" value="#1a1a1a" /&gt;
+                    &lt;param name="allowfullscreen" value="true" /&gt;
+                    &lt;param name="scale" value="showall" /&gt;
+                    &lt;param name="allowscriptaccess" value="always" /&gt;
+                    &lt;param name="flashvars" value="autostart=false&amp;thumb=FirstFrame.png&amp;thumbscale=45&amp;color=0x000000,0x000000" /&gt;
+                &lt;!&lt;/del&gt;&lt;!&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/endif?parent=Main.Videos"&gt;&lt;span class="wikicreatelinktext"&gt;endif&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;del class="strike"&gt;&gt;
+                    &lt;div id="noUpdate"&gt;
+                        &lt;p&gt;Video content presented here requires a more recent version of the Adobe Flash Player. If you are you using a browser with JavaScript disabled please enable it now. Otherwise, please update your version of the free Flash Player by &lt;a href="http://www.adobe.com/go/getflashplayer"&gt;downloading here&lt;/a&gt;.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;!&lt;/del&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/if+%21IE?parent=Main.Videos"&gt;&lt;span class="wikicreatelinktext"&gt;if !IE&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&gt;&lt;del class="strike"&gt;&gt;
+                &lt;/object&gt;
+                &lt;!&lt;/del&gt;&lt;!&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/endif?parent=Main.Videos"&gt;&lt;span class="wikicreatelinktext"&gt;endif&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;--&gt;
+            &lt;/object&gt;
+        &lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Creator: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/kefalakis.html"&gt;&amp;#78;ikos Kefalakis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HNikiRFIDAutomatedReceptionManagementSystem"&gt;Niki RFID Automated Reception Management System&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;object width="640" height="505"&gt;&lt;param name="movie" value="http://www.youtube.com/v/DljvjG8kEvM&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x2b405b&amp;color2=0x6b8ab6"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/DljvjG8kEvM&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x2b405b&amp;color2=0x6b8ab6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Creator: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ait.edu.gr/ait_web_site/Researcher/nkef/kefalakis.html"&gt;&amp;#78;ikos Kefalakis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>MySkin</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Admin.WebHome</parent>
+<creator></creator>
+<author>xwiki:XWiki.caseryj</author>
+<contentAuthor>xwiki:XWiki.caseryj</contentAuthor>
+<creationDate>1107712020000</creationDate>
+<date>1237396615000</date>
+<contentUpdateDate>1237396615000</contentUpdateDate>
+<version>1.193</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>poweredby_xwiki.png</filename>
+<filesize>277</filesize>
+<author>XWiki.Admin</author>
+<date>1129292819000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ow.ico</filename>
+<filesize>1406</filesize>
+<author>xwiki:XWiki.caseryj</author>
+<date>1237286444000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>logo.png</filename>
+<filesize>23255</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237396615000</date>
+<version>1.4</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ast.gif</filename>
+<filesize>851</filesize>
+<author>XWiki.Admin</author>
+<date>1129627759000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.XWikiRights</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<allow>
+<name>allow</name>
+<prettyName>Allow/Deny</prettyName>
+<unmodifiable>0</unmodifiable>
+<number>4</number>
+<displayType>allow</displayType>
+<defaultValue>1</defaultValue>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</allow>
+<groups>
+<name>groups</name>
+<prettyName>Groups</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>5</size>
+<usesList>1</usesList>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
+</groups>
+<levels>
+<name>levels</name>
+<prettyName>Levels</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>3</size>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
+</levels>
+<users>
+<name>users</name>
+<prettyName>Users</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>5</size>
+<usesList>1</usesList>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
+</users>
+</class>
+<name>XWiki.MySkin</name>
+<number>0</number>
+<className>XWiki.XWikiRights</className>
+<property>
+<allow>1</allow>
+</property>
+<property>
+<groups>xwiki:XWiki.XWikiAllGroup,</groups>
+</property>
+<property>
+<levels>view,</levels>
+</property>
+<property>
+<users>XWiki.XWikiGuest,</users>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.XWikiSkins</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<name>
+<name>name</name>
+<prettyName>Name</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<baseskin>
+<name>baseskin</name>
+<prettyName>Base Skin</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</baseskin>
+<style.css>
+<name>style.css</name>
+<prettyName>Style</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</style.css>
+<header.vm>
+<name>header.vm</name>
+<prettyName>Header</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</header.vm>
+<footer.vm>
+<name>footer.vm</name>
+<prettyName>Footer</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>5</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</footer.vm>
+<viewheader.vm>
+<name>viewheader.vm</name>
+<prettyName>View Header</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>6</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</viewheader.vm>
+<view.vm>
+<name>view.vm</name>
+<prettyName>View</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>7</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</view.vm>
+<edit.vm>
+<name>edit.vm</name>
+<prettyName>Edit</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>8</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</edit.vm>
+</class>
+<name>XWiki.MySkin</name>
+<number>0</number>
+<className>XWiki.XWikiSkins</className>
+<property>
+<baseskin></baseskin>
+</property>
+<property>
+<comments2.vm></comments2.vm>
+</property>
+<property>
+<edit.vm></edit.vm>
+</property>
+<property>
+<footer.vm>&lt;div id="xwikifooter" class="clear"&gt;
+ &lt;div id="xwikidocinfo"&gt;
+ #if ($doc.parent.length() &gt; 0)
+ $parent &amp;gt; $!headertitle
+ #else
+ $!headertitle
+ #end
+ ($tdoc.getRealLanguage())
+ &lt;br /&gt;
+ #if ($tdoc)
+ $msg.get("creator"): $xwiki.getLocalUserName($tdoc.creator)
+ &amp;nbsp;$msg.get("date"): $!xwiki.formatDate($tdoc.creationDate)
+ &lt;br /&gt;
+ $msg.get("lastauthor"): $xwiki.getLocalUserName($tdoc.author)
+ &amp;nbsp;$msg.get("date"): $!xwiki.formatDate($tdoc.date)
+ #end
+ &lt;/div&gt;
+
+ &lt;div id="xwikifooterimage"&gt;
+ &lt;a href="http://xwiki.objectweb.org"&gt;
+ &lt;img src="$xwiki.getDocument("XWiki.MySkin").getAttachmentURL("poweredby_xwiki.png","download")" alt="Powered by XWiki" /&gt;&lt;/a&gt;
+ &lt;/div&gt;
+
+ &lt;div id="xwikifootertext"&gt;
+ Copyright (c) 2005-2009, &lt;a href="http://www.ow2.org"&gt;OW2 Consortium&lt;/a&gt; | &lt;a href="$xwiki.getURL("Main.Contact", "view")"&gt;contact&lt;/a&gt; | &lt;a href="mailto:webmaster@ow2.org"&gt;webmaster&lt;/a&gt;
+ &lt;/div&gt;
+
+ &lt;div id="xwikifooterhelp"&gt;
+ $!help
+ &lt;/div&gt;
+&lt;/div&gt;
+
+#if($context.getMode()==0)
+&lt;/body&gt;
+&lt;/html&gt;
+#end</footer.vm>
+</property>
+<property>
+<header.vm>&lt;div id="owlinks"&gt;
+&lt;a href="http://www.ow2.org/"&gt;&amp;nbsp;Consortium&amp;nbsp;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals"&gt;&amp;nbsp;Activities&amp;nbsp;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects"&gt;&amp;nbsp;Projects&amp;nbsp;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="http://forge.objectweb.org/"&gt;&amp;nbsp;Forge&amp;nbsp;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="http://www.ow2.org/view/Events/"&gt;&amp;nbsp;Events&amp;nbsp;&lt;/a&gt;
+&lt;/div&gt;
+
+#if($context.getMode()==0)
+&lt;div id="xwikibanner" style="height: 95px"&gt;
+&lt;div id="xwikilogo" style="top: 20px;"&gt;
+    &lt;a href="$xwiki.getURL("Main.WebHome", "view")"&gt;
+#set($prefdoc = $!xwiki.getDocument("XWiki.MySkin"))
+#set($logourl = $prefdoc.getAttachmentURL("logo.png", "download"))
+&lt;img src="$logourl" alt="ObjectWeb logo" /&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+&lt;div id="xwikilinks"&gt;
+  &lt;div id="xwikimenu"&gt;
+&lt;br/&gt;
+#if($context.getMode()==0)
+#set( $logredir = $xwiki.getFormEncoded($xwiki.getRequestURL()))
+#if ($context.getUser().equals("XWiki.XWikiGuest"))
+#set($loginurl = $xwiki.getURL("XWiki.XWikiLogin", "login", "xredirect=$logredir"))
+#set($regurl = $xwiki.getURL("XWiki.RegisterNewUser"))
+&lt;a href="$loginurl"&gt;$msg.get("login")&lt;/a&gt;&lt;br /&gt;
+&lt;a href="http://consortium.objectweb.org/registration.html"&gt;$msg.get("register")&lt;/a&gt;
+#else
+#set($logouturl = $xwiki.getURL("XWiki.XWikiLogout","logout", "xredirect=$logredir"))
+#set($docuser = $xwiki.getDocument($context.user))
+#set($objuser = $docuser.getObject("XWiki.XWikiUsers",0))
+$msg.get("hello") &lt;a href="$docuser.getURL("view")"&gt;$docuser.display("first_name", "view", $objuser)&lt;/a&gt;&lt;br /&gt;
+&lt;a href="$logouturl"&gt;$msg.get("logout")&lt;/a&gt;
+#end
+#end
+  &lt;/div&gt;
+  &lt;div id="xwikititle"&gt;
+   &lt;h1&gt;$!headertitle&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+#end</header.vm>
+</property>
+<property>
+<name>XWiki.MySkin</name>
+</property>
+<property>
+<pagemenu.vm></pagemenu.vm>
+</property>
+<property>
+<style.css>/* Modifier les styles ici */
+@import "xwiki.css";
+@import "wiki.css";
+@import "page.css";
+@import "rss.css";
+
+.rssfeed {
+  width: 90%;
+}
+
+img {
+ border: none;
+}
+
+body {
+/*   background-image: url("xwiki/bin/download/XWiki/MySkin/bodywelcome.gif");
+   background-repeat: no-repeat;*/
+}
+
+#xwikinav_header, #xwikilanguagemenu, #xwikieditmenu,
+#xwikieditmenu a, #xwikieditmenu a:visited, #xwikieditmenu img,
+#xwikilanguagemenu a, #xwikilanguagemenu a:visited,
+#xwikilanguagemenu span.xwikisep2expl{
+    background-color: transparent;
+}
+
+#xwikinav_footer, #xwikiwebusermenu, .wiki-table th, .rsschanneltitle,
+#xwikilanguagemenu a.xwikilanguageactive, #xwikilanguagemenu a:visited.xwikilanguageactive {
+  background-color: #e8eaf0;
+}
+
+
+/* Dark Blue */
+.xwikiactions a, #xwikiwebusermenu a {
+        background-color: transparent;
+        color: #0099CC;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+#xwikinav_footer, #xwikinav_header, #xwikinav_header.xwiki0b {
+ border-color: #0099CC;
+}
+
+#xwikinav_header {
+    position: relative;
+    display: block;
+    clear: both;
+    width: auto;
+    top: 20px;
+    right: 0px;
+    margin-left: 207px;
+    border-width: 2px 0px 0px 0px;
+    border-style: solid;
+    background-repeat: repeat;
+}
+
+.heading-1 {
+	color: #FF6600;
+	border-color: #0099CC;
+	border-width: 0 0 4px 0;
+	border-style: none none solid none;
+	margin: 10px 0px 5px 0px;
+}
+
+.heading-1-1 {
+        background-color: transparent;
+        color: #0099CC;
+	border-color: #FF6600;
+	border-width: 0 0 4px 0;
+	border-style: none none solid none;
+	margin: 10px 0px 5px 0px;
+}
+
+.heading-1-1-1 {
+        color: #E06611;
+	font-weight: bold;
+	border-color: #E8EAF0;
+	border-width: 0 0 2px 0;
+	border-style: none none solid none;
+	margin: 10px 0px 5px 0px;
+}
+
+/* Comments colors */
+.xwikidata, .xwikidatafooter, .xwikidatafooter1, .xwikidatafooter2 {
+  background-color: #e8eaf0;
+}
+
+.xwikidatatitle, .xwikidatatitle1, .xwikidatatitle2 {
+ background-color: #99C;
+}
+
+.article_title {
+ font-size: 120%;
+ background-color: auto;
+ border-bottom: 1px;
+}
+
+.article_content {
+ padding: 10px;
+}
+
+.article_date {
+ font-size: 120%;
+ border-bottom: 1px solid;
+}
+
+.article_footer {
+ border-top: 1px dotted; 
+ font-size: 75%; 
+ font-weight: bold; 
+ color: grey
+}
+
+#xwikititle {
+    position: relative;
+    display: block;
+    float: left;
+    top: 10px;
+    margin: 0px;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+div.error{ 
+ color: red
+}
+
+table.ow_table
+{
+  margin: auto;
+  width: 70%;
+  line-height: 15px;
+  font-weight: normal;
+  background-color: #DAE4F0;
+  border-color:  #99C;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+}
+
+.ow_table td {
+  padding: 2px;
+}
+
+
+p.news{
+ font-size: 18px;
+ font-weight: bold;
+}
+.tableau
+{
+	background-color: #E8EAF0;
+	border-color: #99C;
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px;
+}
+
+dl
+{
+	color: black;
+	font-weight: normal;
+}
+dt
+{
+	color: black;
+	font-weight: bold;
+}
+dd
+{
+	color: black;
+	font-weight: normal;
+}
+
+/*Classes de formatage des gloses*/
+.glose
+{
+	color: #000000;
+	font-size: 9px;
+	line-height: 13px;
+	font-weight: normal;
+	margin: 0px 20px 3px 0px;
+	padding: 0px 0px 0px 3px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+.lienglose
+{
+	color: #433C7B;
+	text-decoration:none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	list-style-type: disc;
+	list-style-position: inside;
+        padding-left: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+.lienglose:visited
+{
+	color: #9898CB;
+	text-decoration: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.lienglose:hover
+{
+	color: #E06611;
+	text-decoration: underline;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.lienglose:active
+{
+	color: #FFFFFF;
+	background-color: #E06611;
+	text-decoration: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+#xwikiwebusermenu a
+{
+        background-color: transparent;
+        color: #E06712;
+}
+
+#xwikiwebusermenu a:active
+{
+        background-color: #99C;
+        color: #FFFFFF;
+}
+
+#xwikiwebusermenu a:visited
+{
+        background-color: transparent;
+        color: #E06712;
+}
+
+#xwikiwebusermenu a:hover
+{
+	color: #FFFFFF;
+	background-color: #99C;
+}
+
+.leftOW {
+  background-color: #FFFFFF;
+  display: block;
+  float: left;
+  clear: left;
+  width: 200px;
+  margin: 5px;
+  padding: 5px;
+  border:1px dashed #0099CC;
+}
+
+.OW2Panels {
+  background-color: #FFFFFF;
+  display: block;
+  float: left;
+  clear: left;
+  width: 200px;
+  margin: 5px;
+  padding: 5px;
+  border:1px dashed #0099CC;
+}
+
+#owlinks{
+  left:0px;
+  right:0px;
+  width: auto;
+  position:absolute;
+  top:0px;
+  display: block;
+  width: auto;
+  background-color: #FF6600;
+}
+
+#owlinks a {
+        background-color: transparent;
+        color: #FFFFFF;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 2px;
+}
+
+#owlinks a:active {
+        background-color: #E06712;
+        color: #FFFFFF;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+#owlinks a:visited {
+        background-color: transparent;
+        color: #E06712;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 2px;
+
+}
+
+#owlinks a:hover {
+	color: #FFFFFF;
+	background-color: #0099CC;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: bold;
+        text-decoration: none;
+}
+
+#xwikiwebusermenu {
+display:none;
+}</style.css>
+</property>
+<property>
+<view.vm></view.vm>
+</property>
+<property>
+<viewheader.vm></viewheader.vm>
+</property>
+</object>
+<content>1 Skin
+
+You can modify the existing look and feel and even create your own. To active your skin by default, user "Edit XWiki Preferences" in the "More Actions" menu and enter "XWiki.MySkin" in the skin field.
+
+* &lt;a href="$doc.getURL("edit","xpage=editobject")"&gt;Edit this skin&lt;/a&gt;
+* [Test this skin&gt;Main.WebHome?skin=${doc.fullName}]
+
+1.1 Current styles and templates
+
+* &lt;a href="/xwiki/templates/"&gt;Template&lt;/a&gt;
+* &lt;a href="/xwiki/skins/default/"&gt;Styles&lt;/a&gt;</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSkin"&gt;Skin&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;You can modify the existing look and feel and even create your own. To active your skin by default, user "Edit XWiki Preferences" in the "More Actions" menu and enter "XWiki.MySkin" in the skin field.
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/edit/XWiki/MySkin?xpage=editobject#aspire"&gt;Edit this skin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/?skin=XWiki.MySkin"&gt;Test this skin&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HCurrentstylesandtemplates"&gt;Current styles and templates&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/templates/"&gt;Template&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/skins/default/"&gt;Styles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>RFIDBusinessLocationGMFEditor</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.elka</author>
+<contentAuthor>xwiki:XWiki.elka</contentAuthor>
+<creationDate>1274798315000</creationDate>
+<date>1287476794000</date>
+<contentUpdateDate>1287476794000</contentUpdateDate>
+<version>1.28</version>
+<title>RFID Business Location GMF Editor</title>
+<template></template>
+<attachment>
+<filename>aspirerfidide.jpg</filename>
+<filesize>73077</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275824333000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>masterdataeditorgmfview.jpg</filename>
+<filesize>54317</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275824544000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>configuratorpreference.jpg</filename>
+<filesize>100363</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275824868000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>newmasterdataeditorgmfdiagram.jpg</filename>
+<filesize>82978</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275825054000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>masterdataeditorgmfdiagram.jpg</filename>
+<filesize>121774</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275825065000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>openmasterdataeditorgmfdiagramfromfile.jpg</filename>
+<filesize>121309</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275825080000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>openmasterdataeditorgmfdiagramfromepcis.jpg</filename>
+<filesize>79416</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275825088000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>insertmasterdataeditorgmfdiagramintoepcis.jpg</filename>
+<filesize>122094</filesize>
+<author>xwiki:XWiki.elka</author>
+<date>1275825096000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 RFID Business Location GMF Editor
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introduction
+
+The RFID Business Location GMF Editor which is also called the MasterDataEditorGMF project, aims at developing a graphical representation of the MasterData of an RFID EPCIS repository.  The main goal was to ease the management of the Business Locations and Read Points, which contain RFID tags, of an enterprise. In more general terms the main goal was to ease the warehouse management of an enterprise, by representing the MasterData graphically. It is an enhancement of the MasterDataEditor project and provides a more user friendly environment for managing the MasterData.
+
+The main goals are:
+
+* Provide a UML-like graphical representation of the Business Locations (warehouses), Read Points of a company.
+* Query the EPCIS repository and create new diagrams from the MasterData that are stored in it.
+* Capture the MasterData of a diagram and insert them into the EPCIS repository.
+* Create new diagrams from Apdl files.
+* Create offline diagrams which are saved locally in a file.
+* Communicate with the BPWME project and store into the Apdl file the MasterData of the diagram.
+* Communicate with the BPWME project and create a diagram from an Apdl file.
+* Communicate with the BPWME project and correlate a diagram with a CLCB element.
+
+1.1 Developer Guide
+
+In order to successfully build the MasterDataEditorGMF project within Eclipse, the circular dependencies of the plug-ins must be disabled from the preferences menu:
+* Preferences -&gt; Java -&gt; Compiler -&gt; Building -&gt; Build path problems -&gt; Circular dependencies : Warning
+
+
+1.1 User Guide
+
+1.1.1 Requirements
+
+*Software* 
+
+* Java 1.6 or higher
+* Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)
+* MySQL 5.0 (or higher)
+
+1.1.1 Starting the MasterDataEditorGMF application
+
+Prior to starting the MasterDataEditorGMF application, the user has to first start the AspireRfidIde application.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/aspirerfidide.jpg"&gt;{image:aspirerfidide.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1 MasterDataEditorGMF view
+
+When starting the AspireRfidIde application there is an option to view MasterDataEditorGMF editor by selecting Window -&gt; Show View -&gt; Master Data Editor GMF. 
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfview.jpg"&gt;{image:masterdataeditorgmfview.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+This view consists of 3 active windows.
+* Editor
+** Palette
+* Outline
+* Properties
+
+1.1.1.1 Editor window
+
+The editor window is the main window where a MasterDataEditorGMF diagram is being constructed. All the elements can be either created by clicking them on the editor or by manually resizing them. The application automatically validates where an element can be placed. The elements that are already created inside a compartment can not be moved into another compartment. 
+
+1.1.1.1 Palette window
+
+The palette window resides in the editor window and contains all the elements that are used to create a MasterDataEditorGMF diagram. It has also additional options such as zoom in, zoom out and the creation of a note.
+
+1.1.1.1 Properties window
+
+The properties window contains individual properties depending on the element currently selected. These properties are:
+* Core properties of an element that provide its attributes.
+* Rulers &amp; Grid properties that provide options for the editor.
+* Appearance properties that provide appearance options. 
+
+1.1.1.1 Outline window
+
+The outline window shows the whole diagram in the editor window in a zoomed out perspective.
+
+1.1.1 Preferences
+
+The MasterDataEditorGMF application provides preferences by selecting Window -&gt; Preferences -&gt; MasterDataEditorGMF Diagram. The standard preferences of a GMF application are the Appearance, Connections, Pathmaps, Printing, Rulers And Grid.
+
+1.1.1 Configurator Preference
+
+In the Configurator Preference the user can enter the EPCIS Repository Capture URL and the EPCIS Repository Query URL. 
+Additionally, there is an option to set the size of the elements when permorming the action "MasterDataEditorGMF Square Layout".
+Moreover, there are options to insert new custom attributes that will be displayed in the Core property window of each element. The maximum number of the custom attributes is 20 for each element. 
+
+1.1.1 MasterDataEditorGMF Actions
+
+1.1.1.1 New MasterDataEditorGMF Diagram
+
+To create a new MasterDataEditorGMF diagram the user should select File -&gt; MasterDataEditorGMF -&gt; New MasterDataEditorGMF Diagram. The user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated. The MasterDataEditorGMF file has the extension .masterdataeditorgmf_diagram. This file contains all the necessary info of the diagram and can be used for offline options (when there is no connection with the EPCIS repository). 
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/newmasterdataeditorgmfdiagram.jpg"&gt;{image:newmasterdataeditorgmfdiagram.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfdiagram.jpg"&gt;{image:masterdataeditorgmfdiagram.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From File
+
+The user can open a MasterDataEditorGMF diagram from a file with the extension .masterdataeditorgmf_diagram by selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From File. In these cases either there is no connection with the EPCIS repository or a diagram was created and saved locally. 
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromfile.jpg"&gt;{image:openmasterdataeditorgmfdiagramfromfile.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From Apdl
+
+The user can open multiple MasterDataEditorGMF diagrams from an Apdl file with the extension .xml by selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From Apdl. All the MasterData that reside in the Apdl file will be created separately in MasterDataEditorGMF diagrams.
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From EPCIS
+
+A MasterDataEditorGMF diagram can be constructed from the MasterData which is stored in the EPCIS repository. When selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From EPCIS, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a list of the companies that are stored in the EPCIS repository is displayed. By selecting a company and proceeding to the next window, a file is also required for the diagram to be constructed. If no connection to the EPCIS repository exists then an error will pop up.
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created from the EPCIS.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromepcis.jpg"&gt;{image:openmasterdataeditorgmfdiagramfromepcis.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1.1 Insert MasterDataEditorGMF Diagram Into EPCIS
+
+A MasterDataEditorGMF diagram can be inserted into the EPCIS repository by selecting File -&gt; Insert MasterDataEditorGMF Diagram Into EPCIS. The company of the current active window of the diagram will be displayed and inserted into the EPCIS repository.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/insertmasterdataeditorgmfdiagramintoepcis.jpg"&gt;{image:insertmasterdataeditorgmfdiagramintoepcis.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+1.1.1.1 Correlate MasterDataEditorGMF Diagram With CLCB
+
+The user can correlate an existing MasterDataEditorGMF diagram with a CLCB, if there are open BPWME diagrams. When selecting File -&gt; MasterDataEditorGMF -&gt; Correlate MasterDataEditorGMF Diagram With CLCB, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a copy of the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated.
+
+
+1.1.1.1 MasterDataEditorGMF Square Layout
+
+The user can lay out in square a MasterDataEditorGMF diagram by selecting File -&gt; MasterDataEditorGMF -&gt; MasterDataEditorGMF Square Layout. All the elements will be arranged in a square regardless the size of each element. This can be very convenient for diagrams with big number of elements.
+
+1.1.1 Elements – Properties
+
+1.1.1.1 Company Element
+
+The main element of a MasterDataEditorGMF diagram is the Company. It always exists as it cannot be created from the palette and can be considered as the “background” of the diagram.
+
+1.1.1.1.1 Company Element Attributes
+
+The default attributes of a Company element are the ID, Name, Address, City, Country, Description. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Company into the EPCIS repository. 
+
+1.1.1.1 Warehouse Elements
+
+The Warehouse category (in the palette window) provides 4 Warehouse elements: BizLoc, Warehouse, Room, Section. The “BizLoc” Warehouse is an abstract Warehouse element where the user can choose its type, whereas the others have default type which cannot be changed. On top of a warehouse element its Name attribute is displayed.
+
+1.1.1.1.1 Warehouses Attributes
+
+The default attributes of a Warehouse element are the ID, Name, Description, Type. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Warehouse into the EPCIS repository.
+
+1.1.1.1 Read Point Elements
+
+The ReadPoint/Items category (in the palette window) provides 8 ReadPoint elements: ReadPoint, Container, Conveyor, Shelf, Gate, PalletTruck, PushArm, HandHeldReader. The “ReadPoint” Read Point element is an abstract ReadPoint element where the user can choose its type, whereas the others have default type which cannot be changed.
+
+1.1.1.1.1 Read Point Attributes
+
+The default attributes of a ReadPoint element are the ID, Name, Description, Type ReadPoint. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the ReadPoint into the EPCIS repository. The ReadPoint attribute can have the value true or false. If it is true then the element is considered as a ReadPoint element, else if it is false the element is considered as a Warehouse element.
+
+1.1.1 Elements’ Compartments
+
+Compartment of an element is the part of the element where children elements can be placed. None of the elements that are placed inside a compartment can be moved into another compartment.
+
+1.1.1.1 Company compartment
+
+The Company element consists of one compartment where only Warehouse elements can be placed. These can be the BizLoc, Warehouse, Room, Section elements. Inside the Company compartment the children elements can be resized.
+
+1.1.1.1 Warehouse compartment
+
+The Warehouse elements consist of 2 compartments. The top compartment where Warehouse children elements can be placed and the bottom compartment where ReadPoint children elements can be placed. The ReadPoint elements cannot be resized in the Warehouse compartment whereas the Warehouse children elements can. 
+
+1.1.1.1 ReadPoint compartment
+
+The ReadPoint elements do not have compartments and as such they do not have children elements. 
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HRFIDBusinessLocationGMFEditor"&gt;RFID Business Location GMF Editor&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeveloperGuide"&gt;2 Developer Guide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserGuide"&gt;3 User Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;3.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HStartingtheMasterDataEditorGMFapplication"&gt;3.2 Starting the MasterDataEditorGMF application&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMasterDataEditorGMFview"&gt;3.3 MasterDataEditorGMF view&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HEditorwindow"&gt;3.3.1 Editor window&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPalettewindow"&gt;3.3.2 Palette window&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPropertieswindow"&gt;3.3.3 Properties window&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOutlinewindow"&gt;3.3.4 Outline window&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HPreferences"&gt;3.4 Preferences&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguratorPreference"&gt;3.5 Configurator Preference&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMasterDataEditorGMFActions"&gt;3.6 MasterDataEditorGMF Actions&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HNewMasterDataEditorGMFDiagram"&gt;3.6.1 New MasterDataEditorGMF Diagram&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOpenMasterDataEditorGMFDiagramFromFile"&gt;3.6.2 Open MasterDataEditorGMF Diagram From File&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOpenMasterDataEditorGMFDiagramFromApdl"&gt;3.6.3 Open MasterDataEditorGMF Diagram From Apdl&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOpenMasterDataEditorGMFDiagramFromEPCIS"&gt;3.6.4 Open MasterDataEditorGMF Diagram From EPCIS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInsertMasterDataEditorGMFDiagramIntoEPCIS"&gt;3.6.5 Insert MasterDataEditorGMF Diagram Into EPCIS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HCorrelateMasterDataEditorGMFDiagramWithCLCB"&gt;3.6.6 Correlate MasterDataEditorGMF Diagram With CLCB&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMasterDataEditorGMFSquareLayout"&gt;3.6.7 MasterDataEditorGMF Square Layout&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HElementsE28093Properties"&gt;3.7 Elements – Properties&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HCompanyElement"&gt;3.7.1 Company Element&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HCompanyElementAttributes"&gt;3.7.1.1 Company Element Attributes&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HWarehouseElements"&gt;3.7.2 Warehouse Elements&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWarehousesAttributes"&gt;3.7.2.1 Warehouses Attributes&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HReadPointElements"&gt;3.7.3 Read Point Elements&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HReadPointAttributes"&gt;3.7.3.1 Read Point Attributes&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HElementsE28099Compartments"&gt;3.8 Elements’ Compartments&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HCompanycompartment"&gt;3.8.1 Company compartment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWarehousecompartment"&gt;3.8.2 Warehouse compartment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReadPointcompartment"&gt;3.8.3 ReadPoint compartment&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The RFID Business Location GMF Editor which is also called the MasterDataEditorGMF project, aims at developing a graphical representation of the MasterData of an RFID EPCIS repository.  The main goal was to ease the management of the Business Locations and Read Points, which contain RFID tags, of an enterprise. In more general terms the main goal was to ease the warehouse management of an enterprise, by representing the MasterData graphically. It is an enhancement of the MasterDataEditor project and provides a more user friendly environment for managing the MasterData.&lt;p class="paragraph"/&gt;The main goals are:
+&lt;ul class="star"&gt;
+&lt;li&gt;Provide a UML-like graphical representation of the Business Locations (warehouses), Read Points of a company.&lt;/li&gt;
+&lt;li&gt;Query the EPCIS repository and create new diagrams from the MasterData that are stored in it.&lt;/li&gt;
+&lt;li&gt;Capture the MasterData of a diagram and insert them into the EPCIS repository.&lt;/li&gt;
+&lt;li&gt;Create new diagrams from Apdl files.&lt;/li&gt;
+&lt;li&gt;Create offline diagrams which are saved locally in a file.&lt;/li&gt;
+&lt;li&gt;Communicate with the BPWME project and store into the Apdl file the MasterData of the diagram.&lt;/li&gt;
+&lt;li&gt;Communicate with the BPWME project and create a diagram from an Apdl file.&lt;/li&gt;
+&lt;li&gt;Communicate with the BPWME project and correlate a diagram with a CLCB element.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDeveloperGuide"&gt;Developer Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In order to successfully build the MasterDataEditorGMF project within Eclipse, the circular dependencies of the plug-ins must be disabled from the preferences menu:
+&lt;ul class="star"&gt;
+&lt;li&gt;Preferences -&gt; Java -&gt; Compiler -&gt; Building -&gt; Build path problems -&gt; Circular dependencies : Warning&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;User Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6 or higher&lt;/li&gt;
+&lt;li&gt;Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)&lt;/li&gt;
+&lt;li&gt;MySQL 5.0 (or higher)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HStartingtheMasterDataEditorGMFapplication"&gt;Starting the MasterDataEditorGMF application&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Prior to starting the MasterDataEditorGMF application, the user has to first start the AspireRfidIde application.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/aspirerfidide.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/aspirerfidide.jpg" height="400" alt="aspirerfidide.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMasterDataEditorGMFview"&gt;MasterDataEditorGMF view&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;When starting the AspireRfidIde application there is an option to view MasterDataEditorGMF editor by selecting Window -&gt; Show View -&gt; Master Data Editor GMF.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfview.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfview.jpg" height="400" alt="masterdataeditorgmfview.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;This view consists of 3 active windows.
+&lt;ul class="star"&gt;
+&lt;li&gt;Editor&lt;ul class="star"&gt;
+&lt;li&gt;Palette&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Outline&lt;/li&gt;
+&lt;li&gt;Properties&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HEditorwindow"&gt;Editor window&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The editor window is the main window where a MasterDataEditorGMF diagram is being constructed. All the elements can be either created by clicking them on the editor or by manually resizing them. The application automatically validates where an element can be placed. The elements that are already created inside a compartment can not be moved into another compartment. 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPalettewindow"&gt;Palette window&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The palette window resides in the editor window and contains all the elements that are used to create a MasterDataEditorGMF diagram. It has also additional options such as zoom in, zoom out and the creation of a note.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPropertieswindow"&gt;Properties window&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The properties window contains individual properties depending on the element currently selected. These properties are:
+&lt;ul class="star"&gt;
+&lt;li&gt;Core properties of an element that provide its attributes.&lt;/li&gt;
+&lt;li&gt;Rulers &amp; Grid properties that provide options for the editor.&lt;/li&gt;
+&lt;li&gt;Appearance properties that provide appearance options.&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOutlinewindow"&gt;Outline window&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The outline window shows the whole diagram in the editor window in a zoomed out perspective.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPreferences"&gt;Preferences&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The MasterDataEditorGMF application provides preferences by selecting Window -&gt; Preferences -&gt; MasterDataEditorGMF Diagram. The standard preferences of a GMF application are the Appearance, Connections, Pathmaps, Printing, Rulers And Grid.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguratorPreference"&gt;Configurator Preference&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;In the Configurator Preference the user can enter the EPCIS Repository Capture URL and the EPCIS Repository Query URL. 
+Additionally, there is an option to set the size of the elements when permorming the action "MasterDataEditorGMF Square Layout".
+Moreover, there are options to insert new custom attributes that will be displayed in the Core property window of each element. The maximum number of the custom attributes is 20 for each element. 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HMasterDataEditorGMFActions"&gt;MasterDataEditorGMF Actions&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HNewMasterDataEditorGMFDiagram"&gt;New MasterDataEditorGMF Diagram&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;To create a new MasterDataEditorGMF diagram the user should select File -&gt; MasterDataEditorGMF -&gt; New MasterDataEditorGMF Diagram. The user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated. The MasterDataEditorGMF file has the extension .masterdataeditorgmf_diagram. This file contains all the necessary info of the diagram and can be used for offline options (when there is no connection with the EPCIS repository). 
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/newmasterdataeditorgmfdiagram.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/newmasterdataeditorgmfdiagram.jpg" height="400" alt="newmasterdataeditorgmfdiagram.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfdiagram.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfdiagram.jpg" height="400" alt="masterdataeditorgmfdiagram.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOpenMasterDataEditorGMFDiagramFromFile"&gt;Open MasterDataEditorGMF Diagram From File&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The user can open a MasterDataEditorGMF diagram from a file with the extension .masterdataeditorgmf_diagram by selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From File. In these cases either there is no connection with the EPCIS repository or a diagram was created and saved locally.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromfile.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromfile.jpg" height="400" alt="openmasterdataeditorgmfdiagramfromfile.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOpenMasterDataEditorGMFDiagramFromApdl"&gt;Open MasterDataEditorGMF Diagram From Apdl&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The user can open multiple MasterDataEditorGMF diagrams from an Apdl file with the extension .xml by selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From Apdl. All the MasterData that reside in the Apdl file will be created separately in MasterDataEditorGMF diagrams.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOpenMasterDataEditorGMFDiagramFromEPCIS"&gt;Open MasterDataEditorGMF Diagram From EPCIS&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;A MasterDataEditorGMF diagram can be constructed from the MasterData which is stored in the EPCIS repository. When selecting File -&gt; MasterDataEditorGMF -&gt; Open MasterDataEditorGMF Diagram From EPCIS, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a list of the companies that are stored in the EPCIS repository is displayed. By selecting a company and proceeding to the next window, a file is also required for the diagram to be constructed. If no connection to the EPCIS repository exists then an error will pop up.
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created from the EPCIS.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromepcis.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromepcis.jpg" height="400" alt="openmasterdataeditorgmfdiagramfromepcis.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HInsertMasterDataEditorGMFDiagramIntoEPCIS"&gt;Insert MasterDataEditorGMF Diagram Into EPCIS&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;A MasterDataEditorGMF diagram can be inserted into the EPCIS repository by selecting File -&gt; Insert MasterDataEditorGMF Diagram Into EPCIS. The company of the current active window of the diagram will be displayed and inserted into the EPCIS repository.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/insertmasterdataeditorgmfdiagramintoepcis.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/insertmasterdataeditorgmfdiagramintoepcis.jpg" height="400" alt="insertmasterdataeditorgmfdiagramintoepcis.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HCorrelateMasterDataEditorGMFDiagramWithCLCB"&gt;Correlate MasterDataEditorGMF Diagram With CLCB&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The user can correlate an existing MasterDataEditorGMF diagram with a CLCB, if there are open BPWME diagrams. When selecting File -&gt; MasterDataEditorGMF -&gt; Correlate MasterDataEditorGMF Diagram With CLCB, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a copy of the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMasterDataEditorGMFSquareLayout"&gt;MasterDataEditorGMF Square Layout&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The user can lay out in square a MasterDataEditorGMF diagram by selecting File -&gt; MasterDataEditorGMF -&gt; MasterDataEditorGMF Square Layout. All the elements will be arranged in a square regardless the size of each element. This can be very convenient for diagrams with big number of elements.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HElementsE28093Properties"&gt;Elements – Properties&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HCompanyElement"&gt;Company Element&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The main element of a MasterDataEditorGMF diagram is the Company. It always exists as it cannot be created from the palette and can be considered as the “background” of the diagram.
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HCompanyElementAttributes"&gt;Company Element Attributes&lt;/span&gt;&lt;/h6&gt;&lt;p class="paragraph"/&gt;The default attributes of a Company element are the ID, Name, Address, City, Country, Description. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Company into the EPCIS repository. 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWarehouseElements"&gt;Warehouse Elements&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The Warehouse category (in the palette window) provides 4 Warehouse elements: BizLoc, Warehouse, Room, Section. The “BizLoc” Warehouse is an abstract Warehouse element where the user can choose its type, whereas the others have default type which cannot be changed. On top of a warehouse element its Name attribute is displayed.
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HWarehousesAttributes"&gt;Warehouses Attributes&lt;/span&gt;&lt;/h6&gt;&lt;p class="paragraph"/&gt;The default attributes of a Warehouse element are the ID, Name, Description, Type. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Warehouse into the EPCIS repository.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReadPointElements"&gt;Read Point Elements&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The ReadPoint/Items category (in the palette window) provides 8 ReadPoint elements: ReadPoint, Container, Conveyor, Shelf, Gate, PalletTruck, PushArm, HandHeldReader. The “ReadPoint” Read Point element is an abstract ReadPoint element where the user can choose its type, whereas the others have default type which cannot be changed.
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HReadPointAttributes"&gt;Read Point Attributes&lt;/span&gt;&lt;/h6&gt;&lt;p class="paragraph"/&gt;The default attributes of a ReadPoint element are the ID, Name, Description, Type ReadPoint. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the ReadPoint into the EPCIS repository. The ReadPoint attribute can have the value true or false. If it is true then the element is considered as a ReadPoint element, else if it is false the element is considered as a Warehouse element.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HElementsE28099Compartments"&gt;Elements’ Compartments&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Compartment of an element is the part of the element where children elements can be placed. None of the elements that are placed inside a compartment can be moved into another compartment.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HCompanycompartment"&gt;Company compartment&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The Company element consists of one compartment where only Warehouse elements can be placed. These can be the BizLoc, Warehouse, Room, Section elements. Inside the Company compartment the children elements can be resized.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWarehousecompartment"&gt;Warehouse compartment&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The Warehouse elements consist of 2 compartments. The top compartment where Warehouse children elements can be placed and the bottom compartment where ReadPoint children elements can be placed. The ReadPoint elements cannot be resized in the Warehouse compartment whereas the Warehouse children elements can. 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReadPointcompartment"&gt;ReadPoint compartment&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The ReadPoint elements do not have compartments and as such they do not have children elements. 
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Demos/PatrolMan?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:32:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - PatrolMan
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Demos/Main.Demos_PatrolMan.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Demos/PatrolMand5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Demos/PatrolMancede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Demos/PatrolMand77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Patrolman demonstration
+
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+
+1.1 Short description
+
+Nowadays, no option allows interaction on data retrieved from logical readers, even if a logical reader can be a fully interactive device, like a mobile phone.
+
+The aim of this demonstration is to provide a standard way to show a questionnaire to an user each time a specific tag is found.
+A questionnaire may be composed of different elements (textual questions and choices lists), to help the user describe the element he is analyzing.
+
+
+For example, a patrolman may have to control many check points in an industrial building.
+His phone may be considered as a logical reader.
+He will start by downloading one or more ECSpec XML file from a bluetooth server.
+These files contain the list of all questionnaires and the associated tag UID or record type patterns.
+
+While patrolling, the operator will use his phone to read the RFID tag of every item he has to check.
+For every tag read, the associated questionnaire will be displayed.
+At the end of the patrol, he will simply submit the fulfilled questionnaires back to the ALE server.
+
+1.1 User documentation
+
+On the server side, the patrolman-server bundle must be active.
+It relies on the [bluetoothServer&#62;Main.Documentation.Bundles.BluetoothServer] bundle.
+
+On the client side, simply install the .jad and .jar files.
+
+When the client encounter an unknown pattern, nothing is shown on the screen.
+When a known pattern is encountered and multiple questionnaires are valid, the first questionnaire is shown.
+
+
+Currently, the server just show the ECReports on the console output.
+
+1.1 Technical documentation
+
+The ECSpec format has been extended to make an interactive logical reader, like a phone, to display a specific questionnaire when a given pattern has been detected in a tag.
+
+When the client receives an ECSpec file, it prepares in memory a screen per questionnaire, ready to be shown on tag detection.
+The questionnaires are defined in the &#60;questionnaire&#62; XML extension element in group specification elements
+
+The client specifies the questionnaire to display via a &#60;questionnaire&#62; XML element and the associated tag information pattern in report groups specifications.
+
+1.1.1 Sample report specification with a questionnaire
+
+Here is a sample questionnaire, containing several questions displayed every time the reader will find a tag with the pattern: &#34;urn:nfc:wkt:Uri&#34;.
+
+{code:xml}
+&#60;reportSpec reportName=&#34;ReportDevice&#34;&#62;
+    &#60;reportSet set=&#34;CURRENT&#34; /&#62;
+    &#60;groupSpec&#62;
+        &#60;pattern&#62;urn:nfc:wkt:Uri&#60;/pattern&#62;
+        &#60;extension&#62;
+            &#60;extension&#62;
+                &#60;questionnaire title=&#34;Device State&#34; id=&#34;DevState&#34;&#62;
+                    &#60;textual id=&#34;message&#34;&#62;
+                        &#60;label&#62;Value shown&#60;/label&#62;
+                        &#60;default&#62;None&#60;/default&#62;
+                    &#60;/textual&#62;
+                    &#60;choiceList id=&#34;state&#34;&#62;
+                        &#60;label&#62;Unique&#60;/label&#62;
+                        &#60;choice&#62;Good&#60;/choice&#62;
+                        &#60;choice&#62;Medium&#60;/choice&#62;
+                        &#60;choice&#62;Bad&#60;/choice&#62;
+                    &#60;/choiceList&#62;
+                    &#60;choiceList id=&#34;control_leds&#34; multiple=&#34;true&#34;&#62;
+                        &#60;label&#62;Multiple&#60;/label&#62;
+                        &#60;choice&#62;Red&#60;/choice&#62;
+                        &#60;choice&#62;Blue&#60;/choice&#62;
+                        &#60;choice&#62;Green&#60;/choice&#62;
+                    &#60;/choiceList&#62;
+                &#60;/questionnaire&#62;
+            &#60;/extension&#62;
+        &#60;/extension&#62;
+    &#60;/groupSpec&#62;
+&#60;/reportSpec&#62;
+{code}
+
+1.1.1 Questionnaire extension XMLSchema
+
+{code:xml}
+&#60;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&#62;
+&#60;schema targetNamespace=&#34;http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire&#34;
+  xmlns=&#34;http://www.w3.org/2001/XMLSchema&#34;
+  xmlns:tns=&#34;http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire&#34;&#62;
+    &#60;element name=&#34;questionnaire&#34; type=&#34;tns:Questionnaire&#34;&#62;&#60;/element&#62;
+    &#60;complexType name=&#34;Questionnaire&#34;&#62;
+    	&#60;sequence&#62;
+    		&#60;element name=&#34;textual&#34; type=&#34;tns:textualType&#34; maxOccurs=&#34;unbounded&#34; minOccurs=&#34;0&#34;&#62;
+    		&#60;/element&#62;
+    		&#60;element name=&#34;choiceList&#34; type=&#34;tns:choiceListType&#34; maxOccurs=&#34;unbounded&#34; 
+			minOccurs=&#34;0&#34;&#62;
+    		&#60;/element&#62;
+    	&#60;/sequence&#62;
+    	&#60;attribute name=&#34;id&#34; type=&#34;string&#34; use=&#34;required&#34;&#62;&#60;/attribute&#62;
+    	&#60;attribute name=&#34;title&#34; type=&#34;string&#34; use=&#34;required&#34;&#62;&#60;/attribute&#62;
+    &#60;/complexType&#62;
+
+    &#60;complexType name=&#34;QuestionType&#34;&#62;
+        &#60;sequence&#62;
+            &#60;element name=&#34;label&#34; type=&#34;string&#34; maxOccurs=&#34;1&#34; minOccurs=&#34;1&#34;&#62;&#60;/element&#62;
+        &#60;/sequence&#62;
+        &#60;attribute name=&#34;id&#34; type=&#34;string&#34; use=&#34;required&#34;&#62;&#60;/attribute&#62;
+    &#60;/complexType&#62;
+
+    &#60;complexType name=&#34;textualType&#34;&#62;
+        &#60;complexContent&#62;
+            &#60;extension base=&#34;tns:QuestionType&#34;&#62;
+                &#60;sequence&#62;
+                    &#60;element name=&#34;default&#34; type=&#34;string&#34; maxOccurs=&#34;1&#34; minOccurs=&#34;0&#34;&#62;&#60;/element&#62;
+                    &#60;element name=&#34;answer&#34; type=&#34;string&#34; maxOccurs=&#34;1&#34; minOccurs=&#34;0&#34;&#62;&#60;/element&#62;
+                &#60;/sequence&#62;
+                &#60;attribute name=&#34;default&#34; type=&#34;string&#34; use=&#34;optional&#34;&#62;&#60;/attribute&#62;
+            &#60;/extension&#62;
+        &#60;/complexContent&#62;
+    &#60;/complexType&#62;
+
+    &#60;complexType name=&#34;choiceListType&#34;&#62;
+        &#60;complexContent&#62;
+            &#60;extension base=&#34;tns:QuestionType&#34;&#62;
+                &#60;sequence&#62;
+                    &#60;element name=&#34;choice&#34; type=&#34;string&#34; maxOccurs=&#34;unbounded&#34; minOccurs=&#34;1&#34;&#62;
+                    &#60;/element&#62;
+                &#60;/sequence&#62;
+                &#60;attribute name=&#34;multiple&#34; type=&#34;boolean&#34; use=&#34;optional&#34;
+			default=&#34;false&#34;&#62;&#60;/attribute&#62;
+                &#60;attribute name=&#34;default&#34; type=&#34;int&#34; use=&#34;optional&#34; default=&#34;0&#34;&#62;&#60;/attribute&#62;
+            &#60;/extension&#62;
+        &#60;/complexContent&#62;
+    &#60;/complexType&#62;
+&#60;/schema&#62;
+{code}
+
+1.1 Tips for future improvements
+
+* When an unknown tag is encountered, show a default questionnaire (free text area).
+* When multiple questionnaires corresponds to the read tag, let the user choose the good questionnaire.
+* Do something with the questionnaires data when the server gets an ECReport file (storage, statistics...)</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

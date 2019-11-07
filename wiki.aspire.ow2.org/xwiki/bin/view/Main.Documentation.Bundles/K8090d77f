@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>K8090</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1278311423000</creationDate>
+<date>1278312512000</date>
+<contentUpdateDate>1278312512000</contentUpdateDate>
+<version>1.2</version>
+<title>Aspire ::  Bundles :: K8090 USB Relay</title>
+<template></template>
+<content>1 Aspire ::  Bundles :: K8090 USB Relay
+
+
+The [Velleman K8090&gt;http://www.velleman.eu/downloads/0/infosheets/k8090_uk.pdf] is a 8 channel USB relay card. It can be used to power on/off up to 16A appliances.
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3AK8090USBRelay"&gt;Aspire ::  Bundles :: K8090 USB Relay&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+The &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/downloads/0/infosheets/k8090_uk.pdf"&gt;&amp;#86;elleman K8090&lt;/a&gt;&lt;/span&gt; is a 8 channel USB relay card. It can be used to power on/off up to 16A appliances.&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

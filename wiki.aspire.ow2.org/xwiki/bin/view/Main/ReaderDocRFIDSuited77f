@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>ReaderDocRFIDSuite</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.DevDocRFIDSuite</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1231412076000</creationDate>
+<date>1278323349000</date>
+<contentUpdateDate>1278323349000</contentUpdateDate>
+<version>1.17</version>
+<title>Readers, Sensors and Actuators Documentation</title>
+<template></template>
+<content>1 Readers, Sensors and Actuators Documentation
+
+This document describes how to configure the readers, the sensors and the actuators provided in the RFID Suite.
+
+#toc("" "" "")
+
+1.1 Lego Mindstorms
+
+1.1 SunSpot
+To use Sun SPOTs, you should first install the latest version of the SunSPOT SDK called SPOT Manager, which can be downloaded [here&gt;http://sunspotworld.com/SPOTManager/]. Once you have become familiar with these devices, get the USB port reference where the basestation is plugged-in (i.e., COM4 in Windows or /dev/tty/ACM0 on Linux) with the ~~ant info~~ command.
+Copy/paste the USB port in the config.properties file of the SunSPOT bundle and finally regenerate the bundle with maven.
+1.1 Touchatag
+The Touchatag (previously Tikitag) reader is a ACS 122 contactless reader for mainly ISO 14443 A/B, MiFare and Felica RFID transponders
+
+1.1.1 Installation
+
+1.1.1.1 Windows
+
+1.1.1.1 Linux
+*Setup you computer (Ubuntu)*
+
+sudo aptitude install libccid
+
+# the following package is also required for everything to work on my computer...
+# it may be a simple shared library name (one package provides libpcsclite.so.1.0.0, the  other libpcsclite.so)
+# it may be a question of versions (installing libpcsclite-dev pulls a new version of pcscd)
+
+sudo aptitude install libpcsclite-dev
+
+*Under Fedora 13*
+
+yum install pcscd-lite pcscd-lite-libs pcscd-lite-devel ccid
+
+The devel package is required, it seems to create a symbolic link needed by the underlying API
+
+1.1.1.1 MacOS
+
+1.1.1 Development with Java
+
+1.1.1.1 with the javax.smartcardio API
+The API javax.smartcardio relies on the PCSC modules of the host operating system
+
+1.1.1.1 with the Tikitag libraty wrapper
+This wrapper relies on the Tikitag google code project. It uses the javax.smartcardio API.
+
+=== Get the library ===
+
+wget http://membres-liglab.imag.fr/donsez/pub/tikitag/tikitagreader.zip\\
+unzip tikitagreader.zip\\
+tikitagreader/lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar\\
+mkdir lib\\
+mv tikitagreader/lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar ./lib/\\
+rmdir tikitagreader/lib/\\
+rmdir tikitagreader/\\
+rm -f tikitagreader.zip\\
+
+
+=== Try with Aspire Client ===
+
+mkdir -p com/tikitag/client\\
+wget 'http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/\*checkout\*/aspire/sandbox/donsez/tikitagreader/src/main/java/com/tikitag/client/TikitagClient.java?rev=268'\\
+mv 'TikitagClient.java?rev=268' com/tikitag/client/TikitagClient.java\\
+
+sed -i '202,+7 s@.*@// \0@g' com/tikitag/client/TikitagClient.java\\
+
+javac -cp lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar com/tikitag/client/TikitagClient.java\\
+java -cp .:lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar com.tikitag.client.TikitagClient\\
+
+Remark : some trouble are possible with JRE for Linux
+
+
+1.1.1.1 with LibUSB
+
+1.1 Mir:ror
+The Mir:ror reader is a proprietary reader (probably I2C since the Nabaztag/tag reader is I2C) designed by Violet.
+
+
+1.1.1 Installation
+
+1.1.1 Development with Java
+
+1.1.1.1 with LibUSB
+
+
+
+
+1.1 Wiimote
+
+2 bundles
+* Bluecove
+* MoteJ
+
+1.1 WiiFit
+
+1.1 OneWire
+
+1.1 Weather Station Oregon Scientific WMR200
+
+1.1 Weather Station La Crosse Technologies WS23xx
+
+1.1 USB WebCam
+
+1.1 Axis Security Camera
+
+
+1.1 Apple Mac book' Sudden Motion Sensor
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HReaders2CSensorsandActuatorsDocumentation"&gt;Readers, Sensors and Actuators Documentation&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;This document describes how to configure the readers, the sensors and the actuators provided in the RFID Suite.&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HLegoMindstorms"&gt; Lego Mindstorms&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSunSpot"&gt; SunSpot&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTouchatag"&gt; Touchatag&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HInstallation"&gt; Installation&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWindows"&gt; Windows&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLinux"&gt; Linux&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMacOS"&gt; MacOS&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopmentwithJava"&gt; Development with Java&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HwiththejavaxsmartcardioAPI"&gt; with the javax.smartcardio API&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HwiththeTikitaglibratywrapper"&gt; with the Tikitag libraty wrapper&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HwithLibUSB"&gt; with LibUSB&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMir3Aror"&gt; Mir:ror&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HInstallation-1"&gt; Installation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDevelopmentwithJava-1"&gt; Development with Java&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HwithLibUSB-1"&gt; with LibUSB&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HWiimote"&gt; Wiimote&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWiiFit"&gt; WiiFit&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOneWire"&gt; OneWire&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWeatherStationOregonScientificWMR200"&gt; Weather Station Oregon Scientific WMR200&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWeatherStationLaCrosseTechnologiesWS23xx"&gt; Weather Station La Crosse Technologies WS23xx&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUSBWebCam"&gt; USB WebCam&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAxisSecurityCamera"&gt; Axis Security Camera&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAppleMacbook27SuddenMotionSensor"&gt; Apple Mac book' Sudden Motion Sensor&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLegoMindstorms"&gt;Lego Mindstorms&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSunSpot"&gt;SunSpot&lt;/span&gt;&lt;/h3&gt; 
+To use Sun SPOTs, you should first install the latest version of the SunSPOT SDK called SPOT Manager, which can be downloaded &lt;span class="wikiexternallink"&gt;&lt;a href="http://sunspotworld.com/SPOTManager/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. Once you have become familiar with these devices, get the USB port reference where the basestation is plugged-in (i.e., COM4 in Windows or /dev/tty/ACM0 on Linux) with the &lt;i class="italic"&gt;ant info&lt;/i&gt; command.
+Copy/paste the USB port in the config.properties file of the SunSPOT bundle and finally regenerate the bundle with maven.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTouchatag"&gt;Touchatag&lt;/span&gt;&lt;/h3&gt; 
+The Touchatag (previously Tikitag) reader is a ACS 122 contactless reader for mainly ISO 14443 A/B, MiFare and Felica RFID transponders
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstallation"&gt;Installation&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWindows"&gt;Windows&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HLinux"&gt;Linux&lt;/span&gt;&lt;/h5&gt; 
+&lt;strong class="strong"&gt;Setup you computer (Ubuntu)&lt;/strong&gt;&lt;p class="paragraph"/&gt;sudo aptitude install libccid
+&lt;ol&gt;&lt;li&gt;the following package is also required for everything to work on my computer...&lt;/li&gt;
+&lt;li&gt;it may be a simple shared library name (one package provides libpcsclite.so.1.0.0, the  other libpcsclite.so)&lt;/li&gt;
+&lt;li&gt;it may be a question of versions (installing libpcsclite-dev pulls a new version of pcscd)&lt;/li&gt;
+&lt;/ol&gt;sudo aptitude install libpcsclite-dev&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Under Fedora 13&lt;/strong&gt;&lt;p class="paragraph"/&gt;yum install pcscd-lite pcscd-lite-libs pcscd-lite-devel ccid&lt;p class="paragraph"/&gt;The devel package is required, it seems to create a symbolic link needed by the underlying API
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMacOS"&gt;MacOS&lt;/span&gt;&lt;/h5&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDevelopmentwithJava"&gt;Development with Java&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HwiththejavaxsmartcardioAPI"&gt;with the javax.smartcardio API&lt;/span&gt;&lt;/h5&gt; 
+The API javax.smartcardio relies on the PCSC modules of the host operating system
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HwiththeTikitaglibratywrapper"&gt;with the Tikitag libraty wrapper&lt;/span&gt;&lt;/h5&gt; 
+This wrapper relies on the Tikitag google code project. It uses the javax.smartcardio API.&lt;p class="paragraph"/&gt;=== Get the library ===&lt;p class="paragraph"/&gt;wget &lt;span class="nobr"&gt;&lt;a href="http://membres-liglab.imag.fr/donsez/pub/tikitag/tikitagreader.zip"&gt;&amp;#104;ttp://membres-liglab.imag.fr/donsez/pub/tikitag/tikitagreader.zip&lt;/a&gt;&lt;/span&gt;&lt;br/&gt;
+unzip tikitagreader.zip&lt;br/&gt;
+tikitagreader/lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar&lt;br/&gt;
+mkdir lib&lt;br/&gt;
+mv tikitagreader/lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar ./lib/&lt;br/&gt;
+rmdir tikitagreader/lib/&lt;br/&gt;
+rmdir tikitagreader/&lt;br/&gt;
+rm -f tikitagreader.zip&lt;br/&gt;&lt;p class="paragraph"/&gt;
+=== Try with Aspire Client ===&lt;p class="paragraph"/&gt;mkdir -p com/tikitag/client&lt;br/&gt;
+wget 'http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/&amp;#42;checkout&amp;#42;/aspire/sandbox/donsez/tikitagreader/src/main/java/com/tikitag/client/TikitagClient.java?rev=268'&lt;br/&gt;
+mv 'TikitagClient.java?rev=268' com/tikitag/client/TikitagClient.java&lt;br/&gt;&lt;p class="paragraph"/&gt;sed -i '202,+7 s@.*@// &amp;#48;@g' com/tikitag/client/TikitagClient.java&lt;br/&gt;&lt;p class="paragraph"/&gt;javac -cp lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar com/tikitag/client/TikitagClient.java&lt;br/&gt;
+java -cp .:lib/tikitag-client-1.0-SNAPSHOT-jar-with-dependencies.jar com.tikitag.client.TikitagClient&lt;br/&gt;&lt;p class="paragraph"/&gt;Remark : some trouble are possible with JRE for Linux
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HwithLibUSB"&gt;with LibUSB&lt;/span&gt;&lt;/h5&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HMir3Aror"&gt;Mir:ror&lt;/span&gt;&lt;/h3&gt; 
+The Mir:ror reader is a proprietary reader (probably I2C since the Nabaztag/tag reader is I2C) designed by Violet.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstallation"&gt;Installation&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDevelopmentwithJava"&gt;Development with Java&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HwithLibUSB"&gt;with LibUSB&lt;/span&gt;&lt;/h5&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWiimote"&gt;Wiimote&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;2 bundles
+&lt;ul class="star"&gt;
+&lt;li&gt;Bluecove&lt;/li&gt;
+&lt;li&gt;MoteJ&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HWiiFit"&gt;WiiFit&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HOneWire"&gt;OneWire&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWeatherStationOregonScientificWMR200"&gt;Weather Station Oregon Scientific WMR200&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWeatherStationLaCrosseTechnologiesWS23xx"&gt;Weather Station La Crosse Technologies WS23xx&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUSBWebCam"&gt;USB WebCam&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAxisSecurityCamera"&gt;Axis Security Camera&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAppleMacbook27SuddenMotionSensor"&gt;Apple Mac book' Sudden Motion Sensor&lt;/span&gt;&lt;/h3&gt; 
+</renderedcontent>
+</xwikidoc>

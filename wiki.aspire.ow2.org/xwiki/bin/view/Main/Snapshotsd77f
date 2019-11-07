@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Snapshots</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.References</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1222150352000</creationDate>
+<date>1234880555000</date>
+<contentUpdateDate>1234880555000</contentUpdateDate>
+<version>1.14</version>
+<title>ASPIRE RFID Snapshots</title>
+<template></template>
+<attachment>
+<filename>aspire-mc1.png</filename>
+<filesize>144413</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224701276000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc2.png</filename>
+<filesize>271191</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224701294000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc3.png</filename>
+<filesize>520971</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224701312000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc4.png</filename>
+<filesize>196925</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224701408000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc5.png</filename>
+<filesize>129617</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224701426000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Snapshots
+
+
+* [RFID Suite Snapshots&gt;Main.PhotoAlbum.RFIDSuiteSnapshots]
+
+
+See also the [Demonstration page&gt;Main.Demos]</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSnapshots"&gt;Snapshots&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main.PhotoAlbum/RFIDSuiteSnapshots?parent=Main.Snapshots"&gt;&lt;span class="wikicreatelinktext"&gt;RFID Suite Snapshots&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;See also the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Demos"&gt;Demonstration page&lt;/a&gt;&lt;/span&gt;
+</renderedcontent>
+</xwikidoc>

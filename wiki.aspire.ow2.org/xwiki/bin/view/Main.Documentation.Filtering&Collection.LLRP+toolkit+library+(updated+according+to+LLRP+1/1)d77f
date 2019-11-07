@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Filtering&amp;Collection.LLRP toolkit library (updated according to LLRP 1</web>
+<name>1)</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Filtering%26Collection</parent>
+<creator>xwiki:XWiki.driss_r</creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1379424611000</creationDate>
+<date>1379926649000</date>
+<contentUpdateDate>1379926649000</contentUpdateDate>
+<version>1.16</version>
+<title>LLRP toolkit library updated according to LLRP 1.1</title>
+<template></template>
+<attachment>
+<filename>LLRP_interface.png</filename>
+<filesize>105087</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1379425132000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 LLRP toolkit library updated according to LLRP 1.1
+
+#toc("" "" "true")
+
+This section describes the LLRP toolkit library updated by the FUN team, Inria-Lille. 
+
+1.1 Introduction
+
+LLRP is an interface contained in the filtering and collection module. It is concerned with providing the formats and procedures of communications between a Client and a Reader. The LLRP protocol data units are standardized messages, built with [LLRP toolkit&gt;http://www.llrp.org/], a software toolkit for using the EPCglobal Low Level Reader Protocol (LLRP) to communicate with conforming RFID readers.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection//LLRP toolkit library (updated according to LLRP 1.1)/LLRP_interface.png"&gt;{image:LLRP_interface.png|300}&lt;/a&gt;
+&lt;/center&gt;
+
+[EPCglobal&gt;http://www.epcglobalinc.org/] released [LLRP 1.1 specification&gt;http://www.gs1.org/gsmp/kc/epcglobal/llrp] since October 2010. The most important update compared to the previous standard version is version negotiation protocol. With this new technique the Client requests the supported protocol version from the Reader, determines an 
+appropriate version for the connection, and instructs the reader as to the protocol to use.
+Once a version has been established using this procedure, all subsequent messages are 
+using the negotiated protocol version.
+For this protocol, 4 new standardized messages were added to the llrp toolkit library which are “GET_SUPPORTED_VERSION”  “GET_SUPPORTED_VERSION_RESPONSE” “SET_PROTOCOL_VERSION” and “SET_PROTOCOL_VERSION_RESPONSE”.
+
+1.1 User guide: 
+
+The new generated library “ltkjava-1.0.0.7” licensed Apache v2.0 can be downloaded [here&gt;http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324]. It can be used by being added as a dependency to the LLRP interface source code.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLLRPtoolkitlibraryupdatedaccordingtoLLRP11"&gt;LLRP toolkit library updated according to LLRP 1.1&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserguide3A"&gt;2 User guide: &lt;/a&gt; 
+      &lt;/ul&gt; 
+This section describes the LLRP toolkit library updated by the FUN team, Inria-Lille. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;LLRP is an interface contained in the filtering and collection module. It is concerned with providing the formats and procedures of communications between a Client and a Reader. The LLRP protocol data units are standardized messages, built with &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.llrp.org/"&gt;&amp;#76;LRP toolkit&lt;/a&gt;&lt;/span&gt;, a software toolkit for using the EPCglobal Low Level Reader Protocol (LLRP) to communicate with conforming RFID readers.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection//LLRP toolkit library (updated according to LLRP 1.1)/LLRP_interface.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection.LLRP+toolkit+library+%28updated+according+to+LLRP+1/1%29/LLRP_interface.png" height="300" alt="LLRP_interface.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/"&gt;&amp;#69;PCglobal&lt;/a&gt;&lt;/span&gt; released &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.gs1.org/gsmp/kc/epcglobal/llrp"&gt;&amp;#76;LRP 1.1 specification&lt;/a&gt;&lt;/span&gt; since October 2010. The most important update compared to the previous standard version is version negotiation protocol. With this new technique the Client requests the supported protocol version from the Reader, determines an 
+appropriate version for the connection, and instructs the reader as to the protocol to use.
+Once a version has been established using this procedure, all subsequent messages are 
+using the negotiated protocol version.
+For this protocol, 4 new standardized messages were added to the llrp toolkit library which are “GET_SUPPORTED_VERSION”  “GET_SUPPORTED_VERSION_RESPONSE” “SET_PROTOCOL_VERSION” and “SET_PROTOCOL_VERSION_RESPONSE”.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserguide3A"&gt;User guide: &lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The new generated library “ltkjava-1.0.0.7” licensed Apache v2.0 can be downloaded &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. It can be used by being added as a dependency to the LLRP interface source code.
+</renderedcontent>
+</xwikidoc>

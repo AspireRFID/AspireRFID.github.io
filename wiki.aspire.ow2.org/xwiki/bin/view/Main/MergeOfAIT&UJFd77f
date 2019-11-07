@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>MergeOfAIT&amp;UJF</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1235142551000</creationDate>
+<date>1241507591000</date>
+<contentUpdateDate>1241507591000</contentUpdateDate>
+<version>1.34</version>
+<title>Merge of AIT and UJF Branches</title>
+<template></template>
+<content>1 Proposition of Merge of AIT and UJF Branches
+
+----
+#toc("" "" "true")
+----
+
+
+
+
+Under construction 
+
+1.1 Current Status
+Two branches coexist in the OW2 Aspire RFID project
+* AITdev (AIT) branch focuses on …
+* RFIDSuite (UJF) focuses on …
+
+1.1 Proposition of Merge
+
+1.1.1 AIT branch will provide
+
+* *Reader Core Proxy*
+** Exists within OSGi
+** Provides JMX management interface
+** Provides EPC Reader Management (not currently enabled and used)
+** ALE communicates with it via EPC Reader Protocol
+** Provides Interfaces with readers:
+*** For Intermec(BRI)
+*** For Impinj (Mach1)
+*** For FossTrack’s Simulator reader
+*** HAL Wrapper for new readers
+* *ALE Server*
+** EPC F&amp;C1.1 standard compliant.
+*** Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)
+**** ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.
+** Runs on Apache tomcat 6.0
+** Uses CXF and spring to implement JaxWS for the control interface.
+** It Supports Maven.
+** Supports RP and LLRP for the communication with the readers.
+** Supports TCP/HTTP protocol to deliver EC reports
+** Provides Standard EPC Control Interface Based on SOAP messages
+* *EPCIS*
+** EPC 1.0.1 standard compliant
+*** Provides Extension Mechanisms
+**** ~~New Event Field~~ A new field may be added to an existing Event Type in the Data Definition Layer. Additionally to every event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications): 
+{table}
+Column Name | Type Name
+event_id | BIGINT
+fieldname | VARCHAR
+prefix | VARCHAR
+intValue | INT
+floatValue | FLOAT
+dateValue | TIMESTAMP
+strValue | VARCHAR 
+{table}
+
+** Runs on Apache tomcat 6.0
+** Uses CXF and spring to implement JaxWS for the query and capture interface.
+** Uses SQL for the query interface and Hibernate for the capture interface.
+** Supports MySQL 5.0
+** Provides standard EPC Query and capture Interface Based on SOAP messages.
+** Provides proprietary master data capture interface.
+* *BEG* (under development)
+* *Tooling (Eclipse)* ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.
+** AspireRfidIDE Core 
+** ALE Server Configurator Plug-in 
+** Business Event Generator Plug-in 
+** Physical Reader Configuration &amp; Management Plug-in 
+** EC-Spec Editor Plug-in 
+** LR-Spec Editor Plug-in 
+** Master Data Editor Plug-in 
+Business Process Management and Workflow Management Editor Plug-in (under design)
+Connector Configurator Plug-in (Under design)
+ASPIRE Programmability Engine Plug-in (Under design)
+* *Connector*
+** Connector engine component
+** Connector client component
+
+1.1.1 UJF branch will provide
+* Plug and Play Sensors (using iPOJO+WireAdmin+WireAdminBinder) : data collected for sensors must be add in the extension element of the ECReport.
+* EPCIS extension to store sensors data (position, measurement, answers to survey, …) : the data must be extracted from the ECReport by the EPCIS.
+* GWT-based User Console relying on the RFIDSuite” EPCIS (developed with EJB3.0)+ extensions (sensors data) : should we keep/discard the “Warning ” features (lost objects, pairing, …): they will be replaced by the BEG, isn’t it ?
+* Edge Premice Server Architecture ??? Question: does the AIT branch can model the 3 layer architecture ?
+* Communication (JMS, HTTP/SOAP, SMTP, XMPP) between Edge and Premice and between Premice and EPCIS to transport ECReports
+* « ONS » based on Web Services and EJB3.0 + WS-Metadata (JSR 181).
+* Porting the existing readers (Tagsys, TIRIS, ACS122, Mir:ror) to the HAL wrapper
+* Bluetooth bridge as a reader
+* HTTP bridge as a reader
+* NFC MIDLets
+** with BT to the Bluetooth Bridge
+** with HTTP to the HTTP Bridge
+* Management and deployment :
+** LDAP for X509 certificates publication and for architecture description
+** JMX for configuration and monitoring
+** use Felix MOSGi project for the JMX agent
+** may be UPnP and DNSSD for Edge and premice mutual dynamic discovery in the warehouse/store network)
+* JVisualVM and JConsole plugins for OSGi management (may be contributed to the Apache Felix community).
+* Generic build for demopacks (ANT, JMX (and IzPack in the future))
+
+1.1.1 Common programming practices
+1.1.1.1 Maven
+The 2 branches are already built using Maven 2
+1.1.1.1 JavaEE
+TBD
+1.1.1.1 JMX
+The 2 branches have already MBeans to manage MW components
+1.1.1.1 OSGi
+The 2 branches have already packaged applications as OSGi bundles
+1.1.1.1 iPOJO
+Apache Felix iPOJO is a component model to ease the development of OSGi applications. It deals with the service dependency management, the JMX MBean definition for OSGi component, the configuration, … iPOJO was mainly developed by the Adele team involved in the Aspire project. iPOJO is already used in the services of the JOnAS 5 JavaEE server. Most of the bundles of the RFIDSuite branch are developed with iPOJO. [A 10 minute tutorial on iPOJO&gt;http://felix.apache.org/site/apache-felix-ipojo.html]
+
+We propose to use intensively the iPOJO component model for all bundles produced by the project.
+
+
+
+1.1 Roadmap for the merge
+
+1.1.1 General
+* Port all OSGI services to iPojo 1.0
+1.1.1 Reader Core Proxy
+* Port UJF readers to AITdev
+* Read semi-active tags to read sensor data
+1.1.1 Sensor Proxy
+* Propose an extension model for sensor data and integrate to the reader core proxy or ALE
+* Integrate Zigbee sensors to the model
+1.1.1 IOs (Actuator) Proxy
+* TBD
+1.1.1 RFID Printer Proxy
+* TBD
+1.1.1 ALE Server
+* Use the AITDev ALE server
+1.1.1 EPCIS
+* Deploy AITdev EPCIS on JONAS
+1.1.1 BEG
+* Use the AITDev BEG server
+* connection with OW2 Bonita ??
+1.1.1 ONS
+* Keep UJF ONS and implement ONS specification interfaces (based on DNS?)
+
+1.1.1 NFC Stack
+The NFC stack clusters all SW bricks to build NFC applications on the phone and on the desktop or local server.
+
+1.1.1.1 Common
+* new NDEF RTD : GPS position, Point of Interest, Located Smart Poster, BT/Wifi access point (useful to avoid long initialization sessions due to scan all the device) ...
+
+1.1.1.1 MIDLet (J2ME)
+* NFC utilities (([JSR 257&gt;http://jcp.org/en/jsr/detail?id=257])
+* Geolocation utilities ([JSR 179&gt;http://jcp.org/en/jsr/detail?id=179] and [JSR 293&gt;http://jcp.org/en/jsr/detail?id=293])
+* Sensor utilities ([JSR 256&gt;http://jcp.org/en/jsr/detail?id=256])
+* Map display (from open map repositories)
+* GPS logger/replay
+* GPS track interactive simulator
+* Peer-to-peer utilities
+* Rating utilities : for social networking (people rating), product rating, maintenance, ...
+
+1.1.1.1 Desktop (JavaSE)
+* BT-ALE bridge (JSR82)
+* Phone-to-Desktop utilities
+
+1.1.1 End-to-End Management
+* Use Jasmine (eclipse plug-in) for management
+* Maybe use gvisualvm (for monitoring)
+* Implement JMX for UJF Museum
+* Try to make new standard for Reader Management (RM) based on JMX
+1.1.1 Tooling
+1.1.1 Generic User Console (GWT-based)
+* Make UJF applications connector based
+1.1.1 Demo packs
+* Create a project to build demos.
+1.1.1 Demonstrations
+1.1.1.1 NFC Museum
+1.1.1.1 Access Control
+1.1.1.1 NFC Game
+1.1.1.1 Others
+1.1.1 Others
+1.1.1.1 Workflow orchestration ??
+OW2 Bonita ???
+1.1.1.1 ERP connection ??
+1.1.1.1 WMS connection ??
+1.1.1.1 Label generation and printing ??
+including 1D and 2D barecods
+
+1.1.1 Non functional requirements
+1.1.1.1 Security
+1.1.1.1 Privacy
+1.1.1.1 Reliability
+1.1.1.1 Scalability
+1.1.1.1.1 Scaleup and speedup
+1.1.1.1.1 Downwsizing of the edge
+What is the light HW configuration to run the Aspire edge ? ARM9(26) 32MB RAM 16MB on-chip FlashRAM ?
+1.1.1.1 Determinism
+1.1.1.1 Mission-critical
+1.1.1.1 Portability
+1.1.1.1.1 Operating systems : Windows vs Linux
+1.1.1.1.1 JVMs : J9, JamVM, Sun, JRockit, ...
+1.1.1.1.1 OSGi platforms: Equinox, Felix, ...
+1.1.1.1.1 JavaEE servers (for EPCIS, ONS and ALE server): JOnAS, JBoss, Glassfish, ...
+1.1.1.1.1 DBMS (for EPCIS, ONS) : MySQL, PostGres, Oracle, Derby (aka JavaDB), HSQL, ...
+1.1.1.1 Misc
+1.1.1.1.1 Tests (unit testing)
+1.1.1.1.1 Benchmarks (ALE load injection)
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HPropositionofMergeofAITandUJFBranches"&gt;Proposition of Merge of AIT and UJF Branches&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HCurrentStatus"&gt;1 Current Status&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPropositionofMerge"&gt;2 Proposition of Merge&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAITbranchwillprovide"&gt;2.1 AIT branch will provide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUJFbranchwillprovide"&gt;2.2 UJF branch will provide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HCommonprogrammingpractices"&gt;2.3 Common programming practices&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HMaven"&gt;2.3.1 Maven&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJavaEE"&gt;2.3.2 JavaEE&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMX"&gt;2.3.3 JMX&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGi"&gt;2.3.4 OSGi&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HiPOJO"&gt;2.3.5 iPOJO&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HRoadmapforthemerge"&gt;3 Roadmap for the merge&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HGeneral"&gt;3.1 General&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReaderCoreProxy"&gt;3.2 Reader Core Proxy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSensorProxy"&gt;3.3 Sensor Proxy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HIOs28Actuator29Proxy"&gt;3.4 IOs (Actuator) Proxy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRFIDPrinterProxy"&gt;3.5 RFID Printer Proxy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HALEServer"&gt;3.6 ALE Server&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEPCIS"&gt;3.7 EPCIS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBEG"&gt;3.8 BEG&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HONS"&gt;3.9 ONS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNFCStack"&gt;3.10 NFC Stack&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HCommon"&gt;3.10.1 Common&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMIDLet28J2ME29"&gt;3.10.2 MIDLet (J2ME)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDesktop28JavaSE29"&gt;3.10.3 Desktop (JavaSE)&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HEndtoEndManagement"&gt;3.11 End-to-End Management&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTooling"&gt;3.12 Tooling&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGenericUserConsole28GWTbased29"&gt;3.13 Generic User Console (GWT-based)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDemopacks"&gt;3.14 Demo packs&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDemonstrations"&gt;3.15 Demonstrations&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HNFCMuseum"&gt;3.15.1 NFC Museum&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAccessControl"&gt;3.15.2 Access Control&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HNFCGame"&gt;3.15.3 NFC Game&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOthers"&gt;3.15.4 Others&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HOthers-1"&gt;3.16 Others&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWorkfloworchestration3F3F"&gt;3.16.1 Workflow orchestration ??&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HERPconnection3F3F"&gt;3.16.2 ERP connection ??&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWMSconnection3F3F"&gt;3.16.3 WMS connection ??&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLabelgenerationandprinting3F3F"&gt;3.16.4 Label generation and printing ??&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HNonfunctionalrequirements"&gt;3.17 Non functional requirements&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSecurity"&gt;3.17.1 Security&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPrivacy"&gt;3.17.2 Privacy&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReliability"&gt;3.17.3 Reliability&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HScalability"&gt;3.17.4 Scalability&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HScaleupandspeedup"&gt;3.17.4.1 Scaleup and speedup&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDownwsizingoftheedge"&gt;3.17.4.2 Downwsizing of the edge&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDeterminism"&gt;3.17.5 Determinism&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMissioncritical"&gt;3.17.6 Mission-critical&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPortability"&gt;3.17.7 Portability&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HOperatingsystems3AWindowsvsLinux"&gt;3.17.7.1 Operating systems : Windows vs Linux&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJVMs3AJ92CJamVM2CSun2CJRockit2C"&gt;3.17.7.2 JVMs : J9, JamVM, Sun, JRockit, ...&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGiplatforms3AEquinox2CFelix2C"&gt;3.17.7.3 OSGi platforms: Equinox, Felix, ...&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJavaEEservers28forEPCIS2CONSandALEserver293AJOnAS2CJBoss2CGlassfish2C"&gt;3.17.7.4 JavaEE servers (for EPCIS, ONS and ALE server): JOnAS, JBoss, Glassfish, ...&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDBMS28forEPCIS2CONS293AMySQL2CPostGres2COracle2CDerby28akaJavaDB292CHSQL2C"&gt;3.17.7.5 DBMS (for EPCIS, ONS) : MySQL, PostGres, Oracle, Derby (aka JavaDB), HSQL, ...&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMisc"&gt;3.17.8 Misc&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HTests28unittesting29"&gt;3.17.8.1 Tests (unit testing)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBenchmarks28ALEloadinjection29"&gt;3.17.8.2 Benchmarks (ALE load injection)&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+Under construction 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HCurrentStatus"&gt;1 Current Status&lt;/span&gt;&lt;/h3&gt; 
+Two branches coexist in the OW2 Aspire RFID project
+&lt;ul class="star"&gt;
+&lt;li&gt;AITdev (AIT) branch focuses on …&lt;/li&gt;
+&lt;li&gt;RFIDSuite (UJF) focuses on …&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HPropositionofMerge"&gt;2 Proposition of Merge&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAITbranchwillprovide"&gt;2.1 AIT branch will provide&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Reader Core Proxy&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Exists within OSGi&lt;/li&gt;
+&lt;li&gt;Provides JMX management interface&lt;/li&gt;
+&lt;li&gt;Provides EPC Reader Management (not currently enabled and used)&lt;/li&gt;
+&lt;li&gt;ALE communicates with it via EPC Reader Protocol&lt;/li&gt;
+&lt;li&gt;Provides Interfaces with readers:&lt;ul class="star"&gt;
+&lt;li&gt;For Intermec(BRI)&lt;/li&gt;
+&lt;li&gt;For Impinj (Mach1)&lt;/li&gt;
+&lt;li&gt;For FossTrack’s Simulator reader&lt;/li&gt;
+&lt;li&gt;HAL Wrapper for new readers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;ALE Server&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;EPC F&amp;C1.1 standard compliant.&lt;ul class="star"&gt;
+&lt;li&gt;Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)&lt;ul class="star"&gt;
+&lt;li&gt;ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and spring to implement JaxWS for the control interface.&lt;/li&gt;
+&lt;li&gt;It Supports Maven.&lt;/li&gt;
+&lt;li&gt;Supports RP and LLRP for the communication with the readers.&lt;/li&gt;
+&lt;li&gt;Supports TCP/HTTP protocol to deliver EC reports&lt;/li&gt;
+&lt;li&gt;Provides Standard EPC Control Interface Based on SOAP messages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;EPCIS&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;EPC 1.0.1 standard compliant&lt;ul class="star"&gt;
+&lt;li&gt;Provides Extension Mechanisms&lt;ul class="star"&gt;
+&lt;li&gt;&lt;i class="italic"&gt;New Event Field&lt;/i&gt; A new field may be added to an existing Event Type in the Data Definition Layer. Additionally to every event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications):&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Column Name&lt;/th&gt;&lt;th&gt;Type Name&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;event_id&lt;/td&gt;&lt;td&gt;BIGINT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;fieldname&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;prefix&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;intValue&lt;/td&gt;&lt;td&gt;INT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;floatValue&lt;/td&gt;&lt;td&gt;FLOAT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;dateValue&lt;/td&gt;&lt;td&gt;TIMESTAMP&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;strValue&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and spring to implement JaxWS for the query and capture interface.&lt;/li&gt;
+&lt;li&gt;Uses SQL for the query interface and Hibernate for the capture interface.&lt;/li&gt;
+&lt;li&gt;Supports MySQL 5.0&lt;/li&gt;
+&lt;li&gt;Provides standard EPC Query and capture Interface Based on SOAP messages.&lt;/li&gt;
+&lt;li&gt;Provides proprietary master data capture interface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;BEG&lt;/strong&gt; (under development)&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Tooling (Eclipse)&lt;/strong&gt; ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.&lt;ul class="star"&gt;
+&lt;li&gt;AspireRfidIDE Core&lt;/li&gt;
+&lt;li&gt;ALE Server Configurator Plug-in&lt;/li&gt;
+&lt;li&gt;Business Event Generator Plug-in&lt;/li&gt;
+&lt;li&gt;Physical Reader Configuration &amp; Management Plug-in&lt;/li&gt;
+&lt;li&gt;EC-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;LR-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;Master Data Editor Plug-in&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;Business Process Management and Workflow Management Editor Plug-in (under design)
+Connector Configurator Plug-in (Under design)
+ASPIRE Programmability Engine Plug-in (Under design)
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Connector&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Connector engine component&lt;/li&gt;
+&lt;li&gt;Connector client component&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HUJFbranchwillprovide"&gt;2.2 UJF branch will provide&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Plug and Play Sensors (using iPOJO+WireAdmin+WireAdminBinder) : data collected for sensors must be add in the extension element of the ECReport.&lt;/li&gt;
+&lt;li&gt;EPCIS extension to store sensors data (position, measurement, answers to survey, …) : the data must be extracted from the ECReport by the EPCIS.&lt;/li&gt;
+&lt;li&gt;GWT-based User Console relying on the RFIDSuite” EPCIS (developed with EJB3.0)+ extensions (sensors data) : should we keep/discard the “Warning ” features (lost objects, pairing, …): they will be replaced by the BEG, isn’t it ?&lt;/li&gt;
+&lt;li&gt;Edge Premice Server Architecture ??? Question: does the AIT branch can model the 3 layer architecture ?&lt;/li&gt;
+&lt;li&gt;Communication (JMS, HTTP/SOAP, SMTP, XMPP) between Edge and Premice and between Premice and EPCIS to transport ECReports&lt;/li&gt;
+&lt;li&gt;« ONS » based on Web Services and EJB3.0 + WS-Metadata (JSR 181).&lt;/li&gt;
+&lt;li&gt;Porting the existing readers (Tagsys, TIRIS, ACS122, Mir:ror) to the HAL wrapper&lt;/li&gt;
+&lt;li&gt;Bluetooth bridge as a reader&lt;/li&gt;
+&lt;li&gt;HTTP bridge as a reader&lt;/li&gt;
+&lt;li&gt;NFC MIDLets&lt;ul class="star"&gt;
+&lt;li&gt;with BT to the Bluetooth Bridge&lt;/li&gt;
+&lt;li&gt;with HTTP to the HTTP Bridge&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Management and deployment :&lt;ul class="star"&gt;
+&lt;li&gt;LDAP for X509 certificates publication and for architecture description&lt;/li&gt;
+&lt;li&gt;JMX for configuration and monitoring&lt;/li&gt;
+&lt;li&gt;use Felix MOSGi project for the JMX agent&lt;/li&gt;
+&lt;li&gt;may be UPnP and DNSSD for Edge and premice mutual dynamic discovery in the warehouse/store network)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JVisualVM and JConsole plugins for OSGi management (may be contributed to the Apache Felix community).&lt;/li&gt;
+&lt;li&gt;Generic build for demopacks (ANT, JMX (and IzPack in the future))&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HCommonprogrammingpractices"&gt;2.3 Common programming practices&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMaven"&gt;2.3.1 Maven&lt;/span&gt;&lt;/h5&gt; 
+The 2 branches are already built using Maven 2
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HJavaEE"&gt;2.3.2 JavaEE&lt;/span&gt;&lt;/h5&gt; 
+TBD
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HJMX"&gt;2.3.3 JMX&lt;/span&gt;&lt;/h5&gt; 
+The 2 branches have already MBeans to manage MW components
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOSGi"&gt;2.3.4 OSGi&lt;/span&gt;&lt;/h5&gt; 
+The 2 branches have already packaged applications as OSGi bundles
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HiPOJO"&gt;2.3.5 iPOJO&lt;/span&gt;&lt;/h5&gt; 
+Apache Felix iPOJO is a component model to ease the development of OSGi applications. It deals with the service dependency management, the JMX MBean definition for OSGi component, the configuration, … iPOJO was mainly developed by the Adele team involved in the Aspire project. iPOJO is already used in the services of the JOnAS 5 JavaEE server. Most of the bundles of the RFIDSuite branch are developed with iPOJO. &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/apache-felix-ipojo.html"&gt;&amp;#65; 10 minute tutorial on iPOJO&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;We propose to use intensively the iPOJO component model for all bundles produced by the project.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRoadmapforthemerge"&gt;3 Roadmap for the merge&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HGeneral"&gt;3.1 General&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Port all OSGI services to iPojo 1.0&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HReaderCoreProxy"&gt;3.2 Reader Core Proxy&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Port UJF readers to AITdev&lt;/li&gt;
+&lt;li&gt;Read semi-active tags to read sensor data&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSensorProxy"&gt;3.3 Sensor Proxy&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Propose an extension model for sensor data and integrate to the reader core proxy or ALE&lt;/li&gt;
+&lt;li&gt;Integrate Zigbee sensors to the model&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HIOs28Actuator29Proxy"&gt;3.4 IOs (Actuator) Proxy&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRFIDPrinterProxy"&gt;3.5 RFID Printer Proxy&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HALEServer"&gt;3.6 ALE Server&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Use the AITDev ALE server&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HEPCIS"&gt;3.7 EPCIS&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Deploy AITdev EPCIS on JONAS&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBEG"&gt;3.8 BEG&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Use the AITDev BEG server&lt;/li&gt;
+&lt;li&gt;connection with OW2 Bonita ??&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HONS"&gt;3.9 ONS&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Keep UJF ONS and implement ONS specification interfaces (based on DNS?)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNFCStack"&gt;3.10 NFC Stack&lt;/span&gt;&lt;/h4&gt; 
+The NFC stack clusters all SW bricks to build NFC applications on the phone and on the desktop or local server.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HCommon"&gt;3.10.1 Common&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;new NDEF RTD : GPS position, Point of Interest, Located Smart Poster, BT/Wifi access point (useful to avoid long initialization sessions due to scan all the device) ...&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMIDLet28J2ME29"&gt;3.10.2 MIDLet (J2ME)&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;NFC utilities ((&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=257"&gt;&amp;#74;SR 257&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Geolocation utilities (&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=179"&gt;&amp;#74;SR 179&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=293"&gt;&amp;#74;SR 293&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Sensor utilities (&lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=256"&gt;&amp;#74;SR 256&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Map display (from open map repositories)&lt;/li&gt;
+&lt;li&gt;GPS logger/replay&lt;/li&gt;
+&lt;li&gt;GPS track interactive simulator&lt;/li&gt;
+&lt;li&gt;Peer-to-peer utilities&lt;/li&gt;
+&lt;li&gt;Rating utilities : for social networking (people rating), product rating, maintenance, ...&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HDesktop28JavaSE29"&gt;3.10.3 Desktop (JavaSE)&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;BT-ALE bridge (JSR82)&lt;/li&gt;
+&lt;li&gt;Phone-to-Desktop utilities&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HEndtoEndManagement"&gt;3.11 End-to-End Management&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Use Jasmine (eclipse plug-in) for management&lt;/li&gt;
+&lt;li&gt;Maybe use gvisualvm (for monitoring)&lt;/li&gt;
+&lt;li&gt;Implement JMX for UJF Museum&lt;/li&gt;
+&lt;li&gt;Try to make new standard for Reader Management (RM) based on JMX&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTooling"&gt;3.12 Tooling&lt;/span&gt;&lt;/h4&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HGenericUserConsole28GWTbased29"&gt;3.13 Generic User Console (GWT-based)&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Make UJF applications connector based&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDemopacks"&gt;3.14 Demo packs&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Create a project to build demos.&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDemonstrations"&gt;3.15 Demonstrations&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HNFCMuseum"&gt;3.15.1 NFC Museum&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HAccessControl"&gt;3.15.2 Access Control&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HNFCGame"&gt;3.15.3 NFC Game&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HOthers"&gt;3.15.4 Others&lt;/span&gt;&lt;/h5&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOthers"&gt;3.15.4 Others&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWorkfloworchestration3F3F"&gt;3.16.1 Workflow orchestration ??&lt;/span&gt;&lt;/h5&gt; 
+OW2 Bonita ???
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HERPconnection3F3F"&gt;3.16.2 ERP connection ??&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWMSconnection3F3F"&gt;3.16.3 WMS connection ??&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HLabelgenerationandprinting3F3F"&gt;3.16.4 Label generation and printing ??&lt;/span&gt;&lt;/h5&gt; 
+including 1D and 2D barecods
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HNonfunctionalrequirements"&gt;3.17 Non functional requirements&lt;/span&gt;&lt;/h4&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HSecurity"&gt;3.17.1 Security&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPrivacy"&gt;3.17.2 Privacy&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReliability"&gt;3.17.3 Reliability&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HScalability"&gt;3.17.4 Scalability&lt;/span&gt;&lt;/h5&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HScaleupandspeedup"&gt;3.17.4.1 Scaleup and speedup&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HDownwsizingoftheedge"&gt;3.17.4.2 Downwsizing of the edge&lt;/span&gt;&lt;/h6&gt; 
+What is the light HW configuration to run the Aspire edge ? ARM9(26) 32MB RAM 16MB on-chip FlashRAM ?
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HDeterminism"&gt;3.17.5 Determinism&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMissioncritical"&gt;3.17.6 Mission-critical&lt;/span&gt;&lt;/h5&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HPortability"&gt;3.17.7 Portability&lt;/span&gt;&lt;/h5&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HOperatingsystems3AWindowsvsLinux"&gt;3.17.7.1 Operating systems : Windows vs Linux&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HJVMs3AJ92CJamVM2CSun2CJRockit2C"&gt;3.17.7.2 JVMs : J9, JamVM, Sun, JRockit, ...&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HOSGiplatforms3AEquinox2CFelix2C"&gt;3.17.7.3 OSGi platforms: Equinox, Felix, ...&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HJavaEEservers28forEPCIS2CONSandALEserver293AJOnAS2CJBoss2CGlassfish2C"&gt;3.17.7.4 JavaEE servers (for EPCIS, ONS and ALE server): JOnAS, JBoss, Glassfish, ...&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HDBMS28forEPCIS2CONS293AMySQL2CPostGres2COracle2CDerby28akaJavaDB292CHSQL2C"&gt;3.17.7.5 DBMS (for EPCIS, ONS) : MySQL, PostGres, Oracle, Derby (aka JavaDB), HSQL, ...&lt;/span&gt;&lt;/h6&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMisc"&gt;3.17.8 Misc&lt;/span&gt;&lt;/h5&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HTests28unittesting29"&gt;3.17.8.1 Tests (unit testing)&lt;/span&gt;&lt;/h6&gt; 
+&lt;h6 class="heading-1-1-1-1-1"&gt;&lt;span id="HBenchmarks28ALEloadinjection29"&gt;3.17.8.2 Benchmarks (ALE load injection)&lt;/span&gt;&lt;/h6&gt; 
+</renderedcontent>
+</xwikidoc>

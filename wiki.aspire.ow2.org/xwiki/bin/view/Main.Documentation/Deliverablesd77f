@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Deliverables</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1248082279000</creationDate>
+<date>1313762273000</date>
+<contentUpdateDate>1313762273000</contentUpdateDate>
+<version>1.71</version>
+<title>Deliverables</title>
+<template></template>
+<attachment>
+<filename>Aspire-D4.4b_V1.1_ForWiki_.pdf</filename>
+<filesize>3507769</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1287496771000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D3.4a_Core ASPIRE Middleware Infrastructure _Interim Version.pdf</filename>
+<filesize>579036</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248088012000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D4.3a_Programmable Filters – FML Specification _Interim Version.pdf</filename>
+<filesize>1469557</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248088545000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D4.3a_Programmable Filters-FML Specification_Interim Version.pdf</filename>
+<filesize>1469557</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248088672000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D3.3_Data Collection, Filtering and Application Level Events.pdf</filename>
+<filesize>795009</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089087000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D2.5_Privacy Specifications.pdf</filename>
+<filesize>353425</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089184000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D2.6_Specification of Scenarios and Trials.pdf</filename>
+<filesize>1836578</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089211000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D2.1_Review of State-of-the-Art Middleware.pdf</filename>
+<filesize>537281</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089541000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D2.2_End-User requirements.pdf</filename>
+<filesize>1706957</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089559000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D3.1_Licensing and reuse model.pdf</filename>
+<filesize>330283</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1248089830000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Aspire-D4.4a_Programmable RFID Solutions Specification.pdf</filename>
+<filesize>2037646</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1253794191000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ASPIRE_D4.3b_V0.5_Programmable Filters – FML Specification.pdf</filename>
+<filesize>2743939</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1263493927000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Aspire_D4.2a_ASPIRE Programmable Engine (APE) (Interim Version).pdf</filename>
+<filesize>1671598</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1263493755000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>D4.3b_Programmable Filters – FML Specification.pdf</filename>
+<filesize>2743939</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1263494073000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ASPIRE_D4.3b_V0.5_Programmable_Filters-FML_Specification.pdf</filename>
+<filesize>2743939</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1287496981000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et al. - 2010- Core ASPIRE Middleware Infrastructure(D3.4b).pdf</filename>
+<filesize>1609739</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1300723744000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Nikos Kefalakis, John Soldatos, Sofoklis Efremidis et all. - 2010 - Programmable RFID Solutions Specification (D4.4b).pdf</filename>
+<filesize>3134409</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1300725066000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Nektarios Leontiadis, et all. - 2009 - Programmable Filters FML Specification (D4.3b).pdf</filename>
+<filesize>2633015</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1300725182000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2009 - Programmable Filters FML Specification - ASPIRE D4.3a.pdf</filename>
+<filesize>1728708</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954880000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2009 - Programmable Filters FML Specification - ASPIRE D4.3b.pdf</filename>
+<filesize>3179605</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954896000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2011 - End-to-End Infrastructure Management - Aspire-D3.5_final.pdf</filename>
+<filesize>2475309</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954915000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Panos Dimitropoulos et all - 2010 - ASPIRE Middleware Pilot Applications (Liaison Projects &amp; New Pilots) - ASPIRE D6.2.pdf</filename>
+<filesize>3062225</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954937000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>John Soldatos, Nikos Kefalakis, Panos Dimitropoulos et all - 2011 - Integration, Application Development and Technical Support of the ASPIRE Middleware- ASPIRE D6.4.pdf</filename>
+<filesize>2621124</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304956092000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Luc Laurens, Stephane Ribas, Nikos Kefalakis, et - 2010 - ASPIRE Middleware Portal - ASPIRE D7.4.pdf</filename>
+<filesize>373375</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954972000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Mariette Wennmacher, John Soldatos, Nathalie Mitton et all - 2009 - Interim Report on Awareness Workshops - ASPIRE D7.3a.pdf</filename>
+<filesize>338066</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954987000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Neeli Prasad, John Soldatos, Nikos Kefalakis, et all - 2010 - Training Material and Workshops - ASPIRE D7.5.pdf</filename>
+<filesize>407440</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304954997000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Neeli R. Prasad - 2009 - Dissemination Plan - ASPIRE-D7.1.pdf</filename>
+<filesize>122907</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304955016000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Nikos Kefalakis, John Soldatos et all- 2009 - Programmable RFID Solutions Specification - ASPIRE D4.4a.pdf</filename>
+<filesize>2375657</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304955031000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Nikos Kefalakis, John Soldatos et all- 2010 - Programmable RFID Solutions Specification - ASPIRE D4.4b.pdf</filename>
+<filesize>3134409</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304955048000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Nikos Kefalakis, John Soldatos, Yongming Luo et all - 2009 - ASPIRE Programmable Engine (APE) - ASPIRE D4.2a.pdf</filename>
+<filesize>1376382</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304955062000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>Nikos Kefalakis, John Soldatos, Yongming Luo et all - 2011 - ASPIRE Programmable Engine (APE) - ASPIRE D4.2b.pdf</filename>
+<filesize>3726268</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1304955084000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ASPIRE Partners - 2011 - Dissemination Activities - ASPIRE-D7.2.pdf</filename>
+<filesize>1650741</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1308557379000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ASPIRE Partners - 2011 -Training Material and Workshops-ASPIRE-D7.5.pdf</filename>
+<filesize>221371</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1308557393000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 ASPIRE's Public Deliverables
+
+----
+#toc("" "" "true")
+----
+
+1.1 WP2 - Requirements and Specifications
+* {attach:D2.1 Review of State-of-the-Art Middleware, Methods, Tools and Techniques|D2.1_Review of State-of-the-Art Middleware.pdf}
+* {attach:D2.2 End-User requirements|D2.2_End-User requirements.pdf}
+* {attach:D2.5 Privacy Specifications|D2.5_Privacy Specifications.pdf}
+* {attach:D2.6 Specification of Scenarios and Trials|D2.6_Specification of Scenarios and Trials.pdf}
+
+1.1 WP3 - RFID Middleware Infrastructure
+* {attach:D3.1 Licensing and Reuse Model|D3.1_Licensing and reuse model.pdf}
+* {attach:D3.3 Data Collection, Filtering and Application Level Events|D3.3_Data Collection, Filtering and Application Level Events.pdf}
+* {attach:D3.4a Core ASPIRE Middleware Infrastructure Interim Version|D3.4a_Core ASPIRE Middleware Infrastructure _Interim Version.pdf}
+* {attach:D3.4b Core ASPIRE Middleware Infrastructure - 2010|John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et al. - 2010- Core ASPIRE Middleware Infrastructure(D3.4b).pdf}
+* {attach:D3.5 End-to-End Infrastructure Management - 2011|John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2011 - End-to-End Infrastructure Management - Aspire-D3.5_final.pdf}
+
+1.1 WP4 - Middleware Programmability
+* {attach:D4.2a ASPIRE Programmable Engine (APE) Interim Version|Nikos Kefalakis, John Soldatos, Yongming Luo et all - 2009 - ASPIRE Programmable Engine (APE) - ASPIRE D4.2a.pdf}
+* {attach:D4.2b ASPIRE Programmable Engine (APE) Final|Nikos Kefalakis, John Soldatos, Yongming Luo et all - 2011 - ASPIRE Programmable Engine (APE) - ASPIRE D4.2b.pdf}
+* {attach:D4.3a Programmable Filters – FML Specification Interim Version|John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2009 - Programmable Filters FML Specification - ASPIRE D4.3a.pdf}
+* {attach:D4.3b Programmable Filters FML Specification 2009|John Soldatos, Nikos Kefalakis, Nektarios Leontiadis et all - 2009 - Programmable Filters FML Specification - ASPIRE D4.3b.pdf}
+* {attach:D4.4a Programmable RFID Solutions Specification Interim Version|Nikos Kefalakis, John Soldatos et all- 2009 - Programmable RFID Solutions Specification - ASPIRE D4.4a.pdf}
+* {attach:D4.4b Programmable RFID Solutions Specification - 2010|Nikos Kefalakis, John Soldatos et all- 2010 - Programmable RFID Solutions Specification - ASPIRE D4.4b.pdf}
+* [D4.5 Integrated Development Environment for RFID Development - 2011&gt;http://dl.dropbox.com/u/5463008/AspireRFID/Documentation/Nikos%20Kefalakis%2C%20John%20Soldatos%2C%20Didier%20Donsez%20et%20all.%20-%202011%20-%20Integrated%20Development%20Environment%20for%20RFID%20Development%20%28D4.5%29.pdf]
+
+
+1.1 WP6 - Application Integration, Trials and Evaluation
+* {attach:D6.2 ASPIRE Middleware Pilot Applications (Liaison Projects &amp; New Pilots) - 2010|John Soldatos, Nikos Kefalakis, Panos Dimitropoulos et all - 2010 - ASPIRE Middleware Pilot Applications (Liaison Projects &amp; New Pilots) - ASPIRE D6.2.pdf}
+* {attach:D6.4 Integration, Application Development and Technical Support of the ASPIRE Middleware - 2011|John Soldatos, Nikos Kefalakis, Panos Dimitropoulos et all - 2011 - Integration, Application Development and Technical Support of the ASPIRE Middleware- ASPIRE D6.4.pdf}
+
+
+1.1 WP7 - Dissemination, Exploitation, Training
+* {attach:D7.1 Dissemination Plan - 2009|Neeli R. Prasad - 2009 - Dissemination Plan - ASPIRE-D7.1.pdf}
+* {attach:D7.2 Dissemination Activities - 2011|ASPIRE Partners - 2011 - Dissemination Activities - ASPIRE-D7.2.pdf}
+* {attach:D7.4 ASPIRE Middleware Portal - 2010|Luc Laurens, Stephane Ribas, Nikos Kefalakis, et - 2010 - ASPIRE Middleware Portal - ASPIRE D7.4.pdf}
+* {attach:D7.3a Interim Report on Awareness Workshops - 2009|Mariette Wennmacher, John Soldatos, Nathalie Mitton et all - 2009 - Interim Report on Awareness Workshops - ASPIRE D7.3a.pdf}
+* {attach:D7.5 Training Material and Workshops - 2011|ASPIRE Partners - 2011 -Training Material and Workshops-ASPIRE-D7.5.pdf}
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HASPIRE27sPublicDeliverables"&gt;ASPIRE's Public Deliverables&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWP2RequirementsandSpecifications"&gt;1 WP2 - Requirements and Specifications&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWP3RFIDMiddlewareInfrastructure"&gt;2 WP3 - RFID Middleware Infrastructure&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWP4MiddlewareProgrammability"&gt;3 WP4 - Middleware Programmability&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWP6ApplicationIntegration2CTrialsandEvaluation"&gt;4 WP6 - Application Integration, Trials and Evaluation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HWP7Dissemination2CExploitation2CTraining"&gt;5 WP7 - Dissemination, Exploitation, Training&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWP2RequirementsandSpecifications"&gt;WP2 - Requirements and Specifications&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D2.1_Review%20of%20State-of-the-Art%20Middleware.pdf" /&gt;D2.1 Review of State-of-the-Art Middleware, Methods, Tools and Techniques&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D2.2_End-User%20requirements.pdf" /&gt;D2.2 End-User requirements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D2.5_Privacy%20Specifications.pdf" /&gt;D2.5 Privacy Specifications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D2.6_Specification%20of%20Scenarios%20and%20Trials.pdf" /&gt;D2.6 Specification of Scenarios and Trials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HWP3RFIDMiddlewareInfrastructure"&gt;WP3 - RFID Middleware Infrastructure&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D3.1_Licensing%20and%20reuse%20model.pdf" /&gt;D3.1 Licensing and Reuse Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D3.3_Data%20Collection%2C%20Filtering%20and%20Application%20Level%20Events.pdf" /&gt;D3.3 Data Collection, Filtering and Application Level Events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/D3.4a_Core%20ASPIRE%20Middleware%20Infrastructure%20_Interim%20Version.pdf" /&gt;D3.4a Core ASPIRE Middleware Infrastructure Interim Version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Nektarios%20Leontiadis%20et%20al.%20-%202010-%20Core%20ASPIRE%20Middleware%20Infrastructure%28D3.4b%29.pdf" /&gt;D3.4b Core ASPIRE Middleware Infrastructure - 2010&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Nektarios%20Leontiadis%20et%20all%20-%202011%20-%20End-to-End%20Infrastructure%20Management%20-%20Aspire-D3.5_final.pdf" /&gt;D3.5 End-to-End Infrastructure Management - 2011&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HWP4MiddlewareProgrammability"&gt;WP4 - Middleware Programmability&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Nikos%20Kefalakis%2C%20John%20Soldatos%2C%20Yongming%20Luo%20et%20all%20-%202009%20-%20ASPIRE%20Programmable%20Engine%20%28APE%29%20-%20ASPIRE%20D4.2a.pdf" /&gt;D4.2a ASPIRE Programmable Engine (APE) Interim Version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Nikos%20Kefalakis%2C%20John%20Soldatos%2C%20Yongming%20Luo%20et%20all%20-%202011%20-%20ASPIRE%20Programmable%20Engine%20%28APE%29%20-%20ASPIRE%20D4.2b.pdf" /&gt;D4.2b ASPIRE Programmable Engine (APE) Final&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Nektarios%20Leontiadis%20et%20all%20-%202009%20-%20Programmable%20Filters%20FML%20Specification%20-%20ASPIRE%20D4.3a.pdf" /&gt;D4.3a Programmable Filters – FML Specification Interim Version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Nektarios%20Leontiadis%20et%20all%20-%202009%20-%20Programmable%20Filters%20FML%20Specification%20-%20ASPIRE%20D4.3b.pdf" /&gt;D4.3b Programmable Filters FML Specification 2009&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Nikos%20Kefalakis%2C%20John%20Soldatos%20et%20all-%202009%20-%20Programmable%20RFID%20Solutions%20Specification%20-%20ASPIRE%20D4.4a.pdf" /&gt;D4.4a Programmable RFID Solutions Specification Interim Version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Nikos%20Kefalakis%2C%20John%20Soldatos%20et%20all-%202010%20-%20Programmable%20RFID%20Solutions%20Specification%20-%20ASPIRE%20D4.4b.pdf" /&gt;D4.4b Programmable RFID Solutions Specification - 2010&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://dl.dropbox.com/u/5463008/AspireRFID/Documentation/Nikos%20Kefalakis%2C%20John%20Soldatos%2C%20Didier%20Donsez%20et%20all.%20-%202011%20-%20Integrated%20Development%20Environment%20for%20RFID%20Development%20%28D4.5%29.pdf"&gt;&amp;#68;4.5 Integrated Development Environment for RFID Development - 2011&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HWP6ApplicationIntegration2CTrialsandEvaluation"&gt;WP6 - Application Integration, Trials and Evaluation&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Panos%20Dimitropoulos%20et%20all%20-%202010%20-%20ASPIRE%20Middleware%20Pilot%20Applications%20%28Liaison%20Projects%20%26%20New%20Pilots%29%20-%20ASPIRE%20D6.2.pdf" /&gt;D6.2 ASPIRE Middleware Pilot Applications (Liaison Projects &amp; New Pilots) - 2010&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/John%20Soldatos%2C%20Nikos%20Kefalakis%2C%20Panos%20Dimitropoulos%20et%20all%20-%202011%20-%20Integration%2C%20Application%20Development%20and%20Technical%20Support%20of%20the%20ASPIRE%20Middleware-%20ASPIRE%20D6.4.pdf" /&gt;D6.4 Integration, Application Development and Technical Support of the ASPIRE Middleware - 2011&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HWP7Dissemination2CExploitation2CTraining"&gt;WP7 - Dissemination, Exploitation, Training&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Neeli%20R.%20Prasad%20-%202009%20-%20Dissemination%20Plan%20-%20ASPIRE-D7.1.pdf" /&gt;D7.1 Dissemination Plan - 2009&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/ASPIRE%20Partners%20-%202011%20-%20Dissemination%20Activities%20-%20ASPIRE-D7.2.pdf" /&gt;D7.2 Dissemination Activities - 2011&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Luc%20Laurens%2C%20Stephane%20Ribas%2C%20Nikos%20Kefalakis%2C%20et%20-%202010%20-%20ASPIRE%20Middleware%20Portal%20-%20ASPIRE%20D7.4.pdf" /&gt;D7.4 ASPIRE Middleware Portal - 2010&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/Mariette%20Wennmacher%2C%20John%20Soldatos%2C%20Nathalie%20Mitton%20et%20all%20-%202009%20-%20Interim%20Report%20on%20Awareness%20Workshops%20-%20ASPIRE%20D7.3a.pdf" /&gt;D7.3a Interim Report on Awareness Workshops - 2009&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/xwiki/bin/download/Main.Documentation/Deliverables/ASPIRE%20Partners%20-%202011%20-Training%20Material%20and%20Workshops-ASPIRE-D7.5.pdf" /&gt;D7.5 Training Material and Workshops - 2011&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

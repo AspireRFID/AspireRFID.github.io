@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation/BEG?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:27:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - BEG
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_BEG.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation/BEGd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/BEGcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/BEGd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Business Event Generator
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+
+1 Theory
+
+1.1 Notion of Programmable Filters in the ASPIRE Architecture
+
+Because ASPIRE is designed in such a way that it will be expandable, configurable and modular, the use of Programmable filters arises as a natural feature. Moreover ASPIRE IDE (Integrated Development Environment) will include a programmability engine that will be able to process a fully fledged RFID solution described in a special purpose domain specific language. This language will be specified as part of future deliverables of WP4 in the ASPIRE project.
+
+As mentioned in Section 3, the reusable filters and their proposed filtering markup language (FML) need a “core” engine that interprets its semantics and that executes the rules, policies or commands given in their parameter data fields. In the AspireRFID middleware, this core “engine” consists of three different components of the architecture (see also Figure 2 in section 2.2 to see the overall ASPIRE architecture):
+* The filtering and Collection (F&#38;C) module, which is responsible of the low level filtering. We recall that low level filtering simply deals with getting rid of duplicated tag readings.
+* The Business Event Generator (BEG) module, which is responsible for the High Level filtering providing Business context to the captured events.
+* And the Information sharing (IS) repository, which is the repository which stores a company’s Master Data and Business functions.
+
+Figure 5 demonstrates a complete Aspire programmable filter solution with ASPIRE’s existing tools. With the help of a Master Data editor (explained in detail in subsection 8.3) we can “describe” the company’s business data, processes and the required Low Level input to create business events. Note that the Master Data Editor (top left corner of Figure 3) is under the scope of the ASPIRE IDE. Also shown in Figure 3 is an example of Master Data parameter values: ecreport_names, event_name, business_step, business_location, ecspecname, read_point and transaction_type. All these data are stored in the Information Sharing repository (bottom left of Figure 3, tagged EPCIS repository) which is used from the Business Event Generator on demand to configure its behavior on creating the business events. Note in Figure 3 that the BEG is interconnected to the EPCIS via two interfaces, one for capture and another for query. The query interface is the one used by the BEG module to request Master Data on demand from the EPCIS. With the help of ECSpec editor (top right of Figure 3) we can create the required ECSpecs that configure the Filtering and Collections layer behavior by using the ECSpec configurator (also called ALE server configurator in Figure 3). Also note that in Figure 3, the box tagged as Defined ECspec contains a code in XML format. The Filtering and Collection module (low right part of Figure 3) after being configured as required collects the raw readings from the attached RFID readers to it and produces the filtered ECReports which are fed back to the Business Event Generator. Event data is the reported back from the BEG to the EPCIS repository via the capture interface (see again bottom left part of Figure 3). A complete detailed example is described in Section 9.
+
+*Figure 5* Complete Programmable Filters ASPIRE solution
+
+
+1.1 Business Event Generation: Connecting F&#38;C and Information Services modules through Business Filters
+
+Since the programmable filters described in this document are related to specific components of the ASPIRE architecture, it is useful then before proceeding to more technical specifications to understand, in simple words, their aim and how they interact with each other.
+ 
+The Information Services module specification defines a data language for representing visibility information, namely events having four dimensions of “what”, “when”, “where” and “why”.
+
+Primarily, the Filtering and Collection module answers ‘What’, ‘Where’ and ‘When’. Information Services module adds the ‘Why’ (i.e., the business context). For example, the ‘Where’ in Filtering and Collection module usually means a logical reader name (e.g. reader X). This is later converted into a business location in the Information Services module (e.g. Warehouse X).
+
+Furthermore, the Filtering and Collection module interface is exclusively oriented towards real-time processing of Information Services data, with no persistent storage of these data required by the interface. Business applications (e.g. ERP, WMS, etc.) that manipulate Information Services module data, in contrast, typically deal explicitly with historical data and hence are inherently persistent in nature. More details of the F&#38;C server can be found in deliverable D3.3 {pre}[25]{/pre}
+
+Architecturally, the Filtering and Collection layer is first concerned with the mechanics of data gathering, and then with filtering down such data to meaningful events that are a suitable starting point for interpretation by business logic. Business layers, where the Information Services module comes into play, are concerned with business process and recording events that can serve as the basis for a wide variety of enterprise-level information processing tasks. 
+
+Visibility information at the Information Services module level is often used to record what took place in an operational business process that involves the handling of physical assets, such as receiving goods through an entry door of a warehouse. The module responsible for supervising such a process and generating Information Services data is the Business Event Generation module.
+
+The “glue” for the two modules described above, i.e. the information Service and the Filtering and collection modules, and the one that collects the produced F&#38;C data and adds the “why” notion is the Business Event Generator module. To the extent that the Business Event Generation module interacts with EPC data and/or RFID tags in the course of carrying out its function, it uses ALE as the way to read those EPC data and/or RFID tags and the Information Sharing to store these “events”.
+
+In most of the cases the Business Event Generation module is also responsible for a complex orchestration of RFID devices, material handling equipment, and human tasks that are involved in carrying out a business process. That is why Filtering and Collection is used specifically to interact with the RFID devices, and therefore it addresses a reduced scope. {pre}[4]{/pre}
+
+
+
+
+
+
+
+1.1 Connecting F&#38;C and Information Services modules through Business Filters (the different components)
+
+1.1.1	Overview
+
+To create programmable filters that contain a complete business logic throughout the ASPIRE’s middleware we need to combine three different specifications together. These specifications apply to three different modules of the ASPIRE middleware architecture (for details of the architecture see deliverable D2.3b {pre}[21]{/pre} and the introductory section of this document) which are:
+* the Filtering and collection module,
+* the Business Event generation module and
+* the Information Services repository module.
+
+So to analyze the combination of the specifications of those three modules first we need to study the components that are used from each one separately and then specify the way in which they interact.
+
+
+1.1.1	Filtering and Collection module
+
+1.1.1.1 Role
+
+The filtering and collection module (F&#38;C) carries out processing to reduce the volume of EPC data, transforming raw tag reads into streams of events more suitable for application logic than raw tag reads. From the practical point of view, the F&#38;C module interacts with upper layer clients that are subscribed to its services by defining report cycles and report data formats. These report data formats define the type of data to be exchanged, while the cycles define the way in which these data will be exchanged or retrieved and how often. The main specifications that define these procedures are the ECSpecs, and within it, the ECReportSpec. These are briefly described in the following subsections.
+
+
+1.1.1.1 ECSpecs
+
+An ECSpec is a complex type that describes an event cycle and one or more reports that are to be generated from it. Current tags or tags that have been added or deleted can be retrieved with respect to the last event cycle or combinations of all. {pre}[3]{/pre}
+
+An ECSpec Contains (see Figure 6): 
+* An unordered list of Logical Readers called “logicalReaders” whose reader cycles are to be included in the event cycle and are used to acquire tags.
+* A specification of how the boundaries of event cycles are to be determined called “boundarySpec”. In brief, it specifies the starting and stopping conditions for event cycles.
+* An unordered list of Report Specifications, each describing a report to be generated from this event cycle and to be included in the output from each event cycle called “reportSpecs”.
+
+For defining filters the most important part of an ECSpec is the ECReportSpec.
+
+*ECReportSpec*
+
+An ECReportSpec specifies one report to be included in the list of reports that results from executing an event cycle. An ECSpec contains a list of one or more ECReportSpec instances. When an event cycle is completed, an ECReports instance is generated, unless suppressed. An ECReports instance contains one or more ECReport instances, each corresponding to an ECReportSpec instance in the ECSpec that governed the event cycle (see Figure 6). The ECReportSetSpec is an enumerated type denoting what set of Tags is to be considered for filtering and output: all Tags read in the current event cycle, additions from the previous event cycle, or deletions from the previous event cycle (see Figure 6).
+
+An ECReportSetSpec contains one or more ECFilterSpec which specifies the Tags to be included in the final report. The ECFilterSpec implements a flexible filtering scheme based on two pattern lists. Each list contains zero or more URI (Universal Resource Identifier)-formatted EPC patterns. Each EPC pattern denotes a single EPC, a range of EPCs, or some other set of EPCs.
+
+An EPC is included in the final report if 
+
+a. the EPC does not match any pattern in the excludePatterns list, and 
+a. the EPC does match at least one pattern in the includePatterns list. 
+
+The (b) test is omitted if the includePatterns list is empty. {pre}[3]{/pre}
+
+ 
+*Figure 6* ECSpecs and related fields
+
+
+1.1.1	Information Services module
+
+1.1.1.1 Role
+
+The ASPIRE Information Sharing repository is responsible for receiving application-agnostic RFID data from the filtering &#38; collection middleware through the Business Event Generation (BEG) application and store the translated RFID data in corresponding business events. These events carry the business context as well (e.g., they refer to particular companies, business locations, business processes etc.). Moreover it makes business events and master data available and accessible to other upstream applications through the query interface.
+
+Generally, the ASPIRE information sharing repository is dealing with two kinds of data: 
+* RFID event data i.e. data arising in the course of carrying out business processes.  These data change very frequently, at the time scales where business processes are carried out.
+* Master/company data, i.e. additional data that provide the necessary context for interpreting the event data. These are data associated with the company, its business locations, its read points, as well as with the business steps comprising the business processes that this company carries out.
+
+At a glance Information Services of the ASPIRE Information Sharing middleware consists of three parts: a capture interface that provides web services for storing data, a repository that provides persistence, and query interface that provides web services that retrieves the business events/master data from the repository.
+
+
+1.1.1.1 Event Data
+
+Event data arises in the course of carrying out business processes. Event data grows in quantity as more business is transacted, and refers to things that happen at specific moments in time.
+
+*EPCIS Event*
+
+An EPCISEvent is a generic base class for all event types which provides date and time fields (see strings “eventTime” and “recordTime” in Figure 7). Below is given the EPCISEvent’s XML schema {pre}[2]{/pre}{pre}[6]{/pre} and the different events are described in the following subsections (see also Figure 8 for a schematic representation of the different types of events.)
+{code:xml}
+&#60;xsd:complexType name=&#34;EPCISEventType&#34; abstract=&#34;true&#34;&#62;
+	&#60;xsd:sequence&#62;
+		&#60;xsd:element name=&#34;eventTime&#34; type=&#34;xsd:dateTime&#34; /&#62;
+		&#60;xsd:element name=&#34;recordTime&#34; type=&#34;xsd:dateTime&#34; minOccurs=&#34;0&#34; /&#62;
+…
+	&#60;/xsd:sequence&#62;
+	&#60;xsd:anyAttribute processContents=”lax” /&#62;
+&#60;/xsd:complextype&#62;
+{code}
+EPCISEvent’s XML schema
+
+
+
+ 
+*Figure 8* EPCIS Events
+
+
+
+
+*Aggregation Event*
+
+An AggregationEvent describes events related to objects that have been physically aggregated. In such an event, there is a set of contained objects that have been aggregated within a containing entity which identifies the physical aggregation itself. The contained objects are called children and the containing entity is called parent.
+
+Because an AggregationEvent indicates aggregations among physical objects, the children are identified by EPCs. However, the parent entity is identified by an arbitrary URI (which may or may not be an EPC) because the parent is not necessarily a physical object that is separate from the aggregation itself. Below is given the AggregationEvent’s XML schema. {pre}[2]{/pre}{pre}[6]{/pre}
+{code:xml}
+&#60;xsd:complexType name=&#34;AggregationEventType&#34;&#62;
+	&#60;xsd:complexContent&#62;
+		&#60;xsd:extension base=&#34;epcis:EPCISEventType&#34;&#62;
+			&#60;xsd:sequence&#62;
+&#60;xsd:element name=&#34;parentID&#34; 				 type=&#34;epcis:ParentIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;childEPCs&#34;  type=&#34;epcis:EPCListType&#34; /&#62;
+&#60;xsd:element name=&#34;action&#34; type=&#34;epcis:ActionType&#34; /&#62;
+&#60;xsd:element name=&#34;bizStep&#34; type=&#34;epcis:BusinessStepIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;disposition&#34; type=&#34;epcis:DispositionIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;readPoint&#34; type=&#34;epcis:ReadPointType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizLocation&#34; type=&#34;epcis:BusinessLocationType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizTransactionList&#34; type=&#34;epcis:BusinessTransactionListType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+				…
+			&#60;/xsd:sequence&#62;
+			&#60;xsd:anyAttribute processContents=&#34;lax&#34; /&#62;
+		&#60;/xsd:extension&#62;
+	&#60;/xsd:complexContent&#62;
+&#60;/xsd:complexType&#62;
+{code}
+AggregationEvent’s XML schema
+
+*Object Event*
+
+An ObjectEvent captures information about an event pertaining to one or more physical objects identified by EPCs.
+
+Logically, an ObjectEvent pertains to a single object identified by an EPC. However, you can specify more than one EPC in an epcList when the remaining ObjectEvent data applies to all the EPCs in the list.
+
+In an ObjectEvent, no relationship among the EPCs is implied by their appearance in the same ObjectEvent other than the coincidence of them all being captured with identical information. By contrast, an AggregationEvent or TransactionEvent conveys an implicit association among the EPCs in the event. Below is given the ObjectEvent’s XML schema. {pre}[2]{/pre}{pre}[6]{/pre}
+{code:xml}
+&#60;xsd:complexType name=&#34;ObjectEventType&#34;&#62;
+&#60;xsd:complexContent&#62;
+	&#60;xsd:extension base=&#34;epcis:EPCISEventType&#34;&#62;
+		&#60;xsd:sequence&#62;
+			&#60;xsd:element name=&#34;epcList&#34; type=&#34;epcis:EPCListType&#34; /&#62;
+			&#60;xsd:element name=&#34;action&#34; type=&#34;epcis:ActionType&#34; /&#62;
+			&#60;xsd:element name=&#34;bizStep&#34; 				 				type=&#34;epcis:BusinessStepIDType&#34;
+				minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;disposition&#34; type=&#34;epcis:DispositionIDType&#34;
+				minOccurs=&#34;0&#34; /&#62;
+			&#60;xsd:element name=&#34;readPoint&#34; type=&#34;epcis:ReadPointType&#34;
+				minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizLocation&#34; type=&#34;epcis:BusinessLocationType&#34;
+				minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizTransactionList&#34; type=&#34;epcis:BusinessTransactionListType&#34;
+				minOccurs=&#34;0&#34; /&#62;
+			…
+		&#60;/xsd:sequence&#62;
+		&#60;xsd:anyAttribute processContents=&#34;lax&#34; /&#62;
+	&#60;/xsd:extension&#62;
+&#60;/xsd:complexContent&#62;
+&#60;/xsd:complexType&#62;
+{code}
+
+ObjectEvent’s XML schema
+
+*Quantity Event*
+
+A QuantityEvent is an event that happens to a specified number of objects all having the same type, but where the individual instances are not identified. Quantity Events can serve as a bridge between RFID systems and legacy inventory systems that do not identify individual items. Below is given the QuantityEvent’s XML schema. {pre}[2]{/pre}{pre}[6]{/pre}
+{code:xml}
+&#60;xsd:complexType name=&#34;QuantityEventType&#34;&#62;
+	&#60;xsd:complexContent&#62;
+		&#60;xsd:extension base=&#34;epcis:EPCISEventType&#34;&#62;
+			&#60;xsd:sequence&#62;
+&#60;xsd:element name=&#34;epcClass&#34; type=&#34;epcis:EPCClassType&#34; /&#62;
+				&#60;xsd:element name=&#34;quantity&#34; type=&#34;xsd:int&#34; /&#62;
+				&#60;xsd:element name=&#34;bizStep&#34; 			 					type=&#34;epcis:BusinessStepIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;disposition&#34; type=&#34;epcis:DispositionIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;readPoint&#34; type=&#34;epcis:ReadPointType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizLocation&#34; type=&#34;epcis:BusinessLocationType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element minOccurs=&#34;0&#34; name=&#34;bizTransactionList&#34;
+					type=&#34;epcis:BusinessTransactionListType&#34; /&#62;
+				…
+			&#60;/xsd:sequence&#62;
+			&#60;xsd:anyAttribute processContents=&#34;lax&#34; /&#62;
+		&#60;/xsd:extension&#62;
+	&#60;/xsd:complexContent&#62;
+&#60;/xsd:complexType&#62;
+{code}
+
+QuantityEvent’s XML schema
+
+
+*Transaction Event*
+
+A TransactionEvent describes the association or disassociation of physical objects to a business transaction. While other event types have an optional bizTransactionList field that can be used to provide context for an event, the TransactionEvent is used to declare in an unequivocal way that certain EPCs have been associated or disassociated with one or more business transactions as part of the event. Below is given the TransactionEvent’s XML schema. {pre}[2]{/pre}{pre}[6]{/pre}
+{code:xml}
+&#60;xsd:complexType name=&#34;TransactionEventType&#34;&#62;
+	&#60;xsd:complexContent&#62;
+		&#60;xsd:extension base=&#34;epcis:EPCISEventType&#34;&#62;
+			&#60;xsd:sequence&#62;
+&#60;xsd:element name=&#34;bizTransactionList&#34; type=&#34;epcis:BusinessTransactionListType&#34; /&#62;
+&#60;xsd:element name=&#34;parentID&#34; type=&#34;epcis:ParentIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;epcList&#34; type=&#34;epcis:EPCListType&#34; /&#62;
+&#60;xsd:element name=&#34;action&#34; type=&#34;epcis:ActionType&#34; /&#62;
+&#60;xsd:element name=&#34;bizStep&#34; type=&#34;epcis:BusinessStepIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;disposition&#34; type=&#34;epcis:DispositionIDType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;readPoint&#34; type=&#34;epcis:ReadPointType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+&#60;xsd:element name=&#34;bizLocation&#34; type=&#34;epcis:BusinessLocationType&#34;
+					minOccurs=&#34;0&#34; /&#62;
+				…
+			&#60;/xsd:sequence&#62;
+			&#60;xsd:anyAttribute processContents=&#34;lax&#34; /&#62;
+		&#60;/xsd:extension&#62;
+	&#60;/xsd:complexContent&#62;
+&#60;/xsd:complexType&#62;
+{code}
+
+TransactionEvent’s XML schema
+
+
+1.1.1.1 Actions Types
+
+The Action type says how an event relates to the lifecycle of the entity being described. The Action type has three possible values (see Figure 13):
+
+* Add which means that the entity in question has been created or added to.
+* Observe which means that the entity in question has neither been changed, nor has it been created, added to, destroyed or removed from.
+* Delete which means that the entity in question has been removed from or destroyed altogether.
+
+ 
+
+*Figure 13* Action types
+
+1.1.1.1 Master Data
+
+Master data is additional data that provides the necessary context for interpreting event data. It is available for filtering a query through the EPCIS Query Interface, and available as part of a report through the Reporting Service.
+
+Master data does not grow merely because more business is transacted. It is not typically tied to specific moments in time and provides interpretation for elements of event data.
+
+Master data is business-context information that is associated with event data by the Business Event Generation module reporting service and by the data exchange service.
+
+
+*Master Data Types*
+
+A master data type is a definition for master data entries of that type. Each master data type defines a set of attributes and their data types.
+
+A master data entry is a concrete instance of a master data type. You can create as many entries as you need of each master data type. Each entry has the same set of attributes defined for its master data type, but where the master data type defines the data type for each attribute an entry’s attributes contain the real business-context information associated with a business’s operations. {pre}[2]{/pre}{pre}[6]{/pre}
+
+The available master data types are (see also figure below):
+* bizLocation
+* bizStep
+* bizTransactionList
+* bizTransaction which is composed of 
+** Business Transaction and
+** Business Transaction Type
+* disposition
+* epcClass
+* readPoint
+
+ 
+*Figure 14* Master Data types
+
+The master data type that mostly concerns us to define the required programmable filter is the “BusinessTransaction” type which is next analyzed. 
+
+*BusinessTransaction*
+
+A BusinessTransaction field identifies a particular business transaction. Transaction information may be included in EPCIS events to record an event’s participation in particular business transactions. {pre}[6]{/pre}
+
+A business transaction is described in Information Services module by a structured type consisting of the following pair of identifiers:
+* BusinessTransactionTypeID
+* BusinessTransactionID
+
+BusinessTransactionID is a vocabulary whose elements denote specific business transactions. In Table 1 below the BusinessTransactionID’s attributes are shown. The attribute that are most significant to create an EPCIS event are:
+
+* The “ECReportNames” one which stores a list of the incoming ECReport names, to the Business Event Generator module, which concerns the event to be created.
+* The “EventType” which denotes the type of the event (Aggregation Event, Object Event, Quantity Event or Transaction Event)
+* And the “Action” which denotes how an event relates to the lifecycle of the entity being described.
+&#60;center&#62;
+{table}
+Attribute Name| Attribute URI
+ECReportNames| urn:epcglobal:epcis:mda:ecreport_names
+EventName| urn:epcglobal:epcis:mda:event_name
+EventType| urn:epcglobal:epcis:mda:event_type
+BusinessStep| urn:epcglobal:epcis:mda:business_step
+BusinessLocation| urn:epcglobal:epcis:mda:business_location
+Disposition| urn:epcglobal:epcis:mda:disposition
+ReadPoint| urn:epcglobal:epcis:mda:read_point
+TransactionType| urn:epcglobal:epcis:mda:transaction_type
+Action| urn:epcglobal:epcis:mda:action
+{table}
+&#60;/center&#62;
+&#60;center&#62;
+*Table 1* Business Transaction ID Attributes
+&#60;/center&#62;
+
+1.1.1 Business Event Generation module
+
+The architecture introduces a Business Event Generator (BEG) module between the F&#38;C and Information Sharing (e.g., EPC-IS) modules as shown in Figure 15. The role of the BEG is to automate the mapping between reports stemming from F&#38;C and IS events. The Business event generation module associates business-context information (Master Data) with event data. The data is stored in the Information Service module repository.
+
+
+
+
+
+1.1.1.1 Role
+
+BEG module recognizes the occurrence of EPC-related business events, and delivers these as EPCIS data. It may coordinate multiple sources of data in the course of recognizing an individual EPCIS event. Sources of data include filtered, collected EPC data obtained through the Filtering &#38; Collection Interface.
+
+
+1.1.1.1 Functionality
+
+In order for BEG to create the business events it needs the appropriate information from the repository. Hence, the EPCIS standard defines all the information that the EPCIS events encapsulate. This data necessary for the proper population of the EPCIS events are retrieved from the EPCIS repository, and more specifically the data defined at the BusinessTransaction’s Attributes, using the query interface. This predefined information is entered and managed using the master data editor as shown in Figure 15 below (this process is indicated by the top arrow entering the EPCIS repository and indicates the definition of the elementary business processes). With the use of the MDE editor (paragraph 8.3) the end-user organizations can properly populate the vocabularies so as make the event generation possible. The MDE operates over the EPCIS layer also and could be considered an implementation of an accessing application according to the EPC Network Architecture terminology.
+
+ 
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/BEG/BEG%26EPCIS%20Programming.jpg&#34;&#62;{image:BEG&#38;EPCIS Programming.jpg|350}&#60;/a&#62;
+&#60;/center&#62;
+&#60;center&#62;
+*Figure 15* Role of the BEG Configurator and MDE tools
+&#60;/center&#62;
+
+As already outlined BEG is a capturing application: BEG stores the data in the EPCIS repository as event data in an automated fashion, thereby adding business context to RFID readings in order to transform them to the target business semantics as required by the particular business case associated with an overall RFID deployment. In order to create business context, BEG relies on a description of the target business processes, which should be described in the EPCIS Master Data. Each process is defined and described based on the composition of a discrete series of business steps. According to the EPCIS specification, each business step can be modeled by one EPCIS event of the specification. In particular, each business process has an identifier in the Business Transaction Vocabulary and is associated with a number of events. Each event is characterized as shown in Table 1 above by the type of the event, the event’s action, the business location that the event takes place, the event’s business step, the captured items disposition, the read point which the action took place and finally the required report names.
+
+The attributes mentioned above constitute all of the information required in order to properly create an EPCIS event. Recall that based on such master data type, BEG is able to transform EC Reports from ALE into EPCIS events that can be stored in the EPCIS repository. Hence, each described event is associated with a list of Report names. The reports described in a specific ECSpec define all the required details about the Event Cycle and what kind of ECReports are to be delivered to the BEG. The BEG should be previously configured according to what specific report names is expecting from the F&#38;C module which are defined in the business transaction vocabulary of the corresponding event{pre}[18]{/pre}. 
+
+In the context of Figure 15 the configuration process of the BEG module is indicated by two steps: first an arrow that goes from the EPCIS module to the editor and indicates the retrieval of the necessary information to configure the BEG, and second another arrow that goes from the editor to the BEG module and indicates the uploading of the configuration files to the BEG. Finally, real time capturing of events is displayed in the editor by obtaining real time information from the BEG and the BEG generates event data that are stored in the EPCIS module.
+
+ 
+
+1.1 Connecting F&#38;C and Information Services modules through Business Filters (creating business logic)
+
+
+1.1.1	Overview
+
+While RFID readers detect and report tags along with a timestamp, it is not trivial to identify and populate properly business events based solely on a set of low-level RFID readings (i.e. tag streams). For example, there is a need to distinguish the identity of a containing entity from identities of the contained objects in the case of aggregations (e.g., a pallet carrying tagged objects that is in the range of an RFID reader). Most important, a business transaction as defined in the master data must be correlated with a specific transaction as is “monitored” by other applications. To address these needs we segment EPCs in classes. As an organization is assigned (from EPCglobal) and manages a pool of EPCs, it is possible to segment them into categories and reserve some of these categories for specific usage. Hence, a class of EPCs could be reserved for aggregating entities (e.g. pallets or boxes). The classification can then be used to populate the aggregation event. Another class may be reserved to denote a general category for all physical objects under detection, whereas another class can be used to signify documents that accompany business transactions (e.g., invoices). Also, a naming convention for the pattern of the report name is used. Specifically the implementation of BEG, understands a report name that starts with the string “bizTransactionIDs” as the name of the report carrying the EPC of the documents accompanying a process. Likewise, a report name starting with “parentObjects” is expected to carry the parent aggregating entity, while a report name starting with “transactionItems” is expected to carry the EPCs of the tagged items, etc. In the case only of quantity events, which do not have an EPC list and only the quantity of items affected by the event is of interest, this report is expected to contain the EPC class along with the number of items of the class.{pre}[18]{/pre} 
+
+So as previously explained the &#34;glue” from the three modules described in Section 6 to create business logic at the AspireRFID middleware is the BEG module, which uses the predefined data provided from the two others to produce the required EventData. Below the “event generation” notion is analyzed in more details and the relationship between the three middleware modules required for that will become clearer.
+
+
+1.1.1	Combining ECSpecs &#38; BizTransaction Attr to create Event Data
+
+To create Event Data, some event fields are required and some are optional. Table 2 maps these associations. In addition, later on we are going to describe how we should set up our middleware to get these event fields and create the desired Event Data.
+
+
+&#60;center&#62;
+
+{table}
+| ObjectEvent| AggregationEvent| QuantityEvent| TransactionEvent
+Action| R| R|| R
+bizLocation| O| O| O| O
+bizStep| O| O| O| O
+bizTransactionList| O| O| O| R
+childEPCs|| R| |
+Disposition| O| O|| O
+epcClass||| R	
+epcList| R||| R
+eventTime| R| R| R| R
+parented|| R|| O
+Quantity||| R	
+readPoint| O| O| O| O
+{table}
+R = Required O = Optional
+*Table 2* Event fields with Event Types mapping {pre}[2]{/pre} 
+&#60;/center&#62;
+
+
+The sequence for creating the various Business Events shown in Figure 16 at the ASPIRE middleware is the following. The Filtering and Collection module receives the raw readings from the Logical Readers attached to it. The F&#38;C module, in turn, processes the received readings taking in consideration the already predefined ECSpecs and delivers the produced ECReport to the Business Event Generation module. The Event Generation module receives the ECReport produced by the F&#38;C module and processes them taking in consideration the BusinessTransaction attributes data from the already predefined Master Data of the company. Finally the Business Event Generation module sends to the Information Services module Capturing interface the produced event data where they are stored in a repository and are available for other applications, in our case the Connector application, to query through its Query Interface.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/BEG/BEG2.jpg&#34;&#62;{image:BEG2.jpg|350}&#60;/a&#62;
+&#60;/center&#62;
+&#60;center&#62;
+*Figure 16* Creating Event data Sequence
+&#60;/center&#62;
+
+
+1.1.1.1 Creating an Aggregation Event
+
+To create an Aggregation Event the Business Event Generation module should receive an ECReport from the Filtering and Collection module comprised from three reports named:
+* “bizTransactionIDs@{pre}*{/pre}”
+* “transactionItems@{pre}*{/pre}”
+* And “parentObjects@{pre}*{/pre}”
+
+Where ({pre}*{/pre}) the BusinessTransaction vocabulary URI. 
+
+*Setting up the ECSpec*
+
+At the “bizTransactionIDs” report a filter should be set up in such a way that the F&#38;C module would report, every time they are captured, only patterns of the included transaction ID Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;bizTransactionIDs@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;CURRENT&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+urn:epc:pat:gid-96:145.12.{pre}*{/pre}
+&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class
+
+At the “transactionItems” report a filter should be set up in a way that the F&#38;C module would report, only the first time they are captured, only ID’s belonging in the selected patterns of the included items Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;transactionItems@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;ADDITIONS&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+				urn:epc:pat:gid-96:145.233.{pre}*{/pre}
+			&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+An example of ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class
+
+At the “parentObjects” report a filter should be set up in a way that the F&#38;C module would report, every time they are captured, only patterns of the included parent Objects Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.56.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;parentObjects@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;CURRENT&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+				urn:epc:pat:gid-96:145.56.{pre}*{/pre}
+			&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec&#62;
+		&#60;pattern&#62;
+			urn:epc:pat:gid-96:145.56.{pre}*{/pre}
+		&#60;/pattern&#62;
+	&#60;/groupSpec&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.56.{pre}*{/pre}” class
+
+*Processing the ECReport*
+
+As soon as the report is received from the Business Event Generator module it is first checked whether a “bizTransactionID” is included or not. If it has then the specific one is used. If it has not then the last received one is used. Every “transactionItem” and “parentObject” is received and from now on it is bind with the specific “bizTransactionID”. 
+
+After this it is checked if a “parentObject” is reported. If it has been reported, then it is used as the “parentObject” for every “transactionItem” received from now on. If it hasn’t then the last received “parentObject” is used. 
+
+Finally, it is checked whether any “transactionItems” are reported. If they have then these “transactionItems” get as “parentObject” and “bizTransactionID” the last reported. 
+
+The rest of the information required to build the Aggregation Event is taken from the BusinessTransaction’s attributes stored at the Information Services module repository.
+
+1.1.1.1 Creating an Object Event
+
+To create an Object Event the Business Event Generation module should receive an ECReport from the Filtering and Collection module comprised from two reports named:
+* “bizTransactionIDs@{pre}*{/pre}”
+* And “transactionItems@{pre}*{/pre}”
+
+Where ({pre}*{/pre}) the BusinessTransaction vocabulary URI. 
+
+*Setting up the ECSpec*
+
+At the “bizTransactionIDs” report a filter should be set up in a way that the F&#38;C module would report, every time they are captured, only patterns of the included transaction ID Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;bizTransactionIDs@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;CURRENT&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+urn:epc:pat:gid-96:145.12.{pre}*{/pre}
+&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}”
+
+At the “transactionItems” report a filter should be set up in a way that the F&#38;C module would report, only the first time they are captured, only ID’s belonging in the selected patterns of the included items Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;transactionItems@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;ADDITIONS&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+				urn:epc:pat:gid-96:145.233.{pre}*{/pre}
+			&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}”class
+
+* Processing the ECReport*
+
+As soon as the report is received from the Business Event Generator module it is first checked whether a “bizTransactionID” has been included or not. If the specific one has been found then it is used, otherwise the last one received is used. Every “transactionItem” received from now on is bind with the specific “bizTransactionID”. 
+
+Finally, BEG checks whether any “transactionItems” are reported. If so, these “transactionItems” get as “bizTransactionID” the last reported. 
+
+The rest of the information required to build the Object Event is taken from the BusinessTransaction’s attributes stored at the Information Services module repository.
+
+
+
+
+1.1.1.1 Creating a Quantity Event
+
+To create a Quantity Event the Business Event Generation module should receive an ECReport from the Filtering and Collection module comprised from two reports named:
+* “bizTransactionIDs@{pre}*{/pre}”
+* And “transactionItems@{pre}*{/pre}”
+
+Where ({pre}*{/pre}) the BusinessTransaction vocabulary URI. 
+
+*Setting up the ECSpec*
+
+At the “bizTransactionIDs” report a filter should be set up in a way that the F&#38;C module would report, every time they are captured, only patterns of the included transaction ID Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;bizTransactionIDs@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;CURRENT&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+urn:epc:pat:gid-96:145.12.{pre}*{/pre}
+&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class
+
+At the “transactionItems” report a filter should be set up in a way that the F&#38;C module would report, only the first time they are captured, the count of the included patterns and in which Class they belong to. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class is shown below.
+
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;transactionItems@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;ADDITIONS&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+				urn:epc:pat:gid-96:145.233.{pre}*{/pre}
+			&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec&#62;
+		&#60;pattern&#62;
+			urn:epc:pat:gid-96:145.233.{pre}*{/pre}
+		&#60;/pattern&#62;
+	&#60;/groupSpec&#62;
+	&#60;output includeTag=&#34;false&#34; includeRawHex=&#34;false&#34;
+includeRawDecimal=&#34;false&#34; includeEPC=&#34;false&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class
+
+*Processing the ECReport*
+
+As soon as the report is received from the Business Event Generator module it is first checked whether a “bizTransactionID” has been included or not. If it has been included then the specific one is used, otherwise the last one received is used. Every “transactionItem” received from now on is bind to the specific “bizTransactionID”. 
+
+Finally BEG checks whether any “transactionItems” are reported. If so, the count of these items and their Class get as “bizTransactionID” the last reported. 
+
+The rest of the information required to build the Quantity Event is taken from the BusinessTransaction’s attributes stored at the Information Services module repository.
+
+
+1.1.1.1 Creating an Transaction Event
+
+To create Transaction Event the Business Event Generation module should receive an ECReport from the Filtering and Collection module comprised from three reports named:
+* “bizTransactionParentIDs@{pre}*{/pre}”
+* “bizTransactionIDs@{pre}*{/pre}”
+* And “transactionItems@{pre}*{/pre}”
+
+Where ({pre}*{/pre}) the BusinessTransaction vocabulary URI. 
+
+*Setting up the ECSpec*
+
+At the “bizTransactionParentIDs” report a filter should be set up in a way that the F&#38;C module would report, every time they are captured, only patterns of the included transaction ID Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.19.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34;
+	reportName=&#34;bizTransactionParentIDs@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34; reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;CURRENT&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+urn:epc:pat:gid-96:145.19.{pre}*{/pre}
+&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Figure 24 Example of a ReportSpec for the “urn:epc:pat:gid-96:145.19.{pre}*{/pre}” class
+
+At the “bizTransactionIDs” report a filter should be set up in a way that the F&#38;C module would report, only the first time they are captured, only patterns of the included transaction ID Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;bizTransactionIDs@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;ADDITIONS&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+urn:epc:pat:gid-96:145.12.{pre}*{/pre}
+&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.12.{pre}*{/pre}” class
+
+At the “transactionItems” report a filter should be set up in a way that the F&#38;C module would report, only the first time they are captured, only ID’s belonging in the selected patterns of the included items Classes. An example of such a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class is shown below.
+{code:xml}
+&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;transactionItems@urn:epcglobal:fmcg:bte:xxxxxxxxx&#34;
+	reportIfEmpty=&#34;true&#34;&#62;
+	&#60;reportSet set=&#34;ADDITIONS&#34; /&#62;
+	&#60;filterSpec&#62;
+		&#60;includePatterns&#62;
+			&#60;includePattern&#62;
+				urn:epc:pat:gid-96:145.233.{pre}*{/pre}
+			&#60;/includePattern&#62;
+		&#60;/includePatterns&#62;
+		&#60;excludePatterns /&#62;
+	&#60;/filterSpec&#62;
+	&#60;groupSpec /&#62;
+	&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34;
+	includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34; /&#62;
+&#60;/reportSpec&#62;
+{code}
+Example of a ReportSpec for the “urn:epc:pat:gid-96:145.233.{pre}*{/pre}” class
+
+*Processing the ECReport*
+
+As soon as the report is received from the Business Event Generator module, it is first checked whether a “bizTransactionParentID” has been included or not. If it has been included then the specific one is used. If it hasn’t then the last one received is used. Every “bizTransactionID” and “transactionItem” received from now on are bind with the specific “bizTransactionParentID”. 
+
+Finally, it is checked whether any “bizTransactionIDs” and/or “transactionItems” are reported. If they are these “bizTransactionIDs” and/or “transactionItems”  get as “bizTransactionParentID” the last reported. 
+
+The rest of the information required to build the Transaction Event is taken from the BusinessTransaction’s attributes stored at the Information Services module repository.
+
+1 Users Guide
+
+1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* [EPCIS Repository&#62;Main.Documentation.EpcisRepository]
+* [BEG plug in&#62;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in]
+* Java 1.6
+
+
+1.1 Deployment
+In order to set up your own BEG Engine; follow the step-by-step tutorial outlined below:
+Make sure you have an Apache Tomcat servlet container (version 6.0 or higher) running. It will be used to deploy and run the BEG Engine web application.
+Download the latest aspireRfidBEG distribution found at the ASPIRE's [Forge&#62;http://forge.objectweb.org/project/showfiles.php?group_id=324] and place the WAR file contained in the archive in your Tomcat's webapps directory. After restarting Tomcat, the WAR file will be deployed.
+
+1.1 Configuration example
+
+The objective of this tool is to provide a control client to configure Business Event Generator (BEG) so as to translate ECReports to specific EPCIS Events by taking in consideration the already defined Master Data. Moreover, it provides a view which is able to show the real time processed readings for each event served at that time. A screenshot of the BEG plugin is presented in Figure below.
+
+ 
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/BEG/BegIDE.jpg&#34;&#62;{image:BegIDE.jpg|350}&#60;/a&#62;
+&#60;/center&#62;
+&#60;center&#62;
+BEG plugin screenshot
+&#60;/center&#62;
+
+
+
+
+
+In order to configure the BEG plugin, the following need to be defined:
+
+* EPCIS Repository Capture Endpoint: Where the connections for the Capturing Interface are being accepted.
+* EPCIS Repository Query Endpoint: Where the connections for the Query interface are being accepted.
+* Event/Port Binding: Predefine event/port bindings.
+* Observations Refresh Rate: Specify how often the observation server will update its view.
+
+These can be defined through Window -&#62; Preferences -&#62; BEG in the ASPIRE IDE ([BusinessEventGeneratorPlug-in&#62;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in]).
+
+
+1 Developers Guide
+
+1.1 Interfaces to other components
+
+The BEG component interface provides five methods for interaction with the BEG client which are all communicating with the BEG client by exchanging SOAP messages.
+
+a. The first method is the getEpcListForEvent (EventStatus getEpcListForEvent(String eventID)) which is used for returning to the BEG client an EventStatus object which contains the real time list of EPC ids and the transaction ID of a chosen Event (String eventID) from the list of events that the BEG component is already serving. So with the help of this method one can observe at real time the incoming IDs as they are reported to the BEG by the F&#38;C component and are related with a specific transaction Event.
+a. The second method is the stopBegForEvent (boolean stopBegForEvent(String eventID)) which is used by the BEG client to stop serving a predefined Event by sending to it its specific EventID.
+a. The third method is the getStartedEvents (List&#60;String&#62; getStartedEvents()) which returns a list of Event IDs that the BEG component is serving.
+a. The fourth method is the startBegForEvent (boolean startBegForEvent(VocabularyElementType vocabularyElementType, String repositoryCaptureURL, String begListeningPort)) which is used to set up the BEG component for start serving a specific Event. More specifically this method takes the already pre described Elementary Business Transaction Event described at the Information Sharing repository’s Master Data and uses it for configuring the Business Event Generator to create Business Events from the ECReports received from the port given as variable to the startBegForEvent method. If the method is successful it will return true otherwise it will return false.
+a. Finally, the fifth method is the getEventList (List&#60;VocabularyElementType&#62; getEventList( String repositoryQueryURL)) which is used for returning a list of all the available defined Events from a Company’s EPCIS Master Data repository.
+
+1.1 Implementation details
+
+Technically, the BEG component is packed as a .war file which is deployed on top of an Apache Tomcat 6.0 container (or higher) and uses Java version 1.6 (and higher).
+
+In order to implement the Web Services required for its configuration and management, the frameworks JaxWS and CXF/Spring were used.
+
+For capturing the produced ECReports from the Filtering and Collection layer it provides a TCP/HTTP interface that is configured by defining different capturing port for each Elementary Business Transaction’s defined report ID.
+
+It uses Fosstrak’s Event Data Capture client implementation which follows the EPCIS 1.1 Capture interface which uses the JaxWS framework and CXF/Spring technologies for implementing the required Web Services and the “construction” of the SOAP messages. 
+
+It uses Fosstrak’s Master Data Query client implementation which follows the EPCIS 1.1 query interface which uses the JaxWS framework and CXF/Spring technologies for implementing the required Web Services and the “construction” of the SOAP messages 
+
+And finally the Event Types that the Business Event Generation component supports are the standard Event types defined in the EPCIS 1.1 Specifications which are:
+
+* Quantity Events,
+* Aggregation Events,
+* Transaction Events and
+* Object Events
+
+
+
+
+
+
+
+
+
+
+
+
+1.1	References and Bibliography
+
+
+
+
+
+1. Matthias Lampe, Christian Floerkemeier, “High-Level System Support for Automatic-Identification Applications”, In: Wolfgang Maass, Detlef Schoder, Florian Stahl, Kai Fischbach (Eds.): Proceedings of Workshop on Design of Smart Products, pp. 55-64, Furtwangen, Germany, March 2007.
+1. BEA WebLogic. Understanding the Event, Master Data, and Data Exchange Services. BEA WebLogic RFID Entersprise Server. {pre}[Online]{/pre} October 12, 2006. http://e-docs.bea.com/rfid/enterprise_server/docs20/pdf.html.
+1. EPCglobal, “The Application Level Events (ALE) Specification, Version 1.1”, February. 2008, available at: http://www.epcglobalinc.org/standards/ale
+1. EPCglobal Inc™. Frequently Asked Questions - ALE 1.1. EPCglobal. {pre}[Online]{/pre} http://www.epcglobalinc.org/standards/ale.
+1. FossTrak Project. FossTrak Project. {pre}[Online]{/pre} http://www.fosstrak.org/index.html.
+1. EPC Information Services (EPCIS) Specification, Version 1.0.1, September 21, 2007 available at: http://www.epcglobalinc.org/standards/epcis/
+1. EPCglobal Inc™. The EPCglobal Architecture Framework Version 1.2. {pre}[Online]{/pre} September 10, 2007. http://www.epcglobalinc.org/standards/architecture/.
+1. Application Level Events 1.1(ALE 1.1) Overview, Filtering &#38; Collection WG, EPCglobal, March 5, 2008 , available at: http://www.epcglobalinc.org/standards/ale
+1. C.Floerkemeier, C. Roduner, and M. Lampe, RFID Application Development With the Accada Middleware Platform, IEEE Systems Journal, Vol. 1, No. 2, December 2007.
+1. C. Floerkemeier and S. Sarma,  “An Overview of RFID System Interfaces and Reader Protocols”, 2008 IEEE International Conference on RFID, The Venetian, Las Vegas, Nevada, USA, April 16-17, 2008.
+1. Russell Scherwin and Jake Freivald, Reusable Adapters: The Foundation of Service-Oriented Architecture, 2005.
+1. Panos Dimitropoulos and John Soldatos, ‘RFID-enabled Fully Automated Warehouse Management: Adding the Business Context’, submitted to the International Journal of Manufacturing Technology and Management (IJMTM), Special Issue on: &#34;AIT-driven Manufacturing and Management&#34;.
+1. Architecture Review Committee, “The EPCglobal Architecture Framework,” EPCglobal, July 2005, available at: http://www.epcglobalinc.org.
+1. Achilleas Anagnostopoulos, John Soldatos and Sotiris G. Michalakos, ‘REFiLL: A Lightweight Programmable Middleware Platform for Cost Effective RFID Application Development’, accepted for publication to the Journal of Pervasive and Mobile Computing (Elsevier).
+1. Benita M. Beamon, “Supply chain design and analysis: Models and methods”, International Journal of Production Economics, Vol. 55 pp. 281-294, 1998
+1. Zhekun Li, Rajit Gadh, and B. S. Prabhu, &#34;Applications of RFID Technology and Smart Parts in Manufacturing&#34;, Proceedings of DETC04: ASME 2004 Design Engineering Technical Conferences and Computers and Information in Engineering Conference September 28-October 2, 2004, Salt Lake City, Utah USA.
+1. John Soldatos, Nikos Kefalakis, Nektarios Leontiadis, et. al., “Core ASPIRE Middleware Infrastructure”, ASPIRE Project Public Deliverable D3.4a, Jun 2009, publicly available at: http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deliverables
+1. Efstathios Mertikas, Nikos Kefalakis and John Soldatos, “Managing Master Data and Business Events in an RFID Network”, Submitted to the Pervasive and Mobile Computing Journal (Elsevier), September 2009
+1. Jeremy Landt, The history of RFID, IEEE Potentials, October-November 2005.
+1. Ron Weinstein, RFID: A Technical Overview and Its application to the enterprise. IT Pro, published by the IT Computer Society.
+1. ASPIRE D2.3b. Architecture specifications for the innovation management framework, 2009.
+1. ASPIRE D2.2 (End-User) SME Requirements (IT infrastructure, traceability, Anti-counterfeiting, privacy)
+1. ASPIRE D2.1 Review on methods and tools for concurrent innovation engineering - Review of State-of-the-Art Middleware, Methods, Tools and Techniques
+1. ASPIRE, Advanced Sensors and lightweight Programmable middleware for Innovative Rfid Enterprise applications, Annex I Description of work.
+1. ASPIRE D3.3 Data Collection, Filtering and Application Level Events
+1. ASPIRE D4.3a Programmable filters (FML) specification. Interim version
+
+
+
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Photos</web>
+<name>RFIDSuiteSnapshots</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.PhotoAlbumClass</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1237376376000</creationDate>
+<date>1237376585000</date>
+<contentUpdateDate>1237376585000</contentUpdateDate>
+<version>1.7</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>aspire-mc5.png</filename>
+<filesize>129617</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376585000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc4.png</filename>
+<filesize>196925</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376575000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc3.png</filename>
+<filesize>520971</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376565000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc2.png</filename>
+<filesize>271191</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376555000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspire-mc1.png</filename>
+<filesize>144413</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1237376541000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.PhotoAlbumClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<description>
+<name>description</name>
+<prettyName>description</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<rows>5</rows>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</description>
+<height>
+<name>height</name>
+<prettyName>Thumbnail Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height>
+<height2>
+<name>height2</name>
+<prettyName>Photo Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height2>
+</class>
+<name>Photos.RFIDSuiteSnapshots</name>
+<number>0</number>
+<className>XWiki.PhotoAlbumClass</className>
+<property>
+<description>UJF's RFID Suite Snapshots </description>
+</property>
+<property>
+<height>150</height>
+</property>
+<property>
+<height2>400</height2>
+</property>
+<property>
+<title>RFID Suite Snapshots</title>
+</property>
+</object>
+<content>#includeForm("XWiki.PhotoAlbumClassSheet")</content>
+<renderedcontent>&lt;br /&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HRFIDSuiteSnapshots"&gt;RFID Suite Snapshots&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;UJF's RFID Suite Snapshots&lt;p class="paragraph"/&gt;&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=1#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/RFIDSuiteSnapshots/aspire-mc5.png?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=2#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/RFIDSuiteSnapshots/aspire-mc4.png?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=3#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/RFIDSuiteSnapshots/aspire-mc3.png?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=4#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/RFIDSuiteSnapshots/aspire-mc2.png?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=5#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/RFIDSuiteSnapshots/aspire-mc1.png?height=150" height="150"/&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;&lt;br /&gt;
+&lt;i class="italic"&gt;
+ &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=all"&gt;All Photos&lt;/a&gt;&lt;/span&gt; &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/RFIDSuiteSnapshots?diapo=1"&gt;Diaporama&lt;/a&gt;&lt;/span&gt;&lt;/i&gt;
+
+</renderedcontent>
+</xwikidoc>

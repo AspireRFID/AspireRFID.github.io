@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/NMEAGPS by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:26:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - NMEAGPS
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin1743.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/NMEAGPS">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='NMEAGPS.html'>Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.Bundles/Main.Documentation.Bundles_NMEAGPS.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="NMEAGPSd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation.Bundles/NMEAGPScede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="NMEAGPSd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HAspire3A3AOSGiBundles3A3AGPSPositionProducer28NMEAGPS29">Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)</span></h2> 
+<hr class="line"/>
+            <ul>
+          <li><a href="#HDescription">1 Description</a> 
+      <li><a href="#HDependencies">2 Dependencies</a> 
+        <ul>
+          <li><a href="#HLibraries">2.1 Libraries</a> 
+      <li><a href="#HPackages">2.2 Packages</a> 
+        </ul>
+          <li><a href="#HBuild">3 Build</a> 
+      <li><a href="#HMoreinformations">4 More informations...</a> 
+      </ul> <hr class="line"/><p class="paragraph"/>This section describes the bundle for NMEA GPS sensor.
+<h3 class="heading-1-1"><span id="HDescription">Description</span></h3><p class="paragraph"/>This bundle provides provides a org.osgi.service.wireadmin.Producer service that polls GPS positions from a GPS receiver connected to the gateway by a serial link or others receiver (CellID from Cellular Phone, ...).<p class="paragraph"/>In fact, this bundle use classes from GPSMap (<span class="wikiexternallink"><a href="http://gpsmap.sourceforge.net/">&#104;ttp://gpsmap.sourceforge.net</a></span>) done by Christof Dallermassl.<p class="paragraph"/>For more details on how to use this bundle, refer to the /doc/readme.html file embedded in the bundle jarfile.
+<h3 class="heading-1-1"><span id="HDependencies">Dependencies</span></h3> 
+<h4 class="heading-1-1-1"><span id="HLibraries">Libraries</span></h4> 
+<ul class="star">
+<li>RXTX 2.2</li>
+<li>gpsinput-0.5.1</li>
+<li>dinopolis-util-0.5.1</li>
+</ul><h4 class="heading-1-1-1"><span id="HPackages">Packages</span></h4> 
+<ul class="star">
+<li>gnu.io (RXTX)</li>
+<li>org.osgi.service.wireadmin; specification-version=1.0</li>
+<li>org.osgi.util.measurement; specification-version=1.0</li>
+<li>org.osgi.util.position; specification-version=1.0</li>
+</ul><h3 class="heading-1-1"><span id="HBuild">Build</span></h3> 
+<ul class="star">
+<li>Download a recent distribution of GPSMap available from <span class="wikiexternallink"><a href="http://gpsmap.sourceforge.net/">&#104;ttp://gpsmap.sourceforge.net</a></span>. Current version is 0.5.3. Update the POM file if necessary.</li>
+<li>Extract the following files to the <i class="italic">./embeddedlibs</i> folder :<ul class="star">
+<li>dinopolis-util-<i class="italic">version</i>.jar</li>
+<li>gpsinput-<i class="italic">version</i>.jar</li>
+</ul>
+</li>
+<li>Download the RXTX bundle from AspireRFID repository : <span class="wikilink"><a href="RXTX.html">Documentation.Bundles.RXTX</a></span>. Use a recent distribution of the RXTX 2.2 available from <span class="wikiexternallink"><a href="http://rxtx.qbang.org/wiki/index.php/Download">&#104;ttp://rxtx.qbang.org/wiki/index.php/Download</a></span>. It will be needed at runtime, in the running OSGi framework.</li>
+<li>Configure the properties (serial port, ...) in <i>./src/main/resources/CONFIG-INF/config.properties</i>.</li>
+<li>Build with Maven : <i class="italic">mvn clean install</i></li>
+</ul><h3 class="heading-1-1"><span id="HMoreinformations">More informations...</span></h3><p class="paragraph"/>See the readme file in the doc/ folder of bundle sources.
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='NMEAGPS.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation.Bundles/index8461.html?parent=Main.Documentation.Bundles.NMEAGPS"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation.Bundles/0?parent=Main.Documentation.Bundles.NMEAGPS"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation/StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main.Documentation/Bundles.html'>Main.Documentation.Bundles</a> &gt; <a href='NMEAGPS.html'>Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)</a>
+  (en)
+ <br />
+  Creator: calmant
+ &nbsp;Date: 2011/01/25 17:01
+ <br />
+ Last Author: calmant
+ &nbsp;Date: 2011/01/25 17:12
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/NMEAGPS by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:26:47 GMT -->
+</html>

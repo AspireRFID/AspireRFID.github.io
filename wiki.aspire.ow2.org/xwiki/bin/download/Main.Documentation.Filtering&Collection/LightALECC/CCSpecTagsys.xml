@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:CCSpec xmlns:ns2="urn:epcglobal:ale:xsd:1">
+    <logicalReaders>
+        <logicalReader>ReaderInput</logicalReader>
+    </logicalReaders>
+    <boundarySpec>
+        <repeatPeriod unit="MS">5000</repeatPeriod>
+        <duration unit="MS">1000</duration>
+    </boundarySpec>
+    <cmdSpecs>
+        <cmdSpec>
+		<filterSpec>
+			<filterList>
+				<filter>
+				   <includeExclude>INCLUDE</includeExclude>
+				   <fieldspec>
+					<fieldname>epc</fieldname>
+				   </fieldspec>
+				   <patList>
+						<pat>urn:epc:pat:sgtin-96:*.*.*.*</pat>
+						<pat>urn:epc:pat:15693-64:*.*</pat>
+				    </patList> 
+				</filter>
+			</filterList>
+		</filterSpec>
+            <opSpecs>
+            	<opSpec>
+            		<opType>WRITE</opType>
+            		<fieldspec>
+					<fieldname>@1.2</fieldname>
+				</fieldspec>
+				<dataSpec>
+					<data>3039</data>
+				</dataSpec>
+            	</opSpec>
+            </opSpecs>
+        </cmdSpec>
+    </cmdSpecs>
+</ns2:CCSpec>

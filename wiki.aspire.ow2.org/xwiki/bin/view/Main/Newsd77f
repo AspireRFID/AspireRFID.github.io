@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>News</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1129125468000</creationDate>
+<date>1307018911000</date>
+<contentUpdateDate>1307018911000</contentUpdateDate>
+<version>1.61</version>
+<title>ASPIRE RFID News</title>
+<template></template>
+<attachment>
+<filename>hottopics.gif</filename>
+<filesize>2017</filesize>
+<author>XWiki.Admin</author>
+<date>1129125642000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>rss_icon_1.jpg</filename>
+<filesize>8293</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233572825000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.ArticleClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>Title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<category>
+<name>category</name>
+<prettyName>Category</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>1</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>5</size>
+<number>2</number>
+<sql>select prop.value from BaseObject as obj, StringProperty as prop where obj.className='Blog.Categories' and prop.id.id = obj.id and prop.id.name='name'</sql>
+<classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
+</category>
+<content>
+<name>content</name>
+<prettyName>Content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<extract>
+<name>extract</name>
+<prettyName>Extract</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</extract>
+</class>
+<name>Main.News</name>
+<number>0</number>
+<className>XWiki.ArticleClass</className>
+<property>
+<category>
+<value>News</value>
+</category>
+</property>
+<property>
+<content>May 2008: (AIT Branch) Demonstration in the scope of the [ASPIRE-&gt; http://www.fp7-aspire.eu] RFID Information Day in Greece, Athens, Greece, May 21, 2008.</content>
+</property>
+<property>
+<extract></extract>
+</property>
+<property>
+<title>Demonstration in the scope of the ASPIRE RFID Information Day in Greece</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.ArticleClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>Title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<category>
+<name>category</name>
+<prettyName>Category</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>1</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>5</size>
+<number>2</number>
+<sql>select prop.value from BaseObject as obj, StringProperty as prop where obj.className='Blog.Categories' and prop.id.id = obj.id and prop.id.name='name'</sql>
+<classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
+</category>
+<content>
+<name>content</name>
+<prettyName>Content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<extract>
+<name>extract</name>
+<prettyName>Extract</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</extract>
+</class>
+<name>Main.News</name>
+<number>1</number>
+<className>XWiki.ArticleClass</className>
+<property>
+<category/>
+</property>
+<property>
+<content>October 2008: (AIT Branch) Demonstration in the scope of the [Athens Digital Week Festival-&gt; http://www.athensdigitalweek.gr/], Athens, Greece, October 15-19, 2008.</content>
+</property>
+<property>
+<extract></extract>
+</property>
+<property>
+<title>October 2008: (AIT Branch) Demonstration in the scope of the Athens Digital Week Festival</title>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.ArticleClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>Title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<category>
+<name>category</name>
+<prettyName>Category</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>1</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<size>5</size>
+<number>2</number>
+<sql>select prop.value from BaseObject as obj, StringProperty as prop where obj.className='Blog.Categories' and prop.id.id = obj.id and prop.id.name='name'</sql>
+<classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
+</category>
+<content>
+<name>content</name>
+<prettyName>Content</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</content>
+<extract>
+<name>extract</name>
+<prettyName>Extract</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>5</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</extract>
+</class>
+<name>Main.News</name>
+<number>2</number>
+<className>XWiki.ArticleClass</className>
+<property>
+<category/>
+</property>
+<property>
+<content>December 2008: (RFID Suite) Demonstration in the scope of the ACM Middleware 2008 conference, Leuwen, Belgium, December 1-5, 2008.</content>
+</property>
+<property>
+<extract></extract>
+</property>
+<property>
+<title>December 2008: (RFID Suite) Demonstration in the scope of the ACM Middleware 2008 conference</title>
+</property>
+</object>
+<content>1 News
+
+----
+#toc("" "" "true")
+----
+
+
+1.1 Recent Demonstrations of AspireRfid middleware and applications in Public events:
+
+* October 2009: Demonstration of Warehouse Management Processes (Receiving) over an RFID Dock-Door in the scope of the [Athens Digital Week Festival-&gt; http://athensdigitalweek.org/], Athens, Greece, October 16-18, 2009.
+* June 22, 2009: Aspire presented at [OSGi DevCon 2009&gt;http://www.osgi.org/DevConEurope2009/Schedule], Zurich. [Presentation ...&gt;http://www.slideshare.net/clement.escoffier/experimenting-with-the-osgi-platform-in-the-aspire-rfid-middleware]
+* June 3 and 4, 2009: demonstration of the OW2 Aspire project on the OW2 stand at JavaOne 2009. [Diaporama ...&gt;Photos.AspireDemoAtJavaOne2009]
+* April 23, 2009: a team of UJF students is selected in the ten finalists (research track) of the [NFC Forum Competition&gt;http://www.nfc-forum.org/events/competition]. Their project untitled *"EasyRide - An Ecological, Ethical and Social Ride-Sharing NFC-Enabled System"* is based on the NFC Components of the OW2 Aspire RFID project. The project was presented and demonstrated at the WIMA NFC Developers Summit (Monaco, April 23 2009).
+* April 2009: OW2 Aspire RFID proposes ["Summer of Code"&gt;Main.SummerOfCode] for the OW2 Programming Context.
+* April 2009: [OW2 Aspire RFID : a privacy-friendly RFID middleware&gt;http://www.ow2.org/view/Events2009AnnualConference/Session6#0005] @ [OW2Con 2009&gt;http://www.ow2.org/view/Events2009AnnualConference], Paris, April 1-2, 2009  
+* February 2009: a team of UJF students submits a academic solution to the [NFC Forum Competition&gt;http://www.nfc-forum.org/events/competition] based on the OW2 Aspire RFID components. ~~"March 23, 2009: 20 finalists announced" and "April 23, 2009: Finalists present entries at WIMA NFC Developers Summit"~~
+* January 2009: AspireRfid Demonstration in the scope of ASPIRE Project Review Meeting Brussels, Belgium, January 20-21, 2009.
+* December 2008: (RFID Suite) Demonstration in the scope of the ACM Middleware 2008 conference, Leuwen, Belgium, December 1-5, 2008.
+* October 2008: (AIT Branch) Demonstration in the scope of the [Athens Digital Week Festival-&gt; http://www.athensdigitalweek.gr/], Athens, Greece, October 15-19, 2008.
+* May 2008: (AIT Branch) Demonstration in the scope of the [ASPIRE-&gt; http://www.fp7-aspire.eu] RFID Information Day in Greece, Athens, Greece, May 21, 2008.
+
+
+Find below all the recent news from the site blog and from the list of pages that have been changed recently.
+
+1.1 RFID Events
+
+* RFID Show 2010, Paris, France, 23.03.2010, http://www.rfid-show.com/ 
+* Euro ID, Cologne, Germany, 04.05.2010, http://www.euro-id-tradefair.com/ 
+* Radio Solutions 2010 Conference &amp; Exhibition, Cambridge, UK, 02.06.2010, http://www.lpra.eu 
+* RFID Europe 2010, Cambridge, UK, 28.09.2010, http://www.idtechex.com/rfideurope10/en/ 
+* RFID Journal LIVE! Europe 2010, Darmstadt, Germany, 02.11.2010, 
+* ID World, Milan, Italy, 16.11.2010
+* CARTES &amp; IDentification 2010, Paris, France, 07.12.2010, http://www.cartes.com/ 
+
+
+
+1.1 Recent changes 
+
+{image:rss_icon_1.jpg|50}
+&lt;div&gt;
+  &lt;div id="webhomeNewsdisplay" style="float:left; width: 95.1%;"&gt;
+    &lt;div style="padding-left: 20px;"&gt;
+        #if(!$xwiki.hasMinorEdit() || $request.getParameter("showminor"))
+        #set ($sql = "where 1=1 order by doc.date desc")
+      #else
+        #set ($sql = ", XWikiRCSNodeInfo as ni where doc.id=ni.id.docId and ni.id.version2=1 group by doc.web, doc.name order by max(ni.date) desc")
+      #end
+      #set($showdata = 1)
+      #if(!$nb)
+        #set($nb = 30)
+      #end
+      #set($formatDate = "yyyy MMMM dd, HH:mm")
+      #set ($list = $xwiki.searchDocuments($sql , $nb , 0))
+      &lt;ul&gt;
+        #foreach ($item in $list)
+          #set($troubi ="non")
+          #if ($xwiki.hasAccessLevel("view", $context.user, "${context.database}:${item}"))
+            #set($bentrydoc = $xwiki.getDocument($item))
+            #if (!$bentrydoc.name.contains("WatchListJob"))
+              #set($cclass = $xwiki.getDocument("XWiki.XWikiComments").getxWikiClass())
+              #set($comment = $cclass.newObject())
+              #if($xwiki.getWebPreferenceAsInt("commentsorder",1)==0)
+                #set($comments = $bentrydoc.getComments())
+              #else
+                #set($comments = $bentrydoc.getComments(false))
+              #end
+              #set($createur = $xwiki.getUserName($bentrydoc.author))
+              &lt;li&gt;
+                #if($comments.size()&gt;0)  
+                  #set($i = 0)  
+                  #set($cobj = $comments.get($i))  
+                  #set($comment = $bentrydoc.display("comment", "view", $cobj))  
+                  #set($date = $cobj.getXWikiObject().get("date").value)
+                  #if($date)
+                    #set($date2 = $!xwiki.formatDate($date,"yyyy MM dd HH:mm:ss"))
+                  #end
+                  #if($bentrydoc)
+                    #set($date1 = $!xwiki.formatDate($!bentrydoc.date,"yyyy MM dd HH:mm:ss") )
+                  #end
+                  #if($date1.equals($date2) )
+                    [$bentrydoc.name&gt;${bentrydoc.web}.$bentrydoc.name] &lt;em&gt;- 1 new comment&lt;/em&gt;
+                    #set($troubi ="oui")
+                    #set($desc = $cobj.getXWikiObject().get("comment").value)
+                  #else
+                    [$bentrydoc.name in $bentrydoc.web&gt;${bentrydoc.web}.$bentrydoc.name]
+                  #end
+                #else  
+                  #set($comment = "")  
+                  [$bentrydoc.name in $bentrydoc.web&gt;${bentrydoc.web}.$bentrydoc.name.replaceAll("@","%40")]
+                #end   
+                $xwiki.formatDate($bentrydoc.date,"yyyy MMM dd") at $xwiki.formatDate($bentrydoc.date,"HH:mm")
+                #if($troubi =="oui")
+                  #set($createur = $xwiki.getUserName($cobj.author))
+                #end
+                #if ($createur == "XWikiGuest")
+                  Guest
+                #else
+                  $createur
+                #end
+              &lt;/li&gt;
+            #end
+          #end
+        #end
+      &lt;/ul&gt;
+      #if($xwiki.hasMinorEdit())
+        #if($request.getParameter("showminor"))
+          &lt;a href="$xwiki.getURL($tdoc.getFullName(), "view", "")"&gt;Hide minor edits&lt;/a&gt;
+        #else
+          &lt;a href="$xwiki.getURL($tdoc.getFullName(), "view", "showminor")"&gt;Show minor edits&lt;/a&gt;
+        #end
+      #end
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style="clear:both; margin-bottom: 40px;"&gt;&lt;!-- --&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HNews"&gt;News&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRecentDemonstrationsofAspireRfidmiddlewareandapplicationsinPublicevents3A"&gt;1 Recent Demonstrations of AspireRfid middleware and applications in Public events:&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRFIDEvents"&gt;2 RFID Events&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRecentchanges"&gt;3 Recent changes &lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRecentDemonstrationsofAspireRfidmiddlewareandapplicationsinPublicevents3A"&gt;Recent Demonstrations of AspireRfid middleware and applications in Public events:&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;October 2009: Demonstration of Warehouse Management Processes (Receiving) over an RFID Dock-Door in the scope of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://athensdigitalweek.org/"&gt;&amp;#65;thens Digital Week Festival-&lt;/a&gt;&lt;/span&gt;, Athens, Greece, October 16-18, 2009.&lt;/li&gt;
+&lt;li&gt;June 22, 2009: Aspire presented at &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/DevConEurope2009/Schedule"&gt;&amp;#79;SGi DevCon 2009&lt;/a&gt;&lt;/span&gt;, Zurich. &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.slideshare.net/clement.escoffier/experimenting-with-the-osgi-platform-in-the-aspire-rfid-middleware"&gt;&amp;#80;resentation ...&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;June 3 and 4, 2009: demonstration of the OW2 Aspire project on the OW2 stand at JavaOne 2009. &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AspireDemoAtJavaOne2009"&gt;Diaporama ...&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;April 23, 2009: a team of UJF students is selected in the ten finalists (research track) of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nfc-forum.org/events/competition"&gt;&amp;#78;FC Forum Competition&lt;/a&gt;&lt;/span&gt;. Their project untitled &lt;strong class="strong"&gt;"EasyRide - An Ecological, Ethical and Social Ride-Sharing NFC-Enabled System"&lt;/strong&gt; is based on the NFC Components of the OW2 Aspire RFID project. The project was presented and demonstrated at the WIMA NFC Developers Summit (Monaco, April 23 2009).&lt;/li&gt;
+&lt;li&gt;April 2009: OW2 Aspire RFID proposes &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/SummerOfCode"&gt;"Summer of Code"&lt;/a&gt;&lt;/span&gt; for the OW2 Programming Context.&lt;/li&gt;
+&lt;li&gt;April 2009: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ow2.org/view/Events2009AnnualConference/Session6#0005"&gt;&amp;#79;W2 Aspire RFID : a privacy-friendly RFID middleware&lt;/a&gt;&lt;/span&gt; @ &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ow2.org/view/Events2009AnnualConference"&gt;&amp;#79;W2Con 2009&lt;/a&gt;&lt;/span&gt;, Paris, April 1-2, 2009&lt;/li&gt;
+&lt;li&gt;February 2009: a team of UJF students submits a academic solution to the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nfc-forum.org/events/competition"&gt;&amp;#78;FC Forum Competition&lt;/a&gt;&lt;/span&gt; based on the OW2 Aspire RFID components. &lt;i class="italic"&gt;"March 23, 2009: 20 finalists announced" and "April 23, 2009: Finalists present entries at WIMA NFC Developers Summit"&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;January 2009: AspireRfid Demonstration in the scope of ASPIRE Project Review Meeting Brussels, Belgium, January 20-21, 2009.&lt;/li&gt;
+&lt;li&gt;December 2008: (RFID Suite) Demonstration in the scope of the ACM Middleware 2008 conference, Leuwen, Belgium, December 1-5, 2008.&lt;/li&gt;
+&lt;li&gt;October 2008: (AIT Branch) Demonstration in the scope of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.athensdigitalweek.gr/"&gt;&amp;#65;thens Digital Week Festival-&lt;/a&gt;&lt;/span&gt;, Athens, Greece, October 15-19, 2008.&lt;/li&gt;
+&lt;li&gt;May 2008: (AIT Branch) Demonstration in the scope of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fp7-aspire.eu"&gt;&amp;#65;SPIRE-&lt;/a&gt;&lt;/span&gt; RFID Information Day in Greece, Athens, Greece, May 21, 2008.&lt;/li&gt;
+&lt;/ul&gt;Find below all the recent news from the site blog and from the list of pages that have been changed recently.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRFIDEvents"&gt;RFID Events&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;RFID Show 2010, Paris, France, 23.03.2010, &lt;span class="nobr"&gt;&lt;a href="http://www.rfid-show.com/"&gt;&amp;#104;ttp://www.rfid-show.com/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Euro ID, Cologne, Germany, 04.05.2010, &lt;span class="nobr"&gt;&lt;a href="http://www.euro-id-tradefair.com/"&gt;&amp;#104;ttp://www.euro-id-tradefair.com/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Radio Solutions 2010 Conference &amp; Exhibition, Cambridge, UK, 02.06.2010, &lt;span class="nobr"&gt;&lt;a href="http://www.lpra.eu"&gt;&amp;#104;ttp://www.lpra.eu&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;RFID Europe 2010, Cambridge, UK, 28.09.2010, &lt;span class="nobr"&gt;&lt;a href="http://www.idtechex.com/rfideurope10/en/"&gt;&amp;#104;ttp://www.idtechex.com/rfideurope10/en/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;RFID Journal LIVE! Europe 2010, Darmstadt, Germany, 02.11.2010,&lt;/li&gt;
+&lt;li&gt;ID World, Milan, Italy, 16.11.2010&lt;/li&gt;
+&lt;li&gt;CARTES &amp; IDentification 2010, Paris, France, 07.12.2010, &lt;span class="nobr"&gt;&lt;a href="http://www.cartes.com/"&gt;&amp;#104;ttp://www.cartes.com/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HRecentchanges"&gt;Recent changes &lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/News/rss_icon_1.jpg" height="50" alt="rss_icon_1.jpg" /&gt;
+&lt;div&gt;
+  &lt;div id="webhomeNewsdisplay" style="float:left; width: 95.1%;"&gt;
+    &lt;div style="padding-left: 20px;"&gt;
+                                &lt;ul&gt;
+                                                                        &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;Filtering&amp;Collection in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2014 Dec 04 at 14:23
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/SupportedReaders"&gt;SupportedReaders in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2014 Nov 28 at 12:36
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Documentation"&gt;Documentation in Main&lt;/a&gt;&lt;/span&gt;
+                                2014 Nov 27 at 15:21
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/test"&gt;test in XWiki&lt;/a&gt;&lt;/span&gt;
+                                2014 Nov 17 at 11:11
+                                                  superadmin
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/Toolbar"&gt;Toolbar in XWiki&lt;/a&gt;&lt;/span&gt;
+                                2013 Sep 23 at 08:58
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Filtering%26Collection.LLRP+toolkit+library+%28updated+according+to+LLRP+1/1%29"&gt;1) in Main.Documentation.Filtering&amp;Collection.LLRP toolkit library (updated according to LLRP 1&lt;/a&gt;&lt;/span&gt;
+                                2013 Sep 23 at 08:57
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/TDT"&gt;TDT in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2013 Aug 20 at 15:04
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/driss_r"&gt;Rim Driss Rim Driss&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/aspire"&gt;aspire in XWiki&lt;/a&gt;&lt;/span&gt;
+                                2013 Jul 17 at 12:40
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/schmidt"&gt;Loic Schmidt&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/WebPreferences"&gt;WebPreferences in Main&lt;/a&gt;&lt;/span&gt;
+                                2013 May 21 at 17:52
+                                                  WebHome
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/"&gt;WebHome in Main&lt;/a&gt;&lt;/span&gt;
+                                2012 Mar 14 at 20:35
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/References"&gt;References in Main&lt;/a&gt;&lt;/span&gt;
+                                2012 Mar 13 at 17:13
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Filtering%26Collection/NFCLightALE"&gt;NFCLightALE in Main.Documentation.Filtering&amp;Collection&lt;/a&gt;&lt;/span&gt;
+                                2012 Feb 08 at 10:54
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/schmidt"&gt;Loic Schmidt&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/Menu"&gt;Menu in XWiki&lt;/a&gt;&lt;/span&gt;
+                                2011 Oct 07 at 12:31
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/UPnPRFIDReader"&gt;UPnPRFIDReader in Main.Documentation.Bundles&lt;/a&gt;&lt;/span&gt;
+                                2011 Sep 07 at 07:50
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/donsez"&gt;Didier Donsez&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Deliverables"&gt;Deliverables in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Aug 19 at 13:57
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Demos"&gt;Demos in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Aug 19 at 13:57
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Bundles"&gt;Bundles in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 22 at 14:17
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/donsez"&gt;Didier Donsez&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Videos"&gt;Videos in Main&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 17 at 13:27
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/WhoIsUsingAspire"&gt;WhoIsUsingAspire in Main&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 17 at 13:09
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BestPractices"&gt;BestPractices in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 13 at 22:30
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Contributors"&gt;Contributors in Main&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 13 at 18:41
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID"&gt;CompetitiveAdvantageOfUsingAspireRFID in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 13 at 15:40
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/News"&gt;News in Main&lt;/a&gt;&lt;/span&gt;
+                                2011 Jun 02 at 12:48
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ONS"&gt;ONS in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Apr 17 at 16:17
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/kmour"&gt;Mourtzoukos Konstantinos&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;a class="wikicreatelink" href="/xwiki/bin/edit/Sandbox%3E%3ESandbox/TestPage3?parent=Main.News"&gt;&lt;span class="wikicreatelinktext"&gt;TestPage3 in &lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+                                2011 Apr 11 at 10:02
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/lucamartinelli"&gt;Luca Martinelli Luca Martinelli&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;a class="wikicreatelink" href="/xwiki/bin/edit/Sandbox%3E%3ESandbox/TestPage1?parent=Main.News"&gt;&lt;span class="wikicreatelinktext"&gt;TestPage1 in &lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+                                2011 Apr 11 at 10:02
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/lucamartinelli"&gt;Luca Martinelli Luca Martinelli&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;a class="wikicreatelink" href="/xwiki/bin/edit/Sandbox%3E%3ESandbox/TestPage2?parent=Main.News"&gt;&lt;span class="wikicreatelinktext"&gt;TestPage2 in &lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+                                2011 Apr 11 at 10:01
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/lucamartinelli"&gt;Luca Martinelli Luca Martinelli&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;BEG in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Mar 18 at 18:03
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/AspireRFIDIDESnapshots"&gt;AspireRFIDIDESnapshots in Photos&lt;/a&gt;&lt;/span&gt;
+                                2011 Mar 09 at 13:41
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                                                                              &lt;li&gt;
+                                  &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireIDE"&gt;AspireIDE in Main.Documentation&lt;/a&gt;&lt;/span&gt;
+                                2011 Mar 04 at 12:54
+                                                  &lt;span class="wikilink"&gt;&lt;a href="http://www2.objectweb.org/xwiki/bin/view/XWiki/nkef"&gt;Nikos Kefalakis&lt;/a&gt;&lt;/span&gt;
+                              &lt;/li&gt;
+                                    &lt;/ul&gt;
+          &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style="clear:both; margin-bottom: 40px;"&gt;&lt;!-- --&gt;&lt;/div&gt;
+&lt;/div&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>OneWireReader</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1277103069000</creationDate>
+<date>1277103913000</date>
+<contentUpdateDate>1277103913000</contentUpdateDate>
+<version>1.10</version>
+<title>Aspire :: OSGi Bundles :: OneWire Reader</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: OneWire Reader
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for OneWire reader (ie HALAdaptor)
+
+
+1.1 Context
+The OneWire protocol is a proprietary serial protocol for communicating with low-cost [iButton devices&gt;http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm]. A iButton had a globally unique 64 bits long IDentifiers and optionnally memory banks, sensors (thermometer, hygrometer), realtime clock, wo data loggers.. According to Maxim IC, over 175 million iButtons are currently in circulation and they are used in [many applications&gt;http://www.maxim-ic.com/products/ibutton/applications] such access control, door lock, guard tour, cold supply chain, ....
+
+The OneWireReader bundle packages a HALAdaptor for OneWire adapter attached to the host (RS232,Parallel,USB). Tag events are produced when an iButton is connected to the bus managed by the adapter
+
+The OneWireReader bundle can be installed started in the same time as the OneWireProducer bundle. However, the adapter can not be shared between the 2 bundles.
+
+1.1 Build
+1.1.1 Sources
+* trunk/bundles/common
+* trunk/bundles/readers
+
+1.1.1 Instruction
+Same as the [OneWireProducer&gt;Main.Documentation.Bundles.OneWireProducer]
+
+1.1.1 Extra
+Same as the [OneWireProducer&gt;Main.Documentation.Bundles.OneWireProducer]
+
+1.1 Artifacts
+The artifacts to deploy are
+*  org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi
+*  org.ow2.aspirerfid:org.ow2.aspirerfid.onewirereader
+
+1.1 LRSpec
+
+1.1.1 Configurable properties
+{code}
+&lt;LRSpec&gt;
+TBD
+&lt;/LRSpec&gt;
+{code}
+
+
+1.1 Link
+iButton web site http://www.maxim-ic.com/products/ibutton/ibuttons
+
+1.1.1 Starter kit
+Same as the [OneWireProducer&gt;Main.Documentation.Bundles.OneWireProducer]</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3AOneWireReader"&gt;Aspire :: OSGi Bundles :: OneWire Reader&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;2 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;2.1 Sources&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInstruction"&gt;2.2 Instruction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HExtra"&gt;2.3 Extra&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HArtifacts"&gt;3 Artifacts&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLRSpec"&gt;4 LRSpec&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HConfigurableproperties"&gt;4.1 Configurable properties&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HLink"&gt;5 Link&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HStarterkit"&gt;5.1 Starter kit&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for OneWire reader (ie HALAdaptor)
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+The OneWire protocol is a proprietary serial protocol for communicating with low-cost &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/products/ibuttons.cfm"&gt;&amp;#105;Button devices&lt;/a&gt;&lt;/span&gt;. A iButton had a globally unique 64 bits long IDentifiers and optionnally memory banks, sensors (thermometer, hygrometer), realtime clock, wo data loggers.. According to Maxim IC, over 175 million iButtons are currently in circulation and they are used in &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/applications"&gt;&amp;#109;any applications&lt;/a&gt;&lt;/span&gt; such access control, door lock, guard tour, cold supply chain, ....&lt;p class="paragraph"/&gt;The OneWireReader bundle packages a HALAdaptor for OneWire adapter attached to the host (RS232,Parallel,USB). Tag events are produced when an iButton is connected to the bus managed by the adapter&lt;p class="paragraph"/&gt;The OneWireReader bundle can be installed started in the same time as the OneWireProducer bundle. However, the adapter can not be shared between the 2 bundles.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;2 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;2.1 Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;trunk/bundles/common&lt;/li&gt;
+&lt;li&gt;trunk/bundles/readers&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInstruction"&gt;2.2 Instruction&lt;/span&gt;&lt;/h4&gt; 
+Same as the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/OneWireProducer"&gt;OneWireProducer&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HExtra"&gt;2.3 Extra&lt;/span&gt;&lt;/h4&gt; 
+Same as the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/OneWireProducer"&gt;OneWireProducer&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HArtifacts"&gt;3 Artifacts&lt;/span&gt;&lt;/h3&gt; 
+The artifacts to deploy are
+&lt;ul class="star"&gt;
+&lt;li&gt; org.ow2.aspirerfid:org.ow2.aspirerfid.onewireapi&lt;/li&gt;
+&lt;li&gt; org.ow2.aspirerfid:org.ow2.aspirerfid.onewirereader&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HLRSpec"&gt;4 LRSpec&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfigurableproperties"&gt;4.1 Configurable properties&lt;/span&gt;&lt;/h4&gt; 
+&lt;div class="code"&gt;&lt;pre&gt;&amp;#60;LRSpec&amp;#62;
+TBD
+&amp;#60;/LRSpec&amp;#62;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLink"&gt;5 Link&lt;/span&gt;&lt;/h3&gt; 
+iButton web site &lt;span class="nobr"&gt;&lt;a href="http://www.maxim-ic.com/products/ibutton/ibuttons"&gt;&amp;#104;ttp://www.maxim-ic.com/products/ibutton/ibuttons&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HStarterkit"&gt;5.1 Starter kit&lt;/span&gt;&lt;/h4&gt; 
+Same as the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/OneWireProducer"&gt;OneWireProducer&lt;/a&gt;&lt;/span&gt;
+</renderedcontent>
+</xwikidoc>

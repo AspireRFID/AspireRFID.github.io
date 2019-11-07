@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>NMEAGPS</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.calmant</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1295974879000</creationDate>
+<date>1295975546000</date>
+<contentUpdateDate>1295975546000</contentUpdateDate>
+<version>1.2</version>
+<title>Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for NMEA GPS sensor.
+
+1.1 Description
+
+This bundle provides provides a org.osgi.service.wireadmin.Producer service that polls GPS positions from a GPS receiver connected to the gateway by a serial link or others receiver (CellID from Cellular Phone, ...).
+
+In fact, this bundle use classes from GPSMap ([http://gpsmap.sourceforge.net]) done by Christof Dallermassl.
+
+For more details on how to use this bundle, refer to the /doc/readme.html file embedded in the bundle jarfile.
+
+1.1 Dependencies
+
+1.1.1 Libraries
+
+* RXTX 2.2
+* gpsinput-0.5.1
+* dinopolis-util-0.5.1
+
+1.1.1 Packages
+
+* gnu.io (RXTX)
+* org.osgi.service.wireadmin; specification-version=1.0
+* org.osgi.util.measurement; specification-version=1.0
+* org.osgi.util.position; specification-version=1.0
+
+1.1 Build
+
+* Download a recent distribution of GPSMap available from [http://gpsmap.sourceforge.net]. Current version is 0.5.3. Update the POM file if necessary.
+* Extract the following files to the ~~./embeddedlibs~~ folder :
+** dinopolis-util-~~version~~.jar
+** gpsinput-~~version~~.jar
+* Download the RXTX bundle from AspireRFID repository : [Main.Documentation.Bundles.RXTX]. Use a recent distribution of the RXTX 2.2 available from [http://rxtx.qbang.org/wiki/index.php/Download]. It will be needed at runtime, in the running OSGi framework.
+* Configure the properties (serial port, ...) in &lt;i&gt;./src/main/resources/CONFIG-INF/config.properties&lt;/i&gt;.
+* Build with Maven : ~~mvn clean install~~
+
+1.1 More informations...
+
+See the readme file in the doc/ folder of bundle sources.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3AGPSPositionProducer28NMEAGPS29"&gt;Aspire :: OSGi Bundles :: GPS Position Producer (NMEA GPS)&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDescription"&gt;1 Description&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDependencies"&gt;2 Dependencies&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HLibraries"&gt;2.1 Libraries&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HPackages"&gt;2.2 Packages&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HBuild"&gt;3 Build&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMoreinformations"&gt;4 More informations...&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for NMEA GPS sensor.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDescription"&gt;Description&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle provides provides a org.osgi.service.wireadmin.Producer service that polls GPS positions from a GPS receiver connected to the gateway by a serial link or others receiver (CellID from Cellular Phone, ...).&lt;p class="paragraph"/&gt;In fact, this bundle use classes from GPSMap (&lt;span class="wikiexternallink"&gt;&lt;a href="http://gpsmap.sourceforge.net"&gt;&amp;#104;ttp://gpsmap.sourceforge.net&lt;/a&gt;&lt;/span&gt;) done by Christof Dallermassl.&lt;p class="paragraph"/&gt;For more details on how to use this bundle, refer to the /doc/readme.html file embedded in the bundle jarfile.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDependencies"&gt;Dependencies&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLibraries"&gt;Libraries&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;RXTX 2.2&lt;/li&gt;
+&lt;li&gt;gpsinput-0.5.1&lt;/li&gt;
+&lt;li&gt;dinopolis-util-0.5.1&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HPackages"&gt;Packages&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;gnu.io (RXTX)&lt;/li&gt;
+&lt;li&gt;org.osgi.service.wireadmin; specification-version=1.0&lt;/li&gt;
+&lt;li&gt;org.osgi.util.measurement; specification-version=1.0&lt;/li&gt;
+&lt;li&gt;org.osgi.util.position; specification-version=1.0&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Download a recent distribution of GPSMap available from &lt;span class="wikiexternallink"&gt;&lt;a href="http://gpsmap.sourceforge.net"&gt;&amp;#104;ttp://gpsmap.sourceforge.net&lt;/a&gt;&lt;/span&gt;. Current version is 0.5.3. Update the POM file if necessary.&lt;/li&gt;
+&lt;li&gt;Extract the following files to the &lt;i class="italic"&gt;./embeddedlibs&lt;/i&gt; folder :&lt;ul class="star"&gt;
+&lt;li&gt;dinopolis-util-&lt;i class="italic"&gt;version&lt;/i&gt;.jar&lt;/li&gt;
+&lt;li&gt;gpsinput-&lt;i class="italic"&gt;version&lt;/i&gt;.jar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Download the RXTX bundle from AspireRFID repository : &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/RXTX"&gt;Documentation.Bundles.RXTX&lt;/a&gt;&lt;/span&gt;. Use a recent distribution of the RXTX 2.2 available from &lt;span class="wikiexternallink"&gt;&lt;a href="http://rxtx.qbang.org/wiki/index.php/Download"&gt;&amp;#104;ttp://rxtx.qbang.org/wiki/index.php/Download&lt;/a&gt;&lt;/span&gt;. It will be needed at runtime, in the running OSGi framework.&lt;/li&gt;
+&lt;li&gt;Configure the properties (serial port, ...) in &lt;i&gt;./src/main/resources/CONFIG-INF/config.properties&lt;/i&gt;.&lt;/li&gt;
+&lt;li&gt;Build with Maven : &lt;i class="italic"&gt;mvn clean install&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMoreinformations"&gt;More informations...&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;See the readme file in the doc/ folder of bundle sources.
+</renderedcontent>
+</xwikidoc>

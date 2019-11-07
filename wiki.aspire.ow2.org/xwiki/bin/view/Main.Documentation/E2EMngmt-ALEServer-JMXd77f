@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>E2EMngmt-ALEServer-JMX</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.E2EMngmt</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1275921062000</creationDate>
+<date>1277715615000</date>
+<contentUpdateDate>1277715615000</contentUpdateDate>
+<version>1.30</version>
+<title>Aspire :: ALE Server management with JMX</title>
+<template></template>
+<attachment>
+<filename>jvisualplugin-aleserver-1.jpg</filename>
+<filesize>107064</filesize>
+<author>xwiki:XWiki.kievgama</author>
+<date>1276780662000</date>
+<version>1.2</version>
+<comment></comment>
+</attachment>
+<content>1 Aspire :: ALE Server management with JMX
+----
+#toc("" "" "true")
+----
+
+The ALE Server had 2 profiles
+* Tomcat profile : the ALEServer war is deployed in the Tomcat web container
+* OSGi profile: the ALEServer bundle is deployed in the Felix OGSi container with PaxWeb. Extra libraries and DLL/SO can be deployed dynamically without rebooting the server. This profile includes also sensors drivers deployed as bundles.
+
+This section describes the management of the ALE server profiles (with and without OSGi) with JMX.
+
+[JMX (Java Management eXtension)&gt;http://en.wikipedia.org/wiki/Java_Management_Extensions] is the de-facto standard for managing and for monitoring Java applications and middlewares.
+
+The management is composed of 2 parts
+* MBean which are probes to manage/monitor the ALEServer elements and its extensions (sensors, ...).
+* consoles
+
+1.1 ALEServer MBeans
+
+The ALEServer can be managed with the following MBeans:
+* &lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=server&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.AleServer&lt;/code&gt;) provides general information about the ALEServer
+* &lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=lrspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.LRSpec&lt;/code&gt;) manages LRSpec (add, remove)
+* &lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=ecspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.ECSpec&lt;/code&gt;) manages ECSpec (add, remove)
+* &lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=sensor&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.Sensor&lt;/code&gt;) provides informations on sensors activated on the OSGi part of the ALEServer. Remark: This MBean is activated only with the OSGi profile.
+
+
+
+1.1 Consoles
+1.1.1 VisualVM plugin for Aspire ALE Server
+The console uses to manage the ALEServer is the standard [VisualVM&gt;https://visualvm.dev.java.net] with the Aspire ALEServer plugin
+
+The Aspire ALEServer plugin gathers in one panel the main operations available on the 4 MBeans previously described.
+
+
+{image:jvisualplugin-aleserver-1.jpg|600}
+
+[Additionnal plugins&gt;https://visualvm.dev.java.net/plugins.html] can completed the management of the host :
+* OSGi plugin (bundles and shell)
+* Tomcat
+* Glassfish (which is also based on Felix since the version 3)
+
+
+
+1.1 Misc
+*[More documentation on the VisualVM ...&gt;Main.Documentation.E2EMngmt-VisualVM]
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AALEServermanagementwithJMX"&gt;Aspire :: ALE Server management with JMX&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HALEServerMBeans"&gt;1 ALEServer MBeans&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConsoles"&gt;2 Consoles&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HVisualVMpluginforAspireALEServer"&gt;2.1 VisualVM plugin for Aspire ALE Server&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HMisc"&gt;3 Misc&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;The ALE Server had 2 profiles
+&lt;ul class="star"&gt;
+&lt;li&gt;Tomcat profile : the ALEServer war is deployed in the Tomcat web container&lt;/li&gt;
+&lt;li&gt;OSGi profile: the ALEServer bundle is deployed in the Felix OGSi container with PaxWeb. Extra libraries and DLL/SO can be deployed dynamically without rebooting the server. This profile includes also sensors drivers deployed as bundles.&lt;/li&gt;
+&lt;/ul&gt;This section describes the management of the ALE server profiles (with and without OSGi) with JMX.&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://en.wikipedia.org/wiki/Java_Management_Extensions"&gt;&amp;#74;MX (Java Management eXtension)&lt;/a&gt;&lt;/span&gt; is the de-facto standard for managing and for monitoring Java applications and middlewares.&lt;p class="paragraph"/&gt;The management is composed of 2 parts
+&lt;ul class="star"&gt;
+&lt;li&gt;MBean which are probes to manage/monitor the ALEServer elements and its extensions (sensors, ...).&lt;/li&gt;
+&lt;li&gt;consoles&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HALEServerMBeans"&gt;1 ALEServer MBeans&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The ALEServer can be managed with the following MBeans:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=server&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.AleServer&lt;/code&gt;) provides general information about the ALEServer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=lrspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.LRSpec&lt;/code&gt;) manages LRSpec (add, remove)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=ecspec&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.ECSpec&lt;/code&gt;) manages ECSpec (add, remove)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;org.ow2.aspirerfid:type=aleserver,name=sensor&lt;/code&gt; (class &lt;code&gt;org.ow2.aspirerfid.ale.server.mbean.Sensor&lt;/code&gt;) provides informations on sensors activated on the OSGi part of the ALEServer. Remark: This MBean is activated only with the OSGi profile.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HConsoles"&gt;2 Consoles&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HVisualVMpluginforAspireALEServer"&gt;2.1 VisualVM plugin for Aspire ALE Server&lt;/span&gt;&lt;/h4&gt; 
+The console uses to manage the ALEServer is the standard &lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net"&gt;&amp;#86;isualVM&lt;/a&gt;&lt;/span&gt; with the Aspire ALEServer plugin&lt;p class="paragraph"/&gt;The Aspire ALEServer plugin gathers in one panel the main operations available on the 4 MBeans previously described.&lt;p class="paragraph"/&gt;
+&lt;img src="/xwiki/bin/download/Main.Documentation/E2EMngmt-ALEServer-JMX/jvisualplugin-aleserver-1.jpg" height="600" alt="jvisualplugin-aleserver-1.jpg" /&gt;&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="https://visualvm.dev.java.net/plugins.html"&gt;&amp;#65;dditionnal plugins&lt;/a&gt;&lt;/span&gt; can completed the management of the host :
+&lt;ul class="star"&gt;
+&lt;li&gt;OSGi plugin (bundles and shell)&lt;/li&gt;
+&lt;li&gt;Tomcat&lt;/li&gt;
+&lt;li&gt;Glassfish (which is also based on Felix since the version 3)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;3 Misc&lt;/span&gt;&lt;/h3&gt; 
+*&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/E2EMngmt-VisualVM"&gt;More documentation on the VisualVM ...&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

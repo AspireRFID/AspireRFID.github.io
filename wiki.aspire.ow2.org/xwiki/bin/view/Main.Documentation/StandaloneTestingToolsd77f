@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>StandaloneTestingTools</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1233759048000</creationDate>
+<date>1276215560000</date>
+<contentUpdateDate>1276215560000</contentUpdateDate>
+<version>1.8</version>
+<title>Standalone Testing Tools</title>
+<template></template>
+<content>1 Standalone Testing Tools
+
+----
+#toc("" "" "true")
+----
+
+1.1 Embedded Tools
+
+This section is dedicated to describe two embedded tools:
+* [Tag Generator&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagGenerator]: generate tag ids in hexadecimal format in order to validate the EPC grouping and filtering engines of the ALE.
+* [Tag Searcher&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagSearcher]: based on searching algorithm and is used to look for an item in the neighborhood by the beep frequency of the PDA.
+
+
+1.1 TCP Capturer
+1.1.1 Objective
+TCP Message Capturer is a simple application that captures TCP messages at the default port “9999” (if any isn’t specified) or at a port that can be defined.
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* none
+
+*Software*
+* Java 1.6
+
+1.1.1 Download &amp; Run Instructions
+* You can download it at the [ApireRFID Forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324].
+
+
+* For running the application just execute the following at the command line:
+** “java –jar aspireTcpMessageCapturer-(version)-jar-with-dependencies.jar &lt;PortNumber&gt;” if you want to make it listen at a specific port number or
+** without arguments if you want to use the default one (9999).
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HStandaloneTestingTools"&gt;Standalone Testing Tools&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HEmbeddedTools"&gt;1 Embedded Tools&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTCPCapturer"&gt;2 TCP Capturer&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HObjective"&gt;2.1 Objective&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRequirements"&gt;2.2 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDownload26RunInstructions"&gt;2.3 Download &amp; Run Instructions&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HEmbeddedTools"&gt;Embedded Tools&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This section is dedicated to describe two embedded tools:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagGenerator"&gt;&amp;#84;ag Generator&lt;/a&gt;&lt;/span&gt;: generate tag ids in hexadecimal format in order to validate the EPC grouping and filtering engines of the ALE.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.EmbeddedTools/TagSearcher"&gt;&amp;#84;ag Searcher&lt;/a&gt;&lt;/span&gt;: based on searching algorithm and is used to look for an item in the neighborhood by the beep frequency of the PDA.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HTCPCapturer"&gt;TCP Capturer&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HObjective"&gt;Objective&lt;/span&gt;&lt;/h4&gt; 
+TCP Message Capturer is a simple application that captures TCP messages at the default port “9999” (if any isn’t specified) or at a port that can be defined.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;none&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26RunInstructions"&gt;Download &amp; Run Instructions&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;You can download it at the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#65;pireRFID Forge&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;For running the application just execute the following at the command line:&lt;ul class="star"&gt;
+&lt;li&gt;“java –jar aspireTcpMessageCapturer-(version)-jar-with-dependencies.jar &lt;PortNumber&gt;” if you want to make it listen at a specific port number or&lt;/li&gt;
+&lt;li&gt;without arguments if you want to use the default one (9999).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

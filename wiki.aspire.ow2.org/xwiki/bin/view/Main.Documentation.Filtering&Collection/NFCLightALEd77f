@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Filtering&amp;Collection</web>
+<name>NFCLightALE</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>xwiki:XWiki.schmidt</creator>
+<author>xwiki:XWiki.schmidt</author>
+<contentAuthor>xwiki:XWiki.schmidt</contentAuthor>
+<creationDate>1328698038000</creationDate>
+<date>1328698470000</date>
+<contentUpdateDate>1328698470000</contentUpdateDate>
+<version>1.5</version>
+<title>NFC Light ALE</title>
+<template></template>
+<content>1 NFC Light ALE
+
+#toc("" "" "true")
+
+This section describes the NFC Light ALE application software developed by the POPS team, Inria-Lille. This software includes a light-ALE which can be implemented in NFC-enabled mobile phones (we choose the Nokia 6212 classic in our tests). This application can read (and write) data from (and to) NFC tags.
+
+1.1 Download
+You can download the application source files from [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=17884].
+
+
+1.1 User Guide
+~~Under construction~~</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HNFCLightALE"&gt;NFC Light ALE&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload"&gt;1 Download&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserGuide"&gt;2 User Guide&lt;/a&gt; 
+      &lt;/ul&gt; 
+This section describes the NFC Light ALE application software developed by the POPS team, Inria-Lille. This software includes a light-ALE which can be implemented in NFC-enabled mobile phones (we choose the Nokia 6212 classic in our tests). This application can read (and write) data from (and to) NFC tags.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDownload"&gt;Download&lt;/span&gt;&lt;/h3&gt; 
+You can download the application source files from &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=17884"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;User Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;i class="italic"&gt;Under construction&lt;/i&gt;
+</renderedcontent>
+</xwikidoc>

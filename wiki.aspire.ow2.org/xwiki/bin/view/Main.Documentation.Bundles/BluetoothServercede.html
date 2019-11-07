@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/BluetoothServer?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:45:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - BluetoothServer
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogina85e.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/BluetoothServer?xpage=code&amp;">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='BluetoothServer.html'>Aspire :: OSGi Bundles :: Bluetooth Server</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.Bundles/Main.Documentation.Bundles_BluetoothServer.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="BluetoothServerd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation.Bundles/BluetoothServercede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="BluetoothServerd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Aspire :: OSGi Bundles :: Bluetooth Server
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+1.1 Goal
+
+This bundle provides a multi-client bluetooth server.
+It provides a BluetoothServerService service when activated, and must be configured before being the server really starts.
+
+It uses the [Bluecove JSR82 implementation&#62;http://bluecove.org], so all the device configuration may be done by setting Java system properties (see [the bluecove documentation&#62;http://code.google.com/p/bluecove/wiki/Documentation]).
+
+The server waits for a new client via a blocking call, so run it in a specific thread.
+Each client is run in a thread, due to blocking InputStream calls.
+
+1.1 Sample usage
+
+1.1.1 How to start the server
+
+{code}
+// Read properties and threads
+BluetoothServerService m_server = new BluetoothServerImpl();
+
+// Set the device discoverable
+m_server.prepareServer();
+
+// Start listening in a special thread
+m_server.startServer();
+{code}
+
+1.1.1 How to stop the server
+
+{code}
+m_server.stop();
+{code}
+
+1.1.1 How to configure the server
+
+The server can be configured via a property XML file, given as an InputStream parameter to the prepareServer() method.
+
+Sample : Read a configuration XML file embedded in the bundle JAR file.
+
+{code}
+m_server.prepareServer(getClass().getResourceAsStream(&#34;/bluetoothConfig.xml&#34;));
+{code}
+
+Parameters :
+
+{table}
+Key|Type|Description|Default
+uuid|String|Server's &#34;Universally&#34; Unique IDentifier|
+serviceName|String|Server's name|
+authenticate|boolean|Server needs client authentification|false
+encrypt|boolean|Communication must be encrypted|false
+inquiryMode|int|Type of inquiries to respond to (GIAC or LIAC) (see http://bluecove.org/bluecove/apidocs/javax/bluetooth/DiscoveryAgent.html)|GIAC
+debug|boolean|Verbose mode|false
+readingMode|BYTE, CHAR or UTF|Which DataInputStream reading method must be used (readByte, readChar or readUTF)|CHAR
+max_threads|int|Maximum number of communication threads (not used)|
+{table}
+
+1.1.1 How to read data from devices
+
+This bundle use a listener model : each class who needs to read communication data must implement the CommunicationListener interface.
+
+This interface provides three functions :
+* commBegin(String logicalName) : Called when a client has just connected the server, logicalName is UUID generated by the server to identify a connection
+* commEnd(String logicalName) : Called when a client has ended the connection, or when the server stops.
+* commRead(String logicalName, String data) : Called when the server read a line from the client.
+
+The logical name is the client unique identifier, based on its Bluetooth address and its friendly name (if present).
+
+{code}
+class BluetoothComm implements CommunicationListener {
+  private BluetoothServerService m_server;
+
+  public BluetoothComm()
+    m_server = new BluetoothServerImpl();
+    m_server.prepareServer(getClass().getResourceAsStream(&#34;/bluetoothConfig.xml&#34;));
+    m_server.startServer();
+    m_server.addCommunicationListener(this);
+  }
+
+  public void commBegin(String logicalName) {
+    System.out.println(&#34;Client connected : &#34; + logicalName);
+  }
+
+  public void commEnd(String logicalName) {
+    System.out.println(&#34;Client gone : &#34; + logicalName);
+  }
+
+  public void commRead(String logicalName, String data) {
+    System.out.println(&#34;Read '&#34; + data + &#34;' from &#34; + logicalName);
+
+    // Write some data in response
+    try {
+      m_server.getCommunication(logicalName).writeData(&#34;ACK\n&#34;);
+    }
+    catch (IOException e) {
+      // Error occurred during write process
+    }
+  }
+}
+{code}
+
+1.1 Issues under Linux
+
+1.1.1 License issue
+
+* For latest versions BlueZ (v4 and higher), this bundle needs bluecove-gpl library to work, under GPL.
+* For older versions, it *may* be possible to use bluecove-bluez instead, under Apache License 2.0 (*not tested*).
+
+1.1.1 Rights issue
+
+This bundle needs to have root rights in order to set the device discoverable.
+
+A solution to bypass this problem is to set the device discoverable in system wide configuration.
+(It can be done with user rights with gnome-bluetooth, for example).
+
+1.1 Test
+1.1.1 Operating systems
+
+* Windows
+** Windows 7, 32 bits version
+* Linux
+** Fedora 13, 64 bits version, with bluecove-gpl
+
+1.1.1 Dongles
+
+* Built-in AsusTEK bluetooth device, with generic drivers
+
+1.1 Hints for future improvements
+
+* Control the number of client threads, by aggregating them in a thread pool.</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main.Documentation/Bundles.html'>Main.Documentation.Bundles</a> &gt; <a href='BluetoothServer.html'>Aspire :: OSGi Bundles :: Bluetooth Server</a>
+  (en)
+ <br />
+  Creator: donsez
+ &nbsp;Date: 2010/06/10 14:49
+ <br />
+ Last Author: calmant
+ &nbsp;Date: 2010/08/26 19:51
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Bundles/BluetoothServer?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:45:50 GMT -->
+</html>

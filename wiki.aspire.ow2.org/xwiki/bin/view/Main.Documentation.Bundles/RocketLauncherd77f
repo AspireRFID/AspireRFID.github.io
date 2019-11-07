@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>RocketLauncher</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1277971808000</creationDate>
+<date>1278587413000</date>
+<contentUpdateDate>1278587413000</contentUpdateDate>
+<version>1.4</version>
+<title>Aspire :: Bundles :: Rocket Launcher</title>
+<template></template>
+<content>1 Aspire :: Bundles :: Rocket Launcher
+
+This bundle provides a service and a command to control *one* USB Rocket Laucher connected to the host.
+
+The USB Rocket Launcher is a USB toy able to fire 3 foam darts and rotate its tower.
+
+This project provides two bundles :
+* rocket.launcher : the rocket launcher handler, based on libusbjava
+** Provides the org.ow2.aspirerfid.rocket.service.RocketService, to control the RocketLauncher
+* rocket.command : the Felix command to use the rocket launcher
+** Provides the 'rocket' command
+
+1.1 Installation
+
+1.1.1 Windows
+
+Not tested yet, may be the same as [iBuddy&gt;Main.Documentation.Bundles.iBuddy]
+
+1.1.1 Linux
+
+Same as [iBuddy&gt;Main.Documentation.Bundles.iBuddy]
+
+1.1 Usage
+
+The bundle rocket.command provides a command for the Felix shell
+The sub-commands are:
+
+{code}
+rocket fire [all] : Fires a rocket. All rockets if told so.
+rocket move &lt;time&gt; &lt;direction:up|down|left|right|upleft|upright|downleft|downright&gt; [fire] ... : moves the tower &lt;direction&gt; during &lt;time&gt; ms. Can fire between/after moves.
+{code}
+
+1.1.1 Example
+
+{code}
+rocket fire
+rocket move 100 left 3000 up fire 5000 downright fire 2000 right fire
+{code}
+
+It seems the tower stops moving after 5 seconds.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3ARocketLauncher"&gt;Aspire :: Bundles :: Rocket Launcher&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;This bundle provides a service and a command to control &lt;strong class="strong"&gt;one&lt;/strong&gt; USB Rocket Laucher connected to the host.&lt;p class="paragraph"/&gt;The USB Rocket Launcher is a USB toy able to fire 3 foam darts and rotate its tower.&lt;p class="paragraph"/&gt;This project provides two bundles :
+&lt;ul class="star"&gt;
+&lt;li&gt;rocket.launcher : the rocket launcher handler, based on libusbjava&lt;ul class="star"&gt;
+&lt;li&gt;Provides the org.ow2.aspirerfid.rocket.service.RocketService, to control the RocketLauncher&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;rocket.command : the Felix command to use the rocket launcher&lt;ul class="star"&gt;
+&lt;li&gt;Provides the 'rocket' command&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstallation"&gt;Installation&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWindows"&gt;Windows&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Not tested yet, may be the same as &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/iBuddy"&gt;iBuddy&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLinux"&gt;Linux&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Same as &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/iBuddy"&gt;iBuddy&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsage"&gt;Usage&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The bundle rocket.command provides a command for the Felix shell
+The sub-commands are:&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;rocket fire &amp;#91;all&amp;#93; : Fires a rocket. All rockets &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; told so.
+rocket move &amp;#60;time&amp;#62; &amp;#60;direction:up|down|left|right|upleft|upright|downleft|downright&amp;#62; &amp;#91;fire&amp;#93; &amp;#8230; : moves the tower &amp;#60;direction&amp;#62; during &amp;#60;time&amp;#62; ms. Can fire between/after moves.&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HExample"&gt;Example&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;rocket fire
+rocket move 100 left 3000 up fire 5000 downright fire 2000 right fire&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;It seems the tower stops moving after 5 seconds.
+</renderedcontent>
+</xwikidoc>

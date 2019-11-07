@@ -1,0 +1,1 @@
+document.write('<iframe src=\'https://www.openhub.net/p/15713/widgets/project_partner_badge.html\' scrolling=\'no\' marginHeight=0 marginWidth=0 style=\'height: 50px; width: 245px; border: none;\'><\/iframe>')

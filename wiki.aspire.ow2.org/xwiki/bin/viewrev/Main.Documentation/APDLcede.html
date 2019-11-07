@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation/APDL?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:28:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - APDL
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_APDL.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation/APDLd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/APDLcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation/APDLd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1.1 ASPIRE Process Description Language (APDL)
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+1.1.1 APDL Specification
+
+The AspireRFID Process Description Language (APDL) Specification has a structure as shown in the figure below.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/apdl_structure.jpg&#34;&#62;{image:apdl_structure.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+The root element that may contain the description of a complete open loop business process, such as a supply chain, is the Open Loop Composite Business Process (&#38;lt;OLCBProc/&#38;gt;).
+
+An OLCBProc element consists of the following:
+
+* a set of Closed Loop Composite Business Process (&#38;lt;CLCBProc/&#38;gt;) elements, capable of describing complete closed loop supply chain scenarios. A CLCBProc elemtent consists of:
+
+** A Description (&#38;lt;Description/&#38;gt;) element.
+** A set of Elementary Business Process (&#38;lt;EBProc/&#38;gt;) elements. EBProc's are the most important elements in the APDL definition since the whole process can be broke down to Elementary Business process. Each one of them carries information that the AspireRfid middleware requires in order to be configured. An EBProc element contains:
+
+*** A Description (&#38;lt;Description/&#38;gt;) element, with a simple description of the process.
+
+*** A TransitionRestrictions (&#38;lt;TransitionRestrictions/&#38;gt;) element, containing a set of TransitionRestriction (&#38;lt;TransitionRestriction/&#38;gt;) elements.
+
+*** An ExtendedAttributes (&#38;lt;ExtendedAttributes/&#38;gt;) element, containing a set of ExtendedAttribute (&#38;lt;ExtendedAttribute/&#38;gt;) elements. This element is used in order to store the basic configuration data, for instance the ECSpec Subscription URI, and the element's graphical representation data.
+
+
+*** A set of DataFields, that include the required ECSpec (&#38;lt;ECSpec/&#38;gt;), LRSpec (&#38;lt;LRSpec/&#38;gt;) and Master Data (&#38;lt;EPCISMasterDataDocument/&#38;gt;) documents.
+
+** A Transitions (&#38;lt;Transitions/&#38;gt;) element, that carries the Elementary Business Process context-related semantics description of the ransitions between them. The Transition element is based on the XPDL V1.0 specification.
+
+* A Transitions (&#38;lt;Transitions/&#38;gt;) element, in the same fashion as in the EBProc element, regarding Closed Loop Composite Business processes this time.
+
+Note that the description is not complete; the aim is to provide a general overview for the understanding of the basic concepts behind the APDL inception. A complete reference on the structure and a means to assure creation of valid APDL files is provided by the corresponding XSD (XML Schema Definition) document: &#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/apdl.xsd&#34;&#62;apdl.xsd&#60;/a&#62;.
+
+
+1.1 Describing an RFID Workflow Process Scenario Using APDL
+
+In this example we will describe how an APDL specification file can be defined in order to configure the whole middleware serving a warehouse receiving process.
+
+1.1.1 Problem description
+
+A Company Named &#34;Acme&#34; is a Personal Computer Assembler and collaborates with a Microchip Manufacturer that provides it with the required CPUs. Acme, at regular basis places orders to the Microchip Manufacturer for specific CPUs. Acme owns a central building with three warehouses. The first warehouse named Warehouse1 has 2 Sections named Section1 and Section2, respectively. Section1 has an entrance point where the delivered goods arrive.
+
+Acme needs a way to automatically receive goods at Warehouse1 Section1 and inform its Warehouse Management System (WMS) for the new product availability and the correct completeness of each transaction.
+
+
+1.1.1 Solution Requirements
+
+An RFID Portal should be placed to Acme's Warehouse1 Section1 entrance point which will be called ReadPoint1. The RFID portal will be equipped with one Reader WarehouseRfidReader1. The received goods should get equipped with preprogrammed RFID tags from their &#34;Manufacturer&#34;. The received goods should be accompanied with a preprogrammed RFID enabled delivery document. And finally the middleware should be configured for the specific scenario.
+
+
+1.1.1 Building the Required APDL Specification File
+
+For this solution we need to build an CLCBProc as shown below (of id: urn:epcglobal:fmcg:bti:acmesupplying) which will include ACME’s Elementary Business Processes. We are dealing only with one company so defining other Close Loop Business Processes will not be required. 
+
+
+{code:xml}
+
+&#60;OLCBProc&#62;
+	&#60;!-- AspireRFID Process Description (Language Specification) --&#62;
+
+	&#60;CLCBProc id=&#34;urn:epcglobal:fmcg:bti:acmesupplying&#34; name=&#34;CompositeBusinessProcessName&#34;&#62;
+		&#60;!-- RFID Composite Business Process Specification (the ID will be the Described Transactions's URI)--&#62;
+		&#60;Description&#62;Acme Supply Chain&#60;/Description&#62;
+
+		&#60;EBProc Id=&#34;CLCBProcEnd&#34; Name=&#34;CLCBProcEnd&#34;/&#62;
+
+		&#60;EBProc Id=&#34;CLCBProcStart&#34; Name=&#34;CLCBProcStart&#34;/&#62;
+
+		&#60;EBProc id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive&#34; name=&#34;AcmeWarehouse3Ship&#34;/&#62;
+
+		&#60;Transitions/&#62;
+	&#60;/CLCBProc&#62;
+
+&#60;/OLCBProc&#62;
+
+{code}
+
+
+The EBProcesses we are going to include to the CLCBProc are the CLCBProcStart and CLCBProcEnd which are only used for the Start and Stop graphical representation of the CLCBProc. Finally, the AcmeWarehouse3Ship EBProc is included which will describe ACME's Business Scenario solution as shown above. For describing the AcmeWarehouse3Ship (see code below) except the Transition Restrictions which are used for describing the way one EBProc is related to one another, the Extended Attributes which are used for the process graphical representation and the AspireRFID Runtime configuration (e.g. ECSpecSubscriptionURI) the most important role for the completion of the &#34;puzzle&#34; is undertaken from the DataFields element.
+
+
+{code:xml}
+&#60;EBProc id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive&#34; 
+	  name=&#34;AcmeWarehouse3Ship&#34;&#62;
+	&#60;!-- Elementary RFID Business Process Specification (the ID will be the
+	Described Event's URI)--&#62;
+	&#60;Description&#62;Acme Warehouse 3 Receiving ReadPoint5 Gate3&#60;/Description&#62;
+	&#60;TransitionRestrictions&#62;
+		&#60;TransitionRestriction&#62;
+			&#60;Join Type=&#34;AND&#34;/&#62;
+		&#60;/TransitionRestriction&#62;
+	&#60;/TransitionRestrictions&#62;
+	&#60;ExtendedAttributes&#62;
+		&#60;ExtendedAttribute Name=&#34;XOffset&#34; Value=&#34;204&#34;/&#62;
+		&#60;ExtendedAttribute Name=&#34;YOffset&#34; Value=&#34;204&#34;/&#62;
+		&#60;ExtendedAttribute Name=&#34;CellHeight&#34; Value=&#34;30&#34;/&#62;
+		&#60;ExtendedAttribute Name=&#34;CellWidth&#34; Value=&#34;313&#34;/&#62;
+		&#60;ExtendedAttribute Name=&#34;ECSpecSubscriptionURI&#34; Value=&#34;http://localhost:9999&#34;/&#62;
+		&#60;ExtendedAttribute Name=&#34;DefinedECSpecName&#34; Value=&#34;Warehouse3RecievingObjectEvent&#34;/&#62;
+		&#60;!-- The DefinedLRSpecNames can be collected from the defined
+		 logicalReaders names at the ECSpec --&#62;
+		&#60;!-- For the BEG configuration the port can be collected from the
+		&#34;ECSpecSubscriptionURI&#34; value
+		and the event to serve from the EBPSpec id --&#62;
+	&#60;/ExtendedAttributes&#62;
+	&#60;DataFields&#62;
+	&#60;/DataFields&#62;
+&#60;/EBProc&#62;
+{code}
+
+
+DataFields contains the specification files required to configure the AspireRFID F&#38;amp;C server (by defining the ECSpec and LRSpec) and the Business Event Generator (By defining the Transaction Vocabulary at the EPCIS repository Master Data through an EPCISMasterDataDocument).
+
+
+1.1.1 ECSpec definition
+
+To Configure the F&#38;amp;C module, an ECSpec is required for creating Object Events for the Class of &#34;products&#34; and the Class of &#34;receiving notes&#34; that we expect to pass through the gate and that concerns our transaction. For the &#34;bizTransactionIDs&#34; reportSpec we will set the &#34;receiving notes&#34; Class ID's and for the &#34;transactionItems&#34; reportSpec we will set the &#34;received items&#34; Class ID's.
+
+
+* So the &#34;receiving notes&#34; Class is:
+** urn:epc:pat:gid-96:145.12.*
+* and the &#34;received items&#34; Classes are:
+** urn:epc:pat:gid-96:145.233.*
+** urn:epc:pat:gid-96:145.255.*
+
+
+The ECSpec DataField that should be created is shown below. Note that at the configuration time the ECSpec name that will be used is the ECSpec DataField ID and at the ECRepot names the EBProc’s ID will be concatenated to them for example the bizTransactionIDs will become bizTransactionIDs_urn:epcglobal:fmcg:bte:acmewarehouse1receive and the transactionItems will become transactionItems_urn:epcglobal:fmcg:bte:acmewarehouse1receive that are required to be delivered to the BEG engine.
+
+
+
+{code:xml}
+
+&#60;DataField id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive_ecspec&#34; type=&#34;ECSpec&#34; name=&#34;RecievingECSpec&#34;&#62;
+	&#60;ECSpec includeSpecInReports=&#34;false&#34;&#62;
+		&#60;logicalReaders&#62;
+			&#60;logicalReader&#62;SmartLabImpinjSpeedwayLogicalReader&#60;/logicalReader&#62;
+		&#60;/logicalReaders&#62;
+		&#60;boundarySpec&#62;
+			&#60;repeatPeriod unit=&#34;MS&#34;&#62;4500&#60;/repeatPeriod&#62;
+			&#60;duration unit=&#34;MS&#34;&#62;4500&#60;/duration&#62;
+			&#60;stableSetInterval unit=&#34;MS&#34;&#62;0
+			&#60;/stableSetInterval&#62;
+		&#60;/boundarySpec&#62;
+		&#60;reportSpecs&#62;
+			&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;bizTransactionIDs&#34; reportIfEmpty=&#34;true&#34;&#62;
+				&#60;reportSet set=&#34;CURRENT&#34;/&#62;
+					&#60;filterSpec&#62;
+					&#60;includePatterns&#62;
+						&#60;includePattern&#62;
+						    urn:epc:pat:gid-96:145.12.*
+						&#60;/includePattern&#62;
+					&#60;/includePatterns&#62;
+					&#60;excludePatterns/&#62;
+				&#60;/filterSpec&#62;
+				&#60;groupSpec/&#62;
+				&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34; includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34;/&#62;
+			&#60;/reportSpec&#62;
+			&#60;reportSpec reportOnlyOnChange=&#34;false&#34; reportName=&#34;transactionItems&#34; reportIfEmpty=&#34;true&#34;&#62;
+				&#60;reportSet set=&#34;ADDITIONS&#34;/&#62;
+				&#60;filterSpec&#62;
+					&#60;includePatterns&#62;
+						&#60;includePattern&#62;urn:epc:pat:gid-96:145.233.*&#60;/includePattern&#62;
+						&#60;includePattern&#62;urn:epc:pat:gid-96:145.255.*&#60;/includePattern&#62;
+					&#60;/includePatterns&#62;
+					&#60;excludePatterns/&#62;
+				&#60;/filterSpec&#62;
+				&#60;groupSpec/&#62;
+				&#60;output includeTag=&#34;true&#34; includeRawHex=&#34;true&#34; includeRawDecimal=&#34;true&#34; includeEPC=&#34;true&#34; includeCount=&#34;true&#34;/&#62;
+			&#60;/reportSpec&#62;
+		&#60;/reportSpecs&#62;
+		&#60;extension/&#62;
+	&#60;/ECSpec&#62;
+&#60;/DataField&#62;
+
+{code}
+
+
+
+1.1.1 LRSpec Definition
+
+For the LRSpec DataField definition the dynamic LRSpec definition of an Impinj Speedway LLRP reader is used as shown below where at the configuration time the LRSpec DataField's name (SmartLabImpinjSpeedwayLogicalReader) will be used as the Logicals Reader name which is included also at the ECSpec's LogicalReader list.
+
+
+{code:xml}
+&#60;DataField id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive_lrspec&#34; 
+	type=&#34;LRSpec&#34; name=&#34; SmartLabImpinjSpeedwayLogicalReader&#34;&#62;
+	&#60;LRSPec&#62;
+		&#60;isComposite&#62;false&#60;/isComposite&#62;
+		&#60;readers/&#62;
+		&#60;properties&#62;
+			&#60;property&#62;
+				&#60;name&#62;Description&#60;/name&#62;
+				&#60;value&#62;This Logical Reader consists of read point 1,2,3&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;ConnectionPointAddress&#60;/name&#62;
+				&#60;value&#62;192.168.212.238&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;ConnectionPointPort&#60;/name&#62;
+				&#60;value&#62;5084&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;ReadTimeInterval&#60;/name&#62;
+				&#60;value&#62;1000&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;PhysicalReaderSource&#60;/name&#62;
+				&#60;value&#62;1,2,3&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;RoSpecID&#60;/name&#62;
+				&#60;value&#62;1&#60;/value&#62;
+			&#60;/property&#62;
+			&#60;property&#62;
+				&#60;name&#62;ReaderType&#60;/name&#62;
+				&#60;value&#62;org.ow2.aspirerfid.ale.server.readers.llrp.LLRPAdaptor&#60;/value&#62;
+			&#60;/property&#62;
+		&#60;/properties&#62;
+	&#60;/LRSPec&#62;
+&#60;/DataField&#62;
+{code}
+
+
+
+
+1.1.1 BEG Module Required Data Field
+
+The Business Event Generator needs to get the Transaction Event to serve which is the Warehouse1DocDoorReceive (with URI urn:epcglobal:fmcg:bte:acmewarehouse1receive) and the description of it from the Information Sharing module repository which should be set up using the information from the table below.
+
+
+{table}
+Business  Transaction Attribute Name | Business  Transaction Attribute Value
+urn:epcglobal:epcis:mda:event_name | Warehouse1DocDoorReceive
+urn:epcglobal:epcis:mda:event_type | ObjectEvent
+urn:epcglobal:epcis:mda:business_step | urn:epcglobal:fmcg:bizstep:receiving
+urn:epcglobal:epcis:mda:business_location | urn:epcglobal:fmcg:loc:acme:warehouse1
+urn:epcglobal:epcis:mda:disposition | urn:epcglobal:fmcg:disp:in_progress
+urn:epcglobal:epcis:mda:ecspec_name | ECSpecObjectEventFiltering
+urn:epcglobal:epcis:mda:read_point | urn:epcglobal:fmcg:loc:Warehouse1DocDoor
+urn:epcglobal:epcis:mda:transaction_type | urn:epcglobal:fmcg:btt:receiving
+urn:epcglobal:epcis:mda:action | OBSERVE
+{table}
+
+
+We create an EPCISMasterDataDocument DataField as shown in the following code. Note that we are not including the required from the BEG engine ECReport names at the description because this information can be retrieved from the EBProc's ID and the Event Type. Because this is an Object Event we know that two reports are required the bizTransactionIDs and the transactionItems where the EBProc ID urn:epcglobal:fmcg:bte:acmewarehouse1receive will get concatenated.
+
+
+
+{code:xml}
+&#60;DataField id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive_masterdata&#34; 
+	type=&#34;EPCISMasterDataDocument&#34; name=&#34;RecievingMasterData&#34;&#62;
+	&#60;EPCISMasterDataDocument&#62;
+		&#60;EPCISBody&#62;
+			&#60;VocabularyList&#62;
+				&#60;Vocabulary 
+					type=&#34;urn:epcglobal:epcis:vtype:BusinessTransaction&#34;&#62;
+					&#60;VocabularyElementList&#62;
+						&#60;VocabularyElement id=&#34;urn:epcglobal:fmcg:bte:acmewarehouse1receive&#34;&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:event_name&#34;&#62;Warehouse1DocDoorReceive&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:event_type&#34;&#62;ObjectEvent&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:business_step&#34;&#62;urn:epcglobal:fmcg:bizstep:receiving&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:business_location&#34;&#62;urn:epcglobal:fmcg:loc:acme:warehouse1&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:disposition&#34;&#62;urn:epcglobal:fmcg:disp:in_progress&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:read_point&#34;&#62;urn:epcglobal:fmcg:loc:rp:warehouse1docdoor&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:transaction_type&#34;&#62;urn:epcglobal:fmcg:btt:receiving&#60;/attribute&#62;
+							&#60;attribute id=&#34;urn:epcglobal:epcis:mda:action&#34;&#62;OBSERVE&#60;/attribute&#62;
+						&#60;/VocabularyElement&#62;
+					&#60;/VocabularyElementList&#62;
+				&#60;/Vocabulary&#62;
+			&#60;/VocabularyList&#62;
+		&#60;/EPCISBody&#62;
+	&#60;/EPCISMasterDataDocument&#62;
+&#60;/DataField&#62;
+
+{code}
+
+
+
+1.1.1 Process Description
+
+
+As visualized at the figure below, the order arrives to ACME's premises. ACME's RFID portal (ReadPoint1) reads the deliveryID and all the products that follow with the help of WarehouseRfidReader1. AspireRfid ALE filters out the readings and sends two reports to AspireRfid BEG, one with the deliveryID and one with all the products tags. AspireRfid BEG collects these reports, binds the deliveryID with the products tags and sends this event to the AspireRfid EPCIS Repository. The AspireRfid EPCIS Repository informs the Connector for the incoming event which in his turn sends this information to ACME's WMS. When the WMS confirms that all the requested products were delivered it sends a &#34;transaction finish&#34; message to the AspireRfid Connector which in his turn unsubscribe for the specific deliveryID and sends a &#34;transaction finish&#34; to the RFID Repository.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/APDL/acme.jpg&#34;&#62;{image:acme.jpg|320}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1 Conclusions
+
+In this scenario, we demonstrated how APDL can be used in order to model a real-world scenario. Specifically, we present and analyze the steps that the [APE] will follow while parsing an APDL file in order to configure end-to-end a realistic real-world scenario.
+
+
+You can download the APDL file (&#60;a href=&#34;http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/APDL/acme.apdl&#34;&#62;acme.apdl&#60;/a&#62;) that contains the complete RFID solution.
+
+
+
+
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

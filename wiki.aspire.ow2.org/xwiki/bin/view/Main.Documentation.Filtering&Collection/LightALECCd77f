@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Filtering&amp;Collection</web>
+<name>LightALECC</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.reckeyzhang</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1297699589000</creationDate>
+<date>1297949527000</date>
+<contentUpdateDate>1297949527000</contentUpdateDate>
+<version>1.54</version>
+<title>Light ALECC</title>
+<template></template>
+<attachment>
+<filename>demo.png</filename>
+<filesize>79900</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1297701778000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>LRSpecTagsys.xml</filename>
+<filesize>974</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1297702885000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>CCSpecTagsys.xml</filename>
+<filesize>1047</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1297937764000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Light ALECC
+
+#toc("" "" "true")
+
+1.1 Introduction
+According to the feedback of several RFID application SMEs. They are more likely to accept a light and efficient ALE scheme which only includes the most-used basic modules defined by EPC standard.  They desire that such light scheme can be encapsulated and be flexibly used to establish their own RFID application. 
+
+We developed AspireALECC scheme that is encapsulated in jar and aims to supply an easy and efficient framework for developers to realize the most used basic operations (writing, filering, etc.) defined by the EPC ALECC standard. For the develop users, only four lines are required to integrate our Aspire ALECCscheme in their own application.
+
+1.1 User Guide
+Here is the 5 steps of developing your own ALECC application by using AspireALECC.
+
+1) This tool depends on Aspire-fc-commons-1.0.2.jar: the improved version of fc-commons-1.0.2.jar that supports deserializeCCSpec and deserializeCCReorts.
+You should include the following lib to establish your own ALECC application:
+ *  The current light ALECC lib:  [AspireALECC-1.0.jar&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16306]
+ *  The improved version: [Aspire-fc-commons-1.0.2.jar&gt;http://www.megaupload.com/?d=3X3919AT] and [log4j.jar&gt;http://www.megaupload.com/?d=4IJSLPJ0]
+ *  The [AspireTDT (aspiretdt-0.6.jar + tdt-0.9.0.jar which is developed by Fosstrak) &gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16296]  that allows to translate Tag data form, which is useful for the ALECC filer module. 
+ *  (Optional) For the Tagsys UHF reader users, you should download  [AspireALECCTagsys-1.0.jar&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16305] (which defines different operations related to the reader. i.e. writing operations.) and Rapid21_2_1_0_9892.jar (the driver of Tagsys Infinity510 offered by the manufacture Tagsys).
+  
+   2) If you are using Tagsys UHF reader, just set the value "org.inria.pops.readers.tagsys.TagsysAdaptor" to the ReaderType in LRSpec file.
+
+       If you are not using Tagsys UHF reader, you should (by using the SDK offered by the reader manufacture) define the method:
+*  "ReturnDiscoveredTagIdList" , which allows the reader to discover the tags.
+*  "DoOperation", which defines all the operation related to the specific readers.
+     You can complete the methods according to the example defined in org.inria.pops.readers.tagsys.TagsysAdaptor.java (Source available in AspireALECCTagsys-1.0.jar).  The two methods should be included in the package which is defined in "ReaderType" of your LRSpec.  For example: if the two methods are included in org.YourOrgnisation.readers.YourReaderName.YourReaderNameAdaptor.java. You should set the value of "ReaderType" to org.YourOrgnisation.readers.YourReaderName.YourReaderNameAdaptor
+    
+   3) In your application, you only need to write 4 lines to trigger the Light ALECC.   
+      Firstly initialize LRSpec and CCSpec function:
+ *  	LRspec.initialize();  
+ *  	CCspec.initialize();   
+   
+  4) Then you need to define LRSpec; 
+ *  LRspec.DefineLRSpec(LRname, LRSpecfilePath);
+
+     And  define CCSpec and the Notification IP and port. (AspireALECC supports filering module)
+ *  CCspec.DefineCCSpec(CCname, CCSpecfilePath, port ,IP);
+   
+   5) Finally, you can listen the CCreports on the defined (IP:port) by the following thread RcvCCreportThread() defined in the demo.java. Or you can program it by you own.
+
+   Have fun! :)
+
+
+1.1 Demo
+Here is a demo with a graphic interface to realize AspireALECC scheme:
+
+You can download it [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16307]. If you have a Tagsys UHF reader, test it with the  [LRSpec&gt;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/LRSpecTagsys.xml]
+ and  [CCSpec &gt;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/CCSpecTagsys.xml]
+(Right click and choose "save link as"), don't forget to change the logical reader name (in the field &lt;logicalReader&gt; of the CCSpec file) to your defined LRname.
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/demo.png"&gt;{image:demo.png|500}&lt;/a&gt;
+&lt;/center&gt;
+
+
+At the left-bottom of the interface, we define several basic operation modules of ALECC (Define LRSpec, Define CCSpec, Define notification IP:Port). The right part is the results (CCReports and summary reports) listened on the default port 9999.</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLightALECC"&gt;Light ALECC&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserGuide"&gt;2 User Guide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDemo"&gt;3 Demo&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt; 
+According to the feedback of several RFID application SMEs. They are more likely to accept a light and efficient ALE scheme which only includes the most-used basic modules defined by EPC standard.  They desire that such light scheme can be encapsulated and be flexibly used to establish their own RFID application.&lt;p class="paragraph"/&gt;We developed AspireALECC scheme that is encapsulated in jar and aims to supply an easy and efficient framework for developers to realize the most used basic operations (writing, filering, etc.) defined by the EPC ALECC standard. For the develop users, only four lines are required to integrate our Aspire ALECCscheme in their own application.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;User Guide&lt;/span&gt;&lt;/h3&gt; 
+Here is the 5 steps of developing your own ALECC application by using AspireALECC.&lt;p class="paragraph"/&gt;1) This tool depends on Aspire-fc-commons-1.0.2.jar: the improved version of fc-commons-1.0.2.jar that supports deserializeCCSpec and deserializeCCReorts.
+You should include the following lib to establish your own ALECC application:
+&lt;ul class="star"&gt;
+&lt;li&gt; The current light ALECC lib:  &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16306"&gt;&amp;#65;spireALECC-1.0.jar&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt; The improved version: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.megaupload.com/?d=3X3919AT"&gt;&amp;#65;spire-fc-commons-1.0.2.jar&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.megaupload.com/?d=4IJSLPJ0"&gt;&amp;#108;og4j.jar&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt; The &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16296"&gt;&amp;#65;spireTDT (aspiretdt-0.6.jar + tdt-0.9.0.jar which is developed by Fosstrak) &lt;/a&gt;&lt;/span&gt;  that allows to translate Tag data form, which is useful for the ALECC filer module.&lt;/li&gt;
+&lt;li&gt; (Optional) For the Tagsys UHF reader users, you should download  &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16305"&gt;&amp;#65;spireALECCTagsys-1.0.jar&lt;/a&gt;&lt;/span&gt; (which defines different operations related to the reader. i.e. writing operations.) and Rapid21_2_1_0_9892.jar (the driver of Tagsys Infinity510 offered by the manufacture Tagsys).&lt;/li&gt;
+&lt;/ul&gt;  
+   2) If you are using Tagsys UHF reader, just set the value "org.inria.pops.readers.tagsys.TagsysAdaptor" to the ReaderType in LRSpec file.&lt;p class="paragraph"/&gt;       If you are not using Tagsys UHF reader, you should (by using the SDK offered by the reader manufacture) define the method:
+&lt;ul class="star"&gt;
+&lt;li&gt; "ReturnDiscoveredTagIdList" , which allows the reader to discover the tags.&lt;/li&gt;
+&lt;li&gt; "DoOperation", which defines all the operation related to the specific readers.&lt;/li&gt;
+&lt;/ul&gt;     You can complete the methods according to the example defined in org.inria.pops.readers.tagsys.TagsysAdaptor.java (Source available in AspireALECCTagsys-1.0.jar).  The two methods should be included in the package which is defined in "ReaderType" of your LRSpec.  For example: if the two methods are included in org.YourOrgnisation.readers.YourReaderName.YourReaderNameAdaptor.java. You should set the value of "ReaderType" to org.YourOrgnisation.readers.YourReaderName.YourReaderNameAdaptor&lt;p class="paragraph"/&gt;   3) In your application, you only need to write 4 lines to trigger the Light ALECC.   
+      Firstly initialize LRSpec and CCSpec function:
+&lt;ul class="star"&gt;
+&lt;li&gt; 	LRspec.initialize();&lt;/li&gt;
+&lt;li&gt; 	CCspec.initialize();&lt;/li&gt;
+&lt;/ul&gt;   
+  4) Then you need to define LRSpec; 
+&lt;ul class="star"&gt;
+&lt;li&gt; LRspec.DefineLRSpec(LRname, LRSpecfilePath);&lt;/li&gt;
+&lt;/ul&gt;     And  define CCSpec and the Notification IP and port. (AspireALECC supports filering module)
+&lt;ul class="star"&gt;
+&lt;li&gt; CCspec.DefineCCSpec(CCname, CCSpecfilePath, port ,IP);&lt;/li&gt;
+&lt;/ul&gt;   
+   5) Finally, you can listen the CCreports on the defined (IP:port) by the following thread RcvCCreportThread() defined in the demo.java. Or you can program it by you own.&lt;p class="paragraph"/&gt;   Have fun! :)
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDemo"&gt;Demo&lt;/span&gt;&lt;/h3&gt; 
+Here is a demo with a graphic interface to realize AspireALECC scheme:&lt;p class="paragraph"/&gt;You can download it &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=16307"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. If you have a Tagsys UHF reader, test it with the  &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/LRSpecTagsys.xml"&gt;&amp;#76;RSpec&lt;/a&gt;&lt;/span&gt;
+ and  &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/CCSpecTagsys.xml"&gt;&amp;#67;CSpec &lt;/a&gt;&lt;/span&gt;
+(Right click and choose "save link as"), don't forget to change the logical reader name (in the field &lt;logicalReader&gt; of the CCSpec file) to your defined LRname.
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/demo.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Filtering%26Collection/LightALECC/demo.png" height="500" alt="demo.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;
+At the left-bottom of the interface, we define several basic operation modules of ALECC (Define LRSpec, Define CCSpec, Define notification IP:Port). The right part is the results (CCReports and summary reports) listened on the default port 9999.
+</renderedcontent>
+</xwikidoc>

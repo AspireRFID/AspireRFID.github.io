@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>RXTX</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1276951873000</creationDate>
+<date>1295974701000</date>
+<contentUpdateDate>1295974701000</contentUpdateDate>
+<version>1.16</version>
+<title>Aspire :: OSGi Bundles :: RXTX</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: RXTX
+
+----
+#toc("" "" "true")
+----
+
+1.1 Goal
+
+This bundle packages the java classes and shared libraries (.so, .dll) of the [RXTX project&gt;http://users.frii.com/jarvi/rxtx/index.html]. The RXTX project enables to send and to receive data to/from serial or parallel devices (RFID readers, smartcards readers, modems, gsm, nmea0183 gps, onewire adapter, bluetooth serial port, PIC/AVR boards like Arduino ...).
+
+The artifact is org.ow2.aspirerfid:rxtx
+
+* [rxtx&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx%2F]
+* [rxtx.cmd&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2F]
+* [rxtx-2.2-pre&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx-2.2-pre%2F] (optional)
+
+1.1 RXTX Command
+This command for the Felix shell enables to to send and to receive data to/from serial or parallel devices for:
+* debugging programs using gnu.io
+* dumping serial port (raw or formatted) output (GPS, RFID reader, ...)
+
+The options are:
+{code}
+rxtx list                  : list the available ports
+rxtx open &lt;portname&gt; &lt;baudrate&gt; &lt;flowctrlin&gt; &lt;flowctrlout&gt; &lt;databits&gt; &lt;stopbits&gt; &lt;parity&gt;
+                               flowctrl=None,Xon/XoffOut,Xon/XoffIn,RTS/CTSIn,RTS/CTSOut
+                               databits=5,6,7,8
+                               stopbits=1,1.5,2
+                               parity=None,Odd,Even
+                           : open a serial port
+rxtx close                 : close the current opened port
+rxtx send &lt;bytes in hexa&gt;  : send message bytes
+rxtx binary                : switch IO in hex
+rxtx ascii                 : switch IO in ascii
+rxtx buffersize &lt;size&gt;     : set IO buffer size
+rxtx sendurl &lt;url&gt;         : send bytes contained at the url
+rxtx logfile &lt;filepath&gt;    : log received bytes in the file
+rxtx iowrapper &lt;classname&gt; : set a wrapper for IO parsing and printing. The class could be exported by a external bundle
+rxtx help                  : display this help
+{code}
+
+
+The option iowrapper loads a java class implementing the interface [IOWrapper&gt;http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2Fsrc%2Fmain%2Fjava%2Forg%2Fow2%2Faspirerfid%2Frxtx%2Fcmd%2FIOWrapper.java] in order
+* to encode the messages sent to the port
+* to format the message received from the port
+
+[Examples&gt;http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2Fsrc%2Fsite%2Frxtx.txt]
+
+
+1.1 Sample usage
+
+1.1 RXTX 2.2-pre
+
+A pre-release if 2.2 version is available at : [RXTX Download page&gt;http://rxtx.qbang.org/wiki/index.php/Download].
+It seems to correct some incapacitating bugs on Linux 2.6 kernels.
+
+1.1.1 Build the bundle
+
+# Download the latest RXTX 2.2 binary version : [RXTX Download page&gt;http://rxtx.qbang.org/wiki/index.php/Download].
+# Extract all Windows, Linux and Mac OS files and place them according to the existing folder structure in the bundle ./src/main/resources folder.
+# An extra file may be needed for the i386 version : rxtxParallel.dll. It can be found in the latest RXTX 2.1 binary release.
+# Build and install with Maven.
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3ARXTX"&gt;Aspire :: OSGi Bundles :: RXTX&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HGoal"&gt;1 Goal&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRXTXCommand"&gt;2 RXTX Command&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSampleusage"&gt;3 Sample usage&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRXTX22pre"&gt;4 RXTX 2.2-pre&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HBuildthebundle"&gt;4.1 Build the bundle&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGoal"&gt;Goal&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle packages the java classes and shared libraries (.so, .dll) of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://users.frii.com/jarvi/rxtx/index.html"&gt;&amp;#82;XTX project&lt;/a&gt;&lt;/span&gt;. The RXTX project enables to send and to receive data to/from serial or parallel devices (RFID readers, smartcards readers, modems, gsm, nmea0183 gps, onewire adapter, bluetooth serial port, PIC/AVR boards like Arduino ...).&lt;p class="paragraph"/&gt;The artifact is org.ow2.aspirerfid:rxtx
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx%2F"&gt;&amp;#114;xtx&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2F"&gt;&amp;#114;xtx.cmd&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx-2.2-pre%2F"&gt;&amp;#114;xtx-2.2-pre&lt;/a&gt;&lt;/span&gt; (optional)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HRXTXCommand"&gt;RXTX Command&lt;/span&gt;&lt;/h3&gt; 
+This command for the Felix shell enables to to send and to receive data to/from serial or parallel devices for:
+&lt;ul class="star"&gt;
+&lt;li&gt;debugging programs using gnu.io&lt;/li&gt;
+&lt;li&gt;dumping serial port (raw or formatted) output (GPS, RFID reader, ...)&lt;/li&gt;
+&lt;/ul&gt;The options are:
+&lt;div class="code"&gt;&lt;pre&gt;rxtx list                  : list the available ports
+rxtx open &amp;#60;portname&amp;#62; &amp;#60;baudrate&amp;#62; &amp;#60;flowctrlin&amp;#62; &amp;#60;flowctrlout&amp;#62; &amp;#60;databits&amp;#62; &amp;#60;stopbits&amp;#62; &amp;#60;parity&amp;#62;
+                               flowctrl=None,Xon/XoffOut,Xon/XoffIn,RTS/CTSIn,RTS/CTSOut
+                               databits=5,6,7,8
+                               stopbits=1,1.5,2
+                               parity=None,Odd,Even
+                           : open a serial port
+rxtx close                 : close the current opened port
+rxtx send &amp;#60;bytes in hexa&amp;#62;  : send message bytes
+rxtx binary                : &lt;span class="java&amp;#45;keyword"&gt;switch&lt;/span&gt; IO in hex
+rxtx ascii                 : &lt;span class="java&amp;#45;keyword"&gt;switch&lt;/span&gt; IO in ascii
+rxtx buffersize &amp;#60;size&amp;#62;     : set IO buffer size
+rxtx sendurl &amp;#60;url&amp;#62;         : send bytes contained at the url
+rxtx logfile &amp;#60;filepath&amp;#62;    : log received bytes in the file
+rxtx iowrapper &amp;#60;classname&amp;#62; : set a wrapper &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; IO parsing and printing. The class could be exported by a external bundle
+rxtx help                  : display &lt;span class="java&amp;#45;keyword"&gt;this&lt;/span&gt; help&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+The option iowrapper loads a java class implementing the interface &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2Fsrc%2Fmain%2Fjava%2Forg%2Fow2%2Faspirerfid%2Frxtx%2Fcmd%2FIOWrapper.java"&gt;&amp;#73;OWrapper&lt;/a&gt;&lt;/span&gt; in order
+&lt;ul class="star"&gt;
+&lt;li&gt;to encode the messages sent to the port&lt;/li&gt;
+&lt;li&gt;to format the message received from the port&lt;/li&gt;
+&lt;/ul&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Frxtx.cmd%2Fsrc%2Fsite%2Frxtx.txt"&gt;&amp;#69;xamples&lt;/a&gt;&lt;/span&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSampleusage"&gt;Sample usage&lt;/span&gt;&lt;/h3&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRXTX22pre"&gt;RXTX 2.2-pre&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;A pre-release if 2.2 version is available at : &lt;span class="wikiexternallink"&gt;&lt;a href="http://rxtx.qbang.org/wiki/index.php/Download"&gt;&amp;#82;XTX Download page&lt;/a&gt;&lt;/span&gt;.
+It seems to correct some incapacitating bugs on Linux 2.6 kernels.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBuildthebundle"&gt;Build the bundle&lt;/span&gt;&lt;/h4&gt; 
+&lt;ol&gt;&lt;li&gt;Download the latest RXTX 2.2 binary version : &lt;span class="wikiexternallink"&gt;&lt;a href="http://rxtx.qbang.org/wiki/index.php/Download"&gt;&amp;#82;XTX Download page&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;Extract all Windows, Linux and Mac OS files and place them according to the existing folder structure in the bundle ./src/main/resources folder.&lt;/li&gt;
+&lt;li&gt;An extra file may be needed for the i386 version : rxtxParallel.dll. It can be found in the latest RXTX 2.1 binary release.&lt;/li&gt;
+&lt;li&gt;Build and install with Maven.&lt;/li&gt;
+&lt;/ol&gt;
+</renderedcontent>
+</xwikidoc>

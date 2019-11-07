@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>CompetitiveAdvantageOfUsingAspireRFID</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1307460108000</creationDate>
+<date>1307979659000</date>
+<contentUpdateDate>1307979659000</contentUpdateDate>
+<version>1.4</version>
+<title>Competitive Advantage Of Using AspireRFID</title>
+<template></template>
+<content>1 Competitive Advantage Of Using AspireRFID
+
+
+#toc("" "" "true")
+
+
+1.1 Why AspireRFID?
+
+AspireRFID is one of the most prominent projects in the RFID open source community. AspireRFID is an appealing option for RFID solution integrators and SME end-users wishing to deploy RFID systems in a variety of areas including logisitcs, supply chain management, document management, registration management and more. 
+AspireRFID main advantages are:
+
+* *Open Source / Royalty free*: AspireRFID is a 100% open source royalty free solution, which does not incur any licensing costs, which minimizes capital expenses on your RFID project. 
+* *Programmability* : AspireRFID provides a rich set of programmability features that ease significantly the development and integration of RFID solution. AspireRFID tools facilitate solution provider to configure and manage complex solutions. At the same time, the APDL (ASPIRE Business Process Description Language) and the Business Process Workflow Management Editor Tool (BPWME) alleviate the need for tedious low-level programming and minimizes the development effort required.
+* *Modular and Versatile*: AspireRFID provides several modules and tools ranging from tag data acquisition and management to the generation of business events. RFID solution providers can flexibly select one or more AspireRFID modules according to the needs of their solution. Furthermore, AspireRFID support three alternative programming models that meet the needs of different projects and requirements.
+ 
+AspireRFID provides a wide range of functionalities and tools, which include a privacy toolkit for privacy sensitive applications. Thanks to its open source nature AspireRFID is open to public scrunity in terms of its privacy features.
+ 
+ 
+1.1 AspireRFID Programming Models
+AspireRFID supports three alternative models for programming RFID solutions:
+# Integration of its libraries based on conventional programming (in Java language)
+# Solution integration and configuration based on the AspireRFID tools and IDE. These permit for example the configuration of filtering and business event generation solutions.
+# Solution development using the AspireRFID APDL and BPMWE
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HCompetitiveAdvantageOfUsingAspireRFID"&gt;Competitive Advantage Of Using AspireRFID&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWhyAspireRFID3F"&gt;1 Why AspireRFID?&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAspireRFIDProgrammingModels"&gt;2 AspireRFID Programming Models&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HWhyAspireRFID3F"&gt;Why AspireRFID?&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;AspireRFID is one of the most prominent projects in the RFID open source community. AspireRFID is an appealing option for RFID solution integrators and SME end-users wishing to deploy RFID systems in a variety of areas including logisitcs, supply chain management, document management, registration management and more. 
+AspireRFID main advantages are:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Open Source / Royalty free&lt;/strong&gt;: AspireRFID is a 100% open source royalty free solution, which does not incur any licensing costs, which minimizes capital expenses on your RFID project.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Programmability&lt;/strong&gt; : AspireRFID provides a rich set of programmability features that ease significantly the development and integration of RFID solution. AspireRFID tools facilitate solution provider to configure and manage complex solutions. At the same time, the APDL (ASPIRE Business Process Description Language) and the Business Process Workflow Management Editor Tool (BPWME) alleviate the need for tedious low-level programming and minimizes the development effort required.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Modular and Versatile&lt;/strong&gt;: AspireRFID provides several modules and tools ranging from tag data acquisition and management to the generation of business events. RFID solution providers can flexibly select one or more AspireRFID modules according to the needs of their solution. Furthermore, AspireRFID support three alternative programming models that meet the needs of different projects and requirements.&lt;/li&gt;
+&lt;/ul&gt; 
+AspireRFID provides a wide range of functionalities and tools, which include a privacy toolkit for privacy sensitive applications. Thanks to its open source nature AspireRFID is open to public scrunity in terms of its privacy features.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HAspireRFIDProgrammingModels"&gt;AspireRFID Programming Models&lt;/span&gt;&lt;/h3&gt; 
+AspireRFID supports three alternative models for programming RFID solutions:
+&lt;ol&gt;&lt;li&gt;Integration of its libraries based on conventional programming (in Java language)&lt;/li&gt;
+&lt;li&gt;Solution integration and configuration based on the AspireRFID tools and IDE. These permit for example the configuration of filtering and business event generation solutions.&lt;/li&gt;
+&lt;li&gt;Solution development using the AspireRFID APDL and BPMWE&lt;/li&gt;
+&lt;/ol&gt;
+</renderedcontent>
+</xwikidoc>

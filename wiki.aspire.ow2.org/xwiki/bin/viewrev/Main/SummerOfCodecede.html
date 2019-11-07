@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main/SummerOfCode?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:20:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - SummerOfCode
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_SummerOfCode.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main/SummerOfCoded5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main/SummerOfCodecede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main/SummerOfCoded77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Summer of Code
+
+Students in software development, AspireRFID needs You !
+
+You can contribute by implementing features listed in the [forge&#62;http://forge.objectweb.org/tracker/?atid=350456&#38;group_id=324&#38;func=browse] (especially in the categories &#34;demo&#34; or &#34;application&#34;).
+
+For instance :
+
+#toc(&#34;&#34; &#34;&#34; &#34;&#34;)
+
+
+1.1 a Person Access Control System
+(suggestion of Didier Donsez)
+Summary:
+* Persons (Name, role, building, contactless card number) are recorded in a LDAP directory (served by OpenDS, Apache Directory, OpenLDAP, ...).
+* RFID readers are placed at the entrances and exits of buildings and rooms.
+* RFID readers scans persons contactless cards
+
+Main application : access control
+* The system unlocks the doors according the role, the time slot, the building, ...
+* The system unlocks the evelators panels according the role, the time slot, the building, ...
+Derivative applications:
+* The system reports the time spent at work
+* The system switchs off the office light when people left the building, the lobby, ...
+
+
+Alternative: Offline access control
+* The offline access control usecase fits well when door lockers can not access to the authentication &#38; autorization server (no IP connectivity, costly connectivity, ...)
+* The RFID (or iButton) memory stores the autorizations (their validaty period or calendar).
+* The set of autorizations is signed by the organization. The readers trust the organization. 
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+* ID-only iButtons ([DS1990A&#62;])
+* ...
+
+Example:
+* This student project uses Tikitag readers and RFID ISO 14443 badges. The scanned identifier is used to query a LDAP directory. If the authentication is successful, the iBuddy head switchs to green. Else the iBuddy head switchs to red and the USB rocket launcher shoots one rocket. [video 1 (iBuddy only)&#62;http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy.avi] [video 2 (iBuddy+rocket launcher) ...&#62;http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/promo0809/pm2m-rfid-accesscontrol-ibuddy+rocketlauncher.avi]
+
+1.1 a Ski pass system
+Summary:
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers 
+* ...
+
+1.1 a Vehicule Control System
+Summary:
+* Cars can be stolen ... 
+
+Possible hardware:
+* EPC Gen2 or ISO 15693 tags and readers 
+* ...
+
+1.1 a &#34;Pay As You Throw&#34; (PAYT) System
+Summary:
+* [What is PAYT ?&#62;http://www.epa.gov/epawaste/conserve/tools/payt/index.htm] ([Wikipedia&#62;http://en.wikipedia.org/wiki/PAYT])
+* Trash containers are tagged by LF (or HF) tags
+* Containers are identified by the truck reader then weighted by the truck balance during the collection
+* GPS positions are used to check if containers are in the right area (ie stolen, exchanged, ...)
+* The local authority or municipality send a monthly bill to the users. The bill is rated by the weight of recycled waste and unrecycled waste.
+
+Possible hardware:
+* EPC Gen2 or ISO 15693 tags and readers
+* a balance (Wiifit)
+* a GPS
+
+1.1 a NFC book reader
+Summary:
+* books are tagged
+* scanning the tag of a book starts the spelling of the story (audio stream).
+* if the player is stopped, the system keeps in mind the last streamed sentences.
+* target: kids, disable people, elders.  
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+* a UPnP Media Server and Renderer
+
+1.1 a NFC Social Radar
+Summary: Users can be used their NFC phones to touch tags in public places (bar, ...)  to publish presence, mood, ... to friends through their favorite social networks.  
+
+Possible hardware:
+* ISO 14443 tags and NFC phones.
+
+1.1 a RFID library
+Summary:
+
+Possible hardware:
+* ISO 15693 tags and readers
+
+1.1 a Private Company Gas Station
+Summary:
+
+Possible hardware:
+* ISO 14443 or ISO 15693 tags and readers
+
+1.1 a NFC inspection system
+Summary:
+
+Possible hardware:
+* ISO 14443 tags and NFC phones
+
+1.1 a NFC building info point
+1.1.1 Summary
+* suppose that you are visiting a large campus and you are lost !
+* entrances fo the buildings are equipped of NFC labels with printed data matrix. The data matrix cantains an url and NFC tag contains NDEF RTD urls linking to maps, phone numbers of the building offices, ...
+
+1.1.1 Possible hardware
+* ISO 14443 tags and NFC phones
+
+1.1 a e-Healthcare system
+1.1.1 Summary
+
+1.1.1 Possible hardware
+* ISO 14443 or ISO 15693 tags and readers
+* [health sensors&#62;Main.Readers#HHealthcare]
+
+1.1 a cooperative Weather alert system (flood, tornado, ...) based on social networking
+1.1.1 Summary
+
+1.1.1 Possible hardware:
+* [USB weather stations&#62;Main.Readers#HEnvironment]
+
+1.1 a cooperative Pollution alert system (undeclared radioactive clouds, ...) based on social networking
+1.1.1 Summary
+
+1.1.1 Possible hardware
+* see 
+
+1.1 a sport competition system 
+(suggestion of  Didier Donsez and Pierre-Yves Gibello)
+
+1.1.1 Summary
+* Race organizers use RFID to manage a large number of racers in massive competitions (marathon, nordic sky, bicycle, ...)
+* RFID simplifies chronometering and avoids cheating.
+* Racers are equipped of RFID tags
+* RFID portals scans (snaphots or videos can be records) the racers several time during the race. The portal can be fixed or mobile (GPS-located).
+* Supporters can follow favorite racers on their (mobile or not) web browser 
+* Racers can receive SMS to encourage them
+* Racers can upload afterward their own GPS tracks (Garmin Forerunner or other) and cardiac frequency histories (Polar and Suunto watches), pedometer histories (N95 or iPhone accelerometer can be used to infer the steps), video (recorded during the race for small wearable cameras)  ...
+* Racers can calculate their effort from data
+* Racers can compare a race with previous ones
+* Racers can compare their races with other'ones (mainly champions like Lance Armstrong in the Alpe d'Huez ascent )
+
+1.1.1 Possible hardware
+* ISO 15693 tags and readers
+* GPS, accelerometers (in cell phone), video camera, cardiac frequency watches, [more&#62;Main.Readers#HSport]
+
+
+1.1 a RFID-based multiplayer game
+(suggestion of  Eric Gressier-Soudan) 
+1.1.1 Goal
+Write a game that uses RFIDs, able to be played by visitors in a museum (no specific type of museum, it is free). Players/visitors must have fun, they not only learn things about art pieces.
+
+1.1.1 Main Specifications
+- A visit is played as a game, the kind of game is part of the contest.
+- The visitors play alone (no team play).
+- Visitors gain points when they give right answers to questions along the game.
+- Visitors can ask for help to a game master but they loose points in this case.
+- The winner is the person with the highest score at the end of the visit/game.
+
+1.1.1 Technical hints
+- Visitors uses a dedicated device with an NFC reader (PDA or Mobile phone)
+- A mobile network can be considered
+- The OW2 [GASP suite&#62;http://gasp.objectweb.org] can be used to handle game logic on a server and on clients
+- The game uses read AND write features of tags.
+
+Solutions to be avoid
+- PACLAN RFID
+- [Via Mineralia&#62;http://vr.tu-freiberg.de/viamineralia]
+These projects can give ideas but shouldn't be reproduced.
+
+1.1.1 Variant
+* [Orienteering&#62;http://en.wikipedia.org/wiki/Orienteering]
+* [Amazing Race&#62;http://en.wikipedia.org/wiki/The_Amazing_Race]
+* ...
+
+1.1.1 Possible hardware
+* NFC phones (Nokia 6212 classic, ...), ISO 14443 tags, phone accelerators (Nokia serie S60, iPhone, HTC, ...) for visitor pace counting 
+
+1.1 a RFID/NFC Sushi Bar
+
+1.1.1 Motivation
+(suggestion of  Luvent Gurgen)
+
+In Japan, RFID is already in the daily life. The recent example is the  traditional conveyor belt sushi-bars (kaiten sushi):
+In a kaiten sushi restaurant, there is a rotating conveyor belt on  which the sushi plates make the tour of all the restaurant. You can  therefore pick up the sushi you desire when it passes in front of you.  You can also order (in Japanese, for sure) your favorite sushi to the  sushi man(s) who is(are) in the middle of the conveyor preparing it  for you. Plates are coloured according to the price of the sushi, so  the bill will be calculated based on the number and the colour of the  sushi plates. At the end of the meal, the waiter comes, counts your  plates and calculates the bill.
+
+Nowadays, in most of the restaurants each plate has an embedded RFID  tag which contains the price of the sushi it is carrying. This allows  the waiter calculating your bill in one second thanks to a RFID  enabled device (and you pay it with your NFC enabled mobile phone).  Besides, in some restaurants, you can order your favorite sushi via a  monitor in front of each seat (thus no need to speak Japanese), and  your sushi will be being prepared in the kitchen and will be put on  the rotating conveyor. And thanks to the embedded RFID tag, you don't  stress about missing your order, because when your order approaches to  you, you will be notified by an alarm.
+
+This is the integration of the technology with the traditional life  and Japan do that very well!
+
+see:
+* http://wireless.engadget.com/2004/03/23/calculating-your-tab-the-rfid-way/
+* http://www.engadget.com/2004/03/25/rfid-sushi-plate-in-action/
+
+1.1.1 Possible realization
+This application could reuse the 2 demos
+* the Lego train to transport the sushi and what is added and removed
+* the NFC picking demo
+
+1.1.1 Variants
+* NFC [Tamales&#62;http://en.wikipedia.org/wiki/Tamale] Bar
+* NFC Tapas Bar
+* ...
+
+1.1.1 Possible Hardware
+* ISO 14443 or ISO 15693 tags and readers (and NFC phones)
+* a Lego duplo train for the plate conveyor
+* some plates
+* some plastic sushi (used for presentation in japanese restaurants)
+
+
+1.1 NFC Sommelier
+
+1.1.1 Motivation
+For professional or personal wine cellar
+
+* manage the stock of bottles (inventory, ...)
+* alert on temperature and hygrometry thresholds
+* alert the owner when bottles must be consumed
+* provide expert advice 
+* ... 
+
+1.1.1 Possible Hardware
+* ISO 14443 or ISO 15693 tags and readers (and NFC phones)
+* a temperature sensor, a hygrometry sensor or a weather station (for the wine cellar temperature and hygrometry)
+
+Remark: some wine bottle cork include a RFID inlays (tracability, counterfeit, ...) : http://www.rfidjournal.com/article/articleview/2117/1/1/
+
+1.1 Others
+You may have ideas also ...
+
+* GPS tracks importer (http://www.gpsbabel.org/capabilities.html)
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

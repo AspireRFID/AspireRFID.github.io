@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>AspireRfidArchitecture</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1233313358000</creationDate>
+<date>1299093140000</date>
+<contentUpdateDate>1299093140000</contentUpdateDate>
+<version>1.34</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>aspireArchitectureNew.jpg</filename>
+<filesize>84422</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233314317000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>programmabilityTooling.jpg</filename>
+<filesize>143909</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233314333000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ASPIRE_HAL_Connections.jpg</filename>
+<filesize>51530</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233586555000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ConnectorLight.jpg</filename>
+<filesize>101314</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233586683000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>epcis.jpg</filename>
+<filesize>54924</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233586748000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>BEG.jpg</filename>
+<filesize>82150</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233586760000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ALE.jpg</filename>
+<filesize>63535</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233586836000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireArchitectureNew5.jpg</filename>
+<filesize>297725</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1298997208000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireArchitectureNew6.jpg</filename>
+<filesize>269162</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1299092292000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>aspireArchitectureNew7.jpg</filename>
+<filesize>299564</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1299093126000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 AspireRFID Architecture
+
+----
+#toc("" "" "true")
+----
+
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew6.jpg"&gt;{image:aspireArchitectureNew7.jpg|300}&lt;/a&gt;
+&lt;/center&gt;
+
+
+1.1 Hardware Abstraction Layer [(HAL)&gt;Main.Documentation.HAL]
+ 
+The role of this layer is to unify the way the ASPIRE middleware interacts with the RFID readers from multiple vendors that support varying protocols. This is based on the introduction of a hardware abstraction layer (HAL) and the provision of a fixed instruction set to upstream middleware layers which consume RFID readings from the hardware.
+
+Specifications that satisfy the need for a norm at this level are the EPCglobal Reader Protocol (RP), the EPCglobal Lower Level Reader Protocol (LLRP). These protocols define the standard bindings through witch an application can send messages in a standardized format. 
+
+The methods of communication between the HAL and the hardware itself vary, depending on the hardware vendor and it may require a serial connection, an Ethernet connection, etc. The protocols of communication may also vary from a raw TCP (Transmission Control Protocol) connection, to SSL (Secure Sockets Layer) and HTTP (Hypertext Transfer Transport Protocol). The same will apply for the command and message encodings, which may be text, XML or binary.
+
+The Hardware Abstraction shown in the Figure Below defines the interface between the HAL, the F&amp;C server, the Reader Core or any other application using the HAL. It standardises access to various readers and simulators of readers. This allows uniform usage. The readers and simulators become interchangeable because the code specific to the reader is part of the HAL and not of the application. The implementations of the Hardware Abstraction interface are divided into multiple modules, one for the simulators and one for each reader manufacturer. A module can contain one or multiple reader controllers.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg"&gt;{image:ASPIRE_HAL_Connections.jpg|280}&lt;/a&gt;
+&lt;/center&gt;
+
+
+
+
+
+
+1.1 Reader Core Proxy [(RCP)&gt;Main.Documentation.ReaderCoreProxy]
+
+In order to transform non EPC Reader Protocol readers into compliant readers we are using a Reader Core Proxy application, which is used (as shown in the Figure above) as a mediator between a reader supporting protocol “X” and the corresponding F&amp;C Reader Protocol Interface. By deploying the appropriate HAL module at the Reader Core we make whatever reader compliant to RP. Every reader with an implementation of the Hardware Abstraction interface can be controlled over the Reader Protocol.
+
+The core reader support TCP and HTTP for transporting reader protocol messages, while the message content can be either XML or Text. In addition, it support synchronous and asynchronous messaging (through the reader’s protocol Notification Channels mechanisms). Furthermore, support for other reader protocol characteristics, such as triggers, data selectors must be provided. 
+
+
+1.1 Filtering &amp; Collection Server [(ALE)&gt;Main.Documentation.Filtering&amp;Collection]
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ALE.jpg"&gt;{image:ALE.jpg|280}&lt;/a&gt;
+&lt;/center&gt;
+
+In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable “noise.” To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+* Drive as much filtering and counting of reads as low in the architecture as possible.
+* Minimize the amount of “business logic” embedded in the Tags.
+
+The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce “reports” in response to client “requests.” The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional “enterprise application,” or it may be new software designed expressly to carry out an RFID-enabled business process which operates at a higher level than the “middleware” that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware (described later) would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.
+
+Once the readers capture relevant tag data they notify the middleware which combines the data arriving from different readers in a report that is sent according to a pre-determined schedule to the subscribed applications. Since the middleware receives data from multiple readers, it provides specific filtering functionality depending on the different already defined specifications. So redundant events from different readers observing the same location are not included to the despatched report accomplishing the reduction of filtering and aggregation required to the registered application interpreting the captured RFID data.
+
+
+
+1.1 Business Event Generator [(BEG)&gt;Main.Documentation.BEG]
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/BEG.jpg"&gt;{image:BEG.jpg|280}&lt;/a&gt;
+&lt;/center&gt;
+
+The architecture introduces a Business Event Generator (BEG) module between the F&amp;C and Information Sharing (e.g., EPC-IS) modules. The role of the BEG is to automate the mapping between reports stemming from F&amp;C and IS events. Instead of requiring developers to implement the mapping logic, the BEG enables application builders to configure the mapping based on the semantics of the RFID application. 
+
+With the help of AspireRfid IDE by describing the company’s business processes and its underlying business infrastructure the required business events that constitutes a company’s business functionality are created and stored at the RFID repository that Business Event Generator engine exploits to define its functionality.   In EPC terms, BEG can be seen as a specific instance of an EPC-IS capturing application, which parses EPC-ALE reports, fuses these reports with business context data using the assigned business event from the company’s business metadata to serve as guide and accordingly prepares EPC-IS compliant events. The latter events are submitted to the EPC-IS Repository, based on an EPC-IS capture interface and related bindings (e.g., HyperText Transfer Protocol (HTTP)/ Java Messaging Service (JMS). The specification of the BEG is a valuable addition over existing RFID middleware architectures and platforms. 
+
+
+1.1 Information Sharing Repository [(EPCIS)&gt;Main.Documentation.EpcisRepository]
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/epcis.jpg"&gt;{image:epcis.jpg|280}&lt;/a&gt;
+&lt;/center&gt;
+
+
+At the heart of the architecture is the EPC-IS repository. The ASPIRE Information Sharing repository is responsible for receiving application-agnostic RFID data from the filtering &amp; collection middleware through the Business Event Generation (BEG) application and store the translated RFID data in corresponding business events. These events carry the business context as well (e.g., they refer to particular companies, business locations, business processes etc.). Moreover it makes business events and master data available and accessible to other upstream applications thru the query interface.
+
+Generally, the ASPIRE information sharing repository is dealing with two kinds of data: 
+* RFID event data i.e. data arising in the course of carrying out business processes.  These data change very frequently, at the time scales where business processes are carried out.
+* Master/company data, i.e. additional data that provide the necessary context for interpreting the event data. These are data associated with the company, its business locations, its read points, as well as with the business steps comprising the business processes that this company carries out.
+
+At a glance Information Services of the ASPIRE Information Sharing middleware itself consists of three parts a capture interface that provides web services for storing data, a repository that provides persistence and query interface that provides web services that retrieves the business events/master data from the repository.
+
+1.1 Connector Application[(Connector)&gt;Main.Documentation.Connector]
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg"&gt;{image:ConnectorLight.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+RFID middleware components described in the previous paragraphs provide a foundation for translating raw RFID streams to meaningful business events comprising business context such as where a tag was seen, at what time and in the scope of which process. Enterprises can then leverage these business events through their legacy IT systems (e.g., ERPs, WMS, corporate databases), which are used to support their business processes. To this end, there is a clear need for interfacing these legacy systems, with the information sharing repositories, established and populated as part of the RFID deployment. Interfacing between IT systems and the information sharing repository, as well as other middleware blocks of the RFID deployment is realized through specialized middleware components that are called “connectors”.
+
+The main purpose of connector components are to abstract the interface between the ASPIRE information sharing repository and enterprise information systems. Hence, connectors offer APIs, that enable proprietary enterprise information systems to exchange business information with the ASPIRE RFID middleware system.
+
+Connector therefore provides:
+* Support for services and events: Composite applications can call out to existing functionality as a set of services, and to be notified when a particular event type (for example, “purchase order inserted,” “employee hired”) occurs within an existing application. 
+* Service abstraction: All services have some common properties, including error handling, syntax, and calling mechanisms. They also have common access mechanisms such as JCA (Java Connector Architecture), JDBC, ODBC (Object Database Connectivity), and Web services, ideally spanning different platforms. This makes the services more reusable, while also allowing them to share communications, load balancing, and other non-service-specific capabilities.
+* Functionality abstraction: Individual services are driven by metadata about the transactions that the business needs to execute.
+* Process management: Services embed processes, and process management tools call services. Hence, connectors support the grouping of several service invocations to processes.
+
+1.1 Management
+The architecture specifies also implementation of end-to-end (e2e) management functionality based on JMX (Java Management Extension) technology. To this end, a JMX wrapper is specified for each middleware and hardware component. JMX wrappers interface to underlying readers based on the Simple Network Management Protocol (SNMP) and the Reader Management (RM) protocol, while they interface to middleware components (e.g., ALE, BEG, Connector) using MBeans that access their low-level control properties. Based on these JMX wrappers composite sophisticated management applications can be implemented. Management applications can be used to interface and control actuators as well. Based on JMX, actuator control commands can be issued upon the occurrence of certain events at any middleware layer. 
+
+1.1 Actuators
+The actuator control framework will define certain interfaces and connectors that third party applications will be able to utilize in order to successfully interact with analogue or digital devices, based on sensor events. These sensors may either be RFID or other ASPIRE supported physical sensors.  Using this framework the application will be able to register an event handler that will, for example, interact with a flashlight when a specific group of tags pass through a RFID aggregation gate.
+
+1.1 Integrated Development Environment [(AspireRfidIDE)&gt;Main.Documentation.AspireIDE]
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg"&gt;{image:programmabilityTooling.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+As far as ease of development and deployment is concerned, the architecture specifies the existence of an IDE enabling the visual management of all configuration files and meta-data that are required for the operation of an RFID solution. These include:
+* The Physical Reader Configuration Editor to configure physical readers and their operational parameters and environments.
+* The Logical Reader Configuration Editor which will support the definition of logical readers (LLRP, RP, HAL and Simulator readers).
+* The Reading Specifications Editor which will enable editing, as well as management of F&amp;C server Filtering Specifications.
+* The F&amp;C Commands Execution which will have as an objective to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.
+* The Connector Configurator which will be able to interact with the Connector application to reveal all its functionalities and configurations. It should enable configuration of connectors to different systems and databases.
+* The Master Data Editor (with support for Elementary Business Process Description) which will enable users and/or consultants to edit enterprise data including information about the company’s location, its business locations, readpoints, as well as its business processes.
+* And the Business Prosess Workflow Management Editor which can offer to business users and RFID consultants a graphical user interface for manipulating complex business processes, that are composed as workflows of elementary business processes.  The workflow management tool will leverage (though. using/ invoking) the functionality of the above tools in order to support RFID deployments in accordance to particular business processes.
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspireRFIDArchitecture"&gt;AspireRFID Architecture&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHardwareAbstractionLayer5B28HAL293EMainDocumentationHAL5D"&gt;1 Hardware Abstraction Layer &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/HAL"&gt;(HAL)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReaderCoreProxy5B28RCP293EMainDocumentationReaderCoreProxy5D"&gt;2 Reader Core Proxy &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;(RCP)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HFiltering26CollectionServer5B28ALE293EMainDocumentationFiltering26Collection5D"&gt;3 Filtering &amp; Collection Server &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;(ALE)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBusinessEventGenerator5B28BEG293EMainDocumentationBEG5D"&gt;4 Business Event Generator &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;(BEG)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HInformationSharingRepository5B28EPCIS293EMainDocumentationEpcisRepository5D"&gt;5 Information Sharing Repository &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;(EPCIS)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConnectorApplication5B28Connector293EMainDocumentationConnector5D"&gt;6 Connector Application&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Connector"&gt;(Connector)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HManagement"&gt;7 Management&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HActuators"&gt;8 Actuators&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HIntegratedDevelopmentEnvironment5B28AspireRfidIDE293EMainDocumentationAspireIDE5D"&gt;9 Integrated Development Environment &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireIDE"&gt;(AspireRfidIDE)&lt;/a&gt;&lt;/span&gt;&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew6.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/aspireArchitectureNew7.jpg" height="300" alt="aspireArchitectureNew7.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HHardwareAbstractionLayer5B28HAL293EMainDocumentationHAL5D"&gt;Hardware Abstraction Layer &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/HAL"&gt;(HAL)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The role of this layer is to unify the way the ASPIRE middleware interacts with the RFID readers from multiple vendors that support varying protocols. This is based on the introduction of a hardware abstraction layer (HAL) and the provision of a fixed instruction set to upstream middleware layers which consume RFID readings from the hardware.&lt;p class="paragraph"/&gt;Specifications that satisfy the need for a norm at this level are the EPCglobal Reader Protocol (RP), the EPCglobal Lower Level Reader Protocol (LLRP). These protocols define the standard bindings through witch an application can send messages in a standardized format.&lt;p class="paragraph"/&gt;The methods of communication between the HAL and the hardware itself vary, depending on the hardware vendor and it may require a serial connection, an Ethernet connection, etc. The protocols of communication may also vary from a raw TCP (Transmission Control Protocol) connection, to SSL (Secure Sockets Layer) and HTTP (Hypertext Transfer Transport Protocol). The same will apply for the command and message encodings, which may be text, XML or binary.&lt;p class="paragraph"/&gt;The Hardware Abstraction shown in the Figure Below defines the interface between the HAL, the F&amp;C server, the Reader Core or any other application using the HAL. It standardises access to various readers and simulators of readers. This allows uniform usage. The readers and simulators become interchangeable because the code specific to the reader is part of the HAL and not of the application. The implementations of the Hardware Abstraction interface are divided into multiple modules, one for the simulators and one for each reader manufacturer. A module can contain one or multiple reader controllers.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ASPIRE_HAL_Connections.jpg" height="280" alt="ASPIRE_HAL_Connections.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HReaderCoreProxy5B28RCP293EMainDocumentationReaderCoreProxy5D"&gt;Reader Core Proxy &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;(RCP)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In order to transform non EPC Reader Protocol readers into compliant readers we are using a Reader Core Proxy application, which is used (as shown in the Figure above) as a mediator between a reader supporting protocol “X” and the corresponding F&amp;C Reader Protocol Interface. By deploying the appropriate HAL module at the Reader Core we make whatever reader compliant to RP. Every reader with an implementation of the Hardware Abstraction interface can be controlled over the Reader Protocol.&lt;p class="paragraph"/&gt;The core reader support TCP and HTTP for transporting reader protocol messages, while the message content can be either XML or Text. In addition, it support synchronous and asynchronous messaging (through the reader’s protocol Notification Channels mechanisms). Furthermore, support for other reader protocol characteristics, such as triggers, data selectors must be provided. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HFiltering26CollectionServer5B28ALE293EMainDocumentationFiltering26Collection5D"&gt;Filtering &amp; Collection Server &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;(ALE)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ALE.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ALE.jpg" height="280" alt="ALE.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable “noise.” To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+&lt;ul class="star"&gt;
+&lt;li&gt;Drive as much filtering and counting of reads as low in the architecture as possible.&lt;/li&gt;
+&lt;li&gt;Minimize the amount of “business logic” embedded in the Tags.&lt;/li&gt;
+&lt;/ul&gt;The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce “reports” in response to client “requests.” The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional “enterprise application,” or it may be new software designed expressly to carry out an RFID-enabled business process which operates at a higher level than the “middleware” that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware (described later) would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.&lt;p class="paragraph"/&gt;Once the readers capture relevant tag data they notify the middleware which combines the data arriving from different readers in a report that is sent according to a pre-determined schedule to the subscribed applications. Since the middleware receives data from multiple readers, it provides specific filtering functionality depending on the different already defined specifications. So redundant events from different readers observing the same location are not included to the despatched report accomplishing the reduction of filtering and aggregation required to the registered application interpreting the captured RFID data.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBusinessEventGenerator5B28BEG293EMainDocumentationBEG5D"&gt;Business Event Generator &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;(BEG)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/BEG.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/BEG.jpg" height="280" alt="BEG.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The architecture introduces a Business Event Generator (BEG) module between the F&amp;C and Information Sharing (e.g., EPC-IS) modules. The role of the BEG is to automate the mapping between reports stemming from F&amp;C and IS events. Instead of requiring developers to implement the mapping logic, the BEG enables application builders to configure the mapping based on the semantics of the RFID application.&lt;p class="paragraph"/&gt;With the help of AspireRfid IDE by describing the company’s business processes and its underlying business infrastructure the required business events that constitutes a company’s business functionality are created and stored at the RFID repository that Business Event Generator engine exploits to define its functionality.   In EPC terms, BEG can be seen as a specific instance of an EPC-IS capturing application, which parses EPC-ALE reports, fuses these reports with business context data using the assigned business event from the company’s business metadata to serve as guide and accordingly prepares EPC-IS compliant events. The latter events are submitted to the EPC-IS Repository, based on an EPC-IS capture interface and related bindings (e.g., HyperText Transfer Protocol (HTTP)/ Java Messaging Service (JMS). The specification of the BEG is a valuable addition over existing RFID middleware architectures and platforms. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HInformationSharingRepository5B28EPCIS293EMainDocumentationEpcisRepository5D"&gt;Information Sharing Repository &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;(EPCIS)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/epcis.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/epcis.jpg" height="280" alt="epcis.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;
+At the heart of the architecture is the EPC-IS repository. The ASPIRE Information Sharing repository is responsible for receiving application-agnostic RFID data from the filtering &amp; collection middleware through the Business Event Generation (BEG) application and store the translated RFID data in corresponding business events. These events carry the business context as well (e.g., they refer to particular companies, business locations, business processes etc.). Moreover it makes business events and master data available and accessible to other upstream applications thru the query interface.&lt;p class="paragraph"/&gt;Generally, the ASPIRE information sharing repository is dealing with two kinds of data: 
+&lt;ul class="star"&gt;
+&lt;li&gt;RFID event data i.e. data arising in the course of carrying out business processes.  These data change very frequently, at the time scales where business processes are carried out.&lt;/li&gt;
+&lt;li&gt;Master/company data, i.e. additional data that provide the necessary context for interpreting the event data. These are data associated with the company, its business locations, its read points, as well as with the business steps comprising the business processes that this company carries out.&lt;/li&gt;
+&lt;/ul&gt;At a glance Information Services of the ASPIRE Information Sharing middleware itself consists of three parts a capture interface that provides web services for storing data, a repository that provides persistence and query interface that provides web services that retrieves the business events/master data from the repository.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HConnectorApplication5B28Connector293EMainDocumentationConnector5D"&gt;Connector Application&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Connector"&gt;(Connector)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/ConnectorLight.jpg" height="320" alt="ConnectorLight.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;RFID middleware components described in the previous paragraphs provide a foundation for translating raw RFID streams to meaningful business events comprising business context such as where a tag was seen, at what time and in the scope of which process. Enterprises can then leverage these business events through their legacy IT systems (e.g., ERPs, WMS, corporate databases), which are used to support their business processes. To this end, there is a clear need for interfacing these legacy systems, with the information sharing repositories, established and populated as part of the RFID deployment. Interfacing between IT systems and the information sharing repository, as well as other middleware blocks of the RFID deployment is realized through specialized middleware components that are called “connectors”.&lt;p class="paragraph"/&gt;The main purpose of connector components are to abstract the interface between the ASPIRE information sharing repository and enterprise information systems. Hence, connectors offer APIs, that enable proprietary enterprise information systems to exchange business information with the ASPIRE RFID middleware system.&lt;p class="paragraph"/&gt;Connector therefore provides:
+&lt;ul class="star"&gt;
+&lt;li&gt;Support for services and events: Composite applications can call out to existing functionality as a set of services, and to be notified when a particular event type (for example, “purchase order inserted,” “employee hired”) occurs within an existing application.&lt;/li&gt;
+&lt;li&gt;Service abstraction: All services have some common properties, including error handling, syntax, and calling mechanisms. They also have common access mechanisms such as JCA (Java Connector Architecture), JDBC, ODBC (Object Database Connectivity), and Web services, ideally spanning different platforms. This makes the services more reusable, while also allowing them to share communications, load balancing, and other non-service-specific capabilities.&lt;/li&gt;
+&lt;li&gt;Functionality abstraction: Individual services are driven by metadata about the transactions that the business needs to execute.&lt;/li&gt;
+&lt;li&gt;Process management: Services embed processes, and process management tools call services. Hence, connectors support the grouping of several service invocations to processes.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HManagement"&gt;Management&lt;/span&gt;&lt;/h3&gt; 
+The architecture specifies also implementation of end-to-end (e2e) management functionality based on JMX (Java Management Extension) technology. To this end, a JMX wrapper is specified for each middleware and hardware component. JMX wrappers interface to underlying readers based on the Simple Network Management Protocol (SNMP) and the Reader Management (RM) protocol, while they interface to middleware components (e.g., ALE, BEG, Connector) using MBeans that access their low-level control properties. Based on these JMX wrappers composite sophisticated management applications can be implemented. Management applications can be used to interface and control actuators as well. Based on JMX, actuator control commands can be issued upon the occurrence of certain events at any middleware layer. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HActuators"&gt;Actuators&lt;/span&gt;&lt;/h3&gt; 
+The actuator control framework will define certain interfaces and connectors that third party applications will be able to utilize in order to successfully interact with analogue or digital devices, based on sensor events. These sensors may either be RFID or other ASPIRE supported physical sensors.  Using this framework the application will be able to register an event handler that will, for example, interact with a flashlight when a specific group of tags pass through a RFID aggregation gate.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntegratedDevelopmentEnvironment5B28AspireRfidIDE293EMainDocumentationAspireIDE5D"&gt;Integrated Development Environment &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/AspireIDE"&gt;(AspireRfidIDE)&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/AspireRfidArchitecture/programmabilityTooling.jpg" height="320" alt="programmabilityTooling.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;As far as ease of development and deployment is concerned, the architecture specifies the existence of an IDE enabling the visual management of all configuration files and meta-data that are required for the operation of an RFID solution. These include:
+&lt;ul class="star"&gt;
+&lt;li&gt;The Physical Reader Configuration Editor to configure physical readers and their operational parameters and environments.&lt;/li&gt;
+&lt;li&gt;The Logical Reader Configuration Editor which will support the definition of logical readers (LLRP, RP, HAL and Simulator readers).&lt;/li&gt;
+&lt;li&gt;The Reading Specifications Editor which will enable editing, as well as management of F&amp;C server Filtering Specifications.&lt;/li&gt;
+&lt;li&gt;The F&amp;C Commands Execution which will have as an objective to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.&lt;/li&gt;
+&lt;li&gt;The Connector Configurator which will be able to interact with the Connector application to reveal all its functionalities and configurations. It should enable configuration of connectors to different systems and databases.&lt;/li&gt;
+&lt;li&gt;The Master Data Editor (with support for Elementary Business Process Description) which will enable users and/or consultants to edit enterprise data including information about the company’s location, its business locations, readpoints, as well as its business processes.&lt;/li&gt;
+&lt;li&gt;And the Business Prosess Workflow Management Editor which can offer to business users and RFID consultants a graphical user interface for manipulating complex business processes, that are composed as workflows of elementary business processes.  The workflow management tool will leverage (though. using/ invoking) the functionality of the above tools in order to support RFID deployments in accordance to particular business processes.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

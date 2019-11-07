@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Merge</web>
+<name>ProvidedByUjfBranch</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Merge</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1241426535000</creationDate>
+<date>1241426849000</date>
+<contentUpdateDate>1241426849000</contentUpdateDate>
+<version>1.4</version>
+<title>Provided By UJF Branch</title>
+<template></template>
+<content>1 Provided By UJF Branch
+
+
+----
+#toc("" "" "true")
+----
+
+* Plug and Play Sensors (using iPOJO+WireAdmin+WireAdminBinder) : data collected for sensors must be add in the extension element of the ECReport.
+* EPCIS extension to store sensors data (position, measurement, answers to survey, …) : the data must be extracted from the ECReport by the EPCIS.
+* GWT-based User Console relying on the RFIDSuite” EPCIS (developed with EJB3.0)+ extensions (sensors data) : should we keep/discard the “Warning ” features (lost objects, pairing, …): they will be replaced by the BEG, isn’t it ?
+* Edge Premice Server Architecture ??? Question: does the AIT branch can model the 3 layer architecture ?
+* Communication (JMS, HTTP/SOAP, SMTP, XMPP) between Edge and Premice and between Premice and EPCIS to transport ECReports
+* « ONS » based on Web Services and EJB3.0 + WS-Metadata (JSR 181).
+* Porting the existing readers (Tagsys, TIRIS, ACS122, Mir:ror) to the HAL wrapper
+* Bluetooth bridge as a reader
+* HTTP bridge as a reader
+* NFC MIDLets
+** with BT to the Bluetooth Bridge
+** with HTTP to the HTTP Bridge
+* Management and deployment :
+** LDAP for X509 certificates publication and for architecture description
+** JMX for configuration and monitoring
+** use Felix MOSGi project for the JMX agent
+** may be UPnP and DNSSD for Edge and premice mutual dynamic discovery in the warehouse/store network)
+* JVisualVM and JConsole plugins for OSGi management (may be contributed to the Apache Felix community).
+* Generic build for demopacks (ANT, JMX (and IzPack in the future))
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HProvidedByUJFBranch"&gt;Provided By UJF Branch&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+        &lt;hr class="line"/&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Plug and Play Sensors (using iPOJO+WireAdmin+WireAdminBinder) : data collected for sensors must be add in the extension element of the ECReport.&lt;/li&gt;
+&lt;li&gt;EPCIS extension to store sensors data (position, measurement, answers to survey, …) : the data must be extracted from the ECReport by the EPCIS.&lt;/li&gt;
+&lt;li&gt;GWT-based User Console relying on the RFIDSuite” EPCIS (developed with EJB3.0)+ extensions (sensors data) : should we keep/discard the “Warning ” features (lost objects, pairing, …): they will be replaced by the BEG, isn’t it ?&lt;/li&gt;
+&lt;li&gt;Edge Premice Server Architecture ??? Question: does the AIT branch can model the 3 layer architecture ?&lt;/li&gt;
+&lt;li&gt;Communication (JMS, HTTP/SOAP, SMTP, XMPP) between Edge and Premice and between Premice and EPCIS to transport ECReports&lt;/li&gt;
+&lt;li&gt;« ONS » based on Web Services and EJB3.0 + WS-Metadata (JSR 181).&lt;/li&gt;
+&lt;li&gt;Porting the existing readers (Tagsys, TIRIS, ACS122, Mir:ror) to the HAL wrapper&lt;/li&gt;
+&lt;li&gt;Bluetooth bridge as a reader&lt;/li&gt;
+&lt;li&gt;HTTP bridge as a reader&lt;/li&gt;
+&lt;li&gt;NFC MIDLets&lt;ul class="star"&gt;
+&lt;li&gt;with BT to the Bluetooth Bridge&lt;/li&gt;
+&lt;li&gt;with HTTP to the HTTP Bridge&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Management and deployment :&lt;ul class="star"&gt;
+&lt;li&gt;LDAP for X509 certificates publication and for architecture description&lt;/li&gt;
+&lt;li&gt;JMX for configuration and monitoring&lt;/li&gt;
+&lt;li&gt;use Felix MOSGi project for the JMX agent&lt;/li&gt;
+&lt;li&gt;may be UPnP and DNSSD for Edge and premice mutual dynamic discovery in the warehouse/store network)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JVisualVM and JConsole plugins for OSGi management (may be contributed to the Apache Felix community).&lt;/li&gt;
+&lt;li&gt;Generic build for demopacks (ANT, JMX (and IzPack in the future))&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Internships</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.jsoldat</author>
+<contentAuthor>xwiki:XWiki.jsoldat</contentAuthor>
+<creationDate>1227877580000</creationDate>
+<date>1260312933000</date>
+<contentUpdateDate>1260312933000</contentUpdateDate>
+<version>1.11</version>
+<title>OW2 Aspire Internship</title>
+<template></template>
+<content>1 Internships and Sponsored Projects
+
+OW2 Aspire partners propose internships to develop Aspire middleware bricks and applications on the top of them.
+
+Students, you can contact the partners through the Aspire mailing list.
+
+1.1 Sponsored Projects
+*Sponsored Projects are funded by AspireRfid Supported and Donators*
+
+1.1.1 Advanced Management Functionality for LLRP Readers
+* Project Title: Advanced Management Functionality for LLRP Readers
+* Contact Person: John Soldatos (jsol@ait.edu.gr), Nikos Kefalakis (nkef@ait.edu.gr)
+* Project Sponsor: TBA (To be announced)
+* Available Funding: TBA (To be announced)
+* Description: The proposed project will modify the current EPC-LLRP Filtering and Collection HAL to support the following management functionalities:
+** Give the ability to the user to configure reader's sensitivity and transmitted power per Antenna (% presentence of the received min and max values)
+** Give the ability to the user to configure the reader to start/stop reading and send report when a GPIO trigger is activated (again taking in consideration the readers capabilities)
+** Give the ability to the user to configure the reader to send reports at a stable time interval
+** Activate the data reported per request
+                *** Antenna source
+                *** peakRSSI
+** Set up a specific frequency to work.
+
+Interested students/parties should contact the listed AspireRfid people for more details.
+
+
+1.1 Internship propositions
+
+1.1.1 Internship Proposition Template
+* Title 
+* Short description
+* Contact person (person AT domain)
+* Duration and periods
+* Required level
+* Used technologies
+* Link to an extended version of the subject</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HInternshipsandSponsoredProjects"&gt;Internships and Sponsored Projects&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;OW2 Aspire partners propose internships to develop Aspire middleware bricks and applications on the top of them.&lt;p class="paragraph"/&gt;Students, you can contact the partners through the Aspire mailing list.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSponsoredProjects"&gt;Sponsored Projects&lt;/span&gt;&lt;/h3&gt; 
+&lt;strong class="strong"&gt;Sponsored Projects are funded by AspireRfid Supported and Donators&lt;/strong&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAdvancedManagementFunctionalityforLLRPReaders"&gt;Advanced Management Functionality for LLRP Readers&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Project Title: Advanced Management Functionality for LLRP Readers&lt;/li&gt;
+&lt;li&gt;Contact Person: John Soldatos (jsol@ait.edu.gr), Nikos Kefalakis (nkef@ait.edu.gr)&lt;/li&gt;
+&lt;li&gt;Project Sponsor: TBA (To be announced)&lt;/li&gt;
+&lt;li&gt;Available Funding: TBA (To be announced)&lt;/li&gt;
+&lt;li&gt;Description: The proposed project will modify the current EPC-LLRP Filtering and Collection HAL to support the following management functionalities:&lt;ul class="star"&gt;
+&lt;li&gt;Give the ability to the user to configure reader's sensitivity and transmitted power per Antenna (% presentence of the received min and max values)&lt;/li&gt;
+&lt;li&gt;Give the ability to the user to configure the reader to start/stop reading and send report when a GPIO trigger is activated (again taking in consideration the readers capabilities)&lt;/li&gt;
+&lt;li&gt;Give the ability to the user to configure the reader to send reports at a stable time interval&lt;/li&gt;
+&lt;li&gt;Activate the data reported per request&lt;ul class="star"&gt;
+&lt;li&gt;Antenna source&lt;/li&gt;
+&lt;li&gt;peakRSSI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set up a specific frequency to work.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;Interested students/parties should contact the listed AspireRfid people for more details.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HInternshippropositions"&gt;Internship propositions&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HInternshipPropositionTemplate"&gt;Internship Proposition Template&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Title&lt;/li&gt;
+&lt;li&gt;Short description&lt;/li&gt;
+&lt;li&gt;Contact person (person AT domain)&lt;/li&gt;
+&lt;li&gt;Duration and periods&lt;/li&gt;
+&lt;li&gt;Required level&lt;/li&gt;
+&lt;li&gt;Used technologies&lt;/li&gt;
+&lt;li&gt;Link to an extended version of the subject&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

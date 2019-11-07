@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ONS by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:13:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - ONS
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogind69c.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ONS">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='ONS.html'>Object Name Service</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_ONS.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="ONSd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/ONScede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="ONSd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HObjectNameService">Object Name Service</span></h2> 
+<hr class="line"/>
+            <ul>
+          <li><a href="#HIntroduction">1 Introduction</a> 
+      <li><a href="#HUserGuide">2 User Guide</a> 
+        <ul>
+          <li><a href="#HRequirements">2.1 Requirements</a> 
+      <li><a href="#HDeployment">2.2 Deployment</a> 
+        <ul>
+          <li><a href="#HDatabaseinstallationandcreation">2.2.1 Database installation and creation</a> 
+      <li><a href="#HApplicationconfigurationfiles">2.2.2 Application configuration files</a> 
+      <li><a href="#HONSinstallation">2.2.3 ONS installation</a> 
+      <li><a href="#HFinalsteps">2.2.4 Final steps</a> 
+        </ul>
+       </ul>
+          <li><a href="#HDeveloperGuide">3 Developer Guide</a> 
+      </ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HIntroduction">Introduction</span></h3><p class="paragraph"/><center>
+<a href="../../download/Main.Documentation/ONS/ONS_Documentation.png"><img src="../../download/Main.Documentation/ONS/ONS_Documentation.png" height="500" alt="ONS_Documentation.png" /></a>
+</center><p class="paragraph"/>In this document, we shall present an implementation of the Object Name Service (ONS) as defined in the EpcGlobal framework.
+The ONS service (both local and root) shall:
+<ul class="star">
+<li>(For the root ONS) Given an EPC, can return a list of network accessible service endpoints that pertain to the EPC in question. ONS does not contain actual data about the EPC. It only contains the network address of services that contain the actual data. ONS is also authoritative in that the entity that has change control over the information about the EPC is the same entity that assigned the EPC to the item to begin with. For example, in the case of an SGTIN EPC, the entity having control over the ONS record is the owner of the SGTIN manager number (EAN.UCC Company Prefix)</li>
+<li>(For the local ONS) Fulfills ONS lookup requests for EPCs within the control of the enterprise that operates the Local ONS; that is, EPCs for which the enterprise is the EPC Manager.</li>
+</ul>Along with the implementation of the ONS server, an application that enables tracking of products between inter-enterprise EPCIS repositories is provided. This application shall
+<ul class="star">
+<li>Implement and expose a new /tracking interface for the ASPIRE Information Sharing Repository, along with the /query and /capture interfaces. This new interface can be used by an external accessing application to obtain data about any EPC tag belonging to this particular company/repository. Data includes both events from the local repository and data reported from foreign domains as products move to them. The tracking interface is a SOAP interface.</li>
+<li>Collect data reports about an EPC tag from foreign tracking deployments. Data includes at least time, date, geographical coordinates and information about the company which received the item and issued the data. Data can also include details about the particular item (name, features, price, date of production e.t.c) if available. All data of this kind is stored in a local database, separate from the EPCIS repository database.</li>
+<li>Poll the attached EPCIS repository periodically for any events regarding EPC tags having a company identifier different than the one designated as ‘parent company’. Events are grouped together by company, a query is send to the ONS server for an EPCIS/tracking service endpoint, and an attempt is made to report the events.</li>
+</ul><h3 class="heading-1-1"><span id="HUserGuide">User Guide</span></h3> 
+<h4 class="heading-1-1-1"><span id="HRequirements">Requirements</span></h4><p class="paragraph"/><strong class="strong">Hardware (minimum)</strong>
+<ul class="star">
+<li>P IV 1.2GHz or equivalent</li>
+<li>512 MB Ram</li>
+<li>50 MB free HD space</li>
+</ul><strong class="strong">Software</strong>
+<ul class="star">
+<li>Java 1.6</li>
+<li>Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)</li>
+<li>MySQL 5.0 (or higher).</li>
+</ul><h4 class="heading-1-1-1"><span id="HDeployment">Deployment</span></h4><p class="paragraph"/>This section includes a step-by-step tutorial describing how to set up your own ONS server and the tracking application add-on to the Epcis Repository 
+<ul class="star">
+<li>Download and install a fully functional EPCIS repository, following the instructions on the appropriate <span class="wikiexternallink"><a href="EpcisRepository.html">&#119;iki</a></span> page. Populate the repository with sample data.</li>
+<li>Download aspireRfidOnsTrackingService.zip from the project <span class="wikiexternallink"><a href="http://forge.objectweb.org/project/showfiles.php?group_id=324">&#70;orge</a></span> page.</li>
+</ul><h5 class="heading-1-1-1-1"><span id="HDatabaseinstallationandcreation">Database installation and creation</span></h5><p class="paragraph"/>The tracking application was developed (and is preconfigured) to work with the open source MySQL relational database. Following are installation and configuration instructions for the MySQL database, along with a brief guide on how the user can configure the application to work with other relational databases. The installation instructions refer to a windows platform (although most of them apply to linux platforms also)
+<ul class="star">
+<li><strong class="strong">MySQL installation (skip this step if MySQL is already installed in your system)</strong><ul class="star">
+<li>Go to <span class="nobr"><a href="http://www.mysql.com/downloads/mysql/">&#104;ttp://www.mysql.com/downloads/mysql/</a></span> and download the MySQL community server (version 5.5.8 as of writing this document) package appropriate for your operating system (for windows platforms choose the .msi installer)</li>
+<li>Follow the instruction and install MySQL at a place of your choosing. Accept all default parameters (unless you have other needs and you know what you are doing). Make sure you choose to start the server after the installation is done</li>
+<li>During the installation you will be asked to create the ‘root’ user. Create the user and note down the password for later use.</li>
+<li>Go to <span class="nobr"><a href="http://www.mysql.com/downloads/workbench/">&#104;ttp://www.mysql.com/downloads/workbench/</a></span> and download the MySQL Workbench (version 5.2.31a as of writing this document) package appropriate for your operating system</li>
+<li>Install MySQL workbench and launch it. From the main screen of the program select ‘New connection’ .</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/workbench_main.png"><img src="../../download/Main.Documentation/ONS/workbench_main.png" height="350" alt="workbench_main.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>The following screen should appear</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/new_db_connection.png"><img src="../../download/Main.Documentation/ONS/new_db_connection.png" height="350" alt="new_db_connection.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Give a connection name of your liking. If you installed MySQL with the default parameters then hostname should be 127.0.0.1 and port should be 3306. Leave the username as root and enter the password you selected during installation. Press the ‘Test Connection’ button to make sure everything is ok and then ‘OK’. The connection should have now appeared to the list on your left on the main screen of the program.</li>
+<li>Select ‘New Server Instance –from the list on the right of the main screen</li>
+<li>On the popup screen select localhost</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/instance1.png"><img src="../../download/Main.Documentation/ONS/instance1.png" height="350" alt="instance1.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Select your software platform</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/instance2.png"><img src="../../download/Main.Documentation/ONS/instance2.png" height="350" alt="instance2.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Ignore any missing configuration file warnings</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/instance3.png"><img src="../../download/Main.Documentation/ONS/instance3.png" height="350" alt="instance3.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Select the connection you created on the previous step</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/instance4.png"><img src="../../download/Main.Documentation/ONS/instance4.png" height="350" alt="instance4.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Give a name your newly created instance and you are done</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/instance5.png"><img src="../../download/Main.Documentation/ONS/instance5.png" height="350" alt="instance5.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>By double clicking the instance you created, you can manage all aspect of your mysql_server. If the server is not running, you will get a warning. Select ‘continue anyway’ and you can start the server from there .</li>
+</ul>
+</li>
+<li><strong class="strong">Schema creation and user configuration</strong><ul class="star">
+<li>The following instructions and provided scripts assume that you used MySQL community edition as your relational database. If you used any other database, then the needed schema must be created manually according to the provided EER diagram</li>
+<li>Double click the connection you created in the previous part of the guide –make sure the server is running. The following screen should appear</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/connection_main.png"><img src="../../download/Main.Documentation/ONS/connection_main.png" height="350" alt="connection_main.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Select ‘File->Open SQL Script’ and choose the provided TrackingDBCreation.sql you downloaded</li>
+<li>Run the script. It should create the needed schema for the tracking application. The script does not create any users or grant any privileges to the schema. These have to be created manually. Close the SQL editor and double click the database instance you created –from the right part of the main program screen.</li>
+<li>Select the accounts tab, and click ‘Add account’</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/accounts_main.png"><img src="../../download/Main.Documentation/ONS/accounts_main.png" height="350" alt="accounts_main.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Input a login name, password, localhost as the host matching criteria and click apply (see photo for details). Note down the username and password.</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/account_create.png"><img src="../../download/Main.Documentation/ONS/account_create.png" height="350" alt="account_create.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>Go to the ‘Schema Privileges’ Tab. Select the user you just created and click on ‘Add Entry’</li>
+<li>On the screen that will pop-up choose: SelectedHost:localhost  and SelectedSchema: epcis_tracking. Then press ‘Ok’.</li>
+</ul></li>
+</ul><center>
+<a href="../../download/Main.Documentation/ONS/schema_previliges.png"><img src="../../download/Main.Documentation/ONS/schema_previliges.png" height="350" alt="schema_previliges.png" /></a>
+</center>
+<ul class="star">
+<li class="innerlist"><ul class="star">
+<li>On the bottom of the screen click ‘Select ALL’ – to give the new user all privileges on the schema – and then ‘Save changes’</li>
+<li>We are now ready. Next step is to edit the application configuration files for database access and for our company .</li>
+</ul></li>
+</ul><h5 class="heading-1-1-1-1"><span id="HApplicationconfigurationfiles">Application configuration files</span></h5><p class="paragraph"/>There are 2 main configuration files that should be edited according to the database installation and the user needs. The first file is about the Hibernate O/R mapping framework our application uses to access the database. The second is the properties file for the application. Extract the aspireRfidTracking.war file you downloaded to a folder in your hard disk. It should create 2 folders named WEB-INF and META-INF. You can use any archive manager you like (a free option for Windows based platforms is 7-Zip )<p class="paragraph"/><div class="code"><pre>..\WEB-INF\classes\hibernate.cfg.xml</pre></div>
+<ul class="star">
+<li>“hibernate.connection.driver_class”<ul class="star">
+<li>Default: “com.mysql.jdbc.Driver”</li>
+<li>Set: Don’t change if you used MySQL. In other cases change this to the class name of your connector class</li>
+</ul>
+</li>
+<li>“hibernate.dialect”<ul class="star">
+<li>Default:  “org.hibernate.dialect.MySQLDialect”</li>
+<li>Set: Don’t change if you used MySQL. In other cases, consult the appendix for a dialect that matches your database provider (or the Hibernate Documentation for more resources)</li>
+</ul>
+</li>
+<li>“hibernate.connection.username”<ul class="star">
+<li>Default: “user”</li>
+<li>Set: Change this to the username of the user you created on the previous step</li>
+</ul>
+</li>
+<li>“hibernate.connection.password”<ul class="star">
+<li>Default: “pass”</li>
+<li>Set:  Change this to the password of the user you created on the previous step</li>
+</ul>
+</li>
+<li>“hibernate.connection.url”<ul class="star">
+<li>Default: “jdbc:mysql://localhost:3306/epcis_tracking”</li>
+<li>Set: Don’t change if you used MySQL and installed with default options. In other case consult your software vendor’s manual.</li>
+</ul></li>
+</ul><p class="paragraph"/><div class="code"><pre>..\WEB-INF\classes\tracking.properties</pre></div>
+<ul class="star">
+<li>localEpcisInterface<ul class="star">
+<li>Default: http&#58;//localhost&#58;8080/aspireRfidEpcisRepository/query</li>
+<li>Set: The query interface URL of the EPCIS repository the tracking application is attached to</li>
+</ul>
+</li>
+<li>localONS_Resolver<ul class="star">
+<li>Default:  127.0.0.1</li>
+<li>Set: IP of the local ONS server (see ONS section for more details)</li>
+</ul>
+</li>
+<li>exportedEpcisInterface<ul class="star">
+<li>Default: http&#58;//localhost&#58;8080/aspireRfidEpcisRepository/query</li>
+<li>Set: This is what will appear as the remote URI to the foreign tracking application. It can be used by the other party to obtain more information about reported epc events</li>
+</ul>
+</li>
+<li>companyName<ul class="star">
+<li>Default: ASPIRE Inc.</li>
+<li>Set: Your company name</li>
+</ul>
+</li>
+<li>companyDesc<ul class="star">
+<li>Default: RFID Solutions</li>
+<li>Set: A brief description of your company</li>
+</ul>
+</li>
+<li>companyAddress<ul class="star">
+<li>Default: 19.7Km Markopoulou Ave</li>
+<li>Set: Company’s address.</li>
+</ul>
+</li>
+<li>companyCountryCode<ul class="star">
+<li>Default: GR</li>
+<li>Set: Company’s country code.</li>
+</ul>
+</li>
+<li>companyRegion<ul class="star">
+<li>Default: Attica</li>
+<li>Set: Company’s  region, state or province e.t.c</li>
+</ul>
+</li>
+<li>companyEmail<ul class="star">
+<li>Default:  komo@aspire_inc.gr</li>
+<li>Set: Contact email</li>
+</ul>
+</li>
+<li>companyTel<ul class="star">
+<li>Default: +302106671836</li>
+<li>Set: Contact landline</li>
+</ul>
+</li>
+<li>companyFax<ul class="star">
+<li>Default:  +302106672478</li>
+<li>Set: Contact Fax</li>
+</ul>
+</li>
+<li>companyIdentifier<ul class="star">
+<li>Default: 000</li>
+<li>Set: This is the unique company identifier as defined by the EPCIS standard. This numerical in always the first component on any epc urn that is assigned to the company domain. The application uses this to filter out any data from the local EPCIS repository that are for own epc tags.</li>
+</ul>
+</li>
+<li>lattitude<ul class="star">
+<li>Default: 37.939605</li>
+<li>Set: A default latitude attribute for generated events that don’t carry such information. Can be set to any relevant to the epcis repository location.</li>
+</ul>
+</li>
+<li>longtitude<ul class="star">
+<li>Default: 23.874013</li>
+<li>Set: As above</li>
+</ul>
+</li>
+<li>pollPeriod<ul class="star">
+<li>Default:  10000</li>
+<li>Set: The poll interval (in msec) the program should wait before it checks for any new events to report</li>
+</ul>
+</li>
+<li>startTimeDate<ul class="star">
+<li>Default: 2010-10-04 18&#58;09&#58;24</li>
+<li>Set:  On startup, the tracking interface will only poll for events newer that this time/date. This is updated every time a poll is made, so we get only the newer events each time .</li>
+</ul></li>
+</ul>After you have edited the files, repack everything into the original archive aspireRfidTracking.war .
+<h5 class="heading-1-1-1-1"><span id="HONSinstallation">ONS installation</span></h5> 
+<ul class="star">
+<li><strong class="strong">Platform choice and implementation</strong></li>
+</ul>As per the ONS specification, each company assigned part of the epc namespace, should maintain an appropriate ONS server for that namespace. Our application uses these ONS servers to find out the appropriate foreign tracking interfaces to report epc events. The ONS server is actually a properly configured DNS server with NAPTR records for the part of the namespace the server is qualified. Any DNS implementation and platform combination is a valid option. We used the popular, open source and reference BIND implementation of DNS on windows machines. Ideally a realistic setup for our application involves one ONS server per company. For demonstration needs we will present a setup where a single ONS server contains information for EPC’s belonging to several different domains. The guide assumes at least basic information on what DNS (very helpful on this matter is the BIND manual available at <span class="nobr"><a href="http://www.isc.org/software/bind/documentation">&#104;ttp://www.isc.org/software/bind/documentation</a></span>) .
+<ul class="star">
+<li><strong class="strong">DNS Installation</strong><ul class="star">
+<li>Go to <span class="nobr"><a href="http://www.isc.org/downloads">&#104;ttp://www.isc.org/downloads</a></span> and select ‘Windows Download’ of the latest BIND release (version 9.7.2-P3 as of writing this guide).</li>
+<li>Follow the very helpful instructions on <span class="nobr"><a href="http://alex.charrett.com/bind-on-windows-mainmenu-3">&#104;ttp://alex.charrett.com/bind-on-windows-mainmenu-3</a></span> up to the point of Configuring your zone ( if you don’t want to go though the BIND installation manual)</li>
+<li>The scenario also assumes that while populating your EPCIS repository with sample data, you did so with tags having at least 2 different company identifiers. Let us assume that one of them is 1 –for your company – and the other one is 145 – for one of your clients. Modify your named.conf according to the one provided. Also following the instructions on how to configure your zones – from the site mentioned at the previous step, alter if needed the 2 provided zone files and copy them at the appropriate folder. If needed modify again the entry on tracking.properties file for the company identifier.</li>
+<li>Save everything and start the DNS service – or restart it</li>
+<li>Make sure it runs correctly, and that your firewall does not block traffic on TCP and UDP ports 53 (the default for DNS requests) .</li>
+</ul></li>
+</ul><h5 class="heading-1-1-1-1"><span id="HFinalsteps">Final steps</span></h5><p class="paragraph"/>Copy aspireRfidTracking.war to the Tomcat webapps folder. Launch tomcat and you should be set. 
+<h3 class="heading-1-1"><span id="HDeveloperGuide">Developer Guide</span></h3> 
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='ONS.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/indexa043.html?parent=Main.Documentation.ONS"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.ONS"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            13 Attachments  by
+            kmour ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/account_create1b1e.png?width=80" alt="account_create.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/account_create.png">account_create.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>34935</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/accounts_main1b1e.png?width=80" alt="accounts_main.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/accounts_main.png">accounts_main.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>95684</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/connection_main1b1e.png?width=80" alt="connection_main.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/connection_main.png">connection_main.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>100807</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance11b1e.png?width=80" alt="instance1.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance1.png">instance1.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>71943</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance21b1e.png?width=80" alt="instance2.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance2.png">instance2.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>80676</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance31b1e.png?width=80" alt="instance3.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance3.png">instance3.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>72904</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/workbench_main1b1e.png?width=80" alt="workbench_main.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/workbench_main.png">workbench_main.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>189476</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance41b1e.png?width=80" alt="instance4.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance4.png">instance4.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>69481</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance51b1e.png?width=80" alt="instance5.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance5.png">instance5.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>67309</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/instance61b1e.png?width=80" alt="instance6.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/instance6.png">instance6.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>84139</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/new_db_connection1b1e.png?width=80" alt="new_db_connection.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/new_db_connection.png">new_db_connection.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>44843</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/schema_previliges1b1e.png?width=80" alt="schema_previliges.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/schema_previliges.png">schema_previliges.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>33365</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                <img src="../../download/Main.Documentation/ONS/ONS_Documentation1b1e.png?width=80" alt="ONS_Documentation.png" width="80" />
+                                                </ td><td><a href="../../download/Main.Documentation/ONS/ONS_Documentation.png">ONS_Documentation.png</
+                                     a></td>
+            <td>1.1</td><td>kmour</td><td>274065</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/ONS" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='ONS.html'>Object Name Service</a>
+  (en)
+ <br />
+  Creator: nkef
+ &nbsp;Date: 2011/01/11 16:09
+ <br />
+ Last Author: kmour
+ &nbsp;Date: 2011/04/17 16:17
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ONS by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:14:01 GMT -->
+</html>

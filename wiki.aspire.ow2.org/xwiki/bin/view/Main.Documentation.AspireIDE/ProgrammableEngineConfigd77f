@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>ProgrammableEngineConfig</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1274219270000</creationDate>
+<date>1274219400000</date>
+<contentUpdateDate>1274219400000</contentUpdateDate>
+<version>1.2</version>
+<title>Programmable Engine Configurator</title>
+<template></template>
+<content>1 Programmable Engine Configurator
+
+
+----
+#toc("" "" "true")
+----
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HProgrammableEngineConfigurator"&gt;Programmable Engine Configurator&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+        &lt;hr class="line"/&gt;
+</renderedcontent>
+</xwikidoc>

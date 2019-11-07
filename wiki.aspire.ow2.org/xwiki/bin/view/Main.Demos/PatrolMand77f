@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Demos</web>
+<name>PatrolMan</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Demos</parent>
+<creator>xwiki:XWiki.calmant</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1282829426000</creationDate>
+<date>1282855758000</date>
+<contentUpdateDate>1282855758000</contentUpdateDate>
+<version>1.5</version>
+<title>Patrolman Demonstration</title>
+<template></template>
+<content>1 Patrolman demonstration
+
+#toc("" "" "")
+
+1.1 Short description
+
+Nowadays, no option allows interaction on data retrieved from logical readers, even if a logical reader can be a fully interactive device, like a mobile phone.
+
+The aim of this demonstration is to provide a standard way to show a questionnaire to an user each time a specific tag is found.
+A questionnaire may be composed of different elements (textual questions and choices lists), to help the user describe the element he is analyzing.
+
+
+For example, a patrolman may have to control many check points in an industrial building.
+His phone may be considered as a logical reader.
+He will start by downloading one or more ECSpec XML file from a bluetooth server.
+These files contain the list of all questionnaires and the associated tag UID or record type patterns.
+
+While patrolling, the operator will use his phone to read the RFID tag of every item he has to check.
+For every tag read, the associated questionnaire will be displayed.
+At the end of the patrol, he will simply submit the fulfilled questionnaires back to the ALE server.
+
+1.1 User documentation
+
+On the server side, the patrolman-server bundle must be active.
+It relies on the [bluetoothServer&gt;Main.Documentation.Bundles.BluetoothServer] bundle.
+
+On the client side, simply install the .jad and .jar files.
+
+When the client encounter an unknown pattern, nothing is shown on the screen.
+When a known pattern is encountered and multiple questionnaires are valid, the first questionnaire is shown.
+
+
+Currently, the server just show the ECReports on the console output.
+
+1.1 Technical documentation
+
+The ECSpec format has been extended to make an interactive logical reader, like a phone, to display a specific questionnaire when a given pattern has been detected in a tag.
+
+When the client receives an ECSpec file, it prepares in memory a screen per questionnaire, ready to be shown on tag detection.
+The questionnaires are defined in the &lt;questionnaire&gt; XML extension element in group specification elements
+
+The client specifies the questionnaire to display via a &lt;questionnaire&gt; XML element and the associated tag information pattern in report groups specifications.
+
+1.1.1 Sample report specification with a questionnaire
+
+Here is a sample questionnaire, containing several questions displayed every time the reader will find a tag with the pattern: "urn:nfc:wkt:Uri".
+
+{code:xml}
+&lt;reportSpec reportName="ReportDevice"&gt;
+    &lt;reportSet set="CURRENT" /&gt;
+    &lt;groupSpec&gt;
+        &lt;pattern&gt;urn:nfc:wkt:Uri&lt;/pattern&gt;
+        &lt;extension&gt;
+            &lt;extension&gt;
+                &lt;questionnaire title="Device State" id="DevState"&gt;
+                    &lt;textual id="message"&gt;
+                        &lt;label&gt;Value shown&lt;/label&gt;
+                        &lt;default&gt;None&lt;/default&gt;
+                    &lt;/textual&gt;
+                    &lt;choiceList id="state"&gt;
+                        &lt;label&gt;Unique&lt;/label&gt;
+                        &lt;choice&gt;Good&lt;/choice&gt;
+                        &lt;choice&gt;Medium&lt;/choice&gt;
+                        &lt;choice&gt;Bad&lt;/choice&gt;
+                    &lt;/choiceList&gt;
+                    &lt;choiceList id="control_leds" multiple="true"&gt;
+                        &lt;label&gt;Multiple&lt;/label&gt;
+                        &lt;choice&gt;Red&lt;/choice&gt;
+                        &lt;choice&gt;Blue&lt;/choice&gt;
+                        &lt;choice&gt;Green&lt;/choice&gt;
+                    &lt;/choiceList&gt;
+                &lt;/questionnaire&gt;
+            &lt;/extension&gt;
+        &lt;/extension&gt;
+    &lt;/groupSpec&gt;
+&lt;/reportSpec&gt;
+{code}
+
+1.1.1 Questionnaire extension XMLSchema
+
+{code:xml}
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schema targetNamespace="http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire"&gt;
+    &lt;element name="questionnaire" type="tns:Questionnaire"&gt;&lt;/element&gt;
+    &lt;complexType name="Questionnaire"&gt;
+    	&lt;sequence&gt;
+    		&lt;element name="textual" type="tns:textualType" maxOccurs="unbounded" minOccurs="0"&gt;
+    		&lt;/element&gt;
+    		&lt;element name="choiceList" type="tns:choiceListType" maxOccurs="unbounded" 
+			minOccurs="0"&gt;
+    		&lt;/element&gt;
+    	&lt;/sequence&gt;
+    	&lt;attribute name="id" type="string" use="required"&gt;&lt;/attribute&gt;
+    	&lt;attribute name="title" type="string" use="required"&gt;&lt;/attribute&gt;
+    &lt;/complexType&gt;
+
+    &lt;complexType name="QuestionType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="label" type="string" maxOccurs="1" minOccurs="1"&gt;&lt;/element&gt;
+        &lt;/sequence&gt;
+        &lt;attribute name="id" type="string" use="required"&gt;&lt;/attribute&gt;
+    &lt;/complexType&gt;
+
+    &lt;complexType name="textualType"&gt;
+        &lt;complexContent&gt;
+            &lt;extension base="tns:QuestionType"&gt;
+                &lt;sequence&gt;
+                    &lt;element name="default" type="string" maxOccurs="1" minOccurs="0"&gt;&lt;/element&gt;
+                    &lt;element name="answer" type="string" maxOccurs="1" minOccurs="0"&gt;&lt;/element&gt;
+                &lt;/sequence&gt;
+                &lt;attribute name="default" type="string" use="optional"&gt;&lt;/attribute&gt;
+            &lt;/extension&gt;
+        &lt;/complexContent&gt;
+    &lt;/complexType&gt;
+
+    &lt;complexType name="choiceListType"&gt;
+        &lt;complexContent&gt;
+            &lt;extension base="tns:QuestionType"&gt;
+                &lt;sequence&gt;
+                    &lt;element name="choice" type="string" maxOccurs="unbounded" minOccurs="1"&gt;
+                    &lt;/element&gt;
+                &lt;/sequence&gt;
+                &lt;attribute name="multiple" type="boolean" use="optional"
+			default="false"&gt;&lt;/attribute&gt;
+                &lt;attribute name="default" type="int" use="optional" default="0"&gt;&lt;/attribute&gt;
+            &lt;/extension&gt;
+        &lt;/complexContent&gt;
+    &lt;/complexType&gt;
+&lt;/schema&gt;
+{code}
+
+1.1 Tips for future improvements
+
+* When an unknown tag is encountered, show a default questionnaire (free text area).
+* When multiple questionnaires corresponds to the read tag, let the user choose the good questionnaire.
+* Do something with the questionnaires data when the server gets an ECReport file (storage, statistics...)</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HPatrolmandemonstration"&gt;Patrolman demonstration&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HShortdescription"&gt; Short description&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserdocumentation"&gt; User documentation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTechnicaldocumentation"&gt; Technical documentation&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSamplereportspecificationwithaquestionnaire"&gt; Sample report specification with a questionnaire&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HQuestionnaireextensionXMLSchema"&gt; Questionnaire extension XMLSchema&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HTipsforfutureimprovements"&gt; Tips for future improvements&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HShortdescription"&gt;Short description&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Nowadays, no option allows interaction on data retrieved from logical readers, even if a logical reader can be a fully interactive device, like a mobile phone.&lt;p class="paragraph"/&gt;The aim of this demonstration is to provide a standard way to show a questionnaire to an user each time a specific tag is found.
+A questionnaire may be composed of different elements (textual questions and choices lists), to help the user describe the element he is analyzing.&lt;p class="paragraph"/&gt;
+For example, a patrolman may have to control many check points in an industrial building.
+His phone may be considered as a logical reader.
+He will start by downloading one or more ECSpec XML file from a bluetooth server.
+These files contain the list of all questionnaires and the associated tag UID or record type patterns.&lt;p class="paragraph"/&gt;While patrolling, the operator will use his phone to read the RFID tag of every item he has to check.
+For every tag read, the associated questionnaire will be displayed.
+At the end of the patrol, he will simply submit the fulfilled questionnaires back to the ALE server.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserdocumentation"&gt;User documentation&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;On the server side, the patrolman-server bundle must be active.
+It relies on the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.Bundles/BluetoothServer"&gt;bluetoothServer&lt;/a&gt;&lt;/span&gt; bundle.&lt;p class="paragraph"/&gt;On the client side, simply install the .jad and .jar files.&lt;p class="paragraph"/&gt;When the client encounter an unknown pattern, nothing is shown on the screen.
+When a known pattern is encountered and multiple questionnaires are valid, the first questionnaire is shown.&lt;p class="paragraph"/&gt;
+Currently, the server just show the ECReports on the console output.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTechnicaldocumentation"&gt;Technical documentation&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The ECSpec format has been extended to make an interactive logical reader, like a phone, to display a specific questionnaire when a given pattern has been detected in a tag.&lt;p class="paragraph"/&gt;When the client receives an ECSpec file, it prepares in memory a screen per questionnaire, ready to be shown on tag detection.
+The questionnaires are defined in the &lt;questionnaire&gt; XML extension element in group specification elements&lt;p class="paragraph"/&gt;The client specifies the questionnaire to display via a &lt;questionnaire&gt; XML element and the associated tag information pattern in report groups specifications.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSamplereportspecificationwithaquestionnaire"&gt;Sample report specification with a questionnaire&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Here is a sample questionnaire, containing several questions displayed every time the reader will find a tag with the pattern: "urn:nfc:wkt:Uri".&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSpec reportName=&lt;span class="xml&amp;#45;quote"&gt;"ReportDevice"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;reportSet set=&lt;span class="xml&amp;#45;quote"&gt;"CURRENT"&lt;/span&gt; /&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;groupSpec&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;pattern&amp;#62;&lt;/span&gt;urn:nfc:wkt:Uri&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/pattern&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;extension&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;extension&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;questionnaire title=&lt;span class="xml&amp;#45;quote"&gt;"Device State"&lt;/span&gt; id=&lt;span class="xml&amp;#45;quote"&gt;"DevState"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;textual id=&lt;span class="xml&amp;#45;quote"&gt;"message"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;label&amp;#62;&lt;/span&gt;Value shown&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/label&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;default&amp;#62;&lt;/span&gt;None&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/default&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/textual&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choiceList id=&lt;span class="xml&amp;#45;quote"&gt;"state"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;label&amp;#62;&lt;/span&gt;Unique&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/label&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Good&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Medium&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Bad&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choiceList&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choiceList id=&lt;span class="xml&amp;#45;quote"&gt;"control_leds"&lt;/span&gt; multiple=&lt;span class="xml&amp;#45;quote"&gt;"true"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;label&amp;#62;&lt;/span&gt;Multiple&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/label&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Red&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Blue&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;choice&amp;#62;&lt;/span&gt;Green&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choice&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/choiceList&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/questionnaire&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/extension&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/extension&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/groupSpec&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/reportSpec&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HQuestionnaireextensionXMLSchema"&gt;Questionnaire extension XMLSchema&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;?xml version=&lt;span class="xml&amp;#45;quote"&gt;"1.0"&lt;/span&gt; encoding=&lt;span class="xml&amp;#45;quote"&gt;"UTF&amp;#45;8"&lt;/span&gt;?&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;schema targetNamespace=&lt;span class="xml&amp;#45;quote"&gt;"http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire"&lt;/span&gt;
+  xmlns=&lt;span class="xml&amp;#45;quote"&gt;"http://www.w3.org/2001/XMLSchema"&lt;/span&gt;
+  xmlns:tns=&lt;span class="xml&amp;#45;quote"&gt;"http://aspirerfid.ow2.org/ECSpec/extensions/questionnaire"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"questionnaire"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"tns:Questionnaire"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexType name=&lt;span class="xml&amp;#45;quote"&gt;"Questionnaire"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+    	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;sequence&amp;#62;&lt;/span&gt;
+    		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"textual"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"tns:textualType"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"0"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+    		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+    		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"choiceList"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"tns:choiceListType"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; 
+			minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"0"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+    		&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+    	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/sequence&amp;#62;&lt;/span&gt;
+    	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"id"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"required"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+    	&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"title"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"required"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexType&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexType name=&lt;span class="xml&amp;#45;quote"&gt;"QuestionType"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;sequence&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"label"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"1"&lt;/span&gt; minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"1"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/sequence&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"id"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"required"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexType&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexType name=&lt;span class="xml&amp;#45;quote"&gt;"textualType"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexContent&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;extension base=&lt;span class="xml&amp;#45;quote"&gt;"tns:QuestionType"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;sequence&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"default"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"1"&lt;/span&gt; minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"0"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"answer"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"1"&lt;/span&gt; minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"0"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/sequence&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"default"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"optional"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/extension&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexContent&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexType&amp;#62;&lt;/span&gt;&lt;p class="paragraph"/&gt;    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexType name=&lt;span class="xml&amp;#45;quote"&gt;"choiceListType"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;complexContent&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;extension base=&lt;span class="xml&amp;#45;quote"&gt;"tns:QuestionType"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;sequence&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;element name=&lt;span class="xml&amp;#45;quote"&gt;"choice"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"string"&lt;/span&gt; maxOccurs=&lt;span class="xml&amp;#45;quote"&gt;"unbounded"&lt;/span&gt; minOccurs=&lt;span class="xml&amp;#45;quote"&gt;"1"&lt;/span&gt;&amp;#62;&lt;/span&gt;
+                    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/element&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/sequence&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"multiple"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"boolean"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"optional"&lt;/span&gt;
+			default=&lt;span class="xml&amp;#45;quote"&gt;"false"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+                &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;attribute name=&lt;span class="xml&amp;#45;quote"&gt;"default"&lt;/span&gt; type=&lt;span class="xml&amp;#45;quote"&gt;"int"&lt;/span&gt; use=&lt;span class="xml&amp;#45;quote"&gt;"optional"&lt;/span&gt; default=&lt;span class="xml&amp;#45;quote"&gt;"0"&lt;/span&gt;&amp;#62;&lt;/span&gt;&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/attribute&amp;#62;&lt;/span&gt;
+            &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/extension&amp;#62;&lt;/span&gt;
+        &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexContent&amp;#62;&lt;/span&gt;
+    &lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/complexType&amp;#62;&lt;/span&gt;
+&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;/schema&amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTipsforfutureimprovements"&gt;Tips for future improvements&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;When an unknown tag is encountered, show a default questionnaire (free text area).&lt;/li&gt;
+&lt;li&gt;When multiple questionnaires corresponds to the read tag, let the user choose the good questionnaire.&lt;/li&gt;
+&lt;li&gt;Do something with the questionnaires data when the server gets an ECReport file (storage, statistics...)&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

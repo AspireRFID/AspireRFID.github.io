@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:31:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - RFIDBusinessLocationGMFEditor
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation.AspireIDE/Main.Documentation.AspireIDE_RFIDBusinessLocationGMFEditor.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditord5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditorcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditord77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 RFID Business Location GMF Editor
+
+----
+#toc(&#34;&#34; &#34;&#34; &#34;true&#34;)
+----
+
+1.1 Introduction
+
+The RFID Business Location GMF Editor which is also called the MasterDataEditorGMF project, aims at developing a graphical representation of the MasterData of an RFID EPCIS repository.  The main goal was to ease the management of the Business Locations and Read Points, which contain RFID tags, of an enterprise. In more general terms the main goal was to ease the warehouse management of an enterprise, by representing the MasterData graphically. It is an enhancement of the MasterDataEditor project and provides a more user friendly environment for managing the MasterData.
+
+The main goals are:
+
+* Provide a UML-like graphical representation of the Business Locations (warehouses), Read Points of a company.
+* Query the EPCIS repository and create new diagrams from the MasterData that are stored in it.
+* Capture the MasterData of a diagram and insert them into the EPCIS repository.
+* Create new diagrams from Apdl files.
+* Create offline diagrams which are saved locally in a file.
+* Communicate with the BPWME project and store into the Apdl file the MasterData of the diagram.
+* Communicate with the BPWME project and create a diagram from an Apdl file.
+* Communicate with the BPWME project and correlate a diagram with a CLCB element.
+
+1.1 Developer Guide
+
+In order to successfully build the MasterDataEditorGMF project within Eclipse, the circular dependencies of the plug-ins must be disabled from the preferences menu:
+* Preferences -&#62; Java -&#62; Compiler -&#62; Building -&#62; Build path problems -&#62; Circular dependencies : Warning
+
+
+1.1 User Guide
+
+1.1.1 Requirements
+
+*Software* 
+
+* Java 1.6 or higher
+* Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)
+* MySQL 5.0 (or higher)
+
+1.1.1 Starting the MasterDataEditorGMF application
+
+Prior to starting the MasterDataEditorGMF application, the user has to first start the AspireRfidIde application.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/aspirerfidide.jpg&#34;&#62;{image:aspirerfidide.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1 MasterDataEditorGMF view
+
+When starting the AspireRfidIde application there is an option to view MasterDataEditorGMF editor by selecting Window -&#62; Show View -&#62; Master Data Editor GMF. 
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfview.jpg&#34;&#62;{image:masterdataeditorgmfview.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+This view consists of 3 active windows.
+* Editor
+** Palette
+* Outline
+* Properties
+
+1.1.1.1 Editor window
+
+The editor window is the main window where a MasterDataEditorGMF diagram is being constructed. All the elements can be either created by clicking them on the editor or by manually resizing them. The application automatically validates where an element can be placed. The elements that are already created inside a compartment can not be moved into another compartment. 
+
+1.1.1.1 Palette window
+
+The palette window resides in the editor window and contains all the elements that are used to create a MasterDataEditorGMF diagram. It has also additional options such as zoom in, zoom out and the creation of a note.
+
+1.1.1.1 Properties window
+
+The properties window contains individual properties depending on the element currently selected. These properties are:
+* Core properties of an element that provide its attributes.
+* Rulers &#38; Grid properties that provide options for the editor.
+* Appearance properties that provide appearance options. 
+
+1.1.1.1 Outline window
+
+The outline window shows the whole diagram in the editor window in a zoomed out perspective.
+
+1.1.1 Preferences
+
+The MasterDataEditorGMF application provides preferences by selecting Window -&#62; Preferences -&#62; MasterDataEditorGMF Diagram. The standard preferences of a GMF application are the Appearance, Connections, Pathmaps, Printing, Rulers And Grid.
+
+1.1.1 Configurator Preference
+
+In the Configurator Preference the user can enter the EPCIS Repository Capture URL and the EPCIS Repository Query URL. 
+Additionally, there is an option to set the size of the elements when permorming the action &#34;MasterDataEditorGMF Square Layout&#34;.
+Moreover, there are options to insert new custom attributes that will be displayed in the Core property window of each element. The maximum number of the custom attributes is 20 for each element. 
+
+1.1.1 MasterDataEditorGMF Actions
+
+1.1.1.1 New MasterDataEditorGMF Diagram
+
+To create a new MasterDataEditorGMF diagram the user should select File -&#62; MasterDataEditorGMF -&#62; New MasterDataEditorGMF Diagram. The user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated. The MasterDataEditorGMF file has the extension .masterdataeditorgmf_diagram. This file contains all the necessary info of the diagram and can be used for offline options (when there is no connection with the EPCIS repository). 
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/newmasterdataeditorgmfdiagram.jpg&#34;&#62;{image:newmasterdataeditorgmfdiagram.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/masterdataeditorgmfdiagram.jpg&#34;&#62;{image:masterdataeditorgmfdiagram.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From File
+
+The user can open a MasterDataEditorGMF diagram from a file with the extension .masterdataeditorgmf_diagram by selecting File -&#62; MasterDataEditorGMF -&#62; Open MasterDataEditorGMF Diagram From File. In these cases either there is no connection with the EPCIS repository or a diagram was created and saved locally. 
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromfile.jpg&#34;&#62;{image:openmasterdataeditorgmfdiagramfromfile.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From Apdl
+
+The user can open multiple MasterDataEditorGMF diagrams from an Apdl file with the extension .xml by selecting File -&#62; MasterDataEditorGMF -&#62; Open MasterDataEditorGMF Diagram From Apdl. All the MasterData that reside in the Apdl file will be created separately in MasterDataEditorGMF diagrams.
+
+1.1.1.1 Open MasterDataEditorGMF Diagram From EPCIS
+
+A MasterDataEditorGMF diagram can be constructed from the MasterData which is stored in the EPCIS repository. When selecting File -&#62; MasterDataEditorGMF -&#62; Open MasterDataEditorGMF Diagram From EPCIS, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a list of the companies that are stored in the EPCIS repository is displayed. By selecting a company and proceeding to the next window, a file is also required for the diagram to be constructed. If no connection to the EPCIS repository exists then an error will pop up.
+In case the user doesn't want to correlate the MasterDataEditorGMF diagram with a CLCB, then he has to select the location and file name of the MasterDataEditorGMF file that will be created from the EPCIS.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/openmasterdataeditorgmfdiagramfromepcis.jpg&#34;&#62;{image:openmasterdataeditorgmfdiagramfromepcis.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1.1 Insert MasterDataEditorGMF Diagram Into EPCIS
+
+A MasterDataEditorGMF diagram can be inserted into the EPCIS repository by selecting File -&#62; Insert MasterDataEditorGMF Diagram Into EPCIS. The company of the current active window of the diagram will be displayed and inserted into the EPCIS repository.
+
+&#60;center&#62;
+&#60;a href=&#34;http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor/insertmasterdataeditorgmfdiagramintoepcis.jpg&#34;&#62;{image:insertmasterdataeditorgmfdiagramintoepcis.jpg|400}&#60;/a&#62;
+&#60;/center&#62;
+
+1.1.1.1 Correlate MasterDataEditorGMF Diagram With CLCB
+
+The user can correlate an existing MasterDataEditorGMF diagram with a CLCB, if there are open BPWME diagrams. When selecting File -&#62; MasterDataEditorGMF -&#62; Correlate MasterDataEditorGMF Diagram With CLCB, the user is prompted to correlate the MasterDataEditorGMF file with a CLCB (from a BPWME file). By pressing yes a new window for selecting the respective CLCB will open. By selecting a CLCB and pressing finish, a copy of the MasterDataEditorGMF diagram file will be created under a new folder of the CLCB that was correlated.
+
+
+1.1.1.1 MasterDataEditorGMF Square Layout
+
+The user can lay out in square a MasterDataEditorGMF diagram by selecting File -&#62; MasterDataEditorGMF -&#62; MasterDataEditorGMF Square Layout. All the elements will be arranged in a square regardless the size of each element. This can be very convenient for diagrams with big number of elements.
+
+1.1.1 Elements – Properties
+
+1.1.1.1 Company Element
+
+The main element of a MasterDataEditorGMF diagram is the Company. It always exists as it cannot be created from the palette and can be considered as the “background” of the diagram.
+
+1.1.1.1.1 Company Element Attributes
+
+The default attributes of a Company element are the ID, Name, Address, City, Country, Description. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Company into the EPCIS repository. 
+
+1.1.1.1 Warehouse Elements
+
+The Warehouse category (in the palette window) provides 4 Warehouse elements: BizLoc, Warehouse, Room, Section. The “BizLoc” Warehouse is an abstract Warehouse element where the user can choose its type, whereas the others have default type which cannot be changed. On top of a warehouse element its Name attribute is displayed.
+
+1.1.1.1.1 Warehouses Attributes
+
+The default attributes of a Warehouse element are the ID, Name, Description, Type. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the Warehouse into the EPCIS repository.
+
+1.1.1.1 Read Point Elements
+
+The ReadPoint/Items category (in the palette window) provides 8 ReadPoint elements: ReadPoint, Container, Conveyor, Shelf, Gate, PalletTruck, PushArm, HandHeldReader. The “ReadPoint” Read Point element is an abstract ReadPoint element where the user can choose its type, whereas the others have default type which cannot be changed.
+
+1.1.1.1.1 Read Point Attributes
+
+The default attributes of a ReadPoint element are the ID, Name, Description, Type ReadPoint. The ID has the default value urn:epcglobal:fmcg:loc: and is a mandatory field, in case the user wants to save the ReadPoint into the EPCIS repository. The ReadPoint attribute can have the value true or false. If it is true then the element is considered as a ReadPoint element, else if it is false the element is considered as a Warehouse element.
+
+1.1.1 Elements’ Compartments
+
+Compartment of an element is the part of the element where children elements can be placed. None of the elements that are placed inside a compartment can be moved into another compartment.
+
+1.1.1.1 Company compartment
+
+The Company element consists of one compartment where only Warehouse elements can be placed. These can be the BizLoc, Warehouse, Room, Section elements. Inside the Company compartment the children elements can be resized.
+
+1.1.1.1 Warehouse compartment
+
+The Warehouse elements consist of 2 compartments. The top compartment where Warehouse children elements can be placed and the bottom compartment where ReadPoint children elements can be placed. The ReadPoint elements cannot be resized in the Warehouse compartment whereas the Warehouse children elements can. 
+
+1.1.1.1 ReadPoint compartment
+
+The ReadPoint elements do not have compartments and as such they do not have children elements. 
+</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

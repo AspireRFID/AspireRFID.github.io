@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Goodies</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1267284350000</creationDate>
+<date>1268140240000</date>
+<contentUpdateDate>1268140240000</contentUpdateDate>
+<version>1.17</version>
+<title>OW Aspire :: Goodies</title>
+<template></template>
+<attachment>
+<filename>privacy-friendly-wallet.jpg</filename>
+<filesize>49117</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1267399438000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ow2aspire-stickers.pdf</filename>
+<filesize>117702</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1267622045000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ow2aspire-tshirtflop.jpg</filename>
+<filesize>667806</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1268140184000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>&lt;center&gt;
+1 Welcome to the OW2 AspireRFID' DIY Goodies Store
+&lt;/center&gt;
+
+*DIY = Do It Yourself*
+
+
+Note : The ~~"Yes, You Scan !"~~ series are coming soon ! 
+
+1.1 Stickers
+{attach:Stickers|file=ow2aspire-stickers.pdf}
+
+1.1 T-Shirts
+{attach:A4 transfert sheet for 2 T-Shirts|file=ow2aspire-tshirtflop.pdf}
+
+
+1.1 Privacy-Friendly Wallets
+
+Usage: protect your personal data against RFID sniffing
+* passports and ids
+* contactless credit cards : some have accessible banking infos
+* contactless transportation cards : some are not locked or have accessible personal information ([MOBIB&gt;http://www.uclouvain.be/sites/security/fr-mobib.html],...]
+* ... 
+
+Hardware kit
+* 1 wallet
+* 1 outdoor rubber tape
+* 1 piece of cooking aluminium foil
+
+Remark : add several foils to be 100% RFID protected
+
+{image:privacy-friendly-wallet.jpg}
+
+</content>
+<renderedcontent>&lt;center&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HWelcometotheOW2AspireRFID27DIYGoodiesStore"&gt;Welcome to the OW2 AspireRFID' DIY Goodies Store&lt;/span&gt;&lt;/h2&gt; 
+&lt;/center&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;DIY = Do It Yourself&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+Note : The &lt;i class="italic"&gt;"Yes, You Scan !"&lt;/i&gt; series are coming soon ! 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HStickers"&gt;Stickers&lt;/span&gt;&lt;/h3&gt; 
+&lt;a href="/xwiki/bin/download/Main/Goodies/ow2aspire-stickers.pdf" /&gt;Stickers&lt;/a&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTShirts"&gt;T-Shirts&lt;/span&gt;&lt;/h3&gt; 
+&lt;a href="/xwiki/bin/download/Main/Goodies/ow2aspire-tshirtflop.pdf" /&gt;A4 transfert sheet for 2 T-Shirts&lt;/a&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HPrivacyFriendlyWallets"&gt;Privacy-Friendly Wallets&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Usage: protect your personal data against RFID sniffing
+&lt;ul class="star"&gt;
+&lt;li&gt;passports and ids&lt;/li&gt;
+&lt;li&gt;contactless credit cards : some have accessible banking infos&lt;/li&gt;
+&lt;li&gt;contactless transportation cards : some are not locked or have accessible personal information (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.uclouvain.be/sites/security/fr-mobib.html"&gt;&amp;#77;OBIB&lt;/a&gt;&lt;/span&gt;,...]&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;Hardware kit
+&lt;ul class="star"&gt;
+&lt;li&gt;1 wallet&lt;/li&gt;
+&lt;li&gt;1 outdoor rubber tape&lt;/li&gt;
+&lt;li&gt;1 piece of cooking aluminium foil&lt;/li&gt;
+&lt;/ul&gt;Remark : add several foils to be 100% RFID protected&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main/Goodies/privacy-friendly-wallet.jpg" alt="privacy-friendly-wallet.jpg" /&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

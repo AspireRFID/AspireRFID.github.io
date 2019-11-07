@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Roadmap</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1216846996000</creationDate>
+<date>1243424818000</date>
+<contentUpdateDate>1243424818000</contentUpdateDate>
+<version>1.20</version>
+<title>ASPIRE RFID Roadmap</title>
+<template></template>
+<content>1 Roadmap
+
+
+
+----
+#toc("" "" "true")
+----
+
+
+
+The ASPIRE Middleware RoadMap includes implementation of the following modules:
+# Filtering and Collection (F&amp;C) Server implementing core features of the EPC-ALE 1.1 Specification
+# Business Event Generation (BEG) Server Translating Reports from F&amp;C to Business Events
+# Information Sharing Repository implementing core features of the [EPC-IS 1.0.1 Specification&gt;http://www.epcglobalinc.org/standards/epcis/epcis_1_0_1-standard-20070921.pdf]
+# JMX Applications for End-to-End Management of the ASPIRE Middleware
+# Connector applications for Databases and Legacy IT systems (ERPs / WMS)
+# Integrated Development Environment for RFID Solution Descriptions and RFID Business Process Management
+
+
+More Details on each of the above modules follow:
+
+*Filtering and Collection (F&amp;C) Server (see also: [EPC-ALE&gt;http://www.epcglobalinc.org/standards/ale/ale_1_1-standard-core-20080227.pdf])*
+
+# Reading API
+# Writing API
+# Logical Readers API
+# Access Control API
+# Tag Memory API
+
+*Business Event Generation (BEG) Server*
+# BEG to F&amp;C bindings (HTTP)
+# BEG to information sharing repository bindings
+# Authentication and Authorization
+# Configurable Processing of Reports from F&amp;C (e.g., ALE ECReports)
+
+*Information Sharing Repository *
+# Information Sharing Data Model (according to EPC-IS)
+# Capture Operations
+# Query Operations
+# Bindings for Capture Operations
+# Bindings for Query Operations
+
+
+1.1 Implementation Status
+
+*Note that modules noted in “Red” are not implemented yet*
+
+1.1.1 Reader Core Proxy (Uses Licensed Fosstrak modules as Codebase)
+* Implemented as an OSGi bundle that runs within Apache Felix
+* Provides JMX management interface
+* Provides EPC Reader Management (not currently enabled and used)
+* Uses EPC Reader Protocol to communicate with ALE 
+* Provides Interfaces with readers ( Implemented as an OSGi bundle):
+** For Intermec(BRI)
+** For FossTrack’s Simulator reader
+** For Impinj (Mach1) (no OSGi implementation yet)
+** HAL Wrapper for new readers
+** FEIG ID ISC.LRU1000 (Ethernet, TPC/IP) (supported by Fosstrak not tested yet, no OSGi implementation yet)
+** FEIG ID ISC.MR101-A (RS232/485, COM) (supported by Fosstrak not tested yet, no OSGi implementation yet)
+&lt;font style="color:red"&gt;
+**  TagSys Medio [L100 L200&gt;http://www.tagsysrfid.com/systems/upload/Medio-L100-200-Sep08.pdf] Interface
+** Tikitag ([ACR 122&gt;http://www.nfc-reader.com/NFC-smart-card-reader/ACR122-API-Manual/API_ACR122.pdf] USB (CCID compliant))
+** Bluetooth Interface
+** NFC Interface
+* Standardization for Reader Management (RM) based on JMX
+* Authentication/Access mechanisms
+&lt;/font&gt;
+
+1.1.1  ALE Server (Uses Licensed Fosstrak modules as Codebase)
+* EPC F&amp;C 1.1 standard compliant (not all Standards Implemented).
+** Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)
+*** ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.
+* Runs on Apache tomcat 6.0
+* Provides Standard EPC Control Interface Based on SOAP messages
+* Uses CXF and spring to implement JaxWS for the control interface.
+* Supports Maven.
+* Supports RP and LLRP for the communication with the readers.
+* Supports TCP/HTTP protocol to deliver EC reports
+&lt;font style="color:red"&gt;
+* Extension ~~Model~~ for Captured sensor data from semi-passive Tags, active-Tags, Sensor Networks, actuators… (Need to propose the supported model and implement it) sensors input planed to be supported:
+** Humidity
+** Temperature
+** Accelerometer
+** GPS coordinates
+* Interface for connecting/supporting Sensor Networks (e.g. Zigbee)
+* Interface for connecting/supporting Active Tags 
+* Middleware anti-collision solution implementation for multi-vendor RFID readers
+* Partial implementation of the EPC Writing API for supporting Label generation and printing (including 1D and 2D barcodes)
+* Integration of TDT to support multiple types of Tags/Barcodes
+* Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)
+* Authentication/Access mechanisms
+&lt;/font&gt;
+
+
+1.1.1 Business Event Generator
+* Runs on Apache tomcat 6.0
+* Uses CXF and Spring to implement JaxWS for the control interface.
+* Provides TCP/HTTP interface to capture the ECReports
+* Uses EPCIS Master Data Capture Client using AspireRFID MDC API Based on SOAP messages
+* Uses EPCIS Capture Client using the standard EPC Control Interface Based on SOAP messages
+* Uses EPCIS Query Client using the standard EPC Control Interface Based on SOAP messages
+* Supports Quantity, Aggregation, Transaction and Object Events (needs to be tested)
+&lt;font style="color:red"&gt;
+* Interface for connecting/supporting (this feature can be implemented at the Connector also)
+** Actuators
+** To give feedback to various devises (e.g. Account machines, delivery Information at the gates/handheld devises …)
+* Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)
+* Authentication/Access mechanisms
+&lt;/font&gt;
+
+
+1.1.1 EPCIS (Uses Licensed Fosstrak modules as Codebase)
+* EPC 1.0.1 standard compliant
+** Provides Extension Mechanisms
+*** For every Event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications): 
+{table}
+Column Name | Type Name
+event_id | BIGINT
+fieldname | VARCHAR
+prefix | VARCHAR
+intValue | INT
+floatValue | FLOAT
+dateValue | TIMESTAMP
+strValue | VARCHAR 
+{table}
+
+* Runs on Apache tomcat 6.0
+* Provides standard EPC Query and Capture Interface Based on SOAP messages.
+* Provides Query and Capture Interfaces
+** Uses CXF and Spring to implement JaxWS for the standard EPC Query and Capture interface.
+** Provides AspireRFID’s Master Data Capture Interface Based on SOAP messages.
+** Uses CXF and Spring to implement JaxWS for the standard EPC Query and Capture interface.
+** Uses SQL for the Query interface and Hibernate for the Capture interface.
+* Supports MySQL 5.0 (Can Support more Databases with some modifications)
+&lt;font style="color:red"&gt;
+* Probably a ~~New Field~~ extensions may be required for the existing Event Types extensions in the Data Definition Layer (Useful to store e.g. GPS coordinates, Security check …). 
+* Implement EPCIS Repo as an OSGi bundle that can be deployed in JOnAS Application Server
+* Authentication/Access mechanisms
+&lt;/font&gt;
+
+
+1.1.1 Tooling (Eclipse)
+ ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.
+* AspireRfidIDE Core (required for the other plug-ins to run)
+* ALE Server Configurator Plug-in 
+* Business Event Generator Plug-in 
+* Physical Reader Configuration &amp; Management Plug-in 
+* EC-Spec Editor Plug-in 
+* LR-Spec Editor Plug-in 
+* Master Data Editor Plug-in 
+&lt;font style="color:red"&gt;
+* Business Process Management and Workflow Editor Plug-in
+** Possible candidates to use as codebase:
+*** Eclipse JWT Workflow Editor
+*** OW2 Bonita 
+*** OW2 Enhydra JaWE
+* Connector Configurator Plug-in
+* Business Location Designer. Will be used to “build” the company (Master Data: Business Location) using a design editor.
+* ASPIRE Programmability Engine Plug-in. Will be used to translate the AspireRFID specification Language prodused from the BPMWE Plug-in to the AspireRFID middleware.
+* End-to-End management for all the AspireRFID middleware’s modules
+** Probably use Jasmine (eclipse plug-in) as codebase (note: should find appropriate open source JMX enabled plug-in as codebase)
+* Concurrent innovation engineering framework
+* Authentication/Access mechanisms for the AspireRFID IDE
+&lt;/font&gt;
+
+1.1.1 Connector
+* Runs on Apache tomcat 6.0
+* Uses CXF and Spring to implement JaxWS for the control interface.
+* Uses EPCIS Query Client using the standard EPC Control Interface Based on SOAP messages.
+&lt;font style="color:red"&gt;
+* ERP/WMS Support:
+** Singular Logic’s [Enterprise ERP&gt;http://www.singularlogic.eu/index.php?Itemid=194&amp;id=152&amp;option=com_content&amp;task=view]
+** Microsoft’s Dynamics NAV
+** MyWMS
+** UJF’s Object tracking
+** UJF’s Supply chain management
+** UJF’s Sonding Balloon tracking
+* Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)
+* Authentication/Access mechanisms
+&lt;/font&gt;
+
+1.1.1 ONS
+* Under Construction
+
+1.1.1 TDT (Uses Fosstrak Library for EPC TDT)
+{table}
+Tag Data Standards | Supported
+ *Bar Code Tags (GS1 System)* | Yes
+EAN/UPC | Yes
+ITF-14 | Yes
+GS1 DataMatrix | Yes
+GS1 DAtaBar | Yes
+GS1-128 | Yes
+*EPC Global Tags* | Yes (Using Fosstrak)
+SSCC | Yes
+GTIN | Yes
+GTIN | Yes
+GLN | Yes
+GRAI | Yes
+GIAI | Yes
+GLN | Yes
+*ISO Tags* | To be supported
+14443 | To be supported
+15693 | To be supported
+15962 | To be supported
+*uCode Tags* | To be supported
+{table}
+
+1.1.1 Applications and Demos
+
+* Simple F&amp;C Test
+* Warehouse Packet Delivery (3 Tier Use)	
+* AIT’s Warehouse Packet Delivery (6 Tier Use)
+&lt;font style="color:red"&gt;
+* UJF’s Object tracking (Connector Interface should be build to be supported)
+* UJF’s Supply chain management (Connector Interface should be build to be supported)
+* UJF’s Sonding Balloon tracking (Connector Interface should be build to be supported)
+* Demo Packs for all available demos and Middleware modules.
+&lt;/font&gt;
+
+
+
+
+1.1 Tasks
+
+At the Implementation sequence column below we can find what should be done first.
+At the Priority column below we can find the task’s implementation priority degree from 1 to 9 with 9 defining higher priority. 
+
+{table}
+C/N | Task Summary | First Version Deadline | Impl. Seq. |Priority (1--&gt;9)
+*1*| *Reader Core Module*
+1.1| Reader Core HAL for TagSys Medio | |  | 3
+1.2| Reader Core HAL for Tikitag  | |  | 3
+1.3| Reader Core HAL for Bluetooth  | ? |  | 3
+1.4| Reader Core HAL for NFC Phones | |  | 3
+1.5|Reader Core Authentication/Access mechanisms | ? |  | 5
+1.6| Standardization for Reader Management (RM) based on JMX  | ? |  |
+*2* | *Filtering &amp; Collection Module*
+2.1| Extension Model for F&amp;C Captured sensor data from semi-passive Tags  | ? | 2 | 9
+2.2| Extension Model for F&amp;C Captured sensor data from Sensor Networks | asap | 2 |8
+2.3| Extension Model for F&amp;C Captured data from actuators  | ? |  | 7
+2.4| Interface for F&amp;C (or Reader Core) connecting/supporting Active Tags  | ? |  | 7
+2.5| Interface for F&amp;C (or Reader Core) connecting/supporting Sensor Networks  | asap | 2 | 8
+2.6| Partial implementation of the EPC Writing API for supporting Label generation and printing  |?  |  | 4
+2.7| Integration of TDT to F&amp;C for supporting multiple types of Tags/Barcodes | ? |  | 6
+2.8| Anti-collision protocol for multi-vendor RFID readers reside on middleware  | ? |  | 7
+2.9| Anti-collision protocol for multi-vendor RFID readers reside on Mac layer  | ? |  | 7
+2.10| Middleware anti-collision solution implementation for multi-vendor RFID readers  | ? | | 7
+2.11| F&amp;C Bundlization for OSGi deployment within JOnAS Application Server  | ? |  | 2or8 ?
+2.12| Filtering &amp; Collection Authentication/Access mechanisms | ? |  | 5
+2.13| Management and automatic configuration of multiple  RFID readers  | ? |  | 6
+2.14| Specifications of different kinds of low level filtering | ? |  | 7
+2.15| Design of light ALE modules to be embedded in the readers, customizable based on the application | ? |  | 7
+2.16| HAL for TagSys Medio  | asap | 1 | 9
+2.17| HAL for Tikitag  | asap | 1 | 8
+2.18| HAL for Bluetooth  | ? | 1 | 7
+2.6| Reader Core HAL for NFC Phones  | asap | 1 | 8
+*3* | *Business Event Generator Module*
+3.1| BEG Interface for connecting/supporting Actuators  | ? |  | 6
+3.2| BEG Interface for connecting/supporting feedback to various devises (e.g. Account machines, delivery Information at the gates/handheld devises …)  | ? |  | 4
+3.3| BEG Bundlization for OSGi deployment within JOnAS Application Server  | ? |  | 2or8 ?
+3.4| BEG Authentication/Access mechanisms  | ? |  | 5
+*4* | *EPCIS Repository Module*
+4.1| EPCIS new Field extensions for the existing Event Types extensions in the Data Definition Layer | asap | 3 | 9
+4.2| EPCIS deployment within JOnAS Application Server  | ? |  | 2or8 ?
+4.3| EPCIS Authentication/Access mechanisms | ? |  | 5
+*5* | *Connector Module* 
+5.1| Connector Singular Logic’s Enterprise ERP support  | ? |  | 4
+5.2| Connector Microsoft’s Dynamics NAV ERP support   | ? |  | 3
+5.3| Connector MyWMS WMS support  | ? |  | 3
+5.4| Connector UJF’s Object tracking support  | asap | 4 | 8
+5.5| Connector UJF’s Supply chain management support | asap | 4 | 8
+5.6| Connector UJF’s Sonding Balloon tracking support  | ? |  | 3
+5.7| Connector Bundlization for OSGi deployment within JOnAS Application Server  | ? |  | 2or8 ?
+5.8| Connector Authentication/Access mechanisms | ? |  | 5
+*6* | *ONS Module*
+6.1| ONS  | ? |  | 1
+*7* | *IDE/Tooling Module* 
+7.1| RFID Specification Language | ? |  | 8
+7.2| Programmable Engine Plug-in  | ? |  | 7
+7.3| Business Process Workflow Management Editor Plug-in  | ? |  | 7
+7.4| Concurrent innovation engineering framework (as an Eclipse plug-in?)  | ? |  | 6
+7.5| Connector Configurator Plug-in  | ? |  | 
+7.6| Business Location Designer plug-in | ? |  | 2
+7.7| End-to-End management plug-in for all the AspireRFID middleware’s modules  |  | 5 | 7
+7.8| Authentication/Access mechanisms for the AspireRFID IDE | ? |  | 5
+*8* | *TDT Module* 
+8.1| TDT extended support| ? |  | 6
+*9* | *Packaging Module*
+9.1| Demo Packs for all available demos and Middleware modules | ? |  | 4
+{table}
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HRoadmap"&gt;Roadmap&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HImplementationStatus"&gt;1 Implementation Status&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HReaderCoreProxy28UsesLicensedFosstrakmodulesasCodebase29"&gt;1.1 Reader Core Proxy (Uses Licensed Fosstrak modules as Codebase)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HALEServer28UsesLicensedFosstrakmodulesasCodebase29"&gt;1.2 ALE Server (Uses Licensed Fosstrak modules as Codebase)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBusinessEventGenerator"&gt;1.3 Business Event Generator&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HEPCIS28UsesLicensedFosstrakmodulesasCodebase29"&gt;1.4 EPCIS (Uses Licensed Fosstrak modules as Codebase)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTooling28Eclipse29"&gt;1.5 Tooling (Eclipse)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConnector"&gt;1.6 Connector&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HONS"&gt;1.7 ONS&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTDT28UsesFosstrakLibraryforEPCTDT29"&gt;1.8 TDT (Uses Fosstrak Library for EPC TDT)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HApplicationsandDemos"&gt;1.9 Applications and Demos&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HTasks"&gt;2 Tasks&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt;The ASPIRE Middleware RoadMap includes implementation of the following modules:
+&lt;ol&gt;&lt;li&gt;Filtering and Collection (F&amp;C) Server implementing core features of the EPC-ALE 1.1 Specification&lt;/li&gt;
+&lt;li&gt;Business Event Generation (BEG) Server Translating Reports from F&amp;C to Business Events&lt;/li&gt;
+&lt;li&gt;Information Sharing Repository implementing core features of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/epcis/epcis_1_0_1-standard-20070921.pdf"&gt;&amp;#69;PC-IS 1.0.1 Specification&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;JMX Applications for End-to-End Management of the ASPIRE Middleware&lt;/li&gt;
+&lt;li&gt;Connector applications for Databases and Legacy IT systems (ERPs / WMS)&lt;/li&gt;
+&lt;li&gt;Integrated Development Environment for RFID Solution Descriptions and RFID Business Process Management&lt;/li&gt;
+&lt;/ol&gt;More Details on each of the above modules follow:&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Filtering and Collection (F&amp;C) Server (see also: &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/ale/ale_1_1-standard-core-20080227.pdf"&gt;&amp;#69;PC-ALE&lt;/a&gt;&lt;/span&gt;)&lt;/strong&gt;
+&lt;ol&gt;&lt;li&gt;Reading API&lt;/li&gt;
+&lt;li&gt;Writing API&lt;/li&gt;
+&lt;li&gt;Logical Readers API&lt;/li&gt;
+&lt;li&gt;Access Control API&lt;/li&gt;
+&lt;li&gt;Tag Memory API&lt;/li&gt;
+&lt;/ol&gt;&lt;strong class="strong"&gt;Business Event Generation (BEG) Server&lt;/strong&gt;
+&lt;ol&gt;&lt;li&gt;BEG to F&amp;C bindings (HTTP)&lt;/li&gt;
+&lt;li&gt;BEG to information sharing repository bindings&lt;/li&gt;
+&lt;li&gt;Authentication and Authorization&lt;/li&gt;
+&lt;li&gt;Configurable Processing of Reports from F&amp;C (e.g., ALE ECReports)&lt;/li&gt;
+&lt;/ol&gt;&lt;strong class="strong"&gt;Information Sharing Repository &lt;/strong&gt;
+&lt;ol&gt;&lt;li&gt;Information Sharing Data Model (according to EPC-IS)&lt;/li&gt;
+&lt;li&gt;Capture Operations&lt;/li&gt;
+&lt;li&gt;Query Operations&lt;/li&gt;
+&lt;li&gt;Bindings for Capture Operations&lt;/li&gt;
+&lt;li&gt;Bindings for Query Operations&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HImplementationStatus"&gt;Implementation Status&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Note that modules noted in “Red” are not implemented yet&lt;/strong&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HReaderCoreProxy28UsesLicensedFosstrakmodulesasCodebase29"&gt;Reader Core Proxy (Uses Licensed Fosstrak modules as Codebase)&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Implemented as an OSGi bundle that runs within Apache Felix&lt;/li&gt;
+&lt;li&gt;Provides JMX management interface&lt;/li&gt;
+&lt;li&gt;Provides EPC Reader Management (not currently enabled and used)&lt;/li&gt;
+&lt;li&gt;Uses EPC Reader Protocol to communicate with ALE&lt;/li&gt;
+&lt;li&gt;Provides Interfaces with readers ( Implemented as an OSGi bundle):&lt;ul class="star"&gt;
+&lt;li&gt;For Intermec(BRI)&lt;/li&gt;
+&lt;li&gt;For FossTrack’s Simulator reader&lt;/li&gt;
+&lt;li&gt;For Impinj (Mach1) (no OSGi implementation yet)&lt;/li&gt;
+&lt;li&gt;HAL Wrapper for new readers&lt;/li&gt;
+&lt;li&gt;FEIG ID ISC.LRU1000 (Ethernet, TPC/IP) (supported by Fosstrak not tested yet, no OSGi implementation yet)&lt;/li&gt;
+&lt;li&gt;FEIG ID ISC.MR101-A (RS232/485, COM) (supported by Fosstrak not tested yet, no OSGi implementation yet)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt; TagSys Medio &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.tagsysrfid.com/systems/upload/Medio-L100-200-Sep08.pdf"&gt;&amp;#76;100 L200&lt;/a&gt;&lt;/span&gt; Interface&lt;/li&gt;
+&lt;li&gt;Tikitag (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.nfc-reader.com/NFC-smart-card-reader/ACR122-API-Manual/API_ACR122.pdf"&gt;&amp;#65;CR 122&lt;/a&gt;&lt;/span&gt; USB (CCID compliant))&lt;/li&gt;
+&lt;li&gt;Bluetooth Interface&lt;/li&gt;
+&lt;li&gt;NFC Interface&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Standardization for Reader Management (RM) based on JMX&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HALEServer28UsesLicensedFosstrakmodulesasCodebase29"&gt;ALE Server (Uses Licensed Fosstrak modules as Codebase)&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;EPC F&amp;C 1.1 standard compliant (not all Standards Implemented).&lt;ul class="star"&gt;
+&lt;li&gt;Check if AspireRFID fully supports Tag Memory Specification API (Section 7 of ALE 1.1 specifications)&lt;ul class="star"&gt;
+&lt;li&gt;ALETM – Main API class (Section 7.1 of ALE1.1 specifications) and implement it if it doesn’t.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Provides Standard EPC Control Interface Based on SOAP messages&lt;/li&gt;
+&lt;li&gt;Uses CXF and spring to implement JaxWS for the control interface.&lt;/li&gt;
+&lt;li&gt;Supports Maven.&lt;/li&gt;
+&lt;li&gt;Supports RP and LLRP for the communication with the readers.&lt;/li&gt;
+&lt;li&gt;Supports TCP/HTTP protocol to deliver EC reports&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Extension &lt;i class="italic"&gt;Model&lt;/i&gt; for Captured sensor data from semi-passive Tags, active-Tags, Sensor Networks, actuators… (Need to propose the supported model and implement it) sensors input planed to be supported:&lt;ul class="star"&gt;
+&lt;li&gt;Humidity&lt;/li&gt;
+&lt;li&gt;Temperature&lt;/li&gt;
+&lt;li&gt;Accelerometer&lt;/li&gt;
+&lt;li&gt;GPS coordinates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Interface for connecting/supporting Sensor Networks (e.g. Zigbee)&lt;/li&gt;
+&lt;li&gt;Interface for connecting/supporting Active Tags&lt;/li&gt;
+&lt;li&gt;Middleware anti-collision solution implementation for multi-vendor RFID readers&lt;/li&gt;
+&lt;li&gt;Partial implementation of the EPC Writing API for supporting Label generation and printing (including 1D and 2D barcodes)&lt;/li&gt;
+&lt;li&gt;Integration of TDT to support multiple types of Tags/Barcodes&lt;/li&gt;
+&lt;li&gt;Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBusinessEventGenerator"&gt;Business Event Generator&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and Spring to implement JaxWS for the control interface.&lt;/li&gt;
+&lt;li&gt;Provides TCP/HTTP interface to capture the ECReports&lt;/li&gt;
+&lt;li&gt;Uses EPCIS Master Data Capture Client using AspireRFID MDC API Based on SOAP messages&lt;/li&gt;
+&lt;li&gt;Uses EPCIS Capture Client using the standard EPC Control Interface Based on SOAP messages&lt;/li&gt;
+&lt;li&gt;Uses EPCIS Query Client using the standard EPC Control Interface Based on SOAP messages&lt;/li&gt;
+&lt;li&gt;Supports Quantity, Aggregation, Transaction and Object Events (needs to be tested)&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Interface for connecting/supporting (this feature can be implemented at the Connector also)&lt;ul class="star"&gt;
+&lt;li&gt;Actuators&lt;/li&gt;
+&lt;li&gt;To give feedback to various devises (e.g. Account machines, delivery Information at the gates/handheld devises …)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HEPCIS28UsesLicensedFosstrakmodulesasCodebase29"&gt;EPCIS (Uses Licensed Fosstrak modules as Codebase)&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;EPC 1.0.1 standard compliant&lt;ul class="star"&gt;
+&lt;li&gt;Provides Extension Mechanisms&lt;ul class="star"&gt;
+&lt;li&gt;For every Event the following data are supported from the repository (check Section 6.3 and 9.1 of the EPCIS specifications):&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Column Name&lt;/th&gt;&lt;th&gt;Type Name&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;event_id&lt;/td&gt;&lt;td&gt;BIGINT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;fieldname&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;prefix&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;intValue&lt;/td&gt;&lt;td&gt;INT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;floatValue&lt;/td&gt;&lt;td&gt;FLOAT&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;dateValue&lt;/td&gt;&lt;td&gt;TIMESTAMP&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;strValue&lt;/td&gt;&lt;td&gt;VARCHAR&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Provides standard EPC Query and Capture Interface Based on SOAP messages.&lt;/li&gt;
+&lt;li&gt;Provides Query and Capture Interfaces&lt;ul class="star"&gt;
+&lt;li&gt;Uses CXF and Spring to implement JaxWS for the standard EPC Query and Capture interface.&lt;/li&gt;
+&lt;li&gt;Provides AspireRFID’s Master Data Capture Interface Based on SOAP messages.&lt;/li&gt;
+&lt;li&gt;Uses CXF and Spring to implement JaxWS for the standard EPC Query and Capture interface.&lt;/li&gt;
+&lt;li&gt;Uses SQL for the Query interface and Hibernate for the Capture interface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Supports MySQL 5.0 (Can Support more Databases with some modifications)&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Probably a &lt;i class="italic"&gt;New Field&lt;/i&gt; extensions may be required for the existing Event Types extensions in the Data Definition Layer (Useful to store e.g. GPS coordinates, Security check …).&lt;/li&gt;
+&lt;li&gt;Implement EPCIS Repo as an OSGi bundle that can be deployed in JOnAS Application Server&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTooling28Eclipse29"&gt;Tooling (Eclipse)&lt;/span&gt;&lt;/h4&gt; 
+ ASPIRE IDE has been designed as an Eclipse RCP (Rich Client Platform) application that will run over Equinox OSGI server. It uses the command API to define menus, pop-up menu items and toolbars so as to support easily plug-ins and provide more control. Every tool will be an eclipse plug-in/bundle that will be able to be installed or removed as needed.
+&lt;ul class="star"&gt;
+&lt;li&gt;AspireRfidIDE Core (required for the other plug-ins to run)&lt;/li&gt;
+&lt;li&gt;ALE Server Configurator Plug-in&lt;/li&gt;
+&lt;li&gt;Business Event Generator Plug-in&lt;/li&gt;
+&lt;li&gt;Physical Reader Configuration &amp; Management Plug-in&lt;/li&gt;
+&lt;li&gt;EC-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;LR-Spec Editor Plug-in&lt;/li&gt;
+&lt;li&gt;Master Data Editor Plug-in&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Business Process Management and Workflow Editor Plug-in&lt;ul class="star"&gt;
+&lt;li&gt;Possible candidates to use as codebase:&lt;ul class="star"&gt;
+&lt;li&gt;Eclipse JWT Workflow Editor&lt;/li&gt;
+&lt;li&gt;OW2 Bonita&lt;/li&gt;
+&lt;li&gt;OW2 Enhydra JaWE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Connector Configurator Plug-in&lt;/li&gt;
+&lt;li&gt;Business Location Designer. Will be used to “build” the company (Master Data: Business Location) using a design editor.&lt;/li&gt;
+&lt;li&gt;ASPIRE Programmability Engine Plug-in. Will be used to translate the AspireRFID specification Language prodused from the BPMWE Plug-in to the AspireRFID middleware.&lt;/li&gt;
+&lt;li&gt;End-to-End management for all the AspireRFID middleware’s modules&lt;ul class="star"&gt;
+&lt;li&gt;Probably use Jasmine (eclipse plug-in) as codebase (note: should find appropriate open source JMX enabled plug-in as codebase)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Concurrent innovation engineering framework&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms for the AspireRFID IDE&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConnector"&gt;Connector&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Runs on Apache tomcat 6.0&lt;/li&gt;
+&lt;li&gt;Uses CXF and Spring to implement JaxWS for the control interface.&lt;/li&gt;
+&lt;li&gt;Uses EPCIS Query Client using the standard EPC Control Interface Based on SOAP messages.&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;ERP/WMS Support:&lt;ul class="star"&gt;
+&lt;li&gt;Singular Logic’s &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.singularlogic.eu/index.php?Itemid=194&amp;id=152&amp;option=com_content&amp;task=view"&gt;&amp;#69;nterprise ERP&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Microsoft’s Dynamics NAV&lt;/li&gt;
+&lt;li&gt;MyWMS&lt;/li&gt;
+&lt;li&gt;UJF’s Object tracking&lt;/li&gt;
+&lt;li&gt;UJF’s Supply chain management&lt;/li&gt;
+&lt;li&gt;UJF’s Sonding Balloon tracking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implemented as an OSGi bundle that can be deployed in JOnAS Application Server (not implemented yet)&lt;/li&gt;
+&lt;li&gt;Authentication/Access mechanisms&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HONS"&gt;ONS&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Under Construction&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTDT28UsesFosstrakLibraryforEPCTDT29"&gt;TDT (Uses Fosstrak Library for EPC TDT)&lt;/span&gt;&lt;/h4&gt; 
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Tag Data Standards&lt;/th&gt;&lt;th&gt;Supported&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;Bar Code Tags (GS1 System)&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;EAN/UPC&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;ITF-14&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;GS1 DataMatrix&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;GS1 DAtaBar&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;GS1-128&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;EPC Global Tags&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;Yes (Using Fosstrak)&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;SSCC&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;GTIN&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;GTIN&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;GLN&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;GRAI&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;GIAI&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;GLN&lt;/td&gt;&lt;td&gt;Yes&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;ISO Tags&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;To be supported&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;14443&lt;/td&gt;&lt;td&gt;To be supported&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;15693&lt;/td&gt;&lt;td&gt;To be supported&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;15962&lt;/td&gt;&lt;td&gt;To be supported&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;uCode Tags&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;To be supported&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HApplicationsandDemos"&gt;Applications and Demos&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Simple F&amp;C Test&lt;/li&gt;
+&lt;li&gt;Warehouse Packet Delivery (3 Tier Use)&lt;/li&gt;
+&lt;li&gt;AIT’s Warehouse Packet Delivery (6 Tier Use)&lt;/li&gt;
+&lt;/ul&gt;&lt;font style="color:red"&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;UJF’s Object tracking (Connector Interface should be build to be supported)&lt;/li&gt;
+&lt;li&gt;UJF’s Supply chain management (Connector Interface should be build to be supported)&lt;/li&gt;
+&lt;li&gt;UJF’s Sonding Balloon tracking (Connector Interface should be build to be supported)&lt;/li&gt;
+&lt;li&gt;Demo Packs for all available demos and Middleware modules.&lt;/li&gt;
+&lt;/ul&gt;&lt;/font&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTasks"&gt;Tasks&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;At the Implementation sequence column below we can find what should be done first.
+At the Priority column below we can find the task’s implementation priority degree from 1 to 9 with 9 defining higher priority.&lt;p class="paragraph"/&gt;&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;C/N&lt;/th&gt;&lt;th&gt;Task Summary&lt;/th&gt;&lt;th&gt;First Version Deadline&lt;/th&gt;&lt;th&gt;Impl. Seq.&lt;/th&gt;&lt;th&gt;Priority (1--&gt;9)&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;1&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;Reader Core Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;1.1&lt;/td&gt;&lt;td&gt;Reader Core HAL for TagSys Medio&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;1.2&lt;/td&gt;&lt;td&gt;Reader Core HAL for Tikitag&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;1.3&lt;/td&gt;&lt;td&gt;Reader Core HAL for Bluetooth&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;1.4&lt;/td&gt;&lt;td&gt;Reader Core HAL for NFC Phones&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;1.5&lt;/td&gt;&lt;td&gt;Reader Core Authentication/Access mechanisms&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;1.6&lt;/td&gt;&lt;td&gt;Standardization for Reader Management (RM) based on JMX&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;strong class="strong"&gt;2&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;Filtering &amp; Collection Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.1&lt;/td&gt;&lt;td&gt;Extension Model for F&amp;C Captured sensor data from semi-passive Tags&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.2&lt;/td&gt;&lt;td&gt;Extension Model for F&amp;C Captured sensor data from Sensor Networks&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.3&lt;/td&gt;&lt;td&gt;Extension Model for F&amp;C Captured data from actuators&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.4&lt;/td&gt;&lt;td&gt;Interface for F&amp;C (or Reader Core) connecting/supporting Active Tags&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.5&lt;/td&gt;&lt;td&gt;Interface for F&amp;C (or Reader Core) connecting/supporting Sensor Networks&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.6&lt;/td&gt;&lt;td&gt;Partial implementation of the EPC Writing API for supporting Label generation and printing&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.7&lt;/td&gt;&lt;td&gt;Integration of TDT to F&amp;C for supporting multiple types of Tags/Barcodes&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.8&lt;/td&gt;&lt;td&gt;Anti-collision protocol for multi-vendor RFID readers reside on middleware&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.9&lt;/td&gt;&lt;td&gt;Anti-collision protocol for multi-vendor RFID readers reside on Mac layer&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.10&lt;/td&gt;&lt;td&gt;Middleware anti-collision solution implementation for multi-vendor RFID readers&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.11&lt;/td&gt;&lt;td&gt;F&amp;C Bundlization for OSGi deployment within JOnAS Application Server&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;2or8 ?&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.12&lt;/td&gt;&lt;td&gt;Filtering &amp; Collection Authentication/Access mechanisms&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.13&lt;/td&gt;&lt;td&gt;Management and automatic configuration of multiple  RFID readers&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.14&lt;/td&gt;&lt;td&gt;Specifications of different kinds of low level filtering&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.15&lt;/td&gt;&lt;td&gt;Design of light ALE modules to be embedded in the readers, customizable based on the application&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.16&lt;/td&gt;&lt;td&gt;HAL for TagSys Medio&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.17&lt;/td&gt;&lt;td&gt;HAL for Tikitag&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;2.18&lt;/td&gt;&lt;td&gt;HAL for Bluetooth&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;2.6&lt;/td&gt;&lt;td&gt;Reader Core HAL for NFC Phones&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;strong class="strong"&gt;3&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;Business Event Generator Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;3.1&lt;/td&gt;&lt;td&gt;BEG Interface for connecting/supporting Actuators&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;3.2&lt;/td&gt;&lt;td&gt;BEG Interface for connecting/supporting feedback to various devises (e.g. Account machines, delivery Information at the gates/handheld devises …)&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;3.3&lt;/td&gt;&lt;td&gt;BEG Bundlization for OSGi deployment within JOnAS Application Server&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;2or8 ?&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;3.4&lt;/td&gt;&lt;td&gt;BEG Authentication/Access mechanisms&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;4&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;EPCIS Repository Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;4.1&lt;/td&gt;&lt;td&gt;EPCIS new Field extensions for the existing Event Types extensions in the Data Definition Layer&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;4.2&lt;/td&gt;&lt;td&gt;EPCIS deployment within JOnAS Application Server&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;2or8 ?&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;4.3&lt;/td&gt;&lt;td&gt;EPCIS Authentication/Access mechanisms&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;5&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;Connector Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;5.1&lt;/td&gt;&lt;td&gt;Connector Singular Logic’s Enterprise ERP support&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;5.2&lt;/td&gt;&lt;td&gt;Connector Microsoft’s Dynamics NAV ERP support&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;5.3&lt;/td&gt;&lt;td&gt;Connector MyWMS WMS support&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;5.4&lt;/td&gt;&lt;td&gt;Connector UJF’s Object tracking support&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;5.5&lt;/td&gt;&lt;td&gt;Connector UJF’s Supply chain management support&lt;/td&gt;&lt;td&gt;asap&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;5.6&lt;/td&gt;&lt;td&gt;Connector UJF’s Sonding Balloon tracking support&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;5.7&lt;/td&gt;&lt;td&gt;Connector Bundlization for OSGi deployment within JOnAS Application Server&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;2or8 ?&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;5.8&lt;/td&gt;&lt;td&gt;Connector Authentication/Access mechanisms&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;strong class="strong"&gt;6&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;ONS Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;6.1&lt;/td&gt;&lt;td&gt;ONS&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;strong class="strong"&gt;7&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;IDE/Tooling Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;7.1&lt;/td&gt;&lt;td&gt;RFID Specification Language&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;7.2&lt;/td&gt;&lt;td&gt;Programmable Engine Plug-in&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;7.3&lt;/td&gt;&lt;td&gt;Business Process Workflow Management Editor Plug-in&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;7.4&lt;/td&gt;&lt;td&gt;Concurrent innovation engineering framework (as an Eclipse plug-in?)&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;7.5&lt;/td&gt;&lt;td&gt;Connector Configurator Plug-in&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;7.6&lt;/td&gt;&lt;td&gt;Business Location Designer plug-in&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;7.7&lt;/td&gt;&lt;td&gt;End-to-End management plug-in for all the AspireRFID middleware’s modules&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;7.8&lt;/td&gt;&lt;td&gt;Authentication/Access mechanisms for the AspireRFID IDE&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;8&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;TDT Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;8.1&lt;/td&gt;&lt;td&gt;TDT extended support&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;strong class="strong"&gt;9&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong class="strong"&gt;Packaging Module&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;9.1&lt;/td&gt;&lt;td&gt;Demo Packs for all available demos and Middleware modules&lt;/td&gt;&lt;td&gt;?&lt;/td&gt;&lt;td&gt;&amp;#160;&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+</renderedcontent>
+</xwikidoc>

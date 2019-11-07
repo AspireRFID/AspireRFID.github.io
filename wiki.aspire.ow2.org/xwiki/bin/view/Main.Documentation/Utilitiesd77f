@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Utilities</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1277912728000</creationDate>
+<date>1277913004000</date>
+<contentUpdateDate>1277913004000</contentUpdateDate>
+<version>1.6</version>
+<title>Aspire :: Utilities</title>
+<template></template>
+<content>1 Aspire :: Utilities
+
+----
+#toc("" "" "true")
+----
+
+This section describes the utilities for the Aspire project
+
+1.1 Source repository
+* [Source repository&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2F]
+
+
+1.1 Components
+
+* [License Agreement Ant Task&gt;http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2Flicenseagreementtask%2FREADME.txt]
+* [ShutdownHook Ant Task&gt;http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2Fshutdownhooktask%2FREADME.txt]
+
+
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AUtilities"&gt;Aspire :: Utilities&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSourcerepository"&gt;1 Source repository&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HComponents"&gt;2 Components&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the utilities for the Aspire project
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSourcerepository"&gt;1 Source repository&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2F"&gt;&amp;#83;ource repository&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HComponents"&gt;2 Components&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2Flicenseagreementtask%2FREADME.txt"&gt;&amp;#76;icense Agreement Ant Task&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/filedetails.php?repname=aspire&amp;path=%2Ftrunk%2Futil%2Fshutdownhooktask%2FREADME.txt"&gt;&amp;#83;hutdownHook Ant Task&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

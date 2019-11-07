@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>Filtering&amp;Collection</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.driss_r</author>
+<contentAuthor>xwiki:XWiki.driss_r</contentAuthor>
+<creationDate>1233251872000</creationDate>
+<date>1417703016000</date>
+<contentUpdateDate>1417703016000</contentUpdateDate>
+<version>1.78</version>
+<title>Aspire :: Filtering &amp; Collection</title>
+<template></template>
+<attachment>
+<filename>ltkjava-0.1.1.jar</filename>
+<filesize>1420892</filesize>
+<author>xwiki:XWiki.gabo_pedraza</author>
+<date>1277459033000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ALE.jpg</filename>
+<filesize>63535</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233324965000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>LogicalReaders.xsd</filename>
+<filesize>1818</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1233324989000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ADD_ROSPEC</filename>
+<filesize>2373</filesize>
+<author>xwiki:XWiki.driss_r</author>
+<date>1417618078000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Filtering And Collection Server
+
+
+* The [AspireRfid Filtering and Collection Middleware&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection#HIntroduction] is a slightly modified version of Accada RFID Middleware, which is now called FossTrak, licensed under LGPL. This component implements EPCglobal's [ALE 1.1 specification&gt;http://www.gs1.org/gsmp/kc/epcglobal/ale]. AspireRfid have implemented changes and bug fixes on the original Accada middleware. As of 14/05/2009 we have ceased distribution of [FossTrak&gt;http://www.fosstrak.org] licensed code.
+* [Deployment of Filtering And Collection Server on OSGi&gt;Main.Documentation.ALEonOSGi]
+* [CiliaALE&gt;Main.Documentation.ALEinCilia] : a lightweight, flexible and dynamically reconfigurable ALE Servers for Android phones and tablets (developed by the Adele team, LIG, Grenoble)
+* [Embedded ALE&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/EmbededALE]: developed by the FUN team, Inria-Lille, which can be implemented in mobile terminals.
+* [Extended TDT ALE&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/ExtendedTDTALE]: developed by the FUN team, Inria-Lille, which is compatible with different input identification formats (i.e. EPC, GS1, ISO, MAC address, Telephone numbers, etc.).
+* [Light ALECC&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LightALECC]: developed by the FUN team, Inria-Lille, which aims to supply an easy and efficient framework for developers to realize the most used basic operations defined by the EPC ALECC (writing API) standard.
+* [LLRP toolkit library (updated according to LLRP1.1)&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.1)]: developed by the FUN team, Inria-Lille, which aims to provide an updated LLRP toolkit library for developers intersted by LLRP interface.
+
+1 AspireRfid Filtering And Collection Server
+
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introduction
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/Filtering%26Collection/ALE.jpg"&gt;{image:ALE.jpg|350|}&lt;/a&gt;
+&lt;/center&gt;
+
+In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable &amp;ldquo;noise.&amp;rdquo; To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+
+
+* Drive as much filtering and counting of reads as low in the architecture as possible.
+* Minimize the amount of &amp;ldquo;business logic&amp;rdquo; embedded in the Tags.
+
+
+The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce &amp;ldquo;reports&amp;rdquo; in response to client &amp;ldquo;requests.&amp;rdquo; The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional &amp;ldquo;enterprise application,&amp;rdquo; or it may be new software designed expressly to carry out an RFID-enabled business process. but which operates at a higher level than the &amp;ldquo;middleware&amp;rdquo; that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.
+
+
+The AspireRfid  Filtering and Collection Middleware is a modified version of [Accada&gt;http://www.accada.org] RFID Middleware, which is now called [FossTrak&gt;http://www.fosstrak.org], licensed under LGPL. AspireRfid have implemented changes and bug fixes on the original Accada middleware.
+
+
+The actual AspireRFID ALE version is taken from Fosstrak filtering and collection module's revision number 2295 (released on February 2013). It implements EPCglobal's ALE 1.1 and LLRP 1.1 specifications.
+If we consider a user point of view, ALE compromises 3 modules as follows:
+
+
+* the filtering and collection server
+* a standalone clientto configure filtering and collection servers
+* aweb-based clientto configure filtering and collection servers
+
+
+However, if we consider a developer point of view and focus on the source code, ALE is also organized  in 3 modules :
+
+
+* fc-client: Filtering and Collection Client: a Java Swing based test client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification
+* fc-commons: common functionality used by the different Filtering and Collection modules
+* fc-server: an implementation of EPCglobal Application Level Event (ALE) specification. An LLRP interface insures communication procedure with LLRP compliant RFID readers. For readers that do not support LLRP, ALE uses the Hardware Abstraction Layer (HAL) interface.
+
+1.1 Users Guide
+1.1.1 Requirements
+
+
+*Hardware (minimum)*
+
+
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+
+*Software*
+
+
+* [LLRP Commander&gt;https://code.google.com/p/fosstrak/wiki/LlrpMain]
+* [Rifidi&gt;http://sourceforge.net/projects/rifidi/files/Rifidi Emulator/] Reader Emulator
+* [Apache&gt;http://tomcat.apache.org/] Tomcat Java Servlet Container
+
+
+*Files*
+
+
+* a copy of the [fc-server-1.0.0.war or higher&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-server%2Ftarget%2F] (note: LLRP support requires &gt;= 1.0.0)
+* a copy of the [fc-webclient fc-webclient-0.4.0.war&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-webclient%2Ftarget%2F] or higher
+* a copy of the  [aspireTcpMessageCapturer&gt;http://forge.ow2.org/project/showfiles.php?group_id=324]
+* a copy of this LLRP [ADD_ROSPEC&gt;http://fosstrak.googlecode.com/svn/wikires/ale/ROSPEC_example.llrp] message (to be saved in xml format)
+
+* a copy of this ALE [ECSpec&gt;http://fosstrak.googlecode.com/svn/wikires/ale/ECSpec_current.xml] message (to be saved in xml format)
+* a copy of this [ALE logical&gt;http://fosstrak.googlecode.com/svn/wikires/ale/LLRPReader.xml] reader definition file (to be saved in LLRP format)
+
+1.1.1 Deployment
+
+
+*Tomcat Deployment*
+Tomcat is used in order to deploy the Filtering and Collection server. Deployment is worked out as follows.
+* Install Apache Tomcat if you have not installed it yet.
+* Copy the  two WAR files (fc-server-VERSION .war and fc-webclient-VERSION .war) into the Tomcat's webapps directory and start Tomcat. The war-file will be deployed into a new folder.
+
+For Windows users :
+You will usually find the webapps folder inside the tomcat installation directory :
+
+* c:/Program Files/Apache Tomcat/webapps for 32-bit Windows
+* c:/Programs/Apache Software Foundation/Tomcat/webappps for 64-bit Windows
+
+
+For Linux/unix users :
+You can use this command to start tomcat : service tomcat7 start
+
+
+The webapps folder will depend on your distribution, here are some possible locations:
+
+* /var/lib/tomcat/webapps
+* /usr/local/lib/tomcat/webapps
+
+
+Once the two war files are in the webapps directory, Tomcat will automatically deploy them. 
+The ALE server is now ready to be configured at your needs.
+
+
+*Rifidi configuration*
+
+
+* Install the Rifidi emulator
+* Start the Rifidi emulator
+* Instantiate a new reader of type &amp;quot;LLRPReader&amp;quot; that listens on port 5084 (default) using the Reader Wizard
+* Start the reader just instantiated (right click &amp;quot;Start reader&amp;quot;)
+
+
+We will return to the LLRP reader emulator once the other components are configured.
+
+
+*Configure the Rifidi Emulator by using LLRP Commander*
+
+* LLRP Commander is an Eclipse plugin. To install it, you can &amp;quot;check for updates&amp;quot; via the Eclipse or &amp;quot;install a new software&amp;quot;
+
+Eclipse Update Site URL: http://fosstrak.googlecode.com/svn/llrp/eclipse_update_site
+
+* Start Eclipse and customize the view to LLRP Commander (In Eclipse: Window/Open perspective/Other/LLRP Commander).
+* Create a new reader (Under Reader Explorer tab : Right Click on DEFAULT and Add RFID Reader).
+* Connect to the remote adapter instance running on the ALE. Check, if you can send and retrieve messages from the reader by sending a GET_READER_CAPABILITIES message (Right click on the reader and Send message). You can follow the reader behavior towards the messages in Rifidi console and also in the &amp;ldquo;LLRP Messagebox&amp;rdquo; in Eclipse.
+* Create a new LLRP message (Right click on LLRP_CMDR/New/Other/LLRP/LLRP Message)
+* Edit the content (in XML Editor) by the content of the fileRO_SPEC and save
+* Send the message to the Rifid Emulator(use the button &amp;quot;Sending the current message&amp;quot;)
+* From the Reader Explorer tab (right-click on the reader name), select &amp;quot;Send ENABLE_RO_SPEC message&amp;quot; to instruct the reader to enable the ROspec just loaded.
+
+
+Now we are sure that the virtual reader is configured, we just need to provide it with tags. This step will be done after.
+
+
+*GUI Setup : TCP Message Capturer*
+
+
+This interface will spy the reports sent by the filtering and collection server, it displays incoming HTTP requests. Make sure the provided port (9999) is not used by some other application.
+
+
+* Uncompress the aspireTcpMessageCapturer archive
+* Start the TCP Message Capturer that listens on port 9999
+
+
+Command to Start aspireTcpMessageCapturer :
+
+
+{code:xml}
+java -jar aspireTcpMessageCapturer-VERSION -jar-with-dependencies.jar
+#For Example
+java -jar aspireTcpMessageCapturer-V0.1m-jar-with-dependencies.jar
+{code}
+
+
+*ALE web-client configuration*
+
+
+The web-based client is used to configure the filtering and collection server. We need first to tell it the URL through which the filtering and collection server can be accessed.
+Start your web browser and point it to the address of the web-based client.
+
+{code:xml}
+http: //&lt;SERVER&gt;:&lt;PORT&gt;/&lt;WEBCLIENT_VERSION&gt;/services/ALEWebClient.jsp
+
+#For Example
+http:// localhost:8080/fc-webclient-1.2.0/services/ALEWebClient.jsp
+{code}
+
+In the next step, specify two endpoints that tell the web-based client where the &amp;quot;Filtering and Collection API &amp;quot;and the &amp;quot;Logical Reader API&amp;quot; can be found.
+Set the endpoint to the filtering and collection server by selecting the &amp;quot;setEndpoint(String endPointName)&amp;quot; method in the &amp;quot;Filtering and Collection API&amp;quot;. Click &amp;quot;Invoke&amp;quot; to execute the command.
+{code:xml}
+
+endpoint: http: //&lt;SERVER&gt;:&lt;PORT&gt;/&lt;FCSERVER_VERSION&gt;/services/ALEService
+
+#For Example
+http:// localhost:8080/fc-server-1.2.0/services/ALEService
+{code}
+
+
+To be sure that a connection between the web-based client and the server can be established, click &amp;quot;getVendorVersion()&amp;quot;. A version number should be returned.
+
+
+Set the endpoint to the filtering and collection server's Logical Reader API by selecting &amp;quot;setEndPoint(String endPointName)&amp;quot; in the &amp;quot;LogicalReader API&amp;quot;. Click &amp;quot;Invoke&amp;quot; to execute the command.
+{code:xml}
+
+endpoint: http: //&lt;SERVER&gt;:&lt;PORT&gt;/&lt;FCSERVER_VERSION&gt;/services/ALELRService
+
+#For Example
+http: //localhost:8080/fc-server-1.2.0/services/ALELRService
+{code}
+
+
+Click &amp;quot;getVendorVersion()&amp;quot; to be sure that a connection between the web-based client and the server can be established, a version number should be returned.
+
+
+*Set the readers connected to ALE*
+
+
+The next step is to configure the fc-server with the LLRP reader connected. Click on &amp;quot;define(String readerName, LRSpec spec)&amp;quot; in the section &amp;quot;LogicalReader API&amp;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your reader &amp;quot;LogicalReader1&amp;quot; and use theLLRPReader.xmlas your LRSpec.
+{code:xml}
+readerName:  READERNAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: LogicalReader1
+specFilePath: /home/epc/LLRPReader.xml
+{code}
+
+
+Verify that the reader has been created by clicking on &amp;quot;getLogicalReaderNames()&amp;quot;. The call should return a list of logical readers in brackets. Make sure that the reader just creates is listed.
+In the LLRP reader emulator console you can now see the message exchange with the Fosstrak ALE middleware.
+You can inspect the logical reader specification LRSpec by the method &amp;quot;getLRSpec(String readerName)&amp;quot;.
+
+
+*Define the Filtering and Collection Behavior*
+
+
+The behavior of ALE is described in an xml file. So in this step you will define an ALE ECSpec, this tells the ALE Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example: added, current or deleted tags.
+Click on &amp;quot;define(String specName, String specFilePath)&amp;quot; in the section &amp;quot;Filtering and Collection API&amp;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your EventCycle &amp;quot;specCURRENT&amp;quot; and use thisECSpec_current.xmlas your ECSpec.
+{code:xml}
+readerName:  SPEC_NAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: specCURRENT
+specFilePath: /home/epc/ECSpec_current.xml
+{code}
+
+
+Verify the correct defintion of your ECSpec by invoking the method &amp;quot;getECSpecNames()&amp;quot;. You should get a list of ECSpec names currently defined in brackets. Make sure that the ECSpec you just defined is listed.
+You can inspect the event cycle specification ECSpec_current by the method &amp;quot;getECSpec(String specName)&amp;quot;.
+
+
+*Specify the Event Consumer of the ALE Events Being Sent*
+
+
+When there is no subscriber for an ECSpec, the ECSpec is not executed. We therefore need to specify a listener by subscribing our event sink to the ECSpec &amp;quot;specCURRENT&amp;quot; we added earlier.
+Invoke &amp;quot;subscribe(String specName, String notificationUri)&amp;quot; and register the URL on which the event sink GUI is listening.
+{code:xml}
+notificationURI:  http: //SERVER:PORT
+specName: SPEC_NAME
+#For Example
+notificationURI:http: //localhost:9999
+specName: specCURRENT
+{code}
+
+
+The ALE will start sending empty ECReports to the event sink GUI as the Rifidi emulator has no tags in field yet.
+
+
+*Set tags in the reader field*
+Now we will make the virtual reader start delivering tags to the ALE. From the &amp;ldquo;TagsView&amp;rdquo; of Rifidi emulator, create a new tag (SGTIN96, GEN2) then drop it into the antenna zone. The tag reads will be reported to the Fosstrak ALE Middleware. After the tag reads are filtered and collected as specified in the ECSpec, they are delivered by the Fosstrak ALE middleware to the event sink GUI.
+
+
+Based on[Fosstrak&gt;https://code.google.com/p/fosstrak/]ALE MiddlewareUser guide.
+
+1.1 Developers Guide
+1.1.1 Acquiring the code
+
+
+You can get the source code of ALE through [Aspire&gt;http://forge.ow2.org/projects/aspire] SVN. You should get all the source code under the path aspire/trunk/servers/AspireRfidALE/ALE.
+
+1.1.1 Building
+
+
+You will need to:
+
+
+* install Maven 2.2
+* install subversion
+* install java runtime
+
+
+Then :
+
+
+* svn checkout svn://svn.forge.objectweb.org/svnroot/aspire/trunk/servers/AspireRfidALE/ALE
+* download the following dependencies :
+
+
+[javax.comm&gt;http://llk.media.mit.edu/projects/picdev/software/javaxcomm.zip]
+
+
+eclipse [webserviceUtils&gt;https://www.dropbox.com/s/i62pg37xe8s1y2f/webserviceutils.zip] (needed only by fc-webclient)
+
+
+[ltkjava-1.0.0.7 updated library&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FLlrpLib%2F] (needed by fc-server)
+
+
+* Install the dependencies locally :
+
+
+{code:xml}
+
+mvn install : install-file -Dfile=&lt; path-to-file &gt; -DgroupId=&lt; group-id &gt; -DartifactId=&lt; artifact-id &gt;
+
+{code}
+For  webserviceUtils : groupId = org.eclipse.jst.ws.consumption, artifactId = webserviceutils, version = 1.0.102.v200609220223
+
+
+* mvn package</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HFilteringAndCollectionServer"&gt;Filtering And Collection Server&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;The &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection#HIntroduction"&gt;&amp;#65;spireRfid Filtering and Collection Middleware&lt;/a&gt;&lt;/span&gt; is a slightly modified version of Accada RFID Middleware, which is now called FossTrak, licensed under LGPL. This component implements EPCglobal's &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.gs1.org/gsmp/kc/epcglobal/ale"&gt;&amp;#65;LE 1.1 specification&lt;/a&gt;&lt;/span&gt;. AspireRfid have implemented changes and bug fixes on the original Accada middleware. As of 14/05/2009 we have ceased distribution of &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org"&gt;&amp;#70;ossTrak&lt;/a&gt;&lt;/span&gt; licensed code.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ALEonOSGi"&gt;Deployment of Filtering And Collection Server on OSGi&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ALEinCilia"&gt;CiliaALE&lt;/a&gt;&lt;/span&gt; : a lightweight, flexible and dynamically reconfigurable ALE Servers for Android phones and tablets (developed by the Adele team, LIG, Grenoble)&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/EmbededALE"&gt;&amp;#69;mbedded ALE&lt;/a&gt;&lt;/span&gt;: developed by the FUN team, Inria-Lille, which can be implemented in mobile terminals.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/ExtendedTDTALE"&gt;&amp;#69;xtended TDT ALE&lt;/a&gt;&lt;/span&gt;: developed by the FUN team, Inria-Lille, which is compatible with different input identification formats (i.e. EPC, GS1, ISO, MAC address, Telephone numbers, etc.).&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LightALECC"&gt;&amp;#76;ight ALECC&lt;/a&gt;&lt;/span&gt;: developed by the FUN team, Inria-Lille, which aims to supply an easy and efficient framework for developers to realize the most used basic operations defined by the EPC ALECC (writing API) standard.&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.1)"&gt;&amp;#76;LRP toolkit library (updated according to LLRP1.1)&lt;/a&gt;&lt;/span&gt;: developed by the FUN team, Inria-Lille, which aims to provide an updated LLRP toolkit library for developers intersted by LLRP interface.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 class="heading-1"&gt;&lt;span id="HAspireRfidFilteringAndCollectionServer"&gt;AspireRfid Filtering And Collection Server&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;2 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;2.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeployment"&gt;2.2 Deployment&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;3 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;3.1 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuilding"&gt;3.2 Building&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation/Filtering%26Collection/ALE.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/Filtering%26Collection/ALE.jpg" height="350" alt="ALE.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;In the scope of large scale deployments, RFID systems generate an enormous number of object reads. Many of those reads represent non-actionable &amp;ldquo;noise.&amp;rdquo; To balance the cost and performance of this with the need for clear accountability and interoperability of the various parts, the design of the ASPIRE middleware seeks to:
+&lt;ul class="star"&gt;
+&lt;li&gt;Drive as much filtering and counting of reads as low in the architecture as possible.&lt;/li&gt;
+&lt;li&gt;Minimize the amount of &amp;ldquo;business logic&amp;rdquo; embedded in the Tags.&lt;/li&gt;
+&lt;/ul&gt;The Filtering and Collection Middleware is intended to facilitate these objectives by providing a flexible interface (ALE (Application Level Events) interface) to a standard set of accumulation, filtering, and counting operations that produce &amp;ldquo;reports&amp;rdquo; in response to client &amp;ldquo;requests.&amp;rdquo; The client will be responsible for interpreting and acting on the meaning of the report. Depending on the target deployment the client of the ALE interface may be a traditional &amp;ldquo;enterprise application,&amp;rdquo; or it may be new software designed expressly to carry out an RFID-enabled business process. but which operates at a higher level than the &amp;ldquo;middleware&amp;rdquo; that implements the ALE interface. In the scope of the ASPIRE project, the Business Event Generation (BEG) middleware would naturally, consume the results of ALE filtering. However, there might be deployment scenarios where clients will interface directly to the ALE filtered streams of RFID data.&lt;p class="paragraph"/&gt;
+The AspireRfid  Filtering and Collection Middleware is a modified version of &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.accada.org"&gt;&amp;#65;ccada&lt;/a&gt;&lt;/span&gt; RFID Middleware, which is now called &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org"&gt;&amp;#70;ossTrak&lt;/a&gt;&lt;/span&gt;, licensed under LGPL. AspireRfid have implemented changes and bug fixes on the original Accada middleware.&lt;p class="paragraph"/&gt;
+The actual AspireRFID ALE version is taken from Fosstrak filtering and collection module's revision number 2295 (released on February 2013). It implements EPCglobal's ALE 1.1 and LLRP 1.1 specifications.
+If we consider a user point of view, ALE compromises 3 modules as follows:
+&lt;ul class="star"&gt;
+&lt;li&gt;the filtering and collection server&lt;/li&gt;
+&lt;li&gt;a standalone clientto configure filtering and collection servers&lt;/li&gt;
+&lt;li&gt;aweb-based clientto configure filtering and collection servers&lt;/li&gt;
+&lt;/ul&gt;However, if we consider a developer point of view and focus on the source code, ALE is also organized  in 3 modules :
+&lt;ul class="star"&gt;
+&lt;li&gt;fc-client: Filtering and Collection Client: a Java Swing based test client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification&lt;/li&gt;
+&lt;li&gt;fc-commons: common functionality used by the different Filtering and Collection modules&lt;/li&gt;
+&lt;li&gt;fc-server: an implementation of EPCglobal Application Level Event (ALE) specification. An LLRP interface insures communication procedure with LLRP compliant RFID readers. For readers that do not support LLRP, ALE uses the Hardware Abstraction Layer (HAL) interface.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="https://code.google.com/p/fosstrak/wiki/LlrpMain"&gt;&amp;#76;LRP Commander&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://sourceforge.net/projects/rifidi/files/Rifidi Emulator/"&gt;&amp;#82;ifidi&lt;/a&gt;&lt;/span&gt; Reader Emulator&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://tomcat.apache.org/"&gt;&amp;#65;pache&lt;/a&gt;&lt;/span&gt; Tomcat Java Servlet Container&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Files&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;a copy of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-server%2Ftarget%2F"&gt;&amp;#102;c-server-1.0.0.war or higher&lt;/a&gt;&lt;/span&gt; (note: LLRP support requires &gt;= 1.0.0)&lt;/li&gt;
+&lt;li&gt;a copy of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FALE%2Ffc-webclient%2Ftarget%2F"&gt;&amp;#102;c-webclient fc-webclient-0.4.0.war&lt;/a&gt;&lt;/span&gt; or higher&lt;/li&gt;
+&lt;li&gt;a copy of the  &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/showfiles.php?group_id=324"&gt;&amp;#97;spireTcpMessageCapturer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;a copy of this LLRP &lt;span class="wikiexternallink"&gt;&lt;a href="http://fosstrak.googlecode.com/svn/wikires/ale/ROSPEC_example.llrp"&gt;&amp;#65;DD_ROSPEC&lt;/a&gt;&lt;/span&gt; message (to be saved in xml format)&lt;/li&gt;
+&lt;li&gt;a copy of this ALE &lt;span class="wikiexternallink"&gt;&lt;a href="http://fosstrak.googlecode.com/svn/wikires/ale/ECSpec_current.xml"&gt;&amp;#69;CSpec&lt;/a&gt;&lt;/span&gt; message (to be saved in xml format)&lt;/li&gt;
+&lt;li&gt;a copy of this &lt;span class="wikiexternallink"&gt;&lt;a href="http://fosstrak.googlecode.com/svn/wikires/ale/LLRPReader.xml"&gt;&amp;#65;LE logical&lt;/a&gt;&lt;/span&gt; reader definition file (to be saved in LLRP format)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Tomcat Deployment&lt;/strong&gt;
+Tomcat is used in order to deploy the Filtering and Collection server. Deployment is worked out as follows.
+&lt;ul class="star"&gt;
+&lt;li&gt;Install Apache Tomcat if you have not installed it yet.&lt;/li&gt;
+&lt;li&gt;Copy the  two WAR files (fc-server-VERSION .war and fc-webclient-VERSION .war) into the Tomcat's webapps directory and start Tomcat. The war-file will be deployed into a new folder.&lt;/li&gt;
+&lt;/ul&gt;For Windows users :
+You will usually find the webapps folder inside the tomcat installation directory :
+&lt;ul class="star"&gt;
+&lt;li&gt;c:/Program Files/Apache Tomcat/webapps for 32-bit Windows&lt;/li&gt;
+&lt;li&gt;c:/Programs/Apache Software Foundation/Tomcat/webappps for 64-bit Windows&lt;/li&gt;
+&lt;/ul&gt;For Linux/unix users :
+You can use this command to start tomcat : service tomcat7 start&lt;p class="paragraph"/&gt;
+The webapps folder will depend on your distribution, here are some possible locations:
+&lt;ul class="star"&gt;
+&lt;li&gt;/var/lib/tomcat/webapps&lt;/li&gt;
+&lt;li&gt;/usr/local/lib/tomcat/webapps&lt;/li&gt;
+&lt;/ul&gt;Once the two war files are in the webapps directory, Tomcat will automatically deploy them. 
+The ALE server is now ready to be configured at your needs.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Rifidi configuration&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Install the Rifidi emulator&lt;/li&gt;
+&lt;li&gt;Start the Rifidi emulator&lt;/li&gt;
+&lt;li&gt;Instantiate a new reader of type &amp;quot;LLRPReader&amp;quot; that listens on port 5084 (default) using the Reader Wizard&lt;/li&gt;
+&lt;li&gt;Start the reader just instantiated (right click &amp;quot;Start reader&amp;quot;)&lt;/li&gt;
+&lt;/ul&gt;We will return to the LLRP reader emulator once the other components are configured.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Configure the Rifidi Emulator by using LLRP Commander&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;LLRP Commander is an Eclipse plugin. To install it, you can &amp;quot;check for updates&amp;quot; via the Eclipse or &amp;quot;install a new software&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;Eclipse Update Site URL: &lt;span class="nobr"&gt;&lt;a href="http://fosstrak.googlecode.com/svn/llrp/eclipse_update_site"&gt;&amp;#104;ttp://fosstrak.googlecode.com/svn/llrp/eclipse_update_site&lt;/a&gt;&lt;/span&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Start Eclipse and customize the view to LLRP Commander (In Eclipse: Window/Open perspective/Other/LLRP Commander).&lt;/li&gt;
+&lt;li&gt;Create a new reader (Under Reader Explorer tab : Right Click on DEFAULT and Add RFID Reader).&lt;/li&gt;
+&lt;li&gt;Connect to the remote adapter instance running on the ALE. Check, if you can send and retrieve messages from the reader by sending a GET_READER_CAPABILITIES message (Right click on the reader and Send message). You can follow the reader behavior towards the messages in Rifidi console and also in the &amp;ldquo;LLRP Messagebox&amp;rdquo; in Eclipse.&lt;/li&gt;
+&lt;li&gt;Create a new LLRP message (Right click on LLRP_CMDR/New/Other/LLRP/LLRP Message)&lt;/li&gt;
+&lt;li&gt;Edit the content (in XML Editor) by the content of the fileRO_SPEC and save&lt;/li&gt;
+&lt;li&gt;Send the message to the Rifid Emulator(use the button &amp;quot;Sending the current message&amp;quot;)&lt;/li&gt;
+&lt;li&gt;From the Reader Explorer tab (right-click on the reader name), select &amp;quot;Send ENABLE_RO_SPEC message&amp;quot; to instruct the reader to enable the ROspec just loaded.&lt;/li&gt;
+&lt;/ul&gt;Now we are sure that the virtual reader is configured, we just need to provide it with tags. This step will be done after.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;GUI Setup : TCP Message Capturer&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+This interface will spy the reports sent by the filtering and collection server, it displays incoming HTTP requests. Make sure the provided port (9999) is not used by some other application.
+&lt;ul class="star"&gt;
+&lt;li&gt;Uncompress the aspireTcpMessageCapturer archive&lt;/li&gt;
+&lt;li&gt;Start the TCP Message Capturer that listens on port 9999&lt;/li&gt;
+&lt;/ul&gt;Command to Start aspireTcpMessageCapturer :&lt;p class="paragraph"/&gt;
+&lt;div class="code"&gt;&lt;pre&gt;java &amp;#45;jar aspireTcpMessageCapturer&amp;#45;VERSION &amp;#45;jar&amp;#45;with&amp;#45;dependencies.jar
+#For Example
+java &amp;#45;jar aspireTcpMessageCapturer&amp;#45;V0.1m&amp;#45;jar&amp;#45;with&amp;#45;dependencies.jar&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;ALE web-client configuration&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+The web-based client is used to configure the filtering and collection server. We need first to tell it the URL through which the filtering and collection server can be accessed.
+Start your web browser and point it to the address of the web-based client.&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;http: //&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;SERVER&amp;#62;&lt;/span&gt;:&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;PORT&amp;#62;&lt;/span&gt;/&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;WEBCLIENT_VERSION&amp;#62;&lt;/span&gt;/services/ALEWebClient.jsp&lt;p class="paragraph"/&gt;#For Example
+http:// localhost:8080/fc&amp;#45;webclient&amp;#45;1.2.0/services/ALEWebClient.jsp&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;In the next step, specify two endpoints that tell the web-based client where the &amp;quot;Filtering and Collection API &amp;quot;and the &amp;quot;Logical Reader API&amp;quot; can be found.
+Set the endpoint to the filtering and collection server by selecting the &amp;quot;setEndpoint(String endPointName)&amp;quot; method in the &amp;quot;Filtering and Collection API&amp;quot;. Click &amp;quot;Invoke&amp;quot; to execute the command.
+&lt;div class="code"&gt;&lt;pre&gt;endpoint: http: //&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;SERVER&amp;#62;&lt;/span&gt;:&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;PORT&amp;#62;&lt;/span&gt;/&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;FCSERVER_VERSION&amp;#62;&lt;/span&gt;/services/ALEService&lt;p class="paragraph"/&gt;#For Example
+http:// localhost:8080/fc&amp;#45;server&amp;#45;1.2.0/services/ALEService&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+To be sure that a connection between the web-based client and the server can be established, click &amp;quot;getVendorVersion()&amp;quot;. A version number should be returned.&lt;p class="paragraph"/&gt;
+Set the endpoint to the filtering and collection server's Logical Reader API by selecting &amp;quot;setEndPoint(String endPointName)&amp;quot; in the &amp;quot;LogicalReader API&amp;quot;. Click &amp;quot;Invoke&amp;quot; to execute the command.
+&lt;div class="code"&gt;&lt;pre&gt;endpoint: http: //&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;SERVER&amp;#62;&lt;/span&gt;:&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;PORT&amp;#62;&lt;/span&gt;/&lt;span class="xml&amp;#45;tag"&gt;&amp;#60;FCSERVER_VERSION&amp;#62;&lt;/span&gt;/services/ALELRService&lt;p class="paragraph"/&gt;#For Example
+http: //localhost:8080/fc&amp;#45;server&amp;#45;1.2.0/services/ALELRService&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+Click &amp;quot;getVendorVersion()&amp;quot; to be sure that a connection between the web-based client and the server can be established, a version number should be returned.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Set the readers connected to ALE&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+The next step is to configure the fc-server with the LLRP reader connected. Click on &amp;quot;define(String readerName, LRSpec spec)&amp;quot; in the section &amp;quot;LogicalReader API&amp;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your reader &amp;quot;LogicalReader1&amp;quot; and use theLLRPReader.xmlas your LRSpec.
+&lt;div class="code"&gt;&lt;pre&gt;readerName:  READERNAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: LogicalReader1
+specFilePath: /home/epc/LLRPReader.xml&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+Verify that the reader has been created by clicking on &amp;quot;getLogicalReaderNames()&amp;quot;. The call should return a list of logical readers in brackets. Make sure that the reader just creates is listed.
+In the LLRP reader emulator console you can now see the message exchange with the Fosstrak ALE middleware.
+You can inspect the logical reader specification LRSpec by the method &amp;quot;getLRSpec(String readerName)&amp;quot;.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Define the Filtering and Collection Behavior&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+The behavior of ALE is described in an xml file. So in this step you will define an ALE ECSpec, this tells the ALE Middleware how the RFID tag reads ariving from the reader should be filtered and aggregated, for example: added, current or deleted tags.
+Click on &amp;quot;define(String specName, String specFilePath)&amp;quot; in the section &amp;quot;Filtering and Collection API&amp;quot;.
+DO NOT CONFUSE the define method for an EventCycle with the define method for a logical reader! For this tutorial name your EventCycle &amp;quot;specCURRENT&amp;quot; and use thisECSpec_current.xmlas your ECSpec.
+&lt;div class="code"&gt;&lt;pre&gt;readerName:  SPEC_NAME
+specFilePath: PATH_TO_SPEC/SPEC_NAME.xml
+#For Example
+readerName: specCURRENT
+specFilePath: /home/epc/ECSpec_current.xml&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+Verify the correct defintion of your ECSpec by invoking the method &amp;quot;getECSpecNames()&amp;quot;. You should get a list of ECSpec names currently defined in brackets. Make sure that the ECSpec you just defined is listed.
+You can inspect the event cycle specification ECSpec_current by the method &amp;quot;getECSpec(String specName)&amp;quot;.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Specify the Event Consumer of the ALE Events Being Sent&lt;/strong&gt;&lt;p class="paragraph"/&gt;
+When there is no subscriber for an ECSpec, the ECSpec is not executed. We therefore need to specify a listener by subscribing our event sink to the ECSpec &amp;quot;specCURRENT&amp;quot; we added earlier.
+Invoke &amp;quot;subscribe(String specName, String notificationUri)&amp;quot; and register the URL on which the event sink GUI is listening.
+&lt;div class="code"&gt;&lt;pre&gt;notificationURI:  http: //SERVER:PORT
+specName: SPEC_NAME
+#For Example
+notificationURI:http: //localhost:9999
+specName: specCURRENT&lt;/pre&gt;&lt;/div&gt;&lt;p class="paragraph"/&gt;
+The ALE will start sending empty ECReports to the event sink GUI as the Rifidi emulator has no tags in field yet.&lt;p class="paragraph"/&gt;
+&lt;strong class="strong"&gt;Set tags in the reader field&lt;/strong&gt;
+Now we will make the virtual reader start delivering tags to the ALE. From the &amp;ldquo;TagsView&amp;rdquo; of Rifidi emulator, create a new tag (SGTIN96, GEN2) then drop it into the antenna zone. The tag reads will be reported to the Fosstrak ALE Middleware. After the tag reads are filtered and collected as specified in the ECSpec, they are delivered by the Fosstrak ALE middleware to the event sink GUI.&lt;p class="paragraph"/&gt;
+Based on&lt;span class="wikiexternallink"&gt;&lt;a href="https://code.google.com/p/fosstrak/"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt;ALE MiddlewareUser guide.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+You can get the source code of ALE through &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/projects/aspire"&gt;&amp;#65;spire&lt;/a&gt;&lt;/span&gt; SVN. You should get all the source code under the path aspire/trunk/servers/AspireRfidALE/ALE.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HBuilding"&gt;Building&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+You will need to:
+&lt;ul class="star"&gt;
+&lt;li&gt;install Maven 2.2&lt;/li&gt;
+&lt;li&gt;install subversion&lt;/li&gt;
+&lt;li&gt;install java runtime&lt;/li&gt;
+&lt;/ul&gt;Then :
+&lt;ul class="star"&gt;
+&lt;li&gt;svn checkout svn://svn.forge.objectweb.org/svnroot/aspire/trunk/servers/AspireRfidALE/ALE&lt;/li&gt;
+&lt;li&gt;download the following dependencies :&lt;/li&gt;
+&lt;/ul&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://llk.media.mit.edu/projects/picdev/software/javaxcomm.zip"&gt;&amp;#106;avax.comm&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;
+eclipse &lt;span class="wikiexternallink"&gt;&lt;a href="https://www.dropbox.com/s/i62pg37xe8s1y2f/webserviceutils.zip"&gt;&amp;#119;ebserviceUtils&lt;/a&gt;&lt;/span&gt; (needed only by fc-webclient)&lt;p class="paragraph"/&gt;
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fservers%2FAspireRfidALE%2FLlrpLib%2F"&gt;&amp;#108;tkjava-1.0.0.7 updated library&lt;/a&gt;&lt;/span&gt; (needed by fc-server)
+&lt;ul class="star"&gt;
+&lt;li&gt;Install the dependencies locally :&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;mvn install : install&amp;#45;file &amp;#45;Dfile=&lt;span class="xml&amp;#45;tag"&gt;&amp;#60; path&amp;#45;to&amp;#45;file &amp;#62;&lt;/span&gt; &amp;#45;DgroupId=&lt;span class="xml&amp;#45;tag"&gt;&amp;#60; group&amp;#45;id &amp;#62;&lt;/span&gt; &amp;#45;DartifactId=&lt;span class="xml&amp;#45;tag"&gt;&amp;#60; artifact&amp;#45;id &amp;#62;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+For  webserviceUtils : groupId = org.eclipse.jst.ws.consumption, artifactId = webserviceutils, version = 1.0.102.v200609220223
+&lt;ul class="star"&gt;
+&lt;li&gt;mvn package&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

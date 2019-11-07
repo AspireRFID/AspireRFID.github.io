@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>FlushCache</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.WebHome</parent>
+<creator>XWiki.superadmin</creator>
+<author>XWiki.superadmin</author>
+<contentAuthor></contentAuthor>
+<creationDate>1128088477000</creationDate>
+<date>1128088480000</date>
+<contentUpdateDate>1427131372878</contentUpdateDate>
+<version>1.2</version>
+<title></title>
+<template></template>
+<content>$xwiki.flushCache()</content>
+<renderedcontent></renderedcontent>
+</xwikidoc>

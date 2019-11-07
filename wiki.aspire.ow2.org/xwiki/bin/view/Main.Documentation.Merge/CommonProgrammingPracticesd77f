@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Merge</web>
+<name>CommonProgrammingPractices</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Merge</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1241426617000</creationDate>
+<date>1241426983000</date>
+<contentUpdateDate>1241426983000</contentUpdateDate>
+<version>1.5</version>
+<title>Common Programming Practices</title>
+<template></template>
+<content>1 Common Programming Practices
+
+----
+#toc("" "" "true")
+----
+
+1.1 Maven
+The 2 branches are already built using Maven 2
+1.1 JavaEE
+TBD
+1.1  JMX
+The 2 branches have already MBeans to manage MW components
+1.1  OSGi
+The 2 branches have already packaged applications as OSGi bundles
+1.1 iPOJO
+Apache Felix iPOJO is a component model to ease the development of OSGi applications. It deals with the service dependency management, the JMX MBean definition for OSGi component, the configuration, … iPOJO was mainly developed by the Adele team involved in the Aspire project. iPOJO is already used in the services of the JOnAS 5 JavaEE server. Most of the bundles of the RFIDSuite branch are developed with iPOJO. [A 10 minute tutorial on iPOJO&gt;http://felix.apache.org/site/apache-felix-ipojo.html]
+
+We propose to use intensively the iPOJO component model for all bundles produced by the project.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HCommonProgrammingPractices"&gt;Common Programming Practices&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HMaven"&gt;1 Maven&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJavaEE"&gt;2 JavaEE&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMX"&gt;3 JMX&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOSGi"&gt;4 OSGi&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HiPOJO"&gt;5 iPOJO&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HMaven"&gt;Maven&lt;/span&gt;&lt;/h3&gt; 
+The 2 branches are already built using Maven 2
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HJavaEE"&gt;JavaEE&lt;/span&gt;&lt;/h3&gt; 
+TBD
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HJMX"&gt;JMX&lt;/span&gt;&lt;/h3&gt; 
+The 2 branches have already MBeans to manage MW components
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HOSGi"&gt;OSGi&lt;/span&gt;&lt;/h3&gt; 
+The 2 branches have already packaged applications as OSGi bundles
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HiPOJO"&gt;iPOJO&lt;/span&gt;&lt;/h3&gt; 
+Apache Felix iPOJO is a component model to ease the development of OSGi applications. It deals with the service dependency management, the JMX MBean definition for OSGi component, the configuration, … iPOJO was mainly developed by the Adele team involved in the Aspire project. iPOJO is already used in the services of the JOnAS 5 JavaEE server. Most of the bundles of the RFIDSuite branch are developed with iPOJO. &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/apache-felix-ipojo.html"&gt;&amp;#65; 10 minute tutorial on iPOJO&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;We propose to use intensively the iPOJO component model for all bundles produced by the project.
+</renderedcontent>
+</xwikidoc>

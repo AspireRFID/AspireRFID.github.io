@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>PhysicalReaderConfiguration</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.AspireIDE</parent>
+<creator>xwiki:XWiki.nektarios</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1233321641000</creationDate>
+<date>1274087408000</date>
+<contentUpdateDate>1274087408000</contentUpdateDate>
+<version>1.28</version>
+<title>Reader Configuration &amp; Management Plug-in</title>
+<template></template>
+<attachment>
+<filename>ReaderCoreProxyManagementIDE.jpg</filename>
+<filesize>116606</filesize>
+<author>xwiki:XWiki.nektarios</author>
+<date>1234186622000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ReaderCoreProxyManagementPreferences.jpg</filename>
+<filesize>56555</filesize>
+<author>xwiki:XWiki.nektarios</author>
+<date>1234186639000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Reader Configuration &amp; Management Plug-in
+
+----
+#toc("" "" "")
+----
+
+1.1 Introduction
+
+This tool provides a management front-end based on the Java Management extensions (JMX) for the [Reader Core proxy&gt;Main.Documentation.ReaderCoreProxy]. It enables the end user to edit the runtime parameters of the proxy and to manage its status. Though the management interface is usable through any jmx capable console, like SUN's jconsole, this plug-in enables integrated and user friendly management.
+
+1.1 Users Guide
+
+
+1.1.1 Download &amp; Run
+
+You can download the Reader Configuration &amp; Management tool from the [AspireRFID forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIdeToolCollection” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory {pre}"user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”){/pre}.
+
+1.1.1 StartUp
+You can gain access to the management and the configuration interface from the AspireRfidIDE by clicking Window -&gt; Show view and then selecting *JMX management console* or *JMX configuration console*.
+
+Before trying to use plug-in you should make sure that you have a [Reader Core proxy&gt;Main.Documentation.ReaderCoreProxy] instance running and you have configured properly the AspireIDE configuration regarding the JMX endpoint, located at Window-&gt;Preferences-&gt;Management console.
+
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg"&gt;{image:ReaderCoreProxyManagementPreferences.jpg|width=50%|height=50%}&lt;/a&gt;
+
+The JMX server URL field should contain the appropriate url pointing to the OSGI JMX RMI endpoint
+
+1.1.1 JMX management console
+
+This tool provides high level control over the reader proxy. It provides the user with the following functionality:
+
+* *Current status*: Displays the current status of the proxy component. The possible values are:
+** DISCONNECTED: The proxy cannot be reached. This could be happening either because the OSGI container is shut down, or because the Reader Core Proxy bundle is not properly deployed, or the bundle is stopped or the URL connection string, mentioned before is wrong.
+** STOPPED: The plug-in has been connected to the bundle and its operation is set to Stopped
+** STARTED: The plug-in has been connected to the bundle and its operation is set to Started
+* *Refresh status*: Refreshed the current status (described above).
+* *Start*: Starts the reader proxy operation
+* *Stop*: Stops the reader proxy operation
+* *Reset configuration*: Deletes every change that may have happened to the proxy component and restores the default configuration file. *The default configuration loads by the simulator reader when the proxy is started*
+* *Save and load updated configuration*: This operation saves the updated configuration to a new configuration file, and loads it to the runtime. You can update the configuration through the JMX configuration console. This operation is mandatory if you have changed any parameter through this console and you want to apply it.
+* *Download configuration file*: This operation enables you to backup the currently loaded configuration and save it locally as a XML file. When you click on this button a Save As dialogue will be presented to choose the location and the name of the backup file.
+* *Upload configuration file*: This operation enables you to restore a previously backed up XML configuration file and set the new configuration as active. By clicking on the button you will be prompted of a dialogue that will let you choose a configuration file. You should backup the current configuration before trying to upload a new one.
+
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg"&gt;{image:ReaderCoreProxyManagementIDE.jpg|width=50%|height=50%}&lt;/a&gt;
+
+1.1.1 JMX configuration console
+
+When you open the console, if the connection URL is valid and operational, all configuration fields will be populated with the live configuration information from the server. There are 4 panels with grouped configuration that can be edited. *Every update that is executed through the console is NOT activated immediately*. Instead you have to hit the *Save and load updated configuration* button located an the JMX management console. This will save the configuration and restart the reader with the updated configuration. We will now iterate of the available configuration groups.
+
+1.1.1.1 Reader information
+This is general information regarding the reader proxy that is used for identification purposes. The ~~reader name~~ parameter is also used by the [filtering and collection server&gt;Main.Documentation.Filtering&amp;Collection] to identify the proxy component.
+
+1.1.1.1 Main configuration
+These configuration parameters are of general purpose that define operational parameters of the proxy module. These parameters are referenced and documented at the [EPCglobal Reader Protocol&gt;http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf] standard v1.1.
+In most cases you will not need to alter any of these parameters, except if there is a port conflict with the TCP and/or HTTP servers that may be used. By default the proxy opens two server connections, a TCP server on port 5566 and one HTTP server on port 8000. This configuration can be altered from this configuration group.
+
+1.1.1.1 Sources
+Sources are an abstraction through which we can manage and access a group of read points. These read points may be scattered and could have miscellaneous capabilities. Fro example they could be able to read RFID or bardcode or RF tags. 
+Through this configuration group you can *add a new source* by entering a source name and selecting an available read point to connect with the source. You can add a read point through the ~~readers configuration~~ parameters group.
+Through the ~~current source~~ group you can select the source that will be be used (active) in the proxy configuration.
+
+1.1.1.1 Readers configuration
+Through this group you may add a new reader to the configuration or change the configuration of an existing reader.
+* *To add a new reader* you should start by selecting ~~NEW~~ from the existing readers list. The you set the reader name, the class name and the properties file of the reader and push the ~~Add reader~~ button. After adding the reader you can set its read point names.
+* *To edit the configuration* of a reader you should first select it through the ~~existing readers~~ list. Then you are able to view some permanent configuration parameters of the selected reader and add a read point.
+
+
+1.1 Developers Guide
+In this section we will describe the JMX aspects of this component and information on how to add information for a new reader that will be used with the Reader Core Proxy.
+
+1.1.1 Adding new reader information
+As it is explained at the [reader core proxy&gt;Main.Documentation.ReaderCoreProxy] page, you can add a non RP compliant reader to the Aspire middleware. In order to enable the end user to activate and use a new reader implementation, apart from deploying the bundle to the OSGI server, you have to follow some steps to make this information available.
+
+The option to add a new reader is available at the ~~Readers configuration~~ tab of the ~~JMX configuration console~~. To add a new reader, the user has to select ~~NEW~~ from the readers list and then select the implementation class name from the available list and define the properties file, if there is such file required by the implementation. The available class files are defined through the ~~Preferences~~ dialogue (~~Window-&gt;Preferences-&gt;Management console~~). Through this form you can add the name of the class file implementing the ~~org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction~~ interface, as defined [here&gt;Main.Documentation.ReaderCoreProxy#HComponentanalysis]. You should also provide the user of the information regarding the properties file location, which should be existent within the deployed bundle. The property file location should be relative to bundle root directory (e.g. /props/ConfigFile.properties).
+
+1.1.1 JMX MBean
+Through the managed OSGI (MOSGI) we expose one managed bean (MBean) that provides several operations and attributes. This MBean is defined within the ReaderProtocol bundle through the Java interface ~~org.ow2.aspirerfid.reader.rp.RmRpMBean~~. The MBean implementation exists in the ReaderProtocolImpl bundle through the ~~org.ow2.aspirerfid.reader.rp.impl.ReaderProtocol~~ class. The following is provides is the list of operations and attributes.
+
+1.1.1.1 MBean Operations
+
+* Start,stop and check the functionality of the reader proxy based on the active configuration
+{code}
+public boolean start();
+public boolean stop();
+public boolean isStarted();
+{code}
+
+* Loads an updated configuration and makes it active
+{code}
+public void loadConfig();
+{code}
+
+* Loads the default configuration and makes it active
+{code}
+public void resetConfig();
+{code}
+
+* Loads an XML serialized configuration file and makes it active
+{code}
+public void loadConfigurationFile(String serializedFile);
+{code}
+
+* Serializes the XML configuration file and returns it
+{code}
+public String saveConfigurationFileAs();
+{code}
+
+* Get or set functional parameters of the proxy bundle, without making them active. To activate and save the configuration you have to use the ~~loadConfig~~ operation.
+{code}
+public void setEPC(String epc);
+public String getEPC();
+
+public void setName(String name);
+public String getName();
+
+public void setManufacturer(String manufacturer);
+public String getManufacturer();
+
+public void setManufacturerDescription(String desc);
+public String getManufacturerDescription();
+
+public void setModel(String model);
+public String getModel();
+
+public void setHandle(int handle);
+public int getHandle();
+
+public void setRole(String role);
+public String getRole();
+
+public void setMaxSourceNumber(int number);
+public int getMaxSourceNumber();
+
+public void setMaxTagSelectorNumber(int number);
+public int getMaxTagSelectorNumber();
+
+public void setMaxTriggerNumber(int number);
+public int getMaxTriggerNumber();
+
+public void addReader(String name, String className, String propertiesFile);
+public void addReaderReadpoint(String readerName, String readpoint);
+
+public String[] getReaders();
+
+public String getReaderClassName(String readerName);
+
+public String getReaderPropertiesFile(String readerName);
+
+public String[] getReadPointNames(String readerName);
+
+public void setCurrentSource(String source);
+public String getCurrentSource();
+
+public void addSource(String name, boolean fixed, String readpoint);
+
+public String[] getSources();
+
+public boolean getIsSourceFixed(String sourceName);
+
+public String getSourceReadpoint(String sourceName);
+
+public void addIOEdgeTriggerPortManager(String port);
+public String[] getIOEdgeTriggerPortManager();
+
+public void addIOValueTriggerPortManager(String port);
+public String[] getIOValueTriggerPortManager();
+
+public void setTcpServerConnection(boolean isEnabled);
+public boolean getTcpServerConnection();
+
+public void setTcpPort(int port);
+public int getTcpPort();
+
+public void setHttpServerConnectionEnabled(boolean isEnabled);
+public boolean getHttpServerConnectionEnabled();
+
+public void setHttpPort(int port);
+public int getHttpPort();
+
+public void setNotificationListenTimeout(long timeout);
+public long getNotificationListenTimeout();
+
+public void setThreadPoolSize(int size);
+public int getThreadPoolSize();
+
+//For the active source
+public void setIsSourceFized(boolean isFixed);
+
+public void setGlimpsedTimeout(long timeout);
+public long getGlimpsedTimeout();
+
+public void setObservedThreshold(long threshold);
+public long getObservedThreshold();
+
+public void setObservedTimeout(long timeout);
+public long getObservedTimeout();
+
+public void setLostTimeout(long timeout);
+public long getLostTimeout();
+
+public void setReadCyclesPerTrigger(int cycles);
+public int getReadCyclesPerTrigger();
+
+public void setMaxReadDutyCycles(int cycles);
+public int getMaxReadDutyCycles();
+
+public void setReadTimeout(long timeout);
+public long getReadTimeout();
+{code}
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HReaderConfiguration26ManagementPlugin"&gt;Reader Configuration &amp; Management Plug-in&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt; Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt; Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload26Run"&gt; Download &amp; Run&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HStartUp"&gt; StartUp&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMXmanagementconsole"&gt; JMX management console&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMXconfigurationconsole"&gt; JMX configuration console&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HReaderinformation"&gt; Reader information&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMainconfiguration"&gt; Main configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HSources"&gt; Sources&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReadersconfiguration"&gt; Readers configuration&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt; Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAddingnewreaderinformation"&gt; Adding new reader information&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMXMBean"&gt; JMX MBean&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HMBeanOperations"&gt; MBean Operations&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This tool provides a management front-end based on the Java Management extensions (JMX) for the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core proxy&lt;/a&gt;&lt;/span&gt;. It enables the end user to edit the runtime parameters of the proxy and to manage its status. Though the management interface is usable through any jmx capable console, like SUN's jconsole, this plug-in enables integrated and user friendly management.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26Run"&gt;Download &amp; Run&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;You can download the Reader Configuration &amp; Management tool from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#65;spireRFID forge&lt;/a&gt;&lt;/span&gt; named “AspireRfidIdeToolCollection” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory "user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HStartUp"&gt;StartUp&lt;/span&gt;&lt;/h4&gt; 
+You can gain access to the management and the configuration interface from the AspireRfidIDE by clicking Window -&gt; Show view and then selecting &lt;strong class="strong"&gt;JMX management console&lt;/strong&gt; or &lt;strong class="strong"&gt;JMX configuration console&lt;/strong&gt;.&lt;p class="paragraph"/&gt;Before trying to use plug-in you should make sure that you have a &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core proxy&lt;/a&gt;&lt;/span&gt; instance running and you have configured properly the AspireIDE configuration regarding the JMX endpoint, located at Window-&gt;Preferences-&gt;Management console.&lt;p class="paragraph"/&gt;&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementPreferences.jpg" height="50%" width="50%" alt="ReaderCoreProxyManagementPreferences.jpg" /&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;The JMX server URL field should contain the appropriate url pointing to the OSGI JMX RMI endpoint
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HJMXmanagementconsole"&gt;JMX management console&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;This tool provides high level control over the reader proxy. It provides the user with the following functionality:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Current status&lt;/strong&gt;: Displays the current status of the proxy component. The possible values are:&lt;ul class="star"&gt;
+&lt;li&gt;DISCONNECTED: The proxy cannot be reached. This could be happening either because the OSGI container is shut down, or because the Reader Core Proxy bundle is not properly deployed, or the bundle is stopped or the URL connection string, mentioned before is wrong.&lt;/li&gt;
+&lt;li&gt;STOPPED: The plug-in has been connected to the bundle and its operation is set to Stopped&lt;/li&gt;
+&lt;li&gt;STARTED: The plug-in has been connected to the bundle and its operation is set to Started&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Refresh status&lt;/strong&gt;: Refreshed the current status (described above).&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Start&lt;/strong&gt;: Starts the reader proxy operation&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Stop&lt;/strong&gt;: Stops the reader proxy operation&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Reset configuration&lt;/strong&gt;: Deletes every change that may have happened to the proxy component and restores the default configuration file. &lt;strong class="strong"&gt;The default configuration loads by the simulator reader when the proxy is started&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Save and load updated configuration&lt;/strong&gt;: This operation saves the updated configuration to a new configuration file, and loads it to the runtime. You can update the configuration through the JMX configuration console. This operation is mandatory if you have changed any parameter through this console and you want to apply it.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Download configuration file&lt;/strong&gt;: This operation enables you to backup the currently loaded configuration and save it locally as a XML file. When you click on this button a Save As dialogue will be presented to choose the location and the name of the backup file.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Upload configuration file&lt;/strong&gt;: This operation enables you to restore a previously backed up XML configuration file and set the new configuration as active. By clicking on the button you will be prompted of a dialogue that will let you choose a configuration file. You should backup the current configuration before trying to upload a new one.&lt;/li&gt;
+&lt;/ul&gt;&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/PhysicalReaderConfiguration/ReaderCoreProxyManagementIDE.jpg" height="50%" width="50%" alt="ReaderCoreProxyManagementIDE.jpg" /&gt;&lt;/a&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HJMXconfigurationconsole"&gt;JMX configuration console&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;When you open the console, if the connection URL is valid and operational, all configuration fields will be populated with the live configuration information from the server. There are 4 panels with grouped configuration that can be edited. &lt;strong class="strong"&gt;Every update that is executed through the console is NOT activated immediately&lt;/strong&gt;. Instead you have to hit the &lt;strong class="strong"&gt;Save and load updated configuration&lt;/strong&gt; button located an the JMX management console. This will save the configuration and restart the reader with the updated configuration. We will now iterate of the available configuration groups.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReaderinformation"&gt;Reader information&lt;/span&gt;&lt;/h5&gt; 
+This is general information regarding the reader proxy that is used for identification purposes. The &lt;i class="italic"&gt;reader name&lt;/i&gt; parameter is also used by the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;filtering and collection server&lt;/a&gt;&lt;/span&gt; to identify the proxy component.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMainconfiguration"&gt;Main configuration&lt;/span&gt;&lt;/h5&gt; 
+These configuration parameters are of general purpose that define operational parameters of the proxy module. These parameters are referenced and documented at the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/rp/rp_1_1-standard-20060621.pdf"&gt;&amp;#69;PCglobal Reader Protocol&lt;/a&gt;&lt;/span&gt; standard v1.1.
+In most cases you will not need to alter any of these parameters, except if there is a port conflict with the TCP and/or HTTP servers that may be used. By default the proxy opens two server connections, a TCP server on port 5566 and one HTTP server on port 8000. This configuration can be altered from this configuration group.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HSources"&gt;Sources&lt;/span&gt;&lt;/h5&gt; 
+Sources are an abstraction through which we can manage and access a group of read points. These read points may be scattered and could have miscellaneous capabilities. Fro example they could be able to read RFID or bardcode or RF tags. 
+Through this configuration group you can &lt;strong class="strong"&gt;add a new source&lt;/strong&gt; by entering a source name and selecting an available read point to connect with the source. You can add a read point through the &lt;i class="italic"&gt;readers configuration&lt;/i&gt; parameters group.
+Through the &lt;i class="italic"&gt;current source&lt;/i&gt; group you can select the source that will be be used (active) in the proxy configuration.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HReadersconfiguration"&gt;Readers configuration&lt;/span&gt;&lt;/h5&gt; 
+Through this group you may add a new reader to the configuration or change the configuration of an existing reader.
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;To add a new reader&lt;/strong&gt; you should start by selecting &lt;i class="italic"&gt;NEW&lt;/i&gt; from the existing readers list. The you set the reader name, the class name and the properties file of the reader and push the &lt;i class="italic"&gt;Add reader&lt;/i&gt; button. After adding the reader you can set its read point names.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;To edit the configuration&lt;/strong&gt; of a reader you should first select it through the &lt;i class="italic"&gt;existing readers&lt;/i&gt; list. Then you are able to view some permanent configuration parameters of the selected reader and add a read point.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt; 
+In this section we will describe the JMX aspects of this component and information on how to add information for a new reader that will be used with the Reader Core Proxy.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAddingnewreaderinformation"&gt;Adding new reader information&lt;/span&gt;&lt;/h4&gt; 
+As it is explained at the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;reader core proxy&lt;/a&gt;&lt;/span&gt; page, you can add a non RP compliant reader to the Aspire middleware. In order to enable the end user to activate and use a new reader implementation, apart from deploying the bundle to the OSGI server, you have to follow some steps to make this information available.&lt;p class="paragraph"/&gt;The option to add a new reader is available at the &lt;i class="italic"&gt;Readers configuration&lt;/i&gt; tab of the &lt;i class="italic"&gt;JMX configuration console&lt;/i&gt;. To add a new reader, the user has to select &lt;i class="italic"&gt;NEW&lt;/i&gt; from the readers list and then select the implementation class name from the available list and define the properties file, if there is such file required by the implementation. The available class files are defined through the &lt;i class="italic"&gt;Preferences&lt;/i&gt; dialogue (&lt;i class="italic"&gt;Window-&gt;Preferences-&gt;Management console&lt;/i&gt;). Through this form you can add the name of the class file implementing the &lt;i class="italic"&gt;org.ow2.aspirerfid.reader.rp.impl.hal.HardwareAbstraction&lt;/i&gt; interface, as defined &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy#HComponentanalysis"&gt;here&lt;/a&gt;&lt;/span&gt;. You should also provide the user of the information regarding the properties file location, which should be existent within the deployed bundle. The property file location should be relative to bundle root directory (e.g. /props/ConfigFile.properties).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HJMXMBean"&gt;JMX MBean&lt;/span&gt;&lt;/h4&gt; 
+Through the managed OSGI (MOSGI) we expose one managed bean (MBean) that provides several operations and attributes. This MBean is defined within the ReaderProtocol bundle through the Java interface &lt;i class="italic"&gt;org.ow2.aspirerfid.reader.rp.RmRpMBean&lt;/i&gt;. The MBean implementation exists in the ReaderProtocolImpl bundle through the &lt;i class="italic"&gt;org.ow2.aspirerfid.reader.rp.impl.ReaderProtocol&lt;/i&gt; class. The following is provides is the list of operations and attributes.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMBeanOperations"&gt;MBean Operations&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Start,stop and check the functionality of the reader proxy based on the active configuration&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; start();
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; stop();
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; isStarted();&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Loads an updated configuration and makes it active&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void loadConfig();&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Loads the default configuration and makes it active&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void resetConfig();&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Loads an XML serialized configuration file and makes it active&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void loadConfigurationFile(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; serializedFile);&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Serializes the XML configuration file and returns it&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; saveConfigurationFileAs();&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Get or set functional parameters of the proxy bundle, without making them active. To activate and save the configuration you have to use the &lt;i class="italic"&gt;loadConfig&lt;/i&gt; operation.&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="code"&gt;&lt;pre&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setEPC(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; epc);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getEPC();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setName(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; name);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getName();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setManufacturer(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; manufacturer);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getManufacturer();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setManufacturerDescription(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; desc);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getManufacturerDescription();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setModel(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; model);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getModel();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setHandle(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; handle);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getHandle();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setRole(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; role);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getRole();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setMaxSourceNumber(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; number);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getMaxSourceNumber();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setMaxTagSelectorNumber(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; number);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getMaxTagSelectorNumber();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setMaxTriggerNumber(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; number);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getMaxTriggerNumber();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void addReader(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; name, &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; className, &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; propertiesFile);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void addReaderReadpoint(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readerName, &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readpoint);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; getReaders();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getReaderClassName(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readerName);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getReaderPropertiesFile(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readerName);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; getReadPointNames(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readerName);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setCurrentSource(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; source);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getCurrentSource();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void addSource(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; name, &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; fixed, &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; readpoint);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; getSources();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; getIsSourceFixed(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; sourceName);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; getSourceReadpoint(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; sourceName);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void addIOEdgeTriggerPortManager(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; port);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; getIOEdgeTriggerPortManager();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void addIOValueTriggerPortManager(&lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt; port);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; getIOValueTriggerPortManager();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setTcpServerConnection(&lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; isEnabled);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; getTcpServerConnection();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setTcpPort(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; port);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getTcpPort();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setHttpServerConnectionEnabled(&lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; isEnabled);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; getHttpServerConnectionEnabled();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setHttpPort(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; port);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getHttpPort();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setNotificationListenTimeout(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; timeout);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getNotificationListenTimeout();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setThreadPoolSize(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; size);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getThreadPoolSize();&lt;p class="paragraph"/&gt;//For the active source
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setIsSourceFized(&lt;span class="java&amp;#45;object"&gt;boolean&lt;/span&gt; isFixed);&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setGlimpsedTimeout(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; timeout);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getGlimpsedTimeout();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setObservedThreshold(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; threshold);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getObservedThreshold();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setObservedTimeout(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; timeout);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getObservedTimeout();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setLostTimeout(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; timeout);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getLostTimeout();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setReadCyclesPerTrigger(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; cycles);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getReadCyclesPerTrigger();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setMaxReadDutyCycles(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; cycles);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; getMaxReadDutyCycles();&lt;p class="paragraph"/&gt;&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; void setReadTimeout(&lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; timeout);
+&lt;span class="java&amp;#45;keyword"&gt;public&lt;/span&gt; &lt;span class="java&amp;#45;object"&gt;long&lt;/span&gt; getReadTimeout();&lt;/pre&gt;&lt;/div&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/DevDocRFIDSuite by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:36:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - DevDocRFIDSuite
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin8bed.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main/DevDocRFIDSuite">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='DevDocRFIDSuite.html'>RFID Suite branch - Developer Documentation</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_DevDocRFIDSuite.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="DevDocRFIDSuited5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main/DevDocRFIDSuitecede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="DevDocRFIDSuited77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HRFIDSuitebranchDeveloperDocumentation">RFID Suite branch - Developer Documentation</span></h2><p class="paragraph"/>
+This document is destinated to developers who want to extend the RFID Suite branch.<p class="paragraph"/>Cote to the <span class="wikilink"><a href="Documentation.html#HRFIDSuite">user documentation</a></span><p class="paragraph"/>The current version is the Tag <i class="italic">rfidsuite-200809</i><p class="paragraph"/>
+<hr class="line"/>
+            <ul>
+          <li><a href="#HDeveloperSkill28TDB29"> Developer Skill (TDB)</a> 
+      <li><a href="#HArchitecture28TBD29"> Architecture (TBD)</a> 
+      <li><a href="#HGlobalDesign"> Global Design</a> 
+      <li><a href="#HJMXconventionfortheRFIDSuiteMBeans"> JMX convention for the RFIDSuite MBeans</a> 
+        <ul>
+          <li><a href="#HObjectNames"> ObjectNames</a> 
+      <li><a href="#HAttributes"> Attributes</a> 
+      <li><a href="#HOperations"> Operations</a> 
+        </ul>
+          <li><a href="#HReaders2CSensorsandActuatorsDocumentation"> Readers, Sensors and Actuators Documentation</a> 
+      <li><a href="#HProjectsourcesorganization"> Project sources organization</a> 
+        <ul>
+          <li><a href="#HHowtodevelopanewreader"> How to develop a new reader</a> 
+      <li><a href="#HHowtodevelopanewsensor"> How to develop a new sensor</a> 
+        <ul>
+          <li><a href="#HWireAdminbasedsensors"> WireAdmin-based sensors</a> 
+      <li><a href="#HMonitorAdminbasedsensors"> MonitorAdmin-based sensors</a> 
+      <li><a href="#HUPnPbasedsensors"> UPnP-based sensors</a> 
+        </ul>
+          <li><a href="#HHowtodevelopanewactuator"> How to develop a new actuator</a> 
+        <ul>
+          <li><a href="#HUPnPbasedactuators"> UPnP-based actuators</a> 
+        </ul>
+          <li><a href="#HHowtodevelopanewprinter"> How to develop a new printer</a> 
+      <li><a href="#HHowtocustomizeaNFCMIDLet28TBDbyAndresGomez29"> How to customize a NFC MIDLet (TBD by Andres Gomez)</a> 
+      <li><a href="#HHowtodevelopanewfilter"> How to develop a new filter</a> 
+      <li><a href="#HHowtodevelopanewconnector"> How to develop a new connector</a> 
+      <li><a href="#HHowtosecureconnectors"> How to secure connectors</a> 
+      <li><a href="#HHowtoextendtheEPCISserverDataModel"> How to extend the EPCIS server Data Model</a> 
+      <li><a href="#HHowtoextendtheManagementConsole"> How to extend the Management Console</a> 
+      <li><a href="#HHowtoimprovetheONSServer"> How to improve the ONS Server</a> 
+      <li><a href="#HReaders2CSensorsandActuatorsdeployment"> Readers, Sensors and Actuators deployment</a> 
+      <li><a href="#HHowtocustomizetheinstallers"> How to customize the installers</a> 
+      <li><a href="#HHowtocustomizethe1clickdemopack"> How to customize the 1-click demopack</a> 
+        </ul>
+          <li><a href="#HBuild"> Build</a> 
+      </ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HDeveloperSkill28TDB29">Developer Skill (TDB)</span></h3> 
+<ul class="star">
+<li><span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/index.html">&#79;SGi</a></span> and <span class="wikiexternallink"><a href="http://felix.apache.org/site/ipojo.html">&#105;POJO</a></span> for edges and premises development</li>
+<li>JavaEE for EPCIS and ONS development</li>
+<li>GWT for Management Console development</li>
+</ul><h3 class="heading-1-1"><span id="HArchitecture28TBD29">Architecture (TBD)</span></h3><p class="paragraph"/>
+The RFID Suite' architecture is based on the EPS (Edge-Premise-Server) model.
+<ul class="star">
+<li>Edges are directly connected to readers and sensors (and actuators) using wired (USB,Serial,OneWire,Ethernet...) or wireless (Bluetooth,ZigBee,IrDA) communications.</li>
+<li>Each Premise clusters a set of Edges to provide security and persistence facilities. It filters and relays the event flow to the server. Generally, there is one premise per warehouse or store.</li>
+<li>The Server collects the event flows from the Premises.</li>
+</ul>In the RFID Suite, edges communicate with the premises with connectors and premises communicate with the server(s) with connectors.<p class="paragraph"/>
+In some situation, edges and server can be merged in one computer.
+<h3 class="heading-1-1"><span id="HGlobalDesign">Global Design</span></h3><p class="paragraph"/>The global design of the RFID Suite is discribed in this <a href="../../download/Main/DevDocRFIDSuite/RFIDSuite-global-design.pdf" />document</a>.
+<h3 class="heading-1-1"><span id="HJMXconventionfortheRFIDSuiteMBeans">JMX convention for the RFIDSuite MBeans</span></h3> 
+<h4 class="heading-1-1-1"><span id="HObjectNames">ObjectNames</span></h4> 
+MBeans objectnames must follow the <span class="wikiexternallink"><a href="http://java.sun.com/javase/technologies/core/mntr-mgmt/javamanagement/best-practices.jsp">&#110;aming conventions</a></span> recommended by Sun .<p class="paragraph"/>The current convention is 
+<ul class="star">
+<li><i class="italic">rfid:type=reader</i> for readers</li>
+<li><i class="italic">rfid:type=sensor</i> for sensors</li>
+<li><i class="italic">rfid:type=listener</i> for listeners</li>
+</ul>In the future, the domain will become <i class="italic">org.ow2.aspirerfid</i><p class="paragraph"/>Remark: the OW2 Aspire project could propose a set of standard JMX object names to EPC Global as  aaddition to the RM (Reader Management) specification (for instance a <i class="italic">org.epcglobalinc:type=reader</i>).
+<h4 class="heading-1-1-1"><span id="HAttributes">Attributes</span></h4> 
+TODO
+<h4 class="heading-1-1-1"><span id="HOperations">Operations</span></h4> 
+TODO
+<h3 class="heading-1-1"><span id="HReaders2CSensorsandActuatorsDocumentation">Readers, Sensors and Actuators Documentation</span></h3><p class="paragraph"/>
+The documentation to configure and improve the readers and sensors is described in this <span class="wikilink"><a href="ReaderDocRFIDSuite.html">document</a></span>.
+<h3 class="heading-1-1"><span id="HProjectsourcesorganization">Project sources organization</span></h3><p class="paragraph"/>
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Directory&nbsp;</th><th>Contains</th></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite">&#98;ranches/rfidsuite</a></span>&nbsp;</td><td>the root</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/applications">&#98;ranches/rfidsuite/applications</a></span></td><td>contains the concrete applications, such as the Museum</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite">&#98;ranches/rfidsuite/rfidsuite</a></span></td><td>contains the core of the RIFD suite</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/bundles">&#98;ranches/rfidsuite/rfidsuite/bundles</a></span></td><td>contains the bundles deployed on the edges and on the premises</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/common">&#98;ranches/rfidsuite/rfidsuite/common</a></span></td><td>contains the necessary elements to deploy any component of the RFID Suite</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/deployment">&#98;ranches/rfidsuite/rfidsuite/deployment</a></span></td><td>contains the components to deploy and to install the RFID Suite</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/mailet">&#98;ranches/rfidsuite/rfidsuite/mailet</a></span></td><td>contains the elements to use a mail server</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/manuals">&#98;ranches/rfidsuite/rfidsuite/manuals</a></span></td><td>contains the intallation, administration and user manuals.</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet">&#98;ranches/rfidsuite/rfidsuite/midlet</a></span></td><td>contains the architecture to use NFC in an smartphone</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server">&#98;ranches/rfidsuite/rfidsuite/server</a></span></td><td>contains the implementation of the JEE part of the RFID Suite</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis">&#98;ranches/rfidsuite/rfidsuite/server/epcis</a></span></td><td>contains the EPCIS EAR</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons">&#98;ranches/rfidsuite/rfidsuite/server/ons</a></span></td><td>contains the ONS EAR</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers">&#98;ranches/rfidsuite/readers</a></span></td><td>contains the bundles of the readers deployed on the edges</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors">&#98;ranches/rfidsuite/sensors</a></span></td><td>contains the bundles of the sensors deployed on the edges</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators">&#98;ranches/rfidsuite/actuators</a></span></td><td>contains the drivers of actuators (TBD)</td></tr><tr class="table-even"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/printers">&#98;ranches/rfidsuite/printers</a></span></td><td>contains the drivers of RFID printers/encoders (TBD)</td></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/installers">&#98;ranches/rfidsuite/installers</a></span></td><td>contains the installers of the demo packs (TBD)</td></tr></table><p class="paragraph"/>
+Extending the RFID Suite
+<h4 class="heading-1-1-1"><span id="HHowtodevelopanewreader">How to develop a new reader</span></h4><p class="paragraph"/>
+What is a reader ? TBD<p class="paragraph"/>
+A reader is a iPOJO component packaged in an OSGi bundle.<p class="paragraph"/>
+The component requires a <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html">&#111;rg.osgi.service.event.EventAdmin</a></span> service to send <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/Event.html">&#111;rg.osgi.service.event.Event</a></span> object containing the ALE event.<p class="paragraph"/>Here is an example of rfid event sent by a <span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/bundles/fictive/">&#102;ictive reader</a></span> to the EventAdmin at the edge level:
+<ul class="star">
+<li>topic: <i class="italic">org/ow2/aspirerfid/rfidtopic/rfid</i></li>
+<li>with the following properties:<ul class="star">
+<li>event.topics=org/ow2/aspirerfid/rfidtopic/rfid</li>
+<li>publisher.instance.name=fictivereader</li>
+<li><i class="italic">rfid.readerguid</i>=fictiveguid</li>
+<li><i class="italic">rfid.readername</i>=fictive</li>
+<li><i class="italic">rfid.tagguid</i>="357654321000001123456789"</li>
+<li><i class="italic">timestamp</i>=1234444400859</li>
+</ul></li>
+</ul>Events must be sent on topics matching "org/ow2/aspirerfid/rfidtopic/" in order to be included in ALE reports.<p class="paragraph"/>The component provides a javax.management.DynamicMBean service for the Reader configuration (serial port, ethernet port, speed, antenna ...).<p class="paragraph"/>
+Nota Bene:
+<ul class="star">
+<li>The current (ie tags/rfidsuite-200809) version of the component provides a standard MBean service for the Reader Management but is currently moving to iPOJO JMX handler (see below).</li>
+<li>The next version MUST use the iPOJO 1.2.0 <span class="wikiexternallink"><a href="http://felix.apache.org/site/ipojo-jmx-handler.html">&#74;MX handler</a></span> to simplity the MBean definition</li>
+<li>The next version MUST also use the iPOJO 1.2.0 <span class="wikiexternallink"><a href="http://felix.apache.org/site/configuration-handler.html">&#67;M handler</a></span> to configure the reader</li>
+<li>The next version MUST also use the iPOJO 1.2.0 <span class="wikiexternallink"><a href="http://felix.apache.org/site/event-admin-handlers.html">&#69;A handler</a></span> to <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html#postEvent(org.osgi.service.event.Event)">&#112;ost</a></span> events.</li>
+</ul><h4 class="heading-1-1-1"><span id="HHowtodevelopanewsensor">How to develop a new sensor</span></h4><p class="paragraph"/>What is a sensor ? A sensor can measure physical data about a identified objects or about the environment in which objects are temporally or permanently. A modern sensor can provide the instaneous measurement. Moreover, it can log the history (limited or cyclic) of the measurements taken periodically. It can also log the history of threshold infringements.
+<h5 class="heading-1-1-1-1"><span id="HWireAdminbasedsensors">WireAdmin-based sensors</span></h5> 
+In the current version (ie tags/rfidsuite-200809), the driver of a sensor is a iPOJO component packaged in an OSGi bundle. It is attached to the environnement of the indentified objects and collect only the instantaneous measurements.<p class="paragraph"/>
+The component provides a <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/Producer.html">&#111;rg.osgi.service.wireadmin.Producer</a></span> service to push/update sensor data. The type of sensor data (called <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/WireConstants.html#WIREADMIN_PRODUCER_FLAVORS">&#102;lavors</a></span> in the <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/package-summary.html">&#87;ireAdmin</a></span> terminology) is not limited to a list but it must be Comparable. Typical classes are <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/util/measurement/package-summary.html">&#111;rg.osgi.util.measurement.Measurement</a></span>,  <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/util/position/package-summary.html">&#111;rg.osgi.util.position.Position</a></span>, <span class="wikiexternallink"><a href="http://jcp.org/en/jsr/detail?id=179">&#106;avax.microedition.location.Location</a></span>, java.lang.Double,  java.lang.Float,  java.lang.Long ...<p class="paragraph"/>
+The Producer service should have the following registration properties : 
+<ul class="star">
+<li><i class="italic">application</i> represents the application (eg application=outdoor temperature)</li>
+<li><i class="italic">org.osgi.util.measurement.Unit</i> represents the SI unit if the flavor is org.osgi.util.measurement.Measurement (eg org.osgi.util.measurement.Unit=K)</li>
+<li>&#8230; other ??? TODO</li>
+</ul>Warning : You'd better prefer SI (International System) units such as meter for distance, meter/second for speed, radian for angle, etc for your modelized data.<p class="paragraph"/>Producers are automatically wired to consumers using the WireAdminBinder.<p class="paragraph"/>Nota Bene:
+<ul class="star">
+<li>The current version  (ie tags/rfidsuite-200809) of the component provides a javax.management.DynamicMBean service for the Sensor Management.</li>
+<li>The next version MUST use the iPOJO 1.0.0 <span class="wikiexternallink"><a href="http://felix.apache.org/site/ipojo-jmx-handler.html">&#74;MX handler</a></span> to simplity the MBean definition</li>
+<li>The next version MUST also use the iPOJO 1.0.0 <span class="wikiexternallink"><a href="http://felix.apache.org/site/configuration-handler.html">&#67;M handler</a></span> to configure the sensor</li>
+</ul><h5 class="heading-1-1-1-1"><span id="HMonitorAdminbasedsensors">MonitorAdmin-based sensors</span></h5> 
+TODO<p class="paragraph"/><span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/monitor/package-summary.html">&#77;onitor Admin</a></span> 
+<h5 class="heading-1-1-1-1"><span id="HUPnPbasedsensors">UPnP-based sensors</span></h5> 
+TODO<p class="paragraph"/>State variables of : 
+<ul class="star">
+<li>Switch Power (Binary Light, Dimmable Light)</li>
+<li>HVAC (Thermometer, Valve)</li>
+<li>...</li>
+</ul><h4 class="heading-1-1-1"><span id="HHowtodevelopanewactuator">How to develop a new actuator</span></h4><p class="paragraph"/>The current version of the RFID Suite does not have actuators (except the NXT rotor and Nabaztag ears and choregraphy).<p class="paragraph"/>Actuators can be represented
+<ul class="star">
+<li>as an OSGi service,</li>
+<li>as an OSGi UPnPDevice service (if the real device is an UPnP device),</li>
+<li>as an OSGi DPWSDevice service (if the real device is a DPWS device).</li>
+</ul>Suggestions relying on standards are welcomed.
+<h5 class="heading-1-1-1-1"><span id="HUPnPbasedactuators">UPnP-based actuators</span></h5> 
+TODO
+Actions of :
+<ul class="star">
+<li>Switch Power (Binary Light, Dimmable Light)</li>
+<li>HVAC (Valve)</li>
+<li>AV (Media Renderer, Media Server)</li>
+<li>...</li>
+</ul><h4 class="heading-1-1-1"><span id="HHowtodevelopanewprinter">How to develop a new printer</span></h4><p class="paragraph"/>
+A RFID printer can print texts, logos and barcodes on a label and in the same time it can encode (ie write custom data in the memory of) the tag inlaid in the label.<p class="paragraph"/>
+The current version of the RFID Suite does not have RFID printers. Suggestions relying on standards are welcomed.
+<h4 class="heading-1-1-1"><span id="HHowtocustomizeaNFCMIDLet28TBDbyAndresGomez29">How to customize a NFC MIDLet (TBD by Andres Gomez)</span></h4><p class="paragraph"/>
+New MIDLets can be developed by customizing the existing ones.<p class="paragraph"/>
+see <span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet">&#98;ranches/rfidsuite/rfidsuite/midlet</a></span>
+<h4 class="heading-1-1-1"><span id="HHowtodevelopanewfilter">How to develop a new filter</span></h4><p class="paragraph"/>
+What is a filter ? TBD
+<h4 class="heading-1-1-1"><span id="HHowtodevelopanewconnector">How to develop a new connector</span></h4><p class="paragraph"/>
+What is a connector ? TBD
+<h4 class="heading-1-1-1"><span id="HHowtosecureconnectors">How to secure connectors</span></h4><p class="paragraph"/>
+Secured communications can be acheived using SSL/TLS or SSH tunneling.
+<ul class="star">
+<li>HTTP/SOAP connector : TBD</li>
+<li>JMS/SOAP connector : TBD</li>
+<li>SMTP/SOAP connector : TBD</li>
+<li>XMPP connector : TBD</li>
+</ul>Remark: the LDAP server (used for deployment) can be used for PK and certificates distribution.
+<h4 class="heading-1-1-1"><span id="HHowtoextendtheEPCISserverDataModel">How to extend the EPCIS server Data Model</span></h4><p class="paragraph"/>The sources organization is:
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Directory&nbsp;</th><th>Contains</th></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis">&#98;ranches/rfidsuite/rfidsuite/server/epcis</a></span></td><td>contains the EPCIS EAR</td></tr></table>
+The EPCIS is developed using EJB3.0.<p class="paragraph"/>
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+<ul class="star">
+<li>EntityBeans<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatelessSessionBeans (Business)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatelessSessionBeans (Facade)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatefulSessionBeans (Business)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatefulSessionBeans (Facade)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>MessageDrivenBeans<ul class="star">
+<li>...</li>
+</ul></li>
+</ul>Remark: The EJB3.0 container (EasyBeans on JOnAS 4 and 5) maps automatically the EntityBeans to a relational database. A dump of the generated database schema is possible with FOSS or commercial tools such as MySqlAdmin (if your DBMS is MySql), sqlplus (if your DBMS is Oracle), JavaDB util (if you uses a JDBC driver to access to your DBMS), &#8230; Most of the time, each entity is mapped on a SQL table.
+<h4 class="heading-1-1-1"><span id="HHowtoextendtheManagementConsole">How to extend the Management Console</span></h4><p class="paragraph"/>
+The Management Console is developed using the GWT technology.<p class="paragraph"/>
+New menu items can be added in branches/rfidsuite/rfidsuite/server/epcis/gwt/src/main/java/org/ow2/aspirerfid/app/epcis/client/widget/menu/Menu.java
+<h4 class="heading-1-1-1"><span id="HHowtoimprovetheONSServer">How to improve the ONS Server</span></h4><p class="paragraph"/>The sources organization is:
+<table class="wiki-table" cellpadding="0" cellspacing="0" border="0"><tr><th>Directory&nbsp;</th><th>Contains</th></tr><tr class="table-odd"><td><span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons">&#98;ranches/rfidsuite/rfidsuite/server/ons</a></span></td><td>contains the ONS EAR</td></tr></table><p class="paragraph"/>
+The ONS is developed using EJB3.0.<p class="paragraph"/>
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+<ul class="star">
+<li>EntityBeans<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatelessSessionBeans (Business)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatelessSessionBeans (Facade)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatefulSessionBeans (Business)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>StatefulSessionBeans (Facade)<ul class="star">
+<li>...</li>
+</ul>
+</li>
+<li>MessageDrivenBeans<ul class="star">
+<li>...</li>
+</ul></li>
+</ul>The ONS provides only a WS-* based API.<p class="paragraph"/>
+The DNS-based API must be provided.<p class="paragraph"/>
+The RESTful-based API should be provided.
+<h4 class="heading-1-1-1"><span id="HReaders2CSensorsandActuatorsdeployment">Readers, Sensors and Actuators deployment</span></h4><p class="paragraph"/>Usage of the <span class="wikiexternallink"><a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/device/package-summary.html">&#79;SGi Device Access spec</a></span> is recommended
+<h4 class="heading-1-1-1"><span id="HHowtocustomizetheinstallers">How to customize the installers</span></h4><p class="paragraph"/>TBD (Walter)
+<h4 class="heading-1-1-1"><span id="HHowtocustomizethe1clickdemopack">How to customize the 1-click demopack</span></h4> 
+TBD (Walter and Didier)<p class="paragraph"/>The goal of the demopack is to give a quick overview of the RFID Suite to new users by installing and running a full demonstration in less 2 minutes.<p class="paragraph"/>The current demopack packages inn a zip file:
+<ul class="star">
+<li>Ant lightweight distribution</li>
+<li>JOnAS lightweight distribution</li>
+<li>Felix</li>
+<li>Aspire EAR : epcis.ear, ons.ear</li>
+<li>Aspire bundles and dependencies</li>
+</ul>The current demopack is based on Ant build files (start.build.xml and stop.build.xml).
+<h3 class="heading-1-1"><span id="HBuild">Build</span></h3><p class="paragraph"/>
+Maven2 is mainly used to build the projects. However, some legacy requires Ant (but not Ivy).
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="News.html">News</a></span></li>
+<li><span class="wikilink"><a href="FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='DevDocRFIDSuite.html'){
+ var Tynt=Tynt||<span class="wikilink"><a href="index.html"></a></span>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.DevDocRFIDSuite"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            1 Attachments  by
+            donsez ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/DevDocRFIDSuite/RFIDSuite-global-design.pdf">RFIDSuite-global-design.pdf</
+                                     a></td>
+            <td>1.1</td><td>donsez</td><td>583690</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main/DevDocRFIDSuite" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='Documentation.html'>Main.Documentation</a> &gt; <a href='DevDocRFIDSuite.html'>RFID Suite branch - Developer Documentation</a>
+  (en)
+ <br />
+  Creator: donsez
+ &nbsp;Date: 2008/10/11 12:35
+ <br />
+ Last Author: touseau
+ &nbsp;Date: 2009/02/12 13:51
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/DevDocRFIDSuite by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:36:13 GMT -->
+</html>

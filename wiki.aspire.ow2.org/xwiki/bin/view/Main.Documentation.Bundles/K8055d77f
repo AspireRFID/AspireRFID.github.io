@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>K8055</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1280139713000</creationDate>
+<date>1284834190000</date>
+<contentUpdateDate>1284834190000</contentUpdateDate>
+<version>1.8</version>
+<title>1 Aspire ::  Bundles :: K8055 Acquisition Board</title>
+<template></template>
+<content>1 Aspire ::  Bundles :: K8055 Acquisition Board
+
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for K8055 sensors
+
+1.1 Context
+The [Velleman K8055&gt;http://www.velleman.eu/distributor/products/view/?lang=en&amp;id=351346] is low-cost USB acquisition board with 5 digital inputs, 8 digital outputs, 3 analog inputs with attenuation and amplification option and 2 analogue outputs (PWM).
+
+The K8055Producer bundle registers one Producer service producing Measurement, Double or String objects for digital and analog inputs ...
+
+1.1 Dependencies
+
+This bundle requires :
+* LibUSB Java
+
+1.1 Build
+1.1.1 Sources
+* trunk/bundles/sensors/k8055producer/
+
+
+1.1 Felix command
+The bundle provides also a command for Felix
+
+
+{code}
+
+-&gt; k8055 help
+k8055 help                       : display this help
+k8055 get d &lt;value&gt;              : get value
+k8055 set d &lt;value&gt;              : set value
+k8055 get d&lt;port&gt; &lt;value&gt;        : get value
+k8055 set d&lt;port&gt; &lt;value&gt;        : set value
+k8055 get a&lt;port&gt; &lt;value&gt;        : get value
+k8055 set a&lt;port&gt; &lt;value&gt;        : set value
+
+
+Syntax : k8055 [-p:(number)] [-d:(value)] [-a1:(value)] [-a2:(value)] [-num:(number) [-delay:(number)]] [-dbt1:(value)] [-dbt2:(value)] [-reset1] [-reset2] [-debug]
+
+    * -p:(number) Set board address (0-3)
+    * -d:(value) Set digital output value (8 bits in decimal)
+    * -a1:(value) Set analog output 1 value (0-255)
+    * -a2:(value) Set analog output 2 value (0-255)
+    * -num:(number) Set number of measurements
+    * -delay:(number) Set delay between two measurements (in msec)
+    * -dbt1:(value) Set debounce time for counter 1 (0-7450 in msec)
+    * -dbt2:(value) Set debounce time for counter 2 (0-7450 in msec)
+    * -reset1 Reset counter 1
+    * -reset2 Reset counter 2
+    * -debug Activate debug mode
+
+{code}
+
+1.1 Links
+* http://libk8055.sourceforge.net
+* K8055 iPhone app http://k8055.transcendsolutions.net</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3AK8055AcquisitionBoard"&gt;Aspire ::  Bundles :: K8055 Acquisition Board&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDependencies"&gt;2 Dependencies&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;3 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;3.1 Sources&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HFelixcommand"&gt;4 Felix command&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLinks"&gt;5 Links&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for K8055 sensors
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+The &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/products/view/?lang=en&amp;id=351346"&gt;&amp;#86;elleman K8055&lt;/a&gt;&lt;/span&gt; is low-cost USB acquisition board with 5 digital inputs, 8 digital outputs, 3 analog inputs with attenuation and amplification option and 2 analogue outputs (PWM).&lt;p class="paragraph"/&gt;The K8055Producer bundle registers one Producer service producing Measurement, Double or String objects for digital and analog inputs &amp;#8230;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDependencies"&gt;2 Dependencies&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle requires :
+&lt;ul class="star"&gt;
+&lt;li&gt;LibUSB Java&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;3 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;3.1 Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;trunk/bundles/sensors/k8055producer/&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HFelixcommand"&gt;4 Felix command&lt;/span&gt;&lt;/h3&gt; 
+The bundle provides also a command for Felix&lt;p class="paragraph"/&gt;
+&lt;div class="code"&gt;&lt;pre&gt;&amp;#45;&amp;#62; k8055 help
+k8055 help                       : display &lt;span class="java&amp;#45;keyword"&gt;this&lt;/span&gt; help
+k8055 get d &amp;#60;value&amp;#62;              : get value
+k8055 set d &amp;#60;value&amp;#62;              : set value
+k8055 get d&amp;#60;port&amp;#62; &amp;#60;value&amp;#62;        : get value
+k8055 set d&amp;#60;port&amp;#62; &amp;#60;value&amp;#62;        : set value
+k8055 get a&amp;#60;port&amp;#62; &amp;#60;value&amp;#62;        : get value
+k8055 set a&amp;#60;port&amp;#62; &amp;#60;value&amp;#62;        : set value&lt;p class="paragraph"/&gt;
+Syntax : k8055 &amp;#91;&amp;#45;p:(number)&amp;#93; &amp;#91;&amp;#45;d:(value)&amp;#93; &amp;#91;&amp;#45;a1:(value)&amp;#93; &amp;#91;&amp;#45;a2:(value)&amp;#93; &amp;#91;&amp;#45;num:(number) &amp;#91;&amp;#45;delay:(number)&amp;#93;&amp;#93; &amp;#91;&amp;#45;dbt1:(value)&amp;#93; &amp;#91;&amp;#45;dbt2:(value)&amp;#93; &amp;#91;&amp;#45;reset1&amp;#93; &amp;#91;&amp;#45;reset2&amp;#93; &amp;#91;&amp;#45;debug&amp;#93;&lt;p class="paragraph"/&gt;    &amp;#42; &amp;#45;p:(number) Set board address (0&amp;#45;3)
+    &amp;#42; &amp;#45;d:(value) Set digital output value (8 bits in decimal)
+    &amp;#42; &amp;#45;a1:(value) Set analog output 1 value (0&amp;#45;255)
+    &amp;#42; &amp;#45;a2:(value) Set analog output 2 value (0&amp;#45;255)
+    &amp;#42; &amp;#45;num:(number) Set number of measurements
+    &amp;#42; &amp;#45;delay:(number) Set delay between two measurements (in msec)
+    &amp;#42; &amp;#45;dbt1:(value) Set debounce time &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; counter 1 (0&amp;#45;7450 in msec)
+    &amp;#42; &amp;#45;dbt2:(value) Set debounce time &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; counter 2 (0&amp;#45;7450 in msec)
+    &amp;#42; &amp;#45;reset1 Reset counter 1
+    &amp;#42; &amp;#45;reset2 Reset counter 2
+    &amp;#42; &amp;#45;debug Activate debug mode&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLinks"&gt;5 Links&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://libk8055.sourceforge.net"&gt;&amp;#104;ttp://libk8055.sourceforge.net&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;K8055 iPhone app &lt;span class="nobr"&gt;&lt;a href="http://k8055.transcendsolutions.net"&gt;&amp;#104;ttp://k8055.transcendsolutions.net&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

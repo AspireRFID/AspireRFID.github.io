@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Sandbox</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>view.Sandbox</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor></contentAuthor>
+<creationDate>1216985995000</creationDate>
+<date>1288896633000</date>
+<contentUpdateDate>1302535945000</contentUpdateDate>
+<version>1.102</version>
+<title>Sandbox for Wiki editors</title>
+<template></template>
+<object>
+<class>
+<name>XWiki.XWikiSkins</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<name>
+<name>name</name>
+<prettyName>Name</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<baseskin>
+<name>baseskin</name>
+<prettyName>Base Skin</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</baseskin>
+<style.css>
+<name>style.css</name>
+<prettyName>Style</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</style.css>
+<header.vm>
+<name>header.vm</name>
+<prettyName>Header</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</header.vm>
+<footer.vm>
+<name>footer.vm</name>
+<prettyName>Footer</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>5</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</footer.vm>
+<viewheader.vm>
+<name>viewheader.vm</name>
+<prettyName>View Header</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>6</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</viewheader.vm>
+<view.vm>
+<name>view.vm</name>
+<prettyName>View</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>7</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</view.vm>
+<edit.vm>
+<name>edit.vm</name>
+<prettyName>Edit</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>80</size>
+<rows>15</rows>
+<number>8</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</edit.vm>
+</class>
+<name>Main.Sandbox</name>
+<number>0</number>
+<className>XWiki.XWikiSkins</className>
+<property>
+<baseskin></baseskin>
+</property>
+<property>
+<edit.vm></edit.vm>
+</property>
+<property>
+<footer.vm></footer.vm>
+</property>
+<property>
+<header.vm></header.vm>
+</property>
+<property>
+<name></name>
+</property>
+<property>
+<style.css></style.css>
+</property>
+<property>
+<view.vm></view.vm>
+</property>
+<property>
+<viewheader.vm></viewheader.vm>
+</property>
+</object>
+<content>1 Sandbox for Wiki editors
+
+This page is a sandbox to test XWiki (Version 1.0) features
+http://platform.xwiki.org/xwiki/bin/view/Main/XWikiSyntax
+----
+#toc("" "" "")
+----
+
+1.1 Image
+
+{image:aspirelogo.png|document=Main}
+
+1.1 Table
+Tic tac toe
+
+{table}
+Col1 | Col2 | Col3
+X | O | X
+X | O | O
+O | X | O
+{table}
+
+{table}
+
+X | O | X
+X | O | O
+O | X | O
+{table}
+
+
+
+1.1 Boxes
+
+#info("This is an information panel")
+
+#warning("This is a warning panel")
+
+#error("This is an error panel")
+
+#startfloatingbox()
+Some content in a floating box
+#endfloatingbox()
+This is a floating box displayed on the right.
+
+#floatingbox("Some content in a floating box")
+This is also a floating box displayed on the right.
+
+{style:type=div|border=1px solid red|background-color=grey|width=300px|height=300px|color=red}
+This is some content...
+{style}
+
+
+
+
+1.1 Code snippet
+{pre}
+&lt;pre&gt;
+/**
+ * Copyright (c) 2005-2008, Aspire
+ *
+ * Contact: Aspire aspirerfid@ow2.org
+ */
+interface Foo {
+  int bar(final int i);
+}
+
+&lt;/pre&gt;
+{/pre}
+
+
+1.1 Formatted Code snippet
+
+*Product*
+{code:java}
+interface Product {
+	ProductPK getReference(); //retourne la référence (identificateur unique) du produit
+	String getName(): retourne le nom du produit
+	double getPrice(); //retourne le prix du produit
+	int getProductStore(); //retourne la référence du magasin qui vend ce produit
+	...
+}
+{code}
+
+1.1 Other Formatted Code snippet
+
+{code:xml}
+&lt;?xml version="1.0" standalone="yes"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="catalog2html.xsl" ?&gt;
+&lt;catalog&gt;
+
+  &lt;product&gt;
+    &lt;productStoreId&gt;1001&lt;/productStoreId&gt;
+    &lt;reference&gt;101&lt;/reference&gt;
+    &lt;name&gt;Machine à laver&lt;/name&gt;
+    &lt;price currency="EUR"&gt;2000.00&lt;/price&gt;
+  &lt;/product&gt;
+
+  &lt;product&gt;
+    &lt;productStoreId&gt;1002&lt;/productStoreId&gt;
+    &lt;reference&gt;103&lt;/reference&gt;
+    &lt;name&gt;Machine à coudre&lt;/name&gt;
+    &lt;price currency="EUR"&gt;3000.00&lt;/price&gt;
+  &lt;/product&gt;
+&lt;/catalog&gt;
+{code}
+
+1.1 Stats
+{pre}
+&lt;pre&gt;
+
+&gt; Pour avoir des stats de visite XWiki il faut activer le module de stats,
+&gt; cf ces pages:
+&gt;
+&gt; Activation du module de stats:
+&gt; http://platform.xwiki.org/xwiki/bin/view/AdminGuide/Configuration
+&gt;
+&gt; Un exemple:
+&gt; http://www.xwiki.org/xwiki/bin/view/FAQ/HowDoYouAddAStatisticsMenu
+&gt;
+&gt; Plus d'exemples (le code de la page n'est pas exécuté à l'heure où
+&gt; j'écris ce mail, mais vous pouvez faire un "View code" pour recopier le
+&gt; script dans votre wiki): http://dev.xwiki.org/xwiki/bin/view/XWiki/Stats
+&gt;
+&gt; Il y a une application de stats aussi dans la dernière version:
+&gt; http://code.xwiki.org/xwiki/bin/view/Applications/StatisticsApplication
+&gt;
+&gt; cf également le StatsService dans les versions récentes:
+&gt; http://tinyurl.com/368r4r
+&gt;
+&gt; Moi j'utilise souvent en plus Google Analytics sur mes sites XWiki pour
+&gt; croiser les stats...
+&gt;
+&gt; Amicalement
+&gt;
+&lt;/pre&gt;
+{/pre}
+
+1.1 Test11
+
+1.1.1 Test11
+1.1.1 Test12
+1.1.1 Test13
+
+1.1 Test12
+
+1.1 Test21
+
+1.1 Test22
+
+1.2 Test 28
+
+
+1.1 Simile-Timeline
+http://www.jeremi.info/index.php/post/2006/11/28/Simile-Timeline
+&lt;br/&gt;
+{pre}
+&lt;data&gt;
+#set($feed = $xwiki.feed.getFeed("http://www.jeremi.info/index.php/feed/rss2"))
+#foreach($entry in $feed.entries)
+&lt;event start="$entry.getPublishedDate().toLocaleString()" title="$entry.title"&gt;$xwiki.getXMLEncoded($entry.description.value) ... $xwiki.getXMLEncoded("&lt;a href=$entry.link&gt;Suite&lt;/a&gt;")
+&lt;/event&gt;
+#end
+&lt;/data&gt;
+{/pre}
+
+1.1 nkef Tests
+
+
+----
+1.1.1 Alternate Whats New Snippet
+
+
+1.1.1.1 News
+
+Find below all the recent news from the site blog and from the list of pages that have been changed recently.
+
+&lt;div&gt;
+  &lt;div id="webhomeblogdisplay" style="float:left; width: 49.9%;"&gt;
+    &lt;div style="padding-right:20px;"&gt;
+      &lt;h2 class="heading-1-1-1"&gt;Blog &lt;a href="$xwiki.getURL("Main.BlogRss", "view", "xpage=rdf")" style=""&gt;&lt;img src="$xwiki.getSkinFile("icons/black-rss.png")" alt="rss icon"/&gt;&lt;/a&gt;&lt;/h2&gt;
+      #set($nbstart = $request.nbstart)
+      #set($category = "")
+      #set($nbitems = "3")
+      #includeMacros("Blog.Macros")
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id="webhomeNewsdisplay" style="float:left; width: 50.1%;"&gt;
+    &lt;div style="padding-left: 20px;"&gt;
+      &lt;h2 class="heading-1-1-1"&gt;Recent changes &lt;a href="$xwiki.getURL("Main.WebRss", "view", "xpage=rdf")" style=""&gt;&lt;img src="$xwiki.getSkinFile("icons/black-rss.png")" alt="rss icon"/&gt;&lt;/a&gt;&lt;/h2&gt;
+      #if(!$xwiki.hasMinorEdit() || $request.getParameter("showminor"))
+        #set ($sql = "where 1=1 order by doc.date desc")
+      #else
+        #set ($sql = ", XWikiRCSNodeInfo as ni where doc.id=ni.id.docId and ni.id.version2=1 group by doc.web, doc.name order by max(ni.date) desc")
+      #end
+      #set($showdata = 1)
+      #if(!$nb)
+        #set($nb = 30)
+      #end
+      #set($formatDate = "yyyy MMMM dd, HH:mm")
+      #set ($list = $xwiki.searchDocuments($sql , $nb , 0))
+      &lt;ul&gt;
+        #foreach ($item in $list)
+          #set($troubi ="non")
+          #if ($xwiki.hasAccessLevel("view", $context.user, "${context.database}:${item}"))
+            #set($bentrydoc = $xwiki.getDocument($item))
+            #if (!$bentrydoc.name.contains("WatchListJob"))
+              #set($cclass = $xwiki.getDocument("XWiki.XWikiComments").getxWikiClass())
+              #set($comment = $cclass.newObject())
+              #if($xwiki.getWebPreferenceAsInt("commentsorder",1)==0)
+                #set($comments = $bentrydoc.getComments())
+              #else
+                #set($comments = $bentrydoc.getComments(false))
+              #end
+              #set($createur = $xwiki.getUserName($bentrydoc.author))
+              &lt;li&gt;
+                #if($comments.size()&gt;0)  
+                  #set($i = 0)  
+                  #set($cobj = $comments.get($i))  
+                  #set($comment = $bentrydoc.display("comment", "view", $cobj))  
+                  #set($date = $cobj.getXWikiObject().get("date").value)
+                  #if($date)
+                    #set($date2 = $!xwiki.formatDate($date,"yyyy MM dd HH:mm:ss"))
+                  #end
+                  #if($bentrydoc)
+                    #set($date1 = $!xwiki.formatDate($!bentrydoc.date,"yyyy MM dd HH:mm:ss") )
+                  #end
+                  #if($date1.equals($date2) )
+                    [$bentrydoc.name&gt;${bentrydoc.web}.$bentrydoc.name] &lt;em&gt;- 1 new comment&lt;/em&gt;
+                    #set($troubi ="oui")
+                    #set($desc = $cobj.getXWikiObject().get("comment").value)
+                  #else
+                    [$bentrydoc.name in $bentrydoc.web&gt;${bentrydoc.web}.$bentrydoc.name]
+                  #end
+                #else  
+                  #set($comment = "")  
+                  [$bentrydoc.name in $bentrydoc.web&gt;${bentrydoc.web}.$bentrydoc.name.replaceAll("@","%40")]
+                #end   
+                $xwiki.formatDate($bentrydoc.date,"yyyy MMM dd") at $xwiki.formatDate($bentrydoc.date,"HH:mm")
+                #if($troubi =="oui")
+                  #set($createur = $xwiki.getUserName($cobj.author))
+                #end
+                #if ($createur == "XWikiGuest")
+                  Guest
+                #else
+                  $createur
+                #end
+              &lt;/li&gt;
+            #end
+          #end
+        #end
+      &lt;/ul&gt;
+      #if($xwiki.hasMinorEdit())
+        #if($request.getParameter("showminor"))
+          &lt;a href="$xwiki.getURL($tdoc.getFullName(), "view", "")"&gt;Hide minor edits&lt;/a&gt;
+        #else
+          &lt;a href="$xwiki.getURL($tdoc.getFullName(), "view", "showminor")"&gt;Show minor edits&lt;/a&gt;
+        #end
+      #end
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style="clear:both; margin-bottom: 40px;"&gt;&lt;!-- --&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+----
+
+1.1.1 Backlinks Snippet
+
+#set ($links = $doc.getBacklinks())
+#if ($links.size &gt; 0)
+  #foreach($docname in $links)
+    #set($rdoc = $xwiki.getDocument($docname).getTranslatedDocument())
+    * &lt;a href="$rdoc.getURL("view")"&gt;$rdoc.displayTitle&lt;/a&gt;
+  #end
+#else
+  No back links for this page!
+#end
+
+----
+
+
+1.1.1 Child Page Snippet
+#if($doc.name=="WebHome")
+  #set($tree = $xwiki.doctree.getSpaceDocumentTree($doc.web))
+#else
+  #set($tree = $xwiki.doctree.getDocumentTree($doc))
+#end
+#set($depths=["", "*", "**", "***", "****", "*****", "******", "*******", "********"])
+
+#foreach($leaf in $tree)
+  #if($leaf.depth &lt;= 8 &amp;&amp; ($leaf.depth != 0 || $doc.name=="WebHome"))
+    $depths.get($leaf.depth) [$xwiki.getDocument($leaf.fullName).getDisplayTitle()&gt;$leaf.fullName]
+  #end
+#end
+
+----
+
+1.1.1 Force Skin Snippet
+#if("$!request.skin" != "myskin")
+$response.sendRedirect($doc.getURL("view", "skin=myskin"))
+#end
+
+----
+1.1.1 List Wiki Pages
+
+#set($web = $doc.web)
+#set($authorslist = $util.getArrayList())
+#set($currentuser = $context.user)
+    #foreach($page in $xwiki.getSpaceDocsName($web))
+        #set($author = $xwiki.getDocument("${web}.${page}").getCreator())
+            #if (!$authorslist.contains($author) &amp;&amp; $author == $currentuser)
+            #panelheader('Newly Created Page')
+                #set($user=$context.user)
+                #foreach($subdoc in $xwiki.getSpaceDocsName("$doc.web"))
+                    #set($author = $xwiki.getDocument("${doc.web}.${subdoc}").getCreator())
+                    #if($author==$user)
+                        - [${doc.web}.${subdoc}]
+                    #end
+                #end
+            #panelfooter()
+        #set ($discard = $authorslist.add($author))
+    #end
+#end
+
+----
+
+
+1.1.1 Page Index Snippet
+
+#set($plaincontent = $doc.getContent())
+
+&lt;%
+vcontext=context.get("vcontext");
+plaincontent=vcontext.get("plaincontent");
+backSubString = plaincontent;
+i=0;
+sternchen=["*", "**", "***", "****", "*****", "******"]
+while (backSubString.matches("(?s).*\\n1(\\.1)* .*")){ 
+  level=1;
+  backSubString = backSubString.split("\\n1", 2)[1];
+  while (backSubString.matches("(?s)\\.1.*")){
+    level++;
+    backSubString=backSubString.split("\\.1", 2)[1];
+  }
+  if (! backSubString.matches("(?s)\\..*")) { // is not a List
+    heading=backSubString.split("[\\n\\r]", 2)[0];
+    encHeading=URLEncoder.encode(heading, "UTF-8");
+    encHeading=encHeading.replaceAll("[+%-\\.]", "");
+    println(sternchen[level-1] + " ["+heading+"&gt;#H"+encHeading+"]");
+    i++;
+  } else {
+    backSubString=backSubString.split("\\.(1\\.)*", 2)[1];
+  }	
+}
+%&gt;
+
+----
+1.1.1 Recently Visited Snippet
+
+#set($rv_maxItems = $!xwiki.getUserPreference("recent_actions_items"))
+#if($rv_maxItems == "")
+  #set($rv_maxItems = 5)
+#end
+#set($recentlyViewed = $xwiki.getRecentActions("view", $rv_maxItems))
+#foreach($docname in $recentlyViewed)
+  #set($rdoc = $xwiki.getDocument($docname).getTranslatedDocument())
+  * &lt;a href="$rdoc.getURL("view")"&gt;$rdoc.displayTitle&lt;/a&gt;
+#end
+
+----
+1.1.1 Rss Macro
+
+{rss:feed=http://beust.com/weblog/index.rdf|full=true|count=3}
+
+----
+
+1.1.1 Code Check
+
+----
+#if($xwiki.exists("Main.Sandbox"))
+====
+if xwiki.exists("Main.Sandbox")
+====
+#end
+
+----
+
+#if($doc.getDisplayTitle() == "Sandbox for Wiki editors")
+====
+if doc.getDisplayTitle() == "Sandbox for Wiki editors"
+====
+#end
+----
+#if($doc.getExternalURL() == "http://wiki.aspire.objectweb.org/xwiki/bin/view/Main/Sandbox?skin=myskin#aspire")
+====
+if doc.getExternalURL() == "http://wiki.aspire.objectweb.org/xwiki/bin/view/Main/Sandbox?skin=myskin#aspire"
+====
+#end
+----
+
+#if($doc.getFullName() == ("Main.Sandbox"))
+====
+if doc.getFullName() == ("Main.Sandbox")
+
+====
+#end
+
+----
+#if($doc.getName() == ("Sandbox"))
+====
+if doc.getName() == ("Sandbox")
+
+====
+#end
+
+----
+#if($doc.getURL() == "http://wiki.aspire.objectweb.org/xwiki/bin/view/Main/Sandbox?skin=myskin#aspire")
+====
+if doc.getURL() == "http://wiki.aspire.objectweb.org/xwiki/bin/view/Main/Sandbox?skin=myskin#aspire"
+====
+#end
+----
+
+
+#set($query = "where doc.parent is null or doc.parent='' order by doc.name asc")
+
+#foreach($item in $xwiki.searchDocuments($query))
+  #set($lostdoc = $xwiki.getDocument($item))
+    * [${lostdoc.web}.${lostdoc.name}&gt;${lostdoc.web}.${lostdoc.name}]
+#end
+
+1.1.1 text collors
+
+&lt;dl style="color:blue"&gt;Blue&lt;/dl&gt;
+&lt;dl style="color:red"&gt;
+Red
+&lt;/dl&gt;
+&lt;dl style="color:green"&gt;
+Green
+&lt;/dl&gt;
+* Test
+&lt;dl style="color:blue"&gt;
+* Blue dl
+&lt;/dl&gt;
+* Test
+&lt;span style="color:blue"&gt;
+* Blue span
+&lt;/span&gt;
+* Test
+&lt;p style="color:blue"&gt;
+* Blue p
+&lt;/p&gt;
+* Test
+&lt;b style="color:blue"&gt;
+* Blue b
+&lt;/b&gt;
+* Test
+&lt;font style="color:blue"&gt;
+* Blue font
+&lt;/font&gt;
+* Test
+* Test
+* Test
+* Test
+* Test
+* Test
+* Test
+&lt;dl style="color:red"&gt; 
+* Red &lt;/dl&gt;
+&lt;dl style="color:green"&gt;
+* Green&lt;/dl&gt;
+
+-----
+&lt;center&gt;
+1.1.1 Recently Visited
+&lt;/center&gt;
+&lt;div id="xwikirecentmenulinks" class="xwikimenulinks"&gt;
+#set($recentlyviewed = $xwiki.getRecentActions("view", 5))
+#foreach($docname in $recentlyviewed)
+#set($rdoc = $xwiki.getDocument($docname))
+&lt;a href="$rdoc.getURL("view")"&gt;$rdoc.name&lt;/a&gt;
+&lt;span class="xwikisep"&gt; | &lt;/span&gt;
+#end
+&lt;/div&gt;
+
+#end
+
+
+
+
+
+----------
+
+1.1.1 Photo Album
+
+{table}
+Photo|Title|Description|Comments
+#set ($sql = ", BaseObject as obj where  obj.name=doc.fullName and obj.className='XWiki.PhotoAlbumClass' and obj.name &lt;&gt; 'XWiki.PhotoAlbumClassTemplate' order by doc.creationDate desc")
+#foreach ($item in $xwiki.searchDocuments($sql)) 1
+#set($bentrydoc = $xwiki.getDocument($item))
+#set($comments = $bentrydoc.getComments())
+#if($comments.size()&gt;0)
+#set($i = 0)
+#set($cobj = $comments.get($i))
+#set($comment = $bentrydoc.display("comment", "view", $cobj))
+#else
+#set($comment = "")
+#end
+#set($comment = $comment.replaceAll("\n","&lt;br /&gt;"))
+#set($obj = $bentrydoc.getObject("XWiki.PhotoAlbumClass",0))
+#if($bentrydoc.attachmentList.size()&gt;0)
+#set($attach = $bentrydoc.attachmentList.get(0))
+&lt;img src="$bentrydoc.getAttachmentURL($attach.filename,"download")"  height="50"/&gt;|[$!{bentrydoc.display("title","view",$obj)}&gt;$item] | $!bentrydoc.display("description", "view", $obj) | $!comment
+#else
+[No photo&gt;$item]|[$!{bentrydoc.display("title","view",$obj)}&gt;$item] | $!bentrydoc.display("description","view",$obj) | $!comment
+#end
+#end
+{table}
+</content>
+<renderedcontent>&lt;a href="" onclick="document.getElementById('xwikierror1').style.display='block'; return false;"&gt;Error number 4001 in 4: Error while parsing velocity page Main.Sandbox
+Wrapped Exception: Encountered "#end&amp;#110;" at line 485, column 1.
+Was expecting one of:
+    &lt;EOF&gt; 
+    "(" &amp;#8230;
+    &lt;RPAREN&gt; &amp;#8230;
+    &lt;ESCAPE_DIRECTIVE&gt; &amp;#8230;
+    &lt;SET_DIRECTIVE&gt; &amp;#8230;
+    "&amp;#92;&amp;#34; &amp;#8230;
+    "&lt;br/&gt;" &amp;#8230;
+    &lt;TEXT&gt; &amp;#8230;
+    &lt;SINGLE_LINE_COMMENT&gt; &amp;#8230;
+    "*#" &amp;#8230;
+    "&lt;strong class="strong"&gt;#" &amp;#8230;
+    &lt;STRING_LITERAL&gt; &amp;#8230;
+    "if" &amp;#8230;
+    "stop" &amp;#8230;
+    &lt;NUMBER_LITERAL&gt; &amp;#8230;
+    &lt;WORD&gt; &amp;#8230;
+    &lt;IDENTIFIER&gt; &amp;#8230;
+    &lt;DOT&gt; &amp;#8230;
+    "{" &amp;#8230;
+    "}" &amp;#8230;
+    &lt;/a&gt;&lt;div id="xwikierror1" style="display: none;"&gt;&lt;pre&gt;
+Error number 4001 in 4: Error while parsing velocity page Main.Sandbox
+Wrapped Exception: Encountered &amp;#34;#end&amp;#110;&amp;#34; at line 485, column 1.
+Was expecting one of:
+    &amp;#60;EOF&amp;#62; 
+    &amp;#34;(&amp;#34; &amp;#8230;
+    &amp;#60;RPAREN&amp;#62; &amp;#8230;
+    &amp;#60;ESCAPE_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#60;SET_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#34;&amp;#92;&amp;#38;#34; &amp;#8230;
+    &amp;#34;&lt;br/&gt;&amp;#34; &amp;#8230;
+    &amp;#60;TEXT&amp;#62; &amp;#8230;
+    &amp;#60;SINGLE_LINE_COMMENT&amp;#62; &amp;#8230;
+    &amp;#34;&lt;/strong&gt;#&amp;#34; &amp;#8230;
+    &amp;#34;&lt;strong class="strong"&gt;#&amp;#34; &amp;#8230;
+    &amp;#60;STRING_LITERAL&amp;#62; &amp;#8230;
+    &amp;#34;if&amp;#34; &amp;#8230;
+    &amp;#34;stop&amp;#34; &amp;#8230;
+    &amp;#60;NUMBER_LITERAL&amp;#62; &amp;#8230;
+    &amp;#60;WORD&amp;#62; &amp;#8230;
+    &amp;#60;IDENTIFIER&amp;#62; &amp;#8230;
+    &amp;#60;DOT&amp;#62; &amp;#8230;
+    &amp;#34;{&amp;#34; &amp;#8230;
+    &amp;#34;}&amp;#34; ...&lt;p class="paragraph"/&gt;com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page Main.Sandbox
+Wrapped Exception: Encountered &amp;#34;#end&amp;#110;&amp;#34; at line 485, column 1.
+Was expecting one of:
+    &amp;#60;EOF&amp;#62; 
+    &amp;#34;(&amp;#34; &amp;#8230;
+    &amp;#60;RPAREN&amp;#62; &amp;#8230;
+    &amp;#60;ESCAPE_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#60;SET_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#34;&amp;#92;&amp;#38;#34; &amp;#8230;
+    &amp;#34;&lt;br/&gt;&amp;#34; &amp;#8230;
+    &amp;#60;TEXT&amp;#62; &amp;#8230;
+    &amp;#60;SINGLE_LINE_COMMENT&amp;#62; &amp;#8230;
+    &amp;#34;&lt;/strong&gt;#&amp;#34; &amp;#8230;
+    &amp;#34;&lt;strong class="strong"&gt;#&amp;#34; &amp;#8230;
+    &amp;#60;STRING_LITERAL&amp;#62; &amp;#8230;
+    &amp;#34;if&amp;#34; &amp;#8230;
+    &amp;#34;stop&amp;#34; &amp;#8230;
+    &amp;#60;NUMBER_LITERAL&amp;#62; &amp;#8230;
+    &amp;#60;WORD&amp;#62; &amp;#8230;
+    &amp;#60;IDENTIFIER&amp;#62; &amp;#8230;
+    &amp;#60;DOT&amp;#62; &amp;#8230;
+    &amp;#34;{&amp;#34; &amp;#8230;
+    &amp;#34;}&amp;#34; ...&lt;p class="paragraph"/&gt;	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.render(XWikiVelocityRenderer.java:108)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderText(XWikiRenderingEngine.java:208)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderText(XWikiRenderingEngine.java:134)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderDocument(XWikiRenderingEngine.java:126)
+	at com.xpn.xwiki.doc.XWikiDocument.getRenderedContent(XWikiDocument.java:261)
+	at com.xpn.xwiki.doc.XWikiDocument.toXMLDocument(XWikiDocument.java:1542)
+	at com.xpn.xwiki.doc.XWikiDocument.getXMLContent(XWikiDocument.java:1381)
+	at com.xpn.xwiki.api.Document.getXMLContent(Document.java:400)
+	at sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)&lt;p class="paragraph"/&gt;
+Wrapped Exception:&lt;p class="paragraph"/&gt;org.apache.velocity.exception.ParseErrorException: Encountered &amp;#34;#end&amp;#110;&amp;#34; at line 485, column 1.
+Was expecting one of:
+    &amp;#60;EOF&amp;#62; 
+    &amp;#34;(&amp;#34; &amp;#8230;
+    &amp;#60;RPAREN&amp;#62; &amp;#8230;
+    &amp;#60;ESCAPE_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#60;SET_DIRECTIVE&amp;#62; &amp;#8230;
+    &amp;#34;&amp;#92;&amp;#38;#34; &amp;#8230;
+    &amp;#34;&lt;br/&gt;&amp;#34; &amp;#8230;
+    &amp;#60;TEXT&amp;#62; &amp;#8230;
+    &amp;#60;SINGLE_LINE_COMMENT&amp;#62; &amp;#8230;
+    &amp;#34;&lt;/strong&gt;#&amp;#34; &amp;#8230;
+    &amp;#34;*#&amp;#34; &amp;#8230;
+    &amp;#60;STRING_LITERAL&amp;#62; &amp;#8230;
+    &amp;#34;if&amp;#34; &amp;#8230;
+    &amp;#34;stop&amp;#34; &amp;#8230;
+    &amp;#60;NUMBER_LITERAL&amp;#62; &amp;#8230;
+    &amp;#60;WORD&amp;#62; &amp;#8230;
+    &amp;#60;IDENTIFIER&amp;#62; &amp;#8230;
+    &amp;#60;DOT&amp;#62; &amp;#8230;
+    &amp;#34;{&amp;#34; &amp;#8230;
+    &amp;#34;}&amp;#34; ...&lt;p class="paragraph"/&gt;	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:214)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.render(XWikiVelocityRenderer.java:108)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderText(XWikiRenderingEngine.java:208)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderText(XWikiRenderingEngine.java:134)
+	at com.xpn.xwiki.render.XWikiRenderingEngine.renderDocument(XWikiRenderingEngine.java:126)
+	at com.xpn.xwiki.doc.XWikiDocument.getRenderedContent(XWikiDocument.java:261)
+	at com.xpn.xwiki.doc.XWikiDocument.toXMLDocument(XWikiDocument.java:1542)
+	at com.xpn.xwiki.doc.XWikiDocument.getXMLContent(XWikiDocument.java:1381)
+	at com.xpn.xwiki.api.Document.getXMLContent(Document.java:400)
+	at sun.reflect.GeneratedMethodAccessor216.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:173)
+	at com.xpn.xwiki.web.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:127)&lt;p class="paragraph"/&gt;&lt;/pre&gt;&lt;/div&gt;
+</renderedcontent>
+</xwikidoc>

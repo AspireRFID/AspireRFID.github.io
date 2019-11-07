@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Statistics</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.Menu</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nektarios</author>
+<contentAuthor>xwiki:XWiki.nektarios</contentAuthor>
+<creationDate>1232621362000</creationDate>
+<date>1241792982000</date>
+<contentUpdateDate>1241792982000</contentUpdateDate>
+<version>1.5</version>
+<title>OW2 Aspire RFID statistics</title>
+<template></template>
+<content>1 Statistics
+
+#toc("" "" "")
+*[Lines of code analysis &gt; LOC]*
+
+*THIS PAGE IS UNDER CONSTRUCTION*
+
+1.1 Software metrics
+see http://en.wikipedia.org/wiki/Software_metric
+
+could be compute by [Sonar&gt;http://sonar.codehaus.org] 
+
+1.1 Community metrics
+
+* number of downloads /per month
+* number of anonymous SVN checkouts/updates  per month
+* number of commits per month
+* number of commiters
+* number of users (not easy to find)
+* number of mails exchanged on MLs
+* number of subscribers on the MLs
+* number of writers on the MLs
+* number of patchs per month
+* number of issues (open, closed, resolved, commented) per month
+* number of words in the documentations (wiki) per month
+* number of comments in the documentations (wiki) per month
+* ...
+
+1.1 External audit
+
+1.1.1 Ohloh.net
+
+
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_partner_badge.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_basic_stats.js"&gt;&lt;/script&gt;
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HStatistics"&gt;Statistics&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSoftwaremetrics"&gt; Software metrics&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HCommunitymetrics"&gt; Community metrics&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HExternalaudit"&gt; External audit&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HOhlohnet"&gt; Ohloh.net&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/LOC"&gt;Lines of code analysis &lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;THIS PAGE IS UNDER CONSTRUCTION&lt;/strong&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSoftwaremetrics"&gt;Software metrics&lt;/span&gt;&lt;/h3&gt; 
+see &lt;span class="nobr"&gt;&lt;a href="http://en.wikipedia.org/wiki/Software_metric"&gt;&amp;#104;ttp://en.wikipedia.org/wiki/Software_metric&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;could be compute by &lt;span class="wikiexternallink"&gt;&lt;a href="http://sonar.codehaus.org"&gt;&amp;#83;onar&lt;/a&gt;&lt;/span&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HCommunitymetrics"&gt;Community metrics&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;number of downloads /per month&lt;/li&gt;
+&lt;li&gt;number of anonymous SVN checkouts/updates  per month&lt;/li&gt;
+&lt;li&gt;number of commits per month&lt;/li&gt;
+&lt;li&gt;number of commiters&lt;/li&gt;
+&lt;li&gt;number of users (not easy to find)&lt;/li&gt;
+&lt;li&gt;number of mails exchanged on MLs&lt;/li&gt;
+&lt;li&gt;number of subscribers on the MLs&lt;/li&gt;
+&lt;li&gt;number of writers on the MLs&lt;/li&gt;
+&lt;li&gt;number of patchs per month&lt;/li&gt;
+&lt;li&gt;number of issues (open, closed, resolved, commented) per month&lt;/li&gt;
+&lt;li&gt;number of words in the documentations (wiki) per month&lt;/li&gt;
+&lt;li&gt;number of comments in the documentations (wiki) per month&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HExternalaudit"&gt;External audit&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOhlohnet"&gt;Ohloh.net&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_partner_badge.js"&gt;&lt;/script&gt;&lt;p class="paragraph"/&gt;&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_basic_stats.js"&gt;&lt;/script&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

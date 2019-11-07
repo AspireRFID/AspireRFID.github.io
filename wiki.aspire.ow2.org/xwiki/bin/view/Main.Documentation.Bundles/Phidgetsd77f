@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>Phidgets</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1278312703000</creationDate>
+<date>1278365457000</date>
+<contentUpdateDate>1278365457000</contentUpdateDate>
+<version>1.13</version>
+<title>Aspire :: Bundles :: Phidgets</title>
+<template></template>
+<content>1 Aspire :: Bundles :: Phidgets
+
+[Phidgets&gt;http://www.phidgets.com] are "plug and play" building blocks for low cost USB sensing and control including 125Khz RFID readers.
+
+1.1 Build
+Sources of the different artifacts are
+* [phidgetapi&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Fphidgetapi%2F] packages the Java library and the DLL
+* [phidgetapi.cmd&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Futilities%2Fphidgetapi.cmd%2F] provides a command to inspect connected phidgets.
+
+Instructions:
+# install the phidget.msi from http://www.phidgets.com/drivers.php
+# install the Java library phidget21.jar in the Maven repo with {code}mvn install:install-file -DgroupId=com.phidgets -DartifactId=phidget -Dversion=2.1.0 -Dpackaging=jar -Dfile=phidget21.jar{code}
+# cd trunk/bundles/common/phidgetapi
+# copy the DLL phidget21.dll in src/main/resources
+# mvn clean install
+# cd trunk/bundles/utilities/phidgetapi.cmd
+# mvn clean install
+
+1.1 Command
+The utility command ~~phidget~~ inspects connected phidgets.
+
+{code}
+-&gt; phidget
+phidget prop                  : list the properties
+phidget list                  : list the available phidgets
+phidget listen                : start attach/detach listening
+phidget stopListen            : stop attach/detach listening
+phidget help                  : display this help
+-&gt; phidget prop
+List of framework properties
+Version: Phidget21 - Version 2.1.7 - Built May 25 2010 12:06:15
+{code}
+
+1.1 Links
+
+* http://www.phidgets.com/drivers.php
+* http://www.phidgets.com/programming_resources.php
+* http://www.phidgets.com/documentation/Tutorials/Getting_Started_Java.pdf
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3APhidgets"&gt;Aspire :: Bundles :: Phidgets&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.phidgets.com"&gt;&amp;#80;hidgets&lt;/a&gt;&lt;/span&gt; are "plug and play" building blocks for low cost USB sensing and control including 125Khz RFID readers.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;Build&lt;/span&gt;&lt;/h3&gt; 
+Sources of the different artifacts are
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fcommon%2Fphidgetapi%2F"&gt;&amp;#112;hidgetapi&lt;/a&gt;&lt;/span&gt; packages the Java library and the DLL&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Futilities%2Fphidgetapi.cmd%2F"&gt;&amp;#112;hidgetapi.cmd&lt;/a&gt;&lt;/span&gt; provides a command to inspect connected phidgets.&lt;/li&gt;
+&lt;/ul&gt;Instructions:
+&lt;ol&gt;&lt;li&gt;install the phidget.msi from &lt;span class="nobr"&gt;&lt;a href="http://www.phidgets.com/drivers.php"&gt;&amp;#104;ttp://www.phidgets.com/drivers.php&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;install the Java library phidget21.jar in the Maven repo with &lt;div class="code"&gt;&lt;pre&gt;mvn install:install&amp;#45;file &amp;#45;DgroupId=com.phidgets &amp;#45;DartifactId=phidget &amp;#45;Dversion=2.1.0 &amp;#45;Dpackaging=jar &amp;#45;Dfile=phidget21.jar&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;cd trunk/bundles/common/phidgetapi&lt;/li&gt;
+&lt;li&gt;copy the DLL phidget21.dll in src/main/resources&lt;/li&gt;
+&lt;li&gt;mvn clean install&lt;/li&gt;
+&lt;li&gt;cd trunk/bundles/utilities/phidgetapi.cmd&lt;/li&gt;
+&lt;li&gt;mvn clean install&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HCommand"&gt;Command&lt;/span&gt;&lt;/h3&gt; 
+The utility command &lt;i class="italic"&gt;phidget&lt;/i&gt; inspects connected phidgets.&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#45;&amp;#62; phidget
+phidget prop                  : list the properties
+phidget list                  : list the available phidgets
+phidget listen                : start attach/detach listening
+phidget stopListen            : stop attach/detach listening
+phidget help                  : display &lt;span class="java&amp;#45;keyword"&gt;this&lt;/span&gt; help
+&amp;#45;&amp;#62; phidget prop
+List of framework properties
+Version: Phidget21 &amp;#45; Version 2.1.7 &amp;#45; Built May 25 2010 12:06:15&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLinks"&gt;Links&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.phidgets.com/drivers.php"&gt;&amp;#104;ttp://www.phidgets.com/drivers.php&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.phidgets.com/programming_resources.php"&gt;&amp;#104;ttp://www.phidgets.com/programming_resources.php&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="nobr"&gt;&lt;a href="http://www.phidgets.com/documentation/Tutorials/Getting_Started_Java.pdf"&gt;&amp;#104;ttp://www.phidgets.com/documentation/Tutorials/Getting_Started_Java.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

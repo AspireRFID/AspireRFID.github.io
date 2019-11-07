@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:36:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Deployment
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin6acf.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='Deployment.html'>Deployment</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_Deployment.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="Deploymentd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/Deploymentcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="Deploymentd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HDeployment">Deployment</span></h2><p class="paragraph"/>In this section we will provide information regarding the deployment of the components available at the <span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches">&#65;spireRFID SVN branches</a></span>. Before getting on with the deployment of the components, you should check the <a class="wikicreatelink" href="../../login/XWiki/XWikiLogin.html?parent=Main.Documentation.Deployment"><span class="wikicreatelinktext">building</span><span class="wikicreatelinkqm">?</span></a> section which describes how to build the software from the source.<p class="paragraph"/><hr class="line"/>
+            <ul>
+          <li><a href="#HAITdevbranchcomponents"> AITdev branch components</a> 
+        <ul>
+          <li><a href="#HOSGIbundles"> OSGI bundles</a> 
+        <ul>
+          <li><a href="#HDeployingthebundles"> Deploying the bundles</a> 
+      <li><a href="#HConfiguration"> Configuration</a> 
+        </ul>
+          <li><a href="#HWebapplication"> Web application</a> 
+        <ul>
+          <li><a href="#HDeployment"> Deployment</a> 
+      <li><a href="#HConfiguration-1"> Configuration</a> 
+      </ul></ul></ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HAITdevbranchcomponents">AITdev branch components</span></h3><p class="paragraph"/>This branch contains three types of software components.
+<ol><li>Components deployable on an OSGI container (e.g. apache felix)</li>
+<li>Components deployable on a Java Application server (e.g. apache tomcat)</li>
+<li>Client side application (non-deployable)</li>
+</ol>We will describe how to deploy the first two types of components.
+<h4 class="heading-1-1-1"><span id="HOSGIbundles">OSGI bundles</span></h4> 
+The developed bundles implement the role of a EPCglobal RFID Reader Protocol (RP) v.1.1 compliant reader. That means that one can take a non-RP compliant reader and by implementing a Java interface into an OSGI bundle, he can make the reader AspireRFID enabled. 
+<h5 class="heading-1-1-1-1"><span id="HDeployingthebundles">Deploying the bundles</span></h5><p class="paragraph"/>To deploy the bundles you need first to get the latest version of <span class="wikiexternallink"><a href="http://felix.apache.org/">&#65;pache Felix</a></span> and unzip the archive in a directory in which you have read/write access. Before starting the server, you need to edit its configuration file located under the conf folder. You need to add the following line somewhere in the file:<p class="paragraph"/><i class="italic">mosgi.jmxconsole.rmiport.core=9999</i><p class="paragraph"/>Then you may start the server by running the following command (being in the felix directory):<p class="paragraph"/><i class="italic">java -jar bin/felix.jar</i><p class="paragraph"/>You will then be asked to enter a profile name; you should type in the word "core" (without the quotes) and press enter. The the server starts and you will be prompted with the felix shell (>). You may type help to get a list of the available commands. Now you need to deploy some required bundles, which can be found at <span class="wikiexternallink"><a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/sandbox/nektarios/Common bundles/AITdev required bundles">&#116;he forge SVN</a></span>.<p class="paragraph"/>These are the following (note the sequence):
+<ol><li>OSGi R4 Compendium Bundle</li>
+<li>MOSGi JMX-MX4J Agent Service</li>
+<li>MOSGi JMX rmiregistry</li>
+<li>MOSGi JMX-MX4J RMI Connector</li>
+<li>Apache Jakarta log4j Plug-in</li>
+<li>OW2 Bundles :: Externals :: Commons Collections</li>
+<li>castor</li>
+<li>antlr-osgi bundle</li>
+<li>commons-lang-osgi bundle</li>
+<li>commons-configuration-osgi</li>
+</ol>To deploy a bundle you will need the following command:<p class="paragraph"/><i class="italic">start file:"full_bundle_location"</i><p class="paragraph"/>where <i class="italic">full_bundle_location</i> is the location of the bundle on your disk.<p class="paragraph"/>You may then proceed in deploying the RP bundles in the same way. The RP bundles are the following.(Please note the sequence which is essential in order to avoid any problems):
+<ol><li>JaxBLib</li>
+<li>TDT Implementation bundle</li>
+<li>Reader Protocol bundle (API)</li>
+<li>Reader Protocol implementation bundle</li>
+<li>Simulator reader</li>
+<li>Intermec IF5 reader proxy</li>
+</ol>The two latter bundles provide a HAL implementation of the RP.
+<h5 class="heading-1-1-1-1"><span id="HConfiguration">Configuration</span></h5><p class="paragraph"/>After having done all that, you may start and configure the RP bundle using its JMX interface. You may start the JMX console and connect to the server with the following command:<p class="paragraph"/><i class="italic">jconsole service:jmx:rmi:///jndi/rmi://localhost:9999/core</i><p class="paragraph"/>The jconsole tool is provided by the Sun Java JDK. A graphical user interface should be displayed providing means of interacting with the bundle through the exposed JMX functionality. You may see the available functionality under the menu rfid->service->RPreader. The administrator may interact with the bundle through the Attributes and Operations. We will now describe how to start, stop the bundle and to change the active HAL implementation.<p class="paragraph"/>The default Reader Protocol implementation bundle configuration requires the Simulator reader bundle installed. There are two HAL implementations available; a simulated reader and an Intermec IF5 proxy reader which uses the BRI protocol natively.
+<ul class="star">
+<li>To start the bundle functionality you have to simply click the "start" button under the Operations menu. By default the simulator reader starts and the user is provided with a GUI for creating tags and moving them over the virtual antennas.</li>
+<li>To stop the bundle functionality you have to simply click the "stop" button under the Operations menu. Please note that though the simulator window does not close when the bundle is stopped, this module becomes isolated from the rest of the components (like the ALE) and it is safe to close the GUI window through the designated button.</li>
+<li>To enable the use of the Intermec IF5 reader you have to add configuration about the reader. The process of adding configuration is the following:<ul class="star">
+<li>Under the operations you add the following in the addReader button:<ul class="star">
+<li>p1=IntermecIF5</li>
+<li>p2=org.ow2.aspirerfid.reader.rp.impl.hal.impl.intermec.IntermecIF5Controller</li>
+<li>p3=/props/IntermecIF5ControllerProperties.xml</li>
+<li>Then you click the button</li>
+</ul>
+</li>
+<li>Under the operations you add the following in the addReaderReadpoint button<ul class="star">
+<li>p1=IntermecIF5</li>
+<li>p2=Antenna1</li>
+<li>Then you click the button</li>
+</ul>
+</li>
+<li>Under the operations you add the following in the addSource button<ul class="star">
+<li>p1=Antenna1</li>
+<li>p2=true</li>
+<li>p3=Antenna1</li>
+<li>Then you click the button</li>
+</ul>
+</li>
+<li>Under the attributes you edit the CurrentSource addSource field and you set the value Antenna1 and then you press enter</li>
+<li>Press the loadConfig button. This will load the changes and restart the bundle functionality.</li>
+</ul></li>
+</ul>When you stop the bundle the configuration changes will be permanently saved to a file under the user's profile with the name ReaderDevice.xml. You may edit this file directly, <i class="italic">if you know what you are doing</i>. When you start again the bundle the configuration is going to be loaded from this file. If you delete it, the default one is going to be loaded instead.
+<h4 class="heading-1-1-1"><span id="HWebapplication">Web application</span></h4><p class="paragraph"/>To deploy the web application a Java application server (e.g Apache Tomcat) is required to be installed. This guide assumes that you use an Apache Tomcat server.
+<h5 class="heading-1-1-1-1"><span id="HDeployment">Deployment</span></h5> 
+<h5 class="heading-1-1-1-1"><span id="HConfiguration">Configuration</span></h5> 
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='Deployment.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/index8352.html?parent=Main.Documentation.Deployment"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.Deployment"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='Deployment.html'>Deployment</a>
+  (en)
+ <br />
+  Creator: nektarios
+ &nbsp;Date: 2008/10/09 09:16
+ <br />
+ Last Author: nektarios
+ &nbsp;Date: 2008/10/09 12:18
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Deployment by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:36:54 GMT -->
+</html>

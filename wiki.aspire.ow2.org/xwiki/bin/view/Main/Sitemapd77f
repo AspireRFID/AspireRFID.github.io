@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Sitemap</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Sitemap</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1233240050000</creationDate>
+<date>1273678442000</date>
+<contentUpdateDate>1273678442000</contentUpdateDate>
+<version>1.14</version>
+<title>Sitemap</title>
+<template></template>
+<content>1 Sitemap
+
+Under construction
+
+&lt;%
+if(request.xpage &amp;&amp; request.xpage == "plain") {
+
+ response.setContentType("text/xml")
+
+ def sitePages = [  
+    // here you define the page you want in your sitemap
+    // the order is: document name, priority, change frequency
+   
+    ["Main.WebHome","1","weekly"],
+    ["Main.News","0.8","weekly"],
+    ["Main.Documentation","0.5", "weekly"],
+    ["Main.Demos","0.8","weekly"],
+    ["Main.Downloads","0.5", "weekly"]
+    // add more here...
+ ]
+];
+
+ println('&lt;?xml version="1.0" encoding="UTF-8"?&gt;')
+ println('&lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;')
+
+
+ for(page in sitePages) {
+  println("&lt;url&gt;")
+  println(" &lt;loc&gt;" + xwiki.getDocument(page[0]).getExternalURL() + "&lt;/loc&gt;")
+  println(" &lt;lastmod&gt;" + xwiki.formatDate(xwiki.getDocument(page[0]).contentUpdateDate, 'yyyy-MM-dd') + "&lt;/lastmod&gt;")
+  println(" &lt;changefreq&gt;" + page[2]+ "&lt;/changefreq&gt;")
+  println(" &lt;priority&gt;" + page[1] + "&lt;/priority&gt;")
+  println("&lt;/url&gt;")
+ }
+
+ println("&lt;/urlset&gt;")
+
+}
+
+else {
+
+  println("&lt;a href='"+ doc.getURL('view','xpage=plain') +"'&gt;Generate Sitemap&lt;/a&gt;")
+
+}
+%&gt;
+
+&lt;%
+if(request.gen &amp;&amp; request.gen == "1") {
+ content = ""
+ def sitePages = [  
+    // here you define the page you want in your sitemap
+    // the order is: document name, priority, change frequency
+   
+    ["Main.WebHome","1","weekly"],
+    ["Main.News","0.8","weekly"],
+    ["Main.Documentation","0.5", "weekly"],
+    ["Main.Demos","0.8","weekly"],
+    ["Main.Downloads","0.5", "weekly"]
+    // add more here...
+ ];
+
+ content += '&lt;?xml version="1.0" encoding="UTF-8"?&gt;'
+ content += '&lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;'
+
+ for(page in sitePages) {
+  content += "&lt;url&gt;"
+  content += " &lt;loc&gt;" + xwiki.getDocument(page[0]).getExternalURL() + "&lt;/loc&gt;"
+  content += " &lt;lastmod&gt;" + xwiki.formatDate(xwiki.getDocument(page[0]).contentUpdateDate, 'yyyy-MM-dd') + "&lt;/lastmod&gt;"
+  content += " &lt;changefreq&gt;" + page[2]+ "&lt;/changefreq&gt;"
+  content += " &lt;priority&gt;" + page[1] + "&lt;/priority&gt;"
+  content += "&lt;/url&gt;"
+ }
+
+ content += "&lt;/urlset&gt;"
+ new File("../webapps/xwiki/sitemap.xml").withPrintWriter { w |
+    w.println content
+ }
+ println("Done: &lt;a href='/xwiki/sitemap.xml'&gt;sitemap.xml&lt;/a&gt;")
+}
+
+else {
+
+  println("&lt;a href='"+ doc.getURL('view', "gen=1") +"'&gt;Generate Sitemap&lt;/a&gt;")
+
+}
+%&gt;</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HSitemap"&gt;Sitemap&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;Under construction&lt;p class="paragraph"/&gt;&lt;%
+if(request.xpage &amp;&amp; request.xpage == "plain") {&lt;p class="paragraph"/&gt; response.setContentType("text/xml")&lt;p class="paragraph"/&gt; def sitePages = &lt;a class="wikicreatelink" href="/xwiki/bin/edit/++++%5B%22Main/WebHome%22%2C%221%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;// here you define the page you want in your sitemap
+    // the order is: document name, priority, change frequency&lt;p class="paragraph"/&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.News%22%2C%220/8%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;News","0.8","weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Documentation%22%2C%220/5%22%2C+%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Documentation","0.5", "weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Demos%22%2C%220/8%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Demos","0.8","weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Downloads%22%2C%220/5%22%2C+%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Downloads","0.5", "weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+    // add more here&amp;#8230;
+ ]
+];&lt;p class="paragraph"/&gt; println('&lt;?xml version="1.0" encoding="UTF-8"?&gt;')
+ println('&lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 &lt;span class="nobr"&gt;&lt;a href="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"&gt;&amp;#104;ttp://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&lt;/a&gt;&lt;/span&gt;" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;')&lt;p class="paragraph"/&gt;
+ for(page in sitePages) {
+  println("&lt;url&gt;")
+  println(" &lt;loc&gt;" + xwiki.getDocument(page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;0&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;).getExternalURL() + "&lt;/loc&gt;")
+  println(" &lt;lastmod&gt;" + xwiki.formatDate(xwiki.getDocument(page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;0&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;).contentUpdateDate, 'yyyy-MM-dd') + "&lt;/lastmod&gt;")
+  println(" &lt;changefreq&gt;" + page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/2?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;2&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;+ "&lt;/changefreq&gt;")
+  println(" &lt;priority&gt;" + page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/1?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;1&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt; + "&lt;/priority&gt;")
+  println("&lt;/url&gt;")
+ }&lt;p class="paragraph"/&gt; println("&lt;/urlset&gt;")&lt;p class="paragraph"/&gt;}&lt;p class="paragraph"/&gt;else {&lt;p class="paragraph"/&gt;  println("&lt;a href='"+ doc.getURL('view','xpage=plain') +"'&gt;Generate Sitemap&lt;/a&gt;")&lt;p class="paragraph"/&gt;}
+%&gt;&lt;p class="paragraph"/&gt;&lt;%
+if(request.gen &amp;&amp; request.gen == "1") {
+ content = ""
+ def sitePages = &lt;a class="wikicreatelink" href="/xwiki/bin/edit/++++%5B%22Main/WebHome%22%2C%221%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;// here you define the page you want in your sitemap
+    // the order is: document name, priority, change frequency&lt;p class="paragraph"/&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.News%22%2C%220/8%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;News","0.8","weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Documentation%22%2C%220/5%22%2C+%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Documentation","0.5", "weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Demos%22%2C%220/8%22%2C%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Demos","0.8","weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;,
+    &lt;a class="wikicreatelink" href="/xwiki/bin/edit/%22Main.Downloads%22%2C%220/5%22%2C+%22weekly%22?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;Downloads","0.5", "weekly"&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;
+    // add more here&amp;#8230;
+ ];&lt;p class="paragraph"/&gt; content += '&lt;?xml version="1.0" encoding="UTF-8"?&gt;'
+ content += '&lt;urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 &lt;span class="nobr"&gt;&lt;a href="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"&gt;&amp;#104;ttp://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd&lt;/a&gt;&lt;/span&gt;" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;'&lt;p class="paragraph"/&gt; for(page in sitePages) {
+  content += "&lt;url&gt;"
+  content += " &lt;loc&gt;" + xwiki.getDocument(page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;0&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;).getExternalURL() + "&lt;/loc&gt;"
+  content += " &lt;lastmod&gt;" + xwiki.formatDate(xwiki.getDocument(page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;0&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;).contentUpdateDate, 'yyyy-MM-dd') + "&lt;/lastmod&gt;"
+  content += " &lt;changefreq&gt;" + page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/2?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;2&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt;+ "&lt;/changefreq&gt;"
+  content += " &lt;priority&gt;" + page&lt;a class="wikicreatelink" href="/xwiki/bin/edit/Main/1?parent=Main.Sitemap"&gt;&lt;span class="wikicreatelinktext"&gt;1&lt;/span&gt;&lt;span class="wikicreatelinkqm"&gt;?&lt;/span&gt;&lt;/a&gt; + "&lt;/priority&gt;"
+  content += "&lt;/url&gt;"
+ }&lt;p class="paragraph"/&gt; content += "&lt;/urlset&gt;"
+ new File("../webapps/xwiki/sitemap.xml").withPrintWriter { w |
+    w.println content
+ }
+ println("Done: &lt;a href='/xwiki/sitemap.xml'&gt;sitemap.xml&lt;/a&gt;")
+}&lt;p class="paragraph"/&gt;else {&lt;p class="paragraph"/&gt;  println("&lt;a href='"+ doc.getURL('view', "gen=1") +"'&gt;Generate Sitemap&lt;/a&gt;")&lt;p class="paragraph"/&gt;}
+%&gt;
+</renderedcontent>
+</xwikidoc>

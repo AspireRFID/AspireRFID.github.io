@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>MultimeterDVM1200</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1277973089000</creationDate>
+<date>1278338585000</date>
+<contentUpdateDate>1278338585000</contentUpdateDate>
+<version>1.29</version>
+<title>Aspire :: Bundles ::  Velleman DVM 1200</title>
+<template></template>
+<attachment>
+<filename>dvm1200.jpg</filename>
+<filesize>55120</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1278261298000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Aspire :: Bundles :: Velleman DVM 1200 Producer
+
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for USB Multimeter Velleman DVM 1200 sensor
+
+1.1 Context
+The USB Multimeter Velleman DVM 1200 is a USB-to-serial multimeter. It can measure current (AC/DC), voltage (AC/DC), frequency, resistance, temperature, capacitance ... The DVM1200 costs approx. 60 euros VAT.
+
+The DVM1200MultimeterProducer bundle registers one Producer service producing Measurement, Double or String objects (unit is V, TBD).
+This producer can be used for Green Computing managers such as the [VOVOJavaEE&gt;http://ecom.ow2.org/xwiki/bin/view/Main/engreenit].
+
+1.1 Dependencies
+
+This bundle requires :
+* OSGi R4 Compendium, available from OBR in Felix Shell
+* RXTX, available from Aspire SVN Repository/bundles/common/rxtx
+
+1.1 Build
+1.1.1 Sources
+* [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fsensors%2Fvellemandvm1200producer%2F]
+
+
+
+1.1 Installation
+You must install previously the [driver for the (optical) Serial-to-USB adapter&gt;http://www.velleman.eu/distributor/support/downloads/?code=DVM1200] (Sunplus SPCP 825).
+
+
+1.1 Test
+You can test with the RXTX command available from Aspire SVN Repository/bundles/common/rxtx.cmd
+
+{code}
+-&gt; rxtx list
+Stable Library
+=========================================
+Native lib Version = RXTX-2.1-7
+Java lib Version   = RXTX-2.1-7
+...
+-&gt; rxtx  iowrapper org.ow2.aspirerfid.vellemandvm1200.wrapper.DVM1200MultimeterWrapper
+-&gt; rxtx open COM15 2400 None None 8 1 None
+
+rxtx (226 bytes received):
+0.22 A (error=+/-0.0) AC
+rxtx (14 bytes received):
+0.221 A (error=+/-0.0) AC
+rxtx (14 bytes received):
+0.221 A (error=+/-0.0) AC
+rxtx (14 bytes received):
+0.22 A (error=+/-0.0) AC
+rxtx (14 bytes received):
+0.219 A (error=+/-0.0) AC
+rxtx (14 bytes received):
+0.219 A (error=+/-0.0) AC
+...
+rxtx close
+{code}
+
+1.1 Configuration
+In src/main/resources/IPOJO-INF/metadata.xml
+* portName
+
+
+1.1 Data
+The producer produces [org.osgi.util.measurement.Measurement&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Measurement.html] with the following [units&gt;http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Unit.html] Unit.K, Unit.V, Unit.A, Unit.F, Unit.Hz, Unit.Ohm, Unit.Unity 
+
+1.1 Troubleshooting
+Sometime, the OSGi platform must be shutdown when the bundle is updated. 
+
+1.1 Links
+* DVM1200 User manual http://www.velleman.eu/downloads/1/dvm1200gbnlfresdplit.pdf
+
+* Other Velleman USB-Serial multimeters
+** [DVM2000&gt;http://www.velleman.eu/distributor/support/downloads/?code=DVM2000] : the data format for the DVM2000 is probably similar to the DVM1200 one. Please could you report this to the mailing list if you have a DVM2000. 
+* Other Velleman USB-Serial scopes
+** [HPS40&gt;http://www.velleman.eu/distributor/support/downloads/?code=HPS40] ([protocol&gt;http://www.velleman.eu/images/tmp/hps40serialprotocols.txt)]
+** [HPS50&gt;http://www.velleman.eu/distributor/support/downloads/?code=HPS50] 
+** [APS230&gt;http://www.velleman.eu/distributor/support/downloads/?code=APS230]
+** [PPS10&gt;http://www.velleman.eu/distributor/support/downloads/?code=PPS10]
+
+
+1.1 Gallery
+
+{image:dvm1200.jpg}</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3AVellemanDVM1200Producer"&gt;Aspire :: Bundles :: Velleman DVM 1200 Producer&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDependencies"&gt;2 Dependencies&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;3 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;3.1 Sources&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HInstallation"&gt;4 Installation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTest"&gt;5 Test&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;6 Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HData"&gt;7 Data&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HTroubleshooting"&gt;8 Troubleshooting&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLinks"&gt;9 Links&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGallery"&gt;10 Gallery&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for USB Multimeter Velleman DVM 1200 sensor
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;1 Context&lt;/span&gt;&lt;/h3&gt; 
+The USB Multimeter Velleman DVM 1200 is a USB-to-serial multimeter. It can measure current (AC/DC), voltage (AC/DC), frequency, resistance, temperature, capacitance &amp;#8230; The DVM1200 costs approx. 60 euros VAT.&lt;p class="paragraph"/&gt;The DVM1200MultimeterProducer bundle registers one Producer service producing Measurement, Double or String objects (unit is V, TBD).
+This producer can be used for Green Computing managers such as the &lt;span class="wikiexternallink"&gt;&lt;a href="http://ecom.ow2.org/xwiki/bin/view/Main/engreenit"&gt;&amp;#86;OVOJavaEE&lt;/a&gt;&lt;/span&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDependencies"&gt;2 Dependencies&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle requires :
+&lt;ul class="star"&gt;
+&lt;li&gt;OSGi R4 Compendium, available from OBR in Felix Shell&lt;/li&gt;
+&lt;li&gt;RXTX, available from Aspire SVN Repository/bundles/common/rxtx&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;3 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;3.1 Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2Fbundles%2Fsensors%2Fvellemandvm1200producer%2F"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstallation"&gt;4 Installation&lt;/span&gt;&lt;/h3&gt; 
+You must install previously the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=DVM1200"&gt;&amp;#100;river for the (optical) Serial-to-USB adapter&lt;/a&gt;&lt;/span&gt; (Sunplus SPCP 825).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTest"&gt;5 Test&lt;/span&gt;&lt;/h3&gt; 
+You can test with the RXTX command available from Aspire SVN Repository/bundles/common/rxtx.cmd&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;&amp;#45;&amp;#62; rxtx list
+Stable Library
+=========================================
+Native lib Version = RXTX&amp;#45;2.1&amp;#45;7
+Java lib Version   = RXTX&amp;#45;2.1&amp;#45;7
+&amp;#8230;
+&amp;#45;&amp;#62; rxtx  iowrapper org.ow2.aspirerfid.vellemandvm1200.wrapper.DVM1200MultimeterWrapper
+&amp;#45;&amp;#62; rxtx open COM15 2400 None None 8 1 None&lt;p class="paragraph"/&gt;rxtx (226 bytes received):
+0.22 A (error=+/&amp;#45;0.0) AC
+rxtx (14 bytes received):
+0.221 A (error=+/&amp;#45;0.0) AC
+rxtx (14 bytes received):
+0.221 A (error=+/&amp;#45;0.0) AC
+rxtx (14 bytes received):
+0.22 A (error=+/&amp;#45;0.0) AC
+rxtx (14 bytes received):
+0.219 A (error=+/&amp;#45;0.0) AC
+rxtx (14 bytes received):
+0.219 A (error=+/&amp;#45;0.0) AC
+&amp;#8230;
+rxtx close&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HConfiguration"&gt;6 Configuration&lt;/span&gt;&lt;/h3&gt; 
+In src/main/resources/IPOJO-INF/metadata.xml
+&lt;ul class="star"&gt;
+&lt;li&gt;portName&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HData"&gt;7 Data&lt;/span&gt;&lt;/h3&gt; 
+The producer produces &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Measurement.html"&gt;&amp;#111;rg.osgi.util.measurement.Measurement&lt;/a&gt;&lt;/span&gt; with the following &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v42/org/osgi/util/measurement/Unit.html"&gt;&amp;#117;nits&lt;/a&gt;&lt;/span&gt; Unit.K, Unit.V, Unit.A, Unit.F, Unit.Hz, Unit.Ohm, Unit.Unity 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HTroubleshooting"&gt;8 Troubleshooting&lt;/span&gt;&lt;/h3&gt; 
+Sometime, the OSGi platform must be shutdown when the bundle is updated. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLinks"&gt;9 Links&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;DVM1200 User manual &lt;span class="nobr"&gt;&lt;a href="http://www.velleman.eu/downloads/1/dvm1200gbnlfresdplit.pdf"&gt;&amp;#104;ttp://www.velleman.eu/downloads/1/dvm1200gbnlfresdplit.pdf&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Other Velleman USB-Serial multimeters&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=DVM2000"&gt;&amp;#68;VM2000&lt;/a&gt;&lt;/span&gt; : the data format for the DVM2000 is probably similar to the DVM1200 one. Please could you report this to the mailing list if you have a DVM2000.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Other Velleman USB-Serial scopes&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=HPS40"&gt;&amp;#72;PS40&lt;/a&gt;&lt;/span&gt; (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/images/tmp/hps40serialprotocols.txt)"&gt;&amp;#112;rotocol&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=HPS50"&gt;&amp;#72;PS50&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=APS230"&gt;&amp;#65;PS230&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.velleman.eu/distributor/support/downloads/?code=PPS10"&gt;&amp;#80;PS10&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HGallery"&gt;10 Gallery&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.Bundles/MultimeterDVM1200/dvm1200.jpg" alt="dvm1200.jpg" /&gt;
+</renderedcontent>
+</xwikidoc>

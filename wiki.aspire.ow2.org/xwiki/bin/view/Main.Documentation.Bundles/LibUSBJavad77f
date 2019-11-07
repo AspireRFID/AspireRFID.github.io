@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>LibUSBJava</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1277220421000</creationDate>
+<date>1277222198000</date>
+<contentUpdateDate>1277222198000</contentUpdateDate>
+<version>1.5</version>
+<title>Aspire ::  Bundles :: LibUSB Java Proxy</title>
+<template></template>
+<content>1 Aspire :: Bundles ::  LibUSB Java Proxy
+
+----
+#toc("" "" "true")
+----
+
+This bundle uses the LibUSBJava library to develop Java proxies for USB devices (ibuddy, acsacr122, ...).
+
+1.1 Installation
+Read http://libusbjava.sourceforge.net/wp/?page_id=8
+
+1.1.1 Windows
+Copy the 2 files in the system
+
+copy libusb0.dll C:\windows\system32\
+copy libusb0.sys C:\windows\system32\drivers\
+
+For other devices (ibuddy, acsacr122, ...), copy the *.inf files in C:\WINDOWS\system32\inf\other\
+
+1.1.1 Linux
+In order to use LibUSBJava, you must stop the HID module and the USB module : this avoid an auto-mount of the device
+
+1.1 Build
+
+# mvn install:install-file
+# mvn clean install
+
+1.1 Misc
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3ABundles3A3ALibUSBJavaProxy"&gt;Aspire :: Bundles ::  LibUSB Java Proxy&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HInstallation"&gt;1 Installation&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWindows"&gt;1.1 Windows&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLinux"&gt;1.2 Linux&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HBuild"&gt;2 Build&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMisc"&gt;3 Misc&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This bundle uses the LibUSBJava library to develop Java proxies for USB devices (ibuddy, acsacr122, ...).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstallation"&gt;1 Installation&lt;/span&gt;&lt;/h3&gt; 
+Read &lt;span class="nobr"&gt;&lt;a href="http://libusbjava.sourceforge.net/wp/?page_id=8"&gt;&amp;#104;ttp://libusbjava.sourceforge.net/wp/?page_id=8&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HWindows"&gt;1.1 Windows&lt;/span&gt;&lt;/h4&gt; 
+Copy the 2 files in the system&lt;p class="paragraph"/&gt;copy libusb0.dll C:&amp;#119;indows&amp;#115;ystem32&amp;#13;
+copy libusb0.sys C:&amp;#119;indows&amp;#115;ystem32&amp;#100;rivers&amp;#13;&lt;p class="paragraph"/&gt;For other devices (ibuddy, acsacr122, ...), copy the *.inf files in C:&amp;#87;INDOWS&amp;#115;ystem32&amp;#105;nf&amp;#111;ther&amp;#13;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLinux"&gt;1.2 Linux&lt;/span&gt;&lt;/h4&gt; 
+In order to use LibUSBJava, you must stop the HID module and the USB module : this avoid an auto-mount of the device
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;2 Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;ol&gt;&lt;li&gt;mvn install:install-file&lt;/li&gt;
+&lt;li&gt;mvn clean install&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMisc"&gt;3 Misc&lt;/span&gt;&lt;/h3&gt; 
+</renderedcontent>
+</xwikidoc>

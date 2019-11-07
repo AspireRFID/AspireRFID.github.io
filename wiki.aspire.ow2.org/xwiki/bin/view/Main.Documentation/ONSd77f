@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>ONS</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.kmour</author>
+<contentAuthor>xwiki:XWiki.kmour</contentAuthor>
+<creationDate>1294762180000</creationDate>
+<date>1303057037000</date>
+<contentUpdateDate>1303057037000</contentUpdateDate>
+<version>1.46</version>
+<title>Object Name Service</title>
+<template></template>
+<attachment>
+<filename>account_create.png</filename>
+<filesize>34935</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768031000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>accounts_main.png</filename>
+<filesize>95684</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768195000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>connection_main.png</filename>
+<filesize>100807</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768218000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance1.png</filename>
+<filesize>71943</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768242000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance2.png</filename>
+<filesize>80676</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768255000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance3.png</filename>
+<filesize>72904</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768273000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>workbench_main.png</filename>
+<filesize>189476</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768329000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance4.png</filename>
+<filesize>69481</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768775000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance5.png</filename>
+<filesize>67309</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768793000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>instance6.png</filename>
+<filesize>84139</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768812000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>new_db_connection.png</filename>
+<filesize>44843</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768838000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>schema_previliges.png</filename>
+<filesize>33365</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1294768873000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ONS_Documentation.png</filename>
+<filesize>274065</filesize>
+<author>xwiki:XWiki.kmour</author>
+<date>1298897114000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Object Name Service
+----
+#toc("" "" "true")
+----
+1.1 Introduction
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/ONS_Documentation.png"&gt;{image:ONS_Documentation.png|500}&lt;/a&gt;
+&lt;/center&gt;
+
+In this document, we shall present an implementation of the Object Name Service (ONS) as defined in the EpcGlobal framework.
+The ONS service (both local and root) shall:
+
+* (For the root ONS) Given an EPC, can return a list of network accessible service endpoints that pertain to the EPC in question. ONS does not contain actual data about the EPC. It only contains the network address of services that contain the actual data. ONS is also authoritative in that the entity that has change control over the information about the EPC is the same entity that assigned the EPC to the item to begin with. For example, in the case of an SGTIN EPC, the entity having control over the ONS record is the owner of the SGTIN manager number (EAN.UCC Company Prefix)
+
+* (For the local ONS) Fulfills ONS lookup requests for EPCs within the control of the enterprise that operates the Local ONS; that is, EPCs for which the enterprise is the EPC Manager.
+
+Along with the implementation of the ONS server, an application that enables tracking of products between inter-enterprise EPCIS repositories is provided. This application shall
+
+* Implement and expose a new /tracking interface for the ASPIRE Information Sharing Repository, along with the /query and /capture interfaces. This new interface can be used by an external accessing application to obtain data about any EPC tag belonging to this particular company/repository. Data includes both events from the local repository and data reported from foreign domains as products move to them. The tracking interface is a SOAP interface.
+* Collect data reports about an EPC tag from foreign tracking deployments. Data includes at least time, date, geographical coordinates and information about the company which received the item and issued the data. Data can also include details about the particular item (name, features, price, date of production e.t.c) if available. All data of this kind is stored in a local database, separate from the EPCIS repository database.
+* Poll the attached EPCIS repository periodically for any events regarding EPC tags having a company identifier different than the one designated as ‘parent company’. Events are grouped together by company, a query is send to the ONS server for an EPCIS/tracking service endpoint, and an attempt is made to report the events.
+
+
+1.1 User Guide
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* Java 1.6
+* Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)
+* MySQL 5.0 (or higher).
+
+1.1.1 Deployment
+
+This section includes a step-by-step tutorial describing how to set up your own ONS server and the tracking application add-on to the Epcis Repository 
+
+* Download and install a fully functional EPCIS repository, following the instructions on the appropriate [wiki&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository] page. Populate the repository with sample data. 
+* Download aspireRfidOnsTrackingService.zip from the project [Forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324] page.
+
+1.1.1.1 Database installation and creation
+
+The tracking application was developed (and is preconfigured) to work with the open source MySQL relational database. Following are installation and configuration instructions for the MySQL database, along with a brief guide on how the user can configure the application to work with other relational databases. The installation instructions refer to a windows platform (although most of them apply to linux platforms also)
+
+* *MySQL installation (skip this step if MySQL is already installed in your system)*
+** Go to http://www.mysql.com/downloads/mysql/ and download the MySQL community server (version 5.5.8 as of writing this document) package appropriate for your operating system (for windows platforms choose the .msi installer)
+** Follow the instruction and install MySQL at a place of your choosing. Accept all default parameters (unless you have other needs and you know what you are doing). Make sure you choose to start the server after the installation is done
+** During the installation you will be asked to create the ‘root’ user. Create the user and note down the password for later use.
+** Go to http://www.mysql.com/downloads/workbench/ and download the MySQL Workbench (version 5.2.31a as of writing this document) package appropriate for your operating system
+** Install MySQL workbench and launch it. From the main screen of the program select ‘New connection’ .
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/workbench_main.png"&gt;{image:workbench_main.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** The following screen should appear
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/new_db_connection.png"&gt;{image:new_db_connection.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Give a connection name of your liking. If you installed MySQL with the default parameters then hostname should be 127.0.0.1 and port should be 3306. Leave the username as root and enter the password you selected during installation. Press the ‘Test Connection’ button to make sure everything is ok and then ‘OK’. The connection should have now appeared to the list on your left on the main screen of the program.
+** Select ‘New Server Instance –from the list on the right of the main screen
+** On the popup screen select localhost
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance1.png"&gt;{image:instance1.png|350}&lt;/a&gt;
+&lt;/center&gt;
+ 
+** Select your software platform
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance2.png"&gt;{image:instance2.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Ignore any missing configuration file warnings
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance3.png"&gt;{image:instance3.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Select the connection you created on the previous step
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance4.png"&gt;{image:instance4.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Give a name your newly created instance and you are done
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance5.png"&gt;{image:instance5.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** By double clicking the instance you created, you can manage all aspect of your mysql_server. If the server is not running, you will get a warning. Select ‘continue anyway’ and you can start the server from there .
+
+
+
+* *Schema creation and user configuration*
+** The following instructions and provided scripts assume that you used MySQL community edition as your relational database. If you used any other database, then the needed schema must be created manually according to the provided EER diagram
+** Double click the connection you created in the previous part of the guide –make sure the server is running. The following screen should appear 
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/connection_main.png"&gt;{image:connection_main.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Select ‘File-&gt;Open SQL Script’ and choose the provided TrackingDBCreation.sql you downloaded
+** Run the script. It should create the needed schema for the tracking application. The script does not create any users or grant any privileges to the schema. These have to be created manually. Close the SQL editor and double click the database instance you created –from the right part of the main program screen.
+** Select the accounts tab, and click ‘Add account’
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/accounts_main.png"&gt;{image:accounts_main.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Input a login name, password, localhost as the host matching criteria and click apply (see photo for details). Note down the username and password.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/account_create.png"&gt;{image:account_create.png|350}&lt;/a&gt;
+&lt;/center&gt;
+
+** Go to the ‘Schema Privileges’ Tab. Select the user you just created and click on ‘Add Entry’
+** On the screen that will pop-up choose: SelectedHost:localhost  and SelectedSchema: epcis_tracking. Then press ‘Ok’.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/schema_previliges.png"&gt;{image:schema_previliges.png|350}&lt;/a&gt;
+&lt;/center&gt;
+ 
+** On the bottom of the screen click ‘Select ALL’ – to give the new user all privileges on the schema – and then ‘Save changes’
+** We are now ready. Next step is to edit the application configuration files for database access and for our company .
+
+
+1.1.1.1 Application configuration files
+
+There are 2 main configuration files that should be edited according to the database installation and the user needs. The first file is about the Hibernate O/R mapping framework our application uses to access the database. The second is the properties file for the application. Extract the aspireRfidTracking.war file you downloaded to a folder in your hard disk. It should create 2 folders named WEB-INF and META-INF. You can use any archive manager you like (a free option for Windows based platforms is 7-Zip )
+
+{code:text}
+{pre}..\WEB-INF\classes\hibernate.cfg.xml{/pre}
+{code}
+
+* “hibernate.connection.driver_class”  
+** Default: “com.mysql.jdbc.Driver”
+** Set: Don’t change if you used MySQL. In other cases change this to the class name of your connector class
+
+* “hibernate.dialect”
+** Default:  “org.hibernate.dialect.MySQLDialect”
+** Set: Don’t change if you used MySQL. In other cases, consult the appendix for a dialect that matches your database provider (or the Hibernate Documentation for more resources)
+
+* “hibernate.connection.username”
+** Default: “user”
+** Set: Change this to the username of the user you created on the previous step
+
+* “hibernate.connection.password”
+** Default: “pass”
+** Set:  Change this to the password of the user you created on the previous step
+
+* “hibernate.connection.url”
+** Default: “jdbc:mysql://localhost:3306/epcis_tracking”
+** Set: Don’t change if you used MySQL and installed with default options. In other case consult your software vendor’s manual.
+	
+	
+{code:text}
+{pre}..\WEB-INF\classes\tracking.properties{/pre}
+{code}
+
+* localEpcisInterface 	
+** Default: http\://localhost\:8080/aspireRfidEpcisRepository/query
+** Set: The query interface URL of the EPCIS repository the tracking application is attached to
+
+* localONS_Resolver 	
+** Default:  127.0.0.1
+** Set: IP of the local ONS server (see ONS section for more details)
+
+* exportedEpcisInterface 	
+** Default: http\://localhost\:8080/aspireRfidEpcisRepository/query
+** Set: This is what will appear as the remote URI to the foreign tracking application. It can be used by the other party to obtain more information about reported epc events
+
+* companyName 			
+** Default: ASPIRE Inc.
+** Set: Your company name
+
+* companyDesc 		
+** Default: RFID Solutions
+** Set: A brief description of your company
+
+* companyAddress 			
+** Default: 19.7Km Markopoulou Ave
+** Set: Company’s address.
+
+* companyCountryCode 		
+** Default: GR
+** Set: Company’s country code.
+
+* companyRegion 			
+** Default: Attica
+** Set: Company’s  region, state or province e.t.c
+
+* companyEmail 		
+** Default:  komo@aspire_inc.gr
+** Set: Contact email
+
+* companyTel 				
+** Default: +302106671836
+** Set: Contact landline
+
+* companyFax 	
+** Default:  +302106672478
+** Set: Contact Fax 
+
+* companyIdentifier  		
+** Default: 000
+** Set: This is the unique company identifier as defined by the EPCIS standard. This numerical in always the first component on any epc urn that is assigned to the company domain. The application uses this to filter out any data from the local EPCIS repository that are for own epc tags.
+* lattitude				
+** Default: 37.939605
+** Set: A default latitude attribute for generated events that don’t carry such information. Can be set to any relevant to the epcis repository location. 
+
+* longtitude				
+** Default: 23.874013
+** Set: As above
+
+* pollPeriod				
+** Default:  10000
+** Set: The poll interval (in msec) the program should wait before it checks for any new events to report
+
+* startTimeDate			
+** Default: 2010-10-04 18\:09\:24
+** Set:  On startup, the tracking interface will only poll for events newer that this time/date. This is updated every time a poll is made, so we get only the newer events each time .
+
+After you have edited the files, repack everything into the original archive aspireRfidTracking.war .
+
+
+1.1.1.1 ONS installation
+
+* *Platform choice and implementation*
+
+As per the ONS specification, each company assigned part of the epc namespace, should maintain an appropriate ONS server for that namespace. Our application uses these ONS servers to find out the appropriate foreign tracking interfaces to report epc events. The ONS server is actually a properly configured DNS server with NAPTR records for the part of the namespace the server is qualified. Any DNS implementation and platform combination is a valid option. We used the popular, open source and reference BIND implementation of DNS on windows machines. Ideally a realistic setup for our application involves one ONS server per company. For demonstration needs we will present a setup where a single ONS server contains information for EPC’s belonging to several different domains. The guide assumes at least basic information on what DNS (very helpful on this matter is the BIND manual available at http://www.isc.org/software/bind/documentation) .
+
+* *DNS Installation*
+** Go to http://www.isc.org/downloads and select ‘Windows Download’ of the latest BIND release (version 9.7.2-P3 as of writing this guide).
+** Follow the very helpful instructions on http://alex.charrett.com/bind-on-windows-mainmenu-3 up to the point of Configuring your zone ( if you don’t want to go though the BIND installation manual)
+** The scenario also assumes that while populating your EPCIS repository with sample data, you did so with tags having at least 2 different company identifiers. Let us assume that one of them is 1 –for your company – and the other one is 145 – for one of your clients. Modify your named.conf according to the one provided. Also following the instructions on how to configure your zones – from the site mentioned at the previous step, alter if needed the 2 provided zone files and copy them at the appropriate folder. If needed modify again the entry on tracking.properties file for the company identifier.
+** Save everything and start the DNS service – or restart it
+** Make sure it runs correctly, and that your firewall does not block traffic on TCP and UDP ports 53 (the default for DNS requests) .
+
+1.1.1.1 Final steps
+
+Copy aspireRfidTracking.war to the Tomcat webapps folder. Launch tomcat and you should be set. 
+
+1.1 Developer Guide
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HObjectNameService"&gt;Object Name Service&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUserGuide"&gt;2 User Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;2.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeployment"&gt;2.2 Deployment&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDatabaseinstallationandcreation"&gt;2.2.1 Database installation and creation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HApplicationconfigurationfiles"&gt;2.2.2 Application configuration files&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HONSinstallation"&gt;2.2.3 ONS installation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HFinalsteps"&gt;2.2.4 Final steps&lt;/a&gt; 
+        &lt;/ul&gt;
+       &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDeveloperGuide"&gt;3 Developer Guide&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/ONS_Documentation.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/ONS_Documentation.png" height="500" alt="ONS_Documentation.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;In this document, we shall present an implementation of the Object Name Service (ONS) as defined in the EpcGlobal framework.
+The ONS service (both local and root) shall:
+&lt;ul class="star"&gt;
+&lt;li&gt;(For the root ONS) Given an EPC, can return a list of network accessible service endpoints that pertain to the EPC in question. ONS does not contain actual data about the EPC. It only contains the network address of services that contain the actual data. ONS is also authoritative in that the entity that has change control over the information about the EPC is the same entity that assigned the EPC to the item to begin with. For example, in the case of an SGTIN EPC, the entity having control over the ONS record is the owner of the SGTIN manager number (EAN.UCC Company Prefix)&lt;/li&gt;
+&lt;li&gt;(For the local ONS) Fulfills ONS lookup requests for EPCs within the control of the enterprise that operates the Local ONS; that is, EPCs for which the enterprise is the EPC Manager.&lt;/li&gt;
+&lt;/ul&gt;Along with the implementation of the ONS server, an application that enables tracking of products between inter-enterprise EPCIS repositories is provided. This application shall
+&lt;ul class="star"&gt;
+&lt;li&gt;Implement and expose a new /tracking interface for the ASPIRE Information Sharing Repository, along with the /query and /capture interfaces. This new interface can be used by an external accessing application to obtain data about any EPC tag belonging to this particular company/repository. Data includes both events from the local repository and data reported from foreign domains as products move to them. The tracking interface is a SOAP interface.&lt;/li&gt;
+&lt;li&gt;Collect data reports about an EPC tag from foreign tracking deployments. Data includes at least time, date, geographical coordinates and information about the company which received the item and issued the data. Data can also include details about the particular item (name, features, price, date of production e.t.c) if available. All data of this kind is stored in a local database, separate from the EPCIS repository database.&lt;/li&gt;
+&lt;li&gt;Poll the attached EPCIS repository periodically for any events regarding EPC tags having a company identifier different than the one designated as ‘parent company’. Events are grouped together by company, a query is send to the ONS server for an EPCIS/tracking service endpoint, and an attempt is made to report the events.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;User Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;Tomcat 6.0 (or higher) or another server for web-services. (This guide assumes that you use an Apache Tomcat server.)&lt;/li&gt;
+&lt;li&gt;MySQL 5.0 (or higher).&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeployment"&gt;Deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;This section includes a step-by-step tutorial describing how to set up your own ONS server and the tracking application add-on to the Epcis Repository 
+&lt;ul class="star"&gt;
+&lt;li&gt;Download and install a fully functional EPCIS repository, following the instructions on the appropriate &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;&amp;#119;iki&lt;/a&gt;&lt;/span&gt; page. Populate the repository with sample data.&lt;/li&gt;
+&lt;li&gt;Download aspireRfidOnsTrackingService.zip from the project &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#70;orge&lt;/a&gt;&lt;/span&gt; page.&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HDatabaseinstallationandcreation"&gt;Database installation and creation&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;The tracking application was developed (and is preconfigured) to work with the open source MySQL relational database. Following are installation and configuration instructions for the MySQL database, along with a brief guide on how the user can configure the application to work with other relational databases. The installation instructions refer to a windows platform (although most of them apply to linux platforms also)
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;MySQL installation (skip this step if MySQL is already installed in your system)&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Go to &lt;span class="nobr"&gt;&lt;a href="http://www.mysql.com/downloads/mysql/"&gt;&amp;#104;ttp://www.mysql.com/downloads/mysql/&lt;/a&gt;&lt;/span&gt; and download the MySQL community server (version 5.5.8 as of writing this document) package appropriate for your operating system (for windows platforms choose the .msi installer)&lt;/li&gt;
+&lt;li&gt;Follow the instruction and install MySQL at a place of your choosing. Accept all default parameters (unless you have other needs and you know what you are doing). Make sure you choose to start the server after the installation is done&lt;/li&gt;
+&lt;li&gt;During the installation you will be asked to create the ‘root’ user. Create the user and note down the password for later use.&lt;/li&gt;
+&lt;li&gt;Go to &lt;span class="nobr"&gt;&lt;a href="http://www.mysql.com/downloads/workbench/"&gt;&amp;#104;ttp://www.mysql.com/downloads/workbench/&lt;/a&gt;&lt;/span&gt; and download the MySQL Workbench (version 5.2.31a as of writing this document) package appropriate for your operating system&lt;/li&gt;
+&lt;li&gt;Install MySQL workbench and launch it. From the main screen of the program select ‘New connection’ .&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/workbench_main.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/workbench_main.png" height="350" alt="workbench_main.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;The following screen should appear&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/new_db_connection.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/new_db_connection.png" height="350" alt="new_db_connection.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Give a connection name of your liking. If you installed MySQL with the default parameters then hostname should be 127.0.0.1 and port should be 3306. Leave the username as root and enter the password you selected during installation. Press the ‘Test Connection’ button to make sure everything is ok and then ‘OK’. The connection should have now appeared to the list on your left on the main screen of the program.&lt;/li&gt;
+&lt;li&gt;Select ‘New Server Instance –from the list on the right of the main screen&lt;/li&gt;
+&lt;li&gt;On the popup screen select localhost&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance1.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/instance1.png" height="350" alt="instance1.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Select your software platform&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance2.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/instance2.png" height="350" alt="instance2.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Ignore any missing configuration file warnings&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance3.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/instance3.png" height="350" alt="instance3.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Select the connection you created on the previous step&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance4.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/instance4.png" height="350" alt="instance4.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Give a name your newly created instance and you are done&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/instance5.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/instance5.png" height="350" alt="instance5.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;By double clicking the instance you created, you can manage all aspect of your mysql_server. If the server is not running, you will get a warning. Select ‘continue anyway’ and you can start the server from there .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Schema creation and user configuration&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;The following instructions and provided scripts assume that you used MySQL community edition as your relational database. If you used any other database, then the needed schema must be created manually according to the provided EER diagram&lt;/li&gt;
+&lt;li&gt;Double click the connection you created in the previous part of the guide –make sure the server is running. The following screen should appear&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/connection_main.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/connection_main.png" height="350" alt="connection_main.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Select ‘File-&gt;Open SQL Script’ and choose the provided TrackingDBCreation.sql you downloaded&lt;/li&gt;
+&lt;li&gt;Run the script. It should create the needed schema for the tracking application. The script does not create any users or grant any privileges to the schema. These have to be created manually. Close the SQL editor and double click the database instance you created –from the right part of the main program screen.&lt;/li&gt;
+&lt;li&gt;Select the accounts tab, and click ‘Add account’&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/accounts_main.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/accounts_main.png" height="350" alt="accounts_main.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Input a login name, password, localhost as the host matching criteria and click apply (see photo for details). Note down the username and password.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/account_create.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/account_create.png" height="350" alt="account_create.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Go to the ‘Schema Privileges’ Tab. Select the user you just created and click on ‘Add Entry’&lt;/li&gt;
+&lt;li&gt;On the screen that will pop-up choose: SelectedHost:localhost  and SelectedSchema: epcis_tracking. Then press ‘Ok’.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/ONS/schema_previliges.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ONS/schema_previliges.png" height="350" alt="schema_previliges.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;ul class="star"&gt;
+&lt;li class="innerlist"&gt;&lt;ul class="star"&gt;
+&lt;li&gt;On the bottom of the screen click ‘Select ALL’ – to give the new user all privileges on the schema – and then ‘Save changes’&lt;/li&gt;
+&lt;li&gt;We are now ready. Next step is to edit the application configuration files for database access and for our company .&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HApplicationconfigurationfiles"&gt;Application configuration files&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;There are 2 main configuration files that should be edited according to the database installation and the user needs. The first file is about the Hibernate O/R mapping framework our application uses to access the database. The second is the properties file for the application. Extract the aspireRfidTracking.war file you downloaded to a folder in your hard disk. It should create 2 folders named WEB-INF and META-INF. You can use any archive manager you like (a free option for Windows based platforms is 7-Zip )&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;..\WEB-INF\classes\hibernate.cfg.xml&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;“hibernate.connection.driver_class”&lt;ul class="star"&gt;
+&lt;li&gt;Default: “com.mysql.jdbc.Driver”&lt;/li&gt;
+&lt;li&gt;Set: Don’t change if you used MySQL. In other cases change this to the class name of your connector class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;“hibernate.dialect”&lt;ul class="star"&gt;
+&lt;li&gt;Default:  “org.hibernate.dialect.MySQLDialect”&lt;/li&gt;
+&lt;li&gt;Set: Don’t change if you used MySQL. In other cases, consult the appendix for a dialect that matches your database provider (or the Hibernate Documentation for more resources)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;“hibernate.connection.username”&lt;ul class="star"&gt;
+&lt;li&gt;Default: “user”&lt;/li&gt;
+&lt;li&gt;Set: Change this to the username of the user you created on the previous step&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;“hibernate.connection.password”&lt;ul class="star"&gt;
+&lt;li&gt;Default: “pass”&lt;/li&gt;
+&lt;li&gt;Set:  Change this to the password of the user you created on the previous step&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;“hibernate.connection.url”&lt;ul class="star"&gt;
+&lt;li&gt;Default: “jdbc:mysql://localhost:3306/epcis_tracking”&lt;/li&gt;
+&lt;li&gt;Set: Don’t change if you used MySQL and installed with default options. In other case consult your software vendor’s manual.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;..\WEB-INF\classes\tracking.properties&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;localEpcisInterface&lt;ul class="star"&gt;
+&lt;li&gt;Default: http&amp;#58;//localhost&amp;#58;8080/aspireRfidEpcisRepository/query&lt;/li&gt;
+&lt;li&gt;Set: The query interface URL of the EPCIS repository the tracking application is attached to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;localONS_Resolver&lt;ul class="star"&gt;
+&lt;li&gt;Default:  127.0.0.1&lt;/li&gt;
+&lt;li&gt;Set: IP of the local ONS server (see ONS section for more details)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;exportedEpcisInterface&lt;ul class="star"&gt;
+&lt;li&gt;Default: http&amp;#58;//localhost&amp;#58;8080/aspireRfidEpcisRepository/query&lt;/li&gt;
+&lt;li&gt;Set: This is what will appear as the remote URI to the foreign tracking application. It can be used by the other party to obtain more information about reported epc events&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyName&lt;ul class="star"&gt;
+&lt;li&gt;Default: ASPIRE Inc.&lt;/li&gt;
+&lt;li&gt;Set: Your company name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyDesc&lt;ul class="star"&gt;
+&lt;li&gt;Default: RFID Solutions&lt;/li&gt;
+&lt;li&gt;Set: A brief description of your company&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyAddress&lt;ul class="star"&gt;
+&lt;li&gt;Default: 19.7Km Markopoulou Ave&lt;/li&gt;
+&lt;li&gt;Set: Company’s address.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyCountryCode&lt;ul class="star"&gt;
+&lt;li&gt;Default: GR&lt;/li&gt;
+&lt;li&gt;Set: Company’s country code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyRegion&lt;ul class="star"&gt;
+&lt;li&gt;Default: Attica&lt;/li&gt;
+&lt;li&gt;Set: Company’s  region, state or province e.t.c&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyEmail&lt;ul class="star"&gt;
+&lt;li&gt;Default:  komo@aspire_inc.gr&lt;/li&gt;
+&lt;li&gt;Set: Contact email&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyTel&lt;ul class="star"&gt;
+&lt;li&gt;Default: +302106671836&lt;/li&gt;
+&lt;li&gt;Set: Contact landline&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyFax&lt;ul class="star"&gt;
+&lt;li&gt;Default:  +302106672478&lt;/li&gt;
+&lt;li&gt;Set: Contact Fax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;companyIdentifier&lt;ul class="star"&gt;
+&lt;li&gt;Default: 000&lt;/li&gt;
+&lt;li&gt;Set: This is the unique company identifier as defined by the EPCIS standard. This numerical in always the first component on any epc urn that is assigned to the company domain. The application uses this to filter out any data from the local EPCIS repository that are for own epc tags.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;lattitude&lt;ul class="star"&gt;
+&lt;li&gt;Default: 37.939605&lt;/li&gt;
+&lt;li&gt;Set: A default latitude attribute for generated events that don’t carry such information. Can be set to any relevant to the epcis repository location.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;longtitude&lt;ul class="star"&gt;
+&lt;li&gt;Default: 23.874013&lt;/li&gt;
+&lt;li&gt;Set: As above&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;pollPeriod&lt;ul class="star"&gt;
+&lt;li&gt;Default:  10000&lt;/li&gt;
+&lt;li&gt;Set: The poll interval (in msec) the program should wait before it checks for any new events to report&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;startTimeDate&lt;ul class="star"&gt;
+&lt;li&gt;Default: 2010-10-04 18&amp;#58;09&amp;#58;24&lt;/li&gt;
+&lt;li&gt;Set:  On startup, the tracking interface will only poll for events newer that this time/date. This is updated every time a poll is made, so we get only the newer events each time .&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;After you have edited the files, repack everything into the original archive aspireRfidTracking.war .
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HONSinstallation"&gt;ONS installation&lt;/span&gt;&lt;/h5&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;Platform choice and implementation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;As per the ONS specification, each company assigned part of the epc namespace, should maintain an appropriate ONS server for that namespace. Our application uses these ONS servers to find out the appropriate foreign tracking interfaces to report epc events. The ONS server is actually a properly configured DNS server with NAPTR records for the part of the namespace the server is qualified. Any DNS implementation and platform combination is a valid option. We used the popular, open source and reference BIND implementation of DNS on windows machines. Ideally a realistic setup for our application involves one ONS server per company. For demonstration needs we will present a setup where a single ONS server contains information for EPC’s belonging to several different domains. The guide assumes at least basic information on what DNS (very helpful on this matter is the BIND manual available at &lt;span class="nobr"&gt;&lt;a href="http://www.isc.org/software/bind/documentation"&gt;&amp;#104;ttp://www.isc.org/software/bind/documentation&lt;/a&gt;&lt;/span&gt;) .
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;DNS Installation&lt;/strong&gt;&lt;ul class="star"&gt;
+&lt;li&gt;Go to &lt;span class="nobr"&gt;&lt;a href="http://www.isc.org/downloads"&gt;&amp;#104;ttp://www.isc.org/downloads&lt;/a&gt;&lt;/span&gt; and select ‘Windows Download’ of the latest BIND release (version 9.7.2-P3 as of writing this guide).&lt;/li&gt;
+&lt;li&gt;Follow the very helpful instructions on &lt;span class="nobr"&gt;&lt;a href="http://alex.charrett.com/bind-on-windows-mainmenu-3"&gt;&amp;#104;ttp://alex.charrett.com/bind-on-windows-mainmenu-3&lt;/a&gt;&lt;/span&gt; up to the point of Configuring your zone ( if you don’t want to go though the BIND installation manual)&lt;/li&gt;
+&lt;li&gt;The scenario also assumes that while populating your EPCIS repository with sample data, you did so with tags having at least 2 different company identifiers. Let us assume that one of them is 1 –for your company – and the other one is 145 – for one of your clients. Modify your named.conf according to the one provided. Also following the instructions on how to configure your zones – from the site mentioned at the previous step, alter if needed the 2 provided zone files and copy them at the appropriate folder. If needed modify again the entry on tracking.properties file for the company identifier.&lt;/li&gt;
+&lt;li&gt;Save everything and start the DNS service – or restart it&lt;/li&gt;
+&lt;li&gt;Make sure it runs correctly, and that your firewall does not block traffic on TCP and UDP ports 53 (the default for DNS requests) .&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HFinalsteps"&gt;Final steps&lt;/span&gt;&lt;/h5&gt;&lt;p class="paragraph"/&gt;Copy aspireRfidTracking.war to the Tomcat webapps folder. Launch tomcat and you should be set. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDeveloperGuide"&gt;Developer Guide&lt;/span&gt;&lt;/h3&gt; 
+</renderedcontent>
+</xwikidoc>

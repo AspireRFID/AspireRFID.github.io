@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>XWikiGroups</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator></creator>
+<author>XWiki.superadmin</author>
+<contentAuthor></contentAuthor>
+<creationDate>1117547383000</creationDate>
+<date>1128332111000</date>
+<contentUpdateDate>1427131326316</contentUpdateDate>
+<version>1.2</version>
+<title></title>
+<template></template>
+<class>
+<name>XWiki.XWikiGroups</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<member>
+<name>member</name>
+<prettyName>Member</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</member>
+</class>
+<content>1 Create a new group:
+
+&lt;form&gt;
+&lt;input type="text" name="name" value=""&gt;
+&lt;input type="button" value="Create Group" onClick="go(this.form.name.value)"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function go(value) {
+location = "/xwiki/bin/edit/XWiki/" + value + "?parent=XWiki.XWikiGroups&amp;template=XWiki.XWikiGroupTemplate";
+} 
+&lt;/script&gt;
+
+1 Current XWiki Groups
+
+#set ($sql = ", BaseObject as obj where obj.name=doc.fullName and obj.className='XWiki.XWikiGroups'")
+#foreach ($item in $xwiki.searchDocuments($sql))
+   * [$item]
+#end
+
+1 Admin
+
+   * [XWikiGroupTemplate]
+   * [XWikiGroupSheet]</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HCreateanewgroup3A"&gt;Create a new group:&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;form&gt;
+&lt;input type="text" name="name" value=""&gt;
+&lt;input type="button" value="Create Group" onClick="go(this.form.name.value)"&gt;
+&lt;/form&gt;&lt;p class="paragraph"/&gt;&lt;script&gt;
+function go(value) {
+location = "/xwiki/bin/edit/XWiki/" + value + "?parent=XWiki.XWikiGroups&amp;template=XWiki.XWikiGroupTemplate";
+} 
+&lt;/script&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HCurrentXWikiGroups"&gt;Current XWiki Groups&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiAllGroup"&gt;XWiki All Group&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiGroupTemplate"&gt;XWiki Group Template&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/aspire"&gt;aspire&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 class="heading-1"&gt;&lt;span id="HAdmin"&gt;Admin&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiGroupTemplate"&gt;XWiki Group Template&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiGroupSheet"&gt;XWiki Group Sheet&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>AspireRfidIdeCore</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.AspireIDE</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1233321273000</creationDate>
+<date>1276877008000</date>
+<contentUpdateDate>1276877008000</contentUpdateDate>
+<version>1.16</version>
+<title>Aspire IDE Core</title>
+<template></template>
+<attachment>
+<filename>run_configurations.png</filename>
+<filesize>77471</filesize>
+<author>xwiki:XWiki.nkons</author>
+<date>1276255723000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Aspire IDE Core
+
+----
+#toc("" "" "true")
+----
+
+1.1 Users Guide
+
+Under construction 
+
+1.1 Developers Guide
+
+This section provides information on how to download and run AspireRfidIDE Product within an Eclipse Environment.
+
+1.1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* Java 1.6
+* [Eclipse 3.4&gt; http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment plug-ins and [Subversive plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive])
+
+
+1.1.1 Acquiring the source code:
+
+The source code is available for checkout at the AspireRFID forge [SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* Check it out by hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive]and by using the following URL at the window that appears: "svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE"
+**Right click the repository that has been just created and hit the check out button
+* Import the AspireRFID IDE projects to the Eclipse environment
+** Hit File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace and select for the root directory the project you have just checked out (AspireRfidIDE). 
+** Select all the projects from the list (they are the AspireRFID plug-ins with the AspireRfidIDE core)
+** Uncheck the Copy projects into workspace and hit finish.
+
+1.1.1 Running the Project
+
+* Go to the Eclipse's Package Explorer
+* Right click the aspireRfidIDE project and go to Run As&gt; Eclipse Application (this is done to automatically create the lunch configuration)
+* Close the window that have appeared and lets go to configure the lunch command.
+* Go to Run&gt; Run Configurations and at the list on the left choose the aspireRfidIDE.product
+* At the "Main" tab (Workspace Data) check the "Clear" and the "Ask for confirmation before clearing" boxes.
+* At the "Arguments" tab (Program arguments:) you could add the "-console" and "-consolelog" arguments to gain more control over the OSGi debug console window.
+* Now at the "Plug-ins" Tab hit "deselect all" and from the Plug-ins list choose the "aspireRfidIDE" (which is the core of the AspireRFID IDE enviroment [AspireRfidIDE Core&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]) and any other AspireRfid IDE plug-in you would like to run from the list below:
+  ** org.ow2.aspirerfid.ide.aleconfig ([ALE Server Configurator&gt;Main.Documentation.AspireIDE.AleServerConfigurator])
+  ** org.ow2.aspirerfid.ide.beg ([BEG&gt;Main.Documentation.AspireIDE.BusinessEventGeneratorPlug-in])
+  ** org.ow2.aspirerfid.ide.ecspec ([EC-Spec Editor&gt;Main.Documentation.AspireIDE.ECSpecEditor])
+  ** org.ow2.aspirerfid.ide.jmx ([Physical Reader Configurator&gt;Main.Documentation.AspireIDE.PhysicalReaderConfiguration])
+  ** org.ow2.aspirerfid.ide.lrspec ([LR-Spec Editor&gt;Main.Documentation.AspireIDE.LRSpecEditor])
+  ** org.ow2.aspirerfid.ide.masterdata ([Master Data Editor&gt;Main.Documentation.AspireIDE.MasterDataEditor] )
+  ** org.ow2.aspirerfid.ide.peconfig ([Prog. Engine Configurator&gt;Main.Documentation.AspireIDE.ProgrammableEngineConfig])
+  ** org.ow2.aspirerfid.ide.tcpmc ([TCP Message Capturer&gt;Main.Documentation.AspireIDE.TcpMessageCapturer])
+  ** Business Process Workflow Management Editor ([BPWM Editor&gt;Main.Documentation.AspireIDE.BPWMEditor]):
+   *** org.ow2.aspirerfid.ide.bpwme
+   *** org.ow2.aspirerfid.ide.bpwme.diagram
+   *** org.ow2.aspirerfid.ide.bpwme.edit
+  ** Master Data Editor GMF ([Business Loc. GMF Editor&gt;Main.Documentation.AspireIDE.RFIDBusinessLocationGMFEditor]):
+   *** org.ow2.aspirerfid.ide.MasterDataEditorGMF  
+   *** org.ow2.aspirerfid.ide.MasterDataEditorGMF.diagram
+   *** org.ow2.aspirerfid.ide.MasterDataEditorGMF.edit
+   *** org.ow2.aspirerfid.ide.MasterDataEditorGMF.layout
+* Hit the "Add Required Plug-ins" button
+* And finally hit the "Apply" and then the "Run" Button. 
+
+
+&lt;center&gt;
+{image:run_configurations.png|500}
+&lt;/center&gt;</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspireIDECore"&gt;Aspire IDE Core&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HUsersGuide"&gt;1 Users Guide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;2 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HRequirements"&gt;2.1 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAcquiringthesourcecode3A"&gt;2.2 Acquiring the source code:&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRunningtheProject"&gt;2.3 Running the Project&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Under construction 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This section provides information on how to download and run AspireRfidIDE Product within an Eclipse Environment.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#69;clipse 3.4&lt;/a&gt;&lt;/span&gt; and above (with RCP/Plug-in Development Environment plug-ins and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#83;ubversive plug-in&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthesourcecode3A"&gt;Acquiring the source code:&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The source code is available for checkout at the AspireRFID forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#83;VN&lt;/a&gt;&lt;/span&gt;. 
+Check it out by:
+&lt;ul class="star"&gt;
+&lt;li&gt;Check it out by hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#112;lug-in&lt;/a&gt;&lt;/span&gt;and by using the following URL at the window that appears: "svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE"&lt;/li&gt;
+&lt;/ul&gt;**Right click the repository that has been just created and hit the check out button
+&lt;ul class="star"&gt;
+&lt;li&gt;Import the AspireRFID IDE projects to the Eclipse environment&lt;ul class="star"&gt;
+&lt;li&gt;Hit File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace and select for the root directory the project you have just checked out (AspireRfidIDE).&lt;/li&gt;
+&lt;li&gt;Select all the projects from the list (they are the AspireRFID plug-ins with the AspireRfidIDE core)&lt;/li&gt;
+&lt;li&gt;Uncheck the Copy projects into workspace and hit finish.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRunningtheProject"&gt;Running the Project&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Go to the Eclipse's Package Explorer&lt;/li&gt;
+&lt;li&gt;Right click the aspireRfidIDE project and go to Run As&gt; Eclipse Application (this is done to automatically create the lunch configuration)&lt;/li&gt;
+&lt;li&gt;Close the window that have appeared and lets go to configure the lunch command.&lt;/li&gt;
+&lt;li&gt;Go to Run&gt; Run Configurations and at the list on the left choose the aspireRfidIDE.product&lt;/li&gt;
+&lt;li&gt;At the "Main" tab (Workspace Data) check the "Clear" and the "Ask for confirmation before clearing" boxes.&lt;/li&gt;
+&lt;li&gt;At the "Arguments" tab (Program arguments:) you could add the "-console" and "-consolelog" arguments to gain more control over the OSGi debug console window.&lt;/li&gt;
+&lt;li&gt;Now at the "Plug-ins" Tab hit "deselect all" and from the Plug-ins list choose the "aspireRfidIDE" (which is the core of the AspireRFID IDE enviroment &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;AspireRfidIDE Core&lt;/a&gt;&lt;/span&gt;) and any other AspireRfid IDE plug-in you would like to run from the list below:&lt;ul class="star"&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.aleconfig (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AleServerConfigurator"&gt;ALE Server Configurator&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.beg (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in"&gt;BEG&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.ecspec (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/ECSpecEditor"&gt;EC-Spec Editor&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.jmx (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/PhysicalReaderConfiguration"&gt;Physical Reader Configurator&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.lrspec (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/LRSpecEditor"&gt;LR-Spec Editor&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.masterdata (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/MasterDataEditor"&gt;Master Data Editor&lt;/a&gt;&lt;/span&gt; )&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.peconfig (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/ProgrammableEngineConfig"&gt;Prog. Engine Configurator&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.tcpmc (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/TcpMessageCapturer"&gt;TCP Message Capturer&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Business Process Workflow Management Editor (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/BPWMEditor"&gt;BPWM Editor&lt;/a&gt;&lt;/span&gt;):&lt;ul class="star"&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.bpwme&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.bpwme.diagram&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.bpwme.edit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Master Data Editor GMF (&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor"&gt;Business Loc. GMF Editor&lt;/a&gt;&lt;/span&gt;):&lt;ul class="star"&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.MasterDataEditorGMF&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.MasterDataEditorGMF.diagram&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.MasterDataEditorGMF.edit&lt;/li&gt;
+&lt;li&gt;org.ow2.aspirerfid.ide.MasterDataEditorGMF.layout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Hit the "Add Required Plug-ins" button&lt;/li&gt;
+&lt;li&gt;And finally hit the "Apply" and then the "Run" Button.&lt;/li&gt;
+&lt;/ul&gt;&lt;center&gt;
+&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/AspireRfidIdeCore/run_configurations.png" height="500" alt="run_configurations.png" /&gt;
+&lt;/center&gt;
+</renderedcontent>
+</xwikidoc>

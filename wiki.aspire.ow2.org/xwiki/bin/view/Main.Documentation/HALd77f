@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>HAL</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1233251769000</creationDate>
+<date>1257512027000</date>
+<contentUpdateDate>1257512027000</contentUpdateDate>
+<version>1.7</version>
+<title>Hardware Abstraction Layer</title>
+<template></template>
+<content>1 Hardware Abstraction Layer
+
+----
+#toc("" "" "")
+----
+
+
+1.1 Introduction
+
+Using RFID or barcode readers from different vendors, can impose significant complexity to a system. To override this problem there are two possible solutions. First to define a specification that all vendors should implement so that there can be a single way of interacting with such a device. Such specifications exist for RFID UHF readers, namely EPCglobal Reader Protocol ([RP&gt;http://www.epcglobalinc.org/standards/rp]) and EPCglobal Low Lever Reader Protocol ([LLRP&gt;http://www.epcglobalinc.org/standards/llrp]). The problem is that not all vendors implement these specifications. In these cases we have to define an abstraction layer that can translate proprietary vendor system calls to standardised calls (e.g. to RP calls).
+In the case of AspireRFID, we support LLRP readers,with the use of [Fosstrak&gt;http://www.fosstrak.org] libraries we support RP readers and  can support any other reader that supports only a proprietary protocol by building its own HAL. Through the [Reader Core Proxy&gt;ReaderCoreProxy] component we support BRI reader protocol and the Fosstrak's simmulator. 
+
+1.1 Developers Guide
+
+To add support for non-RP or LLRP compliant readers, the most important action that need to be taken is to implement a HAL class that extends the BaseReader interface at ALE layer ( [Building a HAL Adaptor&gt;http://www.fosstrak.org/fc/docs/developer-adaptor.html#A])</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HHardwareAbstractionLayer"&gt;Hardware Abstraction Layer&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt; Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt; Developers Guide&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Using RFID or barcode readers from different vendors, can impose significant complexity to a system. To override this problem there are two possible solutions. First to define a specification that all vendors should implement so that there can be a single way of interacting with such a device. Such specifications exist for RFID UHF readers, namely EPCglobal Reader Protocol (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/rp"&gt;&amp;#82;P&lt;/a&gt;&lt;/span&gt;) and EPCglobal Low Lever Reader Protocol (&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.epcglobalinc.org/standards/llrp"&gt;&amp;#76;LRP&lt;/a&gt;&lt;/span&gt;). The problem is that not all vendors implement these specifications. In these cases we have to define an abstraction layer that can translate proprietary vendor system calls to standardised calls (e.g. to RP calls).
+In the case of AspireRFID, we support LLRP readers,with the use of &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt; libraries we support RP readers and  can support any other reader that supports only a proprietary protocol by building its own HAL. Through the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/ReaderCoreProxy"&gt;Reader Core Proxy&lt;/a&gt;&lt;/span&gt; component we support BRI reader protocol and the Fosstrak's simmulator. 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;To add support for non-RP or LLRP compliant readers, the most important action that need to be taken is to implement a HAL class that extends the BaseReader interface at ALE layer ( &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org/fc/docs/developer-adaptor.html#A"&gt;&amp;#66;uilding a HAL Adaptor&lt;/a&gt;&lt;/span&gt;)
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Photos</web>
+<name>ICT2010</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.PhotoAlbumClass</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1286557445000</creationDate>
+<date>1286557679000</date>
+<contentUpdateDate>1286557679000</contentUpdateDate>
+<version>1.21</version>
+<title></title>
+<template></template>
+<attachment>
+<filename>ICT2010-16.jpg</filename>
+<filesize>601674</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557679000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-15.jpg</filename>
+<filesize>168859</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557670000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-14.jpg</filename>
+<filesize>176037</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557660000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-13.jpg</filename>
+<filesize>187365</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557652000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-12.jpg</filename>
+<filesize>563599</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557640000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-11.jpg</filename>
+<filesize>136514</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557629000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-10.jpg</filename>
+<filesize>148408</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557621000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-09.jpg</filename>
+<filesize>148899</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557614000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-08.jpg</filename>
+<filesize>158675</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557606000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-07.jpg</filename>
+<filesize>154956</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557594000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-05.jpg</filename>
+<filesize>136031</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557583000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-04.jpg</filename>
+<filesize>136162</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557575000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-03.jpg</filename>
+<filesize>160463</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557565000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-02.jpg</filename>
+<filesize>151716</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557556000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-01.jpg</filename>
+<filesize>146371</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557533000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-00.jpg</filename>
+<filesize>170669</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557524000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>ICT2010-06.jpg</filename>
+<filesize>167356</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1286557517000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<object>
+<class>
+<name>XWiki.PhotoAlbumClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<title>
+<name>title</name>
+<prettyName>title</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</title>
+<description>
+<name>description</name>
+<prettyName>description</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<rows>5</rows>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</description>
+<height>
+<name>height</name>
+<prettyName>Thumbnail Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height>
+<height2>
+<name>height2</name>
+<prettyName>Photo Height</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<numberType>long</numberType>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+</height2>
+</class>
+<name>Photos.ICT2010</name>
+<number>0</number>
+<className>XWiki.PhotoAlbumClass</className>
+<property>
+<description>ASPIRE was present at the biggest European event on ICT research and Innovation conducted at Brussels Expo 27-29 of September 2010</description>
+</property>
+<property>
+<height>150</height>
+</property>
+<property>
+<height2>400</height2>
+</property>
+<property>
+<title>ICT 2010</title>
+</property>
+</object>
+<content>#includeForm("XWiki.PhotoAlbumClassSheet")</content>
+<renderedcontent>&lt;br /&gt;
+&lt;h2 class="heading-1"&gt;&lt;span id="HICT2010"&gt;ICT 2010&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;ASPIRE was present at the biggest European event on ICT research and Innovation conducted at Brussels Expo 27-29 of September 2010&lt;p class="paragraph"/&gt;&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=1#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-16.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=2#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-15.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=3#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-14.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=4#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-13.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=5#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-12.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=6#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-11.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=7#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-10.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=8#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-09.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=9#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-08.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=10#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-07.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=11#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-05.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=12#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-04.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=13#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-03.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=14#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-02.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=15#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-01.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=16#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-00.jpg?height=150" height="150"/&gt;&lt;/a&gt;
+&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=17#aspire" &gt;
+&lt;img src="/xwiki/bin/download/Photos/ICT2010/ICT2010-06.jpg?height=150" height="150"/&gt;&lt;/a&gt;&lt;p class="paragraph"/&gt;&lt;br /&gt;
+&lt;i class="italic"&gt;
+ &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=all"&gt;All Photos&lt;/a&gt;&lt;/span&gt; &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Photos/ICT2010?diapo=1"&gt;Diaporama&lt;/a&gt;&lt;/span&gt;&lt;/i&gt;
+
+</renderedcontent>
+</xwikidoc>

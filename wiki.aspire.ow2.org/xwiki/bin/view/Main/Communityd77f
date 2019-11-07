@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Community</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Demos</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1216843757000</creationDate>
+<date>1232621171000</date>
+<contentUpdateDate>1232621171000</contentUpdateDate>
+<version>1.11</version>
+<title>ASPIRE RFID Community</title>
+<template></template>
+<content>1 Community
+
+#toc("" "" "")
+
+1.1 Contributors
+Aspire RFID is an open source project developed within the OW2 consortium. The contributions are initially funded by the [European Community FP7&gt;http://cordis.europa.eu/fp7/home_en.html] with the [ASPIRE project&gt;http://www.fp7-aspire.eu]. The contributors are listed in the [contributors page&gt;Contributors].
+
+Please [contact&gt;mailto:aspire@ow2.org] us if someone is missing.
+
+#includeTopic("Community.Lists")
+
+1.1 Growing the community
+Contact us if you want to use, improve and/or contribute the Aspire RFID project.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HCommunity"&gt;Community&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContributors"&gt; Contributors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGrowingthecommunity"&gt; Growing the community&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContributors"&gt;Contributors&lt;/span&gt;&lt;/h3&gt; 
+Aspire RFID is an open source project developed within the OW2 consortium. The contributions are initially funded by the &lt;span class="wikiexternallink"&gt;&lt;a href="http://cordis.europa.eu/fp7/home_en.html"&gt;&amp;#69;uropean Community FP7&lt;/a&gt;&lt;/span&gt; with the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fp7-aspire.eu"&gt;&amp;#65;SPIRE project&lt;/a&gt;&lt;/span&gt;. The contributors are listed in the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Contributors"&gt;contributors page&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;Please &lt;span class="wikiexternallink"&gt;&lt;a href="mailto:aspire@ow2.org"&gt;&amp;#99;ontact&lt;/a&gt;&lt;/span&gt; us if someone is missing.&lt;p class="paragraph"/&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HMailingLists"&gt;Mailing Lists&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The main list is &lt;strong class="strong"&gt;&lt;i class="italic"&gt;aspirerfid::at::ow2::dot::org&lt;/i&gt;&lt;/strong&gt;, and subscription can be done by entering a mail address on the following form :
+&lt;center&gt;
+&lt;FORM ACTION="http://mail.ow2.org/wws" METHOD="POST"&gt;
+  &lt;INPUT  NAME="email" SIZE="30" VALUE="&lt;your email address&gt;"&gt;
+  &lt;INPUT TYPE="hidden" NAME="list" VALUE="aspirerfid"&gt;
+  &lt;INPUT TYPE="hidden" NAME="action" VALUE="subrequest"&gt;
+  &lt;INPUT TYPE="submit" NAME="action_subrequest" VALUE="Subscribe"&gt;
+&lt;/FORM&gt;
+&lt;/center&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HGeneralmailinglists3A"&gt;General mailing lists:&lt;/span&gt;&lt;/h4&gt; 
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;List&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Subscribe&lt;/th&gt;&lt;th&gt;Unsubscribe&lt;/th&gt;&lt;th&gt;Archives&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;i class="italic"&gt;aspirerfid&lt;/i&gt;&lt;/td&gt;&lt;td&gt;General Aspire RFID mailing list. (Main list)&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/subscribe/aspirerfid"&gt;&amp;#83;ubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/sigrequest/aspirerfid"&gt;&amp;#85;nsubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/info/aspirerfid"&gt;&amp;#83;ympa&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HTechnicalmailinglists3A"&gt;Technical mailing lists:&lt;/span&gt;&lt;/h4&gt; 
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;List&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;th&gt;Subscribe&lt;/th&gt;&lt;th&gt;Unsubscribe&lt;/th&gt;&lt;th&gt;Archives&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;i class="italic"&gt;aspirerfid-dev&lt;/i&gt;&lt;/td&gt;&lt;td&gt;Aspire RFID developer mailing list (technical discussions).&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/subscribe/aspirerfid-dev"&gt;&amp;#83;ubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/sigrequest/aspirerfid-dev"&gt;&amp;#85;nsubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/info/aspirerfid-dev"&gt;&amp;#83;ympa&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;i class="italic"&gt;aspirerfid-commits&lt;/i&gt;&lt;/td&gt;&lt;td&gt;Aspire RFID SVN Commits.&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/subscribe/aspirerfid-commits"&gt;&amp;#83;ubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/sigrequest/aspirerfid-commits"&gt;&amp;#85;nsubscribe&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://mail.ow2.org/wws/info/aspirerfid-commits"&gt;&amp;#83;ympa&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGrowingthecommunity"&gt;Growing the community&lt;/span&gt;&lt;/h3&gt; 
+Contact us if you want to use, improve and/or contribute the Aspire RFID project.
+</renderedcontent>
+</xwikidoc>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>XWikiUsers</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator></creator>
+<author>XWiki.superadmin</author>
+<contentAuthor>XWiki.superadmin</contentAuthor>
+<creationDate>1117547382000</creationDate>
+<date>1216807812000</date>
+<contentUpdateDate>1216807812000</contentUpdateDate>
+<version>1.4</version>
+<title></title>
+<template></template>
+<class>
+<name>XWiki.XWikiUsers</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<first_name>
+<name>first_name</name>
+<prettyName>First Name</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>1</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</first_name>
+<last_name>
+<name>last_name</name>
+<prettyName>Last Name</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>2</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</last_name>
+<email>
+<name>email</name>
+<prettyName>e-Mail</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>3</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</email>
+<password>
+<name>password</name>
+<prettyName>Password</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>10</size>
+<number>4</number>
+<classType>com.xpn.xwiki.objects.classes.PasswordClass</classType>
+</password>
+<validkey>
+<name>validkey</name>
+<prettyName>Validation Key</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>10</size>
+<number>5</number>
+<classType>com.xpn.xwiki.objects.classes.PasswordClass</classType>
+</validkey>
+<active>
+<name>active</name>
+<prettyName>Active</prettyName>
+<unmodifiable>0</unmodifiable>
+<number>6</number>
+<displayType>active</displayType>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</active>
+<default_language>
+<name>default_language</name>
+<prettyName>Default Language</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>7</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</default_language>
+<company>
+<name>company</name>
+<prettyName>Company</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>8</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</company>
+<blog>
+<name>blog</name>
+<prettyName>Blog</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>9</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</blog>
+<blogfeed>
+<name>blogfeed</name>
+<prettyName>Blog Feed</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>60</size>
+<number>10</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</blogfeed>
+<comment>
+<name>comment</name>
+<prettyName>Comment</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>40</size>
+<rows>5</rows>
+<number>11</number>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</comment>
+<imtype>
+<name>imtype</name>
+<prettyName>IM Type</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<size>1</size>
+<number>12</number>
+<values>---|AIM|Yahoo|Jabber|MSN|Skype|ICQ</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</imtype>
+<imaccount>
+<name>imaccount</name>
+<prettyName>imaccount</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>13</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</imaccount>
+<editor>
+<name>editor</name>
+<prettyName>Default Editor</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<size>1</size>
+<values>---|Text|Wysiwyg</values>
+<number>14</number>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</editor>
+<skin>
+<name>skin</name>
+<prettyName>skin</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>15</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</skin>
+<pageWidth>
+<name>pageWidth</name>
+<prettyName>Preferred page width</prettyName>
+<unmodifiable>0</unmodifiable>
+<relationalStorage>0</relationalStorage>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<size>1</size>
+<values>default|640|800|1024|1280|1600</values>
+<number>16</number>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</pageWidth>
+<avatar>
+<name>avatar</name>
+<prettyName>Avatar</prettyName>
+<unmodifiable>0</unmodifiable>
+<size>30</size>
+<number>17</number>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</avatar>
+</class>
+<content>1 Users
+
+   * [RegisterNewUser]
+
+1 Current Users
+#set ($sql = ", BaseObject as obj where obj.name=${xwiki.getFullNameSQL()} and obj.className='XWiki.XWikiUsers'")
+#foreach ($item in $xwiki.searchDocuments($sql))
+   * [$item]
+#end
+
+1 Admin
+
+   * [XWikiUserTemplate]
+   * [XWikiUserSheet]</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HUsers"&gt;Users&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/RegisterNewUser"&gt;Register New User&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 class="heading-1"&gt;&lt;span id="HCurrentUsers"&gt;Current Users&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/test"&gt;test&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 class="heading-1"&gt;&lt;span id="HAdmin"&gt;Admin&lt;/span&gt;&lt;/h2&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiUserTemplate"&gt;XWiki User Template&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/XWiki/XWikiUserSheet"&gt;XWiki User Sheet&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

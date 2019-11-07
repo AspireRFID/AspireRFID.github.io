@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/viewrev/Main/Contributors?xpage=code& by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:20:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Contributors
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../../view/Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.value(ASTReference.java:327)
+	at org.apache.velocity.runtime.parser.node.ASTExpression.value(ASTExpression.java:51)
+	at org.apache.velocity.runtime.parser.node.ASTSetDirective.render(ASTSetDirective.java:95)
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:55)
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:70)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+
+</pre></div>
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_Contributors.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="../../view/Main/Contributorsd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../view/Main/Contributorscede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="../../view/Main/Contributorsd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../../view/Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikieditcontent">
+<textarea id='content' rows='70' name='content' cols='80'>1 Aspire RFID contributors page
+
+Aspire RFID is an open source project developed within the OW2 consortium. The contributions are initially funded by the [European Community FP7&#62;http://cordis.europa.eu/fp7/home_en.html] with the [ASPIRE project&#62;http://www.fp7-aspire.eu]. This page lists all the contributors to the project.
+
+Please [contact&#62;mailto:aspire@ow2.org] us if someone is missing.
+
+1.1 Organizations
+
+
+{table}
+|
+{image:ait.gif|80|}&#38;nbsp;|[Athens Information Technology&#62;http://www.ait.gr/] (AIT) has been recently founded with the vision of becoming a world class education and research centre. As a first step AIT signed an agreement with the Carnegie Mellon University (CMU) and the Information Networking Institute (INI) of Carnegie Mellon to set up and operate a joint Carnegie Mellon-AIT Master in Information Networking (MSIN) Program. AIT has strong relationships with the global IT and networking industry, as well as with the major IT and telecom industries in Greece. AIT is closely collaborating with the largest Greek IT and telecom industry (INTRACOM S.A), towards exploiting and disseminating research results. The Autonomic and Grid Computing Group of the AIT has up-to-date significant research contributions in several aspects of pervasive computing, which it intends to enhance through its participation in ASPIRE and AspireRfid projects.
+{image:ujf.jpg|80|}{image:lig.jpg|80|}&#38;nbsp;|[Université Joseph Fourier - Grenoble 1&#62;http://www.ujf-grenoble.fr/37654972/1/fiche___pagelibre/] (UJF) is the initial contributor of the Aspire RFID open source middleware. UJF is one of Europe's leading universities. It offers its students high-quality education, providing them with a passport to the professional world. The [Laboratory of Informatics of Grenoble&#62;http://www.liglab.fr/?lang=en] (LIG) is a research unit whose funding partners are CNRS, INRIA, Grenoble INP, UJF and UPMF. It was created on January 1, 2007. It gathers 500 researchers, lecturers-researchers, students and postdocs, technical and administrative staff members. Research activities are structured around 24 research groups.
+{image:inria.PNG|80|}&#38;nbsp;|[INRIA&#62;http://www.inria.fr/index.en.html], the French national institute for research in computer science and control, operating under the dual authority of the Ministry of Research and the Ministry of Industry, is dedicated to fundamental and applied research in information and communication science and technology (ICST). The Institute also plays a major role in technology transfer by fostering training through research, diffusion of scientific and technical information, development, as well as providing expert advice and participating in international programs. INRIA maintains important international relations and exchanges. In Europe, INRIA is a member of ERCIM which brings together research institutes from 19 European countries. INRIA is a partner in about 120 FP6 actions and 40 FP7 actions, mainly in the ICST field. INRIA also collaborates with numerous scientific and academic institutions abroad (joint laboratories such as LIAMA, associated research teams, training and internship programs).
+
+{table}
+
+
+
+1.1 People
+1.1.1 UJF
+
+
+* Johann BOURCIER (UJF PhD 2006-)
+* Gilles BROUSSILLON (UJF internship 2006)
+* [Didier DONSEZ&#62;http://membres-liglab.imag.fr/donsez/] (UJF professor 2004-)
+* Clément ESCOFFIER (UJF PhD 2006-)
+* Kiev GAMA (UJF PhD student 2008-)
+* Andrés GOMEZ CASANOVA (UJF Internship 2008)
+* Thomas LEVEQUE (UJF student 2008)
+* Cristina MARIN (UJF PhD 2004-2006)
+* Mikaël OUILLON (UJF Internship 2006)
+* [Gabriel PEDRAZA&#62;http://www-adele.imag.fr/membres/Gabriel.Pedraza.html] (UJF PhD 2009-)
+* Maroula PERISANIDI (UJF Internship 2008)
+* Anne ROBERT (UJF Internship 2006)
+* Walter RUDAMETKIN (UJF 2007-)
+* Guillaume SURREL (UJF Internship 2007)
+* Lionel TOUSEAU (UJF PhD 2007-)
+* Guillaume VAUDAUX-RUTH  (UJF Internship 2007)
+* Ting ZHANG (UJF Internship 2006)
+* Eric SIMON (UJF PhD student 2008-)
+* Thomas CALMANT (UJF Internship 2010)
+* Joris Brémond (UJF Student 2010)
+* Jean-François Knoepfli (UJF Student 2010)
+* Mathieu Rivoalen (UJF Student 2010)
+* Raphael Tronc (UJF Student 2010)
+
+But also
+* Aurélien PRALONG (UJF alumni 2008)
+* Jonathan NALY    UJF alumni 2009, UE PM2M
+* Yves RAGOT    UJF alumni 2009, UE PM2M
+* Wahiba    GABLI    UJF alumni 2009, UE PM2M
+* Jean-François MARQUET    UJF alumni 2009, UE PM2M
+* Dominique    MONGELLI    UJF alumni 2009, UE PM2M
+* Pierre    PEGOUD    UJF alumni 2009, UE PM2M
+* El Mehdi DAMOU    UJF alumni 2009, UE PM2M
+* Romain GOMEZ    UJF alumni 2009, UE PM2M
+* Clément DESCHAMPS    UJF Master 2009, UE PM2M
+* Daniel LOVERA    UJF alumni 2009, UE PM2M 
+* ...
+
+1.1.1 AIT
+
+
+* [Nikos KEFALAKIS&#62;http://www.linkedin.com/in/kefnik]([ait&#62;http://www.ait.edu.gr/ait_web_site/Researcher/nkef/kefalakis.html])&#60;a href='https://www.ohloh.net/accounts/25727?ref=Detailed'&#62;, &#60;a href=&#34;mailto:nkef@ait.edu.gr&#34;&#62;Email Me&#60;/a&#62;
+* [Nektarios LEONTIADIS&#62;http://www.leontiadis.info]
+* [John SOLDATOS&#62;http://www.linkedin.com/pub/3/591/92A]([ait&#62;http://www.ait.gr/faculty/J_Soldatos.asp])
+* Vaso Koleti
+* [Yongming Luo&#62;http://www.andrew.cmu.edu/user/yongmin1/], &#60;a href=&#34;mailto:yluo@ait.edu.gr&#34;&#62;Email Me&#60;/a&#62;
+* Eleftherios Karageorgiou
+* Efstathios MERTIKAS
+* [Konstantinos Mourtzoukos&#62;http://www.linkedin.com/in/kmour], &#60;a href=&#34;mailto:komo@ait.edu.gr&#34;&#62;Email Me&#60;/a&#62;
+* [Nikolaos Konstantinou&#62;http://www.ait.edu.gr/ait_web_site/Researcher/nkons/Konstantinou.html]
+* Vassilios MYLONAKIS
+
+
+1.1.1 INRIA
+
+
+* Nathalie Mitton
+* [Lei Zhang&#62;http://leizhang1.wordpress.com/]
+* David Simplot Ryl
+* Loic Schmidt
+* Roudy Dagher
+* Lionel Seinturier
+* Romain Rouvoy
+* Julien Ellart
+
+1.1.1 Individual
+
+
+* [Mikaël DESERTOT&#62;http://www.univ-valenciennes.fr/LAMIH-intra/site/commun/membres/page_perso.php?perso=desertot_mikael&#38;langue=lang_fr] (UJF 2004-2006, UVHC 2008-)
+* [Sébastien JEAN&#62;http://sebastien.jean.perso.neuf.fr/] (UPMF 2008-)
+* François FORNACIARI (UJF Internship 2007, Bull SAS 2008-)
+* Levent Gurgen (NII poctdoctoral position 2008)
+
+
+
+
+1.1 Detailed Modules Design/Implementation Responsible
+
+{table}
+*Module* | *Lead Institution* | *Design Lead* | *Implementation Lead*
+AspireRFID Architecture | AIT, SENSAP, UJF, INRIA, AAU  | Nikos Kefalakis, John Soldatos, Panos Dimitropoulos,Didier Donsez, ...  |
+*TDT*
+Tag Data Translation | Fosstrak|  |
+Extended Tag Data Translation | INRIA | Lei Zhang, Loic Schmidt | Lei Zhang, Loic Schmidt
+*Hardware Abstraction Layer*
+   LLRP Interface | AIT | Nikos Kefalakis | Nikos Kefalakis
+   Intermec BRI Interface | AIT | Nikos Kefalakis, Nektarios Leondiadis | Nikos Kefalakis, Nektarios Leondiadis
+*Reader Proxies* |  |  |
+   Reader Core | Fosstrak |  |
+   Reader Core OSGI Deployment | AIT | Nektarios Leondiadis  | Nektarios Leondiadis 
+   Embedded light RP | INRIA | Roudy Dagher | Roudy Dagher
+*F&#38;C Server (ALE)* |
+   F&#38;C Server (ALE)Core| Fosstrak|  |
+   Extended TDT ALE | INRIA | Lei Zhang  | Lei Zhang
+   Deploy F&#38;C on OSGi | UJF |  |
+   Embedded ALE | INRIA | Roudy Dagher | Roudy Dagher
+*Business Event Generator* | AIT | Nikos Kefalakis | Nikos Kefalakis
+*Adaptive color based RFID reader Anti-collision* | INRIA | Nathalie Mitton | Nathalie Mitton
+*EPCIS Repository*
+   EPCIS Repository Core | Fosstrak |  | 
+   Master Data Capture I/F | AIT | Nikos Kefalakis | Nikos Kefalakis
+*Connector* | AIT | Nektarios Leondiadis, Nikos Kefalakis, John Soldatos | Nektarios Leondiadis, Nikos Kefalakis
+*Programmable Engine*| AIT | Nikos Kefalakis | Nikos Kefalakis 
+*APDL* | AIT | Nikos Kefalakis | Nikos Kefalakis
+*AspireRfid IDE*
+   AspireRfidIDE Core | AIT | Nikos Kefalakis | Nikos Kefalakis
+   ALE Server Configurator | AIT | Vaso Koleti, Nikos Kefalakis, Nektarios Leondiadis | Vaso Koleti, Nikos Kefalakis
+   Business Event Generator Configurator | AIT | Nikos Kefalakis | Nikos Kefalakis 
+   Physical Reader Configurator| AIT | Nektarios Leondiadis | Nektarios Leondiadis
+   EC-Spec Editor | AIT | Vaso Koleti, Nikos Kefalakis | Vaso Koleti, Nikos Kefalakis
+   LR-Spec Editor | AIT | Vaso Koleti, Nikos Kefalakis | Vaso Koleti, Nikos Kefalakis
+   Master Data Editor | AIT | Efstathios Mertikas, Nikos Kefalakis | Efstathios Mertikas, Nikos Kefalakis
+   Business Loc. GMF Editor| AIT | Eleftherios Karageorgiou, Nikolaos Kefalakis | Eleftherios Karageorgiou
+   TCP Message Capturer | AIT | Nikos Kefalakis | Nikos Kefalakis
+   BPWM Editor | AIT | Nikos Kefalakis, Yongming Luo, Eleftherios Karageorgiou | Yongming Luo, Eleftherios Karageorgiou
+   Prog. Engine Configurator| AIT | Nikos Kefalakis | Nikos Kefalakis
+   Connector Configurator | - | - |
+   Privacy Framework Tool | AAU, OSI |  |
+*OSGi Bundles*
+   ProximaRF Desktop USB reader  | UJF |  |
+   TagSys Medio Serial reader  | UJF |  |
+   ACR 122 USB reader  | UJF |  |
+   OneWire reader  | UJF |  |
+   Phidget RFID Reader | UJF |  |
+*Standalone Tools*
+   Business Intelligent Tool| AIT | to be committed | to be committed 
+   Automatic RFID Reader Configuration &#38; Management | AIT | Nikolaos Kefalakis, Georgios Katsis | Georgios Katsis
+   Light ALECC| INRIA | Lei Zhang | Lei Zhang
+*Standalone Testing Tools*
+   Tag Generator | INRIA | Roudy Daghe |Roudy Daghe 
+   Tag Searcher | INRIA | Roudy Daghe |Roudy Daghe 
+   TCP Message Capturer| Fosstrak |  |  
+*Demos*
+   Simple F&#38;C test with the Simulator Reader device | AIT | Nikos Kefalakis |
+   Warehouse Packet Delivery (3 Tier Use) | AIT | Nikos Kefalakis | Nikos Kefalakis
+   Warehouse Packet Delivery (6 Tier Use) | AIT | Nikos Kefalakis | Nikos Kefalakis, Nektarios Leondiadis
+   Pick and Pack Demo| AIT | Nikolaos Konstantinou, Nikos Kefalakis| Nikolaos Konstantinou, Nikos Kefalakis
+   RFID management System | INRIA | Lei Zhang | Lei Zhang  
+{table}
+
+
+
+
+
+
+1.1 Gallery
+
+
+{image:maroulaandres2008.jpg|450}
+
+
+Maroula and Andres (2008)
+
+
+{image:aconit2008-walter didier kiev2.jpg|450}
+
+
+Walter, Didier and Kiev demonstrating AspireRFID @ La Fête de la Science 2008, Bastille de Grenoble, France
+
+&#60;a href=&#34;http://www.linkedin.com/in/kefnik&#34;&#62;{image:Nikos-review1.jpg|500}&#60;/a&#62;
+
+{image:didier+john-review1.jpg|500}
+
+Nikos, Didier and John demonstrating AspireRFID @ Aspire Review Year 1, Brussels
+
+
+{image:http://wiki.aspire.ow2.org/xwiki/bin/download/Photos/AspireDemoAtJavaOne2009/aspireatjavaone2009-4-withFrancois.jpg|500}
+François demonstrating AspireRFID @ JavaOne 2009, San Francisco.
+
+1.1 Logo
+
+
+The AspireRFID logo was designed by Mrs. Mirto Nassiopoulou (AIT).</textarea>
+</div>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<a href="#" onclick="document.getElementById('xwikierror1').style.display='block'; return false;">Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : </a><div id="xwikierror1" style="display: none;"><pre>
+Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+com.xpn.xwiki.XWikiException: Error number 4001 in 4: Error while parsing velocity page 
+Wrapped Exception: Invocation of method 'getAttachmentURL' in  class com.xpn.xwiki.api.Document threw exception class java.lang.NullPointerException : 
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:152)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+	at org.apache.struts.action.RequestProcessor.processActionPerform(RequestProcessor.java:431)
+	at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:236)
+	at org.apache.struts.action.ActionServlet.process(ActionServlet.java:1196)
+	at org.apache.struts.action.ActionServlet.doGet(ActionServlet.java:414)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:689)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:252)
+
+
+Wrapped Exception:
+
+java.lang.NullPointerException: 
+	at com.xpn.xwiki.web.XWikiServletURLFactory.createAttachmentURL(XWikiServletURLFactory.java:286)
+	at com.xpn.xwiki.doc.XWikiDocument.getAttachmentURL(XWikiDocument.java:505)
+	at com.xpn.xwiki.api.Document.getAttachmentURL(Document.java:216)
+	at sun.reflect.GeneratedMethodAccessor65.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1039)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:991)
+	at com.xpn.xwiki.api.XWiki.parseTemplate(XWiki.java:310)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:585)
+	at org.apache.velocity.util.introspection.UberspectImpl$VelMethodImpl.invoke(UberspectImpl.java:267)
+	at org.apache.velocity.runtime.parser.node.ASTMethod.execute(ASTMethod.java:197)
+	at org.apache.velocity.runtime.parser.node.ASTReference.execute(ASTReference.java:175)
+	at org.apache.velocity.runtime.parser.node.ASTReference.render(ASTReference.java:220)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at org.apache.velocity.runtime.directive.VelocimacroProxy.render(VelocimacroProxy.java:172)
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:114)
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:230)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:244)
+	at com.xpn.xwiki.render.XWikiVelocityRenderer.evaluate(XWikiVelocityRenderer.java:146)
+	at com.xpn.xwiki.XWiki.parseTemplate(XWiki.java:1017)
+	at com.xpn.xwiki.web.Utils.parseTemplate(Utils.java:98)
+	at com.xpn.xwiki.web.XWikiAction.execute(XWikiAction.java:155)
+
+</pre></div>

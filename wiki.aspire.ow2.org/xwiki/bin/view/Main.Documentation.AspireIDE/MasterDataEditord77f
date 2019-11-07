@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>MasterDataEditor</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.AspireIDE</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1233321754000</creationDate>
+<date>1279650165000</date>
+<contentUpdateDate>1279650165000</contentUpdateDate>
+<version>1.16</version>
+<title>Master Data Editor Plug-in</title>
+<template></template>
+<attachment>
+<filename>MasterDataEditor(BizLocation).jpg</filename>
+<filesize>84289</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234791906000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>MasterDataEditor(disposition).jpg</filename>
+<filesize>83208</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234791970000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>MasterDataEditor(transactions).jpg</filename>
+<filesize>82116</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234792070000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Master Data Editor Plug-in
+
+----
+#toc("" "" "true")
+----
+1.1 Introduction
+
+The Master Data Editor (with support for Elementary Business Process Description) enables users and/or consultants to edit enterprise data (Master Data) including information about the company’s location, its business locations, read points, as well as its business processes. The Master Data Editor (MDE) can be used for populating and managing vocabularies in the Master Data. Organizations can use this tool for the proper population of the Master Data without the need to know the associations of the Master Data vocabularies (Database Schema). All the relations among the RFID data and the restrictions are delegated to be the MDE’s responsibility.
+
+The MDE serves as an interface that is used to create the EPCIS repository master data and edit them as needed. Using the MDE users’ can populate the EPCIS vocabularies and store all of the necessary information needed to provide business context to RFID data. The data are manipulated in an intuitive manner, and the user can view how they are related. Our MDE implementation uses the EPC EPCIS 1.0.1 specifications query interface provided by the [Fosstrak&gt;http://www.fosstrak.org/] project and the AspireRFID Master Data capture interface in order to access the EPCIS repository. As already outlined MDE also complements [BEG&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG] since MDE guides users to store all the data BEG needs in order to populate properly the fields of the various EPCIS events.
+
+Using the MDE the user has the ability to define a process, and assign attributes that are descriptive to it and convey useful information about it. Additionally the user can define all of the events that compose the process. The events are treated as transactions and their EPC is stored in the business transaction vocabulary. In the attribute vocabulary for the transactions all of the related information for the events and the transactions is stored in the form of attribute-value pairs. The transactions are associated with the events through the attributes vocabulary. In the Figure below we see that a user has created a process for supplying and has assigned certain information to it.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28disposition%29.jpg"&gt;{image:MasterDataEditor%28disposition%29.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+This information (attributes) can be modified or removed as needed, or even new information can be added. As an example, in the figure below, the user has associated an Object Event with this process and has provided all of the necessary information.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28transactions%29.jpg"&gt;{image:MasterDataEditor%28transactions%29.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+A user has the ability to populate all the master data vocabularies using the corresponding tab, i.e. the Disposition vocabulary, the Business Step vocabulary, the Readers vocabulary, the Transaction Type vocabulary and the Business Location vocabulary. For all cases, the user can add a new element, associate attributes with it or edit an existing element, searching for it either among all of the existing elements or by the EPC. In the business location tag an organization can accurately describe all of the locations it owns in a hierarchical manner. For example has assuming that an organization has two warehouses, and two sections within the first warehouse, this can be reflected in the database and represented visually to the user which can add a location either as a single entity or as part of another location and associate attributes to it. 
+
+A new concept introduced in the MDE is the ability of the user to declare a location as no longer active. A user can mark a location as “deprecated” and this location and all of its sub locations will be defined as inactive as well in the database as we can see in the Figure below below.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28BizLocation%29.jpg"&gt;{image:MasterDataEditor%28BizLocation%29.jpg|320}&lt;/a&gt;
+&lt;/center&gt;
+
+The reason for such a feature is that as you have “described” your company to the system and work this way for some time a specific business location will be inevitably be bind with specific captured EPCIS Events. If later on the structure of the company enforce for a location to physically be removed, if we also delete it from the database, the business location information of the already captured EPCIS events related with the specific location will be lost. So the notion of deprecation was created so as in spite the fact that the information is no longer used will not be lost. This is accomplished by adding an extra Boolean attribute at the business location, and this is allowed by the standard since it does not impose any restrictions on how to use the various attributes, which we call deprecated (urn:epcglobal:epcis:mda:deprecated). Also, a user can change the state and “un-deprecate” a location if necessary.
+
+
+
+
+
+1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* [EPCIS Repository&gt;Main.Documentation.EpcisRepository]
+* Java 1.6
+* [Eclipse 3.4&gt; http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment plug-ins and [Subversive plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive]) (required only for developers)
+
+1.1 Users Guide
+
+1.1.1 Download &amp; Run
+You can download the aspireRfidIDE RCP application with the aspireRfidIde-MasterDataEditor plug-in from the [AspireRFID forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIDE(version).zip” under "AspireRFID IDE" package.
+Just decompress it and hit the “aspireRfidIDE” executable.
+
+1.1.1 Configuration
+Under Construction
+1.1 Developers Guide
+Master Data Editor plug-in is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “[AspireRfidIDECore&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]”.
+
+1.1.1 Acquiring the code
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge [SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive] and by using the following URL at the window that appears: 
+svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-MasterDataEditor/
+* right click the repository that have been just created and hit the check out button
+* check the aspireRfidIde-beg project on the list and hit ok
+
+1.1.1 Running the Project
+
+For running AspireRfidIDE with the aspireRfidIde-MasterDataEditor Plug-in:
+* Create an aspireRfidIDE project (unless you already have created one)
+* Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product
+* At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product
+* At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde” and “org.ow2.aspirerfid.ide.masterdata” and then hit the Add required Plug-ins button.
+* Hit apply
+* Now you are ready to run the application.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HMasterDataEditorPlugin"&gt;Master Data Editor Plug-in&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRequirements"&gt;2 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;3 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload26Run"&gt;3.1 Download &amp; Run&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;3.2 Configuration&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;4 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;4.1 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRunningtheProject"&gt;4.2 Running the Project&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The Master Data Editor (with support for Elementary Business Process Description) enables users and/or consultants to edit enterprise data (Master Data) including information about the company’s location, its business locations, read points, as well as its business processes. The Master Data Editor (MDE) can be used for populating and managing vocabularies in the Master Data. Organizations can use this tool for the proper population of the Master Data without the need to know the associations of the Master Data vocabularies (Database Schema). All the relations among the RFID data and the restrictions are delegated to be the MDE’s responsibility.&lt;p class="paragraph"/&gt;The MDE serves as an interface that is used to create the EPCIS repository master data and edit them as needed. Using the MDE users’ can populate the EPCIS vocabularies and store all of the necessary information needed to provide business context to RFID data. The data are manipulated in an intuitive manner, and the user can view how they are related. Our MDE implementation uses the EPC EPCIS 1.0.1 specifications query interface provided by the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.fosstrak.org/"&gt;&amp;#70;osstrak&lt;/a&gt;&lt;/span&gt; project and the AspireRFID Master Data capture interface in order to access the EPCIS repository. As already outlined MDE also complements &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG"&gt;&amp;#66;EG&lt;/a&gt;&lt;/span&gt; since MDE guides users to store all the data BEG needs in order to populate properly the fields of the various EPCIS events.&lt;p class="paragraph"/&gt;Using the MDE the user has the ability to define a process, and assign attributes that are descriptive to it and convey useful information about it. Additionally the user can define all of the events that compose the process. The events are treated as transactions and their EPC is stored in the business transaction vocabulary. In the attribute vocabulary for the transactions all of the related information for the events and the transactions is stored in the form of attribute-value pairs. The transactions are associated with the events through the attributes vocabulary. In the Figure below we see that a user has created a process for supplying and has assigned certain information to it.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28disposition%29.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%2528disposition%2529.jpg" height="320" alt="MasterDataEditor%28disposition%29.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;This information (attributes) can be modified or removed as needed, or even new information can be added. As an example, in the figure below, the user has associated an Object Event with this process and has provided all of the necessary information.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28transactions%29.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%2528transactions%2529.jpg" height="320" alt="MasterDataEditor%28transactions%29.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;A user has the ability to populate all the master data vocabularies using the corresponding tab, i.e. the Disposition vocabulary, the Business Step vocabulary, the Readers vocabulary, the Transaction Type vocabulary and the Business Location vocabulary. For all cases, the user can add a new element, associate attributes with it or edit an existing element, searching for it either among all of the existing elements or by the EPC. In the business location tag an organization can accurately describe all of the locations it owns in a hierarchical manner. For example has assuming that an organization has two warehouses, and two sections within the first warehouse, this can be reflected in the database and represented visually to the user which can add a location either as a single entity or as part of another location and associate attributes to it.&lt;p class="paragraph"/&gt;A new concept introduced in the MDE is the ability of the user to declare a location as no longer active. A user can mark a location as “deprecated” and this location and all of its sub locations will be defined as inactive as well in the database as we can see in the Figure below below.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%28BizLocation%29.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/MasterDataEditor/MasterDataEditor%2528BizLocation%2529.jpg" height="320" alt="MasterDataEditor%28BizLocation%29.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;The reason for such a feature is that as you have “described” your company to the system and work this way for some time a specific business location will be inevitably be bind with specific captured EPCIS Events. If later on the structure of the company enforce for a location to physically be removed, if we also delete it from the database, the business location information of the already captured EPCIS events related with the specific location will be lost. So the notion of deprecation was created so as in spite the fact that the information is no longer used will not be lost. This is accomplished by adding an extra Boolean attribute at the business location, and this is allowed by the standard since it does not impose any restrictions on how to use the various attributes, which we call deprecated (urn:epcglobal:epcis:mda:deprecated). Also, a user can change the state and “un-deprecate” a location if necessary.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;EPCIS Repository&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#69;clipse 3.4&lt;/a&gt;&lt;/span&gt; and above (with RCP/Plug-in Development Environment plug-ins and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#83;ubversive plug-in&lt;/a&gt;&lt;/span&gt;) (required only for developers)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26Run"&gt;Download &amp; Run&lt;/span&gt;&lt;/h4&gt; 
+You can download the aspireRfidIDE RCP application with the aspireRfidIde-MasterDataEditor plug-in from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#65;spireRFID forge&lt;/a&gt;&lt;/span&gt; named “AspireRfidIDE(version).zip” under "AspireRFID IDE" package.
+Just decompress it and hit the “aspireRfidIDE” executable.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h4&gt; 
+Under Construction
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt; 
+Master Data Editor plug-in is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;AspireRfidIDECore&lt;/a&gt;&lt;/span&gt;”.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt; 
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#83;VN&lt;/a&gt;&lt;/span&gt;. 
+Check it out by:
+&lt;ul class="star"&gt;
+&lt;li&gt;hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#112;lug-in&lt;/a&gt;&lt;/span&gt; and by using the following URL at the window that appears:&lt;/li&gt;
+&lt;/ul&gt;svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-MasterDataEditor/
+&lt;ul class="star"&gt;
+&lt;li&gt;right click the repository that have been just created and hit the check out button&lt;/li&gt;
+&lt;li&gt;check the aspireRfidIde-beg project on the list and hit ok&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRunningtheProject"&gt;Running the Project&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For running AspireRfidIDE with the aspireRfidIde-MasterDataEditor Plug-in:
+&lt;ul class="star"&gt;
+&lt;li&gt;Create an aspireRfidIDE project (unless you already have created one)&lt;/li&gt;
+&lt;li&gt;Go to the aspireRfidIde project Run Configurations (Run -&gt; Run Configurations…) and at the list choose Eclipse Application -&gt; aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the “aspireRfidIde” and “org.ow2.aspirerfid.ide.masterdata” and then hit the Add required Plug-ins button.&lt;/li&gt;
+&lt;li&gt;Hit apply&lt;/li&gt;
+&lt;li&gt;Now you are ready to run the application.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

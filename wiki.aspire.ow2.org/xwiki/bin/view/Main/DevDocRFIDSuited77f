@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>DevDocRFIDSuite</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.touseau</author>
+<contentAuthor>xwiki:XWiki.touseau</contentAuthor>
+<creationDate>1223728538000</creationDate>
+<date>1234446661000</date>
+<contentUpdateDate>1234446661000</contentUpdateDate>
+<version>1.78</version>
+<title>RFID Suite branch - Developer Documentation</title>
+<template></template>
+<attachment>
+<filename>RFIDSuite-global-design.pdf</filename>
+<filesize>583690</filesize>
+<author>xwiki:XWiki.donsez</author>
+<date>1224884476000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 RFID Suite branch - Developer Documentation
+
+
+This document is destinated to developers who want to extend the RFID Suite branch.
+
+Cote to the [user documentation&gt;Main.Documentation#HRFIDSuite]
+
+The current version is the Tag ~~rfidsuite-200809~~
+
+
+----
+#toc("" "" "")
+----
+
+1.1 Developer Skill (TDB)
+
+
+* [OSGi&gt;http://www.osgi.org/javadoc/r4v41/index.html] and [iPOJO&gt;http://felix.apache.org/site/ipojo.html] for edges and premises development
+* JavaEE for EPCIS and ONS development
+* GWT for Management Console development
+
+1.1 Architecture (TBD)
+
+
+The RFID Suite' architecture is based on the EPS (Edge-Premise-Server) model.
+
+
+* Edges are directly connected to readers and sensors (and actuators) using wired (USB,Serial,OneWire,Ethernet...) or wireless (Bluetooth,ZigBee,IrDA) communications.
+* Each Premise clusters a set of Edges to provide security and persistence facilities. It filters and relays the event flow to the server. Generally, there is one premise per warehouse or store.
+* The Server collects the event flows from the Premises.
+
+
+In the RFID Suite, edges communicate with the premises with connectors and premises communicate with the server(s) with connectors.
+
+
+In some situation, edges and server can be merged in one computer.
+
+1.1 Global Design
+
+The global design of the RFID Suite is discribed in this {attach:document|file=RFIDSuite-global-design.pdf}.
+
+1.1 JMX convention for the RFIDSuite MBeans
+1.1.1 ObjectNames
+MBeans objectnames must follow the [naming conventions&gt;http://java.sun.com/javase/technologies/core/mntr-mgmt/javamanagement/best-practices.jsp] recommended by Sun .
+
+The current convention is 
+* ~~rfid:type=reader~~ for readers
+* ~~rfid:type=sensor~~ for sensors
+* ~~rfid:type=listener~~ for listeners
+
+In the future, the domain will become ~~org.ow2.aspirerfid~~
+
+Remark: the OW2 Aspire project could propose a set of standard JMX object names to EPC Global as  aaddition to the RM (Reader Management) specification (for instance a ~~org.epcglobalinc:type=reader~~).
+
+1.1.1 Attributes
+TODO
+
+1.1.1 Operations
+TODO
+
+1.1 Readers, Sensors and Actuators Documentation
+
+
+The documentation to configure and improve the readers and sensors is described in this [document&gt;ReaderDocRFIDSuite].
+
+1.1 Project sources organization
+
+
+{table}
+Directory&amp;nbsp;|Contains
+[branches/rfidsuite&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite]&amp;nbsp;|the root
+[branches/rfidsuite/applications&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/applications]|contains the concrete applications, such as the Museum
+[branches/rfidsuite/rfidsuite&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite]|contains the core of the RIFD suite
+[branches/rfidsuite/rfidsuite/bundles&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/bundles]|contains the bundles deployed on the edges and on the premises
+[branches/rfidsuite/rfidsuite/common&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/common]|contains the necessary elements to deploy any component of the RFID Suite
+[branches/rfidsuite/rfidsuite/deployment&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/deployment]|contains the components to deploy and to install the RFID Suite
+[branches/rfidsuite/rfidsuite/mailet&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/mailet]|contains the elements to use a mail server
+[branches/rfidsuite/rfidsuite/manuals&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/manuals]|contains the intallation, administration and user manuals.
+[branches/rfidsuite/rfidsuite/midlet&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet]|contains the architecture to use NFC in an smartphone
+[branches/rfidsuite/rfidsuite/server&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server]|contains the implementation of the JEE part of the RFID Suite
+[branches/rfidsuite/rfidsuite/server/epcis&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis]|contains the EPCIS EAR 
+[branches/rfidsuite/rfidsuite/server/ons&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons]|contains the ONS EAR
+[branches/rfidsuite/readers&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers]|contains the bundles of the readers deployed on the edges
+[branches/rfidsuite/sensors&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors]|contains the bundles of the sensors deployed on the edges
+[branches/rfidsuite/actuators&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators]|contains the drivers of actuators (TBD)
+[branches/rfidsuite/printers&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/printers]|contains the drivers of RFID printers/encoders (TBD)
+[branches/rfidsuite/installers&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/installers]|contains the installers of the demo packs (TBD) 
+{table}
+
+
+Extending the RFID Suite
+
+1.1.1 How to develop a new reader
+
+
+What is a reader ? TBD
+
+
+A reader is a iPOJO component packaged in an OSGi bundle.
+
+
+The component requires a [org.osgi.service.event.EventAdmin&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html] service to send [org.osgi.service.event.Event&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/Event.html] object containing the ALE event.
+
+Here is an example of rfid event sent by a [fictive reader&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/bundles/fictive/] to the EventAdmin at the edge level:
+
+* topic: ~~org/ow2/aspirerfid/rfidtopic/rfid~~
+* with the following properties:
+** event.topics=org/ow2/aspirerfid/rfidtopic/rfid
+** publisher.instance.name=fictivereader
+** ~~rfid.readerguid~~=fictiveguid
+** ~~rfid.readername~~=fictive
+** ~~rfid.tagguid~~="357654321000001123456789"
+** ~~timestamp~~=1234444400859
+
+Events must be sent on topics matching "org/ow2/aspirerfid/rfidtopic/" in order to be included in ALE reports.
+
+The component provides a javax.management.DynamicMBean service for the Reader configuration (serial port, ethernet port, speed, antenna ...).
+
+
+Nota Bene:
+
+
+* The current (ie tags/rfidsuite-200809) version of the component provides a standard MBean service for the Reader Management but is currently moving to iPOJO JMX handler (see below).
+* The next version MUST use the iPOJO 1.2.0 [JMX handler&gt;http://felix.apache.org/site/ipojo-jmx-handler.html] to simplity the MBean definition
+* The next version MUST also use the iPOJO 1.2.0 [CM handler&gt;http://felix.apache.org/site/configuration-handler.html] to configure the reader
+* The next version MUST also use the iPOJO 1.2.0 [EA handler&gt;http://felix.apache.org/site/event-admin-handlers.html] to [post&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html#postEvent(org.osgi.service.event.Event)] events.
+
+1.1.1 How to develop a new sensor
+
+What is a sensor ? A sensor can measure physical data about a identified objects or about the environment in which objects are temporally or permanently. A modern sensor can provide the instaneous measurement. Moreover, it can log the history (limited or cyclic) of the measurements taken periodically. It can also log the history of threshold infringements.
+
+1.1.1.1 WireAdmin-based sensors
+In the current version (ie tags/rfidsuite-200809), the driver of a sensor is a iPOJO component packaged in an OSGi bundle. It is attached to the environnement of the indentified objects and collect only the instantaneous measurements.
+
+
+The component provides a [org.osgi.service.wireadmin.Producer&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/Producer.html] service to push/update sensor data. The type of sensor data (called [flavors&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/WireConstants.html#WIREADMIN_PRODUCER_FLAVORS] in the [WireAdmin&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/package-summary.html] terminology) is not limited to a list but it must be Comparable. Typical classes are [org.osgi.util.measurement.Measurement&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/util/measurement/package-summary.html],  [org.osgi.util.position.Position&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/util/position/package-summary.html], [javax.microedition.location.Location&gt;http://jcp.org/en/jsr/detail?id=179], java.lang.Double,  java.lang.Float,  java.lang.Long ...
+
+
+The Producer service should have the following registration properties : 
+* ~~application~~ represents the application (eg application=outdoor temperature)
+* ~~org.osgi.util.measurement.Unit~~ represents the SI unit if the flavor is org.osgi.util.measurement.Measurement (eg org.osgi.util.measurement.Unit=K)
+* ... other ??? TODO
+
+Warning : You'd better prefer SI (International System) units such as meter for distance, meter/second for speed, radian for angle, etc for your modelized data.
+
+Producers are automatically wired to consumers using the WireAdminBinder.
+
+Nota Bene:
+* The current version  (ie tags/rfidsuite-200809) of the component provides a javax.management.DynamicMBean service for the Sensor Management.
+* The next version MUST use the iPOJO 1.0.0 [JMX handler&gt;http://felix.apache.org/site/ipojo-jmx-handler.html] to simplity the MBean definition
+* The next version MUST also use the iPOJO 1.0.0 [CM handler&gt;http://felix.apache.org/site/configuration-handler.html] to configure the sensor
+
+1.1.1.1 MonitorAdmin-based sensors
+TODO
+
+[Monitor Admin&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/monitor/package-summary.html] 
+
+
+1.1.1.1 UPnP-based sensors
+TODO
+
+State variables of : 
+* Switch Power (Binary Light, Dimmable Light)
+* HVAC (Thermometer, Valve)
+* ...
+
+
+1.1.1 How to develop a new actuator
+
+The current version of the RFID Suite does not have actuators (except the NXT rotor and Nabaztag ears and choregraphy).
+
+Actuators can be represented
+* as an OSGi service,
+* as an OSGi UPnPDevice service (if the real device is an UPnP device),
+* as an OSGi DPWSDevice service (if the real device is a DPWS device).
+
+Suggestions relying on standards are welcomed.
+
+1.1.1.1 UPnP-based actuators
+TODO
+Actions of :
+* Switch Power (Binary Light, Dimmable Light)
+* HVAC (Valve)
+* AV (Media Renderer, Media Server)
+* ...
+
+
+1.1.1 How to develop a new printer
+
+
+A RFID printer can print texts, logos and barcodes on a label and in the same time it can encode (ie write custom data in the memory of) the tag inlaid in the label.
+
+
+The current version of the RFID Suite does not have RFID printers. Suggestions relying on standards are welcomed.
+
+1.1.1 How to customize a NFC MIDLet (TBD by Andres Gomez)
+
+
+New MIDLets can be developed by customizing the existing ones.
+
+
+see [branches/rfidsuite/rfidsuite/midlet&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet]
+
+1.1.1 How to develop a new filter
+
+
+What is a filter ? TBD
+
+1.1.1 How to develop a new connector
+
+
+What is a connector ? TBD
+
+1.1.1 How to secure connectors
+
+
+Secured communications can be acheived using SSL/TLS or SSH tunneling.
+
+
+* HTTP/SOAP connector : TBD
+* JMS/SOAP connector : TBD
+* SMTP/SOAP connector : TBD
+* XMPP connector : TBD
+
+
+Remark: the LDAP server (used for deployment) can be used for PK and certificates distribution.
+
+1.1.1 How to extend the EPCIS server Data Model
+
+The sources organization is:
+{table}
+Directory&amp;nbsp;|Contains
+[branches/rfidsuite/rfidsuite/server/epcis&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis]|contains the EPCIS EAR 
+{table}
+The EPCIS is developed using EJB3.0.
+
+
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+
+
+* EntityBeans
+** ...
+* StatelessSessionBeans (Business)
+** ...
+* StatelessSessionBeans (Facade)
+** ...
+* StatefulSessionBeans (Business)
+** ...
+* StatefulSessionBeans (Facade)
+** ...
+* MessageDrivenBeans
+** ...
+
+
+Remark: The EJB3.0 container (EasyBeans on JOnAS 4 and 5) maps automatically the EntityBeans to a relational database. A dump of the generated database schema is possible with FOSS or commercial tools such as MySqlAdmin (if your DBMS is MySql), sqlplus (if your DBMS is Oracle), JavaDB util (if you uses a JDBC driver to access to your DBMS), ... Most of the time, each entity is mapped on a SQL table.
+
+1.1.1 How to extend the Management Console
+
+
+The Management Console is developed using the GWT technology.
+
+
+New menu items can be added in branches/rfidsuite/rfidsuite/server/epcis/gwt/src/main/java/org/ow2/aspirerfid/app/epcis/client/widget/menu/Menu.java
+
+1.1.1 How to improve the ONS Server
+
+The sources organization is:
+{table}
+Directory&amp;nbsp;|Contains
+[branches/rfidsuite/rfidsuite/server/ons&gt;http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons]|contains the ONS EAR
+{table}
+
+
+The ONS is developed using EJB3.0.
+
+
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+
+
+* EntityBeans
+** ...
+* StatelessSessionBeans (Business)
+** ...
+* StatelessSessionBeans (Facade)
+** ...
+* StatefulSessionBeans (Business)
+** ...
+* StatefulSessionBeans (Facade)
+** ...
+* MessageDrivenBeans
+** ...
+
+
+The ONS provides only a WS-* based API.
+
+
+The DNS-based API must be provided.
+
+
+The RESTful-based API should be provided.
+
+
+1.1.1 Readers, Sensors and Actuators deployment
+
+Usage of the [OSGi Device Access spec&gt;http://www.osgi.org/javadoc/r4v41/org/osgi/service/device/package-summary.html] is recommended
+
+
+1.1.1 How to customize the installers
+
+TBD (Walter)
+
+
+1.1.1 How to customize the 1-click demopack
+TBD (Walter and Didier)
+
+The goal of the demopack is to give a quick overview of the RFID Suite to new users by installing and running a full demonstration in less 2 minutes.
+
+The current demopack packages inn a zip file:
+* Ant lightweight distribution
+* JOnAS lightweight distribution
+* Felix
+* Aspire EAR : epcis.ear, ons.ear
+* Aspire bundles and dependencies
+
+The current demopack is based on Ant build files (start.build.xml and stop.build.xml).
+
+1.1 Build
+
+
+Maven2 is mainly used to build the projects. However, some legacy requires Ant (but not Ivy).</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HRFIDSuitebranchDeveloperDocumentation"&gt;RFID Suite branch - Developer Documentation&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+This document is destinated to developers who want to extend the RFID Suite branch.&lt;p class="paragraph"/&gt;Cote to the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Documentation#HRFIDSuite"&gt;user documentation&lt;/a&gt;&lt;/span&gt;&lt;p class="paragraph"/&gt;The current version is the Tag &lt;i class="italic"&gt;rfidsuite-200809&lt;/i&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDeveloperSkill28TDB29"&gt; Developer Skill (TDB)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HArchitecture28TBD29"&gt; Architecture (TBD)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGlobalDesign"&gt; Global Design&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HJMXconventionfortheRFIDSuiteMBeans"&gt; JMX convention for the RFIDSuite MBeans&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HObjectNames"&gt; ObjectNames&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HAttributes"&gt; Attributes&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HOperations"&gt; Operations&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HReaders2CSensorsandActuatorsDocumentation"&gt; Readers, Sensors and Actuators Documentation&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HProjectsourcesorganization"&gt; Project sources organization&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HHowtodevelopanewreader"&gt; How to develop a new reader&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtodevelopanewsensor"&gt; How to develop a new sensor&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HWireAdminbasedsensors"&gt; WireAdmin-based sensors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HMonitorAdminbasedsensors"&gt; MonitorAdmin-based sensors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUPnPbasedsensors"&gt; UPnP-based sensors&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HHowtodevelopanewactuator"&gt; How to develop a new actuator&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HUPnPbasedactuators"&gt; UPnP-based actuators&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HHowtodevelopanewprinter"&gt; How to develop a new printer&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtocustomizeaNFCMIDLet28TBDbyAndresGomez29"&gt; How to customize a NFC MIDLet (TBD by Andres Gomez)&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtodevelopanewfilter"&gt; How to develop a new filter&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtodevelopanewconnector"&gt; How to develop a new connector&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtosecureconnectors"&gt; How to secure connectors&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoextendtheEPCISserverDataModel"&gt; How to extend the EPCIS server Data Model&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoextendtheManagementConsole"&gt; How to extend the Management Console&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtoimprovetheONSServer"&gt; How to improve the ONS Server&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HReaders2CSensorsandActuatorsdeployment"&gt; Readers, Sensors and Actuators deployment&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtocustomizetheinstallers"&gt; How to customize the installers&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HHowtocustomizethe1clickdemopack"&gt; How to customize the 1-click demopack&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HBuild"&gt; Build&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDeveloperSkill28TDB29"&gt;Developer Skill (TDB)&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/index.html"&gt;&amp;#79;SGi&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/ipojo.html"&gt;&amp;#105;POJO&lt;/a&gt;&lt;/span&gt; for edges and premises development&lt;/li&gt;
+&lt;li&gt;JavaEE for EPCIS and ONS development&lt;/li&gt;
+&lt;li&gt;GWT for Management Console development&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HArchitecture28TBD29"&gt;Architecture (TBD)&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The RFID Suite' architecture is based on the EPS (Edge-Premise-Server) model.
+&lt;ul class="star"&gt;
+&lt;li&gt;Edges are directly connected to readers and sensors (and actuators) using wired (USB,Serial,OneWire,Ethernet...) or wireless (Bluetooth,ZigBee,IrDA) communications.&lt;/li&gt;
+&lt;li&gt;Each Premise clusters a set of Edges to provide security and persistence facilities. It filters and relays the event flow to the server. Generally, there is one premise per warehouse or store.&lt;/li&gt;
+&lt;li&gt;The Server collects the event flows from the Premises.&lt;/li&gt;
+&lt;/ul&gt;In the RFID Suite, edges communicate with the premises with connectors and premises communicate with the server(s) with connectors.&lt;p class="paragraph"/&gt;
+In some situation, edges and server can be merged in one computer.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGlobalDesign"&gt;Global Design&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The global design of the RFID Suite is discribed in this &lt;a href="/xwiki/bin/download/Main/DevDocRFIDSuite/RFIDSuite-global-design.pdf" /&gt;document&lt;/a&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HJMXconventionfortheRFIDSuiteMBeans"&gt;JMX convention for the RFIDSuite MBeans&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HObjectNames"&gt;ObjectNames&lt;/span&gt;&lt;/h4&gt; 
+MBeans objectnames must follow the &lt;span class="wikiexternallink"&gt;&lt;a href="http://java.sun.com/javase/technologies/core/mntr-mgmt/javamanagement/best-practices.jsp"&gt;&amp;#110;aming conventions&lt;/a&gt;&lt;/span&gt; recommended by Sun .&lt;p class="paragraph"/&gt;The current convention is 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid:type=reader&lt;/i&gt; for readers&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid:type=sensor&lt;/i&gt; for sensors&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid:type=listener&lt;/i&gt; for listeners&lt;/li&gt;
+&lt;/ul&gt;In the future, the domain will become &lt;i class="italic"&gt;org.ow2.aspirerfid&lt;/i&gt;&lt;p class="paragraph"/&gt;Remark: the OW2 Aspire project could propose a set of standard JMX object names to EPC Global as  aaddition to the RM (Reader Management) specification (for instance a &lt;i class="italic"&gt;org.epcglobalinc:type=reader&lt;/i&gt;).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAttributes"&gt;Attributes&lt;/span&gt;&lt;/h4&gt; 
+TODO
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HOperations"&gt;Operations&lt;/span&gt;&lt;/h4&gt; 
+TODO
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HReaders2CSensorsandActuatorsDocumentation"&gt;Readers, Sensors and Actuators Documentation&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+The documentation to configure and improve the readers and sensors is described in this &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/ReaderDocRFIDSuite"&gt;document&lt;/a&gt;&lt;/span&gt;.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HProjectsourcesorganization"&gt;Project sources organization&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Directory&amp;nbsp;&lt;/th&gt;&lt;th&gt;Contains&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite"&gt;&amp;#98;ranches/rfidsuite&lt;/a&gt;&lt;/span&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt;the root&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/applications"&gt;&amp;#98;ranches/rfidsuite/applications&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the concrete applications, such as the Museum&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite"&gt;&amp;#98;ranches/rfidsuite/rfidsuite&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the core of the RIFD suite&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/bundles"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/bundles&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the bundles deployed on the edges and on the premises&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/common"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/common&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the necessary elements to deploy any component of the RFID Suite&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/deployment"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/deployment&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the components to deploy and to install the RFID Suite&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/mailet"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/mailet&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the elements to use a mail server&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/manuals"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/manuals&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the intallation, administration and user manuals.&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/midlet&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the architecture to use NFC in an smartphone&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/server&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the implementation of the JEE part of the RFID Suite&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/server/epcis&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the EPCIS EAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/server/ons&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the ONS EAR&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers"&gt;&amp;#98;ranches/rfidsuite/readers&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the bundles of the readers deployed on the edges&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/sensors"&gt;&amp;#98;ranches/rfidsuite/sensors&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the bundles of the sensors deployed on the edges&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/actuators"&gt;&amp;#98;ranches/rfidsuite/actuators&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the drivers of actuators (TBD)&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-even"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/printers"&gt;&amp;#98;ranches/rfidsuite/printers&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the drivers of RFID printers/encoders (TBD)&lt;/td&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/installers"&gt;&amp;#98;ranches/rfidsuite/installers&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the installers of the demo packs (TBD)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p class="paragraph"/&gt;
+Extending the RFID Suite
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewreader"&gt;How to develop a new reader&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+What is a reader ? TBD&lt;p class="paragraph"/&gt;
+A reader is a iPOJO component packaged in an OSGi bundle.&lt;p class="paragraph"/&gt;
+The component requires a &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html"&gt;&amp;#111;rg.osgi.service.event.EventAdmin&lt;/a&gt;&lt;/span&gt; service to send &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/Event.html"&gt;&amp;#111;rg.osgi.service.event.Event&lt;/a&gt;&lt;/span&gt; object containing the ALE event.&lt;p class="paragraph"/&gt;Here is an example of rfid event sent by a &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/readers/bundles/fictive/"&gt;&amp;#102;ictive reader&lt;/a&gt;&lt;/span&gt; to the EventAdmin at the edge level:
+&lt;ul class="star"&gt;
+&lt;li&gt;topic: &lt;i class="italic"&gt;org/ow2/aspirerfid/rfidtopic/rfid&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;with the following properties:&lt;ul class="star"&gt;
+&lt;li&gt;event.topics=org/ow2/aspirerfid/rfidtopic/rfid&lt;/li&gt;
+&lt;li&gt;publisher.instance.name=fictivereader&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid.readerguid&lt;/i&gt;=fictiveguid&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid.readername&lt;/i&gt;=fictive&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;rfid.tagguid&lt;/i&gt;="357654321000001123456789"&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;timestamp&lt;/i&gt;=1234444400859&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;Events must be sent on topics matching "org/ow2/aspirerfid/rfidtopic/" in order to be included in ALE reports.&lt;p class="paragraph"/&gt;The component provides a javax.management.DynamicMBean service for the Reader configuration (serial port, ethernet port, speed, antenna ...).&lt;p class="paragraph"/&gt;
+Nota Bene:
+&lt;ul class="star"&gt;
+&lt;li&gt;The current (ie tags/rfidsuite-200809) version of the component provides a standard MBean service for the Reader Management but is currently moving to iPOJO JMX handler (see below).&lt;/li&gt;
+&lt;li&gt;The next version MUST use the iPOJO 1.2.0 &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/ipojo-jmx-handler.html"&gt;&amp;#74;MX handler&lt;/a&gt;&lt;/span&gt; to simplity the MBean definition&lt;/li&gt;
+&lt;li&gt;The next version MUST also use the iPOJO 1.2.0 &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/configuration-handler.html"&gt;&amp;#67;M handler&lt;/a&gt;&lt;/span&gt; to configure the reader&lt;/li&gt;
+&lt;li&gt;The next version MUST also use the iPOJO 1.2.0 &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/event-admin-handlers.html"&gt;&amp;#69;A handler&lt;/a&gt;&lt;/span&gt; to &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/event/EventAdmin.html#postEvent(org.osgi.service.event.Event)"&gt;&amp;#112;ost&lt;/a&gt;&lt;/span&gt; events.&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewsensor"&gt;How to develop a new sensor&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;What is a sensor ? A sensor can measure physical data about a identified objects or about the environment in which objects are temporally or permanently. A modern sensor can provide the instaneous measurement. Moreover, it can log the history (limited or cyclic) of the measurements taken periodically. It can also log the history of threshold infringements.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HWireAdminbasedsensors"&gt;WireAdmin-based sensors&lt;/span&gt;&lt;/h5&gt; 
+In the current version (ie tags/rfidsuite-200809), the driver of a sensor is a iPOJO component packaged in an OSGi bundle. It is attached to the environnement of the indentified objects and collect only the instantaneous measurements.&lt;p class="paragraph"/&gt;
+The component provides a &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/Producer.html"&gt;&amp;#111;rg.osgi.service.wireadmin.Producer&lt;/a&gt;&lt;/span&gt; service to push/update sensor data. The type of sensor data (called &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/WireConstants.html#WIREADMIN_PRODUCER_FLAVORS"&gt;&amp;#102;lavors&lt;/a&gt;&lt;/span&gt; in the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/wireadmin/package-summary.html"&gt;&amp;#87;ireAdmin&lt;/a&gt;&lt;/span&gt; terminology) is not limited to a list but it must be Comparable. Typical classes are &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/util/measurement/package-summary.html"&gt;&amp;#111;rg.osgi.util.measurement.Measurement&lt;/a&gt;&lt;/span&gt;,  &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/util/position/package-summary.html"&gt;&amp;#111;rg.osgi.util.position.Position&lt;/a&gt;&lt;/span&gt;, &lt;span class="wikiexternallink"&gt;&lt;a href="http://jcp.org/en/jsr/detail?id=179"&gt;&amp;#106;avax.microedition.location.Location&lt;/a&gt;&lt;/span&gt;, java.lang.Double,  java.lang.Float,  java.lang.Long ...&lt;p class="paragraph"/&gt;
+The Producer service should have the following registration properties : 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;i class="italic"&gt;application&lt;/i&gt; represents the application (eg application=outdoor temperature)&lt;/li&gt;
+&lt;li&gt;&lt;i class="italic"&gt;org.osgi.util.measurement.Unit&lt;/i&gt; represents the SI unit if the flavor is org.osgi.util.measurement.Measurement (eg org.osgi.util.measurement.Unit=K)&lt;/li&gt;
+&lt;li&gt;&amp;#8230; other ??? TODO&lt;/li&gt;
+&lt;/ul&gt;Warning : You'd better prefer SI (International System) units such as meter for distance, meter/second for speed, radian for angle, etc for your modelized data.&lt;p class="paragraph"/&gt;Producers are automatically wired to consumers using the WireAdminBinder.&lt;p class="paragraph"/&gt;Nota Bene:
+&lt;ul class="star"&gt;
+&lt;li&gt;The current version  (ie tags/rfidsuite-200809) of the component provides a javax.management.DynamicMBean service for the Sensor Management.&lt;/li&gt;
+&lt;li&gt;The next version MUST use the iPOJO 1.0.0 &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/ipojo-jmx-handler.html"&gt;&amp;#74;MX handler&lt;/a&gt;&lt;/span&gt; to simplity the MBean definition&lt;/li&gt;
+&lt;li&gt;The next version MUST also use the iPOJO 1.0.0 &lt;span class="wikiexternallink"&gt;&lt;a href="http://felix.apache.org/site/configuration-handler.html"&gt;&amp;#67;M handler&lt;/a&gt;&lt;/span&gt; to configure the sensor&lt;/li&gt;
+&lt;/ul&gt;&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HMonitorAdminbasedsensors"&gt;MonitorAdmin-based sensors&lt;/span&gt;&lt;/h5&gt; 
+TODO&lt;p class="paragraph"/&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/monitor/package-summary.html"&gt;&amp;#77;onitor Admin&lt;/a&gt;&lt;/span&gt; 
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HUPnPbasedsensors"&gt;UPnP-based sensors&lt;/span&gt;&lt;/h5&gt; 
+TODO&lt;p class="paragraph"/&gt;State variables of : 
+&lt;ul class="star"&gt;
+&lt;li&gt;Switch Power (Binary Light, Dimmable Light)&lt;/li&gt;
+&lt;li&gt;HVAC (Thermometer, Valve)&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewactuator"&gt;How to develop a new actuator&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The current version of the RFID Suite does not have actuators (except the NXT rotor and Nabaztag ears and choregraphy).&lt;p class="paragraph"/&gt;Actuators can be represented
+&lt;ul class="star"&gt;
+&lt;li&gt;as an OSGi service,&lt;/li&gt;
+&lt;li&gt;as an OSGi UPnPDevice service (if the real device is an UPnP device),&lt;/li&gt;
+&lt;li&gt;as an OSGi DPWSDevice service (if the real device is a DPWS device).&lt;/li&gt;
+&lt;/ul&gt;Suggestions relying on standards are welcomed.
+&lt;h5 class="heading-1-1-1-1"&gt;&lt;span id="HUPnPbasedactuators"&gt;UPnP-based actuators&lt;/span&gt;&lt;/h5&gt; 
+TODO
+Actions of :
+&lt;ul class="star"&gt;
+&lt;li&gt;Switch Power (Binary Light, Dimmable Light)&lt;/li&gt;
+&lt;li&gt;HVAC (Valve)&lt;/li&gt;
+&lt;li&gt;AV (Media Renderer, Media Server)&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewprinter"&gt;How to develop a new printer&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+A RFID printer can print texts, logos and barcodes on a label and in the same time it can encode (ie write custom data in the memory of) the tag inlaid in the label.&lt;p class="paragraph"/&gt;
+The current version of the RFID Suite does not have RFID printers. Suggestions relying on standards are welcomed.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtocustomizeaNFCMIDLet28TBDbyAndresGomez29"&gt;How to customize a NFC MIDLet (TBD by Andres Gomez)&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+New MIDLets can be developed by customizing the existing ones.&lt;p class="paragraph"/&gt;
+see &lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/midlet"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/midlet&lt;/a&gt;&lt;/span&gt;
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewfilter"&gt;How to develop a new filter&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+What is a filter ? TBD
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtodevelopanewconnector"&gt;How to develop a new connector&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+What is a connector ? TBD
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtosecureconnectors"&gt;How to secure connectors&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+Secured communications can be acheived using SSL/TLS or SSH tunneling.
+&lt;ul class="star"&gt;
+&lt;li&gt;HTTP/SOAP connector : TBD&lt;/li&gt;
+&lt;li&gt;JMS/SOAP connector : TBD&lt;/li&gt;
+&lt;li&gt;SMTP/SOAP connector : TBD&lt;/li&gt;
+&lt;li&gt;XMPP connector : TBD&lt;/li&gt;
+&lt;/ul&gt;Remark: the LDAP server (used for deployment) can be used for PK and certificates distribution.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoextendtheEPCISserverDataModel"&gt;How to extend the EPCIS server Data Model&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The sources organization is:
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Directory&amp;nbsp;&lt;/th&gt;&lt;th&gt;Contains&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/epcis"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/server/epcis&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the EPCIS EAR&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+The EPCIS is developed using EJB3.0.&lt;p class="paragraph"/&gt;
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+&lt;ul class="star"&gt;
+&lt;li&gt;EntityBeans&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatelessSessionBeans (Business)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatelessSessionBeans (Facade)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatefulSessionBeans (Business)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatefulSessionBeans (Facade)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MessageDrivenBeans&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;Remark: The EJB3.0 container (EasyBeans on JOnAS 4 and 5) maps automatically the EntityBeans to a relational database. A dump of the generated database schema is possible with FOSS or commercial tools such as MySqlAdmin (if your DBMS is MySql), sqlplus (if your DBMS is Oracle), JavaDB util (if you uses a JDBC driver to access to your DBMS), &amp;#8230; Most of the time, each entity is mapped on a SQL table.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoextendtheManagementConsole"&gt;How to extend the Management Console&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;
+The Management Console is developed using the GWT technology.&lt;p class="paragraph"/&gt;
+New menu items can be added in branches/rfidsuite/rfidsuite/server/epcis/gwt/src/main/java/org/ow2/aspirerfid/app/epcis/client/widget/menu/Menu.java
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtoimprovetheONSServer"&gt;How to improve the ONS Server&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The sources organization is:
+&lt;table class="wiki-table" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;th&gt;Directory&amp;nbsp;&lt;/th&gt;&lt;th&gt;Contains&lt;/th&gt;&lt;/tr&gt;&lt;tr class="table-odd"&gt;&lt;td&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://svn.forge.objectweb.org/cgi-bin/viewcvs.cgi/aspire/branches/rfidsuite/rfidsuite/server/ons"&gt;&amp;#98;ranches/rfidsuite/rfidsuite/server/ons&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;td&gt;contains the ONS EAR&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p class="paragraph"/&gt;
+The ONS is developed using EJB3.0.&lt;p class="paragraph"/&gt;
+The list of EnterpriseBeans of the current version  (ie tags/rfidsuite-200809) are:
+&lt;ul class="star"&gt;
+&lt;li&gt;EntityBeans&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatelessSessionBeans (Business)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatelessSessionBeans (Facade)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatefulSessionBeans (Business)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;StatefulSessionBeans (Facade)&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MessageDrivenBeans&lt;ul class="star"&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;The ONS provides only a WS-* based API.&lt;p class="paragraph"/&gt;
+The DNS-based API must be provided.&lt;p class="paragraph"/&gt;
+The RESTful-based API should be provided.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HReaders2CSensorsandActuatorsdeployment"&gt;Readers, Sensors and Actuators deployment&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;Usage of the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.osgi.org/javadoc/r4v41/org/osgi/service/device/package-summary.html"&gt;&amp;#79;SGi Device Access spec&lt;/a&gt;&lt;/span&gt; is recommended
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtocustomizetheinstallers"&gt;How to customize the installers&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;TBD (Walter)
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HHowtocustomizethe1clickdemopack"&gt;How to customize the 1-click demopack&lt;/span&gt;&lt;/h4&gt; 
+TBD (Walter and Didier)&lt;p class="paragraph"/&gt;The goal of the demopack is to give a quick overview of the RFID Suite to new users by installing and running a full demonstration in less 2 minutes.&lt;p class="paragraph"/&gt;The current demopack packages inn a zip file:
+&lt;ul class="star"&gt;
+&lt;li&gt;Ant lightweight distribution&lt;/li&gt;
+&lt;li&gt;JOnAS lightweight distribution&lt;/li&gt;
+&lt;li&gt;Felix&lt;/li&gt;
+&lt;li&gt;Aspire EAR : epcis.ear, ons.ear&lt;/li&gt;
+&lt;li&gt;Aspire bundles and dependencies&lt;/li&gt;
+&lt;/ul&gt;The current demopack is based on Ant build files (start.build.xml and stop.build.xml).
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;Build&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+Maven2 is mainly used to build the projects. However, some legacy requires Ant (but not Ivy).
+</renderedcontent>
+</xwikidoc>

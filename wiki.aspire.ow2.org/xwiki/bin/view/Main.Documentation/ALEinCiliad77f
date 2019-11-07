@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>ALEinCilia</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>xwiki:XWiki.gabo_pedraza</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1286283631000</creationDate>
+<date>1286569067000</date>
+<contentUpdateDate>1286569067000</contentUpdateDate>
+<version>1.25</version>
+<title>Aspire :: ALE server in Cilia</title>
+<template></template>
+<attachment>
+<filename>middleware.png</filename>
+<filesize>518954</filesize>
+<author>xwiki:XWiki.gabo_pedraza</author>
+<date>1286285854000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>architecture-ale-cilia.png</filename>
+<filesize>64820</filesize>
+<author>xwiki:XWiki.gabo_pedraza</author>
+<date>1286286629000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Aspire :: Filtering And Collection Server (Prototype) in Cilia
+
+
+----
+#toc("" "" "true")
+----
+
+1.1 Introduction
+
+
+[Cilia&gt;http://cilia.ligforge.imag.fr] is an specialized component model for the building of mediation applications. In Cilia, a mediation application is seen as a dataflow system, where different tasks are interconnected to achieve the desired integration between data sources and targeted applications. In this manner, dataflow systems are achieved following a pipes-and-filter architectural style. Filters are independent from each other, each filter representing one of the interconnected tasks. In Cilia, these tasks are performed by mediators, and the pipes by bindings (using different protocols). Each connection describes the direction in which the data must follow, i.e. the source mediator and the target mediator. Connections are important in this architectural style as they allow for a loosely coupled relation between mediators.
+
+Following the Cilia approach, the functionality of the F&amp;amp;C server has been decomposed into small tasks that are interconnected in a dataflow fashion. The result of each component task is the input to the following one.
+
+
+1.1 Architecture
+
+Cilia framework is built on top of OSGi platform (a modular system for Java applications). Decoupling of Cilia mediators allows applications to be executed in different platforms reusing most of application components. In next figure are shown how the ALE server has been designed in the Cilia Framework.
+
+{image:middleware.png|209px|607px}
+
+Following the Cilia approach, the F&amp;C module has been built using a mediation chain as follows. The first mediators in the chain are the logical readers. Read tags by physical devices are gathered by these components. The scheduler of this component triggers the data processing (i.e. tags gathering) periodically (i.e., read period). The processing of this component eliminates duplicated tags. Next, event cycle mediators are in charge of aggregating tags read from logical readers. The scheduler of this component is also configured to trigger the processing periodically (i.e., event period). The processing will eliminate duplicated read tags from dierent logical readers. Then, report set mediators found in the chain, are in charge of calculating the set of tags to be included in the report (i.e. current tags, additions, or deletions). Later, filter mediators apply filters on the set of data produced by the previous mediators. Finally, generator mediator produces the requested report (gener-
+ally as an XML document), called ECReports in the EPC Global specification, and sends it to the interested clients (e.g. Aspire' [BEG&gt;Main.Documentation.BEG] and [EPCIS&gt;Main.Documentation.EpcisRepository] modules or external sensor repositories such as [Pachube&gt;http://www.pachube.com/feeds/10164]).
+
+
+1.1.1 Embedded Architecture
+
+In this prototype, an ALE server version has been tested for two mobile platforms Android and Windows Phone. Layered architecture of these distributions is presented in the next figure.
+
+{image:architecture-ale-cilia.png|149px|675px}
+
+1.1 User Guide
+
+1.1.1 Download and Run
+
+You can download (svn repository) and build the code source of projects implementing the ALE server in Cilia.
+
+* aspire-cilia-compendium : The core components of the ALE server
+* reader-adaptor-api : The API and common classes for readers
+* cilia-simulator-reader :  An simulator reader
+* cilia-acr122u-reader : An reader driver for the ACR122U readers.
+
+1.1 References
+* Cilia website http://wikiadele.imag.fr/index.php/Cilia
+* Gabriel PEDRAZA, Issac GARCIA and Bassem DEBBABI,  An RFID architecture based on an event-oriented component model. International Conference on Distributed Event-based Systems (DEBS 2010), Cambridge – England, July 12 - 15 2010, http://debs10.doc.ic.ac.uk/
+* Issac Garcia, Gabriel Pedraza, Bassem Debbabi, Philippe Lalanda, Catherine Hamon,Towards a service mediation framework for dynamic applications, IEEE APSCC 2010 , December 6 - 10, 2010, Hangzhou, China, http://apscc2010.hdu.edu.cn/APSCC_home.html 
+
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AFilteringAndCollectionServer28Prototype29inCilia"&gt;Aspire :: Filtering And Collection Server (Prototype) in Cilia&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HArchitecture"&gt;2 Architecture&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HEmbeddedArchitecture"&gt;2.1 Embedded Architecture&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HUserGuide"&gt;3 User Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownloadandRun"&gt;3.1 Download and Run&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HReferences"&gt;4 References&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;1 Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;
+&lt;span class="wikiexternallink"&gt;&lt;a href="http://cilia.ligforge.imag.fr"&gt;&amp;#67;ilia&lt;/a&gt;&lt;/span&gt; is an specialized component model for the building of mediation applications. In Cilia, a mediation application is seen as a dataflow system, where different tasks are interconnected to achieve the desired integration between data sources and targeted applications. In this manner, dataflow systems are achieved following a pipes-and-filter architectural style. Filters are independent from each other, each filter representing one of the interconnected tasks. In Cilia, these tasks are performed by mediators, and the pipes by bindings (using different protocols). Each connection describes the direction in which the data must follow, i.e. the source mediator and the target mediator. Connections are important in this architectural style as they allow for a loosely coupled relation between mediators.&lt;p class="paragraph"/&gt;Following the Cilia approach, the functionality of the F&amp;amp;C server has been decomposed into small tasks that are interconnected in a dataflow fashion. The result of each component task is the input to the following one.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HArchitecture"&gt;2 Architecture&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Cilia framework is built on top of OSGi platform (a modular system for Java applications). Decoupling of Cilia mediators allows applications to be executed in different platforms reusing most of application components. In next figure are shown how the ALE server has been designed in the Cilia Framework.&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ALEinCilia/middleware.png" height="209px" width="607px" alt="middleware.png" /&gt;&lt;p class="paragraph"/&gt;Following the Cilia approach, the F&amp;C module has been built using a mediation chain as follows. The first mediators in the chain are the logical readers. Read tags by physical devices are gathered by these components. The scheduler of this component triggers the data processing (i.e. tags gathering) periodically (i.e., read period). The processing of this component eliminates duplicated tags. Next, event cycle mediators are in charge of aggregating tags read from logical readers. The scheduler of this component is also configured to trigger the processing periodically (i.e., event period). The processing will eliminate duplicated read tags from dierent logical readers. Then, report set mediators found in the chain, are in charge of calculating the set of tags to be included in the report (i.e. current tags, additions, or deletions). Later, filter mediators apply filters on the set of data produced by the previous mediators. Finally, generator mediator produces the requested report (gener-
+ally as an XML document), called ECReports in the EPC Global specification, and sends it to the interested clients (e.g. Aspire' &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/BEG"&gt;BEG&lt;/a&gt;&lt;/span&gt; and &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/EpcisRepository"&gt;EPCIS&lt;/a&gt;&lt;/span&gt; modules or external sensor repositories such as &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.pachube.com/feeds/10164"&gt;&amp;#80;achube&lt;/a&gt;&lt;/span&gt;).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HEmbeddedArchitecture"&gt;2.1 Embedded Architecture&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;In this prototype, an ALE server version has been tested for two mobile platforms Android and Windows Phone. Layered architecture of these distributions is presented in the next figure.&lt;p class="paragraph"/&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/ALEinCilia/architecture-ale-cilia.png" height="149px" width="675px" alt="architecture-ale-cilia.png" /&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUserGuide"&gt;3 User Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownloadandRun"&gt;3.1 Download and Run&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;You can download (svn repository) and build the code source of projects implementing the ALE server in Cilia.
+&lt;ul class="star"&gt;
+&lt;li&gt;aspire-cilia-compendium : The core components of the ALE server&lt;/li&gt;
+&lt;li&gt;reader-adaptor-api : The API and common classes for readers&lt;/li&gt;
+&lt;li&gt;cilia-simulator-reader :  An simulator reader&lt;/li&gt;
+&lt;li&gt;cilia-acr122u-reader : An reader driver for the ACR122U readers.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HReferences"&gt;4 References&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Cilia website &lt;span class="nobr"&gt;&lt;a href="http://wikiadele.imag.fr/index.php/Cilia"&gt;&amp;#104;ttp://wikiadele.imag.fr/index.php/Cilia&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Gabriel PEDRAZA, Issac GARCIA and Bassem DEBBABI,  An RFID architecture based on an event-oriented component model. International Conference on Distributed Event-based Systems (DEBS 2010), Cambridge – England, July 12 - 15 2010, &lt;span class="nobr"&gt;&lt;a href="http://debs10.doc.ic.ac.uk/"&gt;&amp;#104;ttp://debs10.doc.ic.ac.uk/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Issac Garcia, Gabriel Pedraza, Bassem Debbabi, Philippe Lalanda, Catherine Hamon,Towards a service mediation framework for dynamic applications, IEEE APSCC 2010 , December 6 - 10, 2010, Hangzhou, China, &lt;span class="nobr"&gt;&lt;a href="http://apscc2010.hdu.edu.cn/APSCC_home.html"&gt;&amp;#104;ttp://apscc2010.hdu.edu.cn/APSCC_home.html&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

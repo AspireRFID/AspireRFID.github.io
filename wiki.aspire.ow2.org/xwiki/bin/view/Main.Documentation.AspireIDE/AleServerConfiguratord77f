@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.AspireIDE</web>
+<name>AleServerConfigurator</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.AspireIDE</parent>
+<creator>xwiki:XWiki.nkef</creator>
+<author>xwiki:XWiki.nkons</author>
+<contentAuthor>xwiki:XWiki.nkons</contentAuthor>
+<creationDate>1233321568000</creationDate>
+<date>1273736407000</date>
+<contentUpdateDate>1273736407000</contentUpdateDate>
+<version>1.26</version>
+<title>ALE Server Configurator Plug-in</title>
+<template></template>
+<attachment>
+<filename>AleServerConfigurator.jpg</filename>
+<filesize>117734</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234179517000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>AleServerConfiguratorPreferences.jpg</filename>
+<filesize>131943</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1234179532000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 ALE Server Configurator
+
+----
+#toc("" "" "true")
+----
+
+
+1.1 Introduction
+
+The objective of this tool is to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfigurator.jpg"&gt;{image:AleServerConfigurator.jpg|300}&lt;/a&gt;
+&lt;/center&gt;
+
+This guide gives a short overview to the ALE Server Configurator that allows to interactively use the Filtering and Collection Server instance which is an AspireRFID plug-in and comprises:
+
+*. A *View*, where you can interact with the F&amp;C Server
+*. A *Preference window* where you can choose the various preferences for the Configurator
+*. And a *Console*, used to display the server's response.
+
+1.1 Requirements
+
+*Hardware (minimum)*
+* P IV 1.2GHz or equivalent
+* 512 MB Ram
+* 50 MB free HD space
+
+*Software*
+* [F&amp;amp;C Server&gt;Main.Documentation.Filtering&amp;Collection]
+* Java 1.6
+* [Eclipse 3.4&gt; http://www.eclipse.org/downloads/] and above (with RCP/Plug-in Development Environment plug-ins and [Subversive plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive]) (required only for developers)
+
+
+
+
+1.1 Users Guide
+
+1.1.1 Download &amp; Run
+You can download the ALE Server Configurator tool from the [AspireRFID forge&gt;http://forge.objectweb.org/project/showfiles.php?group_id=324] named “AspireRfidIdeToolCollection” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory {pre}"user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”){/pre}.
+
+1.1.1 Configuration
+
+The ALE Server Configurator is configured through the IDE’s preferences window (Window&gt;Preferences) by choosing the ALE Server Configurator from the list appearing at the left see the picture below.
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfiguratorPreferences.jpg"&gt;{image:AleServerConfiguratorPreferences.jpg|400}&lt;/a&gt;
+&lt;/center&gt;
+
+From there you can configure the:
+*. *EC Specs Directory*: The directory where ECSpecs will be stored which will be used to configure the server’s filtering function.
+*. *ALE Client EndPoint*: The F&amp;C Server’s EndPoint that accepts connections for the ALEService.
+*. *LR Specs Directory*: The directory where the LRSpecs will be stored that will be used to dynamically define logical readers.
+*. *ALE LR Client EndPoint*: The F&amp;C Server’s LR EndPoint that accepts connections for the ALELRService to dynamically define logical readers.
+
+1.1.1 ECSpec
+
+The ECSpecs define how the Filtering and Collection Server generates reports. You can retrieve current tags, tags that have been added or deleted with respect to the last EventCycle or combinations of all. For that, you need to provide to the Filtering and Collection Server with a valid ECSpec in xml format by using the ALE Server Configurator. The ECSpec becomes active as soon as you subscribe with a notificationURI.
+
+1.1.1 LRSpec
+
+An LRSpec contains information about a reader. Whenever a new reader is to be created, a corresponding LRSpec has to be created and shipped to the Filtering and Collection Server.
+
+1.1 Developers Guide
+
+ALE Server configurator is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “[AspireRfidIDECore&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore]”.
+
+
+1.1.1 Acquiring the code
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge [SVN&gt;http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324]. 
+Check it out by:
+* hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion [plug-in&gt; http://www.polarion.org/index.php?page=download&amp;project=subversive] and by using the following URL at the window that appears:  
+svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-AleSerConfig
+* right click the repository that has been just created and hit the check out button
+* check the aspireRfidIde-AleSerConfig project on the list and hit ok
+
+1.1.1 Running the Project
+
+For running AspireRfidIDE with the ALE ServerConfigurator Plug-in:
+* Create an aspireRfidIDE project (unless you have already created one)
+* Go to the aspireRfidIde project Run Configurations (Run&gt;Run Configurations…) and at the list choose Eclipse Application&gt;aspireRfidIde.product
+* At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product
+* At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the aspireRfidIde, org.ow2.aspirerfid.ide.aleconfig and then hit the Add required Plug-ins button.
+* Hit apply
+* Now you are ready to run the application.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HALEServerConfigurator"&gt;ALE Server Configurator&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRequirements"&gt;2 Requirements&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsersGuide"&gt;3 Users Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HDownload26Run"&gt;3.1 Download &amp; Run&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HConfiguration"&gt;3.2 Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HECSpec"&gt;3.3 ECSpec&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HLRSpec"&gt;3.4 LRSpec&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HDevelopersGuide"&gt;4 Developers Guide&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HAcquiringthecode"&gt;4.1 Acquiring the code&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HRunningtheProject"&gt;4.2 Running the Project&lt;/a&gt; 
+      &lt;/ul&gt;&lt;/ul&gt; &lt;hr class="line"/&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The objective of this tool is to provide a control client to execute Application Level Event specification (ALE) commands on a reader or component that implements the ALE specification.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfigurator.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfigurator.jpg" height="300" alt="AleServerConfigurator.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;This guide gives a short overview to the ALE Server Configurator that allows to interactively use the Filtering and Collection Server instance which is an AspireRFID plug-in and comprises:
+&lt;ul class="star"&gt;
+&lt;li&gt;A &lt;strong class="strong"&gt;View&lt;/strong&gt;, where you can interact with the F&amp;C Server&lt;/li&gt;
+&lt;li&gt;A &lt;strong class="strong"&gt;Preference window&lt;/strong&gt; where you can choose the various preferences for the Configurator&lt;/li&gt;
+&lt;li&gt;And a &lt;strong class="strong"&gt;Console&lt;/strong&gt;, used to display the server's response.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HRequirements"&gt;Requirements&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;Hardware (minimum)&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;P IV 1.2GHz or equivalent&lt;/li&gt;
+&lt;li&gt;512 MB Ram&lt;/li&gt;
+&lt;li&gt;50 MB free HD space&lt;/li&gt;
+&lt;/ul&gt;&lt;strong class="strong"&gt;Software&lt;/strong&gt;
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation/Filtering%26Collection"&gt;F&amp;amp;C Server&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Java 1.6&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#69;clipse 3.4&lt;/a&gt;&lt;/span&gt; and above (with RCP/Plug-in Development Environment plug-ins and &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#83;ubversive plug-in&lt;/a&gt;&lt;/span&gt;) (required only for developers)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsersGuide"&gt;Users Guide&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDownload26Run"&gt;Download &amp; Run&lt;/span&gt;&lt;/h4&gt; 
+You can download the ALE Server Configurator tool from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/project/showfiles.php?group_id=324"&gt;&amp;#65;spireRFID forge&lt;/a&gt;&lt;/span&gt; named “AspireRfidIdeToolCollection” under "AspireRFID AITdev" package.
+Just decompress it and hit the “aspireRfidIDE” executable
+Also you can download from the same link the “ASPIRE_APPLICATION_FILES”. Decompress and place its content at your home directory "user.home\AspireRFID\IDE\..." (e.g. “C:\Documents and Settings\nkef\AspireRFID\IDE\”).
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The ALE Server Configurator is configured through the IDE’s preferences window (Window&gt;Preferences) by choosing the ALE Server Configurator from the list appearing at the left see the picture below.&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.objectweb.org/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfiguratorPreferences.jpg"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation.AspireIDE/AleServerConfigurator/AleServerConfiguratorPreferences.jpg" height="400" alt="AleServerConfiguratorPreferences.jpg" /&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;p class="paragraph"/&gt;From there you can configure the:
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;EC Specs Directory&lt;/strong&gt;: The directory where ECSpecs will be stored which will be used to configure the server’s filtering function.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;ALE Client EndPoint&lt;/strong&gt;: The F&amp;C Server’s EndPoint that accepts connections for the ALEService.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;LR Specs Directory&lt;/strong&gt;: The directory where the LRSpecs will be stored that will be used to dynamically define logical readers.&lt;/li&gt;
+&lt;li&gt;&lt;strong class="strong"&gt;ALE LR Client EndPoint&lt;/strong&gt;: The F&amp;C Server’s LR EndPoint that accepts connections for the ALELRService to dynamically define logical readers.&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HECSpec"&gt;ECSpec&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;The ECSpecs define how the Filtering and Collection Server generates reports. You can retrieve current tags, tags that have been added or deleted with respect to the last EventCycle or combinations of all. For that, you need to provide to the Filtering and Collection Server with a valid ECSpec in xml format by using the ALE Server Configurator. The ECSpec becomes active as soon as you subscribe with a notificationURI.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HLRSpec"&gt;LRSpec&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;An LRSpec contains information about a reader. Whenever a new reader is to be created, a corresponding LRSpec has to be created and shipped to the Filtering and Collection Server.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDevelopersGuide"&gt;Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;ALE Server configurator is an “AspireRfidIDE” product plug-in that is running within its environment. So for using this plug-in you should first download the “&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;AspireRfidIDECore&lt;/a&gt;&lt;/span&gt;”.
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HAcquiringthecode"&gt;Acquiring the code&lt;/span&gt;&lt;/h4&gt; 
+The “Master Data Editor Plug-in” source code is available for checkout at the AspireRFID forge &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.objectweb.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#83;VN&lt;/a&gt;&lt;/span&gt;. 
+Check it out by:
+&lt;ul class="star"&gt;
+&lt;li&gt;hitting the create new repository location button at the SVN Repositories view of the Eclipse’s subversion &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.polarion.org/index.php?page=download&amp;project=subversive"&gt;&amp;#112;lug-in&lt;/a&gt;&lt;/span&gt; and by using the following URL at the window that appears:&lt;/li&gt;
+&lt;/ul&gt;svn://svn.forge.objectweb.org/svnroot/aspire/trunk/AspireRfidIDE/AspireRfidIdePlug-ins/aspireRfidIde-AleSerConfig
+&lt;ul class="star"&gt;
+&lt;li&gt;right click the repository that has been just created and hit the check out button&lt;/li&gt;
+&lt;li&gt;check the aspireRfidIde-AleSerConfig project on the list and hit ok&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HRunningtheProject"&gt;Running the Project&lt;/span&gt;&lt;/h4&gt;&lt;p class="paragraph"/&gt;For running AspireRfidIDE with the ALE ServerConfigurator Plug-in:
+&lt;ul class="star"&gt;
+&lt;li&gt;Create an aspireRfidIDE project (unless you have already created one)&lt;/li&gt;
+&lt;li&gt;Go to the aspireRfidIde project Run Configurations (Run&gt;Run Configurations…) and at the list choose Eclipse Application&gt;aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Main tab of the “aspireRfidIde.product” set Run a product: aspireRfidIde.product&lt;/li&gt;
+&lt;li&gt;At the Plug-ins tab of the “aspireRfidIde.product”  hit deselect all button and then choose the aspireRfidIde, org.ow2.aspirerfid.ide.aleconfig and then hit the Add required Plug-ins button.&lt;/li&gt;
+&lt;li&gt;Hit apply&lt;/li&gt;
+&lt;li&gt;Now you are ready to run the application.&lt;/li&gt;
+&lt;/ul&gt;
+</renderedcontent>
+</xwikidoc>

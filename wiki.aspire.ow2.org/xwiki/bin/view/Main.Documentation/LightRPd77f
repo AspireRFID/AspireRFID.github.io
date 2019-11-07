@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation</web>
+<name>LightRP</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.reckeyzhang</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1275649383000</creationDate>
+<date>1276525385000</date>
+<contentUpdateDate>1276525385000</contentUpdateDate>
+<version>1.19</version>
+<title>Light RP</title>
+<template></template>
+<attachment>
+<filename>BRI_implementation.png</filename>
+<filesize>4089</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1275649395000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<attachment>
+<filename>LightRP.zip</filename>
+<filesize>384650</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1275651771000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Embedded Light RP
+
+#toc("" "" "true")
+
+1.1 Introduction
+This section describes the Embedded light RP developed by the POPS team, Inria-Lille. This software can be easily implemented in mobile terminals such like PDA to interact with RFID Reader devices.
+
+The implementation is divided into two subsets : RP API definition and core implementation for CAEN and BRI readers. 
+
+The targeted RP architecture is the following :
+* One Reader Device : singleton representing the RFID reader device.
+* One Source : representing the PDA as a mobile source for reading tags.
+* One Read Point : representing the unique  ANTENNA of each PDA.
+* One Data Selector : the default one, with EPCID field selection only.
+* No Tag Selector : The filtering is done by software at upper levels.
+* No Notification Channel : The inventory is done synchronously with a specified time-out per read cycle.
+* No triggers : the only Read Trigger is implicitly fired when calling the method Source.rawReadIDs.
+
+The implementation is performed as follows (example for BRI, idem. for CAEN):
+
+&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/LightRP/BRI_implementation.png"&gt;{image:BRI_implementation.png|250}&lt;/a&gt;
+&lt;/center&gt;
+
+
+1.1 Users &amp; Developers Guide
+
+The executable jar file can be found under the repository ReaderProtocol/dist.
+All the source can be found under the repository ReaderProtocol/src.
+
+Here is an example of Inventory of tags in reader's field:
+
+{code:java}
+// Reader singleton 
+ReaderDevice myReader = 
+             ReaderFactory.getReader(ReaderFactory.BRI_READER,"BRIReaderDevice");
+
+// Reader's default source and data selector
+Source mySource; 
+DataSelector myDataSelector; 
+
+// Establish Connections 
+ReaderFactory.connectReader(myReader); 
+
+// Reader's Data Selector : default singleton for selecting IDs 
+// This is is the default data selector that supports at least the tag ID field 
+// get Default Data Selector and update it 
+myDataSelector = myReader.getCurrentDataSelector(); 
+
+// Reader's source : Singleton 
+mySource = myReader.getCurrentSource(); 
+ 
+// Perform 10 read cycles 
+for( int i = 0; i &lt; 10 ; i++) { 
+        System.out.println("Read Cycle " + i + " at " + 
+				    myReader.getTimeTicks() + " ticks"); 
+
+        // Inventory 
+        ReadReport myReadReport = mySource.rawReadIDs(myDataSelector); 
+
+        if (myReadReport == null) { 
+                System.err.println("Error : mySource.rawReadIDs null report "); 
+        } 
+        else { 
+                // Display read Tags (ids in hexadecimal)
+                String[] tagIds = myReadReport.getTagIds(mySource.getName()); 
+                if (tagIds == null) { 
+                     System.err.println("Error : myReadReport.getTagIds null "); 
+                } 
+                else if (tagIds.length == 0) { 
+                     System.out.println("\t NO TAGS"); 
+                } 
+                else { 
+                     for(int j = 0 ; j &lt; tagIds.length; j++) 
+                          System.out.println("\tObserved : 0x" + tagIds[j]); 
+                } 
+        } 
+} 
+
+// graceful disconnect : equivalent to ReaderFactory.disconnectReader(myReader); 
+myReader.goodbye(); 
+
+{code}
+
+1.1 Download
+
+You can download the executable jar file from [here&gt;http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15239]. The source can be found  [here&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/LightALE/LightRP/].
+
+Please follow the [Users &amp; Developers Guide&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/LightRP#HUsers26DevelopersGuide] for your tests.
+
+More details about the complete version of Light ALE (with light RP embedded) can be found [here&gt;http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/EmbededALE].
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HEmbeddedLightRP"&gt;Embedded Light RP&lt;/span&gt;&lt;/h2&gt;&lt;p class="paragraph"/&gt;            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HIntroduction"&gt;1 Introduction&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUsers26DevelopersGuide"&gt;2 Users &amp; Developers Guide&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDownload"&gt;3 Download&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HIntroduction"&gt;Introduction&lt;/span&gt;&lt;/h3&gt; 
+This section describes the Embedded light RP developed by the POPS team, Inria-Lille. This software can be easily implemented in mobile terminals such like PDA to interact with RFID Reader devices.&lt;p class="paragraph"/&gt;The implementation is divided into two subsets : RP API definition and core implementation for CAEN and BRI readers.&lt;p class="paragraph"/&gt;The targeted RP architecture is the following :
+&lt;ul class="star"&gt;
+&lt;li&gt;One Reader Device : singleton representing the RFID reader device.&lt;/li&gt;
+&lt;li&gt;One Source : representing the PDA as a mobile source for reading tags.&lt;/li&gt;
+&lt;li&gt;One Read Point : representing the unique  ANTENNA of each PDA.&lt;/li&gt;
+&lt;li&gt;One Data Selector : the default one, with EPCID field selection only.&lt;/li&gt;
+&lt;li&gt;No Tag Selector : The filtering is done by software at upper levels.&lt;/li&gt;
+&lt;li&gt;No Notification Channel : The inventory is done synchronously with a specified time-out per read cycle.&lt;/li&gt;
+&lt;li&gt;No triggers : the only Read Trigger is implicitly fired when calling the method Source.rawReadIDs.&lt;/li&gt;
+&lt;/ul&gt;The implementation is performed as follows (example for BRI, idem. for CAEN):&lt;p class="paragraph"/&gt;&lt;center&gt;
+&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/download/Main.Documentation/LightRP/BRI_implementation.png"&gt;&lt;img src="/xwiki/bin/download/Main.Documentation/LightRP/BRI_implementation.png" height="250" alt="BRI_implementation.png" /&gt;&lt;/a&gt;
+&lt;/center&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUsers26DevelopersGuide"&gt;Users &amp; Developers Guide&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;The executable jar file can be found under the repository ReaderProtocol/dist.
+All the source can be found under the repository ReaderProtocol/src.&lt;p class="paragraph"/&gt;Here is an example of Inventory of tags in reader's field:&lt;p class="paragraph"/&gt;&lt;div class="code"&gt;&lt;pre&gt;// Reader singleton 
+ReaderDevice myReader = 
+             ReaderFactory.getReader(ReaderFactory.BRI_READER,&lt;span class="java&amp;#45;quote"&gt;"BRIReaderDevice"&lt;/span&gt;);&lt;p class="paragraph"/&gt;// Reader's &lt;span class="java&amp;#45;keyword"&gt;default&lt;/span&gt; source and data selector
+Source mySource; 
+DataSelector myDataSelector;&lt;p class="paragraph"/&gt;// Establish Connections 
+ReaderFactory.connectReader(myReader);&lt;p class="paragraph"/&gt;// Reader's Data Selector : &lt;span class="java&amp;#45;keyword"&gt;default&lt;/span&gt; singleton &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt; selecting IDs 
+// This is is the &lt;span class="java&amp;#45;keyword"&gt;default&lt;/span&gt; data selector that supports at least the tag ID field 
+// get Default Data Selector and update it 
+myDataSelector = myReader.getCurrentDataSelector();&lt;p class="paragraph"/&gt;// Reader's source : Singleton 
+mySource = myReader.getCurrentSource();&lt;p class="paragraph"/&gt;// Perform 10 read cycles 
+&lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt;( &lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; i = 0; i &amp;#60; 10 ; i++) &amp;#123; 
+        &lt;span class="java&amp;#45;object"&gt;System&lt;/span&gt;.out.println(&lt;span class="java&amp;#45;quote"&gt;"Read Cycle "&lt;/span&gt; + i + &lt;span class="java&amp;#45;quote"&gt;" at "&lt;/span&gt; + 
+				    myReader.getTimeTicks() + &lt;span class="java&amp;#45;quote"&gt;" ticks"&lt;/span&gt;);&lt;p class="paragraph"/&gt;        // Inventory 
+        ReadReport myReadReport = mySource.rawReadIDs(myDataSelector);&lt;p class="paragraph"/&gt;        &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; (myReadReport == &lt;span class="java&amp;#45;keyword"&gt;null&lt;/span&gt;) &amp;#123; 
+                &lt;span class="java&amp;#45;object"&gt;System&lt;/span&gt;.err.println(&lt;span class="java&amp;#45;quote"&gt;"Error : mySource.rawReadIDs &lt;span class="java&amp;#45;keyword"&gt;null&lt;/span&gt; report "&lt;/span&gt;); 
+        &amp;#125; 
+        &lt;span class="java&amp;#45;keyword"&gt;else&lt;/span&gt; &amp;#123; 
+                // Display read Tags (ids in hexadecimal)
+                &lt;span class="java&amp;#45;object"&gt;String&lt;/span&gt;&amp;#91;&amp;#93; tagIds = myReadReport.getTagIds(mySource.getName()); 
+                &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; (tagIds == &lt;span class="java&amp;#45;keyword"&gt;null&lt;/span&gt;) &amp;#123; 
+                     &lt;span class="java&amp;#45;object"&gt;System&lt;/span&gt;.err.println(&lt;span class="java&amp;#45;quote"&gt;"Error : myReadReport.getTagIds &lt;span class="java&amp;#45;keyword"&gt;null&lt;/span&gt; "&lt;/span&gt;); 
+                &amp;#125; 
+                &lt;span class="java&amp;#45;keyword"&gt;else&lt;/span&gt; &lt;span class="java&amp;#45;keyword"&gt;if&lt;/span&gt; (tagIds.length == 0) &amp;#123; 
+                     &lt;span class="java&amp;#45;object"&gt;System&lt;/span&gt;.out.println(&lt;span class="java&amp;#45;quote"&gt;"&amp;#116; NO TAGS"&lt;/span&gt;); 
+                &amp;#125; 
+                &lt;span class="java&amp;#45;keyword"&gt;else&lt;/span&gt; &amp;#123; 
+                     &lt;span class="java&amp;#45;keyword"&gt;for&lt;/span&gt;(&lt;span class="java&amp;#45;object"&gt;int&lt;/span&gt; j = 0 ; j &amp;#60; tagIds.length; j++) 
+                          &lt;span class="java&amp;#45;object"&gt;System&lt;/span&gt;.out.println(&lt;span class="java&amp;#45;quote"&gt;"&amp;#116;Observed : 0x"&lt;/span&gt; + tagIds&amp;#91;j&amp;#93;); 
+                &amp;#125; 
+        &amp;#125; 
+&amp;#125;&lt;p class="paragraph"/&gt;// graceful disconnect : equivalent to ReaderFactory.disconnectReader(myReader); 
+myReader.goodbye();&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDownload"&gt;Download&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;You can download the executable jar file from &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15239"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;. The source can be found  &lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=/trunk/servers/AspireRfidALE/LightALE/LightRP/"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;Please follow the &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/LightRP#HUsers26DevelopersGuide"&gt;&amp;#85;sers &amp; Developers Guide&lt;/a&gt;&lt;/span&gt; for your tests.&lt;p class="paragraph"/&gt;More details about the complete version of Light ALE (with light RP embedded) can be found &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation.Filtering%26Collection/EmbededALE"&gt;&amp;#104;ere&lt;/a&gt;&lt;/span&gt;.
+</renderedcontent>
+</xwikidoc>

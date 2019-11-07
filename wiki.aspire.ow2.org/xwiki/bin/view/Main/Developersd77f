@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Developers</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.nkef</author>
+<contentAuthor>xwiki:XWiki.nkef</contentAuthor>
+<creationDate>1216845052000</creationDate>
+<date>1280401831000</date>
+<contentUpdateDate>1280401831000</contentUpdateDate>
+<version>1.87</version>
+<title>ASPIRE RFID Developers</title>
+<template></template>
+<attachment>
+<filename>ASPIRE_Developers_CodeCamp1.ppt</filename>
+<filesize>236544</filesize>
+<author>xwiki:XWiki.nkef</author>
+<date>1243935538000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Developers
+#toc("" "" "")
+
+1.1 Instructions for new developers
+If you are a new [developer&gt;http://forge.ow2.org/project/memberlist.php?group_id=324] of the Aspire project, check this to do list:
+
+* check that your username is in http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324
+
+* log in on the forge http://forge.ow2.org/projects/aspire/
+* edit your SSH (public) key (if not already done) in http://forge.ow2.org/account/editsshkeys.php . You can generate your private and public keys with [Putty&gt;http://www.putty.org/].
+* checkout the SVN root via SSH with your username http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324
+* create your sandbox (./sandbox/~~yourusername~~) in the sandbox directory ([./sandbox&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Fsandbox%2F]).
+* commit a file (a readme or a whoami for instance) in your sandbox (./sandbox/~~yourusername~~).
+
+* log in on the wiki http://wiki.aspire.ow2.org/
+* edit some lines in the [wiki sandbox&gt;http://wiki.aspire.ow2.org/xwiki/bin/edit/Main/Sandbox#aspire], save the result and [rollback to the previous version&gt;Main.Sandbox?xpage=history#aspire].
+
+* subcribe to project's [mailing lists&gt;Community.Lists]
+
+** &lt;a href="mailto:aspirerfid-subscribe@ow2.org"&gt;aspirerfid-subscribe@ow2.org&lt;/a&gt;
+** &lt;a href="mailto:aspirerfid-dev-subscribe@ow2.org"&gt;aspirerfid-dev-subscribe@ow2.org&lt;/a&gt;
+** &lt;a href="mailto:aspirerfid-commits-subscribe@ow2.org"&gt;aspirerfid-commits-subscribe@ow2.org&lt;/a&gt;
+
+* read the [coding guidelines&gt;Main.Guidelines] used in Aspire.
+
+* add your name in the [contributors list&gt;Main.Contributors].
+* add a description of your organization if your organization is contractually involved in the Aspire project.
+* if you are registered on [ohloh.net&gt;http://www.ohloh.net/p/aspire], you can join the [Aspire RFID contributors list&gt;http://www.ohloh.net/p/aspire/contributors] and add a [widget&gt;http://www.ohloh.net/p/aspire/widgets] in your personal homepage.
+* if you are registered on linkedin.com, you can join the [Aspire RFID group&gt;http://www.linkedin.com/groups?viewMembers=&amp;gid=1179007].
+
+1.1 Generic Development Requirements 
+
+* Eclipse 3.4 and above (http://www.eclipse.org/downloads/) with 
+** RCP/Plug-in Development Environment plug-ins,
+** Web and Java EE Development plug-ins,
+** Subversive plug-in (http://community.polarion.com/index.php?page=overview&amp;project=subversive)
+*** Update Site: http://download.eclipse.org/technology/subversive/0.7/update-site/ 
+** Subversive SVN Connectors
+*** Update Site: http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/ 
+** Maven Integration for Eclipse plug-ins (http://m2eclipse.sonatype.org/)
+*** Update Site: http://m2eclipse.sonatype.org/sites/m2e
+* JDK 1.6 and above
+* Tomcat 6.0 (or higher)
+* MySQL 5.0 (or higher)
+* Apache Maven 2.0.8 or higher (http://maven.apache.org/)
+* VisualVM (https://visualvm.dev.java.net)
+
+1.1 Downloading the Source Code in Eclipse 
+
+* Install the Subversive and the Subversive SVN Connectors plug-ins
+* Open the SVN Repository Perspective
+* Go to the SVN Repositories Tab and hit the new repository location button.
+* For acquiring the hole trunk source code place at the URL of the New Repository Location window that appears the following URL:
+** svn://svn.forge.objectweb.org/svnroot/aspire/ (Anonymous) or
+** svn+ssh://USER@svn.forge.objectweb.org/svnroot/aspire  (Developer SVN Access )
+* Open the repository go to the trunk file right click it an hit Check Out
+* For working with a specific AspireRFID project hit File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace and select for the root directory the project you want to work with from the Hole trunk you have just checked out.
+* Select it from the list, Uncheck the Copy projects into workspace
+* Hit finish and you are ready to work :)
+
+1.1 Debugging and Running the Source Code in Eclipse
+
+In general, every component comes with specific instructions.
+e.g. a good starting point for the AspireRFID IDE is the [Aspire IDE Core&gt;Main.Documentation.AspireIDE.AspireRfidIdeCore], which is the host of the Aspire tools.
+
+
+1.1 General
+
+* [Developer tools documentation&gt;Main.DeveloperTools]
+* [Forge&gt;https://forge.ow2.org/projects/aspire]
+* [Bug tracker&gt;https://forge.ow2.org/tracker/?group_id=324]
+* [Browse sources&gt;http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2F]
+#if(1 == 2)
+* Maven 2 artifacts repository
+** http://repo1.maven.org/maven2/org/ow2/
+** http://repo1.maven.org/maven2/org/ow2/aspirerfid/
+* OBR indexes
+* [Cookbooks]
+#end
+* [Coding guidelines&gt;Guidelines]
+* [AspireRFID @ ohloh.net&gt;http://www.ohloh.net/projects/aspire]
+
+1.1 Documents
+
+Developers {attach:CodeCamp1|ASPIRE_Developers_CodeCamp1.ppt}
+
+1.1 Facts
+
+*[Lines of code analysis &gt; LOC]*
+
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_partner_badge.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_languages.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_basic_stats.js"&gt;&lt;/script&gt;
+
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HDevelopers"&gt;Developers&lt;/span&gt;&lt;/h2&gt; 
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HInstructionsfornewdevelopers"&gt; Instructions for new developers&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGenericDevelopmentRequirements"&gt; Generic Development Requirements &lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDownloadingtheSourceCodeinEclipse"&gt; Downloading the Source Code in Eclipse &lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDebuggingandRunningtheSourceCodeinEclipse"&gt; Debugging and Running the Source Code in Eclipse&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HGeneral"&gt; General&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDocuments"&gt; Documents&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HFacts"&gt; Facts&lt;/a&gt; 
+      &lt;/ul&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HInstructionsfornewdevelopers"&gt;Instructions for new developers&lt;/span&gt;&lt;/h3&gt; 
+If you are a new &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/memberlist.php?group_id=324"&gt;&amp;#100;eveloper&lt;/a&gt;&lt;/span&gt; of the Aspire project, check this to do list:
+&lt;ul class="star"&gt;
+&lt;li&gt;check that your username is in &lt;span class="nobr"&gt;&lt;a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#104;ttp://forge.ow2.org/plugins/scmsvn/index.php?group_id=324&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;log in on the forge &lt;span class="nobr"&gt;&lt;a href="http://forge.ow2.org/projects/aspire/"&gt;&amp;#104;ttp://forge.ow2.org/projects/aspire/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;edit your SSH (public) key (if not already done) in &lt;span class="nobr"&gt;&lt;a href="http://forge.ow2.org/account/editsshkeys.php"&gt;&amp;#104;ttp://forge.ow2.org/account/editsshkeys.php&lt;/a&gt;&lt;/span&gt; . You can generate your private and public keys with &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.putty.org/"&gt;&amp;#80;utty&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;checkout the SVN root via SSH with your username &lt;span class="nobr"&gt;&lt;a href="http://forge.ow2.org/plugins/scmsvn/index.php?group_id=324"&gt;&amp;#104;ttp://forge.ow2.org/plugins/scmsvn/index.php?group_id=324&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;create your sandbox (./sandbox/&lt;i class="italic"&gt;yourusername&lt;/i&gt;) in the sandbox directory (&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Fsandbox%2F"&gt;&amp;#46;/sandbox&lt;/a&gt;&lt;/span&gt;).&lt;/li&gt;
+&lt;li&gt;commit a file (a readme or a whoami for instance) in your sandbox (./sandbox/&lt;i class="italic"&gt;yourusername&lt;/i&gt;).&lt;/li&gt;
+&lt;li&gt;log in on the wiki &lt;span class="nobr"&gt;&lt;a href="http://wiki.aspire.ow2.org/"&gt;&amp;#104;ttp://wiki.aspire.ow2.org/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;edit some lines in the &lt;span class="wikiexternallink"&gt;&lt;a href="http://wiki.aspire.ow2.org/xwiki/bin/edit/Main/Sandbox#aspire"&gt;&amp;#119;iki sandbox&lt;/a&gt;&lt;/span&gt;, save the result and &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Sandbox?xpage=history#aspire"&gt;rollback to the previous version&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;subcribe to project's &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Community/Lists"&gt;mailing lists&lt;/a&gt;&lt;/span&gt;&lt;ul class="star"&gt;
+&lt;li&gt;&lt;a href="mailto:aspirerfid-subscribe@ow2.org"&gt;aspirerfid-subscribe@ow2.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="mailto:aspirerfid-dev-subscribe@ow2.org"&gt;aspirerfid-dev-subscribe@ow2.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="mailto:aspirerfid-commits-subscribe@ow2.org"&gt;aspirerfid-commits-subscribe@ow2.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;read the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Guidelines"&gt;coding guidelines&lt;/a&gt;&lt;/span&gt; used in Aspire.&lt;/li&gt;
+&lt;li&gt;add your name in the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Contributors"&gt;contributors list&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;add a description of your organization if your organization is contractually involved in the Aspire project.&lt;/li&gt;
+&lt;li&gt;if you are registered on &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ohloh.net/p/aspire"&gt;&amp;#111;hloh.net&lt;/a&gt;&lt;/span&gt;, you can join the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ohloh.net/p/aspire/contributors"&gt;&amp;#65;spire RFID contributors list&lt;/a&gt;&lt;/span&gt; and add a &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ohloh.net/p/aspire/widgets"&gt;&amp;#119;idget&lt;/a&gt;&lt;/span&gt; in your personal homepage.&lt;/li&gt;
+&lt;li&gt;if you are registered on linkedin.com, you can join the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.linkedin.com/groups?viewMembers=&amp;gid=1179007"&gt;&amp;#65;spire RFID group&lt;/a&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HGenericDevelopmentRequirements"&gt;Generic Development Requirements &lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Eclipse 3.4 and above (&lt;span class="nobr"&gt;&lt;a href="http://www.eclipse.org/downloads/"&gt;&amp;#104;ttp://www.eclipse.org/downloads/&lt;/a&gt;&lt;/span&gt;) with&lt;ul class="star"&gt;
+&lt;li&gt;RCP/Plug-in Development Environment plug-ins,&lt;/li&gt;
+&lt;li&gt;Web and Java EE Development plug-ins,&lt;/li&gt;
+&lt;li&gt;Subversive plug-in (&lt;span class="nobr"&gt;&lt;a href="http://community.polarion.com/index.php?page=overview&amp;#38;project=subversive"&gt;&amp;#104;ttp://community.polarion.com/index.php?page=overview&amp;project=subversive&lt;/a&gt;&lt;/span&gt;)&lt;ul class="star"&gt;
+&lt;li&gt;Update Site: &lt;span class="nobr"&gt;&lt;a href="http://download.eclipse.org/technology/subversive/0.7/update-site/"&gt;&amp;#104;ttp://download.eclipse.org/technology/subversive/0.7/update-site/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Subversive SVN Connectors&lt;ul class="star"&gt;
+&lt;li&gt;Update Site: &lt;span class="nobr"&gt;&lt;a href="http://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/"&gt;&amp;#104;ttp://www.polarion.org/projects/subversive/download/eclipse/2.0/update-site/&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Maven Integration for Eclipse plug-ins (&lt;span class="nobr"&gt;&lt;a href="http://m2eclipse.sonatype.org/"&gt;&amp;#104;ttp://m2eclipse.sonatype.org/&lt;/a&gt;&lt;/span&gt;)&lt;ul class="star"&gt;
+&lt;li&gt;Update Site: &lt;span class="nobr"&gt;&lt;a href="http://m2eclipse.sonatype.org/sites/m2e"&gt;&amp;#104;ttp://m2eclipse.sonatype.org/sites/m2e&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JDK 1.6 and above&lt;/li&gt;
+&lt;li&gt;Tomcat 6.0 (or higher)&lt;/li&gt;
+&lt;li&gt;MySQL 5.0 (or higher)&lt;/li&gt;
+&lt;li&gt;Apache Maven 2.0.8 or higher (&lt;span class="nobr"&gt;&lt;a href="http://maven.apache.org/"&gt;&amp;#104;ttp://maven.apache.org/&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;VisualVM (&lt;span class="nobr"&gt;&lt;a href="https://visualvm.dev.java.net"&gt;&amp;#104;ttps://visualvm.dev.java.net&lt;/a&gt;&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDownloadingtheSourceCodeinEclipse"&gt;Downloading the Source Code in Eclipse &lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;Install the Subversive and the Subversive SVN Connectors plug-ins&lt;/li&gt;
+&lt;li&gt;Open the SVN Repository Perspective&lt;/li&gt;
+&lt;li&gt;Go to the SVN Repositories Tab and hit the new repository location button.&lt;/li&gt;
+&lt;li&gt;For acquiring the hole trunk source code place at the URL of the New Repository Location window that appears the following URL:&lt;ul class="star"&gt;
+&lt;li&gt;svn://svn.forge.objectweb.org/svnroot/aspire/ (Anonymous) or&lt;/li&gt;
+&lt;li&gt;svn+ssh://USER@svn.forge.objectweb.org/svnroot/aspire  (Developer SVN Access )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Open the repository go to the trunk file right click it an hit Check Out&lt;/li&gt;
+&lt;li&gt;For working with a specific AspireRFID project hit File -&gt; Import -&gt; General -&gt; Existing Projects into Workspace and select for the root directory the project you want to work with from the Hole trunk you have just checked out.&lt;/li&gt;
+&lt;li&gt;Select it from the list, Uncheck the Copy projects into workspace&lt;/li&gt;
+&lt;li&gt;Hit finish and you are ready to work :)&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDebuggingandRunningtheSourceCodeinEclipse"&gt;Debugging and Running the Source Code in Eclipse&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;In general, every component comes with specific instructions.
+e.g. a good starting point for the AspireRFID IDE is the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main.Documentation.AspireIDE/AspireRfidIdeCore"&gt;Aspire IDE Core&lt;/a&gt;&lt;/span&gt;, which is the host of the Aspire tools.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HGeneral"&gt;General&lt;/span&gt;&lt;/h3&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/DeveloperTools"&gt;Developer tools documentation&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="https://forge.ow2.org/projects/aspire"&gt;&amp;#70;orge&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="https://forge.ow2.org/tracker/?group_id=324"&gt;&amp;#66;ug tracker&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;path=%2Ftrunk%2F"&gt;&amp;#66;rowse sources&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Guidelines"&gt;Coding guidelines&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="wikiexternallink"&gt;&lt;a href="http://www.ohloh.net/projects/aspire"&gt;&amp;#65;spireRFID @ ohloh.net&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HDocuments"&gt;Documents&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Developers &lt;a href="/xwiki/bin/download/Main/Developers/ASPIRE_Developers_CodeCamp1.ppt" /&gt;CodeCamp1&lt;/a&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HFacts"&gt;Facts&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;&lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/LOC"&gt;Lines of code analysis &lt;/a&gt;&lt;/span&gt;&lt;/strong&gt;&lt;p class="paragraph"/&gt;&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_partner_badge.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_languages.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://www.ohloh.net/p/15713/widgets/project_basic_stats.js"&gt;&lt;/script&gt;&lt;p class="paragraph"/&gt;
+</renderedcontent>
+</xwikidoc>

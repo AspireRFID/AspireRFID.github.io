@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Licenses</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.donsez</author>
+<contentAuthor>xwiki:XWiki.donsez</contentAuthor>
+<creationDate>1216846832000</creationDate>
+<date>1217579601000</date>
+<contentUpdateDate>1217579601000</contentUpdateDate>
+<version>1.8</version>
+<title>ASPIRE RFID Licenses</title>
+<template></template>
+<content>1 Licenses
+
+1.1 Sources
+The license used by AspireRFID sources is the [LGPL v2.1&gt;http://www.gnu.org/licenses/lgpl-2.1.txt].
+&lt;a rel="license" href="http://www.gnu.org/licenses/lgpl-2.1.txt"&gt;
+&lt;img alt="GNU" style="border-width:0" src="http://www.gnu.org/graphics/gnu-head-mini.png" /&gt;
+&lt;/a&gt;
+
+
+1.1 Documentation
+The license used by AspireRFID documentation is the [Creative Commons Share Alike (by-sa)&gt;http://creativecommons.org/licenses/by-sa/3.0/]
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;
+&lt;img alt="CC" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /&gt;
+&lt;/a&gt;
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HLicenses"&gt;Licenses&lt;/span&gt;&lt;/h2&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HSources"&gt;Sources&lt;/span&gt;&lt;/h3&gt; 
+The license used by AspireRFID sources is the &lt;span class="wikiexternallink"&gt;&lt;a href="http://www.gnu.org/licenses/lgpl-2.1.txt"&gt;&amp;#76;GPL v2.1&lt;/a&gt;&lt;/span&gt;.
+&lt;a rel="license" href="http://www.gnu.org/licenses/lgpl-2.1.txt"&gt;
+&lt;img alt="GNU" style="border-width:0" src="http://www.gnu.org/graphics/gnu-head-mini.png" /&gt;
+&lt;/a&gt;
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDocumentation"&gt;Documentation&lt;/span&gt;&lt;/h3&gt; 
+The license used by AspireRFID documentation is the &lt;span class="wikiexternallink"&gt;&lt;a href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;&amp;#67;reative Commons Share Alike (by-sa)&lt;/a&gt;&lt;/span&gt;
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;
+&lt;img alt="CC" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /&gt;
+&lt;/a&gt;
+</renderedcontent>
+</xwikidoc>

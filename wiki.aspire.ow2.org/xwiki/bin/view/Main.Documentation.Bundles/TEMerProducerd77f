@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main.Documentation.Bundles</web>
+<name>TEMerProducer</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.Documentation.Bundles</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.calmant</author>
+<contentAuthor>xwiki:XWiki.calmant</contentAuthor>
+<creationDate>1276771736000</creationDate>
+<date>1277714602000</date>
+<contentUpdateDate>1277714602000</contentUpdateDate>
+<version>1.11</version>
+<title>Aspire :: OSGi Bundles :: TEMPerProducer</title>
+<template></template>
+<content>1 Aspire :: OSGi Bundles :: TEMPerProducer
+----
+#toc("" "" "true")
+----
+
+This section describes the bundle for TEMPer sensor
+
+1.1 Context
+The TEMPer is a USB-to-serial low-cost thermometer. It can be ordered from many websites. One of the cheapest is http://www.dealextreme.com/details.dx/sku.7003 .
+
+The TEMPerProducer bundle registers one Producer service producing Measurement, Double or String objects (unit is K).
+
+*WARNING:*\\
+as seen on the Internet, there are two versions of this stick.
+The current bundle has been tested with the gray version (old one apparently).
+A blue version exists, with a different data transmission protocol.
+
+1.1 Dependencies
+
+This bundle requires :
+* OSGi R4 Compendium, available from OBR in Felix Shell
+* RXTX, available from Aspire SVN Repository/archive/rfidsuite/rfidsuite/bundles/rxtx/
+
+1.1 Build
+1.1.1 Sources
+* trunk/bundles/sensors/temperproducer/
+
+1.1.1 Device installation
+Under Windows
+# you must install the USB-to-Serial driver on your host with the CD provided with the USB stick (USB Driver/setup.exe).
+# you may install the demonstration application (CD &gt; TEMPer V8.1/setup.exe) to test the thermometer.
+# inspect the serial COM port from "System Properties &gt; Hardware &gt; Device Management &gt; Ports (COM and LPT) &gt; USB-SERIAL (COMxx)"
+
+Under Linux
+# put the device on a USB port
+# In dmesg, you should see a line like : ~~usb 7-2: ch341-uart converter now attached to *ttyUSB0*~~
+# In this case, *ttyUSB0* is the serial port to use to read data from the stick.
+
+*WARNING:*\\
+Reading serial ports through /dev requires root rights.\\
+Some hints to bypass that problem may be given here later.
+
+Then
+# cd trunk/bundles/sensors/temperproducer
+# configure the serial port in src/main/java/org/ow2/aspirerfid/sensor/temperproducer/TEMPerProducer.java
+# mvn clean install
+
+1.1 Configuration
+
+You must configure the properties for your dongle in the source (currently).\\
+The default values are a COM14 port and a poll each 2 seconds.
+
+See org/ow2/aspirerfid/sensor/temperproducer/TEMPerProducer.java
+
+* Hard coded COM port :
+** Default Value : ~~String portName = "COM14";~~
+** Under Linux, you should use : ~~String portName = "/dev/ttyUSB0";~~
+
+* Poll delay :
+** Default value : ~~int POLLDELAY = 2000;~~
+
+1.1 Artifacts
+The artifact to deploy is
+*  org.ow2.aspirerfid:org.ow2.aspirerfid.temperproducer
+
+1. Tests
+1.1 Under Linux
+
+Tested under Fedora 13 (64 bits), kernel 2.6.33, with included driver
+
+It seems that there is an alternance between a correct value and a constant value.\\
+All the results looked like :
+
+&lt;pre&gt;
+    529.0875 K
+    305.15 K
+    529.0875 K
+    305.65 K
+    529.0875 K
+    308.15 K
+    529.0875 K
+&lt;/pre&gt;
+
+Where 305 K is a correct value (around 30°C), and 529.0875 (around 255.9°C) seems to be a control value.
+
+1.1 Under Windows
+
+Tested under Windows 7 Professional (32 bits), with the provided driver (on the CD-Rom).
+
+Works fine, no problem found.
+</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HAspire3A3AOSGiBundles3A3ATEMPerProducer"&gt;Aspire :: OSGi Bundles :: TEMPerProducer&lt;/span&gt;&lt;/h2&gt; 
+&lt;hr class="line"/&gt;
+            &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HContext"&gt;1 Context&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDependencies"&gt;2 Dependencies&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HBuild"&gt;3 Build&lt;/a&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#HSources"&gt;3.1 Sources&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HDeviceinstallation"&gt;3.2 Device installation&lt;/a&gt; 
+        &lt;/ul&gt;
+          &lt;li&gt;&lt;a href="#HConfiguration"&gt;4 Configuration&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HArtifacts"&gt;5 Artifacts&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUnderLinux"&gt;6 Under Linux&lt;/a&gt; 
+      &lt;li&gt;&lt;a href="#HUnderWindows"&gt;7 Under Windows&lt;/a&gt; 
+      &lt;/ul&gt; &lt;hr class="line"/&gt;&lt;p class="paragraph"/&gt;This section describes the bundle for TEMPer sensor
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HContext"&gt;Context&lt;/span&gt;&lt;/h3&gt; 
+The TEMPer is a USB-to-serial low-cost thermometer. It can be ordered from many websites. One of the cheapest is &lt;span class="nobr"&gt;&lt;a href="http://www.dealextreme.com/details.dx/sku.7003"&gt;&amp;#104;ttp://www.dealextreme.com/details.dx/sku.7003&lt;/a&gt;&lt;/span&gt; .&lt;p class="paragraph"/&gt;The TEMPerProducer bundle registers one Producer service producing Measurement, Double or String objects (unit is K).&lt;p class="paragraph"/&gt;&lt;strong class="strong"&gt;WARNING:&lt;/strong&gt;&lt;br/&gt;
+as seen on the Internet, there are two versions of this stick.
+The current bundle has been tested with the gray version (old one apparently).
+A blue version exists, with a different data transmission protocol.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HDependencies"&gt;Dependencies&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;This bundle requires :
+&lt;ul class="star"&gt;
+&lt;li&gt;OSGi R4 Compendium, available from OBR in Felix Shell&lt;/li&gt;
+&lt;li&gt;RXTX, available from Aspire SVN Repository/archive/rfidsuite/rfidsuite/bundles/rxtx/&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HBuild"&gt;Build&lt;/span&gt;&lt;/h3&gt; 
+&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HSources"&gt;Sources&lt;/span&gt;&lt;/h4&gt; 
+&lt;ul class="star"&gt;
+&lt;li&gt;trunk/bundles/sensors/temperproducer/&lt;/li&gt;
+&lt;/ul&gt;&lt;h4 class="heading-1-1-1"&gt;&lt;span id="HDeviceinstallation"&gt;Device installation&lt;/span&gt;&lt;/h4&gt; 
+Under Windows
+&lt;ol&gt;&lt;li&gt;you must install the USB-to-Serial driver on your host with the CD provided with the USB stick (USB Driver/setup.exe).&lt;/li&gt;
+&lt;li&gt;you may install the demonstration application (CD &gt; TEMPer V8.1/setup.exe) to test the thermometer.&lt;/li&gt;
+&lt;li&gt;inspect the serial COM port from "System Properties &gt; Hardware &gt; Device Management &gt; Ports (COM and LPT) &gt; USB-SERIAL (COMxx)"&lt;/li&gt;
+&lt;/ol&gt;Under Linux
+&lt;ol&gt;&lt;li&gt;put the device on a USB port&lt;/li&gt;
+&lt;li&gt;In dmesg, you should see a line like : &lt;i class="italic"&gt;usb 7-2: ch341-uart converter now attached to &lt;strong class="strong"&gt;ttyUSB0&lt;/strong&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;In this case, &lt;strong class="strong"&gt;ttyUSB0&lt;/strong&gt; is the serial port to use to read data from the stick.&lt;/li&gt;
+&lt;/ol&gt;&lt;strong class="strong"&gt;WARNING:&lt;/strong&gt;&lt;br/&gt;
+Reading serial ports through /dev requires root rights.&lt;br/&gt;
+Some hints to bypass that problem may be given here later.&lt;p class="paragraph"/&gt;Then
+&lt;ol&gt;&lt;li&gt;cd trunk/bundles/sensors/temperproducer&lt;/li&gt;
+&lt;li&gt;configure the serial port in src/main/java/org/ow2/aspirerfid/sensor/temperproducer/TEMPerProducer.java&lt;/li&gt;
+&lt;li&gt;mvn clean install&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HConfiguration"&gt;Configuration&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;You must configure the properties for your dongle in the source (currently).&lt;br/&gt;
+The default values are a COM14 port and a poll each 2 seconds.&lt;p class="paragraph"/&gt;See org/ow2/aspirerfid/sensor/temperproducer/TEMPerProducer.java
+&lt;ul class="star"&gt;
+&lt;li&gt;Hard coded COM port :&lt;ul class="star"&gt;
+&lt;li&gt;Default Value : &lt;i class="italic"&gt;String portName = "COM14";&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;Under Linux, you should use : &lt;i class="italic"&gt;String portName = "/dev/ttyUSB0";&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Poll delay :&lt;ul class="star"&gt;
+&lt;li&gt;Default value : &lt;i class="italic"&gt;int POLLDELAY = 2000;&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HArtifacts"&gt;Artifacts&lt;/span&gt;&lt;/h3&gt; 
+The artifact to deploy is
+&lt;ul class="star"&gt;
+&lt;li&gt; org.ow2.aspirerfid:org.ow2.aspirerfid.temperproducer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Tests&lt;/li&gt;
+&lt;/ol&gt;&lt;h3 class="heading-1-1"&gt;&lt;span id="HUnderLinux"&gt;Under Linux&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Tested under Fedora 13 (64 bits), kernel 2.6.33, with included driver&lt;p class="paragraph"/&gt;It seems that there is an alternance between a correct value and a constant value.&lt;br/&gt;
+All the results looked like :&lt;p class="paragraph"/&gt;&lt;pre&gt;
+    529.0875 K
+    305.15 K
+    529.0875 K
+    305.65 K
+    529.0875 K
+    308.15 K
+    529.0875 K
+&lt;/pre&gt;&lt;p class="paragraph"/&gt;Where 305 K is a correct value (around 30°C), and 529.0875 (around 255.9°C) seems to be a control value.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HUnderWindows"&gt;Under Windows&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Tested under Windows 7 Professional (32 bits), with the provided driver (on the CD-Rom).&lt;p class="paragraph"/&gt;Works fine, no problem found.
+</renderedcontent>
+</xwikidoc>

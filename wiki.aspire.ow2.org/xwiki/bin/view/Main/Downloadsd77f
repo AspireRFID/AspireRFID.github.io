@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>Main</web>
+<name>Downloads</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent>Main.WebHome</parent>
+<creator>xwiki:XWiki.donsez</creator>
+<author>xwiki:XWiki.reckeyzhang</author>
+<contentAuthor>xwiki:XWiki.reckeyzhang</contentAuthor>
+<creationDate>1216844416000</creationDate>
+<date>1278084792000</date>
+<contentUpdateDate>1278084792000</contentUpdateDate>
+<version>1.18</version>
+<title>ASPIRE RFID Downloads</title>
+<template></template>
+<attachment>
+<filename>Aspire_Structure.gif</filename>
+<filesize>64031</filesize>
+<author>xwiki:XWiki.reckeyzhang</author>
+<date>1278084763000</date>
+<version>1.1</version>
+<comment></comment>
+</attachment>
+<content>1 Downloads
+
+1.1 Latest Releases Candidates
+
+Latest releases are available at the [ASPIRE forge&gt;http://forge.ow2.org/project/showfiles.php?group_id=324].
+
+Information about using these files can be found at the [Documentation&gt;Main.Documentation] section.
+
+
+1.1 Stable Releases
+
+Under construction
+
+1.1 Nightly builds
+
+Under construction.
+
+Aspire RFID nightly builds will be available from the [OW2 forge&gt;http://forge.ow2.org/bamboo/browse/ASPIRERFID].
+
+
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+&lt;title&gt;Aspire Architecture&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+       
+&lt;H2 class="heading-1"&gt;&lt;font color="#FB6400" face="Arial"&gt;&lt;SPAN id="HDownloads"&gt; Aspire Architecture &lt;/SPAN&gt;&lt;/font&gt;&lt;/H2&gt;
+
+ 
+          
+ &lt;TD id="content-primary"&gt;
+&lt;P&gt;&lt;font color="#0000FF" face="Arial"&gt;Click the different modules of Aspire Architecture below to access 
+the detailed introduction. &lt;br /&gt;Click little arrows at the bottom right of some modules to download the corresponding src/binaire files. &lt;br /&gt;Some of the modules bind a set of contributions from different partners, downloads are available in the introduction pages of the related modules.    &lt;/font&gt;&lt;/P&gt;&lt;MAP name="aspire_structure"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14616" shape="rect" alt="" coords="215, 158, 235, 178"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14614" shape="rect" alt="" coords="215, 263, 235, 282"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14617" shape="rect" alt="" coords="347, 360, 367, 383"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006" shape="rect" alt="" coords="570, 110, 590, 128"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector" shape="rect" alt="" coords="25, 135, 250, 178"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository" shape="rect" alt="" coords="25, 185, 250, 228"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG" shape="rect" alt="" coords="25, 235, 250, 280"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection" shape="rect" alt="" coords="25, 285, 250, 332"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ReaderCoreProxy" shape="rect" alt="" coords="25, 340, 250, 387"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/HAL" shape="rect" alt="" coords="25, 392, 250, 440"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" shape="rect" alt="" coords="25, 447, 250, 492"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL" shape="rect" alt="" coords="275, 130, 378, 242"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APE" shape="rect" alt="" coords="275, 280, 378, 390"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/StandaloneTestingTools" shape="rect" alt="" coords="275, 420, 378, 480"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE" shape="rect" alt="" coords="400, 90, 640, 500"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" shape="rect" alt="" coords="12, 522, 652, 620"&gt;
+
+&lt;/MAP&gt;
+&lt;P&gt;&lt;IMG src="http://wiki.aspire.ow2.org/xwiki/bin/download/Main/Downloads/Aspire_Structure.gif" width="660" height="575" usemap="#aspire_structure"&gt;&lt;BR&gt;&lt;/P&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</content>
+<renderedcontent>&lt;h2 class="heading-1"&gt;&lt;span id="HDownloads"&gt;Downloads&lt;/span&gt;&lt;/h2&gt; 
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HLatestReleasesCandidates"&gt;Latest Releases Candidates&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Latest releases are available at the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/project/showfiles.php?group_id=324"&gt;&amp;#65;SPIRE forge&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;Information about using these files can be found at the &lt;span class="wikilink"&gt;&lt;a href="/xwiki/bin/view/Main/Documentation"&gt;Documentation&lt;/a&gt;&lt;/span&gt; section.
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HStableReleases"&gt;Stable Releases&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Under construction
+&lt;h3 class="heading-1-1"&gt;&lt;span id="HNightlybuilds"&gt;Nightly builds&lt;/span&gt;&lt;/h3&gt;&lt;p class="paragraph"/&gt;Under construction.&lt;p class="paragraph"/&gt;Aspire RFID nightly builds will be available from the &lt;span class="wikiexternallink"&gt;&lt;a href="http://forge.ow2.org/bamboo/browse/ASPIRERFID"&gt;&amp;#79;W2 forge&lt;/a&gt;&lt;/span&gt;.&lt;p class="paragraph"/&gt;
+&lt;html&gt;&lt;p class="paragraph"/&gt;&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+&lt;title&gt;Aspire Architecture&lt;/title&gt;
+&lt;/head&gt;&lt;p class="paragraph"/&gt;&lt;body&gt;&lt;p class="paragraph"/&gt;       
+&lt;H2 class="heading-1"&gt;&lt;font color="#FB6400" face="Arial"&gt;&lt;SPAN id="HDownloads"&gt; Aspire Architecture &lt;/SPAN&gt;&lt;/font&gt;&lt;/H2&gt;&lt;p class="paragraph"/&gt;&lt;p class="paragraph"/&gt; &lt;TD id="content-primary"&gt;
+&lt;P&gt;&lt;font color="#0000FF" face="Arial"&gt;Click the different modules of Aspire Architecture below to access 
+the detailed introduction. &lt;br /&gt;Click little arrows at the bottom right of some modules to download the corresponding src/binaire files. &lt;br /&gt;Some of the modules bind a set of contributions from different partners, downloads are available in the introduction pages of the related modules.    &lt;/font&gt;&lt;/P&gt;&lt;MAP name="aspire_structure"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14616" shape="rect" alt="" coords="215, 158, 235, 178"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14614" shape="rect" alt="" coords="215, 263, 235, 282"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=14617" shape="rect" alt="" coords="347, 360, 367, 383"&gt;
+&lt;AREA href="http://forge.ow2.org/project/download.php?group_id=324&amp;file_id=15006" shape="rect" alt="" coords="570, 110, 590, 128"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector" shape="rect" alt="" coords="25, 135, 250, 178"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/EpcisRepository" shape="rect" alt="" coords="25, 185, 250, 228"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/BEG" shape="rect" alt="" coords="25, 235, 250, 280"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Filtering%26Collection" shape="rect" alt="" coords="25, 285, 250, 332"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/ReaderCoreProxy" shape="rect" alt="" coords="25, 340, 250, 387"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/HAL" shape="rect" alt="" coords="25, 392, 250, 440"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/TDT" shape="rect" alt="" coords="25, 447, 250, 492"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APDL" shape="rect" alt="" coords="275, 130, 378, 242"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/APE" shape="rect" alt="" coords="275, 280, 378, 390"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/StandaloneTestingTools" shape="rect" alt="" coords="275, 420, 378, 480"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/AspireIDE" shape="rect" alt="" coords="400, 90, 640, 500"&gt;
+&lt;AREA href="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Demos" shape="rect" alt="" coords="12, 522, 652, 620"&gt;&lt;p class="paragraph"/&gt;&lt;/MAP&gt;
+&lt;P&gt;&lt;IMG src="http://wiki.aspire.ow2.org/xwiki/bin/download/Main/Downloads/Aspire_Structure.gif" width="660" height="575" usemap="#aspire_structure"&gt;&lt;BR&gt;&lt;/P&gt;&lt;p class="paragraph"/&gt;
+&lt;/body&gt;&lt;p class="paragraph"/&gt;&lt;/html&gt;
+</renderedcontent>
+</xwikidoc>

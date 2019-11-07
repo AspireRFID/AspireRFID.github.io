@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:14:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Connector
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="../Main/BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="../Main/index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin3378.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='Connector.html'>Connector</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main.Documentation/Main.Documentation_Connector.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="Connectord5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main.Documentation/Connectorcede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="Connectord77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HConnector">Connector</span></h2><p class="paragraph"/><hr class="line"/>
+            <ul>
+          <li><a href="#HIntroduction"> Introduction</a> 
+      <li><a href="#HUsersGuide"> Users Guide</a> 
+        <ul>
+          <li><a href="#HDeployment"> Deployment</a> 
+      <li><a href="#HConfiguration"> Configuration </a> 
+        <ul>
+          <li><a href="#HConnectorserver"> Connector server</a> 
+      <li><a href="#HConnectorclient"> Connector client</a> 
+        </ul>
+       </ul>
+          <li><a href="#HDevelopersGuide"> Developers Guide</a> 
+        <ul>
+          <li><a href="#HConnectorEngine"> Connector Engine</a> 
+      <li><a href="#HConnectorclient-1"> Connector client</a> 
+      <li><a href="#HWorktodo"> Work to do</a> 
+      </ul></ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HIntroduction">Introduction</span></h3><p class="paragraph"/>In this section we will provide information regarding the deployment and the configuration of the connector components.<p class="paragraph"/>The connector is composed by two collaborating components the server part and the client part. These terms should not be taken with their strict meaning because both components act at some time in their lifecycle as a server and as a client. These terms represent their position in the AspireRFID framework. The connector server is located next two the EPCIS component and the connector client is located next to the client application that requires information from EPCIS. They act as proxies to automate the process of communicating with an EPCIS repository. More information about the role of the connectors can be acquired from Aspire's deliverable <span class="wikiexternallink"><a href="http://fp7-aspire.eu/fileadmin/aspire/docs/D2_4.pdf">&#50;.4 Requirements and specifications</a></span>. 
+<h3 class="heading-1-1"><span id="HUsersGuide">Users Guide</span></h3> 
+<h4 class="heading-1-1-1"><span id="HDeployment">Deployment</span></h4><p class="paragraph"/>Both connector components are designed to work in a Java application server (e.g. tomcat) so they are provided as a web archive (i.e. war). The connector client can also be embedded within a client application if required. This means that it can function either within a web container or in standalone mode, functionality that can be selected through configuration files.
+Instructions on how to deploy the provided war files are dependent on the application server that you may choose to use. For the latest version of tomcat, all you have to do is place a copy of the war files within the webapps directory located at the tomcat installation folder.
+<h4 class="heading-1-1-1"><span id="HConfiguration">Configuration </span></h4><p class="paragraph"/>Configuration files exist within the war files under the folder props with the name <strong class="strong">application.properties</strong>. You can either edit them before deployment or after deployment based on your needs and on the application server that you are using. Following we will describe the configuration options for each connector component.
+<h5 class="heading-1-1-1-1"><span id="HConnectorserver">Connector server</span></h5> 
+This is the configuration file of the connector server. We will explain each one of the configuration options.
+<div class="code"><pre>callbackDestinationUrl=http://localhost:8899
+epcisQueryIfceUrl=http://localhost:8080/epcis/query
+epcisCaptureIfceUrl=http://localhost:8080/epcis/capture
+queryName=SimpleEventQuery
+timeDifferenceFromUTC=+02:00</pre></div><p class="paragraph"/><strong class="strong">callbackDestinationUrl</strong>: This generally does not need to be changed. It defines a TCP server where query subscriptions to the EPCIS repository will return their results to. If this is defined incorrectly the connector will not be able to receive any query results from the EPCIS repository.<p class="paragraph"/><strong class="strong">epcisQueryIfceUrl</strong>: This property holds the location of the EPCIS query interface that we are interested in getting information from, as defined by the <span class="wikiexternallink"><a href="http://www.epcglobalinc.org/standards/epcis">&#69;PCglobal EPCIS standard</a></span><p class="paragraph"/><strong class="strong">epcisCaptureIfceUrl</strong>: This is the URL of location of the EPCIS capture interface.<p class="paragraph"/><strong class="strong">queryName</strong>: The only available query name is the SimpleEventQuery. Unless another query is implemented at the EPCIS query interface, this should not be changed.<p class="paragraph"/><strong class="strong">timeDifferenceFromUTC</strong>: This is the time difference of the local time from the <span class="wikiexternallink"><a href="http://en.wikipedia.org/wiki/Utc">&#85;TC</a></span> or <span class="wikiexternallink"><a href="http://en.wikipedia.org/wiki/Gmt">&#71;MT</a></span>. It is required for the generation of specific EPCIS events. The format is ±HH:MM.
+<h5 class="heading-1-1-1-1"><span id="HConnectorclient">Connector client</span></h5> 
+<div class="code"><pre>connectorServerUrl = <span class="nobr"><a href="http://localhost:8080/Connector&amp;#45;1.0/connector">&#104;ttp://localhost:8080/Connector&#45;1.0/connector</a></span></pre></div><p class="paragraph"/><strong class="strong">connectorServerUrl</strong>: The endpoint of the connector server. The first part, i.e. <i class="italic"><span class="nobr"><a href="http://localhost:8080/Connector-1.0">&#104;ttp://localhost:8080/Connector-1.0</a></span></i> is the location where the connector server has been deployed. The second part, i.e. <i class="italic">connector</i> is the web service that the client uses to communicate with the server and subscribe for new queries.<p class="paragraph"/><strong class="strong">isConnectorClientStandaloneModeOn</strong>: Possible values: true or false. This defines whether the connector client is deployed as a standalone web application or is embedded within a client application. If this property is set to <strong class="strong">false</strong> and the war file is deployed to an application server, an embedded servlet will be used to deploy the web services of the connector client. On the other hand, if this property is set to true, an embedded trivial application server will be opened by the connector client, on the port defined by the <strong class="strong">standaloneConnectorClientPort</strong> property, and the web service will be deployed on this server.
+<h3 class="heading-1-1"><span id="HDevelopersGuide">Developers Guide</span></h3><p class="paragraph"/>The Connector components provide SOAP based web services to subscribe to new EPCIS transactions and to receive new events information. As it has been mentioned above there are two components than compose the Connector functionality: The Connector Server or Connector Engine and the Connector Client.
+<h4 class="heading-1-1-1"><span id="HConnectorEngine">Connector Engine</span></h4><p class="paragraph"/>This component is responsible for receiving query (subscription or polling) requests from the client, to translate this information to EPCIS query information and then forward any event details from the EPCIS repository to the connector client via the web service that the client exposes.
+The engine provides two web services to start and stop a transaction observation. The <strong class="strong">startObservingTransaction</strong> and the <strong class="strong">stopObservingTransaction</strong>. Both of these operations require (among others) a specific type of object to be passwd that encapsulates all mandatory and optional information for the query, the <strong class="strong">SubscriptionParameters</strong> object.<p class="paragraph"/><strong class="strong">SubscriptionParameters</strong>
+<div class="code"><pre>&#60;xs:complexType name=<span class="java&#45;quote">"subscriptionParameters"</span>&#62;
+    &#60;xs:sequence&#62;
+        &#60;xs:element name=<span class="java&#45;quote">"doPoll"</span> type=<span class="java&#45;quote">"xs:<span class="java&#45;object">boolean</span>"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"initialTime"</span> type=<span class="java&#45;quote">"xs:dateTime"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"queryDayOfMonth"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"queryDayOfWeek"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"queryHour"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"queryMin"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"queryMonth"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"querySec"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"replyEndpoint"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element name=<span class="java&#45;quote">"reportIfEmpty"</span> type=<span class="java&#45;quote">"xs:<span class="java&#45;object">boolean</span>"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"subscriptionId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"transactionId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"transactionType"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+    &#60;/xs:sequence&#62;
+&#60;/xs:complexType&#62;</pre></div>
+<ul class="star">
+<li><strong class="strong">doPoll</strong>: If false, then a new subscription will be registered within the EPCIS with information that is provided with other elements. If true then the query will be executed only once. Mandatory for new subscriptions.</li>
+<li><strong class="strong">initialTime</strong>: This parameter defines the time constraint after which all matching events will be returned. If doPoll is false, and the initialTime refers to the past, the old matching events will be returned within the first response message. Mandatory for new subscriptions.</li>
+<li><strong class="strong">queryX</strong>: This category of parameters define the time interval that the query will be executed within the EPCIS repository if doPoll is false. At least one of the parameters should be defined in this case. These parameters take a comma separated list of integers that define the query schedule. For example, if querySec has the value <i class="italic">1,31</i> then the query will be executed on the 1st and 31st second of every minute. For more information you should read chapter <i class="italic">8.2.5.3 Query Schedule</i> of the <i class="italic">EPCglobal EPC Information Services (EPCIS) Version 1.0.1 Specification</i>. Mandatory for new subscriptions.</li>
+<li><strong class="strong">replyEndpoint</strong>: Defines the web service endpoint of the Connector Client that query results should be posted to. Mandatory for new subscriptions.</li>
+<li><strong class="strong">reportIfEmpty</strong>: Indicates whether a query result will be send to the Connector client even if there is no matching event. Mandatory for new subscriptions.</li>
+<li><strong class="strong">subscriptionId</strong>: Should be a universally unique identifier to identify a subscription. Mandatory if doPoll false.</li>
+<li><strong class="strong">transactionId</strong>: Indicates the events that we are interested in. Mandatory for new subscriptions and for deletions.</li>
+<li><strong class="strong">transactionType</strong>: Indicates the optional event type that we are interested in. Optional. Mandatory in deletions only if it had been defined in the initial subscription.</li>
+</ul>The <strong class="strong">startObservingTransaction operation</strong> requires this object as a parameter.<p class="paragraph"/>The <strong class="strong">stopObservingTransaction operation</strong> takes as a parameter a subscription parameters object along with a boolean value which indicates if the transaction id that we want to stop observing has been completed, in order to send a Transaction Event to the EPCIS repository and delete the transaction designated in the SubscriptionParameters object. If the deletion of the  transaction is not required then the parameters construct should only contain the subscriptionId element.<p class="paragraph"/>Refer to the <a href="../../download/Main.Documentation/Connector/ConnectorEngine.wsdl" />&#67;onnectorEngine.wsdl</a> for the web service definition.
+<h4 class="heading-1-1-1"><span id="HConnectorclient">Connector client</span></h4><p class="paragraph"/>This component is responsible for receiving query (subscription or polling) requests from a software that uses the client component, submit the query to the Connector Engine and receive query responses from the latter.
+The component provides one web services to receive events from the engine based on subscribed or polled queries. This operation is called asynchronously from the engine when event information is available and receives an Event object that encapsulates information provided by EPCIS events which are defined by the EPCIS 1.0.1 specification.<p class="paragraph"/><strong class="strong">Event</strong>
+<div class="code"><pre>&#60;xs:complexType name=<span class="java&#45;quote">"event"</span>&#62;
+    &#60;xs:sequence&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"action"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"bizLocationId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"bizStepId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element maxOccurs=<span class="java&#45;quote">"unbounded"</span> minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"bizTransactionList"</span> nillable=<span class="java&#45;quote">"<span class="java&#45;keyword">true</span>"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element maxOccurs=<span class="java&#45;quote">"unbounded"</span> minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"childEpcs"</span> nillable=<span class="java&#45;quote">"<span class="java&#45;keyword">true</span>"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"dispositionId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"epcClass"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element maxOccurs=<span class="java&#45;quote">"unbounded"</span> minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"epcList"</span> nillable=<span class="java&#45;quote">"<span class="java&#45;keyword">true</span>"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element name=<span class="java&#45;quote">"eventTime"</span> type=<span class="java&#45;quote">"xs:<span class="java&#45;object">long</span>"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"parentId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element name=<span class="java&#45;quote">"quantity"</span> type=<span class="java&#45;quote">"xs:<span class="java&#45;object">int</span>"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"readPointId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+        &#60;xs:element minOccurs=<span class="java&#45;quote">"0"</span> name=<span class="java&#45;quote">"subscriptionId"</span> type=<span class="java&#45;quote">"xs:string"</span>/&#62;
+    &#60;/xs:sequence&#62;
+&#60;/xs:complexType&#62;</pre></div><p class="paragraph"/>Refer to the <a href="../../download/Main.Documentation/Connector/ConnectorClient.wsdl" />&#67;onnectorClient.wsdl</a> for the web service definition.<p class="paragraph"/>The client can be either deployed separately in an application server, e.g. Apache Tomcat, or it may be embedded within a client application and deploy the web service through an embedded Jetty application server. The first task is done automatically. The second is done by calling the <strong class="strong">startStandaloneMode</strong> method of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class.<p class="paragraph"/>The client application should implement the <strong class="strong">org.ow2.aspirerfid.connectors.api.ClientEventHandler</strong> interface and register itself through the <strong class="strong">setEventHandler</strong> of the org.ow2.aspirerfid.connectors.client.ConnectorClientImpl class so that it may receive the events and do the whatever it wants.<p class="paragraph"/>The client application should use the org.ow2.aspirerfid.connectors.client.RegistrationManager operations to register or execute new queries passing a SubscriptionParameters object and unregister from existing subscriptions.
+<h4 class="heading-1-1-1"><span id="HWorktodo">Work to do</span></h4> 
+<ul class="star">
+<li>Make Connector engine subscription information persistent.</li>
+</ul>
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="../Main/News.html">News</a></span></li>
+<li><span class="wikilink"><a href="../Main/FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="../Main/Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="../Main/Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main/References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="../Main/Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="../Main/Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="../Main/Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="../Main/Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="../Main/SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="../Main/Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="../Main/Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="../Main/WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Main/Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="../Main/PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="../Main/Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="../Main/Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="../Main/Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="../Main/Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='Connector.html'){
+ var Tynt=Tynt||<a class="wikicreatelink" href="../../edit/Main.Documentation/index859e.html?parent=Main.Documentation.Connector"><span class="wikicreatelinktext"></span><span class="wikicreatelinkqm">?</span></a>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main.Documentation/0?parent=Main.Documentation.Connector"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            2 Attachments  by
+            nektarios ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/Connector/ConnectorEngine.wsdl">ConnectorEngine.wsdl</
+                                     a></td>
+            <td>1.1</td><td>nektarios</td><td>5406</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main.Documentation/Connector/ConnectorClient.wsdl">ConnectorClient.wsdl</
+                                     a></td>
+            <td>1.1</td><td>nektarios</td><td>3646</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main.Documentation/Connector" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main/Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='../Main/Documentation.html'>Main.Documentation</a> &gt; <a href='Connector.html'>Connector</a>
+  (en)
+ <br />
+  Creator: nektarios
+ &nbsp;Date: 2009/01/29 18:03
+ <br />
+ Last Author: nektarios
+ &nbsp;Date: 2009/02/26 16:19
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="../Main/Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main.Documentation/Connector by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:14:43 GMT -->
+</html>

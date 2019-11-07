@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wiki="http://purl.org/rss/1.0/modules/wiki/" 
+encoding="ISO-8859-1" >
+<channel rdf:about="http://wiki.aspire.ow2.org">
+<title>News</title>
+<link>http://wiki.aspire.ow2.org</link>
+<description>
+News
+</description>
+<image rdf:resource="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif" />
+<dc:language>en</dc:language>
+<dc:rights>Copyright (c) 2008-2010, <a href="http://www.fp7-aspire.eu/">Aspire</a></dc:rights>
+<dc:publisher>xwiki:XWiki.moghrabi</dc:publisher>
+<dc:creator>xwiki:XWiki.moghrabi</dc:creator>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/News" />
+</rdf:Seq>
+</items>
+</channel>
+<image rdf:about="http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif">
+  <title>XWiki Logo</title>
+  <link>http://wiki.aspire.ow2.org</link>
+  <url>http://wiki.aspire.ow2.org/xwiki/skins/default/logo.gif</url>
+</image>
+<item rdf:about="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/News">
+<title>Demonstration in the scope of the ASPIRE RFID Information Day in Greece</title>
+<link>http://wiki.aspire.ow2.org/xwiki/bin/view/Main/News</link>
+<description>
+May 2008: (AIT Branch) Demonstration in the scope of the &#60;span class=&#34;wikiexternallink&#34;&#62;&#60;a href=&#34;http://www.fp7-aspire.eu&#34;&#62;&#38;#65;SPIRE-&#60;/a&#62;&#60;/span&#62; RFID Information Day in Greece, Athens, Greece, May 21, 2008.
+
+</description>
+<dc:date>2011-06-02 14:48:31.0</dc:date>
+<dc:contributor>
+<rdf:Description link="">
+<rdf:value>xwiki:XWiki.nkef</rdf:value>
+</rdf:Description>
+</dc:contributor>
+</item>
+</rdf:RDF>

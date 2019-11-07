@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/Services by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:04:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>
+Aspire Wiki - ObjectWeb - Services
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="NAGIOS" content="OK" >
+<meta name="revisit-after" content="3 days" />
+<meta name="description" content="Wiki Website" />
+<meta name="keywords" content="objectweb Open Source Middleware" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="rating" content="General" />
+<meta name="copyright" content="Copyright 2005-2006, ObjectWeb Consortium" />
+<meta name="author" content="objectweb" />
+<meta http-equiv="reply-to" content="webmaster@objectweb.org" />
+<meta name="language" content="en" />
+<link rel="alternate" type="application/rss+xml" title="ObjectWeb News RSS Feed" href="BlogRss7f1d?xpage=rdf" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="icon" />
+<link type="image/x-icon" href="../../download/XWiki/MySkin/ow.ico" rel="shortcut icon" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../skin/XWiki/MySkin/style.css" rel="stylesheet" type="text/css" title="default" />
+<link href="../../skin/XWiki/MySkin/style.css" rel="alternate stylesheet" type="text/css"  title="Alternate StyleSheet 1" />
+<style type="text/css">
+
+</style>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="../../../skins/default/skin.js"></script>
+<script type="text/javascript" src="../../../skins/default/prototype.js"></script>
+<script type="text/javascript" src="../../../skins/default/xwiki.js"></script>
+<script type="text/javascript" src="../../../skins/default/browserdetect.js"></script>
+</head>
+<body>
+
+<div id="owlinks">
+<a href="http://www.ow2.org/">&nbsp;Consortium&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Fundamentals">&nbsp;Activities&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/xwiki/bin/view/Activities/Projects">&nbsp;Projects&nbsp;</a>&nbsp;&nbsp;<a href="http://forge.objectweb.org/">&nbsp;Forge&nbsp;</a>&nbsp;&nbsp;<a href="http://www.ow2.org/view/Events/">&nbsp;Events&nbsp;</a>
+</div>
+
+<div id="xwikibanner" style="height: 95px">
+<div id="xwikilogo" style="top: 20px;">
+    <a href="index.html">
+<img src="../../download/XWiki/MySkin/logo.png" alt="ObjectWeb logo" />
+    </a>
+  </div>
+
+<div id="xwikilinks">
+  <div id="xwikimenu">
+<br/>
+<a href="../../login/XWiki/XWikiLogin713b.html?xredirect=http://wiki.aspire.ow2.org/xwiki/bin/view/Main/Services">Log-in</a><br />
+<a href="http://consortium.objectweb.org/registration.html">Register</a>
+  </div>
+  <div id="xwikititle">
+   <h1><a href='Services.html'>AspireRfid Services</a></h1>
+  </div>
+</div>
+</div>
+
+  <div class="xwiki0a" id="xwikinav_header">
+  <div id="xwikiwebusermenu">
+    <span id="xwikiwebusermenutitle">Space Menu</span>
+    <a href="http://consortium.objectweb.org/">Consortium</a><span> | </span>
+<a href="http://solutions.objectweb.org/">Solutions</a><span> | </span>
+<a href="http://middleware.objectweb.org/">Middleware</a><span> | </span>
+<a href="http://forge.objectweb.org/">Forge</a><span> | </span>
+<a href="http://myobjectweb.objectweb.org/">MyObjectWeb</a><span> | </span>
+
+  </div>
+  <div id="xwikieditmenu">
+                          <a href="../../pdf/Main/Main_Services.pdf" class="img"><img src="../../../skins/default/pdf.gif" alt="PDF" title="PDF"/>PDF</a><span class="xwikisep"> | </span>
+    <a href="Servicesd5a0.html?xpage=history#aspire" class="img"><img src="../../../skins/default/history.gif" alt="History" title="History"/>History</a><span class="xwikisep"> | </span>
+    <div id="xwikimoreactions">
+      <div id="xwikimoreactionstitle"><a href="#" onclick="showhide('xwikimoreactionsitems'); return false;">More Actions</a></div>
+      <div id="xwikimoreactionsitems">
+        <div class="xwikimenutitle">View</div>
+                  <span class="xwikimoreactionitem"><a href="../../viewrev/Main/Servicescede.html?xpage=code&amp;#aspire">Code</a></span><span class="xwikisep"> | </span>
+                <span class="xwikimoreactionitem"><a href="Servicesd77f?xpage=xml&amp;">XML</a></span><span class="xwikisep"> | </span>
+                        <div class="xwikimenutitle">Help</div>
+        <span class="xwikimoreactionitem"><a href="../Doc/index.html">Documentation</a></span><span class="xwikisep"> | </span>
+        <span class="xwikimoreactionitem"><a href="../Doc/XWikiSyntax.html">XWiki Syntax</a></span><span class="xwikisep"> | </span>
+      </div>
+    </div>
+  </div>
+  <div id="xwikilanguagemenu">
+    
+  </div>
+  </div>
+
+<div id="xwikicontent" class="show-all">
+       <div id="columns">
+        <div class="cols-wrapper">
+          <div class="float-wrapper">
+            <div id="col-a">
+              <div class="main-content">
+<h2 class="heading-1"><span id="HServices28Training2FConsulting29">Services (Training / Consulting)</span></h2><p class="paragraph"/>
+<hr class="line"/>
+            <ul>
+          <li><a href="#HIntroductorycoursetoASPIREandRFID">1 Introductory course to ASPIRE and RFID</a> 
+      <li><a href="#HGeneralTrainingonRFIDTechnologyandMiddleware2CincludingEPC28Tutorials29">2 General Training on RFID Technology and Middleware, including EPC (Tutorials)</a> 
+      <li><a href="#HTrainingonOW2toolsandtechniques">3 Training on OW2 tools and techniques</a> 
+      <li><a href="#HTrainingonAspireRfiddevelopmentsandmiddleware">4 Training on AspireRfid developments and middleware</a> 
+        <ul>
+          <li><a href="#HUniversitycourses">4.1 University courses</a> 
+      <li><a href="#HProfessionalServices">4.2 Professional Services</a> 
+      </ul></ul> <hr class="line"/>
+<h3 class="heading-1-1"><span id="HIntroductorycoursetoASPIREandRFID">Introductory course to ASPIRE and RFID</span></h3><p class="paragraph"/>
+This is a course intended to offer an introduction to the concepts around RFID and guide the reader through the ASPIRE and AspireRFID middleware architecture. You can start by taking a look at the course outline and proceed by studying the lectures. 
+<ul class="star">
+<li>Course Outline (<a href="../../download/Main/Services/course_outline.pdf" />pdf</a>)</li>
+</ul>
+<ol><li>Introduction to RFID Technology (<a href="../../download/Main/Services/01%20Introduction%20to%20RFID%20Technology.pdf" />pdf</a>)</li>
+<li>Introduction to RFID Middleware (<a href="../../download/Main/Services/02%20Introduction%20to%20RFID%20Middleware.pdf" />pdf</a>)</li>
+<li>Introduction to EPC &amp; EPC Architecture (<a href="../../download/Main/Services/03%20Introduction%20to%20EPC%20%2526%20EPC%20Architecture.pdf" />pdf</a>)</li>
+<li>EPC Middleware Standards (<a href="../../download/Main/Services/04%20EPC%20Middleware%20Standards.pdf" />pdf</a>)</li>
+<li>ASPIRE and AspireRfid (<a href="../../download/Main/Services/05%20ASPIRE%20and%20AspireRfid.pdf" />pdf</a>)</li>
+<li>ASPIRE Architecture and Middleware (<a href="../../download/Main/Services/06%20ASPIRE%20Architecture%20and%20Middleware.pdf" />pdf</a>)</li>
+<li>ASPIRE Tools and IDE (<a href="../../download/Main/Services/08%20ASPIRE%20Tools%20and%20IDE.pdf" />pdf</a>)</li>
+<li>ASPIRE Pilots (<a href="../../download/Main/Services/09%20ASPIRE%20Pilots.pdf" />pdf</a>)</li>
+</ol>
+<ul class="star">
+<li>Additional reading material (<a href="../../download/Main/Services/List_of_References.pdf" />pdf</a>)</li>
+</ul><h2 class="heading-1"><span id="HOtherTraining">Other Training</span></h2><p class="paragraph"/>
+ASPIRE Trainings typically consist of three complementary sections:
+<h3 class="heading-1-1"><span id="HGeneralTrainingonRFIDTechnologyandMiddleware2CincludingEPC28Tutorials29">General Training on RFID Technology and Middleware, including EPC (Tutorials)</span></h3> 
+<ul class="star">
+<li>Introduction to RFID and AutoID Technologies (<a href="../../download/Main/Services/Intro_RFID_AutoID.pdf" />pdf</a>)</li>
+<li>Understanding RFID Technologies (<a href="../../download/Main/Services/RFID_Understanding.pdf" />pdf</a>)</li>
+<li>Introduction to RFID Middleware (<a href="../../download/Main/Services/RFID_Middleware_Introduction.pdf" />pdf</a>)</li>
+<li>Introduction to the IoT (Internet of Things) (<a href="../../download/Main/Services/IoT_Intro.pdf" />pdf</a>)</li>
+<li>EPC Essentials (<a href="../../download/Main/Services/RFID_EPC_Essentials.pdf" />pdf</a>)</li>
+<li>EPC Network Architecture (<a href="../../download/Main/Services/RFID_EPC_Network_Architecture.pdf" />pdf</a>)</li>
+<li>Overview of RFID Middleware Toolkits and the ASPIRE Project (<a href="../../download/Main/Services/AspireRfid_SOTA_Middleware.pdf" />pdf</a>)</li>
+<li>Comparison of OSS RFID and Introduction to ASPIRE Developments (<a href="../../download/Main/Services/Aspire_Intro.pdf" />pdf</a>)</li>
+</ul><h3 class="heading-1-1"><span id="HTrainingonOW2toolsandtechniques">Training on OW2 tools and techniques</span></h3> 
+<ul class="star">
+<li>Maven Presentation (<a href="../../download/Main/Services/OW2_ASPIRE_MAVEN.pdf" />pdf</a>)</li>
+<li>Configure Eclipse to work with GForge (<a href="../../download/Main/Services/Configure_Eclipse_to_work_with_Gforge.pdf" />pdf</a>)</li>
+</ul><h3 class="heading-1-1"><span id="HTrainingonAspireRfiddevelopmentsandmiddleware">Training on AspireRfid developments and middleware</span></h3><p class="paragraph"/>Under Construction
+<h4 class="heading-1-1-1"><span id="HUniversitycourses">University courses</span></h4><p class="paragraph"/>
+The Aspire project is used in the teaching units to teach machine-2-machine technologies (RFID, sensors, ...).
+<ul class="star">
+<li>Teaching Unit &quot;Machine 2 Machine Project (6 ECTS), Master 2nd year in Information Technologies, professional track, Universite Joseph Fourier (Grenoble 1), France (<i class="italic">UE PM2M: Projet de Service Machine a Machine (6 ECTS), Master 2 Professionel Genie Informatique, Universite Joseph Fourier (Grenoble 1), France</i>)<ul class="star">
+<li><span class="nobr"><a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/">&#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/</a></span></li>
+<li><span class="nobr"><a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie1.pdf">&#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie1.pdf</a></span></li>
+<li><span class="nobr"><a href="http://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie2.pdf">&#104;ttp://membres-liglab.imag.fr/donsez/ujf/m2pgi/pm2m/projetm2m-0809-partie2.pdf</a></span></li>
+</ul></li>
+</ul><h4 class="heading-1-1-1"><span id="HProfessionalServices">Professional Services</span></h4><p class="paragraph"/>
+AspireRfid main Developers and Contributors (UJF and AIT) are available to provide a range of consulting, integration and training services including:
+<ul class="star">
+<li>Business Case Establishment</li>
+<li>Cost and Financial Analysis (Return-on-Investment (ROI), Internal Rate of Return (IRR) and more)</li>
+<li>Site Investigation</li>
+<li>Solution Design (based on AspireRfid middleware)</li>
+<li>Solution Implementation (based on AspireRfid middleware)</li>
+<li>Solution Integration (based on AspireRfid middleware)</li>
+<li>Training on AspireRfid Middleware and Tools</li>
+<li>Technical Support of AspireRfid Middleware and Tools</li>
+<li>Customization of AspireRfid Middleware and Tools</li>
+</ul>Under Construction
+
+         </div>
+            </div>
+            <div id="col-b" class="sidecol">
+              <div class="box">
+<p class="paragraph"/><p class="paragraph"/><div class="leftOW" style="width: 145px">
+<center>
+<h4 class="heading-1-1-1"><span id="HMain">Main</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="index.html">Home</a></span></li>
+<li><span class="wikilink"><a href="News.html">News</a></span></li>
+<li><span class="wikilink"><a href="FAQs.html">FAQ</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HLearn">Learn</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Documentation.html">Documentation</a></span></li>
+<li><span class="wikiexternallink"><a href="http://moodle.fp7-aspire.eu/">&#77;oodle</a></span></li>
+<li><span class="wikilink"><a href="Services.html">Services (Training/Consulting)</a></span></li>
+<li><span class="wikilink"><a href="Readers.html">Supported devices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="References.html">References</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HUse">Use</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Downloads.html">Downloads</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+<li><span class="wikilink"><a href="Demos.html">Other Demos</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/CompetitiveAdvantageOfUsingAspireRFID.html">Why AspireRFID?</a></span></li>
+<li><span class="wikilink"><a href="Licenses.html">Licenses</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HContribute">Contribute</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Developers.html">Developer Instructions</a></span></li>
+<li><span class="wikilink"><a href="Source-SVN.html">Source-SVN Access</a></span></li>
+<li><span class="wikiexternallink"><a href="http://websvn.ow2.org/listing.php?repname=aspire&amp;">&#66;rowse sources</a></span></li>
+<li><span class="wikilink"><a href="Guidelines.html">Code guidelines</a></span></li>
+<li><span class="wikilink"><a href="Roadmap.html">Roadmap</a></span></li>
+<li><span class="wikilink"><a href="SummerOfCode.html">Summer of code</a></span></li>
+<li><span class="wikilink"><a href="Internships.html">Internships</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HCommunity">Community</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="../Community/Lists.html">Mailing Lists</a></span></li>
+<li><span class="wikilink"><a href="Contributors.html">Contributors</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.fp7-aspire.eu/">&#70;P7 ASPIRE Project</a></span></li>
+<li><span class="wikiexternallink"><a href="http://forge.objectweb.org/projects/aspire">&#70;orge</a></span></li>
+<li><span class="wikiexternallink"><a href="http://www.ohloh.net/p/aspire">&#65;spireRFID@ohloh</a></span></li>
+<li><span class="wikilink"><a href="WhoIsUsingAspire.html">AspireRFID Users</a></span></li>
+</ul><center>
+<h4 class="heading-1-1-1"><span id="HOther">Other</span></h4> 
+</center>
+<ul class="star">
+<li><span class="wikilink"><a href="Logo.html">Logo</a></span></li>
+<li><span class="wikilink"><a href="PhotoAlbum.html">Photo Album</a></span></li>
+<li><span class="wikilink"><a href="Goodies.html">Goodies</a></span></li>
+<li><span class="wikilink"><a href="Videos.html">Videos</a></span></li>
+<li><span class="wikilink"><a href="Operation.html">RFIDthon</a></span></li>
+<li><span class="wikilink"><a href="Links.html">Links</a></span></li>
+</ul></div><p class="paragraph"/><p class="paragraph"/>
+<br/><p class="paragraph"/><a href="http://www2.clustrmaps.com/counter/maps.php?url=http://wiki.aspire.objectweb.org/" id="clustrMapsLink"><img src="http://www2.clustrmaps.com/counter/index2.php?url=http://wiki.aspire.objectweb.org/" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='../../../../../clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/';" />
+</a><p class="paragraph"/>
+<script type="text/javascript" src="../../../../../widgets.amung.us/classic.js"></script><script type="text/javascript">WAU_classic('caw58f8716au')</script><p class="paragraph"/><p class="paragraph"/><script type="text/javascript">
+if(document.location.protocol=='Services.html'){
+ var Tynt=Tynt||<span class="wikilink"><a href="index.html"></a></span>;Tynt.push('c507ju8n4r4kxsacwqm_6r');Tynt.i={"ap":"Read more:","cc":"2","b":true};
+ (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='../../../../../tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')<a class="wikicreatelink" href="/xwiki/bin/edit/Main/0?parent=Main.Services"><span class="wikicreatelinktext">0</span><span class="wikicreatelinkqm">?</span></a>;h.parentNode.insertBefore(s,h);})();
+}
+</script>
+
+              </div>
+            </div>
+<div id="xwikidata" class="clear">
+
+<div id="xwikiattachments" class="xwikidata">
+    <div class="xwikidatatitle2">
+        <div class="xwikidatatitle1">&nbsp;</div>
+
+        <div class="xwikidatatitle">
+            <a href="#" onclick="showhide('xwikiattachmentscontent'); return false">Attachments</a>:
+            21 Attachments  by
+            jsoldat ...
+                    </div>
+    </div>
+
+    <div id="xwikiattachmentscontent" class="xwikidatacontent" style="display:none" >
+        <table>
+        <tr><th></th><th><b>Filename</b></th><th><b>Version</b></th>
+            <th><b>Author</b></th><th><b>Size</b></th><th><b>History</b></th><th><b>Delete</b>
+        </th></tr>
+                <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/Intro_RFID_AutoID.pdf">Intro_RFID_AutoID.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>252539</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/AspireRfid_SOTA_Middleware.pdf">AspireRfid_SOTA_Middleware.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>648528</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/OW2_ASPIRE_MAVEN.pdf">OW2_ASPIRE_MAVEN.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>595380</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/Configure_Eclipse_to_work_with_Gforge.pdf">Configure_Eclipse_to_work_with_Gforge.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>961955</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/RFID_Understanding.pdf">RFID_Understanding.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>217357</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/RFID_EPC_Essentials.pdf">RFID_EPC_Essentials.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>416238</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/IoT_Intro.pdf">IoT_Intro.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>139289</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/Aspire_Intro.pdf">Aspire_Intro.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>648508</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/RFID_Middleware_Introduction.pdf">RFID_Middleware_Introduction.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>213823</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/RFID_EPC_Network_Architecture.pdf">RFID_EPC_Network_Architecture.pdf</
+                                     a></td>
+            <td>1.1</td><td>jsoldat</td><td>349810</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/01%20Introduction%20to%20RFID%20Technology.pdf">01 Introduction to RFID Technology.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>1352819</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/02%20Introduction%20to%20RFID%20Middleware.pdf">02 Introduction to RFID Middleware.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>329706</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/03%20Introduction%20to%20EPC%20%2526%20EPC%20Architecture.pdf">03 Introduction to EPC & EPC Architecture.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>1009152</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/04%20EPC%20Middleware%20Standards.pdf">04 EPC Middleware Standards.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>3850284</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/05%20ASPIRE%20and%20AspireRfid.pdf">05 ASPIRE and AspireRfid.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>707261</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/06%20ASPIRE%20Architecture%20and%20Middleware.pdf">06 ASPIRE Architecture and Middleware.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>1141070</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/07%20ASPIRE%20Programmable%20Language%20and%20Engine.pdf">07 ASPIRE Programmable Language and Engine.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>897013</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/08%20ASPIRE%20Tools%20and%20IDE.pdf">08 ASPIRE Tools and IDE.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>1571912</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/09%20ASPIRE%20Pilots.pdf">09 ASPIRE Pilots.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>1806517</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/course_outline.pdf">course_outline.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>35796</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                        <tr>
+            <td>
+                                        </ td><td><a href="../../download/Main/Services/List_of_References.pdf">List_of_References.pdf</
+                                     a></td>
+            <td>1.1</td><td>nkons</td><td>85533</td>
+            <td align="center">
+                <a href="../../login/XWiki/XWikiLogin.html">History</ a>
+            </td>
+            <td>
+                <a href="../../login/XWiki/XWikiLogin.html" onclick="return confirm('Please confirm you want to delete this attachment ?');">Delete</a></td>
+        </tr>
+                    </table>
+    <br/>
+
+    <form action="http://wiki.aspire.ow2.org/xwiki/bin/upload/Main/Services" enctype="multipart/form-data" method="post">
+            <p>
+        <script type="text/javascript">
+            function updateAttachName(form) {
+                var fname = form.filepath.value;
+
+                if (fname == "") {
+                    return false;
+                }
+
+                var i = fname.lastIndexOf('\\');
+                if (i == -1)
+                    i = fname.lastIndexOf('../../../../index.html');
+
+                fname = fname.substring(i + 1);
+                if (form.filename.value == fname)
+                    return true;
+
+                if (form.filename.value == "")
+                    form.filename.value = fname;
+                else {
+                    if (confirm("Do you want to replace the filename with '" + fname + "' ?"
+                ))
+                    form.filename.value = fname;
+                }
+                return true;
+            }
+        </script>
+        Choose the target file name:
+        <input type="text" name="filename" value="" size="20"/>
+        <br/><br/>
+        Choose file to upload:
+        <input type="file" name="filepath" value="" size="40"/>
+        <br/><br/>
+        <input type="submit" value="Attach this file" onclick="return updateAttachName(this.form)" />
+                </p>
+    </form>
+</div>
+<div class="xwikidatafooter2">
+    <div class="xwikidatafooter1">&nbsp;</div>
+
+    <div class="xwikidatafooter">&nbsp;</div>
+</div>
+</div>
+
+</div>
+          </div>
+          <div id="col-c" class="sidecol">
+         <div class="box">
+<p class="paragraph"/><center>
+<h4 class="heading-1-1-1"><span id="HSearch">Search</span></h4> 
+</center>
+<center>
+<form action="http://wiki.aspire.ow2.org/xwiki/bin/view/Main/WebSearch">
+<input type="text" name="text" value="" size=15>&nbsp;<input type="submit" name="search" value="Search" size=15>
+</form>
+</center><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><div style="width: 145px">
+<br/>
+<center>
+<h4 class="heading-1-1-1"><span id="HDocumentation">Documentation </span></h4> 
+</center>
+</div><p class="paragraph"/><div class="leftOW" style="width: 160px">
+<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/AspireRfidArchitecture.html">AspireRFID Architecture</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/TDT.html">Tag Data Translation</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/HAL.html">Hardware Abstraction Layer</a></span></li>
+<li>Reader Proxies<ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation/ReaderCoreProxy.html">Reader Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/LightRP.html">Embedded light RP</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Filtering%26Collection.html">F&amp;C Server (ALE)</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/ExtendedTDTALE.html">Extended TDT ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ALEonOSGi.html">Deploy F&amp;C on OSGi</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/EmbededALE.html">Embedded ALE</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/LightALECC.html">Light ALECC</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.Filtering%26Collection/NFCLightALE.html">NFC Light ALE</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.Filtering%26Collection/LLRP%20toolkit%20library%20(updated%20according%20to%20LLRP%201.html">&#76;LRP toolkit library (updated according to LLRP 1.1)</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/BEG.html">Business Event Generator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/EpcisRepository.html">EPCIS Repository</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/ONS.html">Object Name Service</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Connector.html">Connector</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APE.html">Programmable Engine</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/APDL.html">APDL</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/AspireIDE.html">AspireRfid IDE</a></span><ul class="star">
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AspireRfidIdeCore.html">AspireRfidIDE Core</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/AleServerConfigurator.html">ALE Server Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BusinessEventGeneratorPlug-in.html">BEG</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/PhysicalReaderConfiguration.html">Physical Reader Configurator</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ECSpecEditor.html">EC-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/LRSpecEditor.html">LR-Spec Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/MasterDataEditor.html">Master Data Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/RFIDBusinessLocationGMFEditor.html">Business Loc. GMF Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/TcpMessageCapturer.html">TCP Message Capturer</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/BPWMEditor.html">BPWM Editor</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation.AspireIDE/ProgrammableEngineConfig.html">Prog. Engine Configurator</a></span></li>
+<li>Connector Configurator</li>
+<li>Privacy Framework Tool</li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Bundles.html">OSGi Bundles</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/StandaloneTestingTools.html">Standalone Testing Tools</a></span><ul class="star">
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagGenerator.html">&#84;ag Generator</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation.EmbeddedTools/TagSearcher.html">&#84;ag Searcher</a></span></li>
+<li><span class="wikiexternallink"><a href="../Main.Documentation/StandaloneTestingTools.html#HTCPCapturer">&#84;CP Message Capturer</a></span></li>
+</ul>
+</li>
+<li><span class="wikilink"><a href="../Main.Documentation/Deliverables.html">Deliverables</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/BestPractices.html">Best Practices</a></span></li>
+<li><span class="wikilink"><a href="Glossary.html">Glossary</a></span></li>
+<li><span class="wikilink"><a href="../Main.Documentation/Demos.html">Demos</a></span></li>
+</ul></div>
+<hr class="line"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/><p class="paragraph"/>
+<br/>
+<br/>
+<br/><p class="paragraph"/>
+
+          </div>
+          </div>
+          <div class="clear" id="em"></div>
+          </div>
+          </div>
+</div>
+<script type="text/javascript">
+<!--
+function showhide(divname) {
+ var style = document.getElementById(divname).style;
+ if ((style.display=='block')||(style.display=='')) {
+  style.display='none';
+  }
+ else {
+  style.display='block';
+  }
+}
+// -->
+</script>
+<div class="xwiki0a" id="xwikinav_footer"></div>
+
+<div id="xwikifooter" class="clear">
+ <div id="xwikidocinfo">
+  <a href='Community.html'>Main.Community</a> &gt; <a href='Services.html'>AspireRfid Services</a>
+  (en)
+ <br />
+  Creator: donsez
+ &nbsp;Date: 2008/07/23 20:23
+ <br />
+ Last Author: nkons
+ &nbsp;Date: 2010/05/13 07:27
+  </div>
+
+ <div id="xwikifooterimage">
+ <a href="http://xwiki.objectweb.org/">
+ <img src="../../download/XWiki/MySkin/poweredby_xwiki.png" alt="Powered by XWiki" /></a>
+ </div>
+
+ <div id="xwikifootertext">
+ Copyright (c) 2005-2009, <a href="http://www.ow2.org/">OW2 Consortium</a> | <a href="Contact.html">contact</a> | <a href="mailto:webmaster@ow2.org">webmaster</a>
+ </div>
+
+ <div id="xwikifooterhelp">
+ 
+ </div>
+</div>
+
+</body>
+
+<!-- Mirrored from wiki.aspire.ow2.org/xwiki/bin/view/Main/Services by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2015 17:05:34 GMT -->
+</html>
